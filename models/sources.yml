@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: yellow_legacy
+    schema: main  
+    tables:
+      - name: game_route_order
+
+      - name: moves_from_level_up
+      - name: moves_from_tmhm 
+      - name: moves_phys_spec
+      - name: moves_stats
+      - name: moves_tmhm_locations
+      - name: moves_type_effectiveness
+
+      - name: pkmn_encounter_area_order
+      - name: pkmn_encounter_areas
+      - name: pkmn_evolutions
+      - name: pkmn_stats
+
+      - name: trainers_gym_leaders
+      - name: trainers_legendary
+      - name: trainers_mandatory
+

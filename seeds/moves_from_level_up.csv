@@ -1,0 +1,1436 @@
+﻿Pokedex Number,Pokemon,Col3,Level,Move,Type,Power,Accuracy,PP
+1,Bulbasaur,Move 1,1,Tackle,Normal,35,1,35
+1,Bulbasaur,Move 2,1,Growl,Growl,N/A,1,40
+1,Bulbasaur,Move 3,7,Leech Seed,Leech Seed,N/A,0.9,10
+1,Bulbasaur,Move 4,9,Vine Whip,Vine Whip,40,1,25
+1,Bulbasaur,Move 5,22,Poisonpowder,Poisonpowder,N/A,0.95,35
+1,Bulbasaur,Move 6,25,Sleep Powder,Sleep Powder,N/A,0.75,15
+1,Bulbasaur,Move 7,29,Razor Leaf,Razor Leaf,55,0.95,25
+1,Bulbasaur,Move 8,38,Growth,Growth,N/A,N/A,40
+1,Bulbasaur,Move 9,42,Body Slam,Body Slam,85,1,15
+1,Bulbasaur,Move 10,52,Solarbeam,Solarbeam,180,1,10
+2,Ivysaur,Move 1,1,Tackle,Tackle,35,1,35
+2,Ivysaur,Move 2,1,Growl,Growl,N/A,1,40
+2,Ivysaur,Move 3,7,Leech Seed,Leech Seed,N/A,0.9,10
+2,Ivysaur,Move 4,9,Vine Whip,Vine Whip,40,1,25
+2,Ivysaur,Move 5,16,Acid,Acid,65,1,30
+2,Ivysaur,Move 6,22,Poisonpowder,Poisonpowder,N/A,0.95,35
+2,Ivysaur,Move 7,25,Sleep Powder,Sleep Powder,N/A,0.75,15
+2,Ivysaur,Move 8,29,Razor Leaf,Razor Leaf,55,0.95,25
+2,Ivysaur,Move 9,38,Growth,Growth,N/A,N/A,40
+2,Ivysaur,Move 10,42,Body Slam,Body Slam,85,1,15
+2,Ivysaur,Move 11,54,Solarbeam,Solarbeam,180,1,10
+3,Venusaur,Move 1,1,Tackle,Tackle,35,1,35
+3,Venusaur,Move 2,1,Growl,Growl,N/A,1,40
+3,Venusaur,Move 3,7,Leech Seed,Leech Seed,N/A,0.9,10
+3,Venusaur,Move 4,9,Vine Whip,Vine Whip,40,1,25
+3,Venusaur,Move 5,16,Acid,Acid,65,1,30
+3,Venusaur,Move 6,22,Poisonpowder,Poisonpowder,N/A,0.95,35
+3,Venusaur,Move 7,25,Sleep Powder,Sleep Powder,N/A,0.75,15
+3,Venusaur,Move 8,29,Razor Leaf,Razor Leaf,55,0.95,25
+3,Venusaur,Move 9,36,Sludge,Sludge,90,1,20
+3,Venusaur,Move 10,38,Growth,Growth,N/A,N/A,40
+3,Venusaur,Move 11,42,Body Slam,Body Slam,85,1,15
+3,Venusaur,Move 12,54,Solarbeam,Solarbeam,180,1,10
+4,Charmander,Move 1,1,Scratch,Scratch,40,1,35
+4,Charmander,Move 2,1,Growl,Growl,N/A,1,40
+4,Charmander,Move 3,9,Ember,Ember,40,1,25
+4,Charmander,Move 4,13,Leer,Leer,N/A,1,30
+4,Charmander,Move 5,17,Rage,Rage,60,1,20
+4,Charmander,Move 6,19,Fire Punch,Fire Punch,70,1,15
+4,Charmander,Move 7,23,Bite,Bite,60,1,25
+4,Charmander,Move 8,33,Slash,Slash,70,1,20
+4,Charmander,Move 9,38,Flamethrower,Flamethrower,95,1,15
+4,Charmander,Move 10,46,Fire Spin,Fire Spin,15,0.7,15
+4,Charmander,Move 11,50,Slam,Slam,80,1,20
+5,Charmeleon,Move 1,1,Scratch,Scratch,40,1,35
+5,Charmeleon,Move 2,1,Growl,Growl,N/A,1,40
+5,Charmeleon,Move 3,9,Ember,Ember,40,1,25
+5,Charmeleon,Move 4,13,Leer,Leer,N/A,1,30
+5,Charmeleon,Move 5,17,Rage,Rage,60,1,20
+5,Charmeleon,Move 6,19,Fire Punch,Fire Punch,70,1,15
+5,Charmeleon,Move 7,23,Bite,Bite,60,1,25
+5,Charmeleon,Move 8,33,Slash,Slash,70,1,20
+5,Charmeleon,Move 9,40,Flamethrower,Flamethrower,95,1,15
+5,Charmeleon,Move 10,48,Slam,Slam,80,1,20
+5,Charmeleon,Move 11,56,Fire Spin,Fire Spin,15,0.7,15
+6,Charizard,Move 1,1,Scratch,Scratch,40,1,35
+6,Charizard,Move 2,1,Growl,Growl,N/A,1,40
+6,Charizard,Move 3,9,Ember,Ember,40,1,25
+6,Charizard,Move 4,13,Leer,Leer,N/A,1,30
+6,Charizard,Move 5,17,Rage,Rage,60,1,20
+6,Charizard,Move 6,19,Fire Punch,Fire Punch,70,1,15
+6,Charizard,Move 7,23,Bite,Bite,60,1,25
+6,Charizard,Move 8,33,Slash,Slash,70,1,20
+6,Charizard,Move 9,36,Wing Attack,Wing Attack,60,1,35
+6,Charizard,Move 10,42,Flamethrower,Flamethrower,95,1,15
+6,Charizard,Move 11,48,Slam,Slam,80,1,20
+6,Charizard,Move 12,56,Fire Spin,Fire Spin,15,0.7,15
+7,Squirtle,Move 1,1,Tackle,Tackle,35,1,35
+7,Squirtle,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+7,Squirtle,Move 3,5,Bubble,Bubble,10,1,30
+7,Squirtle,Move 4,10,Water Gun,Water Gun,40,1,25
+7,Squirtle,Move 5,15,Bite,Bite,60,1,25
+7,Squirtle,Move 6,21,Bubblebeam,Bubblebeam,65,1,20
+7,Squirtle,Move 7,27,Body Slam,Body Slam,85,1,15
+7,Squirtle,Move 8,31,Withdraw,Withdraw,N/A,N/A,40
+7,Squirtle,Move 9,33,Waterfall,Waterfall,70,1,15
+7,Squirtle,Move 10,42,Skull Bash,Skull Bash,100,1,15
+7,Squirtle,Move 11,45,Ice Beam,Ice Beam,95,1,10
+7,Squirtle,Move 12,52,Hydro Pump,Hydro Pump,120,0.85,10
+8,Wartortle,Move 1,1,Tackle,Tackle,35,1,35
+8,Wartortle,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+8,Wartortle,Move 3,1,Bubble,Bubble,10,1,30
+8,Wartortle,Move 4,5,Bubble,Bubble,10,1,30
+8,Wartortle,Move 5,10,Water Gun,Water Gun,40,1,25
+8,Wartortle,Move 6,15,Bite,Bite,60,1,25
+8,Wartortle,Move 7,21,Bubblebeam,Bubblebeam,65,1,20
+8,Wartortle,Move 8,27,Body Slam,Body Slam,85,1,15
+8,Wartortle,Move 9,31,Withdraw,Withdraw,N/A,N/A,40
+8,Wartortle,Move 10,33,Waterfall,Waterfall,70,1,15
+8,Wartortle,Move 11,42,Skull Bash,Skull Bash,100,1,15
+8,Wartortle,Move 12,45,Ice Beam,Ice Beam,95,1,10
+8,Wartortle,Move 13,52,Hydro Pump,Hydro Pump,120,0.85,10
+9,Blastoise,Move 1,1,Tackle,Tackle,35,1,35
+9,Blastoise,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+9,Blastoise,Move 3,5,Bubble,Bubble,10,1,30
+9,Blastoise,Move 4,10,Water Gun,Water Gun,40,1,25
+9,Blastoise,Move 5,15,Bite,Bite,60,1,25
+9,Blastoise,Move 6,21,Bubblebeam,Bubblebeam,65,1,20
+9,Blastoise,Move 7,27,Body Slam,Body Slam,85,1,15
+9,Blastoise,Move 8,31,Withdraw,Withdraw,N/A,N/A,40
+9,Blastoise,Move 9,33,Waterfall,Waterfall,70,1,15
+9,Blastoise,Move 10,42,Skull Bash,Skull Bash,100,1,15
+9,Blastoise,Move 11,45,Ice Beam,Ice Beam,95,1,10
+9,Blastoise,Move 12,52,Hydro Pump,Hydro Pump,120,0.85,10
+10,Caterpie,Move 1,1,Tackle,Tackle,35,1,35
+10,Caterpie,Move 2,1,String Shot,String Shot,N/A,0.95,40
+11,Metapod,Move 1,1,Tackle,Tackle,35,1,35
+11,Metapod,Move 2,1,Harden,Harden,N/A,N/A,30
+11,Metapod,Move 3,1,String Shot,String Shot,N/A,0.95,40
+11,Metapod,Move 4,7,Harden,Harden,N/A,N/A,30
+11,Metapod,Move 5,7,Harden,Harden,N/A,N/A,30
+12,Butterfree,Move 1,1,Tackle,Tackle,35,1,35
+12,Butterfree,Move 2,1,Harden,Harden,N/A,N/A,30
+12,Butterfree,Move 3,1,String Shot,String Shot,N/A,0.95,40
+12,Butterfree,Move 4,10,Confusion,Confusion,50,1,25
+12,Butterfree,Move 5,12,Leech Life,Leech Life,50,1,25
+12,Butterfree,Move 6,13,Poisonpowder,Poisonpowder,N/A,0.95,35
+12,Butterfree,Move 7,14,Stun Spore,Stun Spore,N/A,0.75,30
+12,Butterfree,Move 8,15,Sleep Powder,Sleep Powder,N/A,0.75,15
+12,Butterfree,Move 9,18,Supersonic,Supersonic,N/A,0.75,20
+12,Butterfree,Move 10,24,Gust,Gust,40,1,35
+12,Butterfree,Move 11,24,Psybeam,Psybeam,65,1,20
+12,Butterfree,Move 12,28,Whirlwind,Whirlwind,N/A,1,20
+12,Butterfree,Move 13,32,Psychic,Psychic,90,1,10
+13,Weedle,Move 1,1,Poison Sting,Poison Sting,35,1,35
+13,Weedle,Move 2,1,String Shot,String Shot,N/A,0.95,40
+14,Kakuna,Move 1,1,Poison Sting,Poison Sting,35,1,35
+14,Kakuna,Move 2,1,String Shot,String Shot,N/A,0.95,40
+14,Kakuna,Move 3,1,Harden,Harden,N/A,N/A,30
+14,Kakuna,Move 4,7,Harden,Harden,N/A,N/A,30
+15,Beedrill,Move 1,1,String Shot,String Shot,N/A,0.95,40
+15,Beedrill,Move 2,1,Harden,Harden,N/A,N/A,30
+15,Beedrill,Move 3,1,Poison Sting,Poison Sting,35,1,35
+15,Beedrill,Move 4,10,Pin Missile,Pin Missile,6,1,30
+15,Beedrill,Move 5,12,Rage,Rage,60,1,20
+15,Beedrill,Move 6,15,Focus Energy,Focus Energy,N/A,N/A,30
+15,Beedrill,Move 7,18,Fury Attack,Fury Attack,15,1,20
+15,Beedrill,Move 8,21,Acid,Acid,65,1,30
+15,Beedrill,Move 9,27,Twineedle,Twineedle,40,1,20
+15,Beedrill,Move 10,30,Sludge,Sludge,90,1,20
+15,Beedrill,Move 11,35,Swords Dance,Swords Dance,N/A,N/A,30
+15,Beedrill,Move 12,40,Agility,Agility,N/A,N/A,30
+16,Pidgey,Move 1,1,Gust,Gust,40,1,35
+16,Pidgey,Move 2,5,Sand Attack,Sand Attack,N/A,1,15
+16,Pidgey,Move 3,12,Quick Attack,Quick Attack,40,1,30
+16,Pidgey,Move 4,19,Wing Attack,Wing Attack,60,1,35
+16,Pidgey,Move 5,21,Whirlwind,Whirlwind,N/A,1,20
+16,Pidgey,Move 6,29,Take Down,Take Down,95,1,20
+16,Pidgey,Move 7,34,Agility,Agility,N/A,N/A,30
+16,Pidgey,Move 8,49,Mirror Move,Mirror Move,Copy,N/A,20
+17,Pidgeotto,Move 1,1,Gust,Gust,40,1,35
+17,Pidgeotto,Move 2,5,Sand Attack,Sand Attack,N/A,1,15
+17,Pidgeotto,Move 3,12,Quick Attack,Quick Attack,40,1,30
+17,Pidgeotto,Move 4,18,Wing Attack,Wing Attack,60,1,35
+17,Pidgeotto,Move 5,21,Whirlwind,Whirlwind,N/A,1,20
+17,Pidgeotto,Move 6,29,Take Down,Take Down,95,1,20
+17,Pidgeotto,Move 7,34,Agility,Agility,N/A,N/A,30
+17,Pidgeotto,Move 8,49,Mirror Move,Mirror Move,Copy,N/A,20
+18,Pidgeot,Move 1,1,Gust,Gust,40,1,35
+18,Pidgeot,Move 2,5,Sand Attack,Sand Attack,N/A,1,15
+18,Pidgeot,Move 3,12,Quick Attack,Quick Attack,40,1,30
+18,Pidgeot,Move 4,18,Wing Attack,Wing Attack,60,1,35
+18,Pidgeot,Move 5,21,Whirlwind,Whirlwind,N/A,1,20
+18,Pidgeot,Move 6,29,Take Down,Take Down,95,1,20
+18,Pidgeot,Move 7,34,Agility,Agility,N/A,N/A,30
+18,Pidgeot,Move 8,40,Sky Attack,Sky Attack,120,0.85,5
+18,Pidgeot,Move 9,49,Mirror Move,Mirror Move,Copy,N/A,20
+19,Rattata,Move 1,1,Tackle,Tackle,35,1,35
+19,Rattata,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+19,Rattata,Move 3,7,Quick Attack,Quick Attack,40,1,30
+19,Rattata,Move 4,9,Bite,Bite,60,1,25
+19,Rattata,Move 5,14,Hyper Fang,Hyper Fang,80,0.9,15
+19,Rattata,Move 6,19,Focus Energy,Focus Energy,N/A,N/A,30
+19,Rattata,Move 7,24,Dig,Dig,70,1,10
+19,Rattata,Move 8,28,Super Fang,Super Fang,Var Dmg,0.9,10
+20,Raticate,Move 1,1,Tackle,Tackle,35,1,35
+20,Raticate,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+20,Raticate,Move 3,7,Quick Attack,Quick Attack,40,1,30
+20,Raticate,Move 4,9,Bite,Bite,60,1,25
+20,Raticate,Move 5,14,Hyper Fang,Hyper Fang,80,0.9,15
+20,Raticate,Move 6,19,Focus Energy,Focus Energy,N/A,N/A,30
+20,Raticate,Move 7,24,Dig,Dig,70,1,10
+20,Raticate,Move 8,28,Super Fang,Super Fang,Var Dmg,0.9,10
+21,Spearow,Move 1,1,Peck,Peck,35,1,35
+21,Spearow,Move 2,1,Growl,Growl,N/A,1,40
+21,Spearow,Move 3,7,Leer,Leer,N/A,1,30
+21,Spearow,Move 4,10,Fury Attack,Fury Attack,15,1,20
+21,Spearow,Move 5,14,Focus Energy,Focus Energy,N/A,N/A,30
+21,Spearow,Move 6,18,Swift,Swift,60,1,20
+21,Spearow,Move 7,21,Mirror Move,Mirror Move,Copy,N/A,20
+21,Spearow,Move 8,24,Drill Peck,Drill Peck,80,1,20
+21,Spearow,Move 9,28,Whirlwind,Whirlwind,N/A,1,20
+21,Spearow,Move 10,30,Sharpen,Sharpen,N/A,N/A,30
+21,Spearow,Move 11,40,Agility,Agility,N/A,N/A,30
+22,Fearow,Move 1,1,Peck,Peck,35,1,35
+22,Fearow,Move 2,1,Growl,Growl,N/A,1,40
+22,Fearow,Move 3,7,Leer,Leer,N/A,1,30
+22,Fearow,Move 4,10,Fury Attack,Fury Attack,15,1,20
+22,Fearow,Move 5,14,Focus Energy,Focus Energy,N/A,N/A,30
+22,Fearow,Move 6,18,Swift,Swift,60,1,20
+22,Fearow,Move 7,20,Mirror Move,Mirror Move,Copy,N/A,20
+22,Fearow,Move 8,24,Drill Peck,Drill Peck,80,1,20
+22,Fearow,Move 9,28,Whirlwind,Whirlwind,N/A,1,20
+22,Fearow,Move 10,30,Sharpen,Sharpen,N/A,N/A,30
+22,Fearow,Move 11,40,Agility,Agility,N/A,N/A,30
+23,Ekans,Move 1,1,Leer,Leer,N/A,1,30
+23,Ekans,Move 2,9,Poison Sting,Poison Sting,35,1,35
+23,Ekans,Move 3,12,Bite,Bite,60,1,25
+23,Ekans,Move 4,15,Acid,Acid,65,1,30
+23,Ekans,Move 5,22,Substitute,Substitute,N/A,N/A,10
+23,Ekans,Move 6,25,Glare,Glare,N/A,1,30
+23,Ekans,Move 7,30,Screech,Screech,N/A,0.85,10
+23,Ekans,Move 8,35,Sludge,Sludge,90,1,20
+23,Ekans,Move 9,47,Wrap,Wrap,15,0.85,20
+24,Arbok,Move 1,1,Leer,Leer,N/A,1,30
+24,Arbok,Move 2,9,Poison Sting,Poison Sting,35,1,35
+24,Arbok,Move 3,15,Bite,Bite,60,1,25
+24,Arbok,Move 4,18,Acid,Acid,65,1,30
+24,Arbok,Move 5,22,Substitute,Substitute,N/A,N/A,10
+24,Arbok,Move 6,25,Glare,Glare,N/A,1,30
+24,Arbok,Move 7,30,Screech,Screech,N/A,0.85,10
+24,Arbok,Move 8,35,Sludge,Sludge,90,1,20
+24,Arbok,Move 9,38,Wrap,Wrap,15,0.85,20
+25,Pikachu,Move 1,1,Thundershock,Thundershock,40,1,30
+25,Pikachu,Move 2,1,Growl,Growl,N/A,1,40
+25,Pikachu,Move 3,6,Quick Attack,Quick Attack,40,1,30
+25,Pikachu,Move 4,8,Thunder Wave,Thunder Wave,N/A,1,20
+25,Pikachu,Move 5,11,Tail Whip,Tail Whip,N/A,1,30
+25,Pikachu,Move 6,15,Double Team,Double Team,N/A,N/A,15
+25,Pikachu,Move 7,20,Thunderpunch,Thunderpunch,70,1,15
+25,Pikachu,Move 8,24,Headbutt,Headbutt,70,1,15
+25,Pikachu,Move 9,30,Thunderbolt,Thunderbolt,95,1,15
+25,Pikachu,Move 10,36,Agility,Agility,N/A,N/A,30
+25,Pikachu,Move 11,41,Thunder,Thunder,120,0.85,5
+25,Pikachu,Move 12,50,Light Screen,Light Screen,N/A,N/A,30
+26,Raichu,Move 1,1,Thundershock,Thundershock,40,1,30
+26,Raichu,Move 2,1,Growl,Growl,N/A,1,40
+26,Raichu,Move 3,6,Quick Attack,Quick Attack,40,1,30
+26,Raichu,Move 4,8,Thunder Wave,Thunder Wave,N/A,1,20
+26,Raichu,Move 5,11,Tail Whip,Tail Whip,N/A,1,30
+26,Raichu,Move 6,15,Double Team,Double Team,N/A,N/A,15
+26,Raichu,Move 7,20,Thunderpunch,Thunderpunch,70,1,15
+26,Raichu,Move 8,24,Headbutt,Headbutt,70,1,15
+26,Raichu,Move 9,30,Thunderbolt,Thunderbolt,95,1,15
+26,Raichu,Move 10,36,Agility,Agility,N/A,N/A,30
+26,Raichu,Move 11,41,Thunder,Thunder,120,0.85,5
+26,Raichu,Move 12,50,Light Screen,Light Screen,N/A,N/A,30
+27,Sandshrew,Move 1,1,Scratch,Scratch,40,1,35
+27,Sandshrew,Move 2,5,Poison Sting,Poison Sting,35,1,35
+27,Sandshrew,Move 3,8,Fury Swipes,Fury Swipes,20,1,15
+27,Sandshrew,Move 4,10,Sand Attack,Sand Attack,N/A,1,15
+27,Sandshrew,Move 5,14,Dig,Dig,70,1,10
+27,Sandshrew,Move 6,18,Swift,Swift,60,1,20
+27,Sandshrew,Move 7,23,Slash,Slash,70,1,20
+27,Sandshrew,Move 8,33,Earthquake,Earthquake,100,1,10
+28,Sandslash,Move 1,1,Scratch,Scratch,40,1,35
+28,Sandslash,Move 2,5,Poison Sting,Poison Sting,35,1,35
+28,Sandslash,Move 3,8,Fury Swipes,Fury Swipes,20,1,15
+28,Sandslash,Move 4,10,Sand Attack,Sand Attack,N/A,1,15
+28,Sandslash,Move 5,14,Dig,Dig,70,1,10
+28,Sandslash,Move 6,18,Swift,Swift,60,1,20
+28,Sandslash,Move 7,22,Slash,Slash,70,1,20
+28,Sandslash,Move 8,30,Earthquake,Earthquake,100,1,10
+28,Sandslash,Move 9,42,Swords Dance,Swords Dance,N/A,N/A,30
+29,Nidoran-f,Move 1,1,Growl,Growl,N/A,1,40
+29,Nidoran-f,Move 2,1,Tackle,Tackle,35,1,35
+29,Nidoran-f,Move 3,6,Poison Sting,Poison Sting,35,1,35
+29,Nidoran-f,Move 4,8,Bite,Bite,60,1,25
+29,Nidoran-f,Move 5,12,Double Kick,Double Kick,30,1,30
+29,Nidoran-f,Move 6,23,Tail Whip,Tail Whip,N/A,1,30
+29,Nidoran-f,Move 7,30,Headbutt,Headbutt,70,1,15
+29,Nidoran-f,Move 8,38,Fury Swipes,Fury Swipes,20,1,15
+30,Nidorina,Move 1,1,Growl,Growl,N/A,1,40
+30,Nidorina,Move 2,1,Tackle,Tackle,35,1,35
+30,Nidorina,Move 3,1,Scratch,Scratch,40,1,35
+30,Nidorina,Move 4,6,Poison Sting,Poison Sting,35,1,35
+30,Nidorina,Move 5,8,Bite,Bite,60,1,25
+30,Nidorina,Move 6,12,Double Kick,Double Kick,30,1,30
+30,Nidorina,Move 7,21,Headbutt,Headbutt,70,1,15
+30,Nidorina,Move 8,24,Dig,Dig,70,1,10
+30,Nidorina,Move 9,27,Tail Whip,Tail Whip,N/A,1,30
+30,Nidorina,Move 10,36,Fury Swipes,Fury Swipes,20,1,15
+31,Nidoqueen,Move 1,1,Tackle,Tackle,35,1,35
+31,Nidoqueen,Move 2,1,Scratch,Scratch,40,1,35
+31,Nidoqueen,Move 3,1,Tail Whip,Tail Whip,N/A,1,30
+31,Nidoqueen,Move 4,1,Body Slam,Body Slam,85,1,15
+31,Nidoqueen,Move 5,6,Poison Sting,Poison Sting,35,1,35
+31,Nidoqueen,Move 6,8,Headbutt,Headbutt,70,1,15
+31,Nidoqueen,Move 7,12,Double Kick,Double Kick,30,1,30
+31,Nidoqueen,Move 8,25,Body Slam,Body Slam,85,1,15
+31,Nidoqueen,Move 9,32,Sludge,Sludge,90,1,20
+31,Nidoqueen,Move 10,40,Earthquake,Earthquake,100,1,10
+32,Nidoran-m,Move 1,1,Leer,Leer,N/A,1,30
+32,Nidoran-m,Move 2,1,Tackle,Tackle,35,1,35
+32,Nidoran-m,Move 3,6,Poison Sting,Poison Sting,35,1,35
+32,Nidoran-m,Move 4,8,Horn Attack,Horn Attack,65,1,25
+32,Nidoran-m,Move 5,12,Double Kick,Double Kick,30,1,30
+32,Nidoran-m,Move 6,23,Focus Energy,Focus Energy,N/A,N/A,30
+32,Nidoran-m,Move 7,30,Fury Attack,Fury Attack,15,1,20
+32,Nidoran-m,Move 8,38,Horn Drill,Horn Drill,KO,0.3,5
+33,Nidorino,Move 1,1,Leer,Leer,N/A,1,30
+33,Nidorino,Move 2,1,Tackle,Tackle,35,1,35
+33,Nidorino,Move 3,8,Horn Attack,Horn Attack,65,1,25
+33,Nidorino,Move 4,12,Double Kick,Double Kick,30,1,30
+33,Nidorino,Move 5,19,Poison Sting,Poison Sting,35,1,35
+33,Nidorino,Move 6,21,Bite,Bite,60,1,25
+33,Nidorino,Move 7,24,Dig,Dig,70,1,10
+33,Nidorino,Move 8,27,Focus Energy,Focus Energy,N/A,N/A,30
+33,Nidorino,Move 9,32,Sludge,Sludge,90,1,20
+33,Nidorino,Move 10,36,Fury Attack,Fury Attack,15,1,20
+33,Nidorino,Move 11,40,Earthquake,Earthquake,100,1,10
+33,Nidorino,Move 12,46,Horn Drill,Horn Drill,KO,0.3,5
+34,Nidoking,Move 1,1,Tackle,Tackle,35,1,35
+34,Nidoking,Move 2,1,Thrash,Thrash,90,1,20
+34,Nidoking,Move 3,6,Poison Sting,Poison Sting,35,1,35
+34,Nidoking,Move 4,8,Horn Attack,Horn Attack,65,1,25
+34,Nidoking,Move 5,12,Double Kick,Double Kick,30,1,30
+34,Nidoking,Move 6,25,Thrash,Thrash,90,1,20
+34,Nidoking,Move 7,27,Focus Energy,Focus Energy,N/A,N/A,30
+34,Nidoking,Move 8,32,Sludge,Sludge,90,1,20
+34,Nidoking,Move 9,36,Fury Attack,Fury Attack,15,1,20
+34,Nidoking,Move 10,40,Earthquake,Earthquake,100,1,10
+34,Nidoking,Move 11,46,Horn Drill,Horn Drill,KO,0.3,5
+35,Clefairy,Move 1,1,Pound,Pound,40,1,35
+35,Clefairy,Move 2,1,Growl,Growl,N/A,1,40
+35,Clefairy,Move 3,13,Doubleslap,Doubleslap,20,1,35
+35,Clefairy,Move 4,19,Minimize,Minimize,N/A,N/A,20
+35,Clefairy,Move 5,26,Defense Curl,Defense Curl,N/A,N/A,40
+35,Clefairy,Move 6,30,Metronome,Metronome,N/A,N/A,10
+35,Clefairy,Move 7,32,Sing,Sing,N/A,0.55,15
+35,Clefairy,Move 8,35,Body Slam,Body Slam,85,1,15
+35,Clefairy,Move 9,43,Light Screen,Light Screen,N/A,N/A,30
+36,Clefable,Move 1,1,Sing,Sing,N/A,0.55,15
+36,Clefable,Move 2,1,Metronome,Metronome,N/A,N/A,10
+36,Clefable,Move 3,1,Growl,Growl,N/A,1,40
+36,Clefable,Move 4,13,Doubleslap,Doubleslap,20,1,35
+36,Clefable,Move 5,19,Minimize,Minimize,N/A,N/A,20
+36,Clefable,Move 6,26,Defense Curl,Defense Curl,N/A,N/A,40
+36,Clefable,Move 7,30,Metronome,Metronome,N/A,N/A,10
+36,Clefable,Move 8,35,Body Slam,Body Slam,85,1,15
+36,Clefable,Move 9,43,Light Screen,Light Screen,N/A,N/A,30
+36,Clefable,Move 10,48,Sing,Sing,N/A,0.55,15
+37,Vulpix,Move 1,1,Ember,Ember,40,1,25
+37,Vulpix,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+37,Vulpix,Move 3,7,Quick Attack,Quick Attack,40,1,30
+37,Vulpix,Move 4,13,Roar,Roar,N/A,1,20
+37,Vulpix,Move 5,16,Confuse Ray,Confuse Ray,N/A,1,10
+37,Vulpix,Move 6,25,Reflect,Reflect,N/A,N/A,20
+37,Vulpix,Move 7,32,Flamethrower,Flamethrower,95,1,15
+37,Vulpix,Move 8,37,Night Shade,Night Shade,60,1,15
+37,Vulpix,Move 9,42,Fire Spin,Fire Spin,15,0.7,15
+38,Ninetales,Move 1,1,Ember,Ember,40,1,25
+38,Ninetales,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+38,Ninetales,Move 3,7,Quick Attack,Quick Attack,40,1,30
+38,Ninetales,Move 4,13,Roar,Roar,N/A,1,20
+38,Ninetales,Move 5,16,Confuse Ray,Confuse Ray,N/A,1,10
+38,Ninetales,Move 6,25,Reflect,Reflect,N/A,N/A,20
+38,Ninetales,Move 7,32,Flamethrower,Flamethrower,95,1,15
+38,Ninetales,Move 8,37,Night Shade,Night Shade,60,1,15
+38,Ninetales,Move 9,42,Fire Spin,Fire Spin,15,0.7,15
+39,Jigglypuff,Move 1,1,Sing,Sing,N/A,0.55,15
+39,Jigglypuff,Move 2,3,Pound,Pound,40,1,35
+39,Jigglypuff,Move 3,5,Defense Curl,Defense Curl,N/A,N/A,40
+39,Jigglypuff,Move 4,14,Disable,Disable,N/A,0.75,20
+39,Jigglypuff,Move 5,16,Doubleslap,Doubleslap,20,1,35
+39,Jigglypuff,Move 6,24,Rest,Rest,N/A,N/A,10
+39,Jigglypuff,Move 7,30,Body Slam,Body Slam,85,1,15
+39,Jigglypuff,Move 8,38,Lovely Kiss,Lovely Kiss,N/A,0.75,10
+39,Jigglypuff,Move 9,43,Double Edge,Double Edge,120,1,10
+40,Wigglytuff,Move 1,1,Sing,Sing,N/A,0.55,15
+40,Wigglytuff,Move 2,1,Doubleslap,Doubleslap,20,1,35
+40,Wigglytuff,Move 3,3,Pound,Pound,40,1,35
+40,Wigglytuff,Move 4,5,Defense Curl,Defense Curl,N/A,N/A,40
+40,Wigglytuff,Move 5,14,Disable,Disable,N/A,0.75,20
+40,Wigglytuff,Move 6,16,Doubleslap,Doubleslap,20,1,35
+40,Wigglytuff,Move 7,24,Rest,Rest,N/A,N/A,10
+40,Wigglytuff,Move 8,30,Body Slam,Body Slam,85,1,15
+40,Wigglytuff,Move 9,38,Lovely Kiss,Lovely Kiss,N/A,0.75,10
+40,Wigglytuff,Move 10,43,Double Edge,Double Edge,120,1,10
+41,Zubat,Move 1,1,Leech Life,Leech Life,50,1,25
+41,Zubat,Move 2,5,Supersonic,Supersonic,N/A,0.75,20
+41,Zubat,Move 3,7,Gust,Gust,40,1,35
+41,Zubat,Move 4,12,Bite,Bite,60,1,25
+41,Zubat,Move 5,19,Confuse Ray,Confuse Ray,N/A,1,10
+41,Zubat,Move 6,23,Wing Attack,Wing Attack,60,1,35
+41,Zubat,Move 7,27,Acid,Acid,65,1,30
+41,Zubat,Move 8,36,Sludge,Sludge,90,1,20
+41,Zubat,Move 9,46,Haze,Haze,N/A,N/A,30
+42,Golbat,Move 1,1,Leech Life,Leech Life,50,1,25
+42,Golbat,Move 2,1,Screech,Screech,N/A,0.85,10
+42,Golbat,Move 3,5,Supersonic,Supersonic,N/A,0.75,20
+42,Golbat,Move 4,7,Gust,Gust,40,1,35
+42,Golbat,Move 5,12,Bite,Bite,60,1,25
+42,Golbat,Move 6,19,Confuse Ray,Confuse Ray,N/A,1,10
+42,Golbat,Move 7,22,Wing Attack,Wing Attack,60,1,35
+42,Golbat,Move 8,27,Acid,Acid,65,1,30
+42,Golbat,Move 9,36,Sludge,Sludge,90,1,20
+42,Golbat,Move 10,46,Haze,Haze,N/A,N/A,30
+43,Oddish,Move 1,1,Tackle,Tackle,35,1,35
+43,Oddish,Move 2,5,Poisonpowder,Poisonpowder,N/A,0.95,35
+43,Oddish,Move 3,8,Leech Seed,Leech Seed,N/A,0.9,10
+43,Oddish,Move 4,13,Absorb,Absorb,30,1,25
+43,Oddish,Move 5,16,Stun Spore,Stun Spore,N/A,0.75,30
+43,Oddish,Move 6,21,Acid,Acid,65,1,30
+43,Oddish,Move 7,25,Mega Drain,Mega Drain,65,1,20
+43,Oddish,Move 8,30,Sleep Powder,Sleep Powder,N/A,0.75,15
+43,Oddish,Move 9,35,Petal Dance,Petal Dance,90,1,20
+43,Oddish,Move 10,40,Sludge,Sludge,90,1,20
+43,Oddish,Move 11,50,Solarbeam,Solarbeam,180,1,10
+44,Gloom,Move 1,1,Tackle,Tackle,35,1,35
+44,Gloom,Move 2,1,Stun Spore,Stun Spore,N/A,0.75,30
+44,Gloom,Move 3,5,Poisonpowder,Poisonpowder,N/A,0.95,35
+44,Gloom,Move 4,8,Leech Seed,Leech Seed,N/A,0.9,10
+44,Gloom,Move 5,13,Absorb,Absorb,30,1,25
+44,Gloom,Move 6,16,Stun Spore,Stun Spore,N/A,0.75,30
+44,Gloom,Move 7,21,Acid,Acid,65,1,30
+44,Gloom,Move 8,25,Mega Drain,Mega Drain,65,1,20
+44,Gloom,Move 9,30,Sleep Powder,Sleep Powder,N/A,0.75,15
+44,Gloom,Move 10,35,Petal Dance,Petal Dance,90,1,20
+44,Gloom,Move 11,40,Sludge,Sludge,90,1,20
+44,Gloom,Move 12,50,Solarbeam,Solarbeam,180,1,10
+45,Vileplume,Move 1,1,Tackle,Tackle,35,1,35
+45,Vileplume,Move 2,1,Stun Spore,Stun Spore,N/A,0.75,30
+45,Vileplume,Move 3,1,Sleep Powder,Sleep Powder,N/A,0.75,15
+45,Vileplume,Move 4,1,Acid,Acid,65,1,30
+45,Vileplume,Move 5,5,Poisonpowder,Poisonpowder,N/A,0.95,35
+45,Vileplume,Move 6,8,Leech Seed,Leech Seed,N/A,0.9,10
+45,Vileplume,Move 7,13,Absorb,Absorb,30,1,25
+45,Vileplume,Move 8,16,Stun Spore,Stun Spore,N/A,0.75,30
+45,Vileplume,Move 9,21,Acid,Acid,65,1,30
+45,Vileplume,Move 10,25,Mega Drain,Mega Drain,65,1,20
+45,Vileplume,Move 11,30,Sleep Powder,Sleep Powder,N/A,0.75,15
+45,Vileplume,Move 12,35,Petal Dance,Petal Dance,90,1,20
+45,Vileplume,Move 13,40,Sludge,Sludge,90,1,20
+45,Vileplume,Move 14,50,Solarbeam,Solarbeam,180,1,10
+46,Paras,Move 1,1,Scratch,Scratch,40,1,35
+46,Paras,Move 2,6,Stun Spore,Stun Spore,N/A,0.75,30
+46,Paras,Move 3,8,Absorb,Absorb,30,1,25
+46,Paras,Move 4,10,Leech Life,Leech Life,50,1,25
+46,Paras,Move 5,13,Poisonpowder,Poisonpowder,N/A,0.95,35
+46,Paras,Move 6,24,Spore,Spore,N/A,1,15
+46,Paras,Move 7,27,Mega Drain,Mega Drain,65,1,20
+46,Paras,Move 8,30,Slash,Slash,70,1,20
+46,Paras,Move 9,36,Growth,Growth,N/A,N/A,40
+47,Parasect,Move 1,1,Scratch,Scratch,40,1,35
+47,Parasect,Move 2,6,Stun Spore,Stun Spore,N/A,0.75,30
+47,Parasect,Move 3,8,Absorb,Absorb,30,1,25
+47,Parasect,Move 4,10,Leech Life,Leech Life,50,1,25
+47,Parasect,Move 5,13,Poisonpowder,Poisonpowder,N/A,0.95,35
+47,Parasect,Move 6,24,Spore,Spore,N/A,1,15
+47,Parasect,Move 7,27,Mega Drain,Mega Drain,65,1,20
+47,Parasect,Move 8,30,Slash,Slash,70,1,20
+47,Parasect,Move 9,36,Growth,Growth,N/A,N/A,40
+48,Venonat,Move 1,1,Tackle,Tackle,35,1,35
+48,Venonat,Move 2,1,Disable,Disable,N/A,0.75,20
+48,Venonat,Move 3,11,Supersonic,Supersonic,N/A,0.75,20
+48,Venonat,Move 4,13,Leech Life,Leech Life,50,1,25
+48,Venonat,Move 5,17,Confusion,Confusion,50,1,25
+48,Venonat,Move 6,20,Poisonpowder,Poisonpowder,N/A,0.95,35
+48,Venonat,Move 7,29,Stun Spore,Stun Spore,N/A,0.75,30
+48,Venonat,Move 8,33,Psybeam,Psybeam,65,1,20
+48,Venonat,Move 9,36,Sleep Powder,Sleep Powder,N/A,0.75,15
+48,Venonat,Move 10,41,Psychic,Psychic,90,1,10
+49,Venomoth,Move 1,1,Tackle,Tackle,35,1,35
+49,Venomoth,Move 2,1,Disable,Disable,N/A,0.75,20
+49,Venomoth,Move 3,11,Supersonic,Supersonic,N/A,0.75,20
+49,Venomoth,Move 4,13,Leech Life,Leech Life,50,1,25
+49,Venomoth,Move 5,17,Confusion,Confusion,50,1,25
+49,Venomoth,Move 6,20,Poisonpowder,Poisonpowder,N/A,0.95,35
+49,Venomoth,Move 7,25,Acid,Acid,65,1,30
+49,Venomoth,Move 8,29,Stun Spore,Stun Spore,N/A,0.75,30
+49,Venomoth,Move 9,33,Psybeam,Psybeam,65,1,20
+49,Venomoth,Move 10,36,Sleep Powder,Sleep Powder,N/A,0.75,15
+49,Venomoth,Move 11,41,Psychic,Psychic,90,1,10
+49,Venomoth,Move 12,46,Sludge,Sludge,90,1,20
+50,Diglett,Move 1,1,Scratch,Scratch,40,1,35
+50,Diglett,Move 2,15,Growl,Growl,N/A,1,40
+50,Diglett,Move 3,19,Dig,Dig,70,1,10
+50,Diglett,Move 4,24,Sand Attack,Sand Attack,N/A,1,15
+50,Diglett,Move 5,31,Slash,Slash,70,1,20
+50,Diglett,Move 6,35,Screech,Screech,N/A,0.85,10
+50,Diglett,Move 7,40,Earthquake,Earthquake,100,1,10
+50,Diglett,Move 8,55,Fissure,Fissure,KO,0.3,5
+51,Dugtrio,Move 1,1,Scratch,Scratch,40,1,35
+51,Dugtrio,Move 2,15,Growl,Growl,N/A,1,40
+51,Dugtrio,Move 3,19,Dig,Dig,70,1,10
+51,Dugtrio,Move 4,24,Sand Attack,Sand Attack,N/A,1,15
+51,Dugtrio,Move 5,31,Slash,Slash,70,1,20
+51,Dugtrio,Move 6,35,Screech,Screech,N/A,0.85,10
+51,Dugtrio,Move 7,40,Earthquake,Earthquake,100,1,10
+51,Dugtrio,Move 8,55,Fissure,Fissure,KO,0.3,5
+52,Meowth,Move 1,1,Scratch,Scratch,40,1,35
+52,Meowth,Move 2,1,Growl,Growl,N/A,1,40
+52,Meowth,Move 3,10,Fury Swipes,Fury Swipes,20,1,15
+52,Meowth,Move 4,15,Bite,Bite,60,1,25
+52,Meowth,Move 5,18,Pay Day,Pay Day,60,1,20
+52,Meowth,Move 6,22,Screech,Screech,N/A,0.85,10
+52,Meowth,Move 7,29,Take Down,Take Down,95,1,20
+52,Meowth,Move 8,34,Slash,Slash,70,1,20
+52,Meowth,Move 9,45,Hyper Beam,Hyper Beam,150,0.9,5
+53,Persian,Move 1,1,Scratch,Scratch,40,1,35
+53,Persian,Move 2,1,Growl,Growl,N/A,1,40
+53,Persian,Move 3,10,Fury Swipes,Fury Swipes,20,1,15
+53,Persian,Move 4,15,Bite,Bite,60,1,25
+53,Persian,Move 5,18,Pay Day,Pay Day,60,1,20
+53,Persian,Move 6,22,Screech,Screech,N/A,0.85,10
+53,Persian,Move 7,29,Take Down,Take Down,95,1,20
+53,Persian,Move 8,34,Slash,Slash,70,1,20
+53,Persian,Move 9,50,Hyper Beam,Hyper Beam,150,0.9,5
+54,Psyduck,Move 1,1,Scratch,Scratch,40,1,35
+54,Psyduck,Move 2,10,Disable,Disable,N/A,0.75,20
+54,Psyduck,Move 3,15,Confusion,Confusion,50,1,25
+54,Psyduck,Move 4,17,Bubblebeam,Bubblebeam,65,1,20
+54,Psyduck,Move 5,23,Screech,Screech,N/A,0.85,10
+54,Psyduck,Move 6,40,Fury Swipes,Fury Swipes,20,1,15
+54,Psyduck,Move 7,42,Psychic,Psychic,90,1,10
+54,Psyduck,Move 8,45,Amnesia,Amnesia,N/A,N/A,20
+54,Psyduck,Move 9,50,Hydro Pump,Hydro Pump,120,0.85,10
+55,Golduck,Move 1,1,Scratch,Scratch,40,1,35
+55,Golduck,Move 2,28,Tail Whip,Tail Whip,N/A,1,30
+55,Golduck,Move 3,10,Disable,Disable,N/A,0.75,20
+55,Golduck,Move 4,15,Confusion,Confusion,50,1,25
+55,Golduck,Move 5,17,Bubblebeam,Bubblebeam,65,1,20
+55,Golduck,Move 6,23,Screech,Screech,N/A,0.85,10
+55,Golduck,Move 7,40,Fury Swipes,Fury Swipes,20,1,15
+55,Golduck,Move 8,42,Psychic,Psychic,90,1,10
+55,Golduck,Move 9,45,Amnesia,Amnesia,N/A,N/A,20
+55,Golduck,Move 10,50,Hydro Pump,Hydro Pump,120,0.85,10
+56,Mankey,Move 1,1,Scratch,Scratch,40,1,35
+56,Mankey,Move 2,1,Leer,Leer,N/A,1,30
+56,Mankey,Move 3,9,Low Kick,Low Kick,50,1,20
+56,Mankey,Move 4,15,Fury Swipes,Fury Swipes,20,1,15
+56,Mankey,Move 5,21,Karate Chop,Karate Chop,55,0.95,25
+56,Mankey,Move 6,27,Focus Energy,Focus Energy,N/A,N/A,30
+56,Mankey,Move 7,33,Seismic Toss,Seismic Toss,Var Dmg,1,20
+56,Mankey,Move 8,39,Thrash,Thrash,90,1,20
+56,Mankey,Move 9,45,Screech,Screech,N/A,0.85,10
+57,Primeape,Move 1,1,Scratch,Scratch,40,1,35
+57,Primeape,Move 2,1,Leer,Leer,N/A,1,30
+57,Primeape,Move 3,9,Low Kick,Low Kick,50,1,20
+57,Primeape,Move 4,15,Fury Swipes,Fury Swipes,20,1,15
+57,Primeape,Move 5,21,Karate Chop,Karate Chop,55,0.95,25
+57,Primeape,Move 6,27,Focus Energy,Focus Energy,N/A,N/A,30
+57,Primeape,Move 7,33,Seismic Toss,Seismic Toss,Var Dmg,1,20
+57,Primeape,Move 8,39,Thrash,Thrash,90,1,20
+57,Primeape,Move 9,45,Screech,Screech,N/A,0.85,10
+58,Growlithe,Move 1,1,Bite,Bite,60,1,25
+58,Growlithe,Move 2,1,Roar,Roar,N/A,1,20
+58,Growlithe,Move 3,18,Ember,Ember,40,1,25
+58,Growlithe,Move 4,23,Leer,Leer,N/A,1,30
+58,Growlithe,Move 5,30,Take Down,Take Down,95,1,20
+58,Growlithe,Move 6,35,Flamethrower,Flamethrower,95,1,15
+58,Growlithe,Move 7,36,Agility,Agility,N/A,N/A,30
+59,Arcanine,Move 1,1,Bite,Bite,60,1,25
+59,Arcanine,Move 2,1,Roar,Roar,N/A,1,20
+59,Arcanine,Move 3,18,Ember,Ember,40,1,25
+59,Arcanine,Move 4,23,Leer,Leer,N/A,1,30
+59,Arcanine,Move 5,30,Take Down,Take Down,95,1,20
+59,Arcanine,Move 6,45,Flamethrower,Flamethrower,95,1,15
+59,Arcanine,Move 7,46,Agility,Agility,N/A,N/A,30
+60,Poliwag,Move 1,1,Doubleslap,Doubleslap,20,1,35
+60,Poliwag,Move 2,6,Mist,Mist,N/A,N/A,30
+60,Poliwag,Move 3,9,Bubble,Bubble,10,1,30
+60,Poliwag,Move 4,13,Water Gun,Water Gun,40,1,25
+60,Poliwag,Move 5,22,Bubblebeam,Bubblebeam,65,1,20
+60,Poliwag,Move 6,35,Body Slam,Body Slam,85,1,15
+60,Poliwag,Move 7,43,Hypnosis,Hypnosis,N/A,0.6,20
+60,Poliwag,Move 8,48,Amnesia,Amnesia,N/A,N/A,20
+60,Poliwag,Move 9,53,Hydro Pump,Hydro Pump,120,0.85,10
+61,Poliwhirl,Move 1,1,Bubble,Bubble,10,1,30
+61,Poliwhirl,Move 2,1,Hypnosis,Hypnosis,N/A,0.6,20
+61,Poliwhirl,Move 3,6,Mist,Mist,N/A,N/A,30
+61,Poliwhirl,Move 4,10,Doubleslap,Doubleslap,20,1,35
+61,Poliwhirl,Move 5,13,Water Gun,Water Gun,40,1,25
+61,Poliwhirl,Move 6,22,Bubblebeam,Bubblebeam,65,1,20
+61,Poliwhirl,Move 7,25,Karate Chop,Karate Chop,55,0.95,25
+61,Poliwhirl,Move 8,30,Ice Punch,Ice Punch,70,1,15
+61,Poliwhirl,Move 9,35,Body Slam,Body Slam,85,1,15
+61,Poliwhirl,Move 10,43,Hypnosis,Hypnosis,N/A,0.6,20
+61,Poliwhirl,Move 11,48,Amnesia,Amnesia,N/A,N/A,20
+61,Poliwhirl,Move 12,53,Hydro Pump,Hydro Pump,120,0.85,10
+62,Poliwrath,Move 1,1,Hypnosis,Hypnosis,N/A,0.6,20
+62,Poliwrath,Move 2,1,Body Slam,Body Slam,85,1,15
+62,Poliwrath,Move 3,6,Mist,Mist,N/A,N/A,30
+62,Poliwrath,Move 4,10,Doubleslap,Doubleslap,20,1,35
+62,Poliwrath,Move 5,13,Water Gun,Water Gun,40,1,25
+62,Poliwrath,Move 6,22,Bubblebeam,Bubblebeam,65,1,20
+62,Poliwrath,Move 7,25,Karate Chop,Karate Chop,55,0.95,25
+62,Poliwrath,Move 8,30,Ice Punch,Ice Punch,70,1,15
+62,Poliwrath,Move 9,35,Body Slam,Body Slam,85,1,15
+62,Poliwrath,Move 10,43,Hypnosis,Hypnosis,N/A,0.6,20
+62,Poliwrath,Move 11,48,Amnesia,Amnesia,N/A,N/A,20
+62,Poliwrath,Move 12,53,Hydro Pump,Hydro Pump,120,0.85,10
+63,Abra,Move 1,1,Teleport,Teleport,N/A,N/A,20
+64,Kadabra,Move 1,1,Teleport,Teleport,N/A,N/A,20
+64,Kadabra,Move 2,1,Kinesis,Kinesis,N/A,0.8,15
+64,Kadabra,Move 3,16,Confusion,Confusion,50,1,25
+64,Kadabra,Move 4,20,Disable,Disable,N/A,0.75,20
+64,Kadabra,Move 5,27,Psybeam,Psybeam,65,1,20
+64,Kadabra,Move 6,31,Recover,Recover,N/A,N/A,20
+64,Kadabra,Move 7,38,Psychic,Psychic,90,1,10
+64,Kadabra,Move 8,42,Reflect,Reflect,N/A,N/A,20
+65,Alakazam,Move 1,1,Teleport,Teleport,N/A,N/A,20
+65,Alakazam,Move 2,1,Kinesis,Kinesis,N/A,0.8,15
+65,Alakazam,Move 3,16,Confusion,Confusion,50,1,25
+65,Alakazam,Move 4,20,Disable,Disable,N/A,0.75,20
+65,Alakazam,Move 5,27,Psybeam,Psybeam,65,1,20
+65,Alakazam,Move 6,31,Recover,Recover,N/A,N/A,20
+65,Alakazam,Move 7,38,Psychic,Psychic,90,1,10
+65,Alakazam,Move 8,42,Reflect,Reflect,N/A,N/A,20
+66,Machop,Move 1,1,Low Kick,Low Kick,50,1,20
+66,Machop,Move 2,5,Leer,Leer,N/A,1,30
+66,Machop,Move 3,7,Focus Energy,Focus Energy,N/A,N/A,30
+66,Machop,Move 4,19,Seismic Toss,Seismic Toss,Var Dmg,1,20
+66,Machop,Move 5,28,Submission,Submission,80,1,20
+66,Machop,Move 6,33,Take Down,Take Down,95,1,20
+66,Machop,Move 7,37,Counter,Counter,Var Dmg,1,20
+66,Machop,Move 8,45,Karate Chop,Karate Chop,55,0.95,25
+67,Machoke,Move 1,1,Karate Chop,Karate Chop,55,0.95,25
+67,Machoke,Move 2,1,Low Kick,Low Kick,50,1,20
+67,Machoke,Move 3,1,Leer,Leer,N/A,1,30
+67,Machoke,Move 4,5,Leer,Leer,N/A,1,30
+67,Machoke,Move 5,7,Focus Energy,Focus Energy,N/A,N/A,30
+67,Machoke,Move 6,19,Seismic Toss,Seismic Toss,Var Dmg,1,20
+67,Machoke,Move 7,28,Submission,Submission,80,1,20
+67,Machoke,Move 8,33,Body Slam,Body Slam,85,1,15
+67,Machoke,Move 9,37,Counter,Counter,Var Dmg,1,20
+67,Machoke,Move 10,41,Karate Chop,Karate Chop,55,0.95,25
+68,Machamp,Move 1,1,Karate Chop,Karate Chop,55,0.95,25
+68,Machamp,Move 2,1,Low Kick,Low Kick,50,1,20
+68,Machamp,Move 3,5,Leer,Leer,N/A,1,30
+68,Machamp,Move 4,7,Focus Energy,Focus Energy,N/A,N/A,30
+68,Machamp,Move 5,19,Seismic Toss,Seismic Toss,Var Dmg,1,20
+68,Machamp,Move 6,28,Submission,Submission,80,1,20
+68,Machamp,Move 7,33,Take Down,Take Down,95,1,20
+68,Machamp,Move 8,37,Counter,Counter,Var Dmg,1,20
+68,Machamp,Move 9,45,Karate Chop,Karate Chop,55,0.95,25
+69,Bellsprout,Move 1,1,Growth,Growth,N/A,N/A,40
+69,Bellsprout,Move 2,1,Vine Whip,Vine Whip,40,1,25
+69,Bellsprout,Move 3,13,Poisonpowder,Poisonpowder,N/A,0.95,35
+69,Bellsprout,Move 4,21,Stun Spore,Stun Spore,N/A,0.75,30
+69,Bellsprout,Move 5,25,Acid,Acid,65,1,30
+69,Bellsprout,Move 6,27,Headbutt,Headbutt,70,1,15
+69,Bellsprout,Move 7,29,Razor Leaf,Razor Leaf,55,0.95,25
+69,Bellsprout,Move 8,36,Sludge,Sludge,90,1,20
+69,Bellsprout,Move 9,43,Wrap,Wrap,15,0.85,20
+69,Bellsprout,Move 10,48,Sleep Powder,Sleep Powder,N/A,0.75,15
+70,Weepinbell,Move 1,1,Growth,Growth,N/A,N/A,40
+70,Weepinbell,Move 2,1,Poisonpowder,Poisonpowder,N/A,0.95,35
+70,Weepinbell,Move 3,1,Vine Whip,Vine Whip,40,1,25
+70,Weepinbell,Move 4,21,Stun Spore,Stun Spore,N/A,0.75,30
+70,Weepinbell,Move 5,25,Acid,Acid,65,1,30
+70,Weepinbell,Move 6,27,Headbutt,Headbutt,70,1,15
+70,Weepinbell,Move 7,29,Razor Leaf,Razor Leaf,55,0.95,25
+70,Weepinbell,Move 8,36,Sludge,Sludge,90,1,20
+70,Weepinbell,Move 9,43,Wrap,Wrap,15,0.85,20
+70,Weepinbell,Move 10,48,Sleep Powder,Sleep Powder,N/A,0.75,15
+71,Victreebel,Move 1,1,Stun Spore,Stun Spore,N/A,0.75,30
+71,Victreebel,Move 2,1,Sleep Powder,Sleep Powder,N/A,0.75,15
+71,Victreebel,Move 3,1,Acid,Acid,65,1,30
+71,Victreebel,Move 4,1,Razor Leaf,Razor Leaf,55,0.95,25
+71,Victreebel,Move 5,13,Poisonpowder,Poisonpowder,N/A,0.95,35
+71,Victreebel,Move 6,14,Vine Whip,Vine Whip,40,1,25
+71,Victreebel,Move 7,21,Stun Spore,Stun Spore,N/A,0.75,30
+71,Victreebel,Move 8,25,Acid,Acid,65,1,30
+71,Victreebel,Move 9,27,Headbutt,Headbutt,70,1,15
+71,Victreebel,Move 10,29,Razor Leaf,Razor Leaf,55,0.95,25
+71,Victreebel,Move 11,36,Sludge,Sludge,90,1,20
+71,Victreebel,Move 12,43,Wrap,Wrap,15,0.85,20
+71,Victreebel,Move 13,48,Sleep Powder,Sleep Powder,N/A,0.75,15
+72,Tentacool,Move 1,1,Poison Sting,Poison Sting,35,1,35
+72,Tentacool,Move 2,1,Bubble,Bubble,10,1,30
+72,Tentacool,Move 3,7,Supersonic,Supersonic,N/A,0.75,20
+72,Tentacool,Move 4,13,Water Gun,Water Gun,40,1,25
+72,Tentacool,Move 5,18,Acid,Acid,65,1,30
+72,Tentacool,Move 6,23,Bubblebeam,Bubblebeam,65,1,20
+72,Tentacool,Move 7,27,Constrict,Constrict,40,1,35
+72,Tentacool,Move 8,35,Barrier,Barrier,N/A,N/A,30
+72,Tentacool,Move 9,40,Screech,Screech,N/A,0.85,10
+72,Tentacool,Move 10,43,Sludge,Sludge,90,1,20
+72,Tentacool,Move 11,47,Wrap,Wrap,15,0.85,20
+72,Tentacool,Move 12,50,Hydro Pump,Hydro Pump,120,0.85,10
+73,Tentacruel,Move 1,1,Wrap,Wrap,15,0.85,20
+73,Tentacruel,Move 2,7,Supersonic,Supersonic,N/A,0.75,20
+73,Tentacruel,Move 3,13,Water Gun,Water Gun,40,1,25
+73,Tentacruel,Move 4,18,Acid,Acid,65,1,30
+73,Tentacruel,Move 5,23,Bubblebeam,Bubblebeam,65,1,20
+73,Tentacruel,Move 6,27,Constrict,Constrict,40,1,35
+73,Tentacruel,Move 7,35,Barrier,Barrier,N/A,N/A,30
+73,Tentacruel,Move 8,40,Screech,Screech,N/A,0.85,10
+73,Tentacruel,Move 9,43,Sludge,Sludge,90,1,20
+73,Tentacruel,Move 10,47,Wrap,Wrap,15,0.85,20
+73,Tentacruel,Move 11,50,Hydro Pump,Hydro Pump,120,0.85,10
+74,Geodude,Move 1,1,Tackle,Tackle,35,1,35
+74,Geodude,Move 2,6,Defense Curl,Defense Curl,N/A,N/A,40
+74,Geodude,Move 3,12,Rock Throw,Rock Throw,50,0.95,25
+74,Geodude,Move 4,21,Dig,Dig,70,1,10
+74,Geodude,Move 5,26,Harden,Harden,N/A,N/A,30
+74,Geodude,Move 6,31,Selfdestruct,Selfdestruct,130,1,5
+74,Geodude,Move 7,40,Rock Slide,Rock Slide,75,0.95,10
+74,Geodude,Move 8,45,Earthquake,Earthquake,100,1,10
+74,Geodude,Move 9,48,Explosion,Explosion,170,1,5
+75,Graveler,Move 1,1,Tackle,Tackle,35,1,35
+75,Graveler,Move 2,6,Defense Curl,Defense Curl,N/A,N/A,40
+75,Graveler,Move 3,12,Rock Throw,Rock Throw,50,0.95,25
+75,Graveler,Move 4,21,Dig,Dig,70,1,10
+75,Graveler,Move 5,26,Harden,Harden,N/A,N/A,30
+75,Graveler,Move 6,31,Selfdestruct,Selfdestruct,130,1,5
+75,Graveler,Move 7,40,Rock Slide,Rock Slide,75,0.95,10
+75,Graveler,Move 8,45,Earthquake,Earthquake,100,1,10
+75,Graveler,Move 9,48,Explosion,Explosion,170,1,5
+76,Golem,Move 1,1,Tackle,Tackle,35,1,35
+76,Golem,Move 2,6,Defense Curl,Defense Curl,N/A,N/A,40
+76,Golem,Move 3,12,Rock Throw,Rock Throw,50,0.95,25
+76,Golem,Move 4,21,Dig,Dig,70,1,10
+76,Golem,Move 5,26,Harden,Harden,N/A,N/A,30
+76,Golem,Move 6,31,Selfdestruct,Selfdestruct,130,1,5
+76,Golem,Move 7,40,Rock Slide,Rock Slide,75,0.95,10
+76,Golem,Move 8,45,Earthquake,Earthquake,100,1,10
+76,Golem,Move 9,48,Explosion,Explosion,170,1,5
+77,Ponyta,Move 1,1,Ember,Ember,40,1,25
+77,Ponyta,Move 2,19,Stomp,Stomp,65,1,20
+77,Ponyta,Move 3,25,Double Kick,Double Kick,30,1,30
+77,Ponyta,Move 4,30,Tail Whip,Tail Whip,N/A,1,30
+77,Ponyta,Move 5,33,Flamethrower,Flamethrower,95,1,15
+77,Ponyta,Move 6,35,Agility,Agility,N/A,N/A,30
+77,Ponyta,Move 7,36,Fire Spin,Fire Spin,15,0.7,15
+77,Ponyta,Move 8,40,Take Down,Take Down,95,1,20
+77,Ponyta,Move 9,45,Fire Blast,Fire Blast,120,0.85,5
+78,Rapidash,Move 1,1,Ember,Ember,40,1,25
+78,Rapidash,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+78,Rapidash,Move 3,19,Stomp,Stomp,65,1,20
+78,Rapidash,Move 4,25,Double Kick,Double Kick,30,1,30
+78,Rapidash,Move 5,28,Growl,Growl,N/A,1,40
+78,Rapidash,Move 6,30,Tail Whip,Tail Whip,N/A,1,30
+78,Rapidash,Move 7,33,Flamethrower,Flamethrower,95,1,15
+78,Rapidash,Move 8,35,Agility,Agility,N/A,N/A,30
+78,Rapidash,Move 9,36,Fire Spin,Fire Spin,15,0.7,15
+78,Rapidash,Move 10,40,Take Down,Take Down,95,1,20
+78,Rapidash,Move 11,45,Fire Blast,Fire Blast,120,0.85,5
+78,Rapidash,Move 12,50,Hi Jump Kick,Hi Jump Kick,120,0.9,20
+79,Slowpoke,Move 1,1,Tackle,Tackle,35,1,35
+79,Slowpoke,Move 2,5,Growl,Growl,N/A,1,40
+79,Slowpoke,Move 3,5,Water Gun,Water Gun,40,1,25
+79,Slowpoke,Move 4,10,Confusion,Confusion,50,1,25
+79,Slowpoke,Move 5,18,Disable,Disable,N/A,0.75,20
+79,Slowpoke,Move 6,22,Headbutt,Headbutt,70,1,15
+79,Slowpoke,Move 7,25,Psybeam,Psybeam,65,1,20
+79,Slowpoke,Move 8,28,Waterfall,Waterfall,70,1,15
+79,Slowpoke,Move 9,36,Withdraw,Withdraw,N/A,N/A,40
+79,Slowpoke,Move 10,40,Amnesia,Amnesia,N/A,N/A,20
+79,Slowpoke,Move 11,45,Psychic,Psychic,90,1,10
+80,Slowbro,Move 1,1,Tackle,Tackle,35,1,35
+80,Slowbro,Move 2,1,Disable,Disable,N/A,0.75,20
+80,Slowbro,Move 3,1,Headbutt,Headbutt,70,1,15
+80,Slowbro,Move 4,5,Growl,Growl,N/A,1,40
+80,Slowbro,Move 5,5,Water Gun,Water Gun,40,1,25
+80,Slowbro,Move 6,10,Confusion,Confusion,50,1,25
+80,Slowbro,Move 7,18,Disable,Disable,N/A,0.75,20
+80,Slowbro,Move 8,22,Headbutt,Headbutt,70,1,15
+80,Slowbro,Move 9,25,Psybeam,Psybeam,65,1,20
+80,Slowbro,Move 10,28,Waterfall,Waterfall,70,1,15
+80,Slowbro,Move 11,36,Withdraw,Withdraw,N/A,N/A,40
+80,Slowbro,Move 12,40,Amnesia,Amnesia,N/A,N/A,20
+80,Slowbro,Move 13,45,Psychic,Psychic,90,1,10
+81,Magnemite,Move 1,1,Tackle,Tackle,35,1,35
+81,Magnemite,Move 2,6,Thundershock,Thundershock,40,1,30
+81,Magnemite,Move 3,11,Supersonic,Supersonic,N/A,0.75,20
+81,Magnemite,Move 4,16,Sonicboom,Sonicboom,Set,1,20
+81,Magnemite,Move 5,21,Thunder Wave,Thunder Wave,N/A,1,20
+81,Magnemite,Move 6,24,Swift,Swift,60,1,20
+81,Magnemite,Move 7,27,Reflect,Reflect,N/A,N/A,20
+81,Magnemite,Move 8,33,Thunderbolt,Thunderbolt,95,1,15
+81,Magnemite,Move 9,43,Screech,Screech,N/A,0.85,10
+81,Magnemite,Move 10,50,Thunder,Thunder,120,0.85,5
+82,Magneton,Move 1,1,Tackle,Tackle,35,1,35
+82,Magneton,Move 2,6,Thundershock,Thundershock,40,1,30
+82,Magneton,Move 3,11,Supersonic,Supersonic,N/A,0.75,20
+82,Magneton,Move 4,16,Sonicboom,Sonicboom,Set,1,20
+82,Magneton,Move 5,21,Thunder Wave,Thunder Wave,N/A,1,20
+82,Magneton,Move 6,24,Swift,Swift,60,1,20
+82,Magneton,Move 7,27,Reflect,Reflect,N/A,N/A,20
+82,Magneton,Move 8,33,Thunderbolt,Thunderbolt,95,1,15
+82,Magneton,Move 9,37,Tri Attack,Tri Attack,85,1,15
+82,Magneton,Move 10,43,Screech,Screech,N/A,0.85,10
+82,Magneton,Move 11,50,Thunder,Thunder,120,0.85,5
+83,Farfetchd,Move 1,1,Peck,Peck,35,1,35
+83,Farfetchd,Move 2,1,Sand Attack,Sand Attack,N/A,1,15
+83,Farfetchd,Move 3,7,Leer,Leer,N/A,1,30
+83,Farfetchd,Move 4,9,Sharpen,Sharpen,N/A,N/A,30
+83,Farfetchd,Move 5,13,Fury Attack,Fury Attack,15,1,20
+83,Farfetchd,Move 6,18,Wing Attack,Wing Attack,60,1,35
+83,Farfetchd,Move 7,23,Slash,Slash,70,1,20
+83,Farfetchd,Move 8,28,Swords Dance,Swords Dance,N/A,N/A,30
+83,Farfetchd,Move 9,31,Drill Peck,Drill Peck,80,1,20
+83,Farfetchd,Move 10,39,Agility,Agility,N/A,N/A,30
+84,Doduo,Move 1,1,Peck,Peck,35,1,35
+84,Doduo,Move 2,20,Growl,Growl,N/A,1,40
+84,Doduo,Move 3,24,Fury Attack,Fury Attack,15,1,20
+84,Doduo,Move 4,30,Drill Peck,Drill Peck,80,1,20
+84,Doduo,Move 5,36,Rage,Rage,60,1,20
+84,Doduo,Move 6,39,Tri Attack,Tri Attack,85,1,15
+84,Doduo,Move 7,45,Low Kick,Low Kick,50,1,20
+84,Doduo,Move 8,51,Agility,Agility,N/A,N/A,30
+85,Dodrio,Move 1,1,Peck,Peck,35,1,35
+85,Dodrio,Move 2,20,Growl,Growl,N/A,1,40
+85,Dodrio,Move 3,24,Fury Attack,Fury Attack,15,1,20
+85,Dodrio,Move 4,30,Drill Peck,Drill Peck,80,1,20
+85,Dodrio,Move 5,36,Rage,Rage,60,1,20
+85,Dodrio,Move 6,39,Tri Attack,Tri Attack,85,1,15
+85,Dodrio,Move 7,45,Jump Kick,Jump Kick,90,0.95,20
+85,Dodrio,Move 8,51,Agility,Agility,N/A,N/A,30
+86,Seel,Move 1,1,Headbutt,Headbutt,70,1,15
+86,Seel,Move 2,5,Growl,Growl,N/A,1,40
+86,Seel,Move 3,13,Water Gun,Water Gun,40,1,25
+86,Seel,Move 4,16,Aurora Beam,Aurora Beam,65,1,20
+86,Seel,Move 5,21,Rest,Rest,N/A,N/A,10
+86,Seel,Move 6,25,Bubblebeam,Bubblebeam,65,1,20
+86,Seel,Move 7,32,Take Down,Take Down,95,1,20
+86,Seel,Move 8,40,Ice Beam,Ice Beam,95,1,10
+86,Seel,Move 9,50,Blizzard,Blizzard,120,0.85,5
+87,Dewgong,Move 1,1,Headbutt,Headbutt,70,1,15
+87,Dewgong,Move 2,5,Growl,Growl,N/A,1,40
+87,Dewgong,Move 3,13,Water Gun,Water Gun,40,1,25
+87,Dewgong,Move 4,16,Aurora Beam,Aurora Beam,65,1,20
+87,Dewgong,Move 5,21,Rest,Rest,N/A,N/A,10
+87,Dewgong,Move 6,25,Bubblebeam,Bubblebeam,65,1,20
+87,Dewgong,Move 7,32,Take Down,Take Down,95,1,20
+87,Dewgong,Move 8,40,Ice Beam,Ice Beam,95,1,10
+87,Dewgong,Move 9,50,Blizzard,Blizzard,120,0.85,5
+88,Grimer,Move 1,1,Pound,Pound,40,1,35
+88,Grimer,Move 2,1,Disable,Disable,N/A,0.75,20
+88,Grimer,Move 3,10,Harden,Harden,N/A,N/A,30
+88,Grimer,Move 4,16,Acid,Acid,65,1,30
+88,Grimer,Move 5,19,Poison Gas,Poison Gas,N/A,0.85,40
+88,Grimer,Move 6,24,Acid Armor,Acid Armor,N/A,N/A,40
+88,Grimer,Move 7,27,Minimize,Minimize,N/A,N/A,20
+88,Grimer,Move 8,33,Sludge,Sludge,90,1,20
+88,Grimer,Move 9,37,Body Slam,Body Slam,85,1,15
+88,Grimer,Move 10,42,Toxic,Toxic,N/A,0.85,10
+88,Grimer,Move 11,45,Screech,Screech,N/A,0.85,10
+89,Muk,Move 1,1,Pound,Pound,40,1,35
+89,Muk,Move 2,1,Disable,Disable,N/A,0.75,20
+89,Muk,Move 3,10,Harden,Harden,N/A,N/A,30
+89,Muk,Move 4,16,Acid,Acid,65,1,30
+89,Muk,Move 5,19,Poison Gas,Poison Gas,N/A,0.85,40
+89,Muk,Move 6,24,Acid Armor,Acid Armor,N/A,N/A,40
+89,Muk,Move 7,27,Minimize,Minimize,N/A,N/A,20
+89,Muk,Move 8,33,Sludge,Sludge,90,1,20
+89,Muk,Move 9,37,Body Slam,Body Slam,85,1,15
+89,Muk,Move 10,42,Toxic,Toxic,N/A,0.85,10
+89,Muk,Move 11,45,Screech,Screech,N/A,0.85,10
+90,Shellder,Move 1,1,Tackle,Tackle,35,1,35
+90,Shellder,Move 2,1,Withdraw,Withdraw,N/A,N/A,40
+90,Shellder,Move 3,10,Water Gun,Water Gun,40,1,25
+90,Shellder,Move 4,14,Supersonic,Supersonic,N/A,0.75,20
+90,Shellder,Move 5,17,Leer,Leer,N/A,1,30
+90,Shellder,Move 6,20,Aurora Beam,Aurora Beam,65,1,20
+90,Shellder,Move 7,25,Bubblebeam,Bubblebeam,65,1,20
+90,Shellder,Move 8,35,Ice Beam,Ice Beam,95,1,10
+90,Shellder,Move 9,43,Clamp,Clamp,35,0.85,10
+90,Shellder,Move 10,50,Blizzard,Blizzard,120,0.85,5
+90,Shellder,Move 11,55,Explosion,Explosion,170,1,5
+91,Cloyster,Move 1,1,Tackle,Tackle,35,1,35
+91,Cloyster,Move 2,1,Withdraw,Withdraw,N/A,N/A,40
+91,Cloyster,Move 3,1,Clamp,Clamp,35,0.85,10
+91,Cloyster,Move 4,1,Aurora Beam,Aurora Beam,65,1,20
+91,Cloyster,Move 5,10,Water Gun,Water Gun,40,1,25
+91,Cloyster,Move 6,14,Supersonic,Supersonic,N/A,0.75,20
+91,Cloyster,Move 7,17,Leer,Leer,N/A,1,30
+91,Cloyster,Move 8,20,Aurora Beam,Aurora Beam,65,1,20
+91,Cloyster,Move 9,25,Bubblebeam,Bubblebeam,65,1,20
+91,Cloyster,Move 10,35,Clamp,Clamp,35,0.85,10
+91,Cloyster,Move 11,40,Ice Beam,Ice Beam,95,1,10
+91,Cloyster,Move 12,46,Spike Cannon,Spike Cannon,20,1,15
+91,Cloyster,Move 13,50,Blizzard,Blizzard,120,0.85,5
+92,Gastly,Move 1,1,Lick,Lick,40,1,30
+92,Gastly,Move 2,1,Confuse Ray,Confuse Ray,N/A,1,10
+92,Gastly,Move 3,10,Smog,Smog,40,0.8,20
+92,Gastly,Move 4,15,Psywave,Psywave,Var Dmg,0.95,15
+92,Gastly,Move 5,20,Poison Gas,Poison Gas,N/A,0.85,40
+92,Gastly,Move 6,36,Night Shade,Night Shade,60,1,15
+92,Gastly,Move 7,55,Hypnosis,Hypnosis,N/A,0.6,20
+92,Gastly,Move 8,55,Dream Eater,Dream Eater,100,1,15
+93,Haunter,Move 1,1,Lick,Lick,40,1,30
+93,Haunter,Move 2,1,Confuse Ray,Confuse Ray,N/A,1,10
+93,Haunter,Move 3,10,Smog,Smog,40,0.8,20
+93,Haunter,Move 4,15,Psywave,Psywave,Var Dmg,0.95,15
+93,Haunter,Move 5,36,Night Shade,Night Shade,60,1,15
+93,Haunter,Move 6,55,Hypnosis,Hypnosis,N/A,0.6,20
+93,Haunter,Move 7,55,Dream Eater,Dream Eater,100,1,15
+94,Gengar,Move 1,1,Lick,Lick,40,1,30
+94,Gengar,Move 2,1,Confuse Ray,Confuse Ray,N/A,1,10
+94,Gengar,Move 3,10,Smog,Smog,40,0.8,20
+94,Gengar,Move 4,15,Psywave,Psywave,Var Dmg,0.95,15
+94,Gengar,Move 5,36,Night Shade,Night Shade,60,1,15
+94,Gengar,Move 6,55,Hypnosis,Hypnosis,N/A,0.6,20
+94,Gengar,Move 7,55,Dream Eater,Dream Eater,100,1,15
+95,Onix,Move 1,1,Tackle,Tackle,35,1,35
+95,Onix,Move 2,1,Screech,Screech,N/A,0.85,10
+95,Onix,Move 3,12,Rock Throw,Rock Throw,50,0.95,25
+95,Onix,Move 4,19,Dig,Dig,70,1,10
+95,Onix,Move 5,25,Rage,Rage,60,1,20
+95,Onix,Move 6,29,Harden,Harden,N/A,N/A,30
+95,Onix,Move 7,31,Slam,Slam,80,1,20
+95,Onix,Move 8,37,Rock Slide,Rock Slide,75,0.95,10
+95,Onix,Move 9,43,Earthquake,Earthquake,100,1,10
+95,Onix,Move 10,48,Bind,Bind,15,0.85,20
+96,Drowzee,Move 1,1,Pound,Pound,40,1,35
+96,Drowzee,Move 2,1,Hypnosis,Hypnosis,N/A,0.6,20
+96,Drowzee,Move 3,12,Disable,Disable,N/A,0.75,20
+96,Drowzee,Move 4,17,Confusion,Confusion,50,1,25
+96,Drowzee,Move 5,24,Headbutt,Headbutt,70,1,15
+96,Drowzee,Move 6,29,Poison Gas,Poison Gas,N/A,0.85,40
+96,Drowzee,Move 7,32,Psychic,Psychic,90,1,10
+96,Drowzee,Move 8,37,Meditate,Meditate,N/A,N/A,40
+96,Drowzee,Move 9,40,Hypnosis,Hypnosis,N/A,0.6,20
+96,Drowzee,Move 10,45,Dream Eater,Dream Eater,100,1,15
+97,Hypno,Move 1,1,Pound,Pound,40,1,35
+97,Hypno,Move 2,1,Hypnosis,Hypnosis,N/A,0.6,20
+97,Hypno,Move 3,12,Disable,Disable,N/A,0.75,20
+97,Hypno,Move 4,17,Confusion,Confusion,50,1,25
+97,Hypno,Move 5,24,Headbutt,Headbutt,70,1,15
+97,Hypno,Move 6,29,Poison Gas,Poison Gas,N/A,0.85,40
+97,Hypno,Move 7,32,Psychic,Psychic,90,1,10
+97,Hypno,Move 8,37,Meditate,Meditate,N/A,N/A,40
+97,Hypno,Move 9,40,Hypnosis,Hypnosis,N/A,0.6,20
+97,Hypno,Move 10,45,Dream Eater,Dream Eater,100,1,15
+98,Krabby,Move 1,1,Bubble,Bubble,10,1,30
+98,Krabby,Move 2,1,Leer,Leer,N/A,1,30
+98,Krabby,Move 3,20,Vicegrip,Vicegrip,55,1,30
+98,Krabby,Move 4,25,Bubblebeam,Bubblebeam,65,1,20
+98,Krabby,Move 5,29,Cut,Cut,55,1,30
+98,Krabby,Move 6,30,Stomp,Stomp,65,1,20
+98,Krabby,Move 7,35,Crabhammer,Crabhammer,110,1,10
+98,Krabby,Move 8,40,Harden,Harden,N/A,N/A,30
+98,Krabby,Move 9,50,Guillotine,Guillotine,KO,0.3,5
+99,Kingler,Move 1,1,Bubble,Bubble,10,1,30
+99,Kingler,Move 2,1,Leer,Leer,N/A,1,30
+99,Kingler,Move 3,20,Vicegrip,Vicegrip,55,1,30
+99,Kingler,Move 4,25,Bubblebeam,Bubblebeam,65,1,20
+99,Kingler,Move 5,28,Cut,Cut,55,1,30
+99,Kingler,Move 6,30,Stomp,Stomp,65,1,20
+99,Kingler,Move 7,35,Crabhammer,Crabhammer,110,1,10
+99,Kingler,Move 8,40,Harden,Harden,N/A,N/A,30
+99,Kingler,Move 9,50,Guillotine,Guillotine,KO,0.3,5
+100,Voltorb,Move 1,1,Tackle,Tackle,35,1,35
+100,Voltorb,Move 2,1,Screech,Screech,N/A,0.85,10
+100,Voltorb,Move 3,17,Sonicboom,Sonicboom,Set,1,20
+100,Voltorb,Move 4,19,Thundershock,Thundershock,40,1,30
+100,Voltorb,Move 5,22,Selfdestruct,Selfdestruct,130,1,5
+100,Voltorb,Move 6,26,Swift,Swift,60,1,20
+100,Voltorb,Move 7,30,Light Screen,Light Screen,N/A,N/A,30
+100,Voltorb,Move 8,35,Thunderbolt,Thunderbolt,95,1,15
+100,Voltorb,Move 9,44,Explosion,Explosion,170,1,5
+100,Voltorb,Move 10,50,Thunder,Thunder,120,0.85,5
+101,Electrode,Move 1,1,Tackle,Tackle,35,1,35
+101,Electrode,Move 2,1,Screech,Screech,N/A,0.85,10
+101,Electrode,Move 3,17,Sonicboom,Sonicboom,Set,1,20
+101,Electrode,Move 4,19,Thundershock,Thundershock,40,1,30
+101,Electrode,Move 5,22,Selfdestruct,Selfdestruct,130,1,5
+101,Electrode,Move 6,26,Swift,Swift,60,1,20
+101,Electrode,Move 7,30,Light Screen,Light Screen,N/A,N/A,30
+101,Electrode,Move 8,35,Thunderbolt,Thunderbolt,95,1,15
+101,Electrode,Move 9,44,Explosion,Explosion,170,1,5
+101,Electrode,Move 10,50,Thunder,Thunder,120,0.85,5
+102,Exeggcute,Move 1,1,Barrage,Barrage,20,0.85,20
+102,Exeggcute,Move 2,1,Hypnosis,Hypnosis,N/A,0.6,20
+102,Exeggcute,Move 3,10,Poisonpowder,Poisonpowder,N/A,0.95,35
+102,Exeggcute,Move 4,13,Leech Seed,Leech Seed,N/A,0.9,10
+102,Exeggcute,Move 5,19,Confusion,Confusion,50,1,25
+102,Exeggcute,Move 6,20,Mega Drain,Mega Drain,65,1,20
+102,Exeggcute,Move 7,25,Reflect,Reflect,N/A,N/A,20
+102,Exeggcute,Move 8,32,Stun Spore,Stun Spore,N/A,0.75,30
+102,Exeggcute,Move 9,40,Egg Bomb,Egg Bomb,100,1,10
+102,Exeggcute,Move 10,45,Psychic,Psychic,90,1,10
+102,Exeggcute,Move 11,48,Sleep Powder,Sleep Powder,N/A,0.75,15
+103,Exeggutor,Move 1,1,Barrage,Barrage,20,0.85,20
+103,Exeggutor,Move 2,1,Hypnosis,Hypnosis,N/A,0.6,20
+103,Exeggutor,Move 3,10,Poisonpowder,Poisonpowder,N/A,0.95,35
+103,Exeggutor,Move 4,13,Leech Seed,Leech Seed,N/A,0.9,10
+103,Exeggutor,Move 5,19,Confusion,Confusion,50,1,25
+103,Exeggutor,Move 6,20,Mega Drain,Mega Drain,65,1,20
+103,Exeggutor,Move 7,25,Reflect,Reflect,N/A,N/A,20
+103,Exeggutor,Move 8,28,Stomp,Stomp,65,1,20
+103,Exeggutor,Move 9,32,Stun Spore,Stun Spore,N/A,0.75,30
+103,Exeggutor,Move 10,40,Egg Bomb,Egg Bomb,100,1,10
+103,Exeggutor,Move 11,45,Psychic,Psychic,90,1,10
+103,Exeggutor,Move 12,48,Sleep Powder,Sleep Powder,N/A,0.75,15
+104,Cubone,Move 1,1,Growl,Growl,N/A,1,40
+104,Cubone,Move 2,5,Leer,Leer,N/A,1,30
+104,Cubone,Move 3,10,Bone Club,Bone Club,65,1,20
+104,Cubone,Move 4,13,Tail Whip,Tail Whip,N/A,1,30
+104,Cubone,Move 5,18,Headbutt,Headbutt,70,1,15
+104,Cubone,Move 6,25,Focus Energy,Focus Energy,N/A,N/A,30
+104,Cubone,Move 7,31,Bonemerang,Bonemerang,50,0.9,20
+104,Cubone,Move 8,38,Thrash,Thrash,90,1,20
+104,Cubone,Move 9,46,Rage,Rage,60,1,20
+105,Marowak,Move 1,1,Growl,Growl,N/A,1,40
+105,Marowak,Move 2,5,Leer,Leer,N/A,1,30
+105,Marowak,Move 3,10,Bone Club,Bone Club,65,1,20
+105,Marowak,Move 4,13,Tail Whip,Tail Whip,N/A,1,30
+105,Marowak,Move 5,18,Headbutt,Headbutt,70,1,15
+105,Marowak,Move 6,25,Focus Energy,Focus Energy,N/A,N/A,30
+105,Marowak,Move 7,31,Bonemerang,Bonemerang,50,0.9,20
+105,Marowak,Move 8,38,Thrash,Thrash,90,1,20
+105,Marowak,Move 9,46,Earthquake,Earthquake,100,1,10
+106,Hitmonlee,Move 1,1,Double Kick,Double Kick,30,1,30
+106,Hitmonlee,Move 2,1,Meditate,Meditate,N/A,N/A,40
+106,Hitmonlee,Move 3,25,Focus Energy,Focus Energy,N/A,N/A,30
+106,Hitmonlee,Move 4,33,Rolling Kick,Rolling Kick,70,1,15
+106,Hitmonlee,Move 5,38,Jump Kick,Jump Kick,90,0.95,20
+106,Hitmonlee,Move 6,43,Meditate,Meditate,N/A,N/A,40
+106,Hitmonlee,Move 7,48,Hi Jump Kick,Hi Jump Kick,120,0.9,20
+106,Hitmonlee,Move 8,53,Mega Kick,Mega Kick,120,0.85,10
+107,Hitmonchan,Move 1,1,Comet Punch,Comet Punch,25,1,25
+107,Hitmonchan,Move 2,1,Agility,Agility,N/A,N/A,30
+107,Hitmonchan,Move 3,25,Karate Chop,Karate Chop,55,0.95,25
+107,Hitmonchan,Move 4,33,Fire Punch,Fire Punch,70,1,15
+107,Hitmonchan,Move 5,35,Ice Punch,Ice Punch,70,1,15
+107,Hitmonchan,Move 6,37,Thunderpunch,Thunderpunch,70,1,15
+107,Hitmonchan,Move 7,40,Dizzy Punch,Dizzy Punch,70,1,20
+107,Hitmonchan,Move 8,42,Submission,Submission,80,1,20
+107,Hitmonchan,Move 9,48,Mega Punch,Mega Punch,80,0.85,20
+107,Hitmonchan,Move 10,53,Counter,Counter,Var Dmg,1,20
+108,Lickitung,Move 1,1,Lick,Lick,40,1,30
+108,Lickitung,Move 2,1,Supersonic,Supersonic,N/A,0.75,20
+108,Lickitung,Move 3,7,Stomp,Stomp,65,1,20
+108,Lickitung,Move 4,15,Disable,Disable,N/A,0.75,20
+108,Lickitung,Move 5,19,Headbutt,Headbutt,70,1,15
+108,Lickitung,Move 6,23,Defense Curl,Defense Curl,N/A,N/A,40
+108,Lickitung,Move 7,32,Body Slam,Body Slam,85,1,15
+108,Lickitung,Move 8,39,Screech,Screech,N/A,0.85,10
+108,Lickitung,Move 9,44,Wrap,Wrap,15,0.85,20
+109,Koffing,Move 1,1,Tackle,Tackle,35,1,35
+109,Koffing,Move 2,1,Smog,Smog,40,0.8,20
+109,Koffing,Move 3,23,Acid,Acid,65,1,30
+109,Koffing,Move 4,27,Smokescreen,Smokescreen,N/A,1,20
+109,Koffing,Move 5,33,Sludge,Sludge,90,1,20
+109,Koffing,Move 6,38,Amnesia,Amnesia,N/A,N/A,20
+109,Koffing,Move 7,40,Selfdestruct,Selfdestruct,130,1,5
+109,Koffing,Move 8,45,Haze,Haze,N/A,N/A,30
+109,Koffing,Move 9,48,Explosion,Explosion,170,1,5
+110,Weezing,Move 1,1,Tackle,Tackle,35,1,35
+110,Weezing,Move 2,1,Smog,Smog,40,0.8,20
+110,Weezing,Move 3,23,Acid,Acid,65,1,30
+110,Weezing,Move 4,27,Smokescreen,Smokescreen,N/A,1,20
+110,Weezing,Move 5,33,Sludge,Sludge,90,1,20
+110,Weezing,Move 6,38,Amnesia,Amnesia,N/A,N/A,20
+110,Weezing,Move 7,40,Selfdestruct,Selfdestruct,130,1,5
+110,Weezing,Move 8,45,Haze,Haze,N/A,N/A,30
+110,Weezing,Move 9,48,Explosion,Explosion,170,1,5
+111,Rhyhorn,Move 1,1,Horn Attack,Horn Attack,65,1,25
+111,Rhyhorn,Move 2,10,Tail Whip,Tail Whip,N/A,1,30
+111,Rhyhorn,Move 3,10,Fury Attack,Fury Attack,15,1,20
+111,Rhyhorn,Move 4,13,Stomp,Stomp,65,1,20
+111,Rhyhorn,Move 5,19,Rock Throw,Rock Throw,50,0.95,25
+111,Rhyhorn,Move 6,24,Dig,Dig,70,1,10
+111,Rhyhorn,Move 7,39,Rock Slide,Rock Slide,75,0.95,10
+111,Rhyhorn,Move 8,44,Earthquake,Earthquake,100,1,10
+111,Rhyhorn,Move 9,49,Take Down,Take Down,95,1,20
+111,Rhyhorn,Move 10,55,Horn Drill,Horn Drill,KO,0.3,5
+112,Rhydon,Move 1,1,Horn Attack,Horn Attack,65,1,25
+112,Rhydon,Move 2,10,Tail Whip,Tail Whip,N/A,1,30
+112,Rhydon,Move 3,10,Fury Attack,Fury Attack,15,1,20
+112,Rhydon,Move 4,13,Stomp,Stomp,65,1,20
+112,Rhydon,Move 5,19,Rock Throw,Rock Throw,50,0.95,25
+112,Rhydon,Move 6,24,Dig,Dig,70,1,10
+112,Rhydon,Move 7,39,Rock Slide,Rock Slide,75,0.95,10
+112,Rhydon,Move 8,44,Earthquake,Earthquake,100,1,10
+112,Rhydon,Move 9,49,Take Down,Take Down,95,1,20
+112,Rhydon,Move 10,55,Horn Drill,Horn Drill,KO,0.3,5
+113,Chansey,Move 1,1,Pound,Pound,40,1,35
+113,Chansey,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+113,Chansey,Move 3,12,Doubleslap,Doubleslap,20,1,35
+113,Chansey,Move 4,24,Sing,Sing,N/A,0.55,15
+113,Chansey,Move 5,30,Growl,Growl,N/A,1,40
+113,Chansey,Move 6,38,Minimize,Minimize,N/A,N/A,20
+113,Chansey,Move 7,44,Defense Curl,Defense Curl,N/A,N/A,40
+113,Chansey,Move 8,48,Light Screen,Light Screen,N/A,N/A,30
+113,Chansey,Move 9,50,Mega Punch,Mega Punch,80,0.85,20
+113,Chansey,Move 10,54,Double Edge,Double Edge,120,1,10
+114,Tangela,Move 1,1,Constrict,Constrict,40,1,35
+114,Tangela,Move 2,15,Absorb,Absorb,30,1,25
+114,Tangela,Move 3,19,Vine Whip,Vine Whip,40,1,25
+114,Tangela,Move 4,21,Poisonpowder,Poisonpowder,N/A,0.95,35
+114,Tangela,Move 5,23,Stun Spore,Stun Spore,N/A,0.75,30
+114,Tangela,Move 6,25,Sleep Powder,Sleep Powder,N/A,0.75,15
+114,Tangela,Move 7,32,Mega Drain,Mega Drain,65,1,20
+114,Tangela,Move 8,42,Body Slam,Body Slam,85,1,15
+114,Tangela,Move 9,45,Growth,Growth,N/A,N/A,40
+114,Tangela,Move 10,48,Bind,Bind,15,0.85,20
+115,Kangaskhan,Move 1,1,Comet Punch,Comet Punch,25,1,25
+115,Kangaskhan,Move 2,1,Rage,Rage,60,1,20
+115,Kangaskhan,Move 3,7,Leer,Leer,N/A,1,30
+115,Kangaskhan,Move 4,13,Bite,Bite,60,1,25
+115,Kangaskhan,Move 5,19,Tail Whip,Tail Whip,N/A,1,30
+115,Kangaskhan,Move 6,24,Mega Punch,Mega Punch,80,0.85,20
+115,Kangaskhan,Move 7,29,Dizzy Punch,Dizzy Punch,70,1,20
+115,Kangaskhan,Move 8,37,Body Slam,Body Slam,85,1,15
+115,Kangaskhan,Move 9,48,Double Edge,Double Edge,120,1,10
+116,Horsea,Move 1,1,Bubble,Bubble,10,1,30
+116,Horsea,Move 2,10,Water Gun,Water Gun,40,1,25
+116,Horsea,Move 3,14,Smokescreen,Smokescreen,N/A,1,20
+116,Horsea,Move 4,18,Leer,Leer,N/A,1,30
+116,Horsea,Move 5,22,Bubblebeam,Bubblebeam,65,1,20
+116,Horsea,Move 6,26,Dragon Rage,Dragon Rage,Set,1,10
+116,Horsea,Move 7,30,Aurora Beam,Aurora Beam,65,1,20
+116,Horsea,Move 8,33,Waterfall,Waterfall,70,1,15
+116,Horsea,Move 9,37,Agility,Agility,N/A,N/A,30
+116,Horsea,Move 10,45,Hydro Pump,Hydro Pump,120,0.85,10
+117,Seadra,Move 1,1,Bubble,Bubble,10,1,30
+117,Seadra,Move 2,10,Water Gun,Water Gun,40,1,25
+117,Seadra,Move 3,14,Smokescreen,Smokescreen,N/A,1,20
+117,Seadra,Move 4,18,Leer,Leer,N/A,1,30
+117,Seadra,Move 5,22,Bubblebeam,Bubblebeam,65,1,20
+117,Seadra,Move 6,26,Dragon Rage,Dragon Rage,Set,1,10
+117,Seadra,Move 7,30,Aurora Beam,Aurora Beam,65,1,20
+117,Seadra,Move 8,33,Waterfall,Waterfall,70,1,15
+117,Seadra,Move 9,37,Agility,Agility,N/A,N/A,30
+117,Seadra,Move 10,41,Slam,Slam,80,1,20
+117,Seadra,Move 11,45,Hydro Pump,Hydro Pump,120,0.85,10
+118,Goldeen,Move 1,1,Tail Whip,Tail Whip,N/A,1,30
+118,Goldeen,Move 2,1,Bubble,Bubble,10,1,30
+118,Goldeen,Move 3,7,Peck,Peck,35,1,35
+118,Goldeen,Move 4,10,Supersonic,Supersonic,N/A,0.75,20
+118,Goldeen,Move 5,13,Water Gun,Water Gun,40,1,25
+118,Goldeen,Move 6,15,Horn Attack,Horn Attack,65,1,25
+118,Goldeen,Move 7,17,Waterfall,Waterfall,70,1,15
+118,Goldeen,Move 8,24,Fury Attack,Fury Attack,15,1,20
+118,Goldeen,Move 9,33,Drill Peck,Drill Peck,80,1,20
+118,Goldeen,Move 10,43,Horn Drill,Horn Drill,KO,0.3,5
+118,Goldeen,Move 11,48,Agility,Agility,N/A,N/A,30
+119,Seaking,Move 1,1,Tail Whip,Tail Whip,N/A,1,30
+119,Seaking,Move 2,1,Bubble,Bubble,10,1,30
+119,Seaking,Move 3,7,Peck,Peck,35,1,35
+119,Seaking,Move 4,10,Supersonic,Supersonic,N/A,0.75,20
+119,Seaking,Move 5,13,Water Gun,Water Gun,40,1,25
+119,Seaking,Move 6,15,Horn Attack,Horn Attack,65,1,25
+119,Seaking,Move 7,17,Waterfall,Waterfall,70,1,15
+119,Seaking,Move 8,24,Fury Attack,Fury Attack,15,1,20
+119,Seaking,Move 9,33,Drill Peck,Drill Peck,80,1,20
+119,Seaking,Move 10,43,Horn Drill,Horn Drill,KO,0.3,5
+119,Seaking,Move 11,48,Agility,Agility,N/A,N/A,30
+120,Staryu,Move 1,1,Tackle,Tackle,35,1,35
+120,Staryu,Move 2,7,Water Gun,Water Gun,40,1,25
+120,Staryu,Move 3,10,Confusion,Confusion,50,1,25
+120,Staryu,Move 4,15,Swift,Swift,60,1,20
+120,Staryu,Move 5,22,Harden,Harden,N/A,N/A,30
+120,Staryu,Move 6,24,Bubblebeam,Bubblebeam,65,1,20
+120,Staryu,Move 7,27,Recover,Recover,N/A,N/A,20
+120,Staryu,Move 8,37,Minimize,Minimize,N/A,N/A,20
+120,Staryu,Move 9,40,Psychic,Psychic,90,1,10
+120,Staryu,Move 10,42,Light Screen,Light Screen,N/A,N/A,30
+120,Staryu,Move 11,47,Hydro Pump,Hydro Pump,120,0.85,10
+121,Starmie,Move 1,1,Confusion,Confusion,50,1,25
+121,Starmie,Move 2,1,Swift,Swift,60,1,20
+121,Starmie,Move 3,1,Bubblebeam,Bubblebeam,65,1,20
+121,Starmie,Move 4,23,Harden,Harden,N/A,N/A,30
+121,Starmie,Move 5,27,Recover,Recover,N/A,N/A,20
+121,Starmie,Move 6,37,Minimize,Minimize,N/A,N/A,20
+121,Starmie,Move 7,40,Psychic,Psychic,90,1,10
+121,Starmie,Move 8,42,Light Screen,Light Screen,N/A,N/A,30
+121,Starmie,Move 9,47,Hydro Pump,Hydro Pump,120,0.85,10
+122,Mr-mime,Move 1,1,Barrier,Barrier,N/A,N/A,30
+122,Mr-mime,Move 2,15,Confusion,Confusion,50,1,25
+122,Mr-mime,Move 3,23,Light Screen,Light Screen,N/A,N/A,30
+122,Mr-mime,Move 4,23,Reflect,Reflect,N/A,N/A,20
+122,Mr-mime,Move 5,27,Doubleslap,Doubleslap,20,1,35
+122,Mr-mime,Move 6,31,Psybeam,Psybeam,65,1,20
+122,Mr-mime,Move 7,39,Meditate,Meditate,N/A,N/A,40
+122,Mr-mime,Move 8,43,Psychic,Psychic,90,1,10
+122,Mr-mime,Move 9,47,Substitute,Substitute,N/A,N/A,10
+122,Mr-mime,Move 10,50,Barrier,Barrier,N/A,N/A,30
+123,Scyther,Move 1,1,Quick Attack,Quick Attack,40,1,30
+123,Scyther,Move 2,1,Leer,Leer,N/A,1,30
+123,Scyther,Move 3,6,Focus Energy,Focus Energy,N/A,N/A,30
+123,Scyther,Move 4,16,Cut,Cut,55,1,30
+123,Scyther,Move 5,24,Agility,Agility,N/A,N/A,30
+123,Scyther,Move 6,30,Wing Attack,Wing Attack,60,1,35
+123,Scyther,Move 7,36,Slash,Slash,70,1,20
+123,Scyther,Move 8,42,Twineedle,Twineedle,40,1,20
+123,Scyther,Move 9,48,Double Team,Double Team,N/A,N/A,15
+123,Scyther,Move 10,54,Swords Dance,Swords Dance,N/A,N/A,30
+124,Jynx,Move 1,1,Pound,Pound,40,1,35
+124,Jynx,Move 2,1,Lovely Kiss,Lovely Kiss,N/A,0.75,10
+124,Jynx,Move 3,18,Confusion,Confusion,50,1,25
+124,Jynx,Move 4,23,Doubleslap,Doubleslap,20,1,35
+124,Jynx,Move 5,31,Ice Punch,Ice Punch,70,1,15
+124,Jynx,Move 6,35,Lovely Kiss,Lovely Kiss,N/A,0.75,10
+124,Jynx,Move 7,39,Psychic,Psychic,90,1,10
+124,Jynx,Move 8,43,Ice Beam,Ice Beam,95,1,10
+124,Jynx,Move 9,47,Body Slam,Body Slam,85,1,15
+124,Jynx,Move 10,54,Blizzard,Blizzard,120,0.85,5
+125,Electabuzz,Move 1,1,Quick Attack,Quick Attack,40,1,30
+125,Electabuzz,Move 2,1,Leer,Leer,N/A,1,30
+125,Electabuzz,Move 3,15,Thundershock,Thundershock,40,1,30
+125,Electabuzz,Move 4,20,Thunder Wave,Thunder Wave,N/A,1,20
+125,Electabuzz,Move 5,25,Screech,Screech,N/A,0.85,10
+125,Electabuzz,Move 6,31,Thunderpunch,Thunderpunch,70,1,15
+125,Electabuzz,Move 7,40,Light Screen,Light Screen,N/A,N/A,30
+125,Electabuzz,Move 8,43,Thunderbolt,Thunderbolt,95,1,15
+125,Electabuzz,Move 9,54,Thunder,Thunder,120,0.85,5
+126,Magmar,Move 1,1,Ember,Ember,40,1,25
+126,Magmar,Move 2,10,Smog,Smog,40,0.8,20
+126,Magmar,Move 3,15,Leer,Leer,N/A,1,30
+126,Magmar,Move 4,20,Confuse Ray,Confuse Ray,N/A,1,10
+126,Magmar,Move 5,31,Fire Punch,Fire Punch,70,1,15
+126,Magmar,Move 6,40,Smokescreen,Smokescreen,N/A,1,20
+126,Magmar,Move 7,43,Flamethrower,Flamethrower,95,1,15
+126,Magmar,Move 8,54,Fire Blast,Fire Blast,120,0.85,5
+127,Pinsir,Move 1,1,Vicegrip,Vicegrip,55,1,30
+127,Pinsir,Move 2,5,Harden,Harden,N/A,N/A,30
+127,Pinsir,Move 3,8,Focus Energy,Focus Energy,N/A,N/A,30
+127,Pinsir,Move 4,25,Seismic Toss,Seismic Toss,Var Dmg,1,20
+127,Pinsir,Move 5,30,Twineedle,Twineedle,40,1,20
+127,Pinsir,Move 6,36,Submission,Submission,80,1,20
+127,Pinsir,Move 7,42,Slash,Slash,70,1,20
+127,Pinsir,Move 8,45,Guillotine,Guillotine,KO,0.3,5
+127,Pinsir,Move 9,48,Bind,Bind,15,0.85,20
+127,Pinsir,Move 10,54,Swords Dance,Swords Dance,N/A,N/A,30
+128,Tauros,Move 1,1,Tackle,Tackle,35,1,35
+128,Tauros,Move 2,13,Horn Attack,Horn Attack,65,1,25
+128,Tauros,Move 3,15,Leer,Leer,N/A,1,30
+128,Tauros,Move 4,19,Stomp,Stomp,65,1,20
+128,Tauros,Move 5,23,Tail Whip,Tail Whip,N/A,1,30
+128,Tauros,Move 6,27,Headbutt,Headbutt,70,1,15
+128,Tauros,Move 7,35,Rage,Rage,60,1,20
+128,Tauros,Move 8,40,Take Down,Take Down,95,1,20
+128,Tauros,Move 9,45,Thrash,Thrash,90,1,20
+128,Tauros,Move 10,50,Double Edge,Double Edge,120,1,10
+129,Magikarp,Move 1,1,Splash,Splash,N/A,N/A,40
+129,Magikarp,Move 2,15,Tackle,Tackle,35,1,35
+130,Gyarados,Move 1,1,Tackle,Tackle,35,1,35
+130,Gyarados,Move 2,20,Bite,Bite,60,1,25
+130,Gyarados,Move 3,22,Gust,Gust,40,1,35
+130,Gyarados,Move 4,25,Waterfall,Waterfall,70,1,15
+130,Gyarados,Move 5,28,Dragon Rage,Dragon Rage,Set,1,10
+130,Gyarados,Move 6,32,Leer,Leer,N/A,1,30
+130,Gyarados,Move 7,35,Thrash,Thrash,90,1,20
+130,Gyarados,Move 8,41,Hydro Pump,Hydro Pump,120,0.85,10
+130,Gyarados,Move 9,48,Slam,Slam,80,1,20
+130,Gyarados,Move 10,52,Hyper Beam,Hyper Beam,150,0.9,5
+131,Lapras,Move 1,1,Water Gun,Water Gun,40,1,25
+131,Lapras,Move 2,1,Growl,Growl,N/A,1,40
+131,Lapras,Move 3,19,Mist,Mist,N/A,N/A,30
+131,Lapras,Move 4,23,Aurora Beam,Aurora Beam,65,1,20
+131,Lapras,Move 5,25,Body Slam,Body Slam,85,1,15
+131,Lapras,Move 6,30,Confuse Ray,Confuse Ray,N/A,1,10
+131,Lapras,Move 7,34,Waterfall,Waterfall,70,1,15
+131,Lapras,Move 8,38,Ice Beam,Ice Beam,95,1,10
+131,Lapras,Move 9,46,Sing,Sing,N/A,0.55,15
+131,Lapras,Move 10,51,Hydro Pump,Hydro Pump,120,0.85,10
+131,Lapras,Move 11,55,Blizzard,Blizzard,120,0.85,5
+132,Ditto,Move 1,1,Transform,Transform,N/A,N/A,10
+133,Eevee,Move 1,1,Tackle,Tackle,35,1,35
+133,Eevee,Move 2,6,Tail Whip,Tail Whip,N/A,1,30
+133,Eevee,Move 3,8,Sand Attack,Sand Attack,N/A,1,15
+133,Eevee,Move 4,9,Bite,Bite,60,1,25
+133,Eevee,Move 5,10,Quick Attack,Quick Attack,40,1,30
+133,Eevee,Move 6,14,Growl,Growl,N/A,1,40
+133,Eevee,Move 7,17,Double Kick,Double Kick,30,1,30
+133,Eevee,Move 8,22,Headbutt,Headbutt,70,1,15
+133,Eevee,Move 9,30,Focus Energy,Focus Energy,N/A,N/A,30
+133,Eevee,Move 10,36,Jump Kick,Jump Kick,90,0.95,20
+133,Eevee,Move 11,42,Take Down,Take Down,95,1,20
+134,Vaporeon,Move 1,1,Tackle,Tackle,35,1,35
+134,Vaporeon,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+134,Vaporeon,Move 3,1,Bubble,Bubble,10,1,30
+134,Vaporeon,Move 4,8,Sand Attack,Sand Attack,N/A,1,15
+134,Vaporeon,Move 5,16,Water Gun,Water Gun,40,1,25
+134,Vaporeon,Move 6,23,Quick Attack,Quick Attack,40,1,30
+134,Vaporeon,Move 7,26,Bubblebeam,Bubblebeam,65,1,20
+134,Vaporeon,Move 8,30,Bite,Bite,60,1,25
+134,Vaporeon,Move 9,36,Aurora Beam,Aurora Beam,65,1,20
+134,Vaporeon,Move 10,39,Mist,Mist,N/A,N/A,30
+134,Vaporeon,Move 11,39,Haze,Haze,N/A,N/A,30
+134,Vaporeon,Move 12,41,Acid Armor,Acid Armor,N/A,N/A,40
+134,Vaporeon,Move 13,47,Rest,Rest,N/A,N/A,10
+134,Vaporeon,Move 14,52,Hydro Pump,Hydro Pump,120,0.85,10
+134,Vaporeon,Move 15,52,Hydro Pump,Hydro Pump,120,0.85,10
+135,Jolteon,Move 1,1,Tackle,Tackle,35,1,35
+135,Jolteon,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+135,Jolteon,Move 3,8,Sand Attack,Sand Attack,N/A,1,15
+135,Jolteon,Move 4,23,Quick Attack,Quick Attack,40,1,30
+135,Jolteon,Move 5,26,Thundershock,Thundershock,40,1,30
+135,Jolteon,Move 6,30,Double Kick,Double Kick,30,1,30
+135,Jolteon,Move 7,36,Thunderbolt,Thunderbolt,95,1,15
+135,Jolteon,Move 8,39,Pin Missile,Pin Missile,6,1,30
+135,Jolteon,Move 9,41,Agility,Agility,N/A,N/A,30
+135,Jolteon,Move 10,47,Thunder Wave,Thunder Wave,N/A,1,20
+135,Jolteon,Move 11,52,Thunder,Thunder,120,0.85,5
+136,Flareon,Move 1,1,Tackle,Tackle,35,1,35
+136,Flareon,Move 2,1,Tail Whip,Tail Whip,N/A,1,30
+136,Flareon,Move 3,1,Ember,Ember,40,1,25
+136,Flareon,Move 4,8,Sand Attack,Sand Attack,N/A,1,15
+136,Flareon,Move 5,10,Leer,Leer,N/A,1,30
+136,Flareon,Move 6,23,Quick Attack,Quick Attack,40,1,30
+136,Flareon,Move 7,26,Ember,Ember,40,1,25
+136,Flareon,Move 8,30,Double Kick,Double Kick,30,1,30
+136,Flareon,Move 9,36,Flamethrower,Flamethrower,95,1,15
+136,Flareon,Move 10,39,Double Edge,Double Edge,120,1,10
+136,Flareon,Move 11,41,Growth,Growth,N/A,N/A,40
+136,Flareon,Move 12,47,Fire Spin,Fire Spin,15,0.7,15
+136,Flareon,Move 13,52,Fire Blast,Fire Blast,120,0.85,5
+137,Porygon,Move 1,1,Tackle,Tackle,35,1,35
+137,Porygon,Move 2,1,Conversion,Conversion,N/A,N/A,30
+137,Porygon,Move 3,12,Psybeam,Psybeam,65,1,20
+137,Porygon,Move 4,20,Recover,Recover,N/A,N/A,20
+137,Porygon,Move 5,24,Sharpen,Sharpen,N/A,N/A,30
+137,Porygon,Move 6,28,Tri Attack,Tri Attack,85,1,15
+137,Porygon,Move 7,32,Agility,Agility,N/A,N/A,30
+137,Porygon,Move 8,40,Barrier,Barrier,N/A,N/A,30
+137,Porygon,Move 9,50,Hyper Beam,Hyper Beam,150,0.9,5
+138,Omanyte,Move 1,1,Water Gun,Water Gun,40,1,25
+138,Omanyte,Move 2,1,Withdraw,Withdraw,N/A,N/A,40
+138,Omanyte,Move 3,15,Constrict,Constrict,40,1,35
+138,Omanyte,Move 4,18,Bubblebeam,Bubblebeam,65,1,20
+138,Omanyte,Move 5,22,Horn Attack,Horn Attack,65,1,25
+138,Omanyte,Move 6,25,Rock Throw,Rock Throw,50,0.95,25
+138,Omanyte,Move 7,27,Spike Cannon,Spike Cannon,20,1,15
+138,Omanyte,Move 8,30,Leer,Leer,N/A,1,30
+138,Omanyte,Move 9,37,Rock Slide,Rock Slide,75,0.95,10
+138,Omanyte,Move 10,46,Hydro Pump,Hydro Pump,120,0.85,10
+139,Omastar,Move 1,1,Water Gun,Water Gun,40,1,25
+139,Omastar,Move 2,1,Withdraw,Withdraw,N/A,N/A,40
+139,Omastar,Move 3,15,Constrict,Constrict,40,1,35
+139,Omastar,Move 4,18,Bubblebeam,Bubblebeam,65,1,20
+139,Omastar,Move 5,22,Horn Attack,Horn Attack,65,1,25
+139,Omastar,Move 6,25,Rock Throw,Rock Throw,50,0.95,25
+139,Omastar,Move 7,27,Spike Cannon,Spike Cannon,20,1,15
+139,Omastar,Move 8,30,Leer,Leer,N/A,1,30
+139,Omastar,Move 9,37,Rock Slide,Rock Slide,75,0.95,10
+139,Omastar,Move 10,42,Clamp,Clamp,35,0.85,10
+139,Omastar,Move 11,46,Hydro Pump,Hydro Pump,120,0.85,10
+140,Kabuto,Move 1,1,Scratch,Scratch,40,1,35
+140,Kabuto,Move 2,1,Harden,Harden,N/A,N/A,30
+140,Kabuto,Move 3,11,Leer,Leer,N/A,1,30
+140,Kabuto,Move 4,15,Water Gun,Water Gun,40,1,25
+140,Kabuto,Move 5,19,Absorb,Absorb,30,1,25
+140,Kabuto,Move 6,25,Rock Throw,Rock Throw,50,0.95,25
+140,Kabuto,Move 7,35,Mega Drain,Mega Drain,65,1,20
+140,Kabuto,Move 8,39,Slash,Slash,70,1,20
+140,Kabuto,Move 9,43,Swords Dance,Swords Dance,N/A,N/A,30
+140,Kabuto,Move 10,46,Rock Slide,Rock Slide,75,0.95,10
+140,Kabuto,Move 11,53,Hydro Pump,Hydro Pump,120,0.85,10
+141,Kabutops,Move 1,1,Scratch,Scratch,40,1,35
+141,Kabutops,Move 2,1,Harden,Harden,N/A,N/A,30
+141,Kabutops,Move 3,11,Leer,Leer,N/A,1,30
+141,Kabutops,Move 4,15,Water Gun,Water Gun,40,1,25
+141,Kabutops,Move 5,19,Absorb,Absorb,30,1,25
+141,Kabutops,Move 6,25,Rock Throw,Rock Throw,50,0.95,25
+141,Kabutops,Move 7,35,Mega Drain,Mega Drain,65,1,20
+141,Kabutops,Move 8,39,Slash,Slash,70,1,20
+141,Kabutops,Move 9,43,Swords Dance,Swords Dance,N/A,N/A,30
+141,Kabutops,Move 10,46,Rock Slide,Rock Slide,75,0.95,10
+141,Kabutops,Move 11,53,Hydro Pump,Hydro Pump,120,0.85,10
+142,Aerodactyl,Move 1,1,Wing Attack,Wing Attack,60,1,35
+142,Aerodactyl,Move 2,1,Agility,Agility,N/A,N/A,30
+142,Aerodactyl,Move 3,15,Bite,Bite,60,1,25
+142,Aerodactyl,Move 4,22,Supersonic,Supersonic,N/A,0.75,20
+142,Aerodactyl,Move 5,27,Rock Throw,Rock Throw,50,0.95,25
+142,Aerodactyl,Move 6,32,Wing Attack,Wing Attack,60,1,35
+142,Aerodactyl,Move 7,40,Rock Slide,Rock Slide,75,0.95,10
+142,Aerodactyl,Move 8,43,Take Down,Take Down,95,1,20
+142,Aerodactyl,Move 9,50,Hyper Beam,Hyper Beam,150,0.9,5
+143,Snorlax,Move 1,1,Amnesia,Amnesia,N/A,N/A,20
+143,Snorlax,Move 2,29,Headbutt,Headbutt,70,1,15
+143,Snorlax,Move 3,33,Harden,Harden,N/A,N/A,30
+143,Snorlax,Move 4,36,Rest,Rest,N/A,N/A,10
+143,Snorlax,Move 5,43,Body Slam,Body Slam,85,1,15
+143,Snorlax,Move 6,48,Double Edge,Double Edge,120,1,10
+143,Snorlax,Move 7,56,Hyper Beam,Hyper Beam,150,0.9,5
+144,Articuno,Move 1,1,Peck,Peck,35,1,35
+144,Articuno,Move 2,35,Agility,Agility,N/A,N/A,30
+144,Articuno,Move 3,40,Drill Peck,Drill Peck,80,1,20
+144,Articuno,Move 4,45,Ice Beam,Ice Beam,95,1,10
+144,Articuno,Move 5,51,Blizzard,Blizzard,120,0.85,5
+144,Articuno,Move 6,55,Sky Attack,Sky Attack,120,0.85,5
+144,Articuno,Move 7,60,Mist,Mist,N/A,N/A,30
+145,Zapdos,Move 1,1,Thundershock,Thundershock,40,1,30
+145,Zapdos,Move 2,1,Wing Attack,Wing Attack,60,1,35
+145,Zapdos,Move 3,35,Agility,Agility,N/A,N/A,30
+145,Zapdos,Move 4,40,Drill Peck,Drill Peck,80,1,20
+145,Zapdos,Move 5,45,Thunderbolt,Thunderbolt,95,1,15
+145,Zapdos,Move 6,51,Thunder,Thunder,120,0.85,5
+145,Zapdos,Move 7,55,Sky Attack,Sky Attack,120,0.85,5
+145,Zapdos,Move 8,60,Light Screen,Light Screen,N/A,N/A,30
+146,Moltres,Move 1,1,Peck,Peck,35,1,35
+146,Moltres,Move 2,1,Ember,Ember,40,1,25
+146,Moltres,Move 3,35,Agility,Agility,N/A,N/A,30
+146,Moltres,Move 4,40,Drill Peck,Drill Peck,80,1,20
+146,Moltres,Move 5,45,Flamethrower,Flamethrower,95,1,15
+146,Moltres,Move 6,51,Fire Blast,Fire Blast,120,0.85,5
+146,Moltres,Move 7,55,Sky Attack,Sky Attack,120,0.85,5
+146,Moltres,Move 8,60,Fire Spin,Fire Spin,15,0.7,15
+147,Dratini,Move 1,1,Wrap,Wrap,15,0.85,20
+147,Dratini,Move 2,1,Leer,Leer,N/A,1,30
+147,Dratini,Move 3,10,Thunder Wave,Thunder Wave,N/A,1,20
+147,Dratini,Move 4,20,Dragon Rage,Dragon Rage,Set,1,10
+147,Dratini,Move 5,25,Agility,Agility,N/A,N/A,30
+147,Dratini,Move 6,30,Slam,Slam,80,1,20
+147,Dratini,Move 7,60,Hyper Beam,Hyper Beam,150,0.9,5
+148,Dragonair,Move 1,1,Wrap,Wrap,15,0.85,20
+148,Dragonair,Move 2,1,Leer,Leer,N/A,1,30
+148,Dragonair,Move 3,10,Thunder Wave,Thunder Wave,N/A,1,20
+148,Dragonair,Move 4,20,Dragon Rage,Dragon Rage,Set,1,10
+148,Dragonair,Move 5,25,Agility,Agility,N/A,N/A,30
+148,Dragonair,Move 6,30,Slam,Slam,80,1,20
+148,Dragonair,Move 7,45,Dragon Rage,Dragon Rage,Set,1,10
+148,Dragonair,Move 8,60,Hyper Beam,Hyper Beam,150,0.9,5
+149,Dragonite,Move 1,1,Wrap,Wrap,15,0.85,20
+149,Dragonite,Move 2,1,Leer,Leer,N/A,1,30
+149,Dragonite,Move 3,10,Thunder Wave,Thunder Wave,N/A,1,20
+149,Dragonite,Move 4,20,Dragon Rage,Dragon Rage,Set,1,10
+149,Dragonite,Move 5,25,Agility,Agility,N/A,N/A,30
+149,Dragonite,Move 6,30,Slam,Slam,80,1,20
+149,Dragonite,Move 7,55,Wing Attack,Wing Attack,60,1,35
+149,Dragonite,Move 8,60,Hyper Beam,Hyper Beam,150,0.9,5
+150,Mewtwo,Move 1,1,Confusion,Confusion,50,1,25
+150,Mewtwo,Move 2,1,Disable,Disable,N/A,0.75,20
+150,Mewtwo,Move 3,1,Swift,Swift,60,1,20
+150,Mewtwo,Move 4,1,Psychic,Psychic,90,1,10
+150,Mewtwo,Move 5,63,Barrier,Barrier,N/A,N/A,30
+150,Mewtwo,Move 6,66,Psychic,Psychic,90,1,10
+150,Mewtwo,Move 7,70,Recover,Recover,N/A,N/A,20
+150,Mewtwo,Move 8,75,Mist,Mist,N/A,N/A,30
+150,Mewtwo,Move 9,81,Amnesia,Amnesia,N/A,N/A,20
+151,Mew,Move 1,1,Pound,Pound,40,1,35
+151,Mew,Move 2,10,Transform,Transform,N/A,N/A,10
+151,Mew,Move 3,15,Confusion,Confusion,50,1,25
+151,Mew,Move 4,20,Mega Punch,Mega Punch,80,0.85,20
+151,Mew,Move 5,25,Psybeam,Psybeam,65,1,20
+151,Mew,Move 6,30,Metronome,Metronome,N/A,N/A,10
+151,Mew,Move 7,40,Psychic,Psychic,90,1,10

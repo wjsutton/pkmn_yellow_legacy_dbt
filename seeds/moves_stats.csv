@@ -1,0 +1,166 @@
+﻿Move,Effect,Type,Power,Acc,PP,Hits,Hits Min,Hits Max,Critical-hit Ratio
+Absorb,Restores the user's HP by 1/2 of the damage inflicted on the target.,Grass,30,1,25,1,1,1,0.5
+Acid,Has a ~10% chance to lower the target's Defense by 1 stage.,Poison,65,1,30,1,1,1,0.5
+Acid Armor,Raises the user's Defense by 2 stages.,Poison,N/A,N/A,40,1,1,1,0.5
+Agility,Raises the user's Speed by 2 stages.,Psychic,N/A,N/A,30,1,1,1,0.5
+Amnesia,Raises the user's Special by 2 stages.,Psychic,N/A,N/A,20,1,1,1,0.5
+Aurora Beam,Has a ~10% chance to lower the target's Attack by 1 stage.,Ice,65,1,20,1,1,1,0.5
+Barrage,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Normal,20,0.85,20,3.5,2,5,0.5
+Barrier,Raises the user's Defense by 2 stages.,Psychic,N/A,N/A,30,1,1,1,0.5
+Bide,The user absorbs all damage for 2-3 turns and then inflicts twice the absorbed damage on its target. This move ignores the target's type but still cannot hit Ghost-type Pokemon.,Normal,Var Dmg,1,10,1,1,1,0.5
+Bind,"The user becomes uncontrollable and attacks for 2-5 consecutive turns; the target cannot make attacks of its own during this time, but it may switch out, use items or run away.",Normal,15,0.85,20,3.5,2,5,0.5
+Bite,Has a ~10% chance to make the target flinch.,Normal,60,1,25,1,1,1,0.5
+Blizzard,Has a ~10% chance to freeze the target.,Ice,120,0.85,5,1,1,1,0.5
+Body Slam,Has a ~30% chance to paralyze the target.,Normal,85,1,15,1,1,1,0.5
+Bone Club,Has a ~10% chance to make the target flinch.,Ground,65,1,20,1,1,1,0.5
+Bonemerang,"Strikes twice; if the first hit breaks the target's Substitute, the real Pokemon will take damage from the second hit.",Ground,50,0.9,20,2,2,2,0.5
+Bubble,Has a ~10% chance to lower the target's Speed by 1 stage.,Water,10,1,30,1,1,1,0.5
+Bubblebeam,Has a ~10% chance to lower the target's Speed by 1 stage.,Water,65,1,20,1,1,1,0.5
+Clamp,"The user becomes uncontrollable and attacks for 2-5 consecutive turns; the target cannot make attacks of its own during this time, but it may switch out, use items or run away.",Water,35,0.85,10,3.5,2,5,0.5
+Comet Punch,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Normal,25,1,25,3.5,2,5,0.5
+Confuse Ray,Confuses the target.,Ghost,N/A,1,10,1,1,1,0.5
+Confusion,Has a ~10% chance to confuse the target.,Psychic,50,1,25,1,1,1,0.5
+Constrict,Has a ~10% chance to lower the target's Speed by 1 stage.,Normal,40,1,35,1,1,1,0.5
+Conversion,The user's type changes to match the type of one of its four attacks. This move fails if the user cannot change its type under this condition.,Normal,N/A,N/A,30,1,1,1,0.5
+Counter,"Almost always goes last; if an opponent strikes with a Normal- or Fighting-type attack before the user's turn, the user retaliates for twice the damage it had endured.",Fighting,Var Dmg,1,20,1,1,1,0.5
+Crabhammer,Has a high critical hit ratio.,Water,110,1,10,1,1,1,4
+Cut,Damages the target.,Bug,55,1,30,1,1,1,0.5
+Defense Curl,Raises the user's Defense by 1 stage.,Normal,N/A,N/A,40,1,1,1,0.5
+Dig,"On the first turn, the user digs underground, becoming uncontrollable, and evades all attacks. Swift may still hit a Pokemon underground. On the second turn, the user attacks.",Ground,70,1,10,1,1,1,0.5
+Disable,One randomly selected move of the target's cannot be selected for 1-7 turns. Disable only works on one move at a time. The target does nothing if it is about to use a move that becomes disabled.,Normal,N/A,0.75,20,1,1,1,0.5
+Dizzy Punch,Damages the target. 10% confuse chance,Normal,70,1,20,1,1,1,0.5
+Double Kick,"Strikes twice; if the first hit breaks the target's Substitute, the real Pokemon will take damage from the second hit.",Fighting,30,1,30,2,2,2,0.5
+Double Team,Raises the user's Evasion by 1 stage.,Normal,N/A,N/A,15,1,1,1,0.5
+Double Edge,The user receives 1/4 recoil damage.,Normal,120,1,10,1,1,1,0.5
+Doubleslap,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Normal,20,1,35,3.5,2,5,0.5
+Dragon Rage,Always deals 40 points of damage.,Dragon,Set,1,10,1,1,1,0.5
+Dream Eater,Restores the user's HP by 1/2 of the damage inflicted on the target but only works on a sleeping target.,Psychic,100,1,15,1,1,1,0.5
+Drill Peck,Damages the target.,Flying,80,1,20,1,1,1,0.5
+Earthquake,Damages the target.,Ground,100,1,10,1,1,1,0.5
+Egg Bomb,Damages the target.,Grass,100,1,10,1,1,1,0.5
+Ember,Has a ~10% chance to burn the target.,Fire,40,1,25,1,1,1,0.5
+Explosion,"The Defense stat of other Pokemon is halved against this attack, essentially doubling the move's base power; causes the user to faint.",Normal,170,1,5,1,1,1,0.5
+Fire Blast,Has a ~30% chance to burn the target.,Fire,120,0.85,5,1,1,1,0.5
+Fire Punch,Has a ~10% chance to burn the target.,Fire,70,1,15,1,1,1,0.5
+Fire Spin,"The user becomes uncontrollable and attacks for 2-5 consecutive turns; the target cannot make attacks of its own during this time, but it may switch out, use items or run away.",Fire,15,0.7,15,3.5,2,5,0.5
+Fissure,The target faints; doesn't work on faster or higher-leveled Pokemon.,Ground,KO,0.3,5,1,1,1,0.5
+Flamethrower,Has a ~10% chance to burn the target.,Fire,95,1,15,1,1,1,0.5
+Flash,Lowers the target's Accuracy by 1 stage.,Normal,N/A,0.7,20,1,1,1,0.5
+Fly,"On the first turn, the user flies into the air, becoming uncontrollable, and evades most attacks. Swift may still hit a Pokemon in the air. On the second turn, the user attacks.",Flying,70,1,15,1,1,1,0.5
+Focus Energy,"Decreases critical hit ratio in-game, but raises it in Pokemon Stadium.",Normal,N/A,N/A,30,1,1,1,0.5
+Fury Attack,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Normal,15,1,20,3.5,2,5,0.5
+Fury Swipes,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Normal,20,1,15,3.5,2,5,0.5
+Glare,Paralyzes the target. This move works on Ghost-type Pokemon.,Normal,N/A,1,30,1,1,1,0.5
+Growl,Lowers the target's Attack by 1 stage.,Normal,N/A,1,40,1,1,1,0.5
+Growth,Raises the user's Special by 1 stage.,Normal,N/A,N/A,40,1,1,1,0.5
+Guillotine,The target faints; doesn't work on faster or higher-leveled Pokemon.,Normal,KO,0.3,5,1,1,1,0.5
+Gust,Damages the target.,Flying,40,1,35,1,1,1,0.5
+Harden,Raises the user's Defense by 1 stage.,Normal,N/A,N/A,30,1,1,1,0.5
+Haze,"Eliminates any stat modifiers from all active Pokemon. Also removes Leech Seed, Reflect and Light Screen from either Pokemon and cures the opponent of any status conditions (including Toxic). If the user of Haze has Toxic poisoning, it will be downgraded to regular poisoning.",Ice,N/A,N/A,30,1,1,1,0.5
+Headbutt,Has a ~30% chance to make the target flinch.,Normal,70,1,15,1,1,1,0.5
+Hi Jump Kick,"If this attack misses the target, the user receives 1 HP of damage.",Fighting,120,0.9,20,1,1,1,0.5
+Horn Attack,Damages the target.,Normal,65,1,25,1,1,1,0.5
+Horn Drill,The target faints; doesn't work on faster or higher-leveled Pokemon.,Normal,KO,0.3,5,1,1,1,0.5
+Hydro Pump,Damages the target.,Water,120,0.85,10,1,1,1,0.5
+Hyper Beam,"In Stadium, the user becomes uncontrollable during its next turn. Otherwise, the user attacks on turn one but it doesn't recharge on turn two if it KOs the target, breaks its Substitute or misses entirely.",Normal,150,0.9,5,1,1,1,0.5
+Hyper Fang,Has a ~10% chance to make the target flinch.,Normal,80,0.9,15,1,1,1,0.5
+Hypnosis,Puts the target to sleep.,Psychic,N/A,0.6,20,1,1,1,0.5
+Ice Beam,Has a ~10% chance to freeze the target.,Ice,95,1,10,1,1,1,0.5
+Ice Punch,Has a ~10% chance to freeze the target.,Ice,70,1,15,1,1,1,0.5
+Jump Kick,"If this attack misses the target, the user receives 1 HP of damage.",Fighting,90,0.95,20,1,1,1,0.5
+Karate Chop,Has a high critical hit ratio.,Fighting,55,0.95,25,1,1,1,4
+Kinesis,Lowers the target's Accuracy by 1 stage.,Psychic,N/A,0.8,15,1,1,1,0.5
+Leech Life,Restores the user's HP by 1/2 of the damage inflicted on the target.,Bug,50,1,25,1,1,1,0.5
+Leech Seed,"The user steals 1/8 of the target's max HP (or more if used in conjunction with Toxic) until either Pokemon uses Haze or the target is switched out or KO'ed; does not work on Grass-type Pokemon, but will work against Pokemon behind Substitutes.",Grass,N/A,0.9,10,1,1,1,0.5
+Leer,Lowers the target's Defense by 1 stage.,Normal,N/A,1,30,1,1,1,0.5
+Lick,Has a ~30% chance to paralyze the target. This move fails against Psychic-type Pokemon.,Ghost,40,1,30,1,1,1,0.5
+Light Screen,The user receives 1/2 damage from Special attacks until it switches out or either Pokemon uses Haze.,Psychic,N/A,N/A,30,1,1,1,0.5
+Lovely Kiss,Puts the target to sleep.,Normal,N/A,0.75,10,1,1,1,0.5
+Low Kick,Has a ~30% chance to make the target flinch.,Fighting,50,1,20,1,1,1,0.5
+Meditate,Raises the user's Attack by 1 stage.,Psychic,N/A,N/A,40,1,1,1,0.5
+Mega Drain,Restores the user's HP by 1/2 of the damage inflicted on the target.,Grass,65,1,20,1,1,1,0.5
+Mega Kick,Damages the target.,Normal,120,0.85,10,1,1,1,0.5
+Mega Punch,Damages the target.,Normal,80,0.85,20,1,1,1,0.5
+Metronome,"The user performs a randomly selected move; almost any move in the game could be picked. Metronome cannot generate itself, Struggle or any move that the user already knows.",Normal,N/A,N/A,10,1,1,1,0.5
+Mimic,"This move is temporarily replaced by one of the target's moves; after one PP is subtracted to use this move, the replacement move will retain Mimic's remaining PP. The user can select any of the target's moves to copy until the end of the battle or until the user switches out. There are no move restrictions on Mimic other than itself and Struggle. However, in a link battle, Mimic will copy one of the target's attacks randomly.",Normal,N/A,1,10,1,1,1,0.5
+Minimize,Raises the user's Evasion by 1 stage.,Normal,N/A,N/A,20,1,1,1,0.5
+Mirror Move,"The user performs the last move executed by its target; if applicable, an attack's damage is calculated with the user's stats, level and type(s). This moves fails if the target has not yet used a move. Mirror Move also cannot copy itself.",Flying,Copy,N/A,20,1,1,1,0.5
+Mist,"Protects the user from negative stat modifiers caused by other Pokemon until it switches out. The user's Accuracy and Evasion stats are also protected. Moves that cause negative stat modifiers as a secondary effect, such as Psychic, still deal their regular damage.",Ice,N/A,N/A,30,1,1,1,0.5
+Night Shade,Damages a target,Ghost,60,1,15,1,1,1,0.5
+Pay Day,The player picks up extra money after in-game battles; the money received is equal to: [user's level * 2 * number of times Pay Day is used]. The player does not lose money if the opponent uses Pay Day but the player wins the battle.,Normal,60,1,20,1,1,1,0.5
+Peck,Damages the target.,Flying,35,1,35,1,1,1,0.5
+Petal Dance,The user attacks uncontrollably for 2-3 turns and then gets confused.,Grass,90,1,20,2.5,2,3,0.5
+Pin Missile,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Bug,6,1,30,3.5,2,5,0.5
+Poison Gas,Poisons the target.,Poison,N/A,0.85,40,1,1,1,0.5
+Poison Sting,Has a ~20% chance to poison the target.,Poison,35,1,35,1,1,1,0.5
+Poisonpowder,Poisons the target.,Poison,N/A,0.95,35,1,1,1,0.5
+Pound,Damages the target.,Normal,40,1,35,1,1,1,0.5
+Psybeam,Has a ~10% chance to confuse the target.,Psychic,65,1,20,1,1,1,0.5
+Psychic,Has a ~30% chance to lower the target's Special by 1 stage.,Psychic,90,1,10,1,1,1,0.5
+Psywave,Randomly inflicts set damage between a minimum of 1 HP and a maximum of [1.5x the user's level] HP.,Psychic,Var Dmg,0.95,15,1,1,1,0.5
+Quick Attack,Usually goes first.,Normal,40,1,30,1,1,1,0.5
+Rage,"The user attacks uncontrollably until it faints or its target faints. During this time, the user's Attack increases by 1 stage for each time it is hit by the target. If this move misses, the user continues to attack but has only a 1/256 chance to land a hit.",Normal,60,1,20,1,1,1,0.5
+Razor Leaf,Has a high critical hit ratio.,Grass,55,0.95,25,1,1,1,4
+Razor Wind,"The user prepares on turn one, becoming uncontrollable, and then attacks on turn two.",Normal,80,1,10,1,1,1,0.5
+Recover,"Restores 1/2 of the user's max HP. However, this move fails if the user's current HP is 511 or 255 HP below its value at full health.",Normal,N/A,N/A,20,1,1,1,0.5
+Reflect,The user receives 1/2 damage from Physical attacks until it switches out or either Pokemon uses Haze.,Psychic,N/A,N/A,20,1,1,1,0.5
+Rest,"The user is cured of status effects (and confusion), and recovers full HP, but falls asleep for 2 turns (and then uses a third turn to wake up). However, this move fails if the user's current HP is 511 or 255 HP below its value at full health.",Psychic,N/A,N/A,10,1,1,1,0.5
+Roar,Escapes from wild battles; fails automatically in trainer and link battles.,Normal,N/A,1,20,1,1,1,0.5
+Rock Slide,Damages the target.,Rock,75,0.95,10,1,1,1,0.5
+Rock Throw,Damages the target.,Rock,50,0.95,25,1,1,1,0.5
+Rolling Kick,Has a ~30% chance to make the target flinch.,Fighting,70,1,15,1,1,1,0.5
+Sand Attack,Lowers the target's Accuracy by 1 stage.,Ground,N/A,1,15,1,1,1,0.5
+Scratch,Damages the target.,Normal,40,1,35,1,1,1,0.5
+Screech,Lowers the target's Defense by 2 stages.,Normal,N/A,0.85,10,1,1,1,0.5
+Seismic Toss,Does damage equal to user's level. Hits Ghost-type Pokemon.,Fighting,Var Dmg,1,20,1,1,1,0.5
+Selfdestruct,"The Defense stat of other Pokemon is halved against this attack, essentially doubling the move's base power; causes the user to faint.",Normal,130,1,5,1,1,1,0.5
+Sharpen,Raises the user's Attack by 1 stage.,Normal,N/A,N/A,30,1,1,1,0.5
+Sing,Puts the target to sleep.,Normal,N/A,0.55,15,1,1,1,0.5
+Skull Bash,"The user prepares on turn one, becoming uncontrollable, and then attacks on turn two.",Normal,100,1,15,1,1,1,0.5
+Sky Attack,Damages the target.,Flying,120,0.85,5,1,1,1,0.5
+Slam,Damages the target.,Dragon,80,1,20,1,1,1,0.5
+Slash,Has a high critical hit ratio.,Normal,70,1,20,1,1,1,4
+Sleep Powder,Puts the target to sleep.,Grass,N/A,0.75,15,1,1,1,0.5
+Sludge,Has a ~30% chance to poison the target.,Poison,90,1,20,1,1,1,0.5
+Smog,Has a ~30% chance to poison the target.,Poison,40,0.8,20,1,1,1,0.5
+Smokescreen,Lowers the target's Accuracy by 1 stage.,Normal,N/A,1,20,1,1,1,0.5
+Softboiled,"Restores 1/2 of the user's max HP. However, this move fails if the user's current HP is 511 or 255 HP below its value at full health.",Normal,N/A,N/A,5,1,1,1,0.5
+Solarbeam,"The user prepares on turn one, becoming uncontrollable, and then attacks on turn two.",Grass,180,1,10,1,1,1,0.5
+Sonicboom,Always deals 20 points of damage.,Normal,Set,1,20,1,1,1,0.5
+Spike Cannon,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Normal,20,1,15,3.5,2,5,0.5
+Splash,Doesn't do anything (but we still love it).,Normal,N/A,N/A,40,1,1,1,0.5
+Spore,Puts the target to sleep.,Grass,N/A,1,15,1,1,1,0.5
+Stomp,Has a ~30% chance to make the target flinch.,Normal,65,1,20,1,1,1,0.5
+Strength,Damages the target.,Normal,80,1,15,1,1,1,0.5
+String Shot,Lowers the target's Speed by 1 stage.,Bug,N/A,0.95,40,1,1,1,0.5
+Struggle,"Used automatically when all of the user's other moves have run out of PP or are otherwise inaccessible. The user receives 1/4 recoil damage. Struggle is classified as a Normal-type move, so it is resisted by Rock-type Pokemon and cannot hit Ghost-type Pokemon at all.",Normal,50,1,1,1,1,1,0.5
+Stun Spore,Paralyzes the target.,Grass,N/A,0.75,30,1,1,1,0.5
+Submission,The user receives 1/4 recoil damage.,Fighting,80,1,20,1,1,1,0.5
+Substitute,"The user takes one-fourth of its maximum HP to create a substitute; this move fails if the user does not have enough HP for this. Until the substitute is broken, it receives damage from all attacks made by other Pokemon. In-game, the user can still be inflicted with status effects and stat modifiers from other Pokemon, but this is fixed in Pokemon Stadium. If a Substitute breaks from a hit during a multistrike move such as Fury Attack, the user takes damage from the remaining strikes.",Normal,N/A,N/A,10,1,1,1,0.5
+Super Fang,This move halves the target's current HP.,Normal,Var Dmg,0.9,10,1,1,1,0.5
+Supersonic,Confuses the target.,Normal,N/A,0.75,20,1,1,1,0.5
+Surf,Damages the target.,Water,95,1,15,1,1,1,0.5
+Swift,Ignores Evasion and Accuracy modifiers and will hit Pokemon even if they are in the middle of Fly or Dig. Has a 1-in-256 chance of missing.,Normal,60,1,20,1,1,1,0.5
+Swords Dance,Raises the user's Attack by 2 stages.,Normal,N/A,N/A,30,1,1,1,0.5
+Tackle,Damages the target.,Normal,35,1,35,1,1,1,0.5
+Tail Whip,Lowers the target's Defense by 1 stage.,Normal,N/A,1,30,1,1,1,0.5
+Take Down,The user receives 1/4 recoil damage.,Normal,95,1,20,1,1,1,0.5
+Teleport,Escapes from wild battles; fails automatically in trainer and link battles.,Psychic,N/A,N/A,20,1,1,1,0.5
+Thrash,The user attacks uncontrollably for 2-3 turns and then gets confused.,Normal,90,1,20,2.5,2,3,0.5
+Thunder,Has a ~10% chance to paralyze the target.,Electric,120,0.85,5,1,1,1,0.5
+Thunder Wave,Paralyzes the target.,Electric,N/A,1,20,1,1,1,0.5
+Thunderbolt,Has a ~10% chance to paralyze the target.,Electric,95,1,15,1,1,1,0.5
+Thunderpunch,Has a ~10% chance to paralyze the target.,Electric,70,1,15,1,1,1,0.5
+Thundershock,Has a ~10% chance to paralyze the target.,Electric,40,1,30,1,1,1,0.5
+Toxic,"The target is badly poisoned, with the damage caused by poison doubling after each turn. However, Toxic poisoning will revert to normal poisoning if the poisoned Pokemon is switched out or uses Haze. Damage caused by Leech Seed will also increase as Toxic damage increases.",Poison,N/A,0.85,10,1,1,1,0.5
+Transform,"The user morphs into a near-exact copy of the target. Stats, stat modifiers, type, moves and appearance are changed; the user's level and HP remain the same and each copied move receives only 5 PP.",Normal,N/A,N/A,10,1,1,1,0.5
+Tri Attack,Damages the target.,Normal,85,1,15,1,1,1,0.5
+Twineedle,"Strikes twice; if the first hit breaks the target's Substitute, the real Pokemon will take damage from the second hit. Has a ~20% chance to poison the target .",Bug,40,1,20,2,2,2,0.5
+Vicegrip,Damages the target.,Normal,55,1,30,1,1,1,0.5
+Vine Whip,Damages the target.,Grass,40,1,25,1,1,1,0.5
+Water Gun,Damages the target.,Water,40,1,25,1,1,1,0.5
+Waterfall,Damages the target.,Water,70,1,15,1,1,1,0.5
+Whirlwind,Escapes from wild battles; fails automatically in trainer and link battles.,Normal,N/A,1,20,1,1,1,0.5
+Wing Attack,Damages the target.,Flying,60,1,35,1,1,1,0.5
+Withdraw,Raises the user's Defense by 1 stage.,Water,N/A,N/A,40,1,1,1,0.5
+Wrap,"The user becomes uncontrollable and attacks for 2-5 consecutive turns; the target cannot make attacks of its own during this time, but it may switch out, use items or run away.",Normal,15,0.85,20,3.5,2,5,0.5

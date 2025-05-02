@@ -1,0 +1,3102 @@
+﻿Pokedex Number,Pokemon,Col3,Move
+1,Bulbasaur,Move 1,Swords Dance
+1,Bulbasaur,Move 2,Toxic
+1,Bulbasaur,Move 3,Body Slam
+1,Bulbasaur,Move 4,Take Down
+1,Bulbasaur,Move 5,Double Edge
+1,Bulbasaur,Move 6,Rage
+1,Bulbasaur,Move 7,Mega Drain
+1,Bulbasaur,Move 8,Solarbeam
+1,Bulbasaur,Move 9,Mimic
+1,Bulbasaur,Move 10,Double Team
+1,Bulbasaur,Move 11,Reflect
+1,Bulbasaur,Move 12,Bide
+1,Bulbasaur,Move 13,Rest
+1,Bulbasaur,Move 14,Substitute
+1,Bulbasaur,Move 15,Cut
+2,Ivysaur,Move 1,Swords Dance
+2,Ivysaur,Move 2,Toxic
+2,Ivysaur,Move 3,Body Slam
+2,Ivysaur,Move 4,Take Down
+2,Ivysaur,Move 5,Double Edge
+2,Ivysaur,Move 6,Rage
+2,Ivysaur,Move 7,Mega Drain
+2,Ivysaur,Move 8,Solarbeam
+2,Ivysaur,Move 9,Mimic
+2,Ivysaur,Move 10,Double Team
+2,Ivysaur,Move 11,Reflect
+2,Ivysaur,Move 12,Bide
+2,Ivysaur,Move 13,Rest
+2,Ivysaur,Move 14,Substitute
+2,Ivysaur,Move 15,Cut
+3,Venusaur,Move 1,Swords Dance
+3,Venusaur,Move 2,Toxic
+3,Venusaur,Move 3,Body Slam
+3,Venusaur,Move 4,Take Down
+3,Venusaur,Move 5,Double Edge
+3,Venusaur,Move 6,Hyper Beam
+3,Venusaur,Move 7,Rage
+3,Venusaur,Move 8,Mega Drain
+3,Venusaur,Move 9,Solarbeam
+3,Venusaur,Move 10,Mimic
+3,Venusaur,Move 11,Double Team
+3,Venusaur,Move 12,Reflect
+3,Venusaur,Move 13,Bide
+3,Venusaur,Move 14,Rest
+3,Venusaur,Move 15,Substitute
+3,Venusaur,Move 16,Cut
+3,Venusaur,Move 17,Rock Slide
+3,Venusaur,Move 18,Earthquake
+4,Charmander,Move 1,Mega Punch
+4,Charmander,Move 2,Swords Dance
+4,Charmander,Move 3,Flamethrower
+4,Charmander,Move 4,Mega Kick
+4,Charmander,Move 5,Toxic
+4,Charmander,Move 6,Body Slam
+4,Charmander,Move 7,Take Down
+4,Charmander,Move 8,Double Edge
+4,Charmander,Move 9,Submission
+4,Charmander,Move 10,Counter
+4,Charmander,Move 11,Seismic Toss
+4,Charmander,Move 12,Rage
+4,Charmander,Move 13,Dragon Rage
+4,Charmander,Move 14,Dig
+4,Charmander,Move 15,Mimic
+4,Charmander,Move 16,Double Team
+4,Charmander,Move 17,Reflect
+4,Charmander,Move 18,Bide
+4,Charmander,Move 19,Fire Blast
+4,Charmander,Move 20,Swift
+4,Charmander,Move 21,Skull Bash
+4,Charmander,Move 22,Rest
+4,Charmander,Move 23,Substitute
+4,Charmander,Move 24,Cut
+4,Charmander,Move 25,Strength
+5,Charmeleon,Move 1,Mega Punch
+5,Charmeleon,Move 2,Swords Dance
+5,Charmeleon,Move 3,Flamethrower
+5,Charmeleon,Move 4,Mega Kick
+5,Charmeleon,Move 5,Toxic
+5,Charmeleon,Move 6,Body Slam
+5,Charmeleon,Move 7,Take Down
+5,Charmeleon,Move 8,Double Edge
+5,Charmeleon,Move 9,Submission
+5,Charmeleon,Move 10,Counter
+5,Charmeleon,Move 11,Seismic Toss
+5,Charmeleon,Move 12,Rage
+5,Charmeleon,Move 13,Dragon Rage
+5,Charmeleon,Move 14,Dig
+5,Charmeleon,Move 15,Mimic
+5,Charmeleon,Move 16,Double Team
+5,Charmeleon,Move 17,Reflect
+5,Charmeleon,Move 18,Bide
+5,Charmeleon,Move 19,Fire Blast
+5,Charmeleon,Move 20,Swift
+5,Charmeleon,Move 21,Skull Bash
+5,Charmeleon,Move 22,Rest
+5,Charmeleon,Move 23,Substitute
+5,Charmeleon,Move 24,Cut
+5,Charmeleon,Move 25,Strength
+6,Charizard,Move 1,Mega Punch
+6,Charizard,Move 2,Swords Dance
+6,Charizard,Move 3,Flamethrower
+6,Charizard,Move 4,Mega Kick
+6,Charizard,Move 5,Toxic
+6,Charizard,Move 6,Body Slam
+6,Charizard,Move 7,Take Down
+6,Charizard,Move 8,Double Edge
+6,Charizard,Move 9,Hyper Beam
+6,Charizard,Move 10,Submission
+6,Charizard,Move 11,Counter
+6,Charizard,Move 12,Seismic Toss
+6,Charizard,Move 13,Rage
+6,Charizard,Move 14,Dragon Rage
+6,Charizard,Move 15,Earthquake
+6,Charizard,Move 16,Fissure
+6,Charizard,Move 17,Dig
+6,Charizard,Move 18,Mimic
+6,Charizard,Move 19,Double Team
+6,Charizard,Move 20,Reflect
+6,Charizard,Move 21,Bide
+6,Charizard,Move 22,Fire Blast
+6,Charizard,Move 23,Swift
+6,Charizard,Move 24,Skull Bash
+6,Charizard,Move 25,Rest
+6,Charizard,Move 26,Substitute
+6,Charizard,Move 27,Cut
+6,Charizard,Move 28,Fly
+6,Charizard,Move 29,Strength
+7,Squirtle,Move 1,Mega Punch
+7,Squirtle,Move 2,Mega Kick
+7,Squirtle,Move 3,Toxic
+7,Squirtle,Move 4,Body Slam
+7,Squirtle,Move 5,Take Down
+7,Squirtle,Move 6,Double Edge
+7,Squirtle,Move 7,Bubblebeam
+7,Squirtle,Move 8,Water Gun
+7,Squirtle,Move 9,Ice Beam
+7,Squirtle,Move 10,Blizzard
+7,Squirtle,Move 11,Submission
+7,Squirtle,Move 12,Counter
+7,Squirtle,Move 13,Seismic Toss
+7,Squirtle,Move 14,Rage
+7,Squirtle,Move 15,Dig
+7,Squirtle,Move 16,Mimic
+7,Squirtle,Move 17,Double Team
+7,Squirtle,Move 18,Reflect
+7,Squirtle,Move 19,Bide
+7,Squirtle,Move 20,Skull Bash
+7,Squirtle,Move 21,Rest
+7,Squirtle,Move 22,Substitute
+7,Squirtle,Move 23,Surf
+7,Squirtle,Move 24,Strength
+8,Wartortle,Move 1,Mega Punch
+8,Wartortle,Move 2,Mega Kick
+8,Wartortle,Move 3,Toxic
+8,Wartortle,Move 4,Body Slam
+8,Wartortle,Move 5,Take Down
+8,Wartortle,Move 6,Double Edge
+8,Wartortle,Move 7,Bubblebeam
+8,Wartortle,Move 8,Water Gun
+8,Wartortle,Move 9,Ice Beam
+8,Wartortle,Move 10,Blizzard
+8,Wartortle,Move 11,Submission
+8,Wartortle,Move 12,Counter
+8,Wartortle,Move 13,Seismic Toss
+8,Wartortle,Move 14,Rage
+8,Wartortle,Move 15,Dig
+8,Wartortle,Move 16,Mimic
+8,Wartortle,Move 17,Double Team
+8,Wartortle,Move 18,Reflect
+8,Wartortle,Move 19,Bide
+8,Wartortle,Move 20,Skull Bash
+8,Wartortle,Move 21,Rest
+8,Wartortle,Move 22,Substitute
+8,Wartortle,Move 23,Surf
+8,Wartortle,Move 24,Strength
+9,Blastoise,Move 1,Mega Punch
+9,Blastoise,Move 2,Mega Kick
+9,Blastoise,Move 3,Toxic
+9,Blastoise,Move 4,Body Slam
+9,Blastoise,Move 5,Take Down
+9,Blastoise,Move 6,Double Edge
+9,Blastoise,Move 7,Bubblebeam
+9,Blastoise,Move 8,Water Gun
+9,Blastoise,Move 9,Ice Beam
+9,Blastoise,Move 10,Blizzard
+9,Blastoise,Move 11,Hyper Beam
+9,Blastoise,Move 12,Submission
+9,Blastoise,Move 13,Counter
+9,Blastoise,Move 14,Seismic Toss
+9,Blastoise,Move 15,Rage
+9,Blastoise,Move 16,Earthquake
+9,Blastoise,Move 17,Fissure
+9,Blastoise,Move 18,Dig
+9,Blastoise,Move 19,Mimic
+9,Blastoise,Move 20,Double Team
+9,Blastoise,Move 21,Reflect
+9,Blastoise,Move 22,Bide
+9,Blastoise,Move 23,Skull Bash
+9,Blastoise,Move 24,Rest
+9,Blastoise,Move 25,Substitute
+9,Blastoise,Move 26,Surf
+9,Blastoise,Move 27,Strength
+10,Caterpie,Move 1,Cut
+12,Butterfree,Move 1,Razor Wind
+12,Butterfree,Move 2,Toxic
+12,Butterfree,Move 3,Take Down
+12,Butterfree,Move 4,Double Edge
+12,Butterfree,Move 5,Hyper Beam
+12,Butterfree,Move 6,Rage
+12,Butterfree,Move 7,Mega Drain
+12,Butterfree,Move 8,Solarbeam
+12,Butterfree,Move 9,Psychic
+12,Butterfree,Move 10,Teleport
+12,Butterfree,Move 11,Mimic
+12,Butterfree,Move 12,Double Team
+12,Butterfree,Move 13,Reflect
+12,Butterfree,Move 14,Bide
+12,Butterfree,Move 15,Swift
+12,Butterfree,Move 16,Rest
+12,Butterfree,Move 17,Psywave
+12,Butterfree,Move 18,Substitute
+12,Butterfree,Move 19,Flash
+15,Beedrill,Move 1,Swords Dance
+15,Beedrill,Move 2,Toxic
+15,Beedrill,Move 3,Take Down
+15,Beedrill,Move 4,Double Edge
+15,Beedrill,Move 5,Hyper Beam
+15,Beedrill,Move 6,Rage
+15,Beedrill,Move 7,Mega Drain
+15,Beedrill,Move 8,Mimic
+15,Beedrill,Move 9,Double Team
+15,Beedrill,Move 10,Reflect
+15,Beedrill,Move 11,Bide
+15,Beedrill,Move 12,Swift
+15,Beedrill,Move 13,Skull Bash
+15,Beedrill,Move 14,Rest
+15,Beedrill,Move 15,Substitute
+15,Beedrill,Move 16,Cut
+16,Pidgey,Move 1,Razor Wind
+16,Pidgey,Move 2,Toxic
+16,Pidgey,Move 3,Take Down
+16,Pidgey,Move 4,Double Edge
+16,Pidgey,Move 5,Rage
+16,Pidgey,Move 6,Mimic
+16,Pidgey,Move 7,Double Team
+16,Pidgey,Move 8,Reflect
+16,Pidgey,Move 9,Bide
+16,Pidgey,Move 10,Swift
+16,Pidgey,Move 11,Sky Attack
+16,Pidgey,Move 12,Rest
+16,Pidgey,Move 13,Substitute
+16,Pidgey,Move 14,Fly
+17,Pidgeotto,Move 1,Razor Wind
+17,Pidgeotto,Move 2,Toxic
+17,Pidgeotto,Move 3,Take Down
+17,Pidgeotto,Move 4,Double Edge
+17,Pidgeotto,Move 5,Rage
+17,Pidgeotto,Move 6,Mimic
+17,Pidgeotto,Move 7,Double Team
+17,Pidgeotto,Move 8,Reflect
+17,Pidgeotto,Move 9,Bide
+17,Pidgeotto,Move 10,Swift
+17,Pidgeotto,Move 11,Sky Attack
+17,Pidgeotto,Move 12,Rest
+17,Pidgeotto,Move 13,Substitute
+17,Pidgeotto,Move 14,Fly
+18,Pidgeot,Move 1,Razor Wind
+18,Pidgeot,Move 2,Toxic
+18,Pidgeot,Move 3,Take Down
+18,Pidgeot,Move 4,Double Edge
+18,Pidgeot,Move 5,Hyper Beam
+18,Pidgeot,Move 6,Rage
+18,Pidgeot,Move 7,Mimic
+18,Pidgeot,Move 8,Double Team
+18,Pidgeot,Move 9,Reflect
+18,Pidgeot,Move 10,Bide
+18,Pidgeot,Move 11,Swift
+18,Pidgeot,Move 12,Sky Attack
+18,Pidgeot,Move 13,Rest
+18,Pidgeot,Move 14,Substitute
+18,Pidgeot,Move 15,Fly
+19,Rattata,Move 1,Swords Dance
+19,Rattata,Move 2,Toxic
+19,Rattata,Move 3,Body Slam
+19,Rattata,Move 4,Take Down
+19,Rattata,Move 5,Double Edge
+19,Rattata,Move 6,Bubblebeam
+19,Rattata,Move 7,Water Gun
+19,Rattata,Move 8,Blizzard
+19,Rattata,Move 9,Rage
+19,Rattata,Move 10,Thunderbolt
+19,Rattata,Move 11,Thunder
+19,Rattata,Move 12,Dig
+19,Rattata,Move 13,Mimic
+19,Rattata,Move 14,Double Team
+19,Rattata,Move 15,Bide
+19,Rattata,Move 16,Swift
+19,Rattata,Move 17,Skull Bash
+19,Rattata,Move 18,Rest
+19,Rattata,Move 19,Substitute
+20,Raticate,Move 1,Swords Dance
+20,Raticate,Move 2,Toxic
+20,Raticate,Move 3,Body Slam
+20,Raticate,Move 4,Take Down
+20,Raticate,Move 5,Double Edge
+20,Raticate,Move 6,Bubblebeam
+20,Raticate,Move 7,Water Gun
+20,Raticate,Move 8,Ice Beam
+20,Raticate,Move 9,Blizzard
+20,Raticate,Move 10,Hyper Beam
+20,Raticate,Move 11,Rage
+20,Raticate,Move 12,Thunderbolt
+20,Raticate,Move 13,Thunder
+20,Raticate,Move 14,Dig
+20,Raticate,Move 15,Mimic
+20,Raticate,Move 16,Double Team
+20,Raticate,Move 17,Bide
+20,Raticate,Move 18,Swift
+20,Raticate,Move 19,Skull Bash
+20,Raticate,Move 20,Rest
+20,Raticate,Move 21,Substitute
+21,Spearow,Move 1,Razor Wind
+21,Spearow,Move 2,Toxic
+21,Spearow,Move 3,Take Down
+21,Spearow,Move 4,Double Edge
+21,Spearow,Move 5,Rage
+21,Spearow,Move 6,Mimic
+21,Spearow,Move 7,Double Team
+21,Spearow,Move 8,Bide
+21,Spearow,Move 9,Swift
+21,Spearow,Move 10,Sky Attack
+21,Spearow,Move 11,Rest
+21,Spearow,Move 12,Substitute
+21,Spearow,Move 13,Fly
+22,Fearow,Move 1,Razor Wind
+22,Fearow,Move 2,Toxic
+22,Fearow,Move 3,Take Down
+22,Fearow,Move 4,Double Edge
+22,Fearow,Move 5,Hyper Beam
+22,Fearow,Move 6,Rage
+22,Fearow,Move 7,Mimic
+22,Fearow,Move 8,Double Team
+22,Fearow,Move 9,Bide
+22,Fearow,Move 10,Swift
+22,Fearow,Move 11,Sky Attack
+22,Fearow,Move 12,Rest
+22,Fearow,Move 13,Substitute
+22,Fearow,Move 14,Fly
+23,Ekans,Move 1,Toxic
+23,Ekans,Move 2,Body Slam
+23,Ekans,Move 3,Take Down
+23,Ekans,Move 4,Double Edge
+23,Ekans,Move 5,Rage
+23,Ekans,Move 6,Mega Drain
+23,Ekans,Move 7,Earthquake
+23,Ekans,Move 8,Fissure
+23,Ekans,Move 9,Dig
+23,Ekans,Move 10,Mimic
+23,Ekans,Move 11,Double Team
+23,Ekans,Move 12,Bide
+23,Ekans,Move 13,Skull Bash
+23,Ekans,Move 14,Rest
+23,Ekans,Move 15,Rock Slide
+23,Ekans,Move 16,Substitute
+23,Ekans,Move 17,Strength
+24,Arbok,Move 1,Toxic
+24,Arbok,Move 2,Body Slam
+24,Arbok,Move 3,Take Down
+24,Arbok,Move 4,Double Edge
+24,Arbok,Move 5,Hyper Beam
+24,Arbok,Move 6,Rage
+24,Arbok,Move 7,Mega Drain
+24,Arbok,Move 8,Earthquake
+24,Arbok,Move 9,Fissure
+24,Arbok,Move 10,Dig
+24,Arbok,Move 11,Mimic
+24,Arbok,Move 12,Double Team
+24,Arbok,Move 13,Bide
+24,Arbok,Move 14,Skull Bash
+24,Arbok,Move 15,Rest
+24,Arbok,Move 16,Rock Slide
+24,Arbok,Move 17,Substitute
+24,Arbok,Move 18,Strength
+25,Pikachu,Move 1,Mega Punch
+25,Pikachu,Move 2,Mega Kick
+25,Pikachu,Move 3,Toxic
+25,Pikachu,Move 4,Body Slam
+25,Pikachu,Move 5,Take Down
+25,Pikachu,Move 6,Double Edge
+25,Pikachu,Move 7,Pay Day
+25,Pikachu,Move 8,Submission
+25,Pikachu,Move 9,Seismic Toss
+25,Pikachu,Move 10,Rage
+25,Pikachu,Move 11,Thunderbolt
+25,Pikachu,Move 12,Thunder
+25,Pikachu,Move 13,Mimic
+25,Pikachu,Move 14,Double Team
+25,Pikachu,Move 15,Reflect
+25,Pikachu,Move 16,Bide
+25,Pikachu,Move 17,Swift
+25,Pikachu,Move 18,Skull Bash
+25,Pikachu,Move 19,Rest
+25,Pikachu,Move 20,Thunder Wave
+25,Pikachu,Move 21,Substitute
+25,Pikachu,Move 22,Cut
+25,Pikachu,Move 23,Fly
+25,Pikachu,Move 24,Surf
+25,Pikachu,Move 25,Strength
+25,Pikachu,Move 26,Flash
+26,Raichu,Move 1,Mega Punch
+26,Raichu,Move 2,Mega Kick
+26,Raichu,Move 3,Toxic
+26,Raichu,Move 4,Body Slam
+26,Raichu,Move 5,Take Down
+26,Raichu,Move 6,Double Edge
+26,Raichu,Move 7,Hyper Beam
+26,Raichu,Move 8,Pay Day
+26,Raichu,Move 9,Submission
+26,Raichu,Move 10,Seismic Toss
+26,Raichu,Move 11,Rage
+26,Raichu,Move 12,Thunderbolt
+26,Raichu,Move 13,Thunder
+26,Raichu,Move 14,Mimic
+26,Raichu,Move 15,Double Team
+26,Raichu,Move 16,Reflect
+26,Raichu,Move 17,Bide
+26,Raichu,Move 18,Swift
+26,Raichu,Move 19,Skull Bash
+26,Raichu,Move 20,Rest
+26,Raichu,Move 21,Thunder Wave
+26,Raichu,Move 22,Substitute
+26,Raichu,Move 23,Flash
+27,Sandshrew,Move 1,Swords Dance
+27,Sandshrew,Move 2,Toxic
+27,Sandshrew,Move 3,Body Slam
+27,Sandshrew,Move 4,Take Down
+27,Sandshrew,Move 5,Double Edge
+27,Sandshrew,Move 6,Submission
+27,Sandshrew,Move 7,Seismic Toss
+27,Sandshrew,Move 8,Rage
+27,Sandshrew,Move 9,Earthquake
+27,Sandshrew,Move 10,Fissure
+27,Sandshrew,Move 11,Dig
+27,Sandshrew,Move 12,Mimic
+27,Sandshrew,Move 13,Double Team
+27,Sandshrew,Move 14,Bide
+27,Sandshrew,Move 15,Swift
+27,Sandshrew,Move 16,Skull Bash
+27,Sandshrew,Move 17,Rest
+27,Sandshrew,Move 18,Rock Slide
+27,Sandshrew,Move 19,Substitute
+27,Sandshrew,Move 20,Cut
+27,Sandshrew,Move 21,Strength
+28,Sandslash,Move 1,Swords Dance
+28,Sandslash,Move 2,Toxic
+28,Sandslash,Move 3,Body Slam
+28,Sandslash,Move 4,Take Down
+28,Sandslash,Move 5,Double Edge
+28,Sandslash,Move 6,Hyper Beam
+28,Sandslash,Move 7,Submission
+28,Sandslash,Move 8,Seismic Toss
+28,Sandslash,Move 9,Rage
+28,Sandslash,Move 10,Earthquake
+28,Sandslash,Move 11,Fissure
+28,Sandslash,Move 12,Dig
+28,Sandslash,Move 13,Mimic
+28,Sandslash,Move 14,Double Team
+28,Sandslash,Move 15,Bide
+28,Sandslash,Move 16,Swift
+28,Sandslash,Move 17,Skull Bash
+28,Sandslash,Move 18,Rest
+28,Sandslash,Move 19,Rock Slide
+28,Sandslash,Move 20,Substitute
+28,Sandslash,Move 21,Cut
+28,Sandslash,Move 22,Strength
+29,Nidoran-f,Move 1,Toxic
+29,Nidoran-f,Move 2,Body Slam
+29,Nidoran-f,Move 3,Take Down
+29,Nidoran-f,Move 4,Double Edge
+29,Nidoran-f,Move 5,Blizzard
+29,Nidoran-f,Move 6,Rage
+29,Nidoran-f,Move 7,Thunderbolt
+29,Nidoran-f,Move 8,Thunder
+29,Nidoran-f,Move 9,Mimic
+29,Nidoran-f,Move 10,Double Team
+29,Nidoran-f,Move 11,Reflect
+29,Nidoran-f,Move 12,Bide
+29,Nidoran-f,Move 13,Skull Bash
+29,Nidoran-f,Move 14,Rest
+29,Nidoran-f,Move 15,Substitute
+30,Nidorina,Move 1,Toxic
+30,Nidorina,Move 2,Horn Drill
+30,Nidorina,Move 3,Body Slam
+30,Nidorina,Move 4,Take Down
+30,Nidorina,Move 5,Double Edge
+30,Nidorina,Move 6,Bubblebeam
+30,Nidorina,Move 7,Water Gun
+30,Nidorina,Move 8,Ice Beam
+30,Nidorina,Move 9,Blizzard
+30,Nidorina,Move 10,Rage
+30,Nidorina,Move 11,Thunderbolt
+30,Nidorina,Move 12,Thunder
+30,Nidorina,Move 13,Mimic
+30,Nidorina,Move 14,Double Team
+30,Nidorina,Move 15,Reflect
+30,Nidorina,Move 16,Bide
+30,Nidorina,Move 17,Skull Bash
+30,Nidorina,Move 18,Rest
+30,Nidorina,Move 19,Substitute
+31,Nidoqueen,Move 1,Mega Punch
+31,Nidoqueen,Move 2,Flamethrower
+31,Nidoqueen,Move 3,Mega Kick
+31,Nidoqueen,Move 4,Toxic
+31,Nidoqueen,Move 5,Horn Drill
+31,Nidoqueen,Move 6,Body Slam
+31,Nidoqueen,Move 7,Take Down
+31,Nidoqueen,Move 8,Double Edge
+31,Nidoqueen,Move 9,Bubblebeam
+31,Nidoqueen,Move 10,Water Gun
+31,Nidoqueen,Move 11,Ice Beam
+31,Nidoqueen,Move 12,Blizzard
+31,Nidoqueen,Move 13,Hyper Beam
+31,Nidoqueen,Move 14,Pay Day
+31,Nidoqueen,Move 15,Submission
+31,Nidoqueen,Move 16,Counter
+31,Nidoqueen,Move 17,Seismic Toss
+31,Nidoqueen,Move 18,Rage
+31,Nidoqueen,Move 19,Thunderbolt
+31,Nidoqueen,Move 20,Thunder
+31,Nidoqueen,Move 21,Earthquake
+31,Nidoqueen,Move 22,Fissure
+31,Nidoqueen,Move 23,Mimic
+31,Nidoqueen,Move 24,Double Team
+31,Nidoqueen,Move 25,Reflect
+31,Nidoqueen,Move 26,Bide
+31,Nidoqueen,Move 27,Fire Blast
+31,Nidoqueen,Move 28,Skull Bash
+31,Nidoqueen,Move 29,Rest
+31,Nidoqueen,Move 30,Rock Slide
+31,Nidoqueen,Move 31,Substitute
+31,Nidoqueen,Move 32,Surf
+31,Nidoqueen,Move 33,Strength
+32,Nidoran-m,Move 1,Toxic
+32,Nidoran-m,Move 2,Horn Drill
+32,Nidoran-m,Move 3,Body Slam
+32,Nidoran-m,Move 4,Take Down
+32,Nidoran-m,Move 5,Double Edge
+32,Nidoran-m,Move 6,Blizzard
+32,Nidoran-m,Move 7,Rage
+32,Nidoran-m,Move 8,Thunderbolt
+32,Nidoran-m,Move 9,Thunder
+32,Nidoran-m,Move 10,Mimic
+32,Nidoran-m,Move 11,Double Team
+32,Nidoran-m,Move 12,Reflect
+32,Nidoran-m,Move 13,Bide
+32,Nidoran-m,Move 14,Skull Bash
+32,Nidoran-m,Move 15,Rest
+32,Nidoran-m,Move 16,Substitute
+33,Nidorino,Move 1,Toxic
+33,Nidorino,Move 2,Horn Drill
+33,Nidorino,Move 3,Body Slam
+33,Nidorino,Move 4,Take Down
+33,Nidorino,Move 5,Double Edge
+33,Nidorino,Move 6,Bubblebeam
+33,Nidorino,Move 7,Water Gun
+33,Nidorino,Move 8,Ice Beam
+33,Nidorino,Move 9,Blizzard
+33,Nidorino,Move 10,Rage
+33,Nidorino,Move 11,Thunderbolt
+33,Nidorino,Move 12,Thunder
+33,Nidorino,Move 13,Mimic
+33,Nidorino,Move 14,Double Team
+33,Nidorino,Move 15,Reflect
+33,Nidorino,Move 16,Bide
+33,Nidorino,Move 17,Skull Bash
+33,Nidorino,Move 18,Rest
+33,Nidorino,Move 19,Substitute
+34,Nidoking,Move 1,Mega Punch
+34,Nidoking,Move 2,Flamethrower
+34,Nidoking,Move 3,Mega Kick
+34,Nidoking,Move 4,Toxic
+34,Nidoking,Move 5,Horn Drill
+34,Nidoking,Move 6,Body Slam
+34,Nidoking,Move 7,Take Down
+34,Nidoking,Move 8,Double Edge
+34,Nidoking,Move 9,Bubblebeam
+34,Nidoking,Move 10,Water Gun
+34,Nidoking,Move 11,Ice Beam
+34,Nidoking,Move 12,Blizzard
+34,Nidoking,Move 13,Hyper Beam
+34,Nidoking,Move 14,Pay Day
+34,Nidoking,Move 15,Submission
+34,Nidoking,Move 16,Counter
+34,Nidoking,Move 17,Seismic Toss
+34,Nidoking,Move 18,Rage
+34,Nidoking,Move 19,Thunderbolt
+34,Nidoking,Move 20,Thunder
+34,Nidoking,Move 21,Earthquake
+34,Nidoking,Move 22,Fissure
+34,Nidoking,Move 23,Mimic
+34,Nidoking,Move 24,Double Team
+34,Nidoking,Move 25,Reflect
+34,Nidoking,Move 26,Bide
+34,Nidoking,Move 27,Fire Blast
+34,Nidoking,Move 28,Skull Bash
+34,Nidoking,Move 29,Rest
+34,Nidoking,Move 30,Rock Slide
+34,Nidoking,Move 31,Substitute
+34,Nidoking,Move 32,Surf
+34,Nidoking,Move 33,Strength
+35,Clefairy,Move 1,Mega Punch
+35,Clefairy,Move 2,Flamethrower
+35,Clefairy,Move 3,Mega Kick
+35,Clefairy,Move 4,Toxic
+35,Clefairy,Move 5,Body Slam
+35,Clefairy,Move 6,Take Down
+35,Clefairy,Move 7,Double Edge
+35,Clefairy,Move 8,Bubblebeam
+35,Clefairy,Move 9,Water Gun
+35,Clefairy,Move 10,Ice Beam
+35,Clefairy,Move 11,Blizzard
+35,Clefairy,Move 12,Submission
+35,Clefairy,Move 13,Counter
+35,Clefairy,Move 14,Seismic Toss
+35,Clefairy,Move 15,Rage
+35,Clefairy,Move 16,Solarbeam
+35,Clefairy,Move 17,Thunderbolt
+35,Clefairy,Move 18,Thunder
+35,Clefairy,Move 19,Psychic
+35,Clefairy,Move 20,Teleport
+35,Clefairy,Move 21,Mimic
+35,Clefairy,Move 22,Double Team
+35,Clefairy,Move 23,Reflect
+35,Clefairy,Move 24,Bide
+35,Clefairy,Move 25,Metronome
+35,Clefairy,Move 26,Fire Blast
+35,Clefairy,Move 27,Skull Bash
+35,Clefairy,Move 28,Rest
+35,Clefairy,Move 29,Thunder Wave
+35,Clefairy,Move 30,Psywave
+35,Clefairy,Move 31,Tri Attack
+35,Clefairy,Move 32,Substitute
+35,Clefairy,Move 33,Strength
+35,Clefairy,Move 34,Flash
+35,Clefairy,Move 35,Softboiled
+36,Clefable,Move 1,Mega Punch
+36,Clefable,Move 2,Flamethrower
+36,Clefable,Move 3,Mega Kick
+36,Clefable,Move 4,Toxic
+36,Clefable,Move 5,Body Slam
+36,Clefable,Move 6,Take Down
+36,Clefable,Move 7,Double Edge
+36,Clefable,Move 8,Bubblebeam
+36,Clefable,Move 9,Water Gun
+36,Clefable,Move 10,Ice Beam
+36,Clefable,Move 11,Blizzard
+36,Clefable,Move 12,Hyper Beam
+36,Clefable,Move 13,Submission
+36,Clefable,Move 14,Counter
+36,Clefable,Move 15,Seismic Toss
+36,Clefable,Move 16,Rage
+36,Clefable,Move 17,Solarbeam
+36,Clefable,Move 18,Thunderbolt
+36,Clefable,Move 19,Thunder
+36,Clefable,Move 20,Psychic
+36,Clefable,Move 21,Teleport
+36,Clefable,Move 22,Mimic
+36,Clefable,Move 23,Double Team
+36,Clefable,Move 24,Reflect
+36,Clefable,Move 25,Bide
+36,Clefable,Move 26,Metronome
+36,Clefable,Move 27,Fire Blast
+36,Clefable,Move 28,Skull Bash
+36,Clefable,Move 29,Softboiled
+36,Clefable,Move 30,Rest
+36,Clefable,Move 31,Thunder Wave
+36,Clefable,Move 32,Psywave
+36,Clefable,Move 33,Tri Attack
+36,Clefable,Move 34,Substitute
+36,Clefable,Move 35,Strength
+36,Clefable,Move 36,Flash
+37,Vulpix,Move 1,Toxic
+37,Vulpix,Move 2,Flamethrower
+37,Vulpix,Move 3,Body Slam
+37,Vulpix,Move 4,Take Down
+37,Vulpix,Move 5,Double Edge
+37,Vulpix,Move 6,Rage
+37,Vulpix,Move 7,Dig
+37,Vulpix,Move 8,Mimic
+37,Vulpix,Move 9,Double Team
+37,Vulpix,Move 10,Reflect
+37,Vulpix,Move 11,Bide
+37,Vulpix,Move 12,Fire Blast
+37,Vulpix,Move 13,Swift
+37,Vulpix,Move 14,Skull Bash
+37,Vulpix,Move 15,Rest
+37,Vulpix,Move 16,Substitute
+38,Ninetales,Move 1,Flamethrower
+38,Ninetales,Move 2,Toxic
+38,Ninetales,Move 3,Body Slam
+38,Ninetales,Move 4,Take Down
+38,Ninetales,Move 5,Double Edge
+38,Ninetales,Move 6,Hyper Beam
+38,Ninetales,Move 7,Rage
+38,Ninetales,Move 8,Solarbeam
+38,Ninetales,Move 9,Dig
+38,Ninetales,Move 10,Mimic
+38,Ninetales,Move 11,Double Team
+38,Ninetales,Move 12,Reflect
+38,Ninetales,Move 13,Bide
+38,Ninetales,Move 14,Fire Blast
+38,Ninetales,Move 15,Swift
+38,Ninetales,Move 16,Skull Bash
+38,Ninetales,Move 17,Rest
+38,Ninetales,Move 18,Substitute
+39,Jigglypuff,Move 1,Mega Punch
+39,Jigglypuff,Move 2,Flamethrower
+39,Jigglypuff,Move 3,Mega Kick
+39,Jigglypuff,Move 4,Toxic
+39,Jigglypuff,Move 5,Body Slam
+39,Jigglypuff,Move 6,Take Down
+39,Jigglypuff,Move 7,Double Edge
+39,Jigglypuff,Move 8,Bubblebeam
+39,Jigglypuff,Move 9,Water Gun
+39,Jigglypuff,Move 10,Ice Beam
+39,Jigglypuff,Move 11,Blizzard
+39,Jigglypuff,Move 12,Submission
+39,Jigglypuff,Move 13,Counter
+39,Jigglypuff,Move 14,Seismic Toss
+39,Jigglypuff,Move 15,Rage
+39,Jigglypuff,Move 16,Solarbeam
+39,Jigglypuff,Move 17,Thunderbolt
+39,Jigglypuff,Move 18,Thunder
+39,Jigglypuff,Move 19,Psychic
+39,Jigglypuff,Move 20,Teleport
+39,Jigglypuff,Move 21,Mimic
+39,Jigglypuff,Move 22,Double Team
+39,Jigglypuff,Move 23,Reflect
+39,Jigglypuff,Move 24,Bide
+39,Jigglypuff,Move 25,Fire Blast
+39,Jigglypuff,Move 26,Skull Bash
+39,Jigglypuff,Move 27,Rest
+39,Jigglypuff,Move 28,Thunder Wave
+39,Jigglypuff,Move 29,Psywave
+39,Jigglypuff,Move 30,Tri Attack
+39,Jigglypuff,Move 31,Substitute
+39,Jigglypuff,Move 32,Strength
+39,Jigglypuff,Move 33,Flash
+40,Wigglytuff,Move 1,Mega Punch
+40,Wigglytuff,Move 2,Flamethrower
+40,Wigglytuff,Move 3,Mega Kick
+40,Wigglytuff,Move 4,Toxic
+40,Wigglytuff,Move 5,Body Slam
+40,Wigglytuff,Move 6,Take Down
+40,Wigglytuff,Move 7,Double Edge
+40,Wigglytuff,Move 8,Bubblebeam
+40,Wigglytuff,Move 9,Water Gun
+40,Wigglytuff,Move 10,Ice Beam
+40,Wigglytuff,Move 11,Blizzard
+40,Wigglytuff,Move 12,Hyper Beam
+40,Wigglytuff,Move 13,Submission
+40,Wigglytuff,Move 14,Counter
+40,Wigglytuff,Move 15,Seismic Toss
+40,Wigglytuff,Move 16,Rage
+40,Wigglytuff,Move 17,Solarbeam
+40,Wigglytuff,Move 18,Thunderbolt
+40,Wigglytuff,Move 19,Thunder
+40,Wigglytuff,Move 20,Psychic
+40,Wigglytuff,Move 21,Teleport
+40,Wigglytuff,Move 22,Mimic
+40,Wigglytuff,Move 23,Double Team
+40,Wigglytuff,Move 24,Reflect
+40,Wigglytuff,Move 25,Bide
+40,Wigglytuff,Move 26,Fire Blast
+40,Wigglytuff,Move 27,Skull Bash
+40,Wigglytuff,Move 28,Rest
+40,Wigglytuff,Move 29,Thunder Wave
+40,Wigglytuff,Move 30,Psywave
+40,Wigglytuff,Move 31,Tri Attack
+40,Wigglytuff,Move 32,Substitute
+40,Wigglytuff,Move 33,Strength
+40,Wigglytuff,Move 34,Flash
+41,Zubat,Move 1,Razor Wind
+41,Zubat,Move 2,Toxic
+41,Zubat,Move 3,Take Down
+41,Zubat,Move 4,Double Edge
+41,Zubat,Move 5,Rage
+41,Zubat,Move 6,Mega Drain
+41,Zubat,Move 7,Mimic
+41,Zubat,Move 8,Double Team
+41,Zubat,Move 9,Bide
+41,Zubat,Move 10,Swift
+41,Zubat,Move 11,Rest
+41,Zubat,Move 12,Substitute
+41,Zubat,Move 13,Fly
+42,Golbat,Move 1,Razor Wind
+42,Golbat,Move 2,Toxic
+42,Golbat,Move 3,Take Down
+42,Golbat,Move 4,Double Edge
+42,Golbat,Move 5,Hyper Beam
+42,Golbat,Move 6,Rage
+42,Golbat,Move 7,Mega Drain
+42,Golbat,Move 8,Mimic
+42,Golbat,Move 9,Double Team
+42,Golbat,Move 10,Bide
+42,Golbat,Move 11,Swift
+42,Golbat,Move 12,Rest
+42,Golbat,Move 13,Substitute
+42,Golbat,Move 14,Fly
+43,Oddish,Move 1,Swords Dance
+43,Oddish,Move 2,Toxic
+43,Oddish,Move 3,Take Down
+43,Oddish,Move 4,Double Edge
+43,Oddish,Move 5,Rage
+43,Oddish,Move 6,Mega Drain
+43,Oddish,Move 7,Solarbeam
+43,Oddish,Move 8,Mimic
+43,Oddish,Move 9,Double Team
+43,Oddish,Move 10,Reflect
+43,Oddish,Move 11,Bide
+43,Oddish,Move 12,Rest
+43,Oddish,Move 13,Substitute
+43,Oddish,Move 14,Cut
+44,Gloom,Move 1,Swords Dance
+44,Gloom,Move 2,Toxic
+44,Gloom,Move 3,Take Down
+44,Gloom,Move 4,Double Edge
+44,Gloom,Move 5,Rage
+44,Gloom,Move 6,Mega Drain
+44,Gloom,Move 7,Solarbeam
+44,Gloom,Move 8,Mimic
+44,Gloom,Move 9,Double Team
+44,Gloom,Move 10,Reflect
+44,Gloom,Move 11,Bide
+44,Gloom,Move 12,Rest
+44,Gloom,Move 13,Substitute
+44,Gloom,Move 14,Cut
+45,Vileplume,Move 1,Swords Dance
+45,Vileplume,Move 2,Toxic
+45,Vileplume,Move 3,Body Slam
+45,Vileplume,Move 4,Take Down
+45,Vileplume,Move 5,Double Edge
+45,Vileplume,Move 6,Hyper Beam
+45,Vileplume,Move 7,Rage
+45,Vileplume,Move 8,Mega Drain
+45,Vileplume,Move 9,Solarbeam
+45,Vileplume,Move 10,Mimic
+45,Vileplume,Move 11,Double Team
+45,Vileplume,Move 12,Reflect
+45,Vileplume,Move 13,Bide
+45,Vileplume,Move 14,Rest
+45,Vileplume,Move 15,Substitute
+45,Vileplume,Move 16,Cut
+46,Paras,Move 1,Swords Dance
+46,Paras,Move 2,Toxic
+46,Paras,Move 3,Body Slam
+46,Paras,Move 4,Take Down
+46,Paras,Move 5,Double Edge
+46,Paras,Move 6,Rage
+46,Paras,Move 7,Mega Drain
+46,Paras,Move 8,Solarbeam
+46,Paras,Move 9,Dig
+46,Paras,Move 10,Mimic
+46,Paras,Move 11,Double Team
+46,Paras,Move 12,Reflect
+46,Paras,Move 13,Bide
+46,Paras,Move 14,Skull Bash
+46,Paras,Move 15,Rest
+46,Paras,Move 16,Substitute
+46,Paras,Move 17,Cut
+47,Parasect,Move 1,Swords Dance
+47,Parasect,Move 2,Toxic
+47,Parasect,Move 3,Body Slam
+47,Parasect,Move 4,Take Down
+47,Parasect,Move 5,Double Edge
+47,Parasect,Move 6,Hyper Beam
+47,Parasect,Move 7,Rage
+47,Parasect,Move 8,Mega Drain
+47,Parasect,Move 9,Solarbeam
+47,Parasect,Move 10,Dig
+47,Parasect,Move 11,Mimic
+47,Parasect,Move 12,Double Team
+47,Parasect,Move 13,Reflect
+47,Parasect,Move 14,Bide
+47,Parasect,Move 15,Skull Bash
+47,Parasect,Move 16,Rest
+47,Parasect,Move 17,Substitute
+47,Parasect,Move 18,Cut
+48,Venonat,Move 1,Toxic
+48,Venonat,Move 2,Take Down
+48,Venonat,Move 3,Double Edge
+48,Venonat,Move 4,Rage
+48,Venonat,Move 5,Mega Drain
+48,Venonat,Move 6,Solarbeam
+48,Venonat,Move 7,Psychic
+48,Venonat,Move 8,Mimic
+48,Venonat,Move 9,Double Team
+48,Venonat,Move 10,Reflect
+48,Venonat,Move 11,Bide
+48,Venonat,Move 12,Rest
+48,Venonat,Move 13,Psywave
+48,Venonat,Move 14,Substitute
+48,Venonat,Move 15,Flash
+49,Venomoth,Move 1,Razor Wind
+49,Venomoth,Move 2,Toxic
+49,Venomoth,Move 3,Take Down
+49,Venomoth,Move 4,Double Edge
+49,Venomoth,Move 5,Hyper Beam
+49,Venomoth,Move 6,Rage
+49,Venomoth,Move 7,Mega Drain
+49,Venomoth,Move 8,Solarbeam
+49,Venomoth,Move 9,Psychic
+49,Venomoth,Move 10,Teleport
+49,Venomoth,Move 11,Mimic
+49,Venomoth,Move 12,Double Team
+49,Venomoth,Move 13,Reflect
+49,Venomoth,Move 14,Bide
+49,Venomoth,Move 15,Swift
+49,Venomoth,Move 16,Rest
+49,Venomoth,Move 17,Psywave
+49,Venomoth,Move 18,Substitute
+49,Venomoth,Move 19,Flash
+50,Diglett,Move 1,Toxic
+50,Diglett,Move 2,Body Slam
+50,Diglett,Move 3,Take Down
+50,Diglett,Move 4,Double Edge
+50,Diglett,Move 5,Rage
+50,Diglett,Move 6,Earthquake
+50,Diglett,Move 7,Fissure
+50,Diglett,Move 8,Dig
+50,Diglett,Move 9,Mimic
+50,Diglett,Move 10,Double Team
+50,Diglett,Move 11,Bide
+50,Diglett,Move 12,Rest
+50,Diglett,Move 13,Rock Slide
+50,Diglett,Move 14,Substitute
+50,Diglett,Move 15,Cut
+51,Dugtrio,Move 1,Toxic
+51,Dugtrio,Move 2,Body Slam
+51,Dugtrio,Move 3,Take Down
+51,Dugtrio,Move 4,Double Edge
+51,Dugtrio,Move 5,Hyper Beam
+51,Dugtrio,Move 6,Rage
+51,Dugtrio,Move 7,Earthquake
+51,Dugtrio,Move 8,Fissure
+51,Dugtrio,Move 9,Dig
+51,Dugtrio,Move 10,Mimic
+51,Dugtrio,Move 11,Double Team
+51,Dugtrio,Move 12,Bide
+51,Dugtrio,Move 13,Rest
+51,Dugtrio,Move 14,Rock Slide
+51,Dugtrio,Move 15,Substitute
+51,Dugtrio,Move 16,Cut
+51,Dugtrio,Move 17,Tri Attack
+52,Meowth,Move 1,Toxic
+52,Meowth,Move 2,Body Slam
+52,Meowth,Move 3,Take Down
+52,Meowth,Move 4,Double Edge
+52,Meowth,Move 5,Bubblebeam
+52,Meowth,Move 6,Water Gun
+52,Meowth,Move 7,Pay Day
+52,Meowth,Move 8,Rage
+52,Meowth,Move 9,Thunderbolt
+52,Meowth,Move 10,Thunder
+52,Meowth,Move 11,Mimic
+52,Meowth,Move 12,Double Team
+52,Meowth,Move 13,Bide
+52,Meowth,Move 14,Swift
+52,Meowth,Move 15,Skull Bash
+52,Meowth,Move 16,Rest
+52,Meowth,Move 17,Substitute
+53,Persian,Move 1,Toxic
+53,Persian,Move 2,Body Slam
+53,Persian,Move 3,Take Down
+53,Persian,Move 4,Double Edge
+53,Persian,Move 5,Bubblebeam
+53,Persian,Move 6,Water Gun
+53,Persian,Move 7,Hyper Beam
+53,Persian,Move 8,Pay Day
+53,Persian,Move 9,Rage
+53,Persian,Move 10,Thunderbolt
+53,Persian,Move 11,Thunder
+53,Persian,Move 12,Mimic
+53,Persian,Move 13,Double Team
+53,Persian,Move 14,Bide
+53,Persian,Move 15,Swift
+53,Persian,Move 16,Skull Bash
+53,Persian,Move 17,Rest
+53,Persian,Move 18,Substitute
+54,Psyduck,Move 1,Mega Punch
+54,Psyduck,Move 2,Mega Kick
+54,Psyduck,Move 3,Toxic
+54,Psyduck,Move 4,Body Slam
+54,Psyduck,Move 5,Take Down
+54,Psyduck,Move 6,Double Edge
+54,Psyduck,Move 7,Bubblebeam
+54,Psyduck,Move 8,Water Gun
+54,Psyduck,Move 9,Ice Beam
+54,Psyduck,Move 10,Blizzard
+54,Psyduck,Move 11,Pay Day
+54,Psyduck,Move 12,Submission
+54,Psyduck,Move 13,Counter
+54,Psyduck,Move 14,Seismic Toss
+54,Psyduck,Move 15,Rage
+54,Psyduck,Move 16,Dig
+54,Psyduck,Move 17,Mimic
+54,Psyduck,Move 18,Double Team
+54,Psyduck,Move 19,Bide
+54,Psyduck,Move 20,Swift
+54,Psyduck,Move 21,Skull Bash
+54,Psyduck,Move 22,Rest
+54,Psyduck,Move 23,Psychic
+54,Psyduck,Move 24,Psywave
+54,Psyduck,Move 25,Substitute
+54,Psyduck,Move 26,Surf
+54,Psyduck,Move 27,Strength
+55,Golduck,Move 1,Mega Punch
+55,Golduck,Move 2,Mega Kick
+55,Golduck,Move 3,Toxic
+55,Golduck,Move 4,Body Slam
+55,Golduck,Move 5,Take Down
+55,Golduck,Move 6,Double Edge
+55,Golduck,Move 7,Bubblebeam
+55,Golduck,Move 8,Water Gun
+55,Golduck,Move 9,Ice Beam
+55,Golduck,Move 10,Blizzard
+55,Golduck,Move 11,Hyper Beam
+55,Golduck,Move 12,Pay Day
+55,Golduck,Move 13,Submission
+55,Golduck,Move 14,Counter
+55,Golduck,Move 15,Seismic Toss
+55,Golduck,Move 16,Rage
+55,Golduck,Move 17,Dig
+55,Golduck,Move 18,Mimic
+55,Golduck,Move 19,Double Team
+55,Golduck,Move 20,Bide
+55,Golduck,Move 21,Swift
+55,Golduck,Move 22,Skull Bash
+55,Golduck,Move 23,Rest
+55,Golduck,Move 24,Substitute
+55,Golduck,Move 25,Surf
+55,Golduck,Move 26,Strength
+55,Golduck,Move 27,Psychic
+55,Golduck,Move 28,Psywave
+56,Mankey,Move 1,Mega Punch
+56,Mankey,Move 2,Mega Kick
+56,Mankey,Move 3,Toxic
+56,Mankey,Move 4,Body Slam
+56,Mankey,Move 5,Take Down
+56,Mankey,Move 6,Double Edge
+56,Mankey,Move 7,Pay Day
+56,Mankey,Move 8,Submission
+56,Mankey,Move 9,Counter
+56,Mankey,Move 10,Seismic Toss
+56,Mankey,Move 11,Rage
+56,Mankey,Move 12,Thunderbolt
+56,Mankey,Move 13,Thunder
+56,Mankey,Move 14,Dig
+56,Mankey,Move 15,Mimic
+56,Mankey,Move 16,Double Team
+56,Mankey,Move 17,Bide
+56,Mankey,Move 18,Metronome
+56,Mankey,Move 19,Swift
+56,Mankey,Move 20,Skull Bash
+56,Mankey,Move 21,Rest
+56,Mankey,Move 22,Rock Slide
+56,Mankey,Move 23,Substitute
+56,Mankey,Move 24,Strength
+57,Primeape,Move 1,Mega Punch
+57,Primeape,Move 2,Mega Kick
+57,Primeape,Move 3,Toxic
+57,Primeape,Move 4,Body Slam
+57,Primeape,Move 5,Take Down
+57,Primeape,Move 6,Double Edge
+57,Primeape,Move 7,Hyper Beam
+57,Primeape,Move 8,Pay Day
+57,Primeape,Move 9,Submission
+57,Primeape,Move 10,Counter
+57,Primeape,Move 11,Seismic Toss
+57,Primeape,Move 12,Rage
+57,Primeape,Move 13,Thunderbolt
+57,Primeape,Move 14,Thunder
+57,Primeape,Move 15,Dig
+57,Primeape,Move 16,Mimic
+57,Primeape,Move 17,Double Team
+57,Primeape,Move 18,Bide
+57,Primeape,Move 19,Metronome
+57,Primeape,Move 20,Swift
+57,Primeape,Move 21,Skull Bash
+57,Primeape,Move 22,Rest
+57,Primeape,Move 23,Rock Slide
+57,Primeape,Move 24,Substitute
+57,Primeape,Move 25,Strength
+58,Growlithe,Move 1,Flamethrower
+58,Growlithe,Move 2,Toxic
+58,Growlithe,Move 3,Body Slam
+58,Growlithe,Move 4,Take Down
+58,Growlithe,Move 5,Double Edge
+58,Growlithe,Move 6,Rage
+58,Growlithe,Move 7,Dragon Rage
+58,Growlithe,Move 8,Dig
+58,Growlithe,Move 9,Mimic
+58,Growlithe,Move 10,Double Team
+58,Growlithe,Move 11,Reflect
+58,Growlithe,Move 12,Bide
+58,Growlithe,Move 13,Fire Blast
+58,Growlithe,Move 14,Swift
+58,Growlithe,Move 15,Skull Bash
+58,Growlithe,Move 16,Rest
+58,Growlithe,Move 17,Substitute
+59,Arcanine,Move 1,Flamethrower
+59,Arcanine,Move 2,Toxic
+59,Arcanine,Move 3,Body Slam
+59,Arcanine,Move 4,Take Down
+59,Arcanine,Move 5,Double Edge
+59,Arcanine,Move 6,Hyper Beam
+59,Arcanine,Move 7,Rage
+59,Arcanine,Move 8,Dragon Rage
+59,Arcanine,Move 9,Dig
+59,Arcanine,Move 10,Teleport
+59,Arcanine,Move 11,Mimic
+59,Arcanine,Move 12,Double Team
+59,Arcanine,Move 13,Reflect
+59,Arcanine,Move 14,Bide
+59,Arcanine,Move 15,Fire Blast
+59,Arcanine,Move 16,Swift
+59,Arcanine,Move 17,Skull Bash
+59,Arcanine,Move 18,Rest
+59,Arcanine,Move 19,Substitute
+60,Poliwag,Move 1,Toxic
+60,Poliwag,Move 2,Body Slam
+60,Poliwag,Move 3,Take Down
+60,Poliwag,Move 4,Double Edge
+60,Poliwag,Move 5,Bubblebeam
+60,Poliwag,Move 6,Water Gun
+60,Poliwag,Move 7,Ice Beam
+60,Poliwag,Move 8,Blizzard
+60,Poliwag,Move 9,Rage
+60,Poliwag,Move 10,Psychic
+60,Poliwag,Move 11,Mimic
+60,Poliwag,Move 12,Double Team
+60,Poliwag,Move 13,Bide
+60,Poliwag,Move 14,Skull Bash
+60,Poliwag,Move 15,Rest
+60,Poliwag,Move 16,Psywave
+60,Poliwag,Move 17,Substitute
+60,Poliwag,Move 18,Surf
+60,Poliwag,Move 19,Dream Eater
+61,Poliwhirl,Move 1,Mega Punch
+61,Poliwhirl,Move 2,Mega Kick
+61,Poliwhirl,Move 3,Toxic
+61,Poliwhirl,Move 4,Body Slam
+61,Poliwhirl,Move 5,Take Down
+61,Poliwhirl,Move 6,Double Edge
+61,Poliwhirl,Move 7,Bubblebeam
+61,Poliwhirl,Move 8,Water Gun
+61,Poliwhirl,Move 9,Ice Beam
+61,Poliwhirl,Move 10,Blizzard
+61,Poliwhirl,Move 11,Submission
+61,Poliwhirl,Move 12,Counter
+61,Poliwhirl,Move 13,Seismic Toss
+61,Poliwhirl,Move 14,Rage
+61,Poliwhirl,Move 15,Earthquake
+61,Poliwhirl,Move 16,Fissure
+61,Poliwhirl,Move 17,Psychic
+61,Poliwhirl,Move 18,Mimic
+61,Poliwhirl,Move 19,Double Team
+61,Poliwhirl,Move 20,Bide
+61,Poliwhirl,Move 21,Metronome
+61,Poliwhirl,Move 22,Skull Bash
+61,Poliwhirl,Move 23,Rest
+61,Poliwhirl,Move 24,Psywave
+61,Poliwhirl,Move 25,Substitute
+61,Poliwhirl,Move 26,Surf
+61,Poliwhirl,Move 27,Strength
+61,Poliwhirl,Move 28,Dream Eater
+62,Poliwrath,Move 1,Mega Punch
+62,Poliwrath,Move 2,Mega Kick
+62,Poliwrath,Move 3,Toxic
+62,Poliwrath,Move 4,Body Slam
+62,Poliwrath,Move 5,Take Down
+62,Poliwrath,Move 6,Double Edge
+62,Poliwrath,Move 7,Bubblebeam
+62,Poliwrath,Move 8,Water Gun
+62,Poliwrath,Move 9,Ice Beam
+62,Poliwrath,Move 10,Blizzard
+62,Poliwrath,Move 11,Hyper Beam
+62,Poliwrath,Move 12,Submission
+62,Poliwrath,Move 13,Counter
+62,Poliwrath,Move 14,Seismic Toss
+62,Poliwrath,Move 15,Rage
+62,Poliwrath,Move 16,Earthquake
+62,Poliwrath,Move 17,Fissure
+62,Poliwrath,Move 18,Psychic
+62,Poliwrath,Move 19,Mimic
+62,Poliwrath,Move 20,Double Team
+62,Poliwrath,Move 21,Bide
+62,Poliwrath,Move 22,Metronome
+62,Poliwrath,Move 23,Skull Bash
+62,Poliwrath,Move 24,Dream Eater
+62,Poliwrath,Move 25,Rest
+62,Poliwrath,Move 26,Psywave
+62,Poliwrath,Move 27,Substitute
+62,Poliwrath,Move 28,Surf
+62,Poliwrath,Move 29,Strength
+63,Abra,Move 1,Mega Punch
+63,Abra,Move 2,Mega Kick
+63,Abra,Move 3,Toxic
+63,Abra,Move 4,Body Slam
+63,Abra,Move 5,Take Down
+63,Abra,Move 6,Double Edge
+63,Abra,Move 7,Submission
+63,Abra,Move 8,Counter
+63,Abra,Move 9,Seismic Toss
+63,Abra,Move 10,Rage
+63,Abra,Move 11,Psychic
+63,Abra,Move 12,Teleport
+63,Abra,Move 13,Mimic
+63,Abra,Move 14,Double Team
+63,Abra,Move 15,Reflect
+63,Abra,Move 16,Bide
+63,Abra,Move 17,Metronome
+63,Abra,Move 18,Skull Bash
+63,Abra,Move 19,Rest
+63,Abra,Move 20,Thunder Wave
+63,Abra,Move 21,Psywave
+63,Abra,Move 22,Tri Attack
+63,Abra,Move 23,Substitute
+63,Abra,Move 24,Flash
+64,Kadabra,Move 1,Mega Punch
+64,Kadabra,Move 2,Mega Kick
+64,Kadabra,Move 3,Toxic
+64,Kadabra,Move 4,Body Slam
+64,Kadabra,Move 5,Take Down
+64,Kadabra,Move 6,Double Edge
+64,Kadabra,Move 7,Submission
+64,Kadabra,Move 8,Counter
+64,Kadabra,Move 9,Seismic Toss
+64,Kadabra,Move 10,Rage
+64,Kadabra,Move 11,Dig
+64,Kadabra,Move 12,Psychic
+64,Kadabra,Move 13,Teleport
+64,Kadabra,Move 14,Mimic
+64,Kadabra,Move 15,Double Team
+64,Kadabra,Move 16,Reflect
+64,Kadabra,Move 17,Bide
+64,Kadabra,Move 18,Metronome
+64,Kadabra,Move 19,Skull Bash
+64,Kadabra,Move 20,Rest
+64,Kadabra,Move 21,Thunder Wave
+64,Kadabra,Move 22,Psywave
+64,Kadabra,Move 23,Tri Attack
+64,Kadabra,Move 24,Substitute
+64,Kadabra,Move 25,Flash
+65,Alakazam,Move 1,Mega Punch
+65,Alakazam,Move 2,Mega Kick
+65,Alakazam,Move 3,Toxic
+65,Alakazam,Move 4,Body Slam
+65,Alakazam,Move 5,Take Down
+65,Alakazam,Move 6,Double Edge
+65,Alakazam,Move 7,Hyper Beam
+65,Alakazam,Move 8,Submission
+65,Alakazam,Move 9,Counter
+65,Alakazam,Move 10,Seismic Toss
+65,Alakazam,Move 11,Rage
+65,Alakazam,Move 12,Dig
+65,Alakazam,Move 13,Psychic
+65,Alakazam,Move 14,Teleport
+65,Alakazam,Move 15,Mimic
+65,Alakazam,Move 16,Double Team
+65,Alakazam,Move 17,Reflect
+65,Alakazam,Move 18,Bide
+65,Alakazam,Move 19,Metronome
+65,Alakazam,Move 20,Skull Bash
+65,Alakazam,Move 21,Rest
+65,Alakazam,Move 22,Thunder Wave
+65,Alakazam,Move 23,Psywave
+65,Alakazam,Move 24,Tri Attack
+65,Alakazam,Move 25,Substitute
+65,Alakazam,Move 26,Flash
+66,Machop,Move 1,Mega Punch
+66,Machop,Move 2,Mega Kick
+66,Machop,Move 3,Toxic
+66,Machop,Move 4,Body Slam
+66,Machop,Move 5,Take Down
+66,Machop,Move 6,Double Edge
+66,Machop,Move 7,Submission
+66,Machop,Move 8,Counter
+66,Machop,Move 9,Seismic Toss
+66,Machop,Move 10,Rage
+66,Machop,Move 11,Earthquake
+66,Machop,Move 12,Fissure
+66,Machop,Move 13,Dig
+66,Machop,Move 14,Mimic
+66,Machop,Move 15,Double Team
+66,Machop,Move 16,Bide
+66,Machop,Move 17,Metronome
+66,Machop,Move 18,Fire Blast
+66,Machop,Move 19,Skull Bash
+66,Machop,Move 20,Rest
+66,Machop,Move 21,Rock Slide
+66,Machop,Move 22,Substitute
+66,Machop,Move 23,Strength
+67,Machoke,Move 1,Mega Punch
+67,Machoke,Move 2,Mega Kick
+67,Machoke,Move 3,Toxic
+67,Machoke,Move 4,Body Slam
+67,Machoke,Move 5,Take Down
+67,Machoke,Move 6,Double Edge
+67,Machoke,Move 7,Submission
+67,Machoke,Move 8,Counter
+67,Machoke,Move 9,Seismic Toss
+67,Machoke,Move 10,Rage
+67,Machoke,Move 11,Earthquake
+67,Machoke,Move 12,Fissure
+67,Machoke,Move 13,Dig
+67,Machoke,Move 14,Mimic
+67,Machoke,Move 15,Double Team
+67,Machoke,Move 16,Bide
+67,Machoke,Move 17,Metronome
+67,Machoke,Move 18,Fire Blast
+67,Machoke,Move 19,Skull Bash
+67,Machoke,Move 20,Rest
+67,Machoke,Move 21,Rock Slide
+67,Machoke,Move 22,Substitute
+67,Machoke,Move 23,Strength
+68,Machamp,Move 1,Mega Punch
+68,Machamp,Move 2,Mega Kick
+68,Machamp,Move 3,Toxic
+68,Machamp,Move 4,Body Slam
+68,Machamp,Move 5,Take Down
+68,Machamp,Move 6,Double Edge
+68,Machamp,Move 7,Hyper Beam
+68,Machamp,Move 8,Submission
+68,Machamp,Move 9,Counter
+68,Machamp,Move 10,Seismic Toss
+68,Machamp,Move 11,Rage
+68,Machamp,Move 12,Earthquake
+68,Machamp,Move 13,Fissure
+68,Machamp,Move 14,Dig
+68,Machamp,Move 15,Mimic
+68,Machamp,Move 16,Double Team
+68,Machamp,Move 17,Bide
+68,Machamp,Move 18,Metronome
+68,Machamp,Move 19,Fire Blast
+68,Machamp,Move 20,Skull Bash
+68,Machamp,Move 21,Rest
+68,Machamp,Move 22,Rock Slide
+68,Machamp,Move 23,Substitute
+68,Machamp,Move 24,Strength
+69,Bellsprout,Move 1,Swords Dance
+69,Bellsprout,Move 2,Toxic
+69,Bellsprout,Move 3,Take Down
+69,Bellsprout,Move 4,Double Edge
+69,Bellsprout,Move 5,Rage
+69,Bellsprout,Move 6,Mega Drain
+69,Bellsprout,Move 7,Solarbeam
+69,Bellsprout,Move 8,Mimic
+69,Bellsprout,Move 9,Double Team
+69,Bellsprout,Move 10,Reflect
+69,Bellsprout,Move 11,Bide
+69,Bellsprout,Move 12,Rest
+69,Bellsprout,Move 13,Substitute
+69,Bellsprout,Move 14,Cut
+70,Weepinbell,Move 1,Swords Dance
+70,Weepinbell,Move 2,Toxic
+70,Weepinbell,Move 3,Take Down
+70,Weepinbell,Move 4,Double Edge
+70,Weepinbell,Move 5,Rage
+70,Weepinbell,Move 6,Mega Drain
+70,Weepinbell,Move 7,Solarbeam
+70,Weepinbell,Move 8,Mimic
+70,Weepinbell,Move 9,Double Team
+70,Weepinbell,Move 10,Reflect
+70,Weepinbell,Move 11,Bide
+70,Weepinbell,Move 12,Rest
+70,Weepinbell,Move 13,Substitute
+70,Weepinbell,Move 14,Cut
+71,Victreebel,Move 1,Swords Dance
+71,Victreebel,Move 2,Toxic
+71,Victreebel,Move 3,Body Slam
+71,Victreebel,Move 4,Take Down
+71,Victreebel,Move 5,Double Edge
+71,Victreebel,Move 6,Hyper Beam
+71,Victreebel,Move 7,Rage
+71,Victreebel,Move 8,Mega Drain
+71,Victreebel,Move 9,Solarbeam
+71,Victreebel,Move 10,Mimic
+71,Victreebel,Move 11,Double Team
+71,Victreebel,Move 12,Reflect
+71,Victreebel,Move 13,Bide
+71,Victreebel,Move 14,Rest
+71,Victreebel,Move 15,Substitute
+71,Victreebel,Move 16,Cut
+72,Tentacool,Move 1,Swords Dance
+72,Tentacool,Move 2,Toxic
+72,Tentacool,Move 3,Take Down
+72,Tentacool,Move 4,Double Edge
+72,Tentacool,Move 5,Bubblebeam
+72,Tentacool,Move 6,Water Gun
+72,Tentacool,Move 7,Ice Beam
+72,Tentacool,Move 8,Blizzard
+72,Tentacool,Move 9,Rage
+72,Tentacool,Move 10,Mega Drain
+72,Tentacool,Move 11,Mimic
+72,Tentacool,Move 12,Double Team
+72,Tentacool,Move 13,Reflect
+72,Tentacool,Move 14,Bide
+72,Tentacool,Move 15,Skull Bash
+72,Tentacool,Move 16,Rest
+72,Tentacool,Move 17,Substitute
+72,Tentacool,Move 18,Cut
+72,Tentacool,Move 19,Surf
+73,Tentacruel,Move 1,Swords Dance
+73,Tentacruel,Move 2,Toxic
+73,Tentacruel,Move 3,Take Down
+73,Tentacruel,Move 4,Double Edge
+73,Tentacruel,Move 5,Bubblebeam
+73,Tentacruel,Move 6,Water Gun
+73,Tentacruel,Move 7,Ice Beam
+73,Tentacruel,Move 8,Blizzard
+73,Tentacruel,Move 9,Hyper Beam
+73,Tentacruel,Move 10,Rage
+73,Tentacruel,Move 11,Mega Drain
+73,Tentacruel,Move 12,Mimic
+73,Tentacruel,Move 13,Double Team
+73,Tentacruel,Move 14,Reflect
+73,Tentacruel,Move 15,Bide
+73,Tentacruel,Move 16,Skull Bash
+73,Tentacruel,Move 17,Rest
+73,Tentacruel,Move 18,Substitute
+73,Tentacruel,Move 19,Cut
+73,Tentacruel,Move 20,Surf
+74,Geodude,Move 1,Mega Punch
+74,Geodude,Move 2,Toxic
+74,Geodude,Move 3,Body Slam
+74,Geodude,Move 4,Take Down
+74,Geodude,Move 5,Double Edge
+74,Geodude,Move 6,Submission
+74,Geodude,Move 7,Counter
+74,Geodude,Move 8,Seismic Toss
+74,Geodude,Move 9,Rage
+74,Geodude,Move 10,Earthquake
+74,Geodude,Move 11,Fissure
+74,Geodude,Move 12,Dig
+74,Geodude,Move 13,Mimic
+74,Geodude,Move 14,Double Team
+74,Geodude,Move 15,Bide
+74,Geodude,Move 16,Metronome
+74,Geodude,Move 17,Selfdestruct
+74,Geodude,Move 18,Fire Blast
+74,Geodude,Move 19,Rest
+74,Geodude,Move 20,Explosion
+74,Geodude,Move 21,Rock Slide
+74,Geodude,Move 22,Substitute
+74,Geodude,Move 23,Strength
+75,Graveler,Move 1,Mega Punch
+75,Graveler,Move 2,Toxic
+75,Graveler,Move 3,Body Slam
+75,Graveler,Move 4,Take Down
+75,Graveler,Move 5,Double Edge
+75,Graveler,Move 6,Submission
+75,Graveler,Move 7,Counter
+75,Graveler,Move 8,Seismic Toss
+75,Graveler,Move 9,Rage
+75,Graveler,Move 10,Earthquake
+75,Graveler,Move 11,Fissure
+75,Graveler,Move 12,Dig
+75,Graveler,Move 13,Mimic
+75,Graveler,Move 14,Double Team
+75,Graveler,Move 15,Bide
+75,Graveler,Move 16,Metronome
+75,Graveler,Move 17,Selfdestruct
+75,Graveler,Move 18,Fire Blast
+75,Graveler,Move 19,Rest
+75,Graveler,Move 20,Explosion
+75,Graveler,Move 21,Rock Slide
+75,Graveler,Move 22,Substitute
+75,Graveler,Move 23,Strength
+76,Golem,Move 1,Mega Punch
+76,Golem,Move 2,Mega Kick
+76,Golem,Move 3,Toxic
+76,Golem,Move 4,Body Slam
+76,Golem,Move 5,Take Down
+76,Golem,Move 6,Double Edge
+76,Golem,Move 7,Hyper Beam
+76,Golem,Move 8,Submission
+76,Golem,Move 9,Counter
+76,Golem,Move 10,Seismic Toss
+76,Golem,Move 11,Rage
+76,Golem,Move 12,Earthquake
+76,Golem,Move 13,Fissure
+76,Golem,Move 14,Dig
+76,Golem,Move 15,Mimic
+76,Golem,Move 16,Double Team
+76,Golem,Move 17,Bide
+76,Golem,Move 18,Metronome
+76,Golem,Move 19,Selfdestruct
+76,Golem,Move 20,Fire Blast
+76,Golem,Move 21,Rest
+76,Golem,Move 22,Explosion
+76,Golem,Move 23,Rock Slide
+76,Golem,Move 24,Substitute
+76,Golem,Move 25,Strength
+77,Ponyta,Move 1,Flamethrower
+77,Ponyta,Move 2,Toxic
+77,Ponyta,Move 3,Horn Drill
+77,Ponyta,Move 4,Body Slam
+77,Ponyta,Move 5,Take Down
+77,Ponyta,Move 6,Double Edge
+77,Ponyta,Move 7,Rage
+77,Ponyta,Move 8,Mimic
+77,Ponyta,Move 9,Double Team
+77,Ponyta,Move 10,Reflect
+77,Ponyta,Move 11,Bide
+77,Ponyta,Move 12,Fire Blast
+77,Ponyta,Move 13,Swift
+77,Ponyta,Move 14,Skull Bash
+77,Ponyta,Move 15,Rest
+77,Ponyta,Move 16,Substitute
+78,Rapidash,Move 1,Flamethrower
+78,Rapidash,Move 2,Toxic
+78,Rapidash,Move 3,Horn Drill
+78,Rapidash,Move 4,Body Slam
+78,Rapidash,Move 5,Take Down
+78,Rapidash,Move 6,Double Edge
+78,Rapidash,Move 7,Hyper Beam
+78,Rapidash,Move 8,Rage
+78,Rapidash,Move 9,Mimic
+78,Rapidash,Move 10,Double Team
+78,Rapidash,Move 11,Reflect
+78,Rapidash,Move 12,Bide
+78,Rapidash,Move 13,Fire Blast
+78,Rapidash,Move 14,Swift
+78,Rapidash,Move 15,Skull Bash
+78,Rapidash,Move 16,Rest
+78,Rapidash,Move 17,Substitute
+79,Slowpoke,Move 1,Toxic
+79,Slowpoke,Move 2,Body Slam
+79,Slowpoke,Move 3,Take Down
+79,Slowpoke,Move 4,Double Edge
+79,Slowpoke,Move 5,Bubblebeam
+79,Slowpoke,Move 6,Water Gun
+79,Slowpoke,Move 7,Ice Beam
+79,Slowpoke,Move 8,Blizzard
+79,Slowpoke,Move 9,Pay Day
+79,Slowpoke,Move 10,Rage
+79,Slowpoke,Move 11,Earthquake
+79,Slowpoke,Move 12,Fissure
+79,Slowpoke,Move 13,Dig
+79,Slowpoke,Move 14,Psychic
+79,Slowpoke,Move 15,Teleport
+79,Slowpoke,Move 16,Mimic
+79,Slowpoke,Move 17,Double Team
+79,Slowpoke,Move 18,Reflect
+79,Slowpoke,Move 19,Bide
+79,Slowpoke,Move 20,Fire Blast
+79,Slowpoke,Move 21,Swift
+79,Slowpoke,Move 22,Skull Bash
+79,Slowpoke,Move 23,Rest
+79,Slowpoke,Move 24,Thunder Wave
+79,Slowpoke,Move 25,Psywave
+79,Slowpoke,Move 26,Tri Attack
+79,Slowpoke,Move 27,Substitute
+79,Slowpoke,Move 28,Surf
+79,Slowpoke,Move 29,Strength
+79,Slowpoke,Move 30,Flash
+80,Slowbro,Move 1,Mega Punch
+80,Slowbro,Move 2,Flamethrower
+80,Slowbro,Move 3,Mega Kick
+80,Slowbro,Move 4,Toxic
+80,Slowbro,Move 5,Body Slam
+80,Slowbro,Move 6,Take Down
+80,Slowbro,Move 7,Double Edge
+80,Slowbro,Move 8,Bubblebeam
+80,Slowbro,Move 9,Water Gun
+80,Slowbro,Move 10,Ice Beam
+80,Slowbro,Move 11,Blizzard
+80,Slowbro,Move 12,Hyper Beam
+80,Slowbro,Move 13,Pay Day
+80,Slowbro,Move 14,Submission
+80,Slowbro,Move 15,Counter
+80,Slowbro,Move 16,Seismic Toss
+80,Slowbro,Move 17,Rage
+80,Slowbro,Move 18,Earthquake
+80,Slowbro,Move 19,Fissure
+80,Slowbro,Move 20,Dig
+80,Slowbro,Move 21,Psychic
+80,Slowbro,Move 22,Teleport
+80,Slowbro,Move 23,Mimic
+80,Slowbro,Move 24,Double Team
+80,Slowbro,Move 25,Reflect
+80,Slowbro,Move 26,Bide
+80,Slowbro,Move 27,Fire Blast
+80,Slowbro,Move 28,Swift
+80,Slowbro,Move 29,Skull Bash
+80,Slowbro,Move 30,Rest
+80,Slowbro,Move 31,Thunder Wave
+80,Slowbro,Move 32,Psywave
+80,Slowbro,Move 33,Tri Attack
+80,Slowbro,Move 34,Substitute
+80,Slowbro,Move 35,Surf
+80,Slowbro,Move 36,Strength
+80,Slowbro,Move 37,Flash
+81,Magnemite,Move 1,Toxic
+81,Magnemite,Move 2,Take Down
+81,Magnemite,Move 3,Double Edge
+81,Magnemite,Move 4,Rage
+81,Magnemite,Move 5,Thunderbolt
+81,Magnemite,Move 6,Thunder
+81,Magnemite,Move 7,Teleport
+81,Magnemite,Move 8,Mimic
+81,Magnemite,Move 9,Double Team
+81,Magnemite,Move 10,Reflect
+81,Magnemite,Move 11,Bide
+81,Magnemite,Move 12,Swift
+81,Magnemite,Move 13,Rest
+81,Magnemite,Move 14,Thunder Wave
+81,Magnemite,Move 15,Substitute
+81,Magnemite,Move 16,Flash
+82,Magneton,Move 1,Toxic
+82,Magneton,Move 2,Take Down
+82,Magneton,Move 3,Double Edge
+82,Magneton,Move 4,Hyper Beam
+82,Magneton,Move 5,Rage
+82,Magneton,Move 6,Thunderbolt
+82,Magneton,Move 7,Thunder
+82,Magneton,Move 8,Teleport
+82,Magneton,Move 9,Mimic
+82,Magneton,Move 10,Double Team
+82,Magneton,Move 11,Reflect
+82,Magneton,Move 12,Bide
+82,Magneton,Move 13,Swift
+82,Magneton,Move 14,Rest
+82,Magneton,Move 15,Thunder Wave
+82,Magneton,Move 16,Substitute
+82,Magneton,Move 17,Flash
+82,Magneton,Move 18,Tri Attack
+83,Farfetchd,Move 1,Razor Wind
+83,Farfetchd,Move 2,Swords Dance
+83,Farfetchd,Move 3,Toxic
+83,Farfetchd,Move 4,Body Slam
+83,Farfetchd,Move 5,Take Down
+83,Farfetchd,Move 6,Double Edge
+83,Farfetchd,Move 7,Rage
+83,Farfetchd,Move 8,Mimic
+83,Farfetchd,Move 9,Double Team
+83,Farfetchd,Move 10,Reflect
+83,Farfetchd,Move 11,Bide
+83,Farfetchd,Move 12,Swift
+83,Farfetchd,Move 13,Skull Bash
+83,Farfetchd,Move 14,Rest
+83,Farfetchd,Move 15,Substitute
+83,Farfetchd,Move 16,Cut
+83,Farfetchd,Move 17,Fly
+84,Doduo,Move 1,Toxic
+84,Doduo,Move 2,Body Slam
+84,Doduo,Move 3,Take Down
+84,Doduo,Move 4,Double Edge
+84,Doduo,Move 5,Rage
+84,Doduo,Move 6,Mimic
+84,Doduo,Move 7,Double Team
+84,Doduo,Move 8,Reflect
+84,Doduo,Move 9,Bide
+84,Doduo,Move 10,Skull Bash
+84,Doduo,Move 11,Rest
+84,Doduo,Move 12,Tri Attack
+84,Doduo,Move 13,Substitute
+84,Doduo,Move 14,Fly
+85,Dodrio,Move 1,Toxic
+85,Dodrio,Move 2,Body Slam
+85,Dodrio,Move 3,Take Down
+85,Dodrio,Move 4,Double Edge
+85,Dodrio,Move 5,Hyper Beam
+85,Dodrio,Move 6,Rage
+85,Dodrio,Move 7,Mimic
+85,Dodrio,Move 8,Double Team
+85,Dodrio,Move 9,Reflect
+85,Dodrio,Move 10,Bide
+85,Dodrio,Move 11,Skull Bash
+85,Dodrio,Move 12,Rest
+85,Dodrio,Move 13,Tri Attack
+85,Dodrio,Move 14,Substitute
+85,Dodrio,Move 15,Fly
+86,Seel,Move 1,Toxic
+86,Seel,Move 2,Horn Drill
+86,Seel,Move 3,Body Slam
+86,Seel,Move 4,Take Down
+86,Seel,Move 5,Double Edge
+86,Seel,Move 6,Bubblebeam
+86,Seel,Move 7,Water Gun
+86,Seel,Move 8,Ice Beam
+86,Seel,Move 9,Blizzard
+86,Seel,Move 10,Pay Day
+86,Seel,Move 11,Rage
+86,Seel,Move 12,Mimic
+86,Seel,Move 13,Double Team
+86,Seel,Move 14,Bide
+86,Seel,Move 15,Skull Bash
+86,Seel,Move 16,Rest
+86,Seel,Move 17,Substitute
+86,Seel,Move 18,Surf
+86,Seel,Move 19,Strength
+87,Dewgong,Move 1,Toxic
+87,Dewgong,Move 2,Horn Drill
+87,Dewgong,Move 3,Body Slam
+87,Dewgong,Move 4,Take Down
+87,Dewgong,Move 5,Double Edge
+87,Dewgong,Move 6,Bubblebeam
+87,Dewgong,Move 7,Water Gun
+87,Dewgong,Move 8,Ice Beam
+87,Dewgong,Move 9,Blizzard
+87,Dewgong,Move 10,Hyper Beam
+87,Dewgong,Move 11,Pay Day
+87,Dewgong,Move 12,Rage
+87,Dewgong,Move 13,Mimic
+87,Dewgong,Move 14,Double Team
+87,Dewgong,Move 15,Bide
+87,Dewgong,Move 16,Skull Bash
+87,Dewgong,Move 17,Rest
+87,Dewgong,Move 18,Substitute
+87,Dewgong,Move 19,Surf
+87,Dewgong,Move 20,Strength
+88,Grimer,Move 1,Flamethrower
+88,Grimer,Move 2,Toxic
+88,Grimer,Move 3,Body Slam
+88,Grimer,Move 4,Rage
+88,Grimer,Move 5,Mega Drain
+88,Grimer,Move 6,Thunderbolt
+88,Grimer,Move 7,Thunder
+88,Grimer,Move 8,Mimic
+88,Grimer,Move 9,Double Team
+88,Grimer,Move 10,Bide
+88,Grimer,Move 11,Selfdestruct
+88,Grimer,Move 12,Fire Blast
+88,Grimer,Move 13,Rest
+88,Grimer,Move 14,Explosion
+88,Grimer,Move 15,Substitute
+89,Muk,Move 1,Flamethrower
+89,Muk,Move 2,Toxic
+89,Muk,Move 3,Body Slam
+89,Muk,Move 4,Hyper Beam
+89,Muk,Move 5,Rage
+89,Muk,Move 6,Mega Drain
+89,Muk,Move 7,Thunderbolt
+89,Muk,Move 8,Thunder
+89,Muk,Move 9,Mimic
+89,Muk,Move 10,Double Team
+89,Muk,Move 11,Bide
+89,Muk,Move 12,Selfdestruct
+89,Muk,Move 13,Fire Blast
+89,Muk,Move 14,Rest
+89,Muk,Move 15,Explosion
+89,Muk,Move 16,Substitute
+90,Shellder,Move 1,Toxic
+90,Shellder,Move 2,Take Down
+90,Shellder,Move 3,Double Edge
+90,Shellder,Move 4,Bubblebeam
+90,Shellder,Move 5,Water Gun
+90,Shellder,Move 6,Ice Beam
+90,Shellder,Move 7,Blizzard
+90,Shellder,Move 8,Rage
+90,Shellder,Move 9,Teleport
+90,Shellder,Move 10,Mimic
+90,Shellder,Move 11,Double Team
+90,Shellder,Move 12,Reflect
+90,Shellder,Move 13,Bide
+90,Shellder,Move 14,Selfdestruct
+90,Shellder,Move 15,Swift
+90,Shellder,Move 16,Rest
+90,Shellder,Move 17,Explosion
+90,Shellder,Move 18,Tri Attack
+90,Shellder,Move 19,Substitute
+90,Shellder,Move 20,Surf
+91,Cloyster,Move 1,Toxic
+91,Cloyster,Move 2,Take Down
+91,Cloyster,Move 3,Double Edge
+91,Cloyster,Move 4,Bubblebeam
+91,Cloyster,Move 5,Water Gun
+91,Cloyster,Move 6,Ice Beam
+91,Cloyster,Move 7,Blizzard
+91,Cloyster,Move 8,Hyper Beam
+91,Cloyster,Move 9,Rage
+91,Cloyster,Move 10,Teleport
+91,Cloyster,Move 11,Mimic
+91,Cloyster,Move 12,Double Team
+91,Cloyster,Move 13,Reflect
+91,Cloyster,Move 14,Bide
+91,Cloyster,Move 15,Selfdestruct
+91,Cloyster,Move 16,Swift
+91,Cloyster,Move 17,Rest
+91,Cloyster,Move 18,Explosion
+91,Cloyster,Move 19,Tri Attack
+91,Cloyster,Move 20,Substitute
+91,Cloyster,Move 21,Surf
+92,Gastly,Move 1,Toxic
+92,Gastly,Move 2,Rage
+92,Gastly,Move 3,Mega Drain
+92,Gastly,Move 4,Thunderbolt
+92,Gastly,Move 5,Thunder
+92,Gastly,Move 6,Psychic
+92,Gastly,Move 7,Mimic
+92,Gastly,Move 8,Double Team
+92,Gastly,Move 9,Bide
+92,Gastly,Move 10,Selfdestruct
+92,Gastly,Move 11,Dream Eater
+92,Gastly,Move 12,Rest
+92,Gastly,Move 13,Psywave
+92,Gastly,Move 14,Explosion
+92,Gastly,Move 15,Substitute
+93,Haunter,Move 1,Toxic
+93,Haunter,Move 2,Rage
+93,Haunter,Move 3,Mega Drain
+93,Haunter,Move 4,Thunderbolt
+93,Haunter,Move 5,Thunder
+93,Haunter,Move 6,Psychic
+93,Haunter,Move 7,Mimic
+93,Haunter,Move 8,Double Team
+93,Haunter,Move 9,Bide
+93,Haunter,Move 10,Selfdestruct
+93,Haunter,Move 11,Dream Eater
+93,Haunter,Move 12,Rest
+93,Haunter,Move 13,Psywave
+93,Haunter,Move 14,Explosion
+93,Haunter,Move 15,Substitute
+94,Gengar,Move 1,Mega Punch
+94,Gengar,Move 2,Mega Kick
+94,Gengar,Move 3,Toxic
+94,Gengar,Move 4,Body Slam
+94,Gengar,Move 5,Take Down
+94,Gengar,Move 6,Double Edge
+94,Gengar,Move 7,Hyper Beam
+94,Gengar,Move 8,Submission
+94,Gengar,Move 9,Counter
+94,Gengar,Move 10,Seismic Toss
+94,Gengar,Move 11,Rage
+94,Gengar,Move 12,Mega Drain
+94,Gengar,Move 13,Thunderbolt
+94,Gengar,Move 14,Thunder
+94,Gengar,Move 15,Psychic
+94,Gengar,Move 16,Mimic
+94,Gengar,Move 17,Double Team
+94,Gengar,Move 18,Bide
+94,Gengar,Move 19,Metronome
+94,Gengar,Move 20,Selfdestruct
+94,Gengar,Move 21,Skull Bash
+94,Gengar,Move 22,Dream Eater
+94,Gengar,Move 23,Rest
+94,Gengar,Move 24,Psywave
+94,Gengar,Move 25,Explosion
+94,Gengar,Move 26,Substitute
+94,Gengar,Move 27,Strength
+95,Onix,Move 1,Toxic
+95,Onix,Move 2,Body Slam
+95,Onix,Move 3,Take Down
+95,Onix,Move 4,Double Edge
+95,Onix,Move 5,Rage
+95,Onix,Move 6,Earthquake
+95,Onix,Move 7,Fissure
+95,Onix,Move 8,Dig
+95,Onix,Move 9,Mimic
+95,Onix,Move 10,Double Team
+95,Onix,Move 11,Bide
+95,Onix,Move 12,Selfdestruct
+95,Onix,Move 13,Skull Bash
+95,Onix,Move 14,Rest
+95,Onix,Move 15,Explosion
+95,Onix,Move 16,Rock Slide
+95,Onix,Move 17,Substitute
+95,Onix,Move 18,Strength
+96,Drowzee,Move 1,Mega Punch
+96,Drowzee,Move 2,Mega Kick
+96,Drowzee,Move 3,Toxic
+96,Drowzee,Move 4,Body Slam
+96,Drowzee,Move 5,Take Down
+96,Drowzee,Move 6,Double Edge
+96,Drowzee,Move 7,Submission
+96,Drowzee,Move 8,Counter
+96,Drowzee,Move 9,Seismic Toss
+96,Drowzee,Move 10,Rage
+96,Drowzee,Move 11,Psychic
+96,Drowzee,Move 12,Teleport
+96,Drowzee,Move 13,Mimic
+96,Drowzee,Move 14,Double Team
+96,Drowzee,Move 15,Reflect
+96,Drowzee,Move 16,Bide
+96,Drowzee,Move 17,Metronome
+96,Drowzee,Move 18,Skull Bash
+96,Drowzee,Move 19,Dream Eater
+96,Drowzee,Move 20,Rest
+96,Drowzee,Move 21,Thunder Wave
+96,Drowzee,Move 22,Psywave
+96,Drowzee,Move 23,Tri Attack
+96,Drowzee,Move 24,Substitute
+96,Drowzee,Move 25,Flash
+97,Hypno,Move 1,Mega Punch
+97,Hypno,Move 2,Mega Kick
+97,Hypno,Move 3,Toxic
+97,Hypno,Move 4,Body Slam
+97,Hypno,Move 5,Take Down
+97,Hypno,Move 6,Double Edge
+97,Hypno,Move 7,Hyper Beam
+97,Hypno,Move 8,Submission
+97,Hypno,Move 9,Counter
+97,Hypno,Move 10,Seismic Toss
+97,Hypno,Move 11,Rage
+97,Hypno,Move 12,Psychic
+97,Hypno,Move 13,Teleport
+97,Hypno,Move 14,Mimic
+97,Hypno,Move 15,Double Team
+97,Hypno,Move 16,Reflect
+97,Hypno,Move 17,Bide
+97,Hypno,Move 18,Metronome
+97,Hypno,Move 19,Skull Bash
+97,Hypno,Move 20,Dream Eater
+97,Hypno,Move 21,Rest
+97,Hypno,Move 22,Thunder Wave
+97,Hypno,Move 23,Psywave
+97,Hypno,Move 24,Tri Attack
+97,Hypno,Move 25,Substitute
+97,Hypno,Move 26,Flash
+98,Krabby,Move 1,Swords Dance
+98,Krabby,Move 2,Toxic
+98,Krabby,Move 3,Body Slam
+98,Krabby,Move 4,Take Down
+98,Krabby,Move 5,Double Edge
+98,Krabby,Move 6,Bubblebeam
+98,Krabby,Move 7,Water Gun
+98,Krabby,Move 8,Ice Beam
+98,Krabby,Move 9,Blizzard
+98,Krabby,Move 10,Rage
+98,Krabby,Move 11,Mimic
+98,Krabby,Move 12,Double Team
+98,Krabby,Move 13,Bide
+98,Krabby,Move 14,Rest
+98,Krabby,Move 15,Substitute
+98,Krabby,Move 16,Cut
+98,Krabby,Move 17,Surf
+98,Krabby,Move 18,Strength
+99,Kingler,Move 1,Swords Dance
+99,Kingler,Move 2,Toxic
+99,Kingler,Move 3,Body Slam
+99,Kingler,Move 4,Take Down
+99,Kingler,Move 5,Double Edge
+99,Kingler,Move 6,Bubblebeam
+99,Kingler,Move 7,Water Gun
+99,Kingler,Move 8,Ice Beam
+99,Kingler,Move 9,Blizzard
+99,Kingler,Move 10,Hyper Beam
+99,Kingler,Move 11,Rage
+99,Kingler,Move 12,Mimic
+99,Kingler,Move 13,Double Team
+99,Kingler,Move 14,Bide
+99,Kingler,Move 15,Rest
+99,Kingler,Move 16,Substitute
+99,Kingler,Move 17,Cut
+99,Kingler,Move 18,Surf
+99,Kingler,Move 19,Strength
+100,Voltorb,Move 1,Toxic
+100,Voltorb,Move 2,Take Down
+100,Voltorb,Move 3,Rage
+100,Voltorb,Move 4,Thunderbolt
+100,Voltorb,Move 5,Thunder
+100,Voltorb,Move 6,Teleport
+100,Voltorb,Move 7,Mimic
+100,Voltorb,Move 8,Double Team
+100,Voltorb,Move 9,Reflect
+100,Voltorb,Move 10,Bide
+100,Voltorb,Move 11,Selfdestruct
+100,Voltorb,Move 12,Swift
+100,Voltorb,Move 13,Rest
+100,Voltorb,Move 14,Thunder Wave
+100,Voltorb,Move 15,Explosion
+100,Voltorb,Move 16,Substitute
+100,Voltorb,Move 17,Flash
+101,Electrode,Move 1,Toxic
+101,Electrode,Move 2,Take Down
+101,Electrode,Move 3,Hyper Beam
+101,Electrode,Move 4,Rage
+101,Electrode,Move 5,Thunderbolt
+101,Electrode,Move 6,Thunder
+101,Electrode,Move 7,Teleport
+101,Electrode,Move 8,Mimic
+101,Electrode,Move 9,Double Team
+101,Electrode,Move 10,Reflect
+101,Electrode,Move 11,Bide
+101,Electrode,Move 12,Selfdestruct
+101,Electrode,Move 13,Swift
+101,Electrode,Move 14,Skull Bash
+101,Electrode,Move 15,Rest
+101,Electrode,Move 16,Thunder Wave
+101,Electrode,Move 17,Explosion
+101,Electrode,Move 18,Substitute
+101,Electrode,Move 19,Flash
+102,Exeggcute,Move 1,Toxic
+102,Exeggcute,Move 2,Take Down
+102,Exeggcute,Move 3,Double Edge
+102,Exeggcute,Move 4,Rage
+102,Exeggcute,Move 5,Psychic
+102,Exeggcute,Move 6,Teleport
+102,Exeggcute,Move 7,Mimic
+102,Exeggcute,Move 8,Double Team
+102,Exeggcute,Move 9,Reflect
+102,Exeggcute,Move 10,Bide
+102,Exeggcute,Move 11,Selfdestruct
+102,Exeggcute,Move 12,Egg Bomb
+102,Exeggcute,Move 13,Rest
+102,Exeggcute,Move 14,Psywave
+102,Exeggcute,Move 15,Explosion
+102,Exeggcute,Move 16,Substitute
+102,Exeggcute,Move 17,Softboiled
+103,Exeggutor,Move 1,Toxic
+103,Exeggutor,Move 2,Take Down
+103,Exeggutor,Move 3,Double Edge
+103,Exeggutor,Move 4,Hyper Beam
+103,Exeggutor,Move 5,Rage
+103,Exeggutor,Move 6,Mega Drain
+103,Exeggutor,Move 7,Solarbeam
+103,Exeggutor,Move 8,Psychic
+103,Exeggutor,Move 9,Teleport
+103,Exeggutor,Move 10,Mimic
+103,Exeggutor,Move 11,Double Team
+103,Exeggutor,Move 12,Reflect
+103,Exeggutor,Move 13,Bide
+103,Exeggutor,Move 14,Selfdestruct
+103,Exeggutor,Move 15,Egg Bomb
+103,Exeggutor,Move 16,Softboiled
+103,Exeggutor,Move 17,Rest
+103,Exeggutor,Move 18,Psywave
+103,Exeggutor,Move 19,Explosion
+103,Exeggutor,Move 20,Substitute
+103,Exeggutor,Move 21,Strength
+104,Cubone,Move 1,Mega Punch
+104,Cubone,Move 2,Flamethrower
+104,Cubone,Move 3,Mega Kick
+104,Cubone,Move 4,Toxic
+104,Cubone,Move 5,Body Slam
+104,Cubone,Move 6,Take Down
+104,Cubone,Move 7,Double Edge
+104,Cubone,Move 8,Bubblebeam
+104,Cubone,Move 9,Water Gun
+104,Cubone,Move 10,Ice Beam
+104,Cubone,Move 11,Blizzard
+104,Cubone,Move 12,Submission
+104,Cubone,Move 13,Counter
+104,Cubone,Move 14,Seismic Toss
+104,Cubone,Move 15,Rage
+104,Cubone,Move 16,Earthquake
+104,Cubone,Move 17,Fissure
+104,Cubone,Move 18,Dig
+104,Cubone,Move 19,Mimic
+104,Cubone,Move 20,Double Team
+104,Cubone,Move 21,Bide
+104,Cubone,Move 22,Fire Blast
+104,Cubone,Move 23,Skull Bash
+104,Cubone,Move 24,Rest
+104,Cubone,Move 25,Substitute
+104,Cubone,Move 26,Cut
+104,Cubone,Move 27,Strength
+105,Marowak,Move 1,Mega Punch
+105,Marowak,Move 2,Flamethrower
+105,Marowak,Move 3,Mega Kick
+105,Marowak,Move 4,Toxic
+105,Marowak,Move 5,Body Slam
+105,Marowak,Move 6,Take Down
+105,Marowak,Move 7,Double Edge
+105,Marowak,Move 8,Bubblebeam
+105,Marowak,Move 9,Water Gun
+105,Marowak,Move 10,Ice Beam
+105,Marowak,Move 11,Blizzard
+105,Marowak,Move 12,Hyper Beam
+105,Marowak,Move 13,Submission
+105,Marowak,Move 14,Counter
+105,Marowak,Move 15,Seismic Toss
+105,Marowak,Move 16,Rage
+105,Marowak,Move 17,Earthquake
+105,Marowak,Move 18,Fissure
+105,Marowak,Move 19,Dig
+105,Marowak,Move 20,Mimic
+105,Marowak,Move 21,Double Team
+105,Marowak,Move 22,Bide
+105,Marowak,Move 23,Fire Blast
+105,Marowak,Move 24,Skull Bash
+105,Marowak,Move 25,Rest
+105,Marowak,Move 26,Rock Slide
+105,Marowak,Move 27,Substitute
+105,Marowak,Move 28,Cut
+105,Marowak,Move 29,Strength
+106,Hitmonlee,Move 1,Mega Punch
+106,Hitmonlee,Move 2,Mega Kick
+106,Hitmonlee,Move 3,Toxic
+106,Hitmonlee,Move 4,Body Slam
+106,Hitmonlee,Move 5,Take Down
+106,Hitmonlee,Move 6,Double Edge
+106,Hitmonlee,Move 7,Submission
+106,Hitmonlee,Move 8,Counter
+106,Hitmonlee,Move 9,Seismic Toss
+106,Hitmonlee,Move 10,Rage
+106,Hitmonlee,Move 11,Mimic
+106,Hitmonlee,Move 12,Double Team
+106,Hitmonlee,Move 13,Bide
+106,Hitmonlee,Move 14,Metronome
+106,Hitmonlee,Move 15,Swift
+106,Hitmonlee,Move 16,Skull Bash
+106,Hitmonlee,Move 17,Rest
+106,Hitmonlee,Move 18,Substitute
+106,Hitmonlee,Move 19,Strength
+106,Hitmonlee,Move 20,Rock Slide
+107,Hitmonchan,Move 1,Mega Punch
+107,Hitmonchan,Move 2,Mega Kick
+107,Hitmonchan,Move 3,Toxic
+107,Hitmonchan,Move 4,Body Slam
+107,Hitmonchan,Move 5,Take Down
+107,Hitmonchan,Move 6,Double Edge
+107,Hitmonchan,Move 7,Submission
+107,Hitmonchan,Move 8,Counter
+107,Hitmonchan,Move 9,Seismic Toss
+107,Hitmonchan,Move 10,Rage
+107,Hitmonchan,Move 11,Mimic
+107,Hitmonchan,Move 12,Double Team
+107,Hitmonchan,Move 13,Bide
+107,Hitmonchan,Move 14,Metronome
+107,Hitmonchan,Move 15,Swift
+107,Hitmonchan,Move 16,Skull Bash
+107,Hitmonchan,Move 17,Rest
+107,Hitmonchan,Move 18,Substitute
+107,Hitmonchan,Move 19,Strength
+107,Hitmonchan,Move 20,Rock Slide
+108,Lickitung,Move 1,Mega Punch
+108,Lickitung,Move 2,Swords Dance
+108,Lickitung,Move 3,Mega Kick
+108,Lickitung,Move 4,Toxic
+108,Lickitung,Move 5,Body Slam
+108,Lickitung,Move 6,Take Down
+108,Lickitung,Move 7,Double Edge
+108,Lickitung,Move 8,Bubblebeam
+108,Lickitung,Move 9,Water Gun
+108,Lickitung,Move 10,Ice Beam
+108,Lickitung,Move 11,Blizzard
+108,Lickitung,Move 12,Hyper Beam
+108,Lickitung,Move 13,Submission
+108,Lickitung,Move 14,Counter
+108,Lickitung,Move 15,Seismic Toss
+108,Lickitung,Move 16,Rage
+108,Lickitung,Move 17,Thunderbolt
+108,Lickitung,Move 18,Thunder
+108,Lickitung,Move 19,Earthquake
+108,Lickitung,Move 20,Fissure
+108,Lickitung,Move 21,Mimic
+108,Lickitung,Move 22,Double Team
+108,Lickitung,Move 23,Bide
+108,Lickitung,Move 24,Fire Blast
+108,Lickitung,Move 25,Skull Bash
+108,Lickitung,Move 26,Rest
+108,Lickitung,Move 27,Substitute
+108,Lickitung,Move 28,Cut
+108,Lickitung,Move 29,Surf
+108,Lickitung,Move 30,Strength
+109,Koffing,Move 1,Flamethrower
+109,Koffing,Move 2,Toxic
+109,Koffing,Move 3,Rage
+109,Koffing,Move 4,Thunderbolt
+109,Koffing,Move 5,Thunder
+109,Koffing,Move 6,Mimic
+109,Koffing,Move 7,Double Team
+109,Koffing,Move 8,Bide
+109,Koffing,Move 9,Selfdestruct
+109,Koffing,Move 10,Fire Blast
+109,Koffing,Move 11,Rest
+109,Koffing,Move 12,Explosion
+109,Koffing,Move 13,Substitute
+110,Weezing,Move 1,Flamethrower
+110,Weezing,Move 2,Toxic
+110,Weezing,Move 3,Hyper Beam
+110,Weezing,Move 4,Rage
+110,Weezing,Move 5,Thunderbolt
+110,Weezing,Move 6,Thunder
+110,Weezing,Move 7,Mimic
+110,Weezing,Move 8,Double Team
+110,Weezing,Move 9,Bide
+110,Weezing,Move 10,Selfdestruct
+110,Weezing,Move 11,Fire Blast
+110,Weezing,Move 12,Rest
+110,Weezing,Move 13,Explosion
+110,Weezing,Move 14,Substitute
+111,Rhyhorn,Move 1,Toxic
+111,Rhyhorn,Move 2,Flamethrower
+111,Rhyhorn,Move 3,Horn Drill
+111,Rhyhorn,Move 4,Body Slam
+111,Rhyhorn,Move 5,Take Down
+111,Rhyhorn,Move 6,Double Edge
+111,Rhyhorn,Move 7,Rage
+111,Rhyhorn,Move 8,Thunderbolt
+111,Rhyhorn,Move 9,Thunder
+111,Rhyhorn,Move 10,Earthquake
+111,Rhyhorn,Move 11,Fissure
+111,Rhyhorn,Move 12,Dig
+111,Rhyhorn,Move 13,Mimic
+111,Rhyhorn,Move 14,Double Team
+111,Rhyhorn,Move 15,Bide
+111,Rhyhorn,Move 16,Fire Blast
+111,Rhyhorn,Move 17,Skull Bash
+111,Rhyhorn,Move 18,Rest
+111,Rhyhorn,Move 19,Rock Slide
+111,Rhyhorn,Move 20,Substitute
+111,Rhyhorn,Move 21,Strength
+112,Rhydon,Move 1,Mega Punch
+112,Rhydon,Move 2,Flamethrower
+112,Rhydon,Move 3,Mega Kick
+112,Rhydon,Move 4,Toxic
+112,Rhydon,Move 5,Horn Drill
+112,Rhydon,Move 6,Body Slam
+112,Rhydon,Move 7,Take Down
+112,Rhydon,Move 8,Double Edge
+112,Rhydon,Move 9,Bubblebeam
+112,Rhydon,Move 10,Water Gun
+112,Rhydon,Move 11,Ice Beam
+112,Rhydon,Move 12,Blizzard
+112,Rhydon,Move 13,Hyper Beam
+112,Rhydon,Move 14,Pay Day
+112,Rhydon,Move 15,Submission
+112,Rhydon,Move 16,Counter
+112,Rhydon,Move 17,Seismic Toss
+112,Rhydon,Move 18,Rage
+112,Rhydon,Move 19,Thunderbolt
+112,Rhydon,Move 20,Thunder
+112,Rhydon,Move 21,Earthquake
+112,Rhydon,Move 22,Fissure
+112,Rhydon,Move 23,Dig
+112,Rhydon,Move 24,Mimic
+112,Rhydon,Move 25,Double Team
+112,Rhydon,Move 26,Bide
+112,Rhydon,Move 27,Fire Blast
+112,Rhydon,Move 28,Skull Bash
+112,Rhydon,Move 29,Rest
+112,Rhydon,Move 30,Rock Slide
+112,Rhydon,Move 31,Substitute
+112,Rhydon,Move 32,Surf
+112,Rhydon,Move 33,Strength
+113,Chansey,Move 1,Mega Punch
+113,Chansey,Move 2,Flamethrower
+113,Chansey,Move 3,Mega Kick
+113,Chansey,Move 4,Toxic
+113,Chansey,Move 5,Body Slam
+113,Chansey,Move 6,Take Down
+113,Chansey,Move 7,Double Edge
+113,Chansey,Move 8,Bubblebeam
+113,Chansey,Move 9,Water Gun
+113,Chansey,Move 10,Ice Beam
+113,Chansey,Move 11,Blizzard
+113,Chansey,Move 12,Hyper Beam
+113,Chansey,Move 13,Submission
+113,Chansey,Move 14,Counter
+113,Chansey,Move 15,Seismic Toss
+113,Chansey,Move 16,Rage
+113,Chansey,Move 17,Solarbeam
+113,Chansey,Move 18,Thunderbolt
+113,Chansey,Move 19,Thunder
+113,Chansey,Move 20,Psychic
+113,Chansey,Move 21,Teleport
+113,Chansey,Move 22,Mimic
+113,Chansey,Move 23,Double Team
+113,Chansey,Move 24,Reflect
+113,Chansey,Move 25,Bide
+113,Chansey,Move 26,Metronome
+113,Chansey,Move 27,Egg Bomb
+113,Chansey,Move 28,Fire Blast
+113,Chansey,Move 29,Skull Bash
+113,Chansey,Move 30,Softboiled
+113,Chansey,Move 31,Rest
+113,Chansey,Move 32,Thunder Wave
+113,Chansey,Move 33,Psywave
+113,Chansey,Move 34,Tri Attack
+113,Chansey,Move 35,Substitute
+113,Chansey,Move 36,Strength
+113,Chansey,Move 37,Flash
+114,Tangela,Move 1,Swords Dance
+114,Tangela,Move 2,Toxic
+114,Tangela,Move 3,Body Slam
+114,Tangela,Move 4,Take Down
+114,Tangela,Move 5,Double Edge
+114,Tangela,Move 6,Hyper Beam
+114,Tangela,Move 7,Rage
+114,Tangela,Move 8,Mega Drain
+114,Tangela,Move 9,Solarbeam
+114,Tangela,Move 10,Mimic
+114,Tangela,Move 11,Double Team
+114,Tangela,Move 12,Bide
+114,Tangela,Move 13,Skull Bash
+114,Tangela,Move 14,Rest
+114,Tangela,Move 15,Substitute
+114,Tangela,Move 16,Cut
+115,Kangaskhan,Move 1,Mega Punch
+115,Kangaskhan,Move 2,Mega Kick
+115,Kangaskhan,Move 3,Toxic
+115,Kangaskhan,Move 4,Body Slam
+115,Kangaskhan,Move 5,Take Down
+115,Kangaskhan,Move 6,Double Edge
+115,Kangaskhan,Move 7,Bubblebeam
+115,Kangaskhan,Move 8,Water Gun
+115,Kangaskhan,Move 9,Ice Beam
+115,Kangaskhan,Move 10,Blizzard
+115,Kangaskhan,Move 11,Hyper Beam
+115,Kangaskhan,Move 12,Submission
+115,Kangaskhan,Move 13,Counter
+115,Kangaskhan,Move 14,Seismic Toss
+115,Kangaskhan,Move 15,Rage
+115,Kangaskhan,Move 16,Thunderbolt
+115,Kangaskhan,Move 17,Thunder
+115,Kangaskhan,Move 18,Earthquake
+115,Kangaskhan,Move 19,Fissure
+115,Kangaskhan,Move 20,Mimic
+115,Kangaskhan,Move 21,Double Team
+115,Kangaskhan,Move 22,Bide
+115,Kangaskhan,Move 23,Fire Blast
+115,Kangaskhan,Move 24,Skull Bash
+115,Kangaskhan,Move 25,Rest
+115,Kangaskhan,Move 26,Rock Slide
+115,Kangaskhan,Move 27,Substitute
+115,Kangaskhan,Move 28,Surf
+115,Kangaskhan,Move 29,Strength
+116,Horsea,Move 1,Toxic
+116,Horsea,Move 2,Take Down
+116,Horsea,Move 3,Double Edge
+116,Horsea,Move 4,Bubblebeam
+116,Horsea,Move 5,Water Gun
+116,Horsea,Move 6,Ice Beam
+116,Horsea,Move 7,Blizzard
+116,Horsea,Move 8,Rage
+116,Horsea,Move 9,Mimic
+116,Horsea,Move 10,Double Team
+116,Horsea,Move 11,Bide
+116,Horsea,Move 12,Swift
+116,Horsea,Move 13,Skull Bash
+116,Horsea,Move 14,Rest
+116,Horsea,Move 15,Substitute
+116,Horsea,Move 16,Surf
+117,Seadra,Move 1,Toxic
+117,Seadra,Move 2,Take Down
+117,Seadra,Move 3,Double Edge
+117,Seadra,Move 4,Bubblebeam
+117,Seadra,Move 5,Water Gun
+117,Seadra,Move 6,Ice Beam
+117,Seadra,Move 7,Blizzard
+117,Seadra,Move 8,Hyper Beam
+117,Seadra,Move 9,Rage
+117,Seadra,Move 10,Mimic
+117,Seadra,Move 11,Double Team
+117,Seadra,Move 12,Bide
+117,Seadra,Move 13,Swift
+117,Seadra,Move 14,Skull Bash
+117,Seadra,Move 15,Rest
+117,Seadra,Move 16,Substitute
+117,Seadra,Move 17,Surf
+118,Goldeen,Move 1,Toxic
+118,Goldeen,Move 2,Horn Drill
+118,Goldeen,Move 3,Take Down
+118,Goldeen,Move 4,Double Edge
+118,Goldeen,Move 5,Bubblebeam
+118,Goldeen,Move 6,Water Gun
+118,Goldeen,Move 7,Ice Beam
+118,Goldeen,Move 8,Blizzard
+118,Goldeen,Move 9,Rage
+118,Goldeen,Move 10,Mimic
+118,Goldeen,Move 11,Double Team
+118,Goldeen,Move 12,Bide
+118,Goldeen,Move 13,Swift
+118,Goldeen,Move 14,Skull Bash
+118,Goldeen,Move 15,Rest
+118,Goldeen,Move 16,Substitute
+118,Goldeen,Move 17,Surf
+118,Goldeen,Move 18,Swords Dance
+119,Seaking,Move 1,Toxic
+119,Seaking,Move 2,Horn Drill
+119,Seaking,Move 3,Take Down
+119,Seaking,Move 4,Double Edge
+119,Seaking,Move 5,Bubblebeam
+119,Seaking,Move 6,Water Gun
+119,Seaking,Move 7,Ice Beam
+119,Seaking,Move 8,Blizzard
+119,Seaking,Move 9,Hyper Beam
+119,Seaking,Move 10,Rage
+119,Seaking,Move 11,Mimic
+119,Seaking,Move 12,Double Team
+119,Seaking,Move 13,Bide
+119,Seaking,Move 14,Swift
+119,Seaking,Move 15,Skull Bash
+119,Seaking,Move 16,Rest
+119,Seaking,Move 17,Substitute
+119,Seaking,Move 18,Surf
+119,Seaking,Move 19,Swords Dance
+120,Staryu,Move 1,Toxic
+120,Staryu,Move 2,Take Down
+120,Staryu,Move 3,Double Edge
+120,Staryu,Move 4,Bubblebeam
+120,Staryu,Move 5,Water Gun
+120,Staryu,Move 6,Ice Beam
+120,Staryu,Move 7,Blizzard
+120,Staryu,Move 8,Rage
+120,Staryu,Move 9,Thunderbolt
+120,Staryu,Move 10,Thunder
+120,Staryu,Move 11,Psychic
+120,Staryu,Move 12,Teleport
+120,Staryu,Move 13,Mimic
+120,Staryu,Move 14,Double Team
+120,Staryu,Move 15,Reflect
+120,Staryu,Move 16,Bide
+120,Staryu,Move 17,Swift
+120,Staryu,Move 18,Skull Bash
+120,Staryu,Move 19,Rest
+120,Staryu,Move 20,Thunder Wave
+120,Staryu,Move 21,Psywave
+120,Staryu,Move 22,Tri Attack
+120,Staryu,Move 23,Substitute
+120,Staryu,Move 24,Surf
+120,Staryu,Move 25,Flash
+121,Starmie,Move 1,Toxic
+121,Starmie,Move 2,Take Down
+121,Starmie,Move 3,Double Edge
+121,Starmie,Move 4,Bubblebeam
+121,Starmie,Move 5,Water Gun
+121,Starmie,Move 6,Ice Beam
+121,Starmie,Move 7,Blizzard
+121,Starmie,Move 8,Hyper Beam
+121,Starmie,Move 9,Rage
+121,Starmie,Move 10,Thunderbolt
+121,Starmie,Move 11,Thunder
+121,Starmie,Move 12,Psychic
+121,Starmie,Move 13,Teleport
+121,Starmie,Move 14,Mimic
+121,Starmie,Move 15,Double Team
+121,Starmie,Move 16,Reflect
+121,Starmie,Move 17,Bide
+121,Starmie,Move 18,Swift
+121,Starmie,Move 19,Skull Bash
+121,Starmie,Move 20,Rest
+121,Starmie,Move 21,Thunder Wave
+121,Starmie,Move 22,Psywave
+121,Starmie,Move 23,Tri Attack
+121,Starmie,Move 24,Substitute
+121,Starmie,Move 25,Surf
+121,Starmie,Move 26,Flash
+122,Mr-mime,Move 1,Mega Punch
+122,Mr-mime,Move 2,Mega Kick
+122,Mr-mime,Move 3,Toxic
+122,Mr-mime,Move 4,Body Slam
+122,Mr-mime,Move 5,Take Down
+122,Mr-mime,Move 6,Double Edge
+122,Mr-mime,Move 7,Hyper Beam
+122,Mr-mime,Move 8,Submission
+122,Mr-mime,Move 9,Counter
+122,Mr-mime,Move 10,Seismic Toss
+122,Mr-mime,Move 11,Rage
+122,Mr-mime,Move 12,Solarbeam
+122,Mr-mime,Move 13,Thunderbolt
+122,Mr-mime,Move 14,Thunder
+122,Mr-mime,Move 15,Psychic
+122,Mr-mime,Move 16,Teleport
+122,Mr-mime,Move 17,Mimic
+122,Mr-mime,Move 18,Double Team
+122,Mr-mime,Move 19,Reflect
+122,Mr-mime,Move 20,Bide
+122,Mr-mime,Move 21,Metronome
+122,Mr-mime,Move 22,Skull Bash
+122,Mr-mime,Move 23,Rest
+122,Mr-mime,Move 24,Thunder Wave
+122,Mr-mime,Move 25,Psywave
+122,Mr-mime,Move 26,Substitute
+122,Mr-mime,Move 27,Flash
+123,Scyther,Move 1,Swords Dance
+123,Scyther,Move 2,Toxic
+123,Scyther,Move 3,Take Down
+123,Scyther,Move 4,Double Edge
+123,Scyther,Move 5,Hyper Beam
+123,Scyther,Move 6,Rage
+123,Scyther,Move 7,Mimic
+123,Scyther,Move 8,Double Team
+123,Scyther,Move 9,Bide
+123,Scyther,Move 10,Swift
+123,Scyther,Move 11,Skull Bash
+123,Scyther,Move 12,Rest
+123,Scyther,Move 13,Substitute
+123,Scyther,Move 14,Cut
+124,Jynx,Move 1,Mega Punch
+124,Jynx,Move 2,Mega Kick
+124,Jynx,Move 3,Toxic
+124,Jynx,Move 4,Body Slam
+124,Jynx,Move 5,Take Down
+124,Jynx,Move 6,Double Edge
+124,Jynx,Move 7,Bubblebeam
+124,Jynx,Move 8,Water Gun
+124,Jynx,Move 9,Ice Beam
+124,Jynx,Move 10,Blizzard
+124,Jynx,Move 11,Hyper Beam
+124,Jynx,Move 12,Submission
+124,Jynx,Move 13,Counter
+124,Jynx,Move 14,Seismic Toss
+124,Jynx,Move 15,Rage
+124,Jynx,Move 16,Psychic
+124,Jynx,Move 17,Teleport
+124,Jynx,Move 18,Mimic
+124,Jynx,Move 19,Double Team
+124,Jynx,Move 20,Reflect
+124,Jynx,Move 21,Bide
+124,Jynx,Move 22,Metronome
+124,Jynx,Move 23,Skull Bash
+124,Jynx,Move 24,Rest
+124,Jynx,Move 25,Psywave
+124,Jynx,Move 26,Substitute
+125,Electabuzz,Move 1,Mega Punch
+125,Electabuzz,Move 2,Mega Kick
+125,Electabuzz,Move 3,Toxic
+125,Electabuzz,Move 4,Body Slam
+125,Electabuzz,Move 5,Take Down
+125,Electabuzz,Move 6,Double Edge
+125,Electabuzz,Move 7,Hyper Beam
+125,Electabuzz,Move 8,Submission
+125,Electabuzz,Move 9,Counter
+125,Electabuzz,Move 10,Seismic Toss
+125,Electabuzz,Move 11,Rage
+125,Electabuzz,Move 12,Thunderbolt
+125,Electabuzz,Move 13,Thunder
+125,Electabuzz,Move 14,Psychic
+125,Electabuzz,Move 15,Teleport
+125,Electabuzz,Move 16,Mimic
+125,Electabuzz,Move 17,Double Team
+125,Electabuzz,Move 18,Reflect
+125,Electabuzz,Move 19,Bide
+125,Electabuzz,Move 20,Metronome
+125,Electabuzz,Move 21,Swift
+125,Electabuzz,Move 22,Skull Bash
+125,Electabuzz,Move 23,Rest
+125,Electabuzz,Move 24,Thunder Wave
+125,Electabuzz,Move 25,Psywave
+125,Electabuzz,Move 26,Substitute
+125,Electabuzz,Move 27,Strength
+125,Electabuzz,Move 28,Flash
+126,Magmar,Move 1,Mega Punch
+126,Magmar,Move 2,Flamethrower
+126,Magmar,Move 3,Mega Kick
+126,Magmar,Move 4,Toxic
+126,Magmar,Move 5,Body Slam
+126,Magmar,Move 6,Take Down
+126,Magmar,Move 7,Double Edge
+126,Magmar,Move 8,Hyper Beam
+126,Magmar,Move 9,Submission
+126,Magmar,Move 10,Counter
+126,Magmar,Move 11,Seismic Toss
+126,Magmar,Move 12,Rage
+126,Magmar,Move 13,Psychic
+126,Magmar,Move 14,Teleport
+126,Magmar,Move 15,Mimic
+126,Magmar,Move 16,Double Team
+126,Magmar,Move 17,Bide
+126,Magmar,Move 18,Metronome
+126,Magmar,Move 19,Fire Blast
+126,Magmar,Move 20,Skull Bash
+126,Magmar,Move 21,Rest
+126,Magmar,Move 22,Psywave
+126,Magmar,Move 23,Substitute
+126,Magmar,Move 24,Strength
+127,Pinsir,Move 1,Swords Dance
+127,Pinsir,Move 2,Toxic
+127,Pinsir,Move 3,Body Slam
+127,Pinsir,Move 4,Take Down
+127,Pinsir,Move 5,Double Edge
+127,Pinsir,Move 6,Hyper Beam
+127,Pinsir,Move 7,Submission
+127,Pinsir,Move 8,Seismic Toss
+127,Pinsir,Move 9,Rage
+127,Pinsir,Move 10,Mimic
+127,Pinsir,Move 11,Double Team
+127,Pinsir,Move 12,Bide
+127,Pinsir,Move 13,Rest
+127,Pinsir,Move 14,Substitute
+127,Pinsir,Move 15,Cut
+127,Pinsir,Move 16,Strength
+128,Tauros,Move 1,Flamethrower
+128,Tauros,Move 2,Toxic
+128,Tauros,Move 3,Horn Drill
+128,Tauros,Move 4,Body Slam
+128,Tauros,Move 5,Take Down
+128,Tauros,Move 6,Double Edge
+128,Tauros,Move 7,Ice Beam
+128,Tauros,Move 8,Blizzard
+128,Tauros,Move 9,Hyper Beam
+128,Tauros,Move 10,Rage
+128,Tauros,Move 11,Thunderbolt
+128,Tauros,Move 12,Thunder
+128,Tauros,Move 13,Earthquake
+128,Tauros,Move 14,Fissure
+128,Tauros,Move 15,Mimic
+128,Tauros,Move 16,Double Team
+128,Tauros,Move 17,Bide
+128,Tauros,Move 18,Fire Blast
+128,Tauros,Move 19,Skull Bash
+128,Tauros,Move 20,Rest
+128,Tauros,Move 21,Substitute
+128,Tauros,Move 22,Strength
+130,Gyarados,Move 1,Toxic
+130,Gyarados,Move 2,Body Slam
+130,Gyarados,Move 3,Take Down
+130,Gyarados,Move 4,Double Edge
+130,Gyarados,Move 5,Bubblebeam
+130,Gyarados,Move 6,Water Gun
+130,Gyarados,Move 7,Ice Beam
+130,Gyarados,Move 8,Blizzard
+130,Gyarados,Move 9,Hyper Beam
+130,Gyarados,Move 10,Rage
+130,Gyarados,Move 11,Dragon Rage
+130,Gyarados,Move 12,Thunderbolt
+130,Gyarados,Move 13,Thunder
+130,Gyarados,Move 14,Mimic
+130,Gyarados,Move 15,Double Team
+130,Gyarados,Move 16,Reflect
+130,Gyarados,Move 17,Bide
+130,Gyarados,Move 18,Fire Blast
+130,Gyarados,Move 19,Skull Bash
+130,Gyarados,Move 20,Rest
+130,Gyarados,Move 21,Substitute
+130,Gyarados,Move 22,Fly
+130,Gyarados,Move 23,Surf
+130,Gyarados,Move 24,Strength
+131,Lapras,Move 1,Toxic
+131,Lapras,Move 2,Horn Drill
+131,Lapras,Move 3,Body Slam
+131,Lapras,Move 4,Take Down
+131,Lapras,Move 5,Double Edge
+131,Lapras,Move 6,Bubblebeam
+131,Lapras,Move 7,Water Gun
+131,Lapras,Move 8,Ice Beam
+131,Lapras,Move 9,Blizzard
+131,Lapras,Move 10,Hyper Beam
+131,Lapras,Move 11,Rage
+131,Lapras,Move 12,Solarbeam
+131,Lapras,Move 13,Dragon Rage
+131,Lapras,Move 14,Thunderbolt
+131,Lapras,Move 15,Thunder
+131,Lapras,Move 16,Psychic
+131,Lapras,Move 17,Mimic
+131,Lapras,Move 18,Double Team
+131,Lapras,Move 19,Reflect
+131,Lapras,Move 20,Bide
+131,Lapras,Move 21,Skull Bash
+131,Lapras,Move 22,Rest
+131,Lapras,Move 23,Psywave
+131,Lapras,Move 24,Substitute
+131,Lapras,Move 25,Surf
+131,Lapras,Move 26,Strength
+133,Eevee,Move 1,Toxic
+133,Eevee,Move 2,Body Slam
+133,Eevee,Move 3,Take Down
+133,Eevee,Move 4,Double Edge
+133,Eevee,Move 5,Rage
+133,Eevee,Move 6,Dig
+133,Eevee,Move 7,Mimic
+133,Eevee,Move 8,Double Team
+133,Eevee,Move 9,Reflect
+133,Eevee,Move 10,Bide
+133,Eevee,Move 11,Swift
+133,Eevee,Move 12,Skull Bash
+133,Eevee,Move 13,Rest
+133,Eevee,Move 14,Substitute
+134,Vaporeon,Move 1,Toxic
+134,Vaporeon,Move 2,Body Slam
+134,Vaporeon,Move 3,Take Down
+134,Vaporeon,Move 4,Double Edge
+134,Vaporeon,Move 5,Bubblebeam
+134,Vaporeon,Move 6,Water Gun
+134,Vaporeon,Move 7,Ice Beam
+134,Vaporeon,Move 8,Blizzard
+134,Vaporeon,Move 9,Hyper Beam
+134,Vaporeon,Move 10,Rage
+134,Vaporeon,Move 11,Mimic
+134,Vaporeon,Move 12,Double Team
+134,Vaporeon,Move 13,Reflect
+134,Vaporeon,Move 14,Bide
+134,Vaporeon,Move 15,Swift
+134,Vaporeon,Move 16,Skull Bash
+134,Vaporeon,Move 17,Rest
+134,Vaporeon,Move 18,Substitute
+134,Vaporeon,Move 19,Surf
+135,Jolteon,Move 1,Toxic
+135,Jolteon,Move 2,Body Slam
+135,Jolteon,Move 3,Take Down
+135,Jolteon,Move 4,Double Edge
+135,Jolteon,Move 5,Hyper Beam
+135,Jolteon,Move 6,Rage
+135,Jolteon,Move 7,Thunderbolt
+135,Jolteon,Move 8,Thunder
+135,Jolteon,Move 9,Mimic
+135,Jolteon,Move 10,Double Team
+135,Jolteon,Move 11,Reflect
+135,Jolteon,Move 12,Bide
+135,Jolteon,Move 13,Swift
+135,Jolteon,Move 14,Skull Bash
+135,Jolteon,Move 15,Rest
+135,Jolteon,Move 16,Thunder Wave
+135,Jolteon,Move 17,Substitute
+135,Jolteon,Move 18,Flash
+136,Flareon,Move 1,Flamethrower
+136,Flareon,Move 2,Toxic
+136,Flareon,Move 3,Body Slam
+136,Flareon,Move 4,Take Down
+136,Flareon,Move 5,Double Edge
+136,Flareon,Move 6,Hyper Beam
+136,Flareon,Move 7,Rage
+136,Flareon,Move 8,Mimic
+136,Flareon,Move 9,Double Team
+136,Flareon,Move 10,Reflect
+136,Flareon,Move 11,Bide
+136,Flareon,Move 12,Fire Blast
+136,Flareon,Move 13,Swift
+136,Flareon,Move 14,Skull Bash
+136,Flareon,Move 15,Rest
+136,Flareon,Move 16,Substitute
+137,Porygon,Move 1,Toxic
+137,Porygon,Move 2,Take Down
+137,Porygon,Move 3,Double Edge
+137,Porygon,Move 4,Ice Beam
+137,Porygon,Move 5,Blizzard
+137,Porygon,Move 6,Hyper Beam
+137,Porygon,Move 7,Rage
+137,Porygon,Move 8,Thunderbolt
+137,Porygon,Move 9,Thunder
+137,Porygon,Move 10,Psychic
+137,Porygon,Move 11,Teleport
+137,Porygon,Move 12,Mimic
+137,Porygon,Move 13,Double Team
+137,Porygon,Move 14,Reflect
+137,Porygon,Move 15,Bide
+137,Porygon,Move 16,Swift
+137,Porygon,Move 17,Skull Bash
+137,Porygon,Move 18,Rest
+137,Porygon,Move 19,Thunder Wave
+137,Porygon,Move 20,Psywave
+137,Porygon,Move 21,Tri Attack
+137,Porygon,Move 22,Substitute
+137,Porygon,Move 23,Flash
+138,Omanyte,Move 1,Toxic
+138,Omanyte,Move 2,Body Slam
+138,Omanyte,Move 3,Take Down
+138,Omanyte,Move 4,Double Edge
+138,Omanyte,Move 5,Bubblebeam
+138,Omanyte,Move 6,Water Gun
+138,Omanyte,Move 7,Ice Beam
+138,Omanyte,Move 8,Blizzard
+138,Omanyte,Move 9,Rage
+138,Omanyte,Move 10,Mimic
+138,Omanyte,Move 11,Double Team
+138,Omanyte,Move 12,Reflect
+138,Omanyte,Move 13,Bide
+138,Omanyte,Move 14,Rest
+138,Omanyte,Move 15,Substitute
+138,Omanyte,Move 16,Surf
+138,Omanyte,Move 17,Rock Slide
+139,Omastar,Move 1,Toxic
+139,Omastar,Move 2,Horn Drill
+139,Omastar,Move 3,Body Slam
+139,Omastar,Move 4,Take Down
+139,Omastar,Move 5,Double Edge
+139,Omastar,Move 6,Bubblebeam
+139,Omastar,Move 7,Water Gun
+139,Omastar,Move 8,Ice Beam
+139,Omastar,Move 9,Blizzard
+139,Omastar,Move 10,Hyper Beam
+139,Omastar,Move 11,Submission
+139,Omastar,Move 12,Seismic Toss
+139,Omastar,Move 13,Rage
+139,Omastar,Move 14,Mimic
+139,Omastar,Move 15,Double Team
+139,Omastar,Move 16,Reflect
+139,Omastar,Move 17,Bide
+139,Omastar,Move 18,Skull Bash
+139,Omastar,Move 19,Rest
+139,Omastar,Move 20,Substitute
+139,Omastar,Move 21,Surf
+139,Omastar,Move 22,Rock Slide
+140,Kabuto,Move 1,Toxic
+140,Kabuto,Move 2,Body Slam
+140,Kabuto,Move 3,Take Down
+140,Kabuto,Move 4,Double Edge
+140,Kabuto,Move 5,Bubblebeam
+140,Kabuto,Move 6,Water Gun
+140,Kabuto,Move 7,Ice Beam
+140,Kabuto,Move 8,Blizzard
+140,Kabuto,Move 9,Rage
+140,Kabuto,Move 10,Mimic
+140,Kabuto,Move 11,Double Team
+140,Kabuto,Move 12,Reflect
+140,Kabuto,Move 13,Bide
+140,Kabuto,Move 14,Rest
+140,Kabuto,Move 15,Substitute
+140,Kabuto,Move 16,Surf
+140,Kabuto,Move 17,Rock Slide
+141,Kabutops,Move 1,Razor Wind
+141,Kabutops,Move 2,Swords Dance
+141,Kabutops,Move 3,Mega Kick
+141,Kabutops,Move 4,Toxic
+141,Kabutops,Move 5,Body Slam
+141,Kabutops,Move 6,Take Down
+141,Kabutops,Move 7,Double Edge
+141,Kabutops,Move 8,Bubblebeam
+141,Kabutops,Move 9,Water Gun
+141,Kabutops,Move 10,Ice Beam
+141,Kabutops,Move 11,Blizzard
+141,Kabutops,Move 12,Hyper Beam
+141,Kabutops,Move 13,Submission
+141,Kabutops,Move 14,Seismic Toss
+141,Kabutops,Move 15,Rage
+141,Kabutops,Move 16,Mimic
+141,Kabutops,Move 17,Double Team
+141,Kabutops,Move 18,Reflect
+141,Kabutops,Move 19,Bide
+141,Kabutops,Move 20,Skull Bash
+141,Kabutops,Move 21,Rest
+141,Kabutops,Move 22,Substitute
+141,Kabutops,Move 23,Cut
+141,Kabutops,Move 24,Surf
+141,Kabutops,Move 25,Rock Slide
+142,Aerodactyl,Move 1,Razor Wind
+142,Aerodactyl,Move 2,Flamethrower
+142,Aerodactyl,Move 3,Toxic
+142,Aerodactyl,Move 4,Take Down
+142,Aerodactyl,Move 5,Double Edge
+142,Aerodactyl,Move 6,Hyper Beam
+142,Aerodactyl,Move 7,Rage
+142,Aerodactyl,Move 8,Dragon Rage
+142,Aerodactyl,Move 9,Earthquake
+142,Aerodactyl,Move 10,Mimic
+142,Aerodactyl,Move 11,Double Team
+142,Aerodactyl,Move 12,Reflect
+142,Aerodactyl,Move 13,Bide
+142,Aerodactyl,Move 14,Fire Blast
+142,Aerodactyl,Move 15,Swift
+142,Aerodactyl,Move 16,Sky Attack
+142,Aerodactyl,Move 17,Rest
+142,Aerodactyl,Move 18,Substitute
+142,Aerodactyl,Move 19,Fly
+142,Aerodactyl,Move 20,Rock Slide
+143,Snorlax,Move 1,Mega Punch
+143,Snorlax,Move 2,Flamethrower
+143,Snorlax,Move 3,Mega Kick
+143,Snorlax,Move 4,Toxic
+143,Snorlax,Move 5,Body Slam
+143,Snorlax,Move 6,Take Down
+143,Snorlax,Move 7,Double Edge
+143,Snorlax,Move 8,Bubblebeam
+143,Snorlax,Move 9,Water Gun
+143,Snorlax,Move 10,Ice Beam
+143,Snorlax,Move 11,Blizzard
+143,Snorlax,Move 12,Hyper Beam
+143,Snorlax,Move 13,Pay Day
+143,Snorlax,Move 14,Submission
+143,Snorlax,Move 15,Counter
+143,Snorlax,Move 16,Seismic Toss
+143,Snorlax,Move 17,Rage
+143,Snorlax,Move 18,Solarbeam
+143,Snorlax,Move 19,Thunderbolt
+143,Snorlax,Move 20,Thunder
+143,Snorlax,Move 21,Earthquake
+143,Snorlax,Move 22,Fissure
+143,Snorlax,Move 23,Psychic
+143,Snorlax,Move 24,Mimic
+143,Snorlax,Move 25,Double Team
+143,Snorlax,Move 26,Reflect
+143,Snorlax,Move 27,Bide
+143,Snorlax,Move 28,Metronome
+143,Snorlax,Move 29,Selfdestruct
+143,Snorlax,Move 30,Fire Blast
+143,Snorlax,Move 31,Skull Bash
+143,Snorlax,Move 32,Rest
+143,Snorlax,Move 33,Psywave
+143,Snorlax,Move 34,Rock Slide
+143,Snorlax,Move 35,Substitute
+143,Snorlax,Move 36,Surf
+143,Snorlax,Move 37,Strength
+144,Articuno,Move 1,Razor Wind
+144,Articuno,Move 2,Toxic
+144,Articuno,Move 3,Take Down
+144,Articuno,Move 4,Double Edge
+144,Articuno,Move 5,Bubblebeam
+144,Articuno,Move 6,Water Gun
+144,Articuno,Move 7,Ice Beam
+144,Articuno,Move 8,Blizzard
+144,Articuno,Move 9,Hyper Beam
+144,Articuno,Move 10,Rage
+144,Articuno,Move 11,Mimic
+144,Articuno,Move 12,Double Team
+144,Articuno,Move 13,Reflect
+144,Articuno,Move 14,Bide
+144,Articuno,Move 15,Swift
+144,Articuno,Move 16,Sky Attack
+144,Articuno,Move 17,Rest
+144,Articuno,Move 18,Substitute
+144,Articuno,Move 19,Fly
+145,Zapdos,Move 1,Razor Wind
+145,Zapdos,Move 2,Toxic
+145,Zapdos,Move 3,Take Down
+145,Zapdos,Move 4,Double Edge
+145,Zapdos,Move 5,Hyper Beam
+145,Zapdos,Move 6,Rage
+145,Zapdos,Move 7,Thunderbolt
+145,Zapdos,Move 8,Thunder
+145,Zapdos,Move 9,Mimic
+145,Zapdos,Move 10,Double Team
+145,Zapdos,Move 11,Reflect
+145,Zapdos,Move 12,Bide
+145,Zapdos,Move 13,Swift
+145,Zapdos,Move 14,Sky Attack
+145,Zapdos,Move 15,Rest
+145,Zapdos,Move 16,Thunder Wave
+145,Zapdos,Move 17,Substitute
+145,Zapdos,Move 18,Fly
+145,Zapdos,Move 19,Flash
+146,Moltres,Move 1,Razor Wind
+146,Moltres,Move 2,Flamethrower
+146,Moltres,Move 3,Toxic
+146,Moltres,Move 4,Take Down
+146,Moltres,Move 5,Double Edge
+146,Moltres,Move 6,Hyper Beam
+146,Moltres,Move 7,Rage
+146,Moltres,Move 8,Mimic
+146,Moltres,Move 9,Double Team
+146,Moltres,Move 10,Reflect
+146,Moltres,Move 11,Bide
+146,Moltres,Move 12,Fire Blast
+146,Moltres,Move 13,Swift
+146,Moltres,Move 14,Sky Attack
+146,Moltres,Move 15,Rest
+146,Moltres,Move 16,Substitute
+146,Moltres,Move 17,Fly
+147,Dratini,Move 1,Toxic
+147,Dratini,Move 2,Flamethrower
+147,Dratini,Move 3,Body Slam
+147,Dratini,Move 4,Take Down
+147,Dratini,Move 5,Double Edge
+147,Dratini,Move 6,Bubblebeam
+147,Dratini,Move 7,Water Gun
+147,Dratini,Move 8,Ice Beam
+147,Dratini,Move 9,Blizzard
+147,Dratini,Move 10,Rage
+147,Dratini,Move 11,Dragon Rage
+147,Dratini,Move 12,Thunderbolt
+147,Dratini,Move 13,Thunder
+147,Dratini,Move 14,Mimic
+147,Dratini,Move 15,Double Team
+147,Dratini,Move 16,Reflect
+147,Dratini,Move 17,Bide
+147,Dratini,Move 18,Fire Blast
+147,Dratini,Move 19,Swift
+147,Dratini,Move 20,Skull Bash
+147,Dratini,Move 21,Rest
+147,Dratini,Move 22,Thunder Wave
+147,Dratini,Move 23,Substitute
+147,Dratini,Move 24,Surf
+148,Dragonair,Move 1,Toxic
+148,Dragonair,Move 2,Flamethrower
+148,Dragonair,Move 3,Horn Drill
+148,Dragonair,Move 4,Body Slam
+148,Dragonair,Move 5,Take Down
+148,Dragonair,Move 6,Double Edge
+148,Dragonair,Move 7,Bubblebeam
+148,Dragonair,Move 8,Water Gun
+148,Dragonair,Move 9,Ice Beam
+148,Dragonair,Move 10,Blizzard
+148,Dragonair,Move 11,Rage
+148,Dragonair,Move 12,Dragon Rage
+148,Dragonair,Move 13,Thunderbolt
+148,Dragonair,Move 14,Thunder
+148,Dragonair,Move 15,Mimic
+148,Dragonair,Move 16,Double Team
+148,Dragonair,Move 17,Reflect
+148,Dragonair,Move 18,Bide
+148,Dragonair,Move 19,Fire Blast
+148,Dragonair,Move 20,Swift
+148,Dragonair,Move 21,Skull Bash
+148,Dragonair,Move 22,Rest
+148,Dragonair,Move 23,Thunder Wave
+148,Dragonair,Move 24,Substitute
+148,Dragonair,Move 25,Surf
+149,Dragonite,Move 1,Razor Wind
+149,Dragonite,Move 2,Flamethrower
+149,Dragonite,Move 3,Toxic
+149,Dragonite,Move 4,Horn Drill
+149,Dragonite,Move 5,Body Slam
+149,Dragonite,Move 6,Take Down
+149,Dragonite,Move 7,Double Edge
+149,Dragonite,Move 8,Bubblebeam
+149,Dragonite,Move 9,Water Gun
+149,Dragonite,Move 10,Ice Beam
+149,Dragonite,Move 11,Blizzard
+149,Dragonite,Move 12,Hyper Beam
+149,Dragonite,Move 13,Rage
+149,Dragonite,Move 14,Dragon Rage
+149,Dragonite,Move 15,Thunderbolt
+149,Dragonite,Move 16,Thunder
+149,Dragonite,Move 17,Mimic
+149,Dragonite,Move 18,Double Team
+149,Dragonite,Move 19,Reflect
+149,Dragonite,Move 20,Bide
+149,Dragonite,Move 21,Fire Blast
+149,Dragonite,Move 22,Swift
+149,Dragonite,Move 23,Skull Bash
+149,Dragonite,Move 24,Rest
+149,Dragonite,Move 25,Thunder Wave
+149,Dragonite,Move 26,Substitute
+149,Dragonite,Move 27,Surf
+149,Dragonite,Move 28,Strength
+149,Dragonite,Move 29,Fly
+150,Mewtwo,Move 1,Mega Punch
+150,Mewtwo,Move 2,Flamethrower
+150,Mewtwo,Move 3,Mega Kick
+150,Mewtwo,Move 4,Toxic
+150,Mewtwo,Move 5,Body Slam
+150,Mewtwo,Move 6,Take Down
+150,Mewtwo,Move 7,Double Edge
+150,Mewtwo,Move 8,Bubblebeam
+150,Mewtwo,Move 9,Water Gun
+150,Mewtwo,Move 10,Ice Beam
+150,Mewtwo,Move 11,Blizzard
+150,Mewtwo,Move 12,Hyper Beam
+150,Mewtwo,Move 13,Submission
+150,Mewtwo,Move 14,Counter
+150,Mewtwo,Move 15,Seismic Toss
+150,Mewtwo,Move 16,Rage
+150,Mewtwo,Move 17,Solarbeam
+150,Mewtwo,Move 18,Thunderbolt
+150,Mewtwo,Move 19,Thunder
+150,Mewtwo,Move 20,Psychic
+150,Mewtwo,Move 21,Teleport
+150,Mewtwo,Move 22,Mimic
+150,Mewtwo,Move 23,Double Team
+150,Mewtwo,Move 24,Reflect
+150,Mewtwo,Move 25,Bide
+150,Mewtwo,Move 26,Metronome
+150,Mewtwo,Move 27,Selfdestruct
+150,Mewtwo,Move 28,Fire Blast
+150,Mewtwo,Move 29,Skull Bash
+150,Mewtwo,Move 30,Rest
+150,Mewtwo,Move 31,Thunder Wave
+150,Mewtwo,Move 32,Psywave
+150,Mewtwo,Move 33,Tri Attack
+150,Mewtwo,Move 34,Substitute
+150,Mewtwo,Move 35,Strength
+150,Mewtwo,Move 36,Flash
+151,Mew,Move 1,Mega Punch
+151,Mew,Move 2,Razor Wind
+151,Mew,Move 3,Swords Dance
+151,Mew,Move 4,Flamethrower
+151,Mew,Move 5,Mega Kick
+151,Mew,Move 6,Toxic
+151,Mew,Move 7,Horn Drill
+151,Mew,Move 8,Body Slam
+151,Mew,Move 9,Take Down
+151,Mew,Move 10,Double Edge
+151,Mew,Move 11,Bubblebeam
+151,Mew,Move 12,Water Gun
+151,Mew,Move 13,Ice Beam
+151,Mew,Move 14,Blizzard
+151,Mew,Move 15,Hyper Beam
+151,Mew,Move 16,Pay Day
+151,Mew,Move 17,Submission
+151,Mew,Move 18,Counter
+151,Mew,Move 19,Seismic Toss
+151,Mew,Move 20,Rage
+151,Mew,Move 21,Mega Drain
+151,Mew,Move 22,Solarbeam
+151,Mew,Move 23,Dragon Rage
+151,Mew,Move 24,Thunderbolt
+151,Mew,Move 25,Thunder
+151,Mew,Move 26,Earthquake
+151,Mew,Move 27,Fissure
+151,Mew,Move 28,Dig
+151,Mew,Move 29,Psychic
+151,Mew,Move 30,Teleport
+151,Mew,Move 31,Mimic
+151,Mew,Move 32,Double Team
+151,Mew,Move 33,Reflect
+151,Mew,Move 34,Bide
+151,Mew,Move 35,Metronome
+151,Mew,Move 36,Selfdestruct
+151,Mew,Move 37,Egg Bomb
+151,Mew,Move 38,Fire Blast
+151,Mew,Move 39,Swift
+151,Mew,Move 40,Skull Bash
+151,Mew,Move 41,Softboiled
+151,Mew,Move 42,Dream Eater
+151,Mew,Move 43,Sky Attack
+151,Mew,Move 44,Rest
+151,Mew,Move 45,Thunder Wave
+151,Mew,Move 46,Psywave
+151,Mew,Move 47,Explosion
+151,Mew,Move 48,Rock Slide
+151,Mew,Move 49,Tri Attack
+151,Mew,Move 50,Substitute
+151,Mew,Move 51,Cut
+151,Mew,Move 52,Fly
+151,Mew,Move 53,Surf
+151,Mew,Move 54,Strength
+151,Mew,Move 55,Flash

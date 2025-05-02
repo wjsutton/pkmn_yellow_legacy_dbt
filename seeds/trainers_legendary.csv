@@ -1,0 +1,73 @@
+﻿Trainer,Pkmn_id,Map,Nearest_Route,Pokemon,Moves,Game_Stage,Level
+Craig,Craig_Jolteon_1,PowerPlant,PowerPlant,Jolteon,Pin Missile,Badge_8,55
+Craig,Craig_Jolteon_1,PowerPlant,PowerPlant,Jolteon,Thunderbolt,Badge_8,55
+Craig,Craig_Jolteon_1,PowerPlant,PowerPlant,Jolteon,Thunder Wave,Badge_8,55
+Craig,Craig_Jolteon_1,PowerPlant,PowerPlant,Jolteon,Dig,Badge_8,55
+Craig,Craig_Aerodactyl_1,PowerPlant,PowerPlant,Aerodactyl,Sky Attack,Badge_8,55
+Craig,Craig_Aerodactyl_1,PowerPlant,PowerPlant,Aerodactyl,Rock Slide,Badge_8,55
+Craig,Craig_Aerodactyl_1,PowerPlant,PowerPlant,Aerodactyl,Earthquake,Badge_8,55
+Craig,Craig_Aerodactyl_1,PowerPlant,PowerPlant,Aerodactyl,Hyper Beam,Badge_8,55
+Craig,Craig_Exeggutor_1,PowerPlant,PowerPlant,Exeggutor,Mega Drain,Badge_8,55
+Craig,Craig_Exeggutor_1,PowerPlant,PowerPlant,Exeggutor,Softboiled,Badge_8,55
+Craig,Craig_Exeggutor_1,PowerPlant,PowerPlant,Exeggutor,Psychic,Badge_8,55
+Craig,Craig_Exeggutor_1,PowerPlant,PowerPlant,Exeggutor,Reflect,Badge_8,55
+Craig,Craig_Snorlax_1,PowerPlant,PowerPlant,Snorlax,Surf,Badge_8,55
+Craig,Craig_Snorlax_1,PowerPlant,PowerPlant,Snorlax,Psychic,Badge_8,55
+Craig,Craig_Snorlax_1,PowerPlant,PowerPlant,Snorlax,Body Slam,Badge_8,55
+Craig,Craig_Snorlax_1,PowerPlant,PowerPlant,Snorlax,Amnesia,Badge_8,55
+Craig,Craig_Cloyster_1,PowerPlant,PowerPlant,Cloyster,Clamp,Badge_8,55
+Craig,Craig_Cloyster_1,PowerPlant,PowerPlant,Cloyster,Explosion,Badge_8,55
+Craig,Craig_Cloyster_1,PowerPlant,PowerPlant,Cloyster,Reflect,Badge_8,55
+Craig,Craig_Cloyster_1,PowerPlant,PowerPlant,Cloyster,Blizzard,Badge_8,55
+Craig,Craig_Arcanine_1,PowerPlant,PowerPlant,Arcanine,Hyper Beam,Badge_8,55
+Craig,Craig_Arcanine_1,PowerPlant,PowerPlant,Arcanine,Dig,Badge_8,55
+Craig,Craig_Arcanine_1,PowerPlant,PowerPlant,Arcanine,Flamethrower,Badge_8,55
+Craig,Craig_Arcanine_1,PowerPlant,PowerPlant,Arcanine,Reflect,Badge_8,55
+Weebra,Weebra_Snorlax_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Snorlax,Metronome,Badge_8,55
+Weebra,Weebra_Snorlax_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Snorlax,Rest,Badge_8,55
+Weebra,Weebra_Snorlax_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Snorlax,Body Slam,Badge_8,55
+Weebra,Weebra_Snorlax_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Snorlax,Earthquake,Badge_8,55
+Weebra,Weebra_Gengar_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Gengar,Psychic,Badge_8,55
+Weebra,Weebra_Gengar_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Gengar,Night Shade,Badge_8,55
+Weebra,Weebra_Gengar_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Gengar,Hypnosis,Badge_8,55
+Weebra,Weebra_Gengar_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Gengar,Dream Eater,Badge_8,55
+Weebra,Weebra_Charizard_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Charizard,Fly,Badge_8,55
+Weebra,Weebra_Charizard_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Charizard,Cut,Badge_8,55
+Weebra,Weebra_Charizard_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Charizard,Flamethrower,Badge_8,55
+Weebra,Weebra_Charizard_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Charizard,Hyper Beam,Badge_8,55
+Weebra,Weebra_Vaporeon_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Vaporeon,Toxic,Badge_8,55
+Weebra,Weebra_Vaporeon_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Vaporeon,Reflect,Badge_8,55
+Weebra,Weebra_Vaporeon_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Vaporeon,Ice Beam,Badge_8,55
+Weebra,Weebra_Vaporeon_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Vaporeon,Hydro Pump,Badge_8,55
+Weebra,Weebra_Onix_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Onix,Body Slam,Badge_8,55
+Weebra,Weebra_Onix_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Onix,Rock Slide,Badge_8,55
+Weebra,Weebra_Onix_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Onix,Earthquake,Badge_8,55
+Weebra,Weebra_Onix_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Onix,Bind,Badge_8,55
+Weebra,Weebra_Machamp_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Machamp,Seismic Toss,Badge_8,55
+Weebra,Weebra_Machamp_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Machamp,Hyper Beam,Badge_8,55
+Weebra,Weebra_Machamp_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Machamp,Metronome,Badge_8,55
+Weebra,Weebra_Machamp_1,SeafoamIslandsB4F,SeafoamIslandsB4F,Machamp,Earthquake,Badge_8,55
+Smith,Smith_Aerodactyl_1,CeruleanCaveB1F,CeruleanCaveB1F,Aerodactyl,Sky Attack,Rematches,65
+Smith,Smith_Aerodactyl_1,CeruleanCaveB1F,CeruleanCaveB1F,Aerodactyl,Rock Slide,Rematches,65
+Smith,Smith_Aerodactyl_1,CeruleanCaveB1F,CeruleanCaveB1F,Aerodactyl,Fire Blast,Rematches,65
+Smith,Smith_Aerodactyl_1,CeruleanCaveB1F,CeruleanCaveB1F,Aerodactyl,Hyper Beam,Rematches,65
+Smith,Smith_Gengar_1,CeruleanCaveB1F,CeruleanCaveB1F,Gengar,Mega Drain,Rematches,65
+Smith,Smith_Gengar_1,CeruleanCaveB1F,CeruleanCaveB1F,Gengar,Night Shade,Rematches,65
+Smith,Smith_Gengar_1,CeruleanCaveB1F,CeruleanCaveB1F,Gengar,Psychic,Rematches,65
+Smith,Smith_Gengar_1,CeruleanCaveB1F,CeruleanCaveB1F,Gengar,Thunderbolt,Rematches,65
+Smith,Smith_Tentacruel_1,CeruleanCaveB1F,CeruleanCaveB1F,Tentacruel,Thunder Wave,Rematches,65
+Smith,Smith_Tentacruel_1,CeruleanCaveB1F,CeruleanCaveB1F,Tentacruel,Sludge,Rematches,65
+Smith,Smith_Tentacruel_1,CeruleanCaveB1F,CeruleanCaveB1F,Tentacruel,Wrap,Rematches,65
+Smith,Smith_Tentacruel_1,CeruleanCaveB1F,CeruleanCaveB1F,Tentacruel,Hydro Pump,Rematches,65
+Smith,Smith_Alakazam_1,CeruleanCaveB1F,CeruleanCaveB1F,Alakazam,Surf,Rematches,65
+Smith,Smith_Alakazam_1,CeruleanCaveB1F,CeruleanCaveB1F,Alakazam,Recover,Rematches,65
+Smith,Smith_Alakazam_1,CeruleanCaveB1F,CeruleanCaveB1F,Alakazam,Psychic,Rematches,65
+Smith,Smith_Alakazam_1,CeruleanCaveB1F,CeruleanCaveB1F,Alakazam,Swords Dance,Rematches,65
+Smith,Smith_Tauros_1,CeruleanCaveB1F,CeruleanCaveB1F,Tauros,Blizzard,Rematches,65
+Smith,Smith_Tauros_1,CeruleanCaveB1F,CeruleanCaveB1F,Tauros,Fire Blast,Rematches,65
+Smith,Smith_Tauros_1,CeruleanCaveB1F,CeruleanCaveB1F,Tauros,Hyper Beam,Rematches,65
+Smith,Smith_Tauros_1,CeruleanCaveB1F,CeruleanCaveB1F,Tauros,Earthquake,Rematches,65
+Smith,Smith_Starmie_1,CeruleanCaveB1F,CeruleanCaveB1F,Starmie,Recover,Rematches,65
+Smith,Smith_Starmie_1,CeruleanCaveB1F,CeruleanCaveB1F,Starmie,Psychic,Rematches,65
+Smith,Smith_Starmie_1,CeruleanCaveB1F,CeruleanCaveB1F,Starmie,Surf,Rematches,65
+Smith,Smith_Starmie_1,CeruleanCaveB1F,CeruleanCaveB1F,Starmie,Thunderbolt,Rematches,65

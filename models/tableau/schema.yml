@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: teams_optimisation
+
+  - name: teams_optimisation_with_pikachu

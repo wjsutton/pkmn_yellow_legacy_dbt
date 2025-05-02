@@ -1,0 +1,103 @@
+version: 2
+
+models:
+  - name: int_game_level_cap
+    columns:
+        - name: game_stage
+          tests:
+            - unique
+            - not_null
+        - name: level_cap
+          tests:
+            - not_null
+
+
+  - name: int_pkmn_catchable
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          tests:
+            - not_null
+        - name: level_cap
+          tests:
+            - not_null
+        - name: map
+          tests:
+            - not_null
+        - name: area
+          tests:
+            - not_null
+        - name: earliest_route
+          tests:
+            - not_null
+
+  - name: int_pkmn_move_damage
+    description: "Table containing pokemon move damage calculations for matchups between player and trainer pokemon"
+    tests:
+      - trainer_completeness:
+          description: "Checks that all trainers from int_trainers_all appear in matchups"
+    #   - trainer_pokemon_completeness
+    #   - order_validation
+    #   - trainer_matchup_count
+    #   - excluded_moves_check
+
+  - name: int_pkmn_move_damage_prep
+    description: "Preparatory table for pokemon move damage calculations"
+
+  - name: int_pkmn_team_optimisation_prep
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+            
+  - name: int_pkmn_team_options
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          tests:
+            - not_null
+        - name: level_cap
+          tests:
+            - not_null
+        - name: map
+          tests:
+            - not_null
+        - name: next_gym
+          tests:
+            - not_null
+        - name: initial_pokemon
+          tests:
+            - not_null
+
+  - name: int_trainers_all
+    columns:
+        - name: pkmn_id
+          tests:
+            - unique
+            - not_null
+        - name: move_1
+          tests:
+            - not_null
+        - name: game_stage
+          tests:
+            - not_null
+        - name: level
+          tests:
+            - not_null
+
+  # - name: catchable_pkmn
+  # - name: matchups_summary
+  # - name: matchups
+  # - name: player_best_team 
+  # - name: player_pkmn_damage
+  # - name: player_pkmn_moves
+  # - name: trainer_pkmn_damage
+  # - name: trainer_pkmn_moves
+  # - name: usable_pkmn

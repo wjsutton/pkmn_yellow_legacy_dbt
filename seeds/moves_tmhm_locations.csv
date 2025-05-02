@@ -1,0 +1,56 @@
+﻿TM/HM,Move,Type,Locations,Price,Earliest Nearest Route,Repurchase Route
+TM01,Mega Punch,Normal,"Mt. Moon, Celadon Department Store",$3000,MtMoonB2F,Route7
+TM02,Razor Wind,Normal,Route 4,N/A,Route4,Route7
+TM03,Swords Dance,Normal,Silph Co.,N/A,Route17,
+TM04,Flamethrower,Normal,"Rocket Hideout, Celadon Department Store",$2000,Route7,VictoryRoad3F
+TM05,Mega Kick,Normal,"Victory Road, Celadon Department Store",$3000,Route7,Route7
+TM06,Toxic,Poison,Prize for defeating gym leader Koga at the Fuchsia Gym,N/A,Route19,
+TM07,Horn Drill,Normal,"Rocket Hideout, Celadon Department Store",$2000,Route7,
+TM08,Body Slam,Normal,S.S. Anne,N/A,Route6,
+TM09,Take Down,Normal,"Silph Co., Celadon Department Store",$3000,Route7,Route7
+TM10,Double-Edge,Normal,Rocket Hideout,N/A,Route7,
+TM11,BubbleBeam,Water,Prize for defeating gym leader Misty at the Cerulean Gym,N/A,Route5,PokemonMansionB1F
+TM12,Water Gun,Water,Mt. Moon,N/A,MtMoon1F,Route7
+TM13,Ice Beam,Ice,Celadon Department Store roof,N/A,Route7,VictoryRoad3F
+TM14,Blizzard,Ice,Pokémon Mansion,N/A,PokemonMansion1F,
+TM15,Hyper Beam,Normal,Rocket Game Corner,5500C,Route7,Route7
+TM16,Pay Day,Normal,Route 12,N/A,Route12,Route7
+TM17,Submission,Fighting,"Victory Road, Celadon Department Store",$3000,Route7,VictoryRoad3F
+TM18,Counter,Fighting,Celadon Department Store,N/A,Route7,
+TM19,Seismic Toss,Fighting,Route 25,N/A,Route25,Route7
+TM20,Rage,Normal,Route 15,N/A,Route15,Route7
+TM21,Mega Drain,Grass,Prize for defeating gym leader Erika at the Celadon Gym,N/A,PokemonTower1F,VictoryRoad3F
+TM22,SolarBeam,Grass,Pokémon Mansion,N/A,PokemonMansion1F,VictoryRoad3F
+TM23,Dragon Rage,Dragon,Rocket Game Corner,3300C,Route7,Route7
+TM24,Thunderbolt,Electric,Prize for defeating gym leader Lt. Surge at the Vermilion Gym,N/A,Route9,VictoryRoad3F
+TM25,Thunder,Electric,Kanto Power Plant,N/A,PowerPlant,
+TM26,Earthquake,Ground,Silph Co.,N/A,Route17,
+TM27,Fissure,Ground,Prize for defeating gym leader Giovanni at the Viridian Gym,N/A,Route23,
+TM28,Dig,Ground,Cerulean City,N/A,Route25,PokemonMansionB1F
+TM29,Psychic,Psychic,Saffron City,N/A,Route7,
+TM30,Teleport,Psychic,Route 9,N/A,Route9,Route7
+TM31,Mimic,Normal,Saffron City,N/A,Route17,PokemonMansionB1F
+TM32,Double Team,Normal,"Safari Zone, Celadon Department Store",$1000,Route7,Route7
+TM33,Reflect,Psychic,"Kanto Power Plant, Celadon Department Store",$1000,Route7,Route7
+TM34,Bide,Normal,Prize for defeating gym leader Brock at the Pewter Gym,N/A,Route3,Route7
+TM35,Metronome,Normal,Pokémon Lab,N/A,Route16,PokemonMansionB1F
+TM36,Selfdestruct,Normal,Silph Co.,N/A,Route17,PokemonMansionB1F
+TM37,Egg Bomb,Normal,"Safari Zone, Celadon Department Store",$2000,Route7,Route7
+TM38,Fire Blast,Fire,Prize for defeating gym leader Blaine at the Cinnabar Gym,N/A,PokemonMansionB1F,
+TM39,Swift,Normal,Route 12,N/A,Route12,Route7
+TM40,Skull Bash,Normal,Safari Zone,N/A,SafariZoneCenter,PokemonMansionB1F
+TM41,Softboiled,Normal,Celadon City,N/A,Route7,
+TM42,Dream Eater,Psychic,Viridian City,N/A,Route19,VictoryRoad3F
+TM43,Sky Attack,Flying,Victory Road,N/A,VictoryRoad1F,
+TM44,Rest,Psychic,S.S. Anne,N/A,Route6,Route7
+TM45,Thunder Wave,Electric,Route 24,N/A,Route24,Route7
+TM46,Psywave,Psychic,Prize for defeating gym leader Sabrina at the Saffron Gym,N/A,Route17,PokemonMansionB1F
+TM47,Explosion,Normal,Victory Road,N/A,VictoryRoad1F,
+TM48,Rock Slide,Rock,Celadon Department Store roof,N/A,Route7,VictoryRoad3F
+TM49,Tri Attack,Normal,Celadon Department Store roof,N/A,Route7,PokemonMansionB1F
+TM50,Substitute,Normal,Rocket Game Corner,7700C,Route7,Route7
+HM01,Cut,Normal,S.S. Anne,Cascade Badge.png,Route6,Route6
+HM02,Fly,Flying,Route 16,Thunder Badge.png,Route16,Route16
+HM03,Surf,Water,Safari Zone,Soul Badge.png,SafariZoneNorth,SafariZoneNorth
+HM04,Strength,Normal,Fuchsia City,Rainbow Badge.png,Route18,Route18
+HM05,Flash,Normal,Route 2,Boulder Badge.png,DiglettsCave,DiglettsCave

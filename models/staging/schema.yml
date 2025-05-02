@@ -1,0 +1,264 @@
+version: 2
+
+models:
+  - name: stg_game_route_order
+    columns:
+        - name: map
+          tests:
+            - unique
+            - not_null
+
+
+  - name: stg_moves_from_level_up
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+        - name: move
+          tests:
+            - relationships:
+                to: ref('stg_moves_stats')
+                field: move
+            - not_null     
+
+
+  - name: stg_moves_from_tmhm
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+        - name: move
+          tests:
+            - relationships:
+                to: ref('stg_moves_stats')
+                field: move
+            - not_null
+
+
+  - name: stg_moves_phys_spec
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+
+  - name: stg_moves_stats
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+
+  - name: stg_moves_tmhm_locations
+    columns:
+        - name: tm_or_hm
+          tests:
+            - unique
+            - not_null
+
+
+  - name: stg_moves_type_effectiveness 
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+
+  - name: stg_pkmn_encounter_area_order
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+        - name: map
+          tests:
+            - relationships:
+                to: ref('stg_game_route_order')
+                field: map
+            - not_null   
+
+
+
+  - name: stg_pkmn_encounter_areas
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+        - name: map
+          tests:
+            - relationships:
+                to: ref('stg_game_route_order')
+                field: map
+            - not_null   
+
+
+  - name: stg_pkmn_evolutions
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+
+  - name: stg_pkmn_stats
+    columns:
+        - name: pokedex
+          tests:
+            - unique
+            - not_null
+
+
+  - name: stg_trainers_gym_leaders
+    columns:
+
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+        - name: trainer
+          tests:
+            - not_null
+
+        - name: pkmn_id
+          tests:
+            - not_null
+
+        - name: location
+          tests:
+            - not_null
+
+        - name: nearest_route
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_game_route_order')
+                field: map
+
+        - name: pokemon
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_pkmn_stats')
+                field: pokemon
+                to: ref('stg_moves_from_level_up')
+                field: pokemon
+
+        - name: game_stage
+          tests:
+            - not_null
+
+        - name: level
+          tests:
+            - not_null
+
+        - name: move
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_moves_stats')
+                field: move
+
+
+  - name: stg_trainers_legendary
+    columns:
+
+        - name: id
+          tests:
+            - unique
+            - not_null
+
+        - name: trainer
+          tests:
+            - not_null
+
+        - name: pkmn_id
+          tests:
+            - not_null
+
+        - name: location
+          tests:
+            - not_null
+
+        - name: nearest_route
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_game_route_order')
+                field: map
+
+        - name: pokemon
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_pkmn_stats')
+                field: pokemon
+                to: ref('stg_moves_from_level_up')
+                field: pokemon
+
+        - name: game_stage
+          tests:
+            - not_null
+
+        - name: level
+          tests:
+            - not_null
+
+        - name: move
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_moves_stats')
+                field: move
+
+
+  - name: stg_trainers_mandatory
+    columns:
+
+        - name: trainer
+          tests:
+            - not_null
+
+        - name: pkmn_id
+          tests:
+            - not_null
+            - unique
+
+        - name: location
+          tests:
+            - not_null
+
+        - name: nearest_route
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_game_route_order')
+                field: map
+
+        - name: pokemon
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_pkmn_stats')
+                field: pokemon
+                to: ref('stg_moves_from_level_up')
+                field: pokemon
+
+        - name: game_stage
+          tests:
+            - not_null
+
+        - name: level
+          tests:
+            - not_null
+

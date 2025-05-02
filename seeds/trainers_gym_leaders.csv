@@ -1,0 +1,821 @@
+﻿Trainer,Pkmn_id,Map,Nearest_Route,Pokemon,Moves,Game_Stage,Notes,Level
+Rival_1,Rival_1_Eevee_1,OaksLab,OaksLab,Eevee,Tackle,Badge_1,,5
+Rival_1,Rival_1_Eevee_1,OaksLab,OaksLab,Eevee,Tail Whip,Badge_1,,5
+Rival_2,Rival_2_Spearow_1,Route22,Route22,Spearow,Growl,Badge_1,,9
+Rival_2,Rival_2_Spearow_1,Route22,Route22,Spearow,Leer,Badge_1,,9
+Rival_2,Rival_2_Spearow_1,Route22,Route22,Spearow,Peck,Badge_1,,9
+Rival_2,Rival_2_Eevee_1,Route22,Route22,Eevee,Sand Attack,Badge_1,,8
+Rival_2,Rival_2_Eevee_1,Route22,Route22,Eevee,Tackle,Badge_1,,8
+Rival_2,Rival_2_Eevee_1,Route22,Route22,Eevee,Tail Whip,Badge_1,,8
+Brock,Brock_Onix_1,PewterCity,ViridianForest,Onix,Bide,Badge_1,,12
+Brock,Brock_Onix_1,PewterCity,ViridianForest,Onix,Bind,Badge_1,,12
+Brock,Brock_Onix_1,PewterCity,ViridianForest,Onix,Constrict,Badge_1,,12
+Brock,Brock_Geodude_1,PewterCity,ViridianForest,Geodude,Defense Curl,Badge_1,,10
+Brock,Brock_Geodude_1,PewterCity,ViridianForest,Geodude,Rock Throw,Badge_1,,10
+Brock,Brock_Onix_1,PewterCity,ViridianForest,Onix,Screech,Badge_1,,12
+Brock,Brock_Geodude_1,PewterCity,ViridianForest,Geodude,Tackle,Badge_1,,10
+Jessie_&_James_1,Jessie_&_James_1_Ekans_1,MtMoonB2F,MtMoonB2F,Ekans,Poison Sting,Badge_2,,15
+Jessie_&_James_1,Jessie_&_James_1_Ekans_1,MtMoonB2F,MtMoonB2F,Ekans,Leer,Badge_2,,15
+Jessie_&_James_1,Jessie_&_James_1_Ekans_1,MtMoonB2F,MtMoonB2F,Ekans,Bite,Badge_2,,15
+Jessie_&_James_1,Jessie_&_James_1_Ekans_1,MtMoonB2F,MtMoonB2F,Ekans,Acid,Badge_2,,15
+Jessie_&_James_1,Jessie_&_James_1_Meowth_1,MtMoonB2F,MtMoonB2F,Meowth,Scratch,Badge_2,,16
+Jessie_&_James_1,Jessie_&_James_1_Meowth_1,MtMoonB2F,MtMoonB2F,Meowth,Growl,Badge_2,,16
+Jessie_&_James_1,Jessie_&_James_1_Meowth_1,MtMoonB2F,MtMoonB2F,Meowth,Fury Swipes,Badge_2,,16
+Jessie_&_James_1,Jessie_&_James_1_Meowth_1,MtMoonB2F,MtMoonB2F,Meowth,Bite,Badge_2,,16
+Jessie_&_James_1,Jessie_&_James_1_Koffing_1,MtMoonB2F,MtMoonB2F,Koffing,Tackle,Badge_2,,15
+Jessie_&_James_1,Jessie_&_James_1_Koffing_1,MtMoonB2F,MtMoonB2F,Koffing,Smog,Badge_2,,15
+Rival_3,Rival_3_Ratatta_1,CeruleanCity,Route4,Ratatta,Bite,Badge_2,,15
+Rival_3,Rival_3_Eevee_1,CeruleanCity,Route4,Eevee,Bite,Badge_2,,19
+Rival_3,Rival_3_Eevee_1,CeruleanCity,Route4,Eevee,Double Kick,Badge_2,,19
+Rival_3,Rival_3_Spearow_1,CeruleanCity,Route4,Spearow,Focus Energy,Badge_2,,18
+Rival_3,Rival_3_Spearow_1,CeruleanCity,Route4,Spearow,Fury Attack,Badge_2,,18
+Rival_3,Rival_3_Eevee_1,CeruleanCity,Route4,Eevee,Growl,Badge_2,,19
+Rival_3,Rival_3_Bellsprout_1,CeruleanCity,Route4,Bellsprout,Growth,Badge_2,,15
+Rival_3,Rival_3_Ratatta_1,CeruleanCity,Route4,Ratatta,Hyper Fang,Badge_2,,15
+Rival_3,Rival_3_Spearow_1,CeruleanCity,Route4,Spearow,Leer,Badge_2,,18
+Rival_3,Rival_3_Bellsprout_1,CeruleanCity,Route4,Bellsprout,Poison Powder,Badge_2,,15
+Rival_3,Rival_3_Ratatta_1,CeruleanCity,Route4,Ratatta,Quick Attack,Badge_2,,15
+Rival_3,Rival_3_Eevee_1,CeruleanCity,Route4,Eevee,Quick Attack,Badge_2,,19
+Rival_3,Rival_3_Spearow_1,CeruleanCity,Route4,Spearow,Swift,Badge_2,,18
+Rival_3,Rival_3_Ratatta_1,CeruleanCity,Route4,Ratatta,Tail Whip,Badge_2,,15
+Rival_3,Rival_3_Bellsprout_1,CeruleanCity,Route4,Bellsprout,Vine Whip,Badge_2,,15
+Misty,Misty_Psyduck_1,CeruleanCity,Route25,Psyduck,Bubblebeam,Badge_2,,19
+Misty,Misty_Starmie_1,CeruleanCity,Route25,Starmie,Bubblebeam,Badge_2,,21
+Misty,Misty_Psyduck_1,CeruleanCity,Route25,Psyduck,Confusion,Badge_2,,19
+Misty,Misty_Starmie_1,CeruleanCity,Route25,Starmie,Confusion,Badge_2,,21
+Misty,Misty_Psyduck_1,CeruleanCity,Route25,Psyduck,Disable,Badge_2,,19
+Misty,Misty_Goldeen_1,CeruleanCity,Route25,Goldeen,Horn Attack,Badge_2,,18
+Misty,Misty_Psyduck_1,CeruleanCity,Route25,Psyduck,Scratch,Badge_2,,19
+Misty,Misty_Goldeen_1,CeruleanCity,Route25,Goldeen,Supersonic,Badge_2,,18
+Misty,Misty_Starmie_1,CeruleanCity,Route25,Starmie,Swift,Badge_2,,21
+Misty,Misty_Goldeen_1,CeruleanCity,Route25,Goldeen,Tail Whip,Badge_2,,18
+Misty,Misty_Goldeen_1,CeruleanCity,Route25,Goldeen,Waterfall,Badge_2,,18
+Rival_4,Rival_4_Raticate_1,SSAnne,DiglettsCave,Raticate,Bite,Badge_3,,20
+Rival_4,Rival_4_Sandshrew_1,SSAnne,DiglettsCave,Sandshrew,Dig,Badge_3,,21
+Rival_4,Rival_4_Eevee_1,SSAnne,DiglettsCave,Eevee,Double Kick,Badge_3,,24
+Rival_4,Rival_4_Raticate_1,SSAnne,DiglettsCave,Raticate,Focus Energy,Badge_3,,20
+Rival_4,Rival_4_Sandshrew_1,SSAnne,DiglettsCave,Sandshrew,Fury Swipes,Badge_3,,21
+Rival_4,Rival_4_Eevee_1,SSAnne,DiglettsCave,Eevee,Growl,Badge_3,,24
+Rival_4,Rival_4_Weepingbell_1,SSAnne,DiglettsCave,Weepingbell,Growth,Badge_3,,22
+Rival_4,Rival_4_Eevee_1,SSAnne,DiglettsCave,Eevee,Headbutt,Badge_3,,24
+Rival_4,Rival_4_Raticate_1,SSAnne,DiglettsCave,Raticate,Hyper Fang,Badge_3,,20
+Rival_4,Rival_4_Weepingbell_1,SSAnne,DiglettsCave,Weepingbell,Poison Powder,Badge_3,,22
+Rival_4,Rival_4_Raticate_1,SSAnne,DiglettsCave,Raticate,Quick Attack,Badge_3,,20
+Rival_4,Rival_4_Eevee_1,SSAnne,DiglettsCave,Eevee,Quick Attack,Badge_3,,24
+Rival_4,Rival_4_Sandshrew_1,SSAnne,DiglettsCave,Sandshrew,Sand Attack,Badge_3,,21
+Rival_4,Rival_4_Weepingbell_1,SSAnne,DiglettsCave,Weepingbell,Stun Spore,Badge_3,,22
+Rival_4,Rival_4_Sandshrew_1,SSAnne,DiglettsCave,Sandshrew,Swift,Badge_3,,21
+Rival_4,Rival_4_Weepingbell_1,SSAnne,DiglettsCave,Weepingbell,Vine Whip,Badge_3,,22
+Lt._Surge,Lt._Surge_Raichu_1,VermilionCity,DiglettsCave,Raichu,Body Slam,Badge_3,,29
+Lt._Surge,Lt._Surge_Raichu_1,VermilionCity,DiglettsCave,Raichu,Surf,Badge_3,,29
+Lt._Surge,Lt._Surge_Raichu_1,VermilionCity,DiglettsCave,Raichu,Thunder Wave,Badge_3,,29
+Lt._Surge,Lt._Surge_Raichu_1,VermilionCity,DiglettsCave,Raichu,Thunderbolt,Badge_3,,29
+Jessie_&_James_2,Jessie_&_James_2_Koffing_1,RocketHideoutB4F,Route7,Koffing,Tackle,Badge_4,,28
+Jessie_&_James_2,Jessie_&_James_2_Koffing_1,RocketHideoutB4F,Route7,Koffing,Smog,Badge_4,,28
+Jessie_&_James_2,Jessie_&_James_2_Koffing_1,RocketHideoutB4F,Route7,Koffing,Acid,Badge_4,,28
+Jessie_&_James_2,Jessie_&_James_2_Koffing_1,RocketHideoutB4F,Route7,Koffing,Smokescreen,Badge_4,,28
+Jessie_&_James_2,Jessie_&_James_2_Meowth_1,RocketHideoutB4F,Route7,Meowth,Bite,Badge_4,,29
+Jessie_&_James_2,Jessie_&_James_2_Meowth_1,RocketHideoutB4F,Route7,Meowth,Pay Day,Badge_4,,29
+Jessie_&_James_2,Jessie_&_James_2_Meowth_1,RocketHideoutB4F,Route7,Meowth,Screech,Badge_4,,29
+Jessie_&_James_2,Jessie_&_James_2_Meowth_1,RocketHideoutB4F,Route7,Meowth,Take Down,Badge_4,,29
+Jessie_&_James_2,Jessie_&_James_2_Arbok_1,RocketHideoutB4F,Route7,Arbok,Bite,Badge_4,,28
+Jessie_&_James_2,Jessie_&_James_2_Arbok_1,RocketHideoutB4F,Route7,Arbok,Acid,Badge_4,,28
+Jessie_&_James_2,Jessie_&_James_2_Arbok_1,RocketHideoutB4F,Route7,Arbok,Substitute,Badge_4,,28
+Jessie_&_James_2,Jessie_&_James_2_Arbok_1,RocketHideoutB4F,Route7,Arbok,Glare,Badge_4,,28
+Erica_4,Erica_4_Tangela_1,CeladonCity,Route7,Tangela,Bind,Badge_4,,33
+Erica_4,Erica_4_Tangela_1,CeladonCity,Route7,Tangela,Stun Spore,Badge_4,,33
+Erica_4,Erica_4_Tangela_1,CeladonCity,Route7,Tangela,Sleep Powder,Badge_4,,33
+Erica_4,Erica_4_Tangela_1,CeladonCity,Route7,Tangela,Mega Drain,Badge_4,,33
+Erica_4,Erica_4_Victreebel_1,CeladonCity,Route7,Victreebel,Mega Drain,Badge_4,,34
+Erica_4,Erica_4_Victreebel_1,CeladonCity,Route7,Victreebel,Stun Spore,Badge_4,,34
+Erica_4,Erica_4_Victreebel_1,CeladonCity,Route7,Victreebel,Acid,Badge_4,,34
+Erica_4,Erica_4_Victreebel_1,CeladonCity,Route7,Victreebel,Razor Leaf,Badge_4,,34
+Erica_4,Erica_4_Ivysaur_1,CeladonCity,Route7,Ivysaur,Razor Leaf,Badge_4,,31
+Erica_4,Erica_4_Ivysaur_1,CeladonCity,Route7,Ivysaur,Leech Seed,Badge_4,,31
+Erica_4,Erica_4_Ivysaur_1,CeladonCity,Route7,Ivysaur,Acid,Badge_4,,31
+Erica_4,Erica_4_Gloom_1,CeladonCity,Route7,Gloom,Acid,Badge_4,,35
+Erica_4,Erica_4_Gloom_1,CeladonCity,Route7,Gloom,Solarbeam,Badge_4,,35
+Erica_4,Erica_4_Gloom_1,CeladonCity,Route7,Gloom,Stun Spore,Badge_4,,35
+Erica_4,Erica_4_Gloom_1,CeladonCity,Route7,Gloom,Sleep Powder,Badge_4,,35
+Rival_5_Flareon,Rival_5_Flareon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Aurora Beam,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Bubblebeam,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Confusion,Badge_5,Flareon Version,33
+Rival_5_Flareon,Rival_5_Flareon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Disable,Badge_5,Flareon Version,33
+Rival_5_Flareon,Rival_5_Flareon_Flareon_1,PokemonTower1F,PokemonTower1F,Flareon,Double Kick,Badge_5,Flareon Version,35
+Rival_5_Flareon,Rival_5_Flareon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Drill Peck,Badge_5,Flareon Version,34
+Rival_5_Flareon,Rival_5_Flareon_Flareon_1,PokemonTower1F,PokemonTower1F,Flareon,Ember,Badge_5,Flareon Version,35
+Rival_5_Flareon,Rival_5_Flareon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Leer,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Flareon_1,PokemonTower1F,PokemonTower1F,Flareon,Leer,Badge_5,Flareon Version,35
+Rival_5_Flareon,Rival_5_Flareon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Mirror Move,Badge_5,Flareon Version,34
+Rival_5_Flareon,Rival_5_Flareon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Psybeam,Badge_5,Flareon Version,33
+Rival_5_Flareon,Rival_5_Flareon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Recover,Badge_5,Flareon Version,33
+Rival_5_Flareon,Rival_5_Flareon_Magnemite_1,PokemonTower1F,PokemonTower1F,Magnemite,Reflect,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Flareon_1,PokemonTower1F,PokemonTower1F,Flareon,Sand Attack,Badge_5,Flareon Version,35
+Rival_5_Flareon,Rival_5_Flareon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Sharpen,Badge_5,Flareon Version,34
+Rival_5_Flareon,Rival_5_Flareon_Magnemite_1,PokemonTower1F,PokemonTower1F,Magnemite,Sonicboom,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Supersonic,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Magnemite_1,PokemonTower1F,PokemonTower1F,Magnemite,Swift,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Magnemite_1,PokemonTower1F,PokemonTower1F,Magnemite,Thunder Wave,Badge_5,Flareon Version,32
+Rival_5_Flareon,Rival_5_Flareon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Whirlwind,Badge_5,Flareon Version,34
+Rival_5_Jolteon,Rival_5_Jolteon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Aurora Beam,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Bubblebeam,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Confusion,Badge_5,Jolteon Version,33
+Rival_5_Jolteon,Rival_5_Jolteon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Disable,Badge_5,Jolteon Version,33
+Rival_5_Jolteon,Rival_5_Jolteon_Jolteon_1,PokemonTower1F,PokemonTower1F,Jolteon,Double Kick,Badge_5,Jolteon Version,35
+Rival_5_Jolteon,Rival_5_Jolteon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Drill Peck,Badge_5,Jolteon Version,34
+Rival_5_Jolteon,Rival_5_Jolteon_Growlithe_1,PokemonTower1F,PokemonTower1F,Growlithe,Ember,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Leer,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Growlithe_1,PokemonTower1F,PokemonTower1F,Growlithe,Leer,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Mirror Move,Badge_5,Jolteon Version,34
+Rival_5_Jolteon,Rival_5_Jolteon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Psybeam,Badge_5,Jolteon Version,33
+Rival_5_Jolteon,Rival_5_Jolteon_Jolteon_1,PokemonTower1F,PokemonTower1F,Jolteon,Quick Attack,Badge_5,Jolteon Version,35
+Rival_5_Jolteon,Rival_5_Jolteon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Recover,Badge_5,Jolteon Version,33
+Rival_5_Jolteon,Rival_5_Jolteon_Growlithe_1,PokemonTower1F,PokemonTower1F,Growlithe,Roar,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Jolteon_1,PokemonTower1F,PokemonTower1F,Jolteon,Sand Attack,Badge_5,Jolteon Version,35
+Rival_5_Jolteon,Rival_5_Jolteon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Sharpen,Badge_5,Jolteon Version,34
+Rival_5_Jolteon,Rival_5_Jolteon_Shellder_1,PokemonTower1F,PokemonTower1F,Shellder,Supersonic,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Growlithe_1,PokemonTower1F,PokemonTower1F,Growlithe,Take Down,Badge_5,Jolteon Version,32
+Rival_5_Jolteon,Rival_5_Jolteon_Jolteon_1,PokemonTower1F,PokemonTower1F,Jolteon,Thundershock,Badge_5,Jolteon Version,35
+Rival_5_Jolteon,Rival_5_Jolteon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Whirlwind,Badge_5,Jolteon Version,34
+Rival_5_Vaporeon,Rival_5_Vaporeon_Scyther_1,PokemonTower1F,PokemonTower1F,Scyther,Agility,Badge_5,Vaporeon Version,32
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vaporeon_1,PokemonTower1F,PokemonTower1F,Vaporeon,Bite,Badge_5,Vaporeon Version,35
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vaporeon_1,PokemonTower1F,PokemonTower1F,Vaporeon,Bubblebeam,Badge_5,Vaporeon Version,35
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vulpix_1,PokemonTower1F,PokemonTower1F,Vulpix,Confuse Ray,Badge_5,Vaporeon Version,32
+Rival_5_Vaporeon,Rival_5_Vaporeon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Confusion,Badge_5,Vaporeon Version,33
+Rival_5_Vaporeon,Rival_5_Vaporeon_Scyther_1,PokemonTower1F,PokemonTower1F,Scyther,Cut,Badge_5,Vaporeon Version,32
+Rival_5_Vaporeon,Rival_5_Vaporeon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Disable,Badge_5,Vaporeon Version,33
+Rival_5_Vaporeon,Rival_5_Vaporeon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Drill Peck,Badge_5,Vaporeon Version,34
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vulpix_1,PokemonTower1F,PokemonTower1F,Vulpix,Flamethrower,Badge_5,Vaporeon Version,32
+Rival_5_Vaporeon,Rival_5_Vaporeon_Scyther_1,PokemonTower1F,PokemonTower1F,Scyther,Focus Energy,Badge_5,Vaporeon Version,32
+Rival_5_Vaporeon,Rival_5_Vaporeon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Mirror Move,Badge_5,Vaporeon Version,34
+Rival_5_Vaporeon,Rival_5_Vaporeon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Psybeam,Badge_5,Vaporeon Version,33
+Rival_5_Vaporeon,Rival_5_Vaporeon_Kadabra_1,PokemonTower1F,PokemonTower1F,Kadabra,Recover,Badge_5,Vaporeon Version,33
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vulpix_1,PokemonTower1F,PokemonTower1F,Vulpix,Reflect,Badge_5,Vaporeon Version,32
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vulpix_1,PokemonTower1F,PokemonTower1F,Vulpix,Roar,Badge_5,Vaporeon Version,32
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vaporeon_1,PokemonTower1F,PokemonTower1F,Vaporeon,Sand Attack,Badge_5,Vaporeon Version,35
+Rival_5_Vaporeon,Rival_5_Vaporeon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Sharpen,Badge_5,Vaporeon Version,34
+Rival_5_Vaporeon,Rival_5_Vaporeon_Vaporeon_1,PokemonTower1F,PokemonTower1F,Vaporeon,Water Gun,Badge_5,Vaporeon Version,35
+Rival_5_Vaporeon,Rival_5_Vaporeon_Fearow_1,PokemonTower1F,PokemonTower1F,Fearow,Whirlwind,Badge_5,Vaporeon Version,34
+Rival_5_Vaporeon,Rival_5_Vaporeon_Scyther_1,PokemonTower1F,PokemonTower1F,Scyther,Wing Attack,Badge_5,Vaporeon Version,32
+Rival_6_Jolteon,Rival_6_Jolteon_Parasect_1,SilphCo,SaffronCity,Parasect,Spore,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Parasect_1,SilphCo,SaffronCity,Parasect,Mega Drain,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Parasect_1,SilphCo,SaffronCity,Parasect,Slash,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Parasect_1,SilphCo,SaffronCity,Parasect,Leech Life,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Gyarados_1,SilphCo,SaffronCity,Gyarados,Surf,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Gyarados_1,SilphCo,SaffronCity,Gyarados,Ice Beam,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Gyarados_1,SilphCo,SaffronCity,Gyarados,Double-Edge,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Gyarados_1,SilphCo,SaffronCity,Gyarados,Fly,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Rhydon_1,SilphCo,SaffronCity,Rhydon,Horn Drill,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Rhydon_1,SilphCo,SaffronCity,Rhydon,Body Slam,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Rhydon_1,SilphCo,SaffronCity,Rhydon,Earthquake,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Rhydon_1,SilphCo,SaffronCity,Rhydon,Rock Slide,Badge_6,Jolteon Version,43
+Rival_6_Jolteon,Rival_6_Jolteon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Thunder Wave,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Recover,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Psychic,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Tri Attack,Badge_6,Jolteon Version,44
+Rival_6_Jolteon,Rival_6_Jolteon_Jolteon_1,SilphCo,SaffronCity,Jolteon,Dig,Badge_6,Jolteon Version,46
+Rival_6_Jolteon,Rival_6_Jolteon_Jolteon_1,SilphCo,SaffronCity,Jolteon,Thunderbolt,Badge_6,Jolteon Version,46
+Rival_6_Jolteon,Rival_6_Jolteon_Jolteon_1,SilphCo,SaffronCity,Jolteon,Pin Missile,Badge_6,Jolteon Version,46
+Rival_6_Jolteon,Rival_6_Jolteon_Jolteon_1,SilphCo,SaffronCity,Jolteon,Thunder Wave,Badge_6,Jolteon Version,46
+Rival_6_Flareon,Rival_6_Flareon_Electrabuzz_1,SilphCo,SaffronCity,Electabuzz,Thunder Wave,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Electrabuzz_1,SilphCo,SaffronCity,Electabuzz,Psychic,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Electrabuzz_1,SilphCo,SaffronCity,Electabuzz,Light Screen,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Electrabuzz_1,SilphCo,SaffronCity,Electabuzz,Thunderbolt,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Cloyster_1,SilphCo,SaffronCity,Cloyster,Selfdestruct,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Cloyster_1,SilphCo,SaffronCity,Cloyster,Toxic,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Cloyster_1,SilphCo,SaffronCity,Cloyster,Surf,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Cloyster_1,SilphCo,SaffronCity,Cloyster,Ice Beam,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Duotrio_1,SilphCo,SaffronCity,Dodrio,Fly,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Duotrio_1,SilphCo,SaffronCity,Dodrio,Drill Peck,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Duotrio_1,SilphCo,SaffronCity,Dodrio,Substitute,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Duotrio_1,SilphCo,SaffronCity,Dodrio,Tri Attack,Badge_6,Flareon Version,43
+Rival_6_Flareon,Rival_6_Flareon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Tri Attack,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Recover,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Psychic,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Reflect,Badge_6,Flareon Version,44
+Rival_6_Flareon,Rival_6_Flareon_Flareon_1,SilphCo,SaffronCity,Flareon,Dig,Badge_6,Flareon Version,46
+Rival_6_Flareon,Rival_6_Flareon_Flareon_1,SilphCo,SaffronCity,Flareon,Flamethrower,Badge_6,Flareon Version,46
+Rival_6_Flareon,Rival_6_Flareon_Flareon_1,SilphCo,SaffronCity,Flareon,Sand Attack,Badge_6,Flareon Version,46
+Rival_6_Flareon,Rival_6_Flareon_Flareon_1,SilphCo,SaffronCity,Flareon,Growth,Badge_6,Flareon Version,46
+Rival_6_Vaporeon,Rival_6_Vaporeon_Victreebel_1,SilphCo,SaffronCity,Victreebel,Swords Dance,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Victreebel_1,SilphCo,SaffronCity,Victreebel,Razor Leaf,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Victreebel_1,SilphCo,SaffronCity,Victreebel,Sludge,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Victreebel_1,SilphCo,SaffronCity,Victreebel,Wrap,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Porygon_1,SilphCo,SaffronCity,Porygon,Thunderbolt,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Porygon_1,SilphCo,SaffronCity,Porygon,Ice Beam,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Porygon_1,SilphCo,SaffronCity,Porygon,Recover,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Porygon_1,SilphCo,SaffronCity,Porygon,Reflect,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Primeape_1,SilphCo,SaffronCity,Primeape,Karate Chop,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Primeape_1,SilphCo,SaffronCity,Primeape,Dig,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Primeape_1,SilphCo,SaffronCity,Primeape,Rock Slide,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Primeape_1,SilphCo,SaffronCity,Primeape,Body Slam,Badge_6,Vaporeon Version,43
+Rival_6_Vaporeon,Rival_6_Vaporeon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Double Team,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Recover,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Psychic,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Alakazam_1,SilphCo,SaffronCity,Alakazam,Tri Attack,Badge_6,Vaporeon Version,44
+Rival_6_Vaporeon,Rival_6_Vaporeon_Vaporeon_1,SilphCo,SaffronCity,Vaporeon,Aurora Beam,Badge_6,Vaporeon Version,46
+Rival_6_Vaporeon,Rival_6_Vaporeon_Vaporeon_1,SilphCo,SaffronCity,Vaporeon,Surf,Badge_6,Vaporeon Version,46
+Rival_6_Vaporeon,Rival_6_Vaporeon_Vaporeon_1,SilphCo,SaffronCity,Vaporeon,Haze,Badge_6,Vaporeon Version,46
+Rival_6_Vaporeon,Rival_6_Vaporeon_Vaporeon_1,SilphCo,SaffronCity,Vaporeon,Rest,Badge_6,Vaporeon Version,46
+Rival_7_Jolteon,Rival_7_Jolteon_Jolteon_1,Route22,Route23,Jolteon,Pin Missile,Elite 4,Jolteon Version,55
+Rival_7_Jolteon,Rival_7_Jolteon_Jolteon_1,Route22,Route23,Jolteon,Thunderbolt,Elite 4,Jolteon Version,55
+Rival_7_Jolteon,Rival_7_Jolteon_Jolteon_1,Route22,Route23,Jolteon,Thunder Wave,Elite 4,Jolteon Version,55
+Rival_7_Jolteon,Rival_7_Jolteon_Jolteon_1,Route22,Route23,Jolteon,Headbutt,Elite 4,Jolteon Version,55
+Rival_7_Jolteon,Rival_7_Jolteon_Pidgeot_1,Route22,Route23,Pidgeot,Double Edge,Elite 4,Jolteon Version,53
+Rival_7_Jolteon,Rival_7_Jolteon_Pidgeot_1,Route22,Route23,Pidgeot,Sky Attack,Elite 4,Jolteon Version,53
+Rival_7_Jolteon,Rival_7_Jolteon_Pidgeot_1,Route22,Route23,Pidgeot,Quick Attack,Elite 4,Jolteon Version,53
+Rival_7_Jolteon,Rival_7_Jolteon_Pidgeot_1,Route22,Route23,Pidgeot,Mirror Move,Elite 4,Jolteon Version,53
+Rival_7_Jolteon,Rival_7_Jolteon_Exeggutor_1,Route22,Route23,Exeggutor,Softboiled,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Exeggutor_1,Route22,Route23,Exeggutor,Solarbeam,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Exeggutor_1,Route22,Route23,Exeggutor,Leech Seed,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Exeggutor_1,Route22,Route23,Exeggutor,Sleep Powder,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Marowak_1,Route22,Route23,Marowak,Swords Dance,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Marowak_1,Route22,Route23,Marowak,Bonemerang,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Marowak_1,Route22,Route23,Marowak,Blizzard,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Marowak_1,Route22,Route23,Marowak,Rock Slide,Elite 4,Jolteon Version,52
+Rival_7_Jolteon,Rival_7_Jolteon_Arcanine_1,Route22,Route23,Arcanine,Hyper Beam,Elite 4,Jolteon Version,54
+Rival_7_Jolteon,Rival_7_Jolteon_Arcanine_1,Route22,Route23,Arcanine,Dig,Elite 4,Jolteon Version,54
+Rival_7_Jolteon,Rival_7_Jolteon_Arcanine_1,Route22,Route23,Arcanine,Flamethrower,Elite 4,Jolteon Version,54
+Rival_7_Jolteon,Rival_7_Jolteon_Arcanine_1,Route22,Route23,Arcanine,Reflect,Elite 4,Jolteon Version,54
+Rival_7_Jolteon,Rival_7_Jolteon_Alakazam_1,Route22,Route23,Alakazam,Tri Attack,Elite 4,Jolteon Version,54
+Rival_7_Jolteon,Rival_7_Jolteon_Alakazam_1,Route22,Route23,Alakazam,Recover,Elite 4,Jolteon Version,54
+Rival_7_Jolteon,Rival_7_Jolteon_Alakazam_1,Route22,Route23,Alakazam,Psychic,Elite 4,Jolteon Version,54
+Rival_7_Jolteon,Rival_7_Jolteon_Alakazam_1,Route22,Route23,Alakazam,Thunder Wave,Elite 4,Jolteon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Fearow_1,Route22,Route23,Fearow,Sky Attack,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Fearow_1,Route22,Route23,Fearow,Double Edge,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Fearow_1,Route22,Route23,Fearow,Toxic,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Fearow_1,Route22,Route23,Fearow,Double Team,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Magneton_1,Route22,Route23,Magneton,Thunderbolt,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Magneton_1,Route22,Route23,Magneton,Tri Attack,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Magneton_1,Route22,Route23,Magneton,Screech,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Magneton_1,Route22,Route23,Magneton,Thunder Wave,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Golduck_1,Route22,Route23,Golduck,Ice Beam,Elite 4,Flareon Version,53
+Rival_7_Flareon,Rival_7_Flareon_Golduck_1,Route22,Route23,Golduck,Psychic,Elite 4,Flareon Version,53
+Rival_7_Flareon,Rival_7_Flareon_Golduck_1,Route22,Route23,Golduck,Amnesia,Elite 4,Flareon Version,53
+Rival_7_Flareon,Rival_7_Flareon_Golduck_1,Route22,Route23,Golduck,Hydro Pump,Elite 4,Flareon Version,53
+Rival_7_Flareon,Rival_7_Flareon_Alakazam_1,Route22,Route23,Alakazam,Tri Attack,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Alakazam_1,Route22,Route23,Alakazam,Recover,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Alakazam_1,Route22,Route23,Alakazam,Psychic,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Alakazam_1,Route22,Route23,Alakazam,Thunder Wave,Elite 4,Flareon Version,54
+Rival_7_Flareon,Rival_7_Flareon_Marowak_1,Route22,Route23,Marowak,Blizzard,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Marowak_1,Route22,Route23,Marowak,Flamethrower,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Marowak_1,Route22,Route23,Marowak,Earthquake,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Marowak_1,Route22,Route23,Marowak,Rock Slide,Elite 4,Flareon Version,52
+Rival_7_Flareon,Rival_7_Flareon_Flareon_1,Route22,Route23,Flareon,Double Edge,Elite 4,Flareon Version,55
+Rival_7_Flareon,Rival_7_Flareon_Flareon_1,Route22,Route23,Flareon,Flamethrower,Elite 4,Flareon Version,55
+Rival_7_Flareon,Rival_7_Flareon_Flareon_1,Route22,Route23,Flareon,Dig,Elite 4,Flareon Version,55
+Rival_7_Flareon,Rival_7_Flareon_Flareon_1,Route22,Route23,Flareon,Substitute,Elite 4,Flareon Version,55
+Rival_7_Vaporeon,Rival_7_Vaporeon_Pidgeot_1,Route22,Route23,Pidgeot,Double Edge,Elite 4,Vaporeon Version,53
+Rival_7_Vaporeon,Rival_7_Vaporeon_Pidgeot_1,Route22,Route23,Pidgeot,Toxic,Elite 4,Vaporeon Version,53
+Rival_7_Vaporeon,Rival_7_Vaporeon_Pidgeot_1,Route22,Route23,Pidgeot,Sky Attack,Elite 4,Vaporeon Version,53
+Rival_7_Vaporeon,Rival_7_Vaporeon_Pidgeot_1,Route22,Route23,Pidgeot,Mirror Move,Elite 4,Vaporeon Version,53
+Rival_7_Vaporeon,Rival_7_Vaporeon_Machamp_1,Route22,Route23,Machamp,Submission,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Machamp_1,Route22,Route23,Machamp,Body Slam,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Machamp_1,Route22,Route23,Machamp,Counter,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Machamp_1,Route22,Route23,Machamp,Earthquake,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Alakazam_1,Route22,Route23,Alakazam,Tri Attack,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Alakazam_1,Route22,Route23,Alakazam,Recover,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Alakazam_1,Route22,Route23,Alakazam,Psychic,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Alakazam_1,Route22,Route23,Alakazam,Thunder Wave,Elite 4,Vaporeon Version,54
+Rival_7_Vaporeon,Rival_7_Vaporeon_Ninetales_1,Route22,Route23,Ninetales,Solarbeam,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Ninetales_1,Route22,Route23,Ninetales,Flamethrower,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Ninetales_1,Route22,Route23,Ninetales,Night Shade,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Ninetales_1,Route22,Route23,Ninetales,Confuse Ray,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Scyther_1,Route22,Route23,Scyther,Wing Attack,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Scyther_1,Route22,Route23,Scyther,Slash,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Scyther_1,Route22,Route23,Scyther,Twineedle,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Scyther_1,Route22,Route23,Scyther,Swords Dance,Elite 4,Vaporeon Version,52
+Rival_7_Vaporeon,Rival_7_Vaporeon_Vaporeon_1,Route22,Route23,Vaporeon,Surf,Elite 4,Vaporeon Version,55
+Rival_7_Vaporeon,Rival_7_Vaporeon_Vaporeon_1,Route22,Route23,Vaporeon,Acid Armor,Elite 4,Vaporeon Version,55
+Rival_7_Vaporeon,Rival_7_Vaporeon_Vaporeon_1,Route22,Route23,Vaporeon,Rest,Elite 4,Vaporeon Version,55
+Rival_7_Vaporeon,Rival_7_Vaporeon_Vaporeon_1,Route22,Route23,Vaporeon,Ice Beam,Elite 4,Vaporeon Version,55
+Erica_5,Erica_5_Tangela_1,CeladonCity,Route7,Tangela,Bind,Badge_5_Alt,4 Badges,41
+Erica_5,Erica_5_Tangela_1,CeladonCity,Route7,Tangela,Stun Spore,Badge_5_Alt,4 Badges,41
+Erica_5,Erica_5_Tangela_1,CeladonCity,Route7,Tangela,Sleep Powder,Badge_5_Alt,4 Badges,41
+Erica_5,Erica_5_Tangela_1,CeladonCity,Route7,Tangela,Mega Drain,Badge_5_Alt,4 Badges,41
+Erica_5,Erica_5_Victreebel_1,CeladonCity,Route7,Victreebel,Swords Dance,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Victreebel_1,CeladonCity,Route7,Victreebel,Wrap,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Victreebel_1,CeladonCity,Route7,Victreebel,Razor Leaf,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Victreebel_1,CeladonCity,Route7,Victreebel,Sludge,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Venusaur_1,CeladonCity,Route7,Venusaur,Razor Leaf,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Venusaur_1,CeladonCity,Route7,Venusaur,Leech Seed,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Venusaur_1,CeladonCity,Route7,Venusaur,Sludge,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Venusaur_1,CeladonCity,Route7,Venusaur,Body Slam,Badge_5_Alt,4 Badges,42
+Erica_5,Erica_5_Gloom_1,CeladonCity,Route7,Gloom,Mega Drain,Badge_5_Alt,4 Badges,43
+Erica_5,Erica_5_Gloom_1,CeladonCity,Route7,Gloom,Sleep Powder,Badge_5_Alt,4 Badges,43
+Erica_5,Erica_5_Gloom_1,CeladonCity,Route7,Gloom,Petal Dance,Badge_5_Alt,4 Badges,43
+Erica_5,Erica_5_Gloom_1,CeladonCity,Route7,Gloom,Sludge,Badge_5_Alt,4 Badges,43
+Erica_6,Erica_6_Tangela_1,CeladonCity,Route7,Tangela,Mega Drain,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Tangela_1,CeladonCity,Route7,Tangela,Stun Spore,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Tangela_1,CeladonCity,Route7,Tangela,Solarbeam,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Tangela_1,CeladonCity,Route7,Tangela,Bind,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Victreebel_1,CeladonCity,Route7,Victreebel,Razor Leaf,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Victreebel_1,CeladonCity,Route7,Victreebel,Sludge,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Victreebel_1,CeladonCity,Route7,Victreebel,Wrap,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Victreebel_1,CeladonCity,Route7,Victreebel,Swords Dance,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Venusaur_1,CeladonCity,Route7,Venusaur,Razor Leaf,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Venusaur_1,CeladonCity,Route7,Venusaur,Solarbeam,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Venusaur_1,CeladonCity,Route7,Venusaur,Leech Seed,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Venusaur_1,CeladonCity,Route7,Venusaur,Body Slam,Badge_6_Alt,5 Badges,48
+Erica_6,Erica_6_Exeggutor_1,CeladonCity,Route7,Exeggutor,Reflect,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Exeggutor_1,CeladonCity,Route7,Exeggutor,Egg Bomb,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Exeggutor_1,CeladonCity,Route7,Exeggutor,Psychic,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Exeggutor_1,CeladonCity,Route7,Exeggutor,Sleep Powder,Badge_6_Alt,5 Badges,49
+Erica_6,Erica_6_Gloom_1,CeladonCity,Route7,Gloom,Leech Seed,Badge_6_Alt,5 Badges,50
+Erica_6,Erica_6_Gloom_1,CeladonCity,Route7,Gloom,Petal Dance,Badge_6_Alt,5 Badges,50
+Erica_6,Erica_6_Gloom_1,CeladonCity,Route7,Gloom,Sludge,Badge_6_Alt,5 Badges,50
+Erica_6,Erica_6_Gloom_1,CeladonCity,Route7,Gloom,Solarbeam,Badge_6_Alt,5 Badges,50
+Koga_5,Koga_5_Golbat_1,FuchsiaCity,Route12,Golbat,Confuse Ray,Badge_5,,42
+Koga_5,Koga_5_Golbat_1,FuchsiaCity,Route12,Golbat,Toxic,Badge_5,,42
+Koga_5,Koga_5_Golbat_1,FuchsiaCity,Route12,Golbat,Bite,Badge_5,,42
+Koga_5,Koga_5_Golbat_1,FuchsiaCity,Route12,Golbat,Sludge,Badge_5,,42
+Koga_5,Koga_5_Muk_1,FuchsiaCity,Route12,Muk,Acid Armor,Badge_5,,42
+Koga_5,Koga_5_Muk_1,FuchsiaCity,Route12,Muk,Mega Drain,Badge_5,,42
+Koga_5,Koga_5_Muk_1,FuchsiaCity,Route12,Muk,Sludge,Badge_5,,42
+Koga_5,Koga_5_Muk_1,FuchsiaCity,Route12,Muk,Toxic,Badge_5,,42
+Koga_5,Koga_5_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Surf,Badge_5,,41
+Koga_5,Koga_5_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Ice Beam,Badge_5,,41
+Koga_5,Koga_5_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Barrier,Badge_5,,41
+Koga_5,Koga_5_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Sludge,Badge_5,,41
+Koga_5,Koga_5_Venomoth_1,FuchsiaCity,Route12,Venomoth,Solarbeam,Badge_5,,43
+Koga_5,Koga_5_Venomoth_1,FuchsiaCity,Route12,Venomoth,Double Team,Badge_5,,43
+Koga_5,Koga_5_Venomoth_1,FuchsiaCity,Route12,Venomoth,Toxic,Badge_5,,43
+Koga_5,Koga_5_Venomoth_1,FuchsiaCity,Route12,Venomoth,Psychic,Badge_5,,43
+Koga_6,Koga_6_Golbat_1,FuchsiaCity,Route12,Golbat,Toxic,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Golbat_1,FuchsiaCity,Route12,Golbat,Confuse Ray,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Golbat_1,FuchsiaCity,Route12,Golbat,Sludge,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Golbat_1,FuchsiaCity,Route12,Golbat,Bite,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Muk_1,FuchsiaCity,Route12,Muk,Sludge,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Muk_1,FuchsiaCity,Route12,Muk,Mega Drain,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Muk_1,FuchsiaCity,Route12,Muk,Toxic,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Muk_1,FuchsiaCity,Route12,Muk,Acid Armor,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Barrier,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Surf,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Ice Beam,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Tentacruel_1,FuchsiaCity,Route12,Tentacruel,Wrap,Badge_6_Alt,5 Badges,49
+Koga_6,Koga_6_Weezing_1,FuchsiaCity,Route12,Weezing,Amnesia,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Weezing_1,FuchsiaCity,Route12,Weezing,Sludge,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Weezing_1,FuchsiaCity,Route12,Weezing,Thunderbolt,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Weezing_1,FuchsiaCity,Route12,Weezing,Explosion,Badge_6_Alt,5 Badges,48
+Koga_6,Koga_6_Venomoth_1,FuchsiaCity,Route12,Venomoth,Solarbeam,Badge_6_Alt,5 Badges,50
+Koga_6,Koga_6_Venomoth_1,FuchsiaCity,Route12,Venomoth,Double Team,Badge_6_Alt,5 Badges,50
+Koga_6,Koga_6_Venomoth_1,FuchsiaCity,Route12,Venomoth,Toxic,Badge_6_Alt,5 Badges,50
+Koga_6,Koga_6_Venomoth_1,FuchsiaCity,Route12,Venomoth,Sludge,Badge_6_Alt,5 Badges,50
+Sabrina_5,Sabrina_5_Abra_1,SaffronCity,SaffronCity,Abra,Psychic,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Substitute,Badge_5_Alt,4 Badges,42
+Sabrina_5,Sabrina_5_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Mimic,Badge_5_Alt,4 Badges,42
+Sabrina_5,Sabrina_5_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Light Screen,Badge_5_Alt,4 Badges,42
+Sabrina_5,Sabrina_5_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Psychic,Badge_5_Alt,4 Badges,42
+Sabrina_5,Sabrina_5_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Psywave,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Recover,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Psychic,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Reflect,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Thunder Wave,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Recover,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Psychic,Badge_5_Alt,4 Badges,43
+Sabrina_5,Sabrina_5_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Reflect,Badge_5_Alt,4 Badges,43
+Sabrina_6,Sabrina_6_Abra_1,SaffronCity,SaffronCity,Abra,Psychic,Badge_6,,50
+Sabrina_6,Sabrina_6_Hypno_1,SaffronCity,SaffronCity,Hypno,Psychic,Badge_6,,48
+Sabrina_6,Sabrina_6_Hypno_1,SaffronCity,SaffronCity,Hypno,Psywave,Badge_6,,48
+Sabrina_6,Sabrina_6_Hypno_1,SaffronCity,SaffronCity,Hypno,Hypnosis,Badge_6,,48
+Sabrina_6,Sabrina_6_Hypno_1,SaffronCity,SaffronCity,Hypno,Dream Eater,Badge_6,,48
+Sabrina_6,Sabrina_6_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Light Screen,Badge_6,,49
+Sabrina_6,Sabrina_6_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Mimic,Badge_6,,49
+Sabrina_6,Sabrina_6_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Psychic,Badge_6,,49
+Sabrina_6,Sabrina_6_Mr Mime_1,SaffronCity,SaffronCity,Mr Mime,Substitute,Badge_6,,49
+Sabrina_6,Sabrina_6_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Reflect,Badge_6,,50
+Sabrina_6,Sabrina_6_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Psywave,Badge_6,,50
+Sabrina_6,Sabrina_6_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Psychic,Badge_6,,50
+Sabrina_6,Sabrina_6_Kadabra_1,SaffronCity,SaffronCity,Kadabra,Recover,Badge_6,,50
+Sabrina_6,Sabrina_6_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Thunder Wave,Badge_6,,50
+Sabrina_6,Sabrina_6_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Recover,Badge_6,,50
+Sabrina_6,Sabrina_6_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Psychic,Badge_6,,50
+Sabrina_6,Sabrina_6_Alakazam_1,SaffronCity,SaffronCity,Alakazam,Reflect,Badge_6,,50
+Blaine,Blaine_Rapidash_1,CinnabarIsland,CinnabarIsland,Rapidash,Fire Spin,Badge_7,,52
+Blaine,Blaine_Rapidash_1,CinnabarIsland,CinnabarIsland,Rapidash,Take Down,Badge_7,,52
+Blaine,Blaine_Rapidash_1,CinnabarIsland,CinnabarIsland,Rapidash,Fire Blast,Badge_7,,52
+Blaine,Blaine_Rapidash_1,CinnabarIsland,CinnabarIsland,Rapidash,Hi Jump Kick,Badge_7,,52
+Blaine,Blaine_Charizard_1,CinnabarIsland,CinnabarIsland,Charizard,Fire Blast,Badge_7,,51
+Blaine,Blaine_Charizard_1,CinnabarIsland,CinnabarIsland,Charizard,Wing Attack,Badge_7,,51
+Blaine,Blaine_Charizard_1,CinnabarIsland,CinnabarIsland,Charizard,Slash,Badge_7,,51
+Blaine,Blaine_Charizard_1,CinnabarIsland,CinnabarIsland,Charizard,Seismic Toss,Badge_7,,51
+Blaine,Blaine_Ninetales_1,CinnabarIsland,CinnabarIsland,Ninetales,Fire Blast,Badge_7,,51
+Blaine,Blaine_Ninetales_1,CinnabarIsland,CinnabarIsland,Ninetales,Confuse Ray,Badge_7,,51
+Blaine,Blaine_Ninetales_1,CinnabarIsland,CinnabarIsland,Ninetales,Solarbeam,Badge_7,,51
+Blaine,Blaine_Ninetales_1,CinnabarIsland,CinnabarIsland,Ninetales,Fire Spin,Badge_7,,51
+Blaine,Blaine_Arcanine_1,CinnabarIsland,CinnabarIsland,Arcanine,Fire Blast,Badge_7,,52
+Blaine,Blaine_Arcanine_1,CinnabarIsland,CinnabarIsland,Arcanine,Double Edge,Badge_7,,52
+Blaine,Blaine_Arcanine_1,CinnabarIsland,CinnabarIsland,Arcanine,Dig,Badge_7,,52
+Blaine,Blaine_Arcanine_1,CinnabarIsland,CinnabarIsland,Arcanine,Agility,Badge_7,,52
+Blaine,Blaine_Magmar_1,CinnabarIsland,CinnabarIsland,Magmar,Fire Blast,Badge_7,,53
+Blaine,Blaine_Magmar_1,CinnabarIsland,CinnabarIsland,Magmar,Psychic,Badge_7,,53
+Blaine,Blaine_Magmar_1,CinnabarIsland,CinnabarIsland,Magmar,Confuse Ray,Badge_7,,53
+Blaine,Blaine_Magmar_1,CinnabarIsland,CinnabarIsland,Magmar,Thunderpunch,Badge_7,,53
+Giovanni,Giovanni_Dugtrio_1,VirdianCity,VirdianCity,Dugtrio,Earthquake,Badge_8,,53
+Giovanni,Giovanni_Dugtrio_1,VirdianCity,VirdianCity,Dugtrio,Slash,Badge_8,,53
+Giovanni,Giovanni_Dugtrio_1,VirdianCity,VirdianCity,Dugtrio,Fissure,Badge_8,,53
+Giovanni,Giovanni_Dugtrio_1,VirdianCity,VirdianCity,Dugtrio,Rock Slide,Badge_8,,53
+Giovanni,Giovanni_Nidoqueen_1,VirdianCity,VirdianCity,Nidoqueen,Earthquake,Badge_8,,54
+Giovanni,Giovanni_Nidoqueen_1,VirdianCity,VirdianCity,Nidoqueen,Ice Beam,Badge_8,,54
+Giovanni,Giovanni_Nidoqueen_1,VirdianCity,VirdianCity,Nidoqueen,Thunderbolt,Badge_8,,54
+Giovanni,Giovanni_Nidoqueen_1,VirdianCity,VirdianCity,Nidoqueen,Body Slam,Badge_8,,54
+Giovanni,Giovanni_Persian_1,VirdianCity,VirdianCity,Persian,Slash,Badge_8,,55
+Giovanni,Giovanni_Persian_1,VirdianCity,VirdianCity,Persian,Hyper Beam,Badge_8,,55
+Giovanni,Giovanni_Persian_1,VirdianCity,VirdianCity,Persian,Bubblebeam,Badge_8,,55
+Giovanni,Giovanni_Persian_1,VirdianCity,VirdianCity,Persian,Thunderbolt,Badge_8,,55
+Giovanni,Giovanni_Nidoking_1,VirdianCity,VirdianCity,Nidoking,Earthquake,Badge_8,,54
+Giovanni,Giovanni_Nidoking_1,VirdianCity,VirdianCity,Nidoking,Blizzard,Badge_8,,54
+Giovanni,Giovanni_Nidoking_1,VirdianCity,VirdianCity,Nidoking,Thunder,Badge_8,,54
+Giovanni,Giovanni_Nidoking_1,VirdianCity,VirdianCity,Nidoking,Sludge,Badge_8,,54
+Giovanni,Giovanni_Rhydon_1,VirdianCity,VirdianCity,Rhydon,Rock Slide,Badge_8,,55
+Giovanni,Giovanni_Rhydon_1,VirdianCity,VirdianCity,Rhydon,Earthquake,Badge_8,,55
+Giovanni,Giovanni_Rhydon_1,VirdianCity,VirdianCity,Rhydon,Submission,Badge_8,,55
+Giovanni,Giovanni_Rhydon_1,VirdianCity,VirdianCity,Rhydon,Thunderbolt,Badge_8,,55
+Lorelei,Lorelei_Slowbro_1,IndigoPlateau,VictoryRoad3F,Slowbro,Earthquake,Elite 4,,56
+Lorelei,Lorelei_Slowbro_1,IndigoPlateau,VictoryRoad3F,Slowbro,Blizzard,Elite 4,,56
+Lorelei,Lorelei_Slowbro_1,IndigoPlateau,VictoryRoad3F,Slowbro,Amnesia,Elite 4,,56
+Lorelei,Lorelei_Slowbro_1,IndigoPlateau,VictoryRoad3F,Slowbro,Psychic,Elite 4,,56
+Lorelei,Lorelei_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Surf,Elite 4,,55
+Lorelei,Lorelei_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Ice Beam,Elite 4,,55
+Lorelei,Lorelei_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Explosion,Elite 4,,55
+Lorelei,Lorelei_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Blizzard,Elite 4,,55
+Lorelei,Lorelei_Dewgong_1,IndigoPlateau,VictoryRoad3F,Dewgong,Surf,Elite 4,,55
+Lorelei,Lorelei_Dewgong_1,IndigoPlateau,VictoryRoad3F,Dewgong,Rest,Elite 4,,55
+Lorelei,Lorelei_Dewgong_1,IndigoPlateau,VictoryRoad3F,Dewgong,Ice Beam,Elite 4,,55
+Lorelei,Lorelei_Dewgong_1,IndigoPlateau,VictoryRoad3F,Dewgong,Blizzard,Elite 4,,55
+Lorelei,Lorelei_Jynx_1,IndigoPlateau,VictoryRoad3F,Jynx,Psychic,Elite 4,,56
+Lorelei,Lorelei_Jynx_1,IndigoPlateau,VictoryRoad3F,Jynx,Bubblebeam,Elite 4,,56
+Lorelei,Lorelei_Jynx_1,IndigoPlateau,VictoryRoad3F,Jynx,Lovely Kiss,Elite 4,,56
+Lorelei,Lorelei_Jynx_1,IndigoPlateau,VictoryRoad3F,Jynx,Blizzard,Elite 4,,56
+Lorelei,Lorelei_Lapras_1,IndigoPlateau,VictoryRoad3F,Lapras,Thunderbolt,Elite 4,,57
+Lorelei,Lorelei_Lapras_1,IndigoPlateau,VictoryRoad3F,Lapras,Sing,Elite 4,,57
+Lorelei,Lorelei_Lapras_1,IndigoPlateau,VictoryRoad3F,Lapras,Surf,Elite 4,,57
+Lorelei,Lorelei_Lapras_1,IndigoPlateau,VictoryRoad3F,Lapras,Blizzard,Elite 4,,57
+Bruno,Bruno_Hitmonchan_1,IndigoPlateau,VictoryRoad3F,Hitmonchan,Dizzy Punch,Elite 4,,57
+Bruno,Bruno_Hitmonchan_1,IndigoPlateau,VictoryRoad3F,Hitmonchan,Submission,Elite 4,,57
+Bruno,Bruno_Hitmonchan_1,IndigoPlateau,VictoryRoad3F,Hitmonchan,Ice Beam,Elite 4,,57
+Bruno,Bruno_Hitmonchan_1,IndigoPlateau,VictoryRoad3F,Hitmonchan,Thunderpunch,Elite 4,,57
+Bruno,Bruno_Poliwrath_1,IndigoPlateau,VictoryRoad3F,Poliwrath,Ice Beam,Elite 4,,56
+Bruno,Bruno_Poliwrath_1,IndigoPlateau,VictoryRoad3F,Poliwrath,Hypnosis,Elite 4,,56
+Bruno,Bruno_Poliwrath_1,IndigoPlateau,VictoryRoad3F,Poliwrath,Amnesia,Elite 4,,56
+Bruno,Bruno_Poliwrath_1,IndigoPlateau,VictoryRoad3F,Poliwrath,Hydro Pump,Elite 4,,56
+Bruno,Bruno_Hitmonlee_1,IndigoPlateau,VictoryRoad3F,Hitmonlee,Body Slam,Elite 4,,57
+Bruno,Bruno_Hitmonlee_1,IndigoPlateau,VictoryRoad3F,Hitmonlee,Jump Kick,Elite 4,,57
+Bruno,Bruno_Hitmonlee_1,IndigoPlateau,VictoryRoad3F,Hitmonlee,Hi Jump Kick,Elite 4,,57
+Bruno,Bruno_Hitmonlee_1,IndigoPlateau,VictoryRoad3F,Hitmonlee,Mega Kick,Elite 4,,57
+Bruno,Bruno_Onix_1,IndigoPlateau,VictoryRoad3F,Onix,Explosion,Elite 4,,56
+Bruno,Bruno_Onix_1,IndigoPlateau,VictoryRoad3F,Onix,Rock Slide,Elite 4,,56
+Bruno,Bruno_Onix_1,IndigoPlateau,VictoryRoad3F,Onix,Earthquake,Elite 4,,56
+Bruno,Bruno_Onix_1,IndigoPlateau,VictoryRoad3F,Onix,Bind,Elite 4,,56
+Bruno,Bruno_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Body Slam,Elite 4,,58
+Bruno,Bruno_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Rock Slide,Elite 4,,58
+Bruno,Bruno_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Earthquake,Elite 4,,58
+Bruno,Bruno_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Karate Chop,Elite 4,,58
+Agatha,Agatha_Gengar_1,IndigoPlateau,VictoryRoad3F,Gengar,Mega Drain,Elite 4,,57
+Agatha,Agatha_Gengar_1,IndigoPlateau,VictoryRoad3F,Gengar,Night Shade,Elite 4,,57
+Agatha,Agatha_Gengar_1,IndigoPlateau,VictoryRoad3F,Gengar,Hypnosis,Elite 4,,57
+Agatha,Agatha_Gengar_1,IndigoPlateau,VictoryRoad3F,Gengar,Dream Eater,Elite 4,,57
+Agatha,Agatha_Golbat_1,IndigoPlateau,VictoryRoad3F,Golbat,Fly,Elite 4,,58
+Agatha,Agatha_Golbat_1,IndigoPlateau,VictoryRoad3F,Golbat,Toxic,Elite 4,,58
+Agatha,Agatha_Golbat_1,IndigoPlateau,VictoryRoad3F,Golbat,Sludge,Elite 4,,58
+Agatha,Agatha_Golbat_1,IndigoPlateau,VictoryRoad3F,Golbat,Double Team,Elite 4,,58
+Agatha,Agatha_Marowak_1,IndigoPlateau,VictoryRoad3F,Marowak,Swords Dance,Elite 4,,57
+Agatha,Agatha_Marowak_1,IndigoPlateau,VictoryRoad3F,Marowak,Body Slam,Elite 4,,57
+Agatha,Agatha_Marowak_1,IndigoPlateau,VictoryRoad3F,Marowak,Rock Slide,Elite 4,,57
+Agatha,Agatha_Marowak_1,IndigoPlateau,VictoryRoad3F,Marowak,Earthquake,Elite 4,,57
+Agatha,Agatha_Arbok_1,IndigoPlateau,VictoryRoad3F,Arbok,Glare,Elite 4,,58
+Agatha,Agatha_Arbok_1,IndigoPlateau,VictoryRoad3F,Arbok,Substitute,Elite 4,,58
+Agatha,Agatha_Arbok_1,IndigoPlateau,VictoryRoad3F,Arbok,Sludge,Elite 4,,58
+Agatha,Agatha_Arbok_1,IndigoPlateau,VictoryRoad3F,Arbok,Wrap,Elite 4,,58
+Agatha,Agatha_Gengar_2,IndigoPlateau,VictoryRoad3F,Gengar,Psychic,Elite 4,,59
+Agatha,Agatha_Gengar_2,IndigoPlateau,VictoryRoad3F,Gengar,Night Shade,Elite 4,,59
+Agatha,Agatha_Gengar_2,IndigoPlateau,VictoryRoad3F,Gengar,Mega Drain,Elite 4,,59
+Agatha,Agatha_Gengar_2,IndigoPlateau,VictoryRoad3F,Gengar,Thunder,Elite 4,,59
+Lance,Lance_Dragonite_1,IndigoPlateau,VictoryRoad3F,Dragonite,Wrap,Elite 4,,61
+Lance,Lance_Dragonite_1,IndigoPlateau,VictoryRoad3F,Dragonite,Slam,Elite 4,,61
+Lance,Lance_Dragonite_1,IndigoPlateau,VictoryRoad3F,Dragonite,Thunder Wave,Elite 4,,61
+Lance,Lance_Dragonite_1,IndigoPlateau,VictoryRoad3F,Dragonite,Hyper Beam,Elite 4,,61
+Lance,Lance_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Fly,Elite 4,,60
+Lance,Lance_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Surf,Elite 4,,60
+Lance,Lance_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Slam,Elite 4,,60
+Lance,Lance_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Hyper Beam,Elite 4,,60
+Lance,Lance_Charizard_1,IndigoPlateau,VictoryRoad3F,Charizard,Wing Attack,Elite 4,,60
+Lance,Lance_Charizard_1,IndigoPlateau,VictoryRoad3F,Charizard,Flamethrower,Elite 4,,60
+Lance,Lance_Charizard_1,IndigoPlateau,VictoryRoad3F,Charizard,Hyper Beam,Elite 4,,60
+Lance,Lance_Charizard_1,IndigoPlateau,VictoryRoad3F,Charizard,Earthquake,Elite 4,,60
+Lance,Lance_Aerodactyl_1,IndigoPlateau,VictoryRoad3F,Aerodactyl,Wing Attack,Elite 4,,61
+Lance,Lance_Aerodactyl_1,IndigoPlateau,VictoryRoad3F,Aerodactyl,Rock Slide,Elite 4,,61
+Lance,Lance_Aerodactyl_1,IndigoPlateau,VictoryRoad3F,Aerodactyl,Earthquake,Elite 4,,61
+Lance,Lance_Aerodactyl_1,IndigoPlateau,VictoryRoad3F,Aerodactyl,Hyper Beam,Elite 4,,61
+Lance,Lance_Dragonite_2,IndigoPlateau,VictoryRoad3F,Dragonite,Blizzard,Elite 4,,62
+Lance,Lance_Dragonite_2,IndigoPlateau,VictoryRoad3F,Dragonite,Fire Blast,Elite 4,,62
+Lance,Lance_Dragonite_2,IndigoPlateau,VictoryRoad3F,Dragonite,Thunder,Elite 4,,62
+Lance,Lance_Dragonite_2,IndigoPlateau,VictoryRoad3F,Dragonite,Hyper Beam,Elite 4,,62
+Champion_Jolteon,Champion_Jolteon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Thunder Wave,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Recover,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Psychic,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Double Team,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Rhydon_1,IndigoPlateau,VictoryRoad3F,Rhydon,Rock Slide,Elite 4,Jolteon Version,60
+Champion_Jolteon,Champion_Jolteon_Rhydon_1,IndigoPlateau,VictoryRoad3F,Rhydon,Earthquake,Elite 4,Jolteon Version,60
+Champion_Jolteon,Champion_Jolteon_Rhydon_1,IndigoPlateau,VictoryRoad3F,Rhydon,Horn Drill,Elite 4,Jolteon Version,60
+Champion_Jolteon,Champion_Jolteon_Rhydon_1,IndigoPlateau,VictoryRoad3F,Rhydon,Submission,Elite 4,Jolteon Version,60
+Champion_Jolteon,Champion_Jolteon_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Blizzard,Elite 4,Jolteon Version,61
+Champion_Jolteon,Champion_Jolteon_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Hydro Pump,Elite 4,Jolteon Version,61
+Champion_Jolteon,Champion_Jolteon_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Fly,Elite 4,Jolteon Version,61
+Champion_Jolteon,Champion_Jolteon_Gyarados_1,IndigoPlateau,VictoryRoad3F,Gyarados,Hyper Beam,Elite 4,Jolteon Version,61
+Champion_Jolteon,Champion_Jolteon_Arcanine_1,IndigoPlateau,VictoryRoad3F,Arcanine,Fire Blast,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Arcanine_1,IndigoPlateau,VictoryRoad3F,Arcanine,Dig,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Arcanine_1,IndigoPlateau,VictoryRoad3F,Arcanine,Rest,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Arcanine_1,IndigoPlateau,VictoryRoad3F,Arcanine,Hyper Beam,Elite 4,Jolteon Version,63
+Champion_Jolteon,Champion_Jolteon_Exeggutor_1,IndigoPlateau,VictoryRoad3F,Exeggutor,Softboiled,Elite 4,Jolteon Version,62
+Champion_Jolteon,Champion_Jolteon_Exeggutor_1,IndigoPlateau,VictoryRoad3F,Exeggutor,Egg Bomb,Elite 4,Jolteon Version,62
+Champion_Jolteon,Champion_Jolteon_Exeggutor_1,IndigoPlateau,VictoryRoad3F,Exeggutor,Psychic,Elite 4,Jolteon Version,62
+Champion_Jolteon,Champion_Jolteon_Exeggutor_1,IndigoPlateau,VictoryRoad3F,Exeggutor,Reflect,Elite 4,Jolteon Version,62
+Champion_Jolteon,Champion_Jolteon_Jolteon_1,IndigoPlateau,VictoryRoad3F,Jolteon,Double Team,Elite 4,Jolteon Version,65
+Champion_Jolteon,Champion_Jolteon_Jolteon_1,IndigoPlateau,VictoryRoad3F,Jolteon,Headbutt,Elite 4,Jolteon Version,65
+Champion_Jolteon,Champion_Jolteon_Jolteon_1,IndigoPlateau,VictoryRoad3F,Jolteon,Thunder Wave,Elite 4,Jolteon Version,65
+Champion_Jolteon,Champion_Jolteon_Jolteon_1,IndigoPlateau,VictoryRoad3F,Jolteon,Thunder,Elite 4,Jolteon Version,65
+Champion_Flareon,Champion_Flareon_Magneton_1,IndigoPlateau,VictoryRoad3F,Magneton,Thunder Wave,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Magneton_1,IndigoPlateau,VictoryRoad3F,Magneton,Tri Attack,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Magneton_1,IndigoPlateau,VictoryRoad3F,Magneton,Reflect,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Magneton_1,IndigoPlateau,VictoryRoad3F,Magneton,Thunder,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Dutrio_1,IndigoPlateau,VictoryRoad3F,Dodrio,Drill Peck,Elite 4,Flareon Version,61
+Champion_Flareon,Champion_Flareon_Dutrio_1,IndigoPlateau,VictoryRoad3F,Dodrio,Hyper Beam,Elite 4,Flareon Version,61
+Champion_Flareon,Champion_Flareon_Dutrio_1,IndigoPlateau,VictoryRoad3F,Dodrio,Jump Kick,Elite 4,Flareon Version,61
+Champion_Flareon,Champion_Flareon_Dutrio_1,IndigoPlateau,VictoryRoad3F,Dodrio,Double Team,Elite 4,Flareon Version,61
+Champion_Flareon,Champion_Flareon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Thunder Wave,Elite 4,Flareon Version,63
+Champion_Flareon,Champion_Flareon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Recover,Elite 4,Flareon Version,63
+Champion_Flareon,Champion_Flareon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Psychic,Elite 4,Flareon Version,63
+Champion_Flareon,Champion_Flareon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Reflect,Elite 4,Flareon Version,63
+Champion_Flareon,Champion_Flareon_Sandshrew_1,IndigoPlateau,VictoryRoad3F,Sandshrew,Rock Slide,Elite 4,Flareon Version,60
+Champion_Flareon,Champion_Flareon_Sandshrew_1,IndigoPlateau,VictoryRoad3F,Sandshrew,Cut,Elite 4,Flareon Version,60
+Champion_Flareon,Champion_Flareon_Sandshrew_1,IndigoPlateau,VictoryRoad3F,Sandshrew,Earthquake,Elite 4,Flareon Version,60
+Champion_Flareon,Champion_Flareon_Sandshrew_1,IndigoPlateau,VictoryRoad3F,Sandshrew,Swords Dance,Elite 4,Flareon Version,60
+Champion_Flareon,Champion_Flareon_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Clamp,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Explosion,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Double Team,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Cloyster_1,IndigoPlateau,VictoryRoad3F,Cloyster,Blizzard,Elite 4,Flareon Version,62
+Champion_Flareon,Champion_Flareon_Flareon_1,IndigoPlateau,VictoryRoad3F,Flareon,Reflect,Elite 4,Flareon Version,65
+Champion_Flareon,Champion_Flareon_Flareon_1,IndigoPlateau,VictoryRoad3F,Flareon,Body Slam,Elite 4,Flareon Version,65
+Champion_Flareon,Champion_Flareon_Flareon_1,IndigoPlateau,VictoryRoad3F,Flareon,Dig,Elite 4,Flareon Version,65
+Champion_Flareon,Champion_Flareon_Flareon_1,IndigoPlateau,VictoryRoad3F,Flareon,Fire Blast,Elite 4,Flareon Version,65
+Champion_Vaporeon,Champion_Vaporeon_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Earthquake,Elite 4,Vaporeon Version,60
+Champion_Vaporeon,Champion_Vaporeon_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Rock Slide,Elite 4,Vaporeon Version,60
+Champion_Vaporeon,Champion_Vaporeon_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Counter,Elite 4,Vaporeon Version,60
+Champion_Vaporeon,Champion_Vaporeon_Machamp_1,IndigoPlateau,VictoryRoad3F,Machamp,Karate Chop,Elite 4,Vaporeon Version,60
+Champion_Vaporeon,Champion_Vaporeon_Pidgeot_1,IndigoPlateau,VictoryRoad3F,Pidgeot,Toxic,Elite 4,Vaporeon Version,61
+Champion_Vaporeon,Champion_Vaporeon_Pidgeot_1,IndigoPlateau,VictoryRoad3F,Pidgeot,Hyper Beam,Elite 4,Vaporeon Version,61
+Champion_Vaporeon,Champion_Vaporeon_Pidgeot_1,IndigoPlateau,VictoryRoad3F,Pidgeot,Sky Attack,Elite 4,Vaporeon Version,61
+Champion_Vaporeon,Champion_Vaporeon_Pidgeot_1,IndigoPlateau,VictoryRoad3F,Pidgeot,Double Team,Elite 4,Vaporeon Version,61
+Champion_Vaporeon,Champion_Vaporeon_Ninetales_1,IndigoPlateau,VictoryRoad3F,Ninetales,Psywave,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Ninetales_1,IndigoPlateau,VictoryRoad3F,Ninetales,Solarbeam,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Ninetales_1,IndigoPlateau,VictoryRoad3F,Ninetales,Night Shade,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Ninetales_1,IndigoPlateau,VictoryRoad3F,Ninetales,Fire Spin,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Victreebel_1,IndigoPlateau,VictoryRoad3F,Victreebel,Mega Drain,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Victreebel_1,IndigoPlateau,VictoryRoad3F,Victreebel,Sludge,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Victreebel_1,IndigoPlateau,VictoryRoad3F,Victreebel,Wrap,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Victreebel_1,IndigoPlateau,VictoryRoad3F,Victreebel,Sleep Powder,Elite 4,Vaporeon Version,62
+Champion_Vaporeon,Champion_Vaporeon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Double Team,Elite 4,Vaporeon Version,63
+Champion_Vaporeon,Champion_Vaporeon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Recover,Elite 4,Vaporeon Version,63
+Champion_Vaporeon,Champion_Vaporeon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Psychic,Elite 4,Vaporeon Version,63
+Champion_Vaporeon,Champion_Vaporeon_Alakazam_1,IndigoPlateau,VictoryRoad3F,Alakazam,Reflect,Elite 4,Vaporeon Version,63
+Champion_Vaporeon,Champion_Vaporeon_Vaporeon_1,IndigoPlateau,VictoryRoad3F,Vaporeon,Blizzard,Elite 4,Vaporeon Version,65
+Champion_Vaporeon,Champion_Vaporeon_Vaporeon_1,IndigoPlateau,VictoryRoad3F,Vaporeon,Reflect,Elite 4,Vaporeon Version,65
+Champion_Vaporeon,Champion_Vaporeon_Vaporeon_1,IndigoPlateau,VictoryRoad3F,Vaporeon,Rest,Elite 4,Vaporeon Version,65
+Champion_Vaporeon,Champion_Vaporeon_Vaporeon_1,IndigoPlateau,VictoryRoad3F,Vaporeon,Hydro Pump,Elite 4,Vaporeon Version,65
+Jessie_&_James_3,Jessie_&_James_3_Meowth_1,PokemonTower7F,PokemonTower7F,Meowth,Bite,Badge_5,,33
+Jessie_&_James_3,Jessie_&_James_3_Meowth_1,PokemonTower7F,PokemonTower7F,Meowth,Pay Day,Badge_5,,33
+Jessie_&_James_3,Jessie_&_James_3_Meowth_1,PokemonTower7F,PokemonTower7F,Meowth,Screech,Badge_5,,33
+Jessie_&_James_3,Jessie_&_James_3_Meowth_1,PokemonTower7F,PokemonTower7F,Meowth,Take Down,Badge_5,,33
+Jessie_&_James_3,Jessie_&_James_3_Arbok_1,PokemonTower7F,PokemonTower7F,Arbok,Acid,Badge_5,,31
+Jessie_&_James_3,Jessie_&_James_3_Arbok_1,PokemonTower7F,PokemonTower7F,Arbok,Substitute,Badge_5,,31
+Jessie_&_James_3,Jessie_&_James_3_Arbok_1,PokemonTower7F,PokemonTower7F,Arbok,Glare,Badge_5,,31
+Jessie_&_James_3,Jessie_&_James_3_Arbok_1,PokemonTower7F,PokemonTower7F,Arbok,Screech,Badge_5,,31
+Jessie_&_James_3,Jessie_&_James_3_Lickitung_1,PokemonTower7F,PokemonTower7F,Lickitung,Stomp,Badge_5,,30
+Jessie_&_James_3,Jessie_&_James_3_Lickitung_1,PokemonTower7F,PokemonTower7F,Lickitung,Disable,Badge_5,,30
+Jessie_&_James_3,Jessie_&_James_3_Lickitung_1,PokemonTower7F,PokemonTower7F,Lickitung,Headbutt,Badge_5,,30
+Jessie_&_James_3,Jessie_&_James_3_Lickitung_1,PokemonTower7F,PokemonTower7F,Lickitung,Defense Curl,Badge_5,,30
+Jessie_&_James_3,Jessie_&_James_3_Weezing_1,PokemonTower7F,PokemonTower7F,Weezing,Tackle,Badge_5,,31
+Jessie_&_James_3,Jessie_&_James_3_Weezing_1,PokemonTower7F,PokemonTower7F,Weezing,Smog,Badge_5,,31
+Jessie_&_James_3,Jessie_&_James_3_Weezing_1,PokemonTower7F,PokemonTower7F,Weezing,Acid,Badge_5,,31
+Jessie_&_James_3,Jessie_&_James_3_Weezing_1,PokemonTower7F,PokemonTower7F,Weezing,Smokescreen,Badge_5,,31
+Jessie_&_James_4,Jessie_&_James_4_Weezing_1,SilphCo,SaffronCity,Weezing,Smokescreen,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Weezing_1,SilphCo,SaffronCity,Weezing,Sludge,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Weezing_1,SilphCo,SaffronCity,Weezing,Amnesia,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Weezing_1,SilphCo,SaffronCity,Weezing,Selfdestruct,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Lickitung_1,SilphCo,SaffronCity,Lickitung,Headbutt,Badge_6,,41
+Jessie_&_James_4,Jessie_&_James_4_Lickitung_1,SilphCo,SaffronCity,Lickitung,Defense Curl,Badge_6,,41
+Jessie_&_James_4,Jessie_&_James_4_Lickitung_1,SilphCo,SaffronCity,Lickitung,Body Slam,Badge_6,,41
+Jessie_&_James_4,Jessie_&_James_4_Lickitung_1,SilphCo,SaffronCity,Lickitung,Screech,Badge_6,,41
+Jessie_&_James_4,Jessie_&_James_4_Arbok_1,SilphCo,SaffronCity,Arbok,Glare,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Arbok_1,SilphCo,SaffronCity,Arbok,Screech,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Arbok_1,SilphCo,SaffronCity,Arbok,Sludge,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Arbok_1,SilphCo,SaffronCity,Arbok,Wrap,Badge_6,,42
+Jessie_&_James_4,Jessie_&_James_4_Meowth_1,SilphCo,SaffronCity,Meowth,Pay Day,Badge_6,,44
+Jessie_&_James_4,Jessie_&_James_4_Meowth_1,SilphCo,SaffronCity,Meowth,Screech,Badge_6,,44
+Jessie_&_James_4,Jessie_&_James_4_Meowth_1,SilphCo,SaffronCity,Meowth,Take Down,Badge_6,,44
+Jessie_&_James_4,Jessie_&_James_4_Meowth_1,SilphCo,SaffronCity,Meowth,Slash,Badge_6,,44
+Jessie_&_James_4,Jessie_&_James_4_Victreebel_1,SilphCo,SaffronCity,Victreebel,Acid,Badge_6,,43
+Jessie_&_James_4,Jessie_&_James_4_Victreebel_1,SilphCo,SaffronCity,Victreebel,Razor Leaf,Badge_6,,43
+Jessie_&_James_4,Jessie_&_James_4_Victreebel_1,SilphCo,SaffronCity,Victreebel,Sludge,Badge_6,,43
+Jessie_&_James_4,Jessie_&_James_4_Victreebel_1,SilphCo,SaffronCity,Victreebel,Wrap,Badge_6,,43
+Giovanni_1,Giovanni_1_Onix_1,RocketHideout,Route7,Onix,Rock Throw,Badge_4,,29
+Giovanni_1,Giovanni_1_Onix_1,RocketHideout,Route7,Onix,Dig,Badge_4,,29
+Giovanni_1,Giovanni_1_Onix_1,RocketHideout,Route7,Onix,Screech,Badge_4,,29
+Giovanni_1,Giovanni_1_Onix_1,RocketHideout,Route7,Onix,Take Down,Badge_4,,29
+Giovanni_1,Giovanni_1_Kangaskhan_1,RocketHideout,Route7,Kangaskhan,Mega Punch,Badge_4,,31
+Giovanni_1,Giovanni_1_Kangaskhan_1,RocketHideout,Route7,Kangaskhan,Submission,Badge_4,,31
+Giovanni_1,Giovanni_1_Kangaskhan_1,RocketHideout,Route7,Kangaskhan,Dizzy Punch,Badge_4,,31
+Giovanni_1,Giovanni_1_Marowak_1,RocketHideout,Route7,Marowak,Bone Club,Badge_4,,30
+Giovanni_1,Giovanni_1_Marowak_1,RocketHideout,Route7,Marowak,Headbutt,Badge_4,,30
+Giovanni_1,Giovanni_1_Marowak_1,RocketHideout,Route7,Marowak,Cut,Badge_4,,30
+Giovanni_1,Giovanni_1_Marowak_1,RocketHideout,Route7,Marowak,Focus Energy,Badge_4,,30
+Giovanni_1,Giovanni_1_Persian_1,RocketHideout,Route7,Persian,Take Down,Badge_4,,32
+Giovanni_1,Giovanni_1_Persian_1,RocketHideout,Route7,Persian,Bubblebeam,Badge_4,,32
+Giovanni_1,Giovanni_1_Persian_1,RocketHideout,Route7,Persian,Thunderbolt,Badge_4,,32
+Giovanni_2,Giovanni_2_Kingler_1,SilphCo,SaffronCity,Kingler,Crabhammer,Badge_6,,44
+Giovanni_2,Giovanni_2_Kingler_1,SilphCo,SaffronCity,Kingler,Cut,Badge_6,,44
+Giovanni_2,Giovanni_2_Kingler_1,SilphCo,SaffronCity,Kingler,Body Slam,Badge_6,,44
+Giovanni_2,Giovanni_2_Kingler_1,SilphCo,SaffronCity,Kingler,Harden,Badge_6,,44
+Giovanni_2,Giovanni_2_Kangaskhan_1,SilphCo,SaffronCity,Kangaskhan,Ice Punch,Badge_6,,44
+Giovanni_2,Giovanni_2_Kangaskhan_1,SilphCo,SaffronCity,Kangaskhan,Rock Slide,Badge_6,,44
+Giovanni_2,Giovanni_2_Kangaskhan_1,SilphCo,SaffronCity,Kangaskhan,Submission,Badge_6,,44
+Giovanni_2,Giovanni_2_Kangaskhan_1,SilphCo,SaffronCity,Kangaskhan,Body Slam,Badge_6,,44
+Giovanni_2,Giovanni_2_Machoke_1,SilphCo,SaffronCity,Machoke,Dig,Badge_6,,45
+Giovanni_2,Giovanni_2_Machoke_1,SilphCo,SaffronCity,Machoke,Body Slam,Badge_6,,45
+Giovanni_2,Giovanni_2_Machoke_1,SilphCo,SaffronCity,Machoke,Rock Slide,Badge_6,,45
+Giovanni_2,Giovanni_2_Machoke_1,SilphCo,SaffronCity,Machoke,Karate Chop,Badge_6,,45
+Giovanni_2,Giovanni_2_Golem_1,SilphCo,SaffronCity,Golem,Earthquake,Badge_6,,44
+Giovanni_2,Giovanni_2_Golem_1,SilphCo,SaffronCity,Golem,Rock Slide,Badge_6,,44
+Giovanni_2,Giovanni_2_Golem_1,SilphCo,SaffronCity,Golem,Explosion,Badge_6,,44
+Giovanni_2,Giovanni_2_Persian_1,SilphCo,SaffronCity,Persian,Slash,Badge_6,,47
+Giovanni_2,Giovanni_2_Persian_1,SilphCo,SaffronCity,Persian,Bubblebeam,Badge_6,,47
+Giovanni_2,Giovanni_2_Persian_1,SilphCo,SaffronCity,Persian,Thunderbolt,Badge_6,,47
+Brock_Rematch,Brock_Rematch_Omastar_1,PewterCity,CeruleanCaveB1F,Omastar,Blizzard,Rematches,,64
+Brock_Rematch,Brock_Rematch_Omastar_1,PewterCity,CeruleanCaveB1F,Omastar,Rock Slide,Rematches,,64
+Brock_Rematch,Brock_Rematch_Omastar_1,PewterCity,CeruleanCaveB1F,Omastar,Clamp,Rematches,,64
+Brock_Rematch,Brock_Rematch_Omastar_1,PewterCity,CeruleanCaveB1F,Omastar,Hydro Pump,Rematches,,64
+Brock_Rematch,Brock_Rematch_Onix_1,PewterCity,CeruleanCaveB1F,Onix,Fissure,Rematches,,65
+Brock_Rematch,Brock_Rematch_Onix_1,PewterCity,CeruleanCaveB1F,Onix,Rock Slide,Rematches,,65
+Brock_Rematch,Brock_Rematch_Onix_1,PewterCity,CeruleanCaveB1F,Onix,Earthquake,Rematches,,65
+Brock_Rematch,Brock_Rematch_Onix_1,PewterCity,CeruleanCaveB1F,Onix,Bind,Rematches,,65
+Brock_Rematch,Brock_Rematch_Kabutops_1,PewterCity,CeruleanCaveB1F,Kabutops,Slash,Rematches,,64
+Brock_Rematch,Brock_Rematch_Kabutops_1,PewterCity,CeruleanCaveB1F,Kabutops,Swords Dance,Rematches,,64
+Brock_Rematch,Brock_Rematch_Kabutops_1,PewterCity,CeruleanCaveB1F,Kabutops,Rock Slide,Rematches,,64
+Brock_Rematch,Brock_Rematch_Kabutops_1,PewterCity,CeruleanCaveB1F,Kabutops,Hydro Pump,Rematches,,64
+Brock_Rematch,Brock_Rematch_Golem_1,PewterCity,CeruleanCaveB1F,Golem,Body Slam,Rematches,,64
+Brock_Rematch,Brock_Rematch_Golem_1,PewterCity,CeruleanCaveB1F,Golem,Rock Slide,Rematches,,64
+Brock_Rematch,Brock_Rematch_Golem_1,PewterCity,CeruleanCaveB1F,Golem,Earthquake,Rematches,,64
+Brock_Rematch,Brock_Rematch_Golem_1,PewterCity,CeruleanCaveB1F,Golem,Explosion,Rematches,,64
+Brock_Rematch,Brock_Rematch_Ninetales_1,PewterCity,CeruleanCaveB1F,Ninetales,Reflect,Rematches,,64
+Brock_Rematch,Brock_Rematch_Ninetales_1,PewterCity,CeruleanCaveB1F,Ninetales,Solarbeam,Rematches,,64
+Brock_Rematch,Brock_Rematch_Ninetales_1,PewterCity,CeruleanCaveB1F,Ninetales,Confuse Ray,Rematches,,64
+Brock_Rematch,Brock_Rematch_Ninetales_1,PewterCity,CeruleanCaveB1F,Ninetales,Fire Spin,Rematches,,64
+Brock_Rematch,Brock_Rematch_Aerodactyl_1,PewterCity,CeruleanCaveB1F,Aerodactyl,Fly,Rematches,,65
+Brock_Rematch,Brock_Rematch_Aerodactyl_1,PewterCity,CeruleanCaveB1F,Aerodactyl,Rock Slide,Rematches,,65
+Brock_Rematch,Brock_Rematch_Aerodactyl_1,PewterCity,CeruleanCaveB1F,Aerodactyl,Earthquake,Rematches,,65
+Brock_Rematch,Brock_Rematch_Aerodactyl_1,PewterCity,CeruleanCaveB1F,Aerodactyl,Double Edge,Rematches,,65
+Misty_Rematch,Misty_Rematch_Seadra_1,CeruleanCity,CeruleanCaveB1F,Seadra,Ice Beam,Rematches,,64
+Misty_Rematch,Misty_Rematch_Seadra_1,CeruleanCity,CeruleanCaveB1F,Seadra,Double Team,Rematches,,64
+Misty_Rematch,Misty_Rematch_Seadra_1,CeruleanCity,CeruleanCaveB1F,Seadra,Slam,Rematches,,64
+Misty_Rematch,Misty_Rematch_Seadra_1,CeruleanCity,CeruleanCaveB1F,Seadra,Hydro Pump,Rematches,,64
+Misty_Rematch,Misty_Rematch_Golduck_1,CeruleanCity,CeruleanCaveB1F,Golduck,Blizzard,Rematches,,65
+Misty_Rematch,Misty_Rematch_Golduck_1,CeruleanCity,CeruleanCaveB1F,Golduck,Psychic,Rematches,,65
+Misty_Rematch,Misty_Rematch_Golduck_1,CeruleanCity,CeruleanCaveB1F,Golduck,Amnesia,Rematches,,65
+Misty_Rematch,Misty_Rematch_Golduck_1,CeruleanCity,CeruleanCaveB1F,Golduck,Hydro Pump,Rematches,,65
+Misty_Rematch,Misty_Rematch_Lapras_1,CeruleanCity,CeruleanCaveB1F,Lapras,Psychic,Rematches,,64
+Misty_Rematch,Misty_Rematch_Lapras_1,CeruleanCity,CeruleanCaveB1F,Lapras,Thunder,Rematches,,64
+Misty_Rematch,Misty_Rematch_Lapras_1,CeruleanCity,CeruleanCaveB1F,Lapras,Hydro Pump,Rematches,,64
+Misty_Rematch,Misty_Rematch_Lapras_1,CeruleanCity,CeruleanCaveB1F,Lapras,Blizzard,Rematches,,64
+Misty_Rematch,Misty_Rematch_Blastoise_1,CeruleanCity,CeruleanCaveB1F,Blastoise,Surf,Rematches,,64
+Misty_Rematch,Misty_Rematch_Blastoise_1,CeruleanCity,CeruleanCaveB1F,Blastoise,Earthquake,Rematches,,64
+Misty_Rematch,Misty_Rematch_Blastoise_1,CeruleanCity,CeruleanCaveB1F,Blastoise,Ice Beam,Rematches,,64
+Misty_Rematch,Misty_Rematch_Blastoise_1,CeruleanCity,CeruleanCaveB1F,Blastoise,Reflect,Rematches,,64
+Misty_Rematch,Misty_Rematch_Vaporeon_1,CeruleanCity,CeruleanCaveB1F,Vaporeon,Substitute,Rematches,,64
+Misty_Rematch,Misty_Rematch_Vaporeon_1,CeruleanCity,CeruleanCaveB1F,Vaporeon,Acid Armor,Rematches,,64
+Misty_Rematch,Misty_Rematch_Vaporeon_1,CeruleanCity,CeruleanCaveB1F,Vaporeon,Blizzard,Rematches,,64
+Misty_Rematch,Misty_Rematch_Vaporeon_1,CeruleanCity,CeruleanCaveB1F,Vaporeon,Hydro Pump,Rematches,,64
+Misty_Rematch,Misty_Rematch_Starmie_1,CeruleanCity,CeruleanCaveB1F,Starmie,Surf,Rematches,,65
+Misty_Rematch,Misty_Rematch_Starmie_1,CeruleanCity,CeruleanCaveB1F,Starmie,Psychic,Rematches,,65
+Misty_Rematch,Misty_Rematch_Starmie_1,CeruleanCity,CeruleanCaveB1F,Starmie,Recover,Rematches,,65
+Misty_Rematch,Misty_Rematch_Starmie_1,CeruleanCity,CeruleanCaveB1F,Starmie,Thunderbolt,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,VermilionCity,CeruleanCaveB1F,Electrode,Light Screen,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,VermilionCity,CeruleanCaveB1F,Electrode,Thunder Wave,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,VermilionCity,CeruleanCaveB1F,Electrode,Explosion,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,VermilionCity,CeruleanCaveB1F,Electrode,Thunder,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Magneton_1,VermilionCity,CeruleanCaveB1F,Magneton,Thunder Wave,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Magneton_1,VermilionCity,CeruleanCaveB1F,Magneton,Tri Attack,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Magneton_1,VermilionCity,CeruleanCaveB1F,Magneton,Reflect,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Magneton_1,VermilionCity,CeruleanCaveB1F,Magneton,Thunder,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Jolteon_1,VermilionCity,CeruleanCaveB1F,Jolteon,Headbutt,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Jolteon_1,VermilionCity,CeruleanCaveB1F,Jolteon,Dig,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Jolteon_1,VermilionCity,CeruleanCaveB1F,Jolteon,Thunder Wave,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Jolteon_1,VermilionCity,CeruleanCaveB1F,Jolteon,Thunder,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Porygon_1,VermilionCity,CeruleanCaveB1F,Porygon,Thunder,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Porygon_1,VermilionCity,CeruleanCaveB1F,Porygon,Blizzard,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Porygon_1,VermilionCity,CeruleanCaveB1F,Porygon,Recover,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Porygon_1,VermilionCity,CeruleanCaveB1F,Porygon,Hyper Beam,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electabuzz_1,VermilionCity,CeruleanCaveB1F,Electabuzz,Ice Punch,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electabuzz_1,VermilionCity,CeruleanCaveB1F,Electabuzz,Light Screen,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electabuzz_1,VermilionCity,CeruleanCaveB1F,Electabuzz,Psychic,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electabuzz_1,VermilionCity,CeruleanCaveB1F,Electabuzz,Thunder,Rematches,,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_1,VermilionCity,CeruleanCaveB1F,Raichu,Surf,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_1,VermilionCity,CeruleanCaveB1F,Raichu,Cut,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_1,VermilionCity,CeruleanCaveB1F,Raichu,Thunder,Rematches,,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_1,VermilionCity,CeruleanCaveB1F,Raichu,Thunder Wave,Rematches,,65
+Erica_Rematch,Erica_Rematch_Tangela_1,CeladonCity,CeruleanCaveB1F,Tangela,Mega Drain,Rematches,,64
+Erica_Rematch,Erica_Rematch_Tangela_1,CeladonCity,CeruleanCaveB1F,Tangela,Body Slam,Rematches,,64
+Erica_Rematch,Erica_Rematch_Tangela_1,CeladonCity,CeruleanCaveB1F,Tangela,Stun Spore,Rematches,,64
+Erica_Rematch,Erica_Rematch_Tangela_1,CeladonCity,CeruleanCaveB1F,Tangela,Bind,Rematches,,64
+Erica_Rematch,Erica_Rematch_Venusaur_1,CeladonCity,CeruleanCaveB1F,Venusaur,Sludge,Rematches,,64
+Erica_Rematch,Erica_Rematch_Venusaur_1,CeladonCity,CeruleanCaveB1F,Venusaur,Leech Seed,Rematches,,64
+Erica_Rematch,Erica_Rematch_Venusaur_1,CeladonCity,CeruleanCaveB1F,Venusaur,Sleep Powder,Rematches,,64
+Erica_Rematch,Erica_Rematch_Venusaur_1,CeladonCity,CeruleanCaveB1F,Venusaur,Razor Leaf,Rematches,,64
+Erica_Rematch,Erica_Rematch_Parasect_1,CeladonCity,CeruleanCaveB1F,Parasect,Leech Life,Rematches,,64
+Erica_Rematch,Erica_Rematch_Parasect_1,CeladonCity,CeruleanCaveB1F,Parasect,Mega Drain,Rematches,,64
+Erica_Rematch,Erica_Rematch_Parasect_1,CeladonCity,CeruleanCaveB1F,Parasect,Solarbeam,Rematches,,64
+Erica_Rematch,Erica_Rematch_Parasect_1,CeladonCity,CeruleanCaveB1F,Parasect,Growth,Rematches,,64
+Erica_Rematch,Erica_Rematch_Exeggutor_1,CeladonCity,CeruleanCaveB1F,Exeggutor,Mega Drain,Rematches,,64
+Erica_Rematch,Erica_Rematch_Exeggutor_1,CeladonCity,CeruleanCaveB1F,Exeggutor,Substitute,Rematches,,64
+Erica_Rematch,Erica_Rematch_Exeggutor_1,CeladonCity,CeruleanCaveB1F,Exeggutor,Psychic,Rematches,,64
+Erica_Rematch,Erica_Rematch_Exeggutor_1,CeladonCity,CeruleanCaveB1F,Exeggutor,Sleep Powder,Rematches,,64
+Erica_Rematch,Erica_Rematch_Victreebel_1,CeladonCity,CeruleanCaveB1F,Victreebel,Mega Drain,Rematches,,65
+Erica_Rematch,Erica_Rematch_Victreebel_1,CeladonCity,CeruleanCaveB1F,Victreebel,Sludge,Rematches,,65
+Erica_Rematch,Erica_Rematch_Victreebel_1,CeladonCity,CeruleanCaveB1F,Victreebel,Growth,Rematches,,65
+Erica_Rematch,Erica_Rematch_Victreebel_1,CeladonCity,CeruleanCaveB1F,Victreebel,Sleep Powder,Rematches,,65
+Erica_Rematch,Erica_Rematch_Vileplume_1,CeladonCity,CeruleanCaveB1F,Vileplume,Sleep Powder,Rematches,,65
+Erica_Rematch,Erica_Rematch_Vileplume_1,CeladonCity,CeruleanCaveB1F,Vileplume,Leech Seed,Rematches,,65
+Erica_Rematch,Erica_Rematch_Vileplume_1,CeladonCity,CeruleanCaveB1F,Vileplume,Substitute,Rematches,,65
+Erica_Rematch,Erica_Rematch_Vileplume_1,CeladonCity,CeruleanCaveB1F,Vileplume,Mega Drain,Rematches,,65
+Koga_Rematch,Koga_Rematch_Golbat_1,FuchsiaCity,CeruleanCaveB1F,Golbat,Fly,Rematches,,64
+Koga_Rematch,Koga_Rematch_Golbat_1,FuchsiaCity,CeruleanCaveB1F,Golbat,Toxic,Rematches,,64
+Koga_Rematch,Koga_Rematch_Golbat_1,FuchsiaCity,CeruleanCaveB1F,Golbat,Double Team,Rematches,,64
+Koga_Rematch,Koga_Rematch_Golbat_1,FuchsiaCity,CeruleanCaveB1F,Golbat,Confuse Ray,Rematches,,64
+Koga_Rematch,Koga_Rematch_Muk_1,FuchsiaCity,CeruleanCaveB1F,Muk,Sludge,Rematches,,64
+Koga_Rematch,Koga_Rematch_Muk_1,FuchsiaCity,CeruleanCaveB1F,Muk,Toxic,Rematches,,64
+Koga_Rematch,Koga_Rematch_Muk_1,FuchsiaCity,CeruleanCaveB1F,Muk,Mega Drain,Rematches,,64
+Koga_Rematch,Koga_Rematch_Muk_1,FuchsiaCity,CeruleanCaveB1F,Muk,Minimize,Rematches,,64
+Koga_Rematch,Koga_Rematch_Tentacruel_1,FuchsiaCity,CeruleanCaveB1F,Tentacruel,Surf,Rematches,,64
+Koga_Rematch,Koga_Rematch_Tentacruel_1,FuchsiaCity,CeruleanCaveB1F,Tentacruel,Sludge,Rematches,,64
+Koga_Rematch,Koga_Rematch_Tentacruel_1,FuchsiaCity,CeruleanCaveB1F,Tentacruel,Blizzard,Rematches,,64
+Koga_Rematch,Koga_Rematch_Tentacruel_1,FuchsiaCity,CeruleanCaveB1F,Tentacruel,Reflect,Rematches,,64
+Koga_Rematch,Koga_Rematch_Weezing_1,FuchsiaCity,CeruleanCaveB1F,Weezing,Amnesia,Rematches,,65
+Koga_Rematch,Koga_Rematch_Weezing_1,FuchsiaCity,CeruleanCaveB1F,Weezing,Fire Blast,Rematches,,65
+Koga_Rematch,Koga_Rematch_Weezing_1,FuchsiaCity,CeruleanCaveB1F,Weezing,Thunderbolt,Rematches,,65
+Koga_Rematch,Koga_Rematch_Weezing_1,FuchsiaCity,CeruleanCaveB1F,Weezing,Sludge,Rematches,,65
+Koga_Rematch,Koga_Rematch_Arbok_1,FuchsiaCity,CeruleanCaveB1F,Arbok,Glare,Rematches,,64
+Koga_Rematch,Koga_Rematch_Arbok_1,FuchsiaCity,CeruleanCaveB1F,Arbok,Earthquake,Rematches,,64
+Koga_Rematch,Koga_Rematch_Arbok_1,FuchsiaCity,CeruleanCaveB1F,Arbok,Rock Slide,Rematches,,64
+Koga_Rematch,Koga_Rematch_Arbok_1,FuchsiaCity,CeruleanCaveB1F,Arbok,Wrap,Rematches,,64
+Koga_Rematch,Koga_Rematch_Venomoth_1,FuchsiaCity,CeruleanCaveB1F,Venomoth,Double Team,Rematches,,65
+Koga_Rematch,Koga_Rematch_Venomoth_1,FuchsiaCity,CeruleanCaveB1F,Venomoth,Sleep Powder,Rematches,,65
+Koga_Rematch,Koga_Rematch_Venomoth_1,FuchsiaCity,CeruleanCaveB1F,Venomoth,Psychic,Rematches,,65
+Koga_Rematch,Koga_Rematch_Venomoth_1,FuchsiaCity,CeruleanCaveB1F,Venomoth,Leech Life,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Mr-mime_1,SaffronCity,CeruleanCaveB1F,Mr-mime,Thunderbolt,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Mr-mime_1,SaffronCity,CeruleanCaveB1F,Mr-mime,Psychic,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Mr-mime_1,SaffronCity,CeruleanCaveB1F,Mr-mime,Substitute,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Mr-mime_1,SaffronCity,CeruleanCaveB1F,Mr-mime,Thunder Wave,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Hypno_1,SaffronCity,CeruleanCaveB1F,Hypno,Substitute,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Hypno_1,SaffronCity,CeruleanCaveB1F,Hypno,Psywave,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Hypno_1,SaffronCity,CeruleanCaveB1F,Hypno,Hypnosis,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Hypno_1,SaffronCity,CeruleanCaveB1F,Hypno,Dream Eater,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_1,SaffronCity,CeruleanCaveB1F,Slowbro,Surf,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_1,SaffronCity,CeruleanCaveB1F,Slowbro,Reflect,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_1,SaffronCity,CeruleanCaveB1F,Slowbro,Amnesia,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_1,SaffronCity,CeruleanCaveB1F,Slowbro,Psychic,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_1,SaffronCity,CeruleanCaveB1F,Jynx,Lovely Kiss,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_1,SaffronCity,CeruleanCaveB1F,Jynx,Dream Eater,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_1,SaffronCity,CeruleanCaveB1F,Jynx,Bubblebeam,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_1,SaffronCity,CeruleanCaveB1F,Jynx,Blizzard,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_1,SaffronCity,CeruleanCaveB1F,Gengar,Psychic,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_1,SaffronCity,CeruleanCaveB1F,Gengar,Night Shade,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_1,SaffronCity,CeruleanCaveB1F,Gengar,Double Team,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_1,SaffronCity,CeruleanCaveB1F,Gengar,Mega Drain,Rematches,,64
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_1,SaffronCity,CeruleanCaveB1F,Alakazam,Thunder Wave,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_1,SaffronCity,CeruleanCaveB1F,Alakazam,Recover,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_1,SaffronCity,CeruleanCaveB1F,Alakazam,Psychic,Rematches,,65
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_1,SaffronCity,CeruleanCaveB1F,Alakazam,Reflect,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,CinnabarIsland,CeruleanCaveB1F,Rapidash,Fire Spin,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,CinnabarIsland,CeruleanCaveB1F,Rapidash,Agility,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,CinnabarIsland,CeruleanCaveB1F,Rapidash,Solarbeam,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,CinnabarIsland,CeruleanCaveB1F,Rapidash,Horn Drill,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Flareon_1,CinnabarIsland,CeruleanCaveB1F,Flareon,Double Edge,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Flareon_1,CinnabarIsland,CeruleanCaveB1F,Flareon,Growth,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Flareon_1,CinnabarIsland,CeruleanCaveB1F,Flareon,Fire Spin,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Flareon_1,CinnabarIsland,CeruleanCaveB1F,Flareon,Dig,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Charizard_1,CinnabarIsland,CeruleanCaveB1F,Charizard,Wing Attack,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Charizard_1,CinnabarIsland,CeruleanCaveB1F,Charizard,Fire Blast,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Charizard_1,CinnabarIsland,CeruleanCaveB1F,Charizard,Earthquake,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Charizard_1,CinnabarIsland,CeruleanCaveB1F,Charizard,Swords Dance,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Ninetales_1,CinnabarIsland,CeruleanCaveB1F,Ninetales,Reflect,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Ninetales_1,CinnabarIsland,CeruleanCaveB1F,Ninetales,Confuse Ray,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Ninetales_1,CinnabarIsland,CeruleanCaveB1F,Ninetales,Solarbeam,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Ninetales_1,CinnabarIsland,CeruleanCaveB1F,Ninetales,Fire Spin,Rematches,,64
+Blaine_Rematch,Blaine_Rematch_Arcanine_1,CinnabarIsland,CeruleanCaveB1F,Arcanine,Fire Blast,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Arcanine_1,CinnabarIsland,CeruleanCaveB1F,Arcanine,Dig,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Arcanine_1,CinnabarIsland,CeruleanCaveB1F,Arcanine,Double Edge,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Arcanine_1,CinnabarIsland,CeruleanCaveB1F,Arcanine,Agility,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Magmar_1,CinnabarIsland,CeruleanCaveB1F,Magmar,Thunderpunch,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Magmar_1,CinnabarIsland,CeruleanCaveB1F,Magmar,Psychic,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Magmar_1,CinnabarIsland,CeruleanCaveB1F,Magmar,Confuse Ray,Rematches,,65
+Blaine_Rematch,Blaine_Rematch_Magmar_1,CinnabarIsland,CeruleanCaveB1F,Magmar,Fire Blast,Rematches,,65
