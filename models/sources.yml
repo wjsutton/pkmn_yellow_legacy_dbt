@@ -6,6 +6,8 @@ sources:
     tables:
       - name: game_route_order
 
+      - name: map_locations
+
       - name: moves_from_level_up
       - name: moves_from_tmhm 
       - name: moves_phys_spec

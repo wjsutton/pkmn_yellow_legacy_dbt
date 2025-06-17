@@ -7,6 +7,7 @@ from deap import base, creator, tools, algorithms
 def calculate_route_score(group, difficulty_df):
     """
     Calculate route score based on battle difficulty ratings.
+    Fixed version with better scoring logic.
     """
     # For each opponent Pokemon, find the best matchup from our team
     best_matchups = group.loc[group.groupby(['trainer', 'trainer_pkmn_id'])['battle_score'].idxmax()]
@@ -19,57 +20,59 @@ def calculate_route_score(group, difficulty_df):
         how='left'
     )
     
-    # Apply difficulty-based weights
-    difficulty_weights = {
-        'Easy': 1.0,
-        'Requires Specific Counter': 1.5,
-        'Medium': 2.0,
-        'Hard': 3.0,
-        'Very Hard': 4.0
+    # FIXED: Apply difficulty-based weights that make sense
+    # Higher difficulty should require higher minimum scores
+    difficulty_thresholds = {
+        'Easy': 0.3,           # Even weak Pokemon can handle easy opponents
+        'Requires Specific Counter': 0.6,  # Need decent counters
+        'Medium': 0.7,         # Need good matchups
+        'Hard': 0.8,           # Need strong counters
+        'Very Hard': 0.9       # Need excellent counters
     }
     
-    # Default to 1.0 for any missing difficulty ratings
-    matchups_with_difficulty['difficulty_weight'] = matchups_with_difficulty['difficulty_rating'].map(
-        difficulty_weights).fillna(1.0)
+    # Default threshold for missing difficulty ratings
+    matchups_with_difficulty['difficulty_threshold'] = matchups_with_difficulty['difficulty_rating'].map(
+        difficulty_thresholds).fillna(0.5)
     
-    # Apply weights to battle scores
-    matchups_with_difficulty['weighted_score'] = matchups_with_difficulty['battle_score'] * \
-                                               matchups_with_difficulty['difficulty_weight']
+    # FIXED: Penalize teams that can't meet difficulty thresholds
+    matchups_with_difficulty['threshold_penalty'] = (
+        matchups_with_difficulty['difficulty_threshold'] - 
+        matchups_with_difficulty['battle_score']
+    ).clip(lower=0)  # Only penalize if below threshold
     
-    # Calculate total weighted score across all trainers
-    total_trainers = matchups_with_difficulty['trainer'].nunique()
+    # Calculate base score (sum of battle scores)
+    base_score = matchups_with_difficulty['battle_score'].sum()
     
-    if total_trainers == 0:
-        return 0
-        
-    # Each trainer contributes equally to the total score (1/n weighting)
-    trainer_weight = 1.0 / total_trainers
-    weighted_scores = matchups_with_difficulty.groupby('trainer')['weighted_score'].sum() * trainer_weight
+    # Apply threshold penalties
+    total_penalty = matchups_with_difficulty['threshold_penalty'].sum()
     
-    return weighted_scores.sum()
+    # FIXED: Score = base performance - heavy penalty for inadequate counters
+    final_score = base_score - (total_penalty * 2.0)  # Heavy penalty multiplier
+    
+    return max(0, final_score)  # Don't allow negative scores
+
 
 def calculate_team_score(selected_members, df, difficulty_df):
     """
-    Calculate team score by finding the best Pokemon matchup against each opponent,
-    weighted by battle difficulty. Also checks for single-use TM conflicts.
+    Calculate team score with improved logic.
     """
     combo_df = df[df['player_pkmn_id'].isin(selected_members)]
+    
+    if combo_df.empty:
+        return 0, pd.DataFrame(), False, {}
     
     # Check for single-use TM conflicts
     tm_conflicts = {}
     has_conflicts = False
     
     if 'single_use_tm' in combo_df.columns:
-        # Get all single-use TMs in the team
         single_use_tms = combo_df[combo_df['single_use_tm'] == 1]
         
         if not single_use_tms.empty:
-            # Group by move name and check which single-use TMs are used by multiple Pokémon
             tm_conflicts = single_use_tms.groupby('player_pkmn_move').apply(
                 lambda x: list(x['player_pkmn_id'].unique()) if len(x['player_pkmn_id'].unique()) > 1 else []
             ).to_dict()
             
-            # Remove empty lists from the conflicts dictionary
             tm_conflicts = {k: v for k, v in tm_conflicts.items() if v}
             has_conflicts = bool(tm_conflicts)
     
@@ -79,41 +82,64 @@ def calculate_team_score(selected_members, df, difficulty_df):
     )
     total_score = scores.sum()
     
-    # Apply penalty for single-use TM conflicts
+    # FIXED: More aggressive penalty for TM conflicts
     if has_conflicts:
-        # The penalty is proportional to the number of conflicts
-        conflict_penalty = 0.1 * len(tm_conflicts)
-        total_score *= max(0.5, 1 - conflict_penalty)  # Cap the penalty at 50%
+        conflict_penalty = 0.2 * len(tm_conflicts)  # Increased from 0.1
+        total_score *= max(0.3, 1 - conflict_penalty)  # Increased penalty cap
     
-    # Get detailed matchup information including moves
+    # FIXED: Add team composition bonus
+    # Reward teams with diverse, high-performing Pokemon
+    unique_pokemon = combo_df['player_pkmn_id'].nunique()
+    if unique_pokemon == 6:  # Full team bonus
+        diversity_bonus = 1.1
+    elif unique_pokemon >= 4:  # Partial bonus
+        diversity_bonus = 1.05
+    else:
+        diversity_bonus = 0.9  # Penalty for small teams
+    
+    total_score *= diversity_bonus
+    
+    # FIXED: Add minimum performance check
+    # Ensure no Pokemon in the team is completely useless
+    min_pokemon_scores = combo_df.groupby('player_pkmn_id')['battle_score'].max()
+    min_score = min_pokemon_scores.min()
+    
+    if min_score < 0.1:  # If any Pokemon is essentially useless
+        total_score *= 0.5  # Heavy penalty
+    elif min_score < 0.3:  # If any Pokemon is very weak
+        total_score *= 0.8  # Moderate penalty
+    
+    # Get detailed matchup information
     best_matchups = combo_df.loc[combo_df.groupby(['trainer', 'trainer_pkmn_id'])['battle_score'].idxmax()]
     
     return total_score, best_matchups, has_conflicts, tm_conflicts
 
+
 def get_adaptive_parameters(pool_size):
     """
-    Calculate appropriate genetic algorithm parameters based on available candidate pool size.
+    FIXED: More conservative parameters for better optimization.
     """
     if pool_size <= 10:
         return {
-            'population_size': 100,
-            'generations': 50,
+            'population_size': 200,    # Increased from 100
+            'generations': 100,        # Increased from 50
             'crossover_probability': 0.7,
-            'mutation_probability': 0.1
+            'mutation_probability': 0.15  # Increased from 0.1
         }
     
-    population_size = min(2000, max(300, int(300 + 50 * math.sqrt(pool_size))))
-    generations = min(200, max(50, int(50 + 10 * math.log(pool_size + 1))))
+    # More conservative scaling
+    population_size = min(1500, max(400, int(400 + 30 * math.sqrt(pool_size))))
+    generations = min(150, max(75, int(75 + 5 * math.log(pool_size + 1))))
 
     if pool_size <= 20:
         crossover_prob = 0.7
-        mutation_prob = 0.1
+        mutation_prob = 0.15  # Increased mutation for better exploration
     elif pool_size <= 50:
         crossover_prob = 0.75
-        mutation_prob = 0.12
+        mutation_prob = 0.18
     else:
         crossover_prob = 0.8
-        mutation_prob = 0.15
+        mutation_prob = 0.2
     
     return {
         'population_size': population_size,
@@ -231,14 +257,33 @@ def resolve_single_use_tm_conflicts(team_pokemon_ids, filtered_df):
     
     return resolved_moves
 
+def debug_team_selection(team_pokemon_ids, filtered_df, badge, run):
+    """Debug function to understand why certain Pokemon are selected."""
+    print(f"\n=== DEBUG: {run} - {badge} ===")
+    
+    for pokemon in team_pokemon_ids:
+        pokemon_data = filtered_df[filtered_df['player_pkmn_id'] == pokemon]
+        if not pokemon_data.empty:
+            avg_score = pokemon_data['battle_score'].mean()
+            max_score = pokemon_data['battle_score'].max()
+            matchup_count = len(pokemon_data)
+            
+            print(f"{pokemon}: Avg={avg_score:.3f}, Max={max_score:.3f}, Matchups={matchup_count}")
+            
+            # Show worst matchups
+            worst_matchups = pokemon_data.nsmallest(3, 'battle_score')
+            print(f"  Worst matchups:")
+            for _, row in worst_matchups.iterrows():
+                print(f"    vs {row['trainer_pkmn_id']}: {row['battle_score']:.3f}")
+
 def model(dbt, session):
     # Configure the model
     dbt.config(materialized="table")
     
     # Reference upstream models
-    matchup_df = dbt.ref("int_pkmn_team_optimisation_prep").df()
-    int_trainers_by_game_route_df = dbt.ref("int_trainers_by_game_route").df()
-    battle_difficulty_df = dbt.ref("int_pkmn_team_battle_difficulty").df()
+    matchup_df = dbt.ref("int_team_optimization").df()
+    int_trainers_by_game_route_df = dbt.ref("int_trainer_roster").df()
+    battle_difficulty_df = dbt.ref("int_battle_analysis").df()
     
     df = pd.merge(matchup_df, int_trainers_by_game_route_df, on=['trainer', 'game_stage'])
     

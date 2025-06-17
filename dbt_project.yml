@@ -23,6 +23,10 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 
+vars:
+  sprite_base_url: "https://raw.githubusercontent.com/cRz-Shadows/Pokemon_Yellow_Legacy/refs/heads/main/gfx"
+
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -37,5 +41,8 @@ models:
       +materialized: table
     output_teams:
       +materialized: table
+    optimisation:
+      +materialized: table
     tableau:
       +materialized: table
+      +post-hook: "COPY {{ this }} TO 'dashboard_assets/data/{{ this.identifier }}.csv' (HEADER, DELIMITER ',')"

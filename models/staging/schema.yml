@@ -8,6 +8,7 @@ models:
             - unique
             - not_null
 
+  - name: stg_map_locations
 
   - name: stg_moves_from_level_up
     columns:

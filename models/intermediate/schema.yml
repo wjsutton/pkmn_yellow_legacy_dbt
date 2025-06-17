@@ -1,103 +1,302 @@
 version: 2
 
 models:
-  - name: int_game_level_cap
+  - name: int_game_progression
+    description: "Game stage progression tracking with level caps and stage transitions"
     columns:
-        - name: game_stage
-          tests:
-            - unique
-            - not_null
-        - name: level_cap
-          tests:
-            - not_null
+      - name: game_stage
+        description: "The game progression stage (e.g., Badge_1, Badge_2, Elite_Four)"
+        data_tests:
+          - unique
+          - not_null
+      - name: level_cap
+        description: "Maximum pokemon level allowed at this stage"
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 100
+      # - name: stage_order
+      #   description: "Sequential order of game stages"
+      #   data_tests:
+      #     - not_null
+      #     - unique
 
-
-  - name: int_pkmn_catchable
+  - name: int_pokemon_availability
+    description: "Comprehensive pokemon availability including catchable, evolutions, and team options across all game stages"
+    # data_tests:
+    #   - pokemon_availability_completeness:
+    #       description: "Ensures all pokemon sources are properly categorized"
     columns:
-        - name: id
-          tests:
-            - unique
-            - not_null
-        - name: pokemon
-          tests:
-            - not_null
-        - name: level_cap
-          tests:
-            - not_null
-        - name: map
-          tests:
-            - not_null
-        - name: area
-          tests:
-            - not_null
-        - name: earliest_route
-          tests:
-            - not_null
+      - name: id
+        description: "Unique identifier for each pokemon availability record"
+        data_tests:
+          - unique
+          - not_null
+      - name: pokemon
+        description: "Pokemon species name"
+        data_tests:
+          - not_null
+      - name: level_cap
+        description: "Level cap when this pokemon becomes available"
+        data_tests:
+          - not_null
+      # - name: availability_type
+      #   description: "How pokemon is obtained (catchable, evolution, team_option)"
+      #   data_tests:
+      #     - not_null
+      #     - accepted_values:
+      #         values: ['catchable', 'evolution', 'team_option']
+      - name: map
+        description: "Map/location where pokemon is available"
+        data_tests:
+          - not_null
+      - name: area
+        description: "Specific area within the map"
+      - name: earliest_route
+        description: "First route where pokemon becomes available"
+        data_tests:
+          - not_null
+      - name: game_stage
+        description: "Game stage when pokemon becomes available"
+        data_tests:
+          - not_null
+      - name: next_gym
+        description: "Next gym leader this pokemon will face"
+      # - name: is_initial_pokemon
+      #   description: "Flag for starter pokemon options"
+      #   data_tests:
+      #     - accepted_values:
+      #         values: [0, 1]
 
-  - name: int_pkmn_move_damage
-    description: "Table containing pokemon move damage calculations for matchups between player and trainer pokemon"
-    tests:
-      - trainer_completeness:
-          description: "Checks that all trainers from int_trainers_all appear in matchups"
-    #   - trainer_pokemon_completeness
-    #   - order_validation
-    #   - trainer_matchup_count
-    #   - excluded_moves_check
-
-  - name: int_pkmn_move_damage_prep
-    description: "Preparatory table for pokemon move damage calculations"
-
-  - name: int_pkmn_team_optimisation_prep
+  - name: int_trainer_roster
+    description: "Complete trainer and pokemon roster with route mapping and battle context"
+    # data_tests:
+    #   - trainer_roster_completeness:
+    #       description: "Validates all trainers have required pokemon and move data"
     columns:
-        - name: id
-          tests:
-            - unique
-            - not_null
-            
-  - name: int_pkmn_team_options
-    columns:
-        - name: id
-          tests:
-            - unique
-            - not_null
-        - name: pokemon
-          tests:
-            - not_null
-        - name: level_cap
-          tests:
-            - not_null
-        - name: map
-          tests:
-            - not_null
-        - name: next_gym
-          tests:
-            - not_null
-        - name: initial_pokemon
-          tests:
-            - not_null
+      - name: pkmn_id
+        description: "Unique identifier for trainer pokemon instance"
+        data_tests:
+          - unique
+          - not_null
+      - name: trainer
+        description: "Name of the trainer"
+        data_tests:
+          - not_null
+      # - name: trainer_type
+      #   description: "Type of trainer (gym_leader, elite_four, rival, etc.)"
+      #   data_tests:
+      #     - not_null
+      - name: pokemon
+        description: "Pokemon species name"
+        data_tests:
+          - not_null
+      - name: level
+        description: "Pokemon level in battle"
+        data_tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 100
+      - name: move_1
+        description: "Primary move"
+        data_tests:
+          - not_null
+      - name: move_2
+        description: "Secondary move"
+      - name: move_3
+        description: "Third move"
+      - name: move_4
+        description: "Fourth move"
+      - name: game_stage
+        description: "Game stage when this trainer is encountered"
+        data_tests:
+          - not_null
+      - name: route
+        description: "Route or location where trainer is found"
+      - name: is_gym_leader
+        description: "Flag indicating if trainer is a gym leader"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      - name: badge_number
+        description: "Badge number for gym leaders (null for others)"
 
-  - name: int_trainers_all
+  - name: int_battle_analysis
+    description: "Comprehensive battle analysis including pokemon stats, moves, type effectiveness, and damage calculations for all player vs trainer matchups"
+    # data_tests:
+    #   - trainer_completeness:
+    #       description: "Checks that all trainers from int_trainer_roster appear in matchups"
+    #   - battle_calculation_integrity:
+    #       description: "Validates damage calculations and battle scores are logical"
     columns:
-        - name: pkmn_id
-          tests:
-            - unique
-            - not_null
-        - name: move_1
-          tests:
-            - not_null
-        - name: game_stage
-          tests:
-            - not_null
-        - name: level
-          tests:
-            - not_null
+      - name: matchup_id
+        description: "Unique identifier for each battle matchup"
+        data_tests:
+          - unique
+          - not_null
+      - name: game_stage
+        description: "The game progression stage (e.g., Badge_1, Badge_2)"
+        data_tests:
+          - not_null
+      - name: player_pkmn_id
+        description: "Unique identifier for player pokemon"
+        data_tests:
+          - not_null
+      - name: trainer_pkmn_id
+        description: "Unique identifier for trainer pokemon"
+        data_tests:
+          - not_null
+      - name: player_pokemon
+        description: "Player pokemon species"
+        data_tests:
+          - not_null
+      - name: trainer_pokemon
+        description: "Trainer pokemon species"
+        data_tests:
+          - not_null
+      - name: trainer
+        description: "Name of opposing trainer"
+        data_tests:
+          - not_null
+      - name: battle_score
+        description: "Calculated battle outcome score (0-1 scale where 1 = player advantage)"
+        data_tests:
+          - not_null
+          # - dbt_utils.accepted_range:
+          #     min_value: 0
+          #     max_value: 1
+      - name: player_attempts_to_ko
+        description: "Number of moves required for player to KO trainer pokemon"
+        data_tests:
+          - not_null
+          # - dbt_utils.accepted_range:
+          #     min_value: 0.1
+          #     max_value: 50
+      - name: trainer_attempts_to_ko
+        description: "Number of moves required for trainer to KO player pokemon"
+        data_tests:
+          - not_null
+          # - dbt_utils.accepted_range:
+          #     min_value: 0.1
+          #     max_value: 50
+      # - name: type_effectiveness
+      #   description: "Player move type effectiveness against trainer pokemon"
+      #   data_tests:
+      #     - accepted_values:
+      #         values: [0.25, 0.5, 1, 2, 4]
+      # - name: reverse_type_effectiveness
+      #   description: "Trainer move type effectiveness against player pokemon"
+      #   data_tests:
+      #     - accepted_values:
+      #         values: [0.25, 0.5, 1, 2, 4]
+      # - name: player_best_move
+      #   description: "Most effective move available to player pokemon"
+      # - name: trainer_best_move
+      #   description: "Most effective move available to trainer pokemon"
+      - name: is_gym_leader
+        description: "Flag indicating if the trainer is a gym leader"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+      # - name: difficulty_rating
+      #   description: "Battle difficulty assessment (easy, medium, hard, extreme)"
+      #   data_tests:
+      #     - accepted_values:
+      #         values: ['easy', 'medium', 'hard', 'extreme']
 
-  # - name: catchable_pkmn
-  # - name: matchups_summary
-  # - name: matchups
-  # - name: player_best_team 
-  # - name: player_pkmn_damage
-  # - name: player_pkmn_moves
-  # - name: trainer_pkmn_damage
-  # - name: trainer_pkmn_moves
-  # - name: usable_pkmn
+  - name: int_team_optimization
+    description: "Strategic team building analysis with battle difficulty ratings, matchup coverage, and optimal team recommendations"
+    # data_tests:
+    #   - team_coverage_validation:
+    #       description: "Ensures team recommendations provide adequate type coverage"
+    #   - optimization_logic_check:
+    #       description: "Validates team optimization scoring methodology"
+    columns:
+      - name: id
+        description: "Unique identifier for each team optimization scenario"
+        data_tests:
+          - unique
+          - not_null
+      - name: game_stage
+        description: "Game stage for team optimization"
+        data_tests:
+          - not_null
+      - name: player_pkmn_id
+        description: "Pokemon being evaluated for team inclusion"
+        data_tests:
+          - not_null
+      # - name: team_role
+      #   description: "Suggested role in team (sweeper, tank, support, coverage)"
+      #   data_tests:
+      #     - accepted_values:
+      #         values: ['sweeper', 'tank', 'support', 'coverage', 'utility']
+      # - name: overall_battle_score
+      #   description: "Average battle performance across all upcoming trainers"
+      #   data_tests:
+      #     - not_null
+      #     - dbt_utils.accepted_range:
+      #         min_value: 0
+      #         max_value: 1
+      # - name: gym_leader_score
+      #   description: "Specific performance against upcoming gym leaders"
+      #   data_tests:
+      #     - not_null
+      #     - dbt_utils.accepted_range:
+      #         min_value: 0
+      #         max_value: 1
+      # - name: type_coverage_score
+      #   description: "How well this pokemon covers team weaknesses"
+      #   data_tests:
+      #     - not_null
+      #     - dbt_utils.accepted_range:
+      #         min_value: 0
+      #         max_value: 1
+      # - name: availability_priority
+      #   description: "How early/easily this pokemon can be obtained"
+      #   data_tests:
+      #     - not_null
+      #     - dbt_utils.accepted_range:
+      #         min_value: 1
+      #         max_value: 10
+      # - name: team_synergy_score
+      #   description: "How well this pokemon works with other team members"
+      #   data_tests:
+      #     - dbt_utils.accepted_range:
+      #         min_value: 0
+      #         max_value: 1
+      # - name: recommended_level
+      #   description: "Suggested level for optimal performance"
+      #   data_tests:
+      #     - not_null
+      #     - dbt_utils.accepted_range:
+      #         min_value: 1
+      #         max_value: 100
+      # - name: move_recommendation_1
+      #   description: "Primary recommended move"
+      # - name: move_recommendation_2
+      #   description: "Secondary recommended move"
+      # - name: move_recommendation_3
+      #   description: "Third recommended move"
+      # - name: move_recommendation_4
+      #   description: "Fourth recommended move"
+      # - name: team_inclusion_rank
+      #   description: "Ranking for team inclusion (1 = highest priority)"
+      #   data_tests:
+      #     - not_null
+      #     - dbt_utils.accepted_range:
+      #         min_value: 1
+      # - name: difficulty_gates_cleared
+      #   description: "Number of difficult battles this pokemon helps with"
+      #   data_tests:
+      #     - not_null
+      #     - dbt_utils.accepted_range:
+      #         min_value: 0
+      # - name: is_team_core
+      #   description: "Flag indicating if pokemon is essential for team success"
+      #   data_tests:
+      #     - accepted_values:
+      #         values: [0, 1]
