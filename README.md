@@ -10,23 +10,19 @@ A **dbt** project to analyse and model data from the **Pokémon Yellow Legacy** 
 
 ## 🎯 Project Overview
 
-This project transforms raw Pokémon game data into analytical models that can help answer questions like:
-- What's the optimal team composition for beating the game?
-- Which Pokémon have the best stat distributions for specific roles?
-- How do movesets evolve throughout the game progression?
-- What are the most efficient routes for experience grinding?
+This project transforms raw Pokémon game data into analytical models that can help answer the question: What's the optimal team composition for beating the game?
 
-The project leverages dbt's powerful transformation capabilities to create clean, tested, and documented datasets from Pokémon Yellow Legacy game data.
+The project leverages dbt's help manage the complexity of this wide dataset to develop useful resources for Pokemon players
 
-## 🚀 What is Pokémon Yellow Legacy?
+### 🚀 What is Pokémon Yellow Legacy?
 
-Pokémon Yellow Legacy is a ROM hack created by TheSmithPlays that aims to fix and polish the original Pokémon Yellow while staying true to Generation 1's vision. This project analyzes data from this enhanced version of the classic game.
+Pokémon Yellow Legacy is a ROM hack created by TheSmithPlays that aims to fix and polish the original Pokémon Yellow while staying true to Generation 1's vision. This project analyses data from this enhanced version of the classic game.
 
 <a href="https://youtu.be/9yxjuwCJbjI?feature=shared">
 📺 How to Play Pokémon Yellow Legacy
 </a>
 
-## 🏗️ Project Structure (Work in Progress)
+### 🏗️ Project Structure (Work in Progress)
 
 The project is being restructured, but will include models for:
 
@@ -52,14 +48,14 @@ pkmn_yellow_legacy_dbt/
 └── docs/               # Project documentation
 ```
 
-## 📈 Roadmap
+### 📈 Roadmap
 
 - [ ] **Phase 1**: Refactor existing models for better usability
 - [ ] **Phase 2**: Implement pokemon availablity check tests
 - [ ] **Phase 3**: Create exposure layer
 - [ ] **Phase 4**: Add documentation
 
-## 🤝 Contributing
+### 🤝 Contributing
 
 This project is currently under active development and refactoring. Contributions will be welcomed once the initial restructuring is complete!
 
@@ -68,23 +64,17 @@ This project is currently under active development and refactoring. Contribution
 - [Pokemon showdown](https://pokemonshowdown.com/) integration for better battle simulation models
 - Applications for next Pokemon Legacy games: Crystal and Emerald 
 
-## 📚 Resources
+### 📚 Resources
 
 - [dbt Documentation](https://docs.getdbt.com/)
 - [Pokémon Yellow Legacy ROM Hack](https://github.com/cRz-Shadows/Pokemon_Yellow_Legacy)
 - [TheSmithPlays YouTube Channel](https://youtube.com/thesmithplays)
 
-## 📝 License
-
-This project is for educational and analytical purposes. Pokémon is a trademark of Nintendo/Game Freak/Creatures Inc.
-
-## 💬 Contact
+### 💬 Contact
 
 - **GitHub**: [@wjsutton](https://github.com/wjsutton)
 - **Issues**: Please open an issue for questions or suggestions
 
 ---
-
-*Gotta analyze 'em all!* 📊⚡
 
 > **Note**: This README will be updated as the project refactoring progresses. Star the repo to stay updated on improvements!
