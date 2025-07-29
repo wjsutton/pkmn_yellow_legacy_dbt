@@ -1,0 +1,209 @@
+version: 2
+
+models:
+  - name: opt_team_compositions
+    description: "Advanced team selection with type diversity, TM efficiency, and multi-factor scoring algorithm"
+    columns:
+        - name: game_stage
+          description: "Game progression stage (e.g., Badge_1, Badge_2)"
+          tests:
+            - not_null
+        - name: recommended_rank
+          description: "Ranking of pokemon for team inclusion (1 = highest recommended)"
+          tests:
+            - not_null
+        - name: player_pkmn_id
+          description: "Unique identifier for player pokemon instance"
+          tests:
+            - not_null
+        - name: player_pokemon
+          description: "Pokemon species name"
+          tests:
+            - not_null
+        - name: type1
+          description: "Primary type of the pokemon"
+          tests:
+            - not_null
+        - name: type2
+          description: "Secondary type of the pokemon (null if single-type)"
+        - name: team_selection_score
+          description: "Composite score combining battle performance, type coverage, and TM efficiency"
+          tests:
+            - not_null
+        - name: adjusted_team_score
+          description: "Team selection score adjusted for type diversity bonuses/penalties"
+          tests:
+            - not_null
+        - name: pokemon_tier
+          description: "Performance tier classification (Elite, Strong, Solid, Viable, Weak)"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Elite', 'Strong', 'Solid', 'Viable', 'Weak']
+        - name: tm_efficiency
+          description: "TM usage classification (TM-Free, TM-Efficient, TM-Dependent, TM-Heavy)"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['TM-Free', 'TM-Efficient', 'TM-Dependent', 'TM-Heavy']
+        - name: role_category
+          description: "Suggested team role based on typing (Physical, Special, Defensive, Utility, Balanced)"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Physical', 'Special', 'Defensive', 'Utility', 'Balanced']
+        - name: diversity_bonus
+          description: "Score adjustment for type diversity in team building"
+          tests:
+            - not_null
+        - name: team_slot_recommendation
+          description: "Team inclusion recommendation (Core Team, Backup Option, Situational Pick)"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Core Team', 'Backup Option', 'Situational Pick']
+        - name: usage_recommendation
+          description: "Detailed usage guidance and investment recommendations"
+          tests:
+            - not_null
+
+  - name: opt_tm_allocation  
+    description: "Greedy TM allocation algorithm resolving single-use TM conflicts with priority-based assignment"
+    columns:
+        - name: game_stage
+          description: "Game progression stage when TM allocation is relevant"
+          tests:
+            - not_null
+        - name: tm_move
+          description: "Single-use TM move being allocated"
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_moves_stats')
+                field: move
+        - name: player_pkmn_id
+          description: "Pokemon requesting TM allocation"
+          tests:
+            - not_null
+        - name: player_pokemon
+          description: "Pokemon species name"
+          tests:
+            - not_null
+        - name: allocation_status
+          description: "Result of TM allocation decision"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Allocated', 'Denied - TM Conflict', 'Available']
+        - name: tm_value_rating
+          description: "Value assessment of TM usage (High Value, Good Value, Moderate Value, Low Value)"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['High Value', 'Good Value', 'Moderate Value', 'Low Value']
+        - name: tm_priority_score
+          description: "Priority score for TM allocation (higher = more important)"
+          tests:
+            - not_null
+        - name: battle_score
+          description: "Battle performance improvement from using this TM"
+          tests:
+            - not_null
+        - name: benefits_against_trainer
+          description: "Trainer that this TM allocation helps against"
+          tests:
+            - not_null
+        - name: benefits_against_pokemon
+          description: "Specific trainer pokemon that this TM is effective against"
+          tests:
+            - not_null
+        - name: alternative_suggestion
+          description: "Alternative recommendation if TM allocation is denied"
+        - name: total_tms_for_pokemon
+          description: "Total number of TMs allocated to this pokemon"
+          tests:
+            - not_null
+        - name: pokemon_tm_loadout
+          description: "Complete list of TMs allocated to this pokemon"
+        - name: usage_recommendation
+          description: "Detailed recommendation for TM usage"
+          tests:
+            - not_null
+        - name: efficiency_score
+          description: "Numerical efficiency score for TM allocation"
+          tests:
+            - not_null
+
+  - name: opt_difficulty_rankings
+    description: "Comprehensive trainer difficulty analysis with team building recommendations and strategic preparation guidance"
+    columns:
+        - name: game_stage
+          description: "Game progression stage where trainer is encountered"
+          tests:
+            - not_null
+        - name: trainer
+          description: "Name of the trainer"
+          tests:
+            - not_null
+        - name: difficulty_rating
+          description: "Overall difficulty classification"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Easy', 'Medium', 'Hard', 'Very Hard', 'Extreme', 'Requires Specific Counter']
+        - name: difficulty_score
+          description: "Numerical difficulty score (0-10 scale, higher = more difficult)"
+          tests:
+            - not_null
+        - name: team_building_priority
+          description: "Priority level for team preparation"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Low Priority', 'Medium Priority', 'High Priority', 'Critical Priority']
+        - name: difficulty_characteristics
+          description: "Specific difficulty characteristics (TM-Dependent, No Easy Counters, etc.)"
+          tests:
+            - not_null
+        - name: stage_difficulty_rating
+          description: "Overall difficulty rating for the game stage"
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Easy Stage', 'Medium Stage', 'Hard Stage', 'Brutal Stage']
+        - name: is_gym_leader
+          description: "Flag indicating if trainer is a gym leader (1) or regular trainer (0)"
+          tests:
+            - not_null
+            - accepted_values:
+                values: [0, 1]
+        - name: excellent_counters
+          description: "Number of pokemon with excellent matchups (>0.8 battle score)"
+          tests:
+            - not_null
+        - name: good_counters
+          description: "Number of pokemon with good matchups (>0.6 battle score)"
+          tests:
+            - not_null
+        - name: tm_dependent_solutions
+          description: "Number of effective strategies requiring single-use TMs"
+          tests:
+            - not_null
+        - name: natural_solutions
+          description: "Number of effective strategies using natural movesets"
+          tests:
+            - not_null
+        - name: preparation_recommendation
+          description: "Specific strategic preparation advice"
+          tests:
+            - not_null
+        - name: specific_counter_suggestions
+          description: "Detailed counter recommendations for trainer's pokemon"
+        - name: overall_assessment
+          description: "Overall difficulty assessment and expectations"
+          tests:
+            - not_null
+        - name: planning_priority_rank
+          description: "Ranking for preparation planning (1 = highest priority)"
+          tests:
+            - not_null

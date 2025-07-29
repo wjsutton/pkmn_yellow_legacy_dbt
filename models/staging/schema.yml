@@ -263,3 +263,61 @@ models:
           tests:
             - not_null
 
+
+  - name: stg_pkmn_stats_calculated
+    description: "Pre-calculated Generation 1 stats for all Pokemon at all levels (1-100)"
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_pkmn_stats')
+                field: pokemon
+        - name: level
+          tests:
+            - not_null
+
+  - name: stg_move_sources_unified
+    description: "Consolidated move availability from all sources (level-up, TM/HM) with move stats"
+    columns:
+        - name: id
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_pkmn_stats')
+                field: pokemon
+        - name: move
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_moves_stats')
+                field: move
+
+  - name: stg_pokemon_evolutions_expanded
+    description: "Complete evolution chains with availability routes and game stage information"
+    columns:
+        - name: chain_id
+          tests:
+            - unique
+            - not_null
+        - name: base_pokemon
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_pkmn_stats')
+                field: pokemon
+        - name: current_form
+          tests:
+            - not_null
+            - relationships:
+                to: ref('stg_pkmn_stats')
+                field: pokemon
+
