@@ -17,17 +17,17 @@ WITH base_evolutions AS (
 -- Stone evolution locations and route availability
 stone_evolution_routes AS (
     SELECT 
-        'Fire Stone' as stone_name,
+        'Fire' as stone_name,
         'Route7' as earliest_route,
         7 as route_order
     UNION ALL
-    SELECT 'Water Stone', 'Route7', 7
+    SELECT 'Water', 'Route7', 7
     UNION ALL
-    SELECT 'Thunder Stone', 'Route7', 7
+    SELECT 'Thunder', 'Route7', 7
     UNION ALL
-    SELECT 'Leaf Stone', 'Route7', 7
+    SELECT 'Leaf', 'Route7', 7
     UNION ALL
-    SELECT 'Moon Stone', 'MtMoon1F', 3
+    SELECT 'Moon', 'MtMoon1F', 3
 ),
 
 -- Add route availability for stone evolutions

@@ -158,11 +158,11 @@ all_team_options AS (
     SELECT * FROM team_evolutions
 ),
 
--- Final comprehensive pokemon availability (unchanged output structure)
+-- Final comprehensive pokemon availability (with deduplication fix)
 pokemon_availability AS (
     -- Catchable pokemon with encounter details
-    SELECT
-        {{ dbt_utils.generate_surrogate_key(['pokemon','COALESCE(level, 0)','map','area','earliest_route']) }} as id,
+    SELECT DISTINCT
+        {{ dbt_utils.generate_surrogate_key(['pokemon','initial_pokemon','COALESCE(level, 0)','map','area','earliest_route','next_gym']) }} as id,
         'Catchable' as availability_type,
         pokemon,
         initial_pokemon,
@@ -179,8 +179,8 @@ pokemon_availability AS (
     UNION
     
     -- Team building options
-    SELECT
-        {{ dbt_utils.generate_surrogate_key(['pokemon','map','"order"','initial_pokemon']) }} as id,
+    SELECT DISTINCT
+        {{ dbt_utils.generate_surrogate_key(['pokemon','map','"order"','initial_pokemon','next_gym']) }} as id,
         'Team Option' as availability_type,
         pokemon,
         initial_pokemon,
@@ -196,7 +196,7 @@ pokemon_availability AS (
 )
 
 -- Final output maintains same structure as original
-SELECT 
+SELECT DISTINCT
     id,
     availability_type,
     pokemon,
@@ -218,8 +218,8 @@ SELECT
     END as pokemon_category,
     CASE 
         WHEN pokemon = initial_pokemon THEN 0
-        WHEN source LIKE '%Level Evolution%' THEN 1
-        WHEN source LIKE '%Stone Evolution%' THEN 2
+        WHEN COALESCE(availability_source, team_source) LIKE '%Level Evolution%' THEN 1
+        WHEN COALESCE(availability_source, team_source) LIKE '%Stone Evolution%' THEN 2
         ELSE 0
     END as evolution_stage
 FROM pokemon_availability

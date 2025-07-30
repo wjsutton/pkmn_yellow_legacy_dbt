@@ -1,6 +1,6 @@
 SELECT 
-    id,
-    run,
+    matchup_id,
+    'Standard' as run,  -- Add run column since it's not in int_battle_analysis
     game_stage,
     trainer_pkmn_id,
     player_pkmn_id,

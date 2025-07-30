@@ -19,11 +19,10 @@ WITH player_pokemon_with_moves AS (
     WHERE ((MS.level <= PA.level_cap AND MS.is_level_up_move = 1)
         OR (MS.route_order <= PA.earliest_route AND MS.is_level_up_move = 0))
         AND MS.is_damaging_move = 1  -- Only damaging moves for battle analysis
-    GROUP BY ALL
 ),
 
 trainer_pokemon_with_moves AS (
-    -- Trainer Pokemon from roster (unchanged)
+    -- Trainer Pokemon from roster with only damaging moves
     SELECT 
         trainer,
         game_stage,
@@ -32,15 +31,20 @@ trainer_pokemon_with_moves AS (
         pokemon,
         "level",
         'trainer' as move_origin,
-        move,
-        NULL as move_type,  -- Will join with move stats
-        NULL as move_power,
-        NULL as move_accuracy,
-        NULL as move_stat_used,
+        unpvt.move as move,
+        MS.type as move_type,  -- Store move type from stats join
+        MS.power as move_power,  -- Store move power from stats join
+        MS.acc as move_accuracy,  -- Store move accuracy from stats join
+        PhySpec.stat_used as move_stat_used,  -- Store stat used from phys/spec join
         0 as is_single_use_tm
     FROM {{ ref('int_trainer_roster') }} t
     UNPIVOT(move FOR move_slot IN (move_1, move_2, move_3, move_4)) AS unpvt
-    WHERE move IS NOT NULL
+    INNER JOIN {{ ref('stg_moves_stats') }} MS ON unpvt.move = MS.move
+    LEFT JOIN {{ ref('stg_moves_phys_spec') }} PhySpec ON MS.type = PhySpec.type
+    WHERE unpvt.move IS NOT NULL
+        AND MS.power <> 'N/A'  -- Only damaging moves for battle analysis
+        AND MS.power IS NOT NULL
+        AND MS.power NOT IN ('Copy', 'Set', 'Var Dmg')  -- Exclude non-numeric power values
 ),
 
 -- Combine all pokemon with their stats (using pre-calculated stats)
@@ -91,15 +95,26 @@ all_pokemon_with_stats AS (
 
 -- Create type effectiveness lookup for all relevant combinations
 type_effectiveness_lookup AS (
+    -- Single-type effectiveness (type2 = NULL)
+    SELECT 
+        attacking_type,
+        defending_type as type1,
+        CAST(NULL as VARCHAR) as type2,
+        damage_modifier as total_effectiveness
+    FROM {{ ref('stg_moves_type_effectiveness') }}
+    
+    UNION ALL
+    
+    -- Dual-type effectiveness (both types)
     SELECT 
         TE1.attacking_type,
         TE1.defending_type as type1,
         TE2.defending_type as type2,
-        TE1.damage_modifier * COALESCE(TE2.damage_modifier, 1) as total_effectiveness
+        TE1.damage_modifier * TE2.damage_modifier as total_effectiveness
     FROM {{ ref('stg_moves_type_effectiveness') }} TE1
-    LEFT JOIN {{ ref('stg_moves_type_effectiveness') }} TE2 
+    INNER JOIN {{ ref('stg_moves_type_effectiveness') }} TE2 
         ON TE1.attacking_type = TE2.attacking_type
-    WHERE TE2.defending_type IS NULL OR TE2.defending_type != TE1.defending_type
+        AND TE2.defending_type != TE1.defending_type
 ),
 
 -- Optimized matchups with pre-calculated effectiveness
@@ -137,12 +152,13 @@ matchups AS (
         AND (TEL.type2 = D.type2 OR (TEL.type2 IS NULL AND D.type2 IS NULL))
 ),
 
--- Damage calculations (using existing macro but with optimized inputs)
+-- Damage calculations creating explicit bidirectional battle pairs
 damage_dealt AS (
+    -- Player attacking trainer perspective  
     SELECT 
         game_stage,
-        attacker,
-        defender,
+        'Player' as attacker,
+        defender as defender,
         attacker_pkmn_id,
         defender_pkmn_id,
         attacker_pokemon,
@@ -155,11 +171,39 @@ damage_dealt AS (
         move_origin,
         is_single_use_tm,
         CASE WHEN move_power = 'KO' THEN TRUE ELSE FALSE END as is_ohko_move,
-        move_acc::double as move_accuracy,
+        TRY_CAST(move_acc AS DOUBLE) as move_accuracy,
         {{ calculate_damage_rby('defender_stat','defender_hp','attacker_stat','attacker_level','move','move_acc','attacker_move_type_effectiveness','move_stab','move_power','move_hits_min') }} as damage_min,
         defender_hp / {{ calculate_damage_rby('defender_stat','defender_hp','attacker_stat','attacker_level','move','move_acc','attacker_move_type_effectiveness','move_stab','move_power','move_hits_min') }} as attempts_to_ko,
         ROW_NUMBER() OVER(PARTITION BY attacker_pkmn_id, defender_pkmn_id ORDER BY attempts_to_ko ASC) as rn
     FROM matchups
+    WHERE attacker = 'Player'
+    QUALIFY ROW_NUMBER() OVER(PARTITION BY attacker_pkmn_id, defender_pkmn_id ORDER BY attempts_to_ko ASC) <= 4
+    
+    UNION ALL
+    
+    -- Trainer attacking player perspective (same battles, reversed roles)
+    SELECT 
+        game_stage,
+        attacker as attacker,  -- This will be the trainer name
+        'Player' as defender,
+        attacker_pkmn_id,
+        defender_pkmn_id,
+        attacker_pokemon,
+        defender_pokemon,
+        attacker_level,
+        defender_level,
+        attacker_speed,
+        defender_speed,
+        move,
+        move_origin,
+        is_single_use_tm,
+        CASE WHEN move_power = 'KO' THEN TRUE ELSE FALSE END as is_ohko_move,
+        TRY_CAST(move_acc AS DOUBLE) as move_accuracy,
+        {{ calculate_damage_rby('defender_stat','defender_hp','attacker_stat','attacker_level','move','move_acc','attacker_move_type_effectiveness','move_stab','move_power','move_hits_min') }} as damage_min,
+        defender_hp / {{ calculate_damage_rby('defender_stat','defender_hp','attacker_stat','attacker_level','move','move_acc','attacker_move_type_effectiveness','move_stab','move_power','move_hits_min') }} as attempts_to_ko,
+        ROW_NUMBER() OVER(PARTITION BY attacker_pkmn_id, defender_pkmn_id ORDER BY attempts_to_ko ASC) as rn
+    FROM matchups
+    WHERE attacker <> 'Player'  -- This captures trainer attacking player scenarios
     QUALIFY ROW_NUMBER() OVER(PARTITION BY attacker_pkmn_id, defender_pkmn_id ORDER BY attempts_to_ko ASC) <= 4
 )
 

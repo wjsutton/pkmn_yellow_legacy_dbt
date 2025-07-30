@@ -1,13 +1,7 @@
 
 WITH CTE AS (
 
-    -- SELECT * FROM {{ ref('teams_optimisation') }} 
-
-    -- UNION ALL
-
-    -- SELECT * FROM {{ ref('teams_optimisation_with_pikachu') }} 
-
-    SELECT * FROM {{ ref('find_best_teams') }}
+    SELECT * FROM {{ ref('opt_team_battle_analysis') }}
 
 )
 ,

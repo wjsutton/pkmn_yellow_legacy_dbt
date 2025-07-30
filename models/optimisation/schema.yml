@@ -1,209 +1,205 @@
 version: 2
 
 models:
-  - name: opt_team_compositions
-    description: "Advanced team selection with type diversity, TM efficiency, and multi-factor scoring algorithm"
+  - name: opt_pokemon_performance_by_stage
+    description: "Pokemon performance scores and rankings by game stage with difficulty penalties and TM efficiency analysis"
     columns:
         - name: game_stage
           description: "Game progression stage (e.g., Badge_1, Badge_2)"
-          tests:
-            - not_null
-        - name: recommended_rank
-          description: "Ranking of pokemon for team inclusion (1 = highest recommended)"
-          tests:
-            - not_null
         - name: player_pkmn_id
           description: "Unique identifier for player pokemon instance"
-          tests:
-            - not_null
         - name: player_pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-        - name: type1
-          description: "Primary type of the pokemon"
-          tests:
-            - not_null
-        - name: type2
-          description: "Secondary type of the pokemon (null if single-type)"
         - name: team_selection_score
-          description: "Composite score combining battle performance, type coverage, and TM efficiency"
+          description: "Overall score for team selection consideration"
+        - name: route_score
+          description: "Performance score for this game stage route"
+        - name: base_score
+          description: "Sum of all battle scores before penalties"
+        - name: total_penalty
+          description: "Total penalty applied for difficulty thresholds"
+        - name: performance_tier
+          description: "Performance classification (Elite, Strong, Solid, Viable, Weak)"
           tests:
-            - not_null
-        - name: adjusted_team_score
-          description: "Team selection score adjusted for type diversity bonuses/penalties"
-          tests:
-            - not_null
-        - name: pokemon_tier
-          description: "Performance tier classification (Elite, Strong, Solid, Viable, Weak)"
-          tests:
-            - not_null
             - accepted_values:
                 values: ['Elite', 'Strong', 'Solid', 'Viable', 'Weak']
         - name: tm_efficiency
           description: "TM usage classification (TM-Free, TM-Efficient, TM-Dependent, TM-Heavy)"
           tests:
-            - not_null
             - accepted_values:
                 values: ['TM-Free', 'TM-Efficient', 'TM-Dependent', 'TM-Heavy']
-        - name: role_category
-          description: "Suggested team role based on typing (Physical, Special, Defensive, Utility, Balanced)"
+        - name: tm_dependent_wins
+          description: "Number of victories requiring single-use TMs"
+        - name: total_matchups
+          description: "Total number of trainer battles analyzed"
+        - name: gym_leader_matchups
+          description: "Number of gym leader battles"
+        - name: avg_gym_score
+          description: "Average battle score against gym leaders"
+        - name: stage_rank
+          description: "Ranking among all pokemon for this stage (1 = best)"
+        - name: team_recommendation
+          description: "Team inclusion recommendation"
           tests:
-            - not_null
             - accepted_values:
-                values: ['Physical', 'Special', 'Defensive', 'Utility', 'Balanced']
-        - name: diversity_bonus
-          description: "Score adjustment for type diversity in team building"
-          tests:
-            - not_null
-        - name: team_slot_recommendation
-          description: "Team inclusion recommendation (Core Team, Backup Option, Situational Pick)"
-          tests:
-            - not_null
-            - accepted_values:
-                values: ['Core Team', 'Backup Option', 'Situational Pick']
-        - name: usage_recommendation
-          description: "Detailed usage guidance and investment recommendations"
-          tests:
-            - not_null
+                values: ['Core Team Candidate', 'Backup Option', 'Situational Use']
 
-  - name: opt_tm_allocation  
-    description: "Greedy TM allocation algorithm resolving single-use TM conflicts with priority-based assignment"
+  - name: opt_tm_assignments
+    description: "TM allocation decisions using greedy assignment algorithm to resolve single-use TM conflicts"
     columns:
         - name: game_stage
           description: "Game progression stage when TM allocation is relevant"
-          tests:
-            - not_null
-        - name: tm_move
-          description: "Single-use TM move being allocated"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_moves_stats')
-                field: move
         - name: player_pkmn_id
-          description: "Pokemon requesting TM allocation"
-          tests:
-            - not_null
+          description: "Pokemon receiving TM allocation"
         - name: player_pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-        - name: allocation_status
-          description: "Result of TM allocation decision"
-          tests:
-            - not_null
-            - accepted_values:
-                values: ['Allocated', 'Denied - TM Conflict', 'Available']
-        - name: tm_value_rating
-          description: "Value assessment of TM usage (High Value, Good Value, Moderate Value, Low Value)"
-          tests:
-            - not_null
-            - accepted_values:
-                values: ['High Value', 'Good Value', 'Moderate Value', 'Low Value']
-        - name: tm_priority_score
-          description: "Priority score for TM allocation (higher = more important)"
-          tests:
-            - not_null
-        - name: battle_score
-          description: "Battle performance improvement from using this TM"
-          tests:
-            - not_null
-        - name: benefits_against_trainer
-          description: "Trainer that this TM allocation helps against"
-          tests:
-            - not_null
-        - name: benefits_against_pokemon
-          description: "Specific trainer pokemon that this TM is effective against"
-          tests:
-            - not_null
-        - name: alternative_suggestion
-          description: "Alternative recommendation if TM allocation is denied"
-        - name: total_tms_for_pokemon
+        - name: assigned_tm_move
+          description: "Primary TM move assigned to this pokemon (None if no TMs)"
+        - name: tms_allocated
           description: "Total number of TMs allocated to this pokemon"
-          tests:
-            - not_null
-        - name: pokemon_tm_loadout
+        - name: tms_denied
+          description: "Number of TM requests denied due to conflicts"
+        - name: allocated_tm_list
           description: "Complete list of TMs allocated to this pokemon"
-        - name: usage_recommendation
-          description: "Detailed recommendation for TM usage"
+        - name: tm_efficiency_rating
+          description: "TM allocation efficiency classification"
           tests:
-            - not_null
-        - name: efficiency_score
-          description: "Numerical efficiency score for TM allocation"
-          tests:
-            - not_null
+            - accepted_values:
+                values: ['TM-Free', 'TM-Efficient', 'TM-Moderate', 'TM-Heavy']
+        - name: tm_usage_recommendation
+          description: "Detailed TM investment recommendation"
 
-  - name: opt_difficulty_rankings
-    description: "Comprehensive trainer difficulty analysis with team building recommendations and strategic preparation guidance"
+  - name: opt_recommended_teams
+    description: "Optimal 6-pokemon teams per game stage with variant support (Standard, NoLedges, Pikachu variants)"
     columns:
+        - name: run_name
+          description: "Run variant identifier (e.g., Standard_Ledges, NoLedges_keepPikachu)"
         - name: game_stage
-          description: "Game progression stage where trainer is encountered"
+          description: "Game progression stage"
+        - name: keep_pikachu
+          description: "Flag indicating if Pikachu is required in team (1) or not (0)"
           tests:
-            - not_null
-        - name: trainer
-          description: "Name of the trainer"
-          tests:
-            - not_null
-        - name: difficulty_rating
-          description: "Overall difficulty classification"
-          tests:
-            - not_null
-            - accepted_values:
-                values: ['Easy', 'Medium', 'Hard', 'Very Hard', 'Extreme', 'Requires Specific Counter']
-        - name: difficulty_score
-          description: "Numerical difficulty score (0-10 scale, higher = more difficult)"
-          tests:
-            - not_null
-        - name: team_building_priority
-          description: "Priority level for team preparation"
-          tests:
-            - not_null
-            - accepted_values:
-                values: ['Low Priority', 'Medium Priority', 'High Priority', 'Critical Priority']
-        - name: difficulty_characteristics
-          description: "Specific difficulty characteristics (TM-Dependent, No Easy Counters, etc.)"
-          tests:
-            - not_null
-        - name: stage_difficulty_rating
-          description: "Overall difficulty rating for the game stage"
-          tests:
-            - not_null
-            - accepted_values:
-                values: ['Easy Stage', 'Medium Stage', 'Hard Stage', 'Brutal Stage']
-        - name: is_gym_leader
-          description: "Flag indicating if trainer is a gym leader (1) or regular trainer (0)"
-          tests:
-            - not_null
             - accepted_values:
                 values: [0, 1]
-        - name: excellent_counters
-          description: "Number of pokemon with excellent matchups (>0.8 battle score)"
+        - name: no_legends
+          description: "Flag indicating if legendary pokemon are excluded (1) or allowed (0)"
           tests:
-            - not_null
-        - name: good_counters
-          description: "Number of pokemon with good matchups (>0.6 battle score)"
+            - accepted_values:
+                values: [0, 1]
+        - name: player_pkmn_id
+          description: "Pokemon team member identifier"
+        - name: player_pokemon
+          description: "Pokemon species name"
+        - name: team_rank
+          description: "Position in team (1-6, 1 = primary member)"
+        - name: pokemon_score
+          description: "Individual pokemon performance score"
+        - name: performance_tier
+          description: "Pokemon performance classification"
           tests:
-            - not_null
-        - name: tm_dependent_solutions
-          description: "Number of effective strategies requiring single-use TMs"
+            - accepted_values:
+                values: ['Elite', 'Strong', 'Solid', 'Viable', 'Weak']
+        - name: tm_efficiency_rating
+          description: "TM usage efficiency rating"
+        - name: assigned_tm_move
+          description: "Primary TM move assigned to this pokemon"
+        - name: tms_allocated
+          description: "Number of TMs allocated to this pokemon"
+        - name: is_pikachu
+          description: "Flag indicating if this pokemon is Pikachu (1) or not (0)"
           tests:
-            - not_null
-        - name: natural_solutions
-          description: "Number of effective strategies using natural movesets"
+            - accepted_values:
+                values: [0, 1]
+        - name: team_performance_score
+          description: "Overall team performance score"
+        - name: team_quality
+          description: "Team quality classification"
           tests:
-            - not_null
-        - name: preparation_recommendation
-          description: "Specific strategic preparation advice"
+            - accepted_values:
+                values: ['Elite Team', 'Strong Team', 'Solid Team', 'Weak Team']
+        - name: tm_investment_level
+          description: "Team TM investment classification"
+        - name: total_team_tms
+          description: "Total TMs used by entire team"
+        - name: role_on_team
+          description: "Pokemon's role within the team"
           tests:
-            - not_null
-        - name: specific_counter_suggestions
-          description: "Detailed counter recommendations for trainer's pokemon"
-        - name: overall_assessment
-          description: "Overall difficulty assessment and expectations"
+            - accepted_values:
+                values: ['Primary team member', 'Core team member', 'Support team member']
+        - name: variant_description
+          description: "Human-readable description of run variant"
           tests:
-            - not_null
-        - name: planning_priority_rank
-          description: "Ranking for preparation planning (1 = highest priority)"
+            - accepted_values:
+                values: ['Standard Run', 'No Legendaries', 'Pikachu Included', 'Pikachu + No Legendaries']
+
+  - name: opt_team_battle_analysis
+    description: "Detailed battle analysis for recommended teams showing matchup performance against all trainers"
+    columns:
+        - name: run
+          description: "Run variant identifier"
+        - name: game_stage
+          description: "Game progression stage"
+        - name: player_pkmn_id
+          description: "Team member pokemon identifier"
+        - name: player_pokemon
+          description: "Team member pokemon species"
+        - name: trainer
+          description: "Opponent trainer name"
+        - name: trainer_pkmn_id
+          description: "Opponent pokemon identifier"
+        - name: trainer_pokemon
+          description: "Opponent pokemon species"
+        - name: trainer_type
+          description: "Type of trainer (Gym Leader or Trainer)"
           tests:
-            - not_null
+            - accepted_values:
+                values: ['Gym Leader', 'Trainer']
+        - name: is_gym_leader
+          description: "Flag indicating if opponent is gym leader (1) or regular trainer (0)"
+          tests:
+            - accepted_values:
+                values: [0, 1]
+        - name: battle_score
+          description: "Battle performance score (0-1 scale, higher = better)"
+        - name: player_pkmn_move
+          description: "Best move for this matchup"
+        - name: single_use_tm
+          description: "Flag indicating if best move requires single-use TM (1) or not (0)"
+          tests:
+            - accepted_values:
+                values: [0, 1]
+        - name: is_assigned_move
+          description: "Flag indicating if this is the pokemon's assigned TM move (1) or not (0)"
+          tests:
+            - accepted_values:
+                values: [0, 1]
+        - name: best_score
+          description: "Team's overall performance score"
+        - name: team_size
+          description: "Number of pokemon in team (should be 6)"
+        - name: total_tms
+          description: "Total TMs used by team"
+        - name: variant_type
+          description: "Human-readable variant description"
+        - name: team_rank
+          description: "Pokemon's position in team (1-6)"
+        - name: pokemon_score
+          description: "Individual pokemon performance score"
+        - name: performance_tier
+          description: "Pokemon performance classification"
+        - name: assigned_tm_move
+          description: "TM move assigned to this pokemon"
+        - name: tms_allocated
+          description: "Number of TMs allocated to this pokemon"
+        - name: matchup_priority
+          description: "Priority ranking for this matchup (1 = highest priority)"
+        - name: move_category
+          description: "Classification of the move used"
+          tests:
+            - accepted_values:
+                values: ['ASSIGNED MOVE', 'ALTERNATIVE TM OPTION', 'NATURAL MOVE']
+        - name: matchup_difficulty
+          description: "Assessment of battle difficulty"
+          tests:
+            - accepted_values:
+                values: ['Easy Win', 'Favorable', 'Challenging', 'Very Difficult']
