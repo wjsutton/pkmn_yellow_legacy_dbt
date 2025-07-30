@@ -14,20 +14,24 @@ WITH base_evolutions AS (
     INNER JOIN {{ ref('stg_pkmn_stats') }} PS2 ON E.evolution_name = PS2.pokemon
 ),
 
--- Stone evolution locations and route availability
+-- Stone evolution locations and route availability - now pulls actual route orders dynamically
 stone_evolution_routes AS (
     SELECT 
-        'Fire' as stone_name,
-        'Route7' as earliest_route,
-        7 as route_order
-    UNION ALL
-    SELECT 'Water', 'Route7', 7
-    UNION ALL
-    SELECT 'Thunder', 'Route7', 7
-    UNION ALL
-    SELECT 'Leaf', 'Route7', 7
-    UNION ALL
-    SELECT 'Moon', 'MtMoon1F', 3
+        stone_name,
+        earliest_route,
+        R."order" as route_order
+    FROM (
+        SELECT 'Fire' as stone_name, 'Route7' as earliest_route
+        UNION ALL
+        SELECT 'Water', 'Route7'
+        UNION ALL  
+        SELECT 'Thunder', 'Route7'
+        UNION ALL
+        SELECT 'Leaf', 'Route7'
+        UNION ALL
+        SELECT 'Moon', 'MtMoon1F'
+    ) stone_locations
+    INNER JOIN {{ ref('stg_game_route_order') }} R ON R.map = stone_locations.earliest_route
 ),
 
 -- Add route availability for stone evolutions

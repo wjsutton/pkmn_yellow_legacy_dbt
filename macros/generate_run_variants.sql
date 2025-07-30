@@ -1,61 +1,65 @@
 {% macro generate_run_variants(base_table) %}
-    -- Generate all run variants from base stages
-    WITH base_runs AS (
-        SELECT DISTINCT 
-            game_stage,
-            CASE 
-                WHEN game_stage LIKE '%Badge%' THEN 
-                    REGEXP_REPLACE(game_stage, '.*_([^_]+)_[^_]+$', '\1') || '_Standard_Ledges'
-                ELSE 'Standard_Ledges'
-            END as base_run
+    -- Generate all 12 run variants (3 rival types × 2 pikachu variants × 2 legendary variants)
+    WITH base_stages AS (
+        SELECT DISTINCT game_stage
         FROM {{ base_table }}
+    ),
+    
+    rival_variants AS (
+        SELECT 
+            'Jolteon' as rival_type,
+            -- Jolteon run: exclude rival battles ending in '_Flareon' or '_Vaporeon'
+            ARRAY['%_Flareon', '%_Vaporeon'] as exclude_rival_patterns,
+            ARRAY[]::STRING[] as exclude_trainers
+        UNION ALL
+        SELECT 
+            'Flareon' as rival_type,
+            -- Flareon run: exclude rival battles ending in '_Jolteon' or '_Vaporeon' AND exclude trainer 'Rival_2'
+            ARRAY['%_Jolteon', '%_Vaporeon'] as exclude_rival_patterns,
+            ARRAY['Rival_2'] as exclude_trainers
+        UNION ALL
+        SELECT 
+            'Vaporeon' as rival_type,
+            -- Vaporeon run: exclude rival battles ending in '_Flareon' or '_Jolteon' AND exclude trainers 'Rival_2' and 'Rival_1'
+            ARRAY['%_Flareon', '%_Jolteon'] as exclude_rival_patterns,
+            ARRAY['Rival_2', 'Rival_1'] as exclude_trainers
+    ),
+    
+    pikachu_variants AS (
+        SELECT 'NoPikachu' as pikachu_variant, 0 as keep_pikachu
+        UNION ALL
+        SELECT 'KeepPikachu' as pikachu_variant, 1 as keep_pikachu
+    ),
+    
+    legendary_variants AS (
+        SELECT 'Ledges' as legendary_variant, 0 as no_legends
+        UNION ALL
+        SELECT 'NoLedges' as legendary_variant, 1 as no_legends
     )
     
     SELECT 
-        game_stage,
-        base_run,
-        base_run as run_name,
-        0 as keep_pikachu,
-        0 as no_legends
-    FROM base_runs
-    
-    UNION ALL
-    
-    SELECT 
-        game_stage,
-        base_run,
-        REPLACE(base_run, '_Ledges', '_NoLedges') as run_name,
-        0 as keep_pikachu,
-        1 as no_legends
-    FROM base_runs
-    
-    UNION ALL
-    
-    SELECT 
-        game_stage,
-        base_run,
-        base_run || '_keepPikachu' as run_name,
-        1 as keep_pikachu,
-        0 as no_legends
-    FROM base_runs
-    
-    UNION ALL
-    
-    SELECT 
-        game_stage,
-        base_run,
-        REPLACE(base_run, '_Ledges', '_NoLedges') || '_keepPikachu' as run_name,  
-        1 as keep_pikachu,
-        1 as no_legends
-    FROM base_runs
+        BS.game_stage,
+        RV.rival_type,
+        PV.pikachu_variant,
+        LV.legendary_variant,
+        -- Run name format: Rival_Pikachu_Legendary
+        RV.rival_type || '_' || PV.pikachu_variant || '_' || LV.legendary_variant as run_name,
+        PV.keep_pikachu,
+        LV.no_legends,
+        RV.exclude_rival_patterns,
+        RV.exclude_trainers
+    FROM base_stages BS
+    CROSS JOIN rival_variants RV
+    CROSS JOIN pikachu_variants PV
+    CROSS JOIN legendary_variants LV
 {% endmacro %}
 
-{% macro generate_variant_description(keep_pikachu, no_legends) %}
-    -- Generate variant description text
+{% macro generate_variant_description(rival_type, keep_pikachu, no_legends) %}
+    -- Generate variant description text based on run parameters
     CASE 
-        WHEN {{ keep_pikachu }} = 1 AND {{ no_legends }} = 1 THEN 'Pikachu + No Legendaries'
-        WHEN {{ keep_pikachu }} = 1 THEN 'Pikachu Included'
-        WHEN {{ no_legends }} = 1 THEN 'No Legendaries'
-        ELSE 'Standard Run'
+        WHEN {{ keep_pikachu }} = 1 AND {{ no_legends }} = 1 THEN {{ rival_type }} || ' + Pikachu + No Legendaries'
+        WHEN {{ keep_pikachu }} = 1 AND {{ no_legends }} = 0 THEN {{ rival_type }} || ' + Pikachu + Legendaries'
+        WHEN {{ keep_pikachu }} = 0 AND {{ no_legends }} = 1 THEN {{ rival_type }} || ' + No Legendaries'
+        ELSE {{ rival_type }} || ' + Legendaries'
     END
 {% endmacro %}

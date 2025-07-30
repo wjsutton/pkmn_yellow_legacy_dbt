@@ -127,10 +127,17 @@ models:
             - accepted_values:
                 values: ['Primary team member', 'Core team member', 'Support team member']
         - name: variant_description
-          description: "Human-readable description of run variant"
+          description: "Human-readable description of run variant including rival type"
           tests:
             - accepted_values:
-                values: ['Standard Run', 'No Legendaries', 'Pikachu Included', 'Pikachu + No Legendaries']
+                values: [
+                  'Jolteon + Legendaries', 'Jolteon + No Legendaries', 
+                  'Jolteon + Pikachu + Legendaries', 'Jolteon + Pikachu + No Legendaries',
+                  'Flareon + Legendaries', 'Flareon + No Legendaries',
+                  'Flareon + Pikachu + Legendaries', 'Flareon + Pikachu + No Legendaries',
+                  'Vaporeon + Legendaries', 'Vaporeon + No Legendaries',
+                  'Vaporeon + Pikachu + Legendaries', 'Vaporeon + Pikachu + No Legendaries'
+                ]
 
   - name: opt_team_battle_analysis
     description: "Detailed battle analysis for recommended teams showing matchup performance against all trainers"

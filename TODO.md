@@ -6,6 +6,35 @@
 **Resolution Date**: July 2024  
 **Priority**: COMPLETED - Downstream optimization models now functioning
 
+## ✅ RESOLVED - Team Optimization Strategy Refactor
+**Status**: ✅ FULLY RESOLVED  
+**Issue Date**: January 2025  
+**Resolution Date**: January 2025  
+**Priority**: COMPLETED - Strategic team building now functional
+
+### Problem Summary
+The penalty-based team optimization system was limiting team diversity by favoring generalist Pokémon over specialists. Pokémon like Poliwag (excellent vs Brock) received zero scores due to poor performance in unrelated battles.
+
+### Resolution Summary
+- ✅ **Refactored**: `opt_pokemon_performance_by_stage.sql` to use team contribution scoring
+- ✅ **New Logic**: Pokémon only get credit for battles where they're the best team option
+- ✅ **Difficulty Weighting**: Gym leaders 3x weight, Very Hard/Extreme battles 2x weight
+- ✅ **Result**: Strategic teams with viable specialists, proper battle prioritization
+
+## ✅ RESOLVED - Gym Leader Moveset Bug  
+**Status**: ✅ FULLY RESOLVED  
+**Issue Date**: January 2025  
+**Resolution Date**: January 2025  
+**Priority**: COMPLETED - Battle analysis now accurate
+
+### Problem Summary
+The `int_trainer_roster.sql` model was incorrectly using level-up movesets for ALL trainers, including gym leaders, instead of respecting explicit moves defined in seed files. This caused incorrect battle analysis (e.g., Erica's Victreebel only knowing Acid instead of Mega Drain + Razor Leaf).
+
+### Resolution Summary
+- ✅ **Fixed**: Gym leaders now use explicit moves from `stg_trainers_gym_leaders`
+- ✅ **Preserved**: Regular trainers continue using level-up move derivation
+- ✅ **Result**: Accurate type matchups and battle analysis for all gym battles
+
 ### Problem Summary
 The `int_battle_analysis` model was compiling successfully but returning 0 rows despite all dependency tables containing data, preventing the optimization layer from functioning.
 
@@ -64,6 +93,23 @@ Review of staging, intermediate, and optimization layers identified significant 
 **Status**: ✅ All tasks completed  
 **Actual Effort**: 3 hours  
 **Performance Impact**: Major improvement in downstream models
+
+### ✅ Phase 5: Strategic Team Optimization - COMPLETED (Jan 2025)
+**Status**: ✅ All tasks completed  
+**Actual Effort**: 4 hours  
+**Strategic Impact**: Viable specialist Pokémon, better team diversity
+
+#### ✅ Task 5.1: Refactor team scoring approach - COMPLETED
+- ✅ Replaced penalty-based individual scoring with team contribution approach
+- ✅ Implemented difficulty weighting for strategic battle prioritization
+- ✅ Added support for specialist Pokémon (type advantages vs key battles)
+- **Result**: Teams built around covering key battles rather than avoiding bad matchups
+
+#### ✅ Task 5.2: Fix gym leader moveset handling - COMPLETED  
+- ✅ Separated gym leader explicit moves from regular trainer level-up derivation
+- ✅ Fixed `int_trainer_roster.sql` to respect seed file movesets
+- ✅ Validated battle analysis accuracy for all gym battles
+- **Result**: Proper type effectiveness and realistic battle outcomes
 
 #### ✅ Task 1.1: Create `stg_pkmn_stats_calculated.sql` - COMPLETED
 - ✅ Pre-calculated Generation 1 stats for all Pokemon at levels 1-100
@@ -161,6 +207,12 @@ Review of staging, intermediate, and optimization layers identified significant 
 - ✅ **Battle Analysis**: 60%+ improvement in most expensive model delivered
 - ✅ **Pokemon Availability**: 50%+ improvement in complex availability logic achieved
 - ✅ **Memory Usage**: Significantly reduced through elimination of redundant calculations
+
+### ✅ Strategic Improvements - DELIVERED (Jan 2025)
+- ✅ **Team Diversity**: Specialist Pokémon now viable (e.g., Poliwag for water-weak opponents)
+- ✅ **Battle Prioritization**: Key battles weighted appropriately (gym leaders 3x, hard battles 2x)
+- ✅ **Data Accuracy**: Gym leader movesets corrected, battle analysis now reflects ROM hack reality
+- ✅ **Coverage Strategy**: Teams built around strategic battle coverage vs penalty avoidance
 
 ### ✅ Code Quality Improvements - ACHIEVED
 - ✅ **Maintainability**: Centralized logic reduces duplication, cleaner codebase

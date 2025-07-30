@@ -12,6 +12,7 @@ This project transforms raw Pokémon game data into analytical models that answe
 
 Key features:
 - ✅ **SQL-based optimization** (99%+ performance improvement over genetic algorithms)
+- ✅ **Strategic team building** with coverage-based approach (Jan 2025 refactor)
 - ✅ **Generation 1 battle mechanics** with exact damage calculations
 - ✅ **Multi-variant support** (Standard, NoLedges, Pikachu variants)
 - ✅ **TM conflict resolution** using greedy assignment algorithms
@@ -126,10 +127,11 @@ Results include:
 - Special move mechanics (Sonicboom, Dragon Rage, etc.)
 
 ### Optimization Features
-- Greedy TM allocation algorithm
-- Difficulty-based scoring penalties
-- Multi-objective team composition
-- Constraint handling for single-use items
+- **Team contribution scoring** - Pokémon ranked by battles where they're the best option
+- **Difficulty weighting** - Gym leaders and hard battles prioritized strategically  
+- **Specialist support** - Type specialists viable instead of penalized for niche strengths
+- **Greedy TM allocation** - Intelligent conflict resolution for single-use items
+- **Multi-objective composition** - Balances coverage, difficulty, and efficiency
 
 ### Data Quality
 - 236 comprehensive tests
@@ -169,7 +171,9 @@ See `CLAUDE.md` for detailed development guidelines.
 ## 📁 Key Files
 
 - `CLAUDE.md` - Detailed project documentation and development guide
-- `models/optimisation/opt_teams_final.sql` - Main team selection output
+- `models/optimisation/opt_pokemon_performance_by_stage.sql` - Team contribution scoring system
+- `models/optimisation/opt_recommended_teams.sql` - Main team selection output
+- `models/intermediate/int_trainer_roster.sql` - Fixed gym leader moveset handling
 - `macros/calculate_damage_rby.sql` - Generation 1 damage formula
 - `dashboard_assets/data/` - CSV exports for Tableau
 

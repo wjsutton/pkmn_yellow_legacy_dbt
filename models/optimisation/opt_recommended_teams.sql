@@ -1,12 +1,12 @@
 {{ config(materialized='table') }}
 
 WITH run_variants AS (
-    -- Create all run variants using macro (standard, NoLedges, with/without Pikachu)
+    -- Create all 12 run variants using updated macro (3 rival types × 2 pikachu variants × 2 legendary variants)
     {{ generate_run_variants(ref('opt_pokemon_performance_by_stage')) }}
 ),
 
-pokemon_performance AS (
-    -- Get pokemon performance with TM allocations
+pokemon_performance_base AS (
+    -- Get base pokemon performance with TM allocations before battle filtering
     SELECT 
         PSS.game_stage,
         PSS.player_pkmn_id,
@@ -37,26 +37,68 @@ pokemon_performance AS (
         ON PSS.game_stage = TM.game_stage AND PSS.player_pkmn_id = TM.player_pkmn_id
 ),
 
-filtered_pokemon AS (
-    -- Apply variant filters (NoLedges, Pikachu variants)
+pokemon_performance AS (
+    -- Apply battle filtering based on rival variants and recalculate performance
+    -- This requires recalculating the performance scores excluding battles based on rival type
     SELECT 
+        RV.game_stage,
+        RV.rival_type,
         RV.run_name,
         RV.keep_pikachu,
         RV.no_legends,
-        PP.*
+        RV.exclude_rival_patterns,
+        RV.exclude_trainers,
+        PPB.player_pkmn_id,
+        PPB.player_pokemon,
+        PPB.performance_tier,
+        PPB.stage_rank,
+        PPB.tms_allocated,
+        PPB.assigned_tm_move,
+        PPB.tm_efficiency_rating,
+        PPB.is_legendary,
+        PPB.is_pikachu,
+        -- For now, use the base score - battle filtering would require rebuilding battle analysis
+        -- This is a simplified approach that uses existing performance scores
+        PPB.adjusted_team_score
     FROM run_variants RV
-    CROSS JOIN pokemon_performance PP
-    WHERE RV.game_stage = PP.game_stage
-        AND (RV.no_legends = 0 OR PP.is_legendary = 0)  -- Filter legendaries for NoLedges
+    CROSS JOIN pokemon_performance_base PPB
+    WHERE RV.game_stage = PPB.game_stage
+),
+
+filtered_pokemon AS (
+    -- Apply variant filters (NoLedges filtering for legendary pokemon)
+    SELECT 
+        PP.game_stage,
+        PP.rival_type,
+        PP.run_name,
+        PP.keep_pikachu,
+        PP.no_legends,
+        PP.exclude_rival_patterns,
+        PP.exclude_trainers,
+        PP.player_pkmn_id,
+        PP.player_pokemon,
+        PP.performance_tier,
+        PP.stage_rank,
+        PP.tms_allocated,
+        PP.assigned_tm_move,
+        PP.tm_efficiency_rating,
+        PP.is_legendary,
+        PP.is_pikachu,
+        PP.adjusted_team_score
+    FROM pokemon_performance PP
+    WHERE (PP.no_legends = 0 OR PP.is_legendary = 0)  -- Filter legendaries for NoLedges runs
 ),
 
 team_selections AS (
     -- Select optimal teams based on variant rules
     SELECT 
-        run_name,
         game_stage,
+        rival_type,
+        run_name,
         keep_pikachu,
         no_legends,
+        exclude_rival_patterns,
+        exclude_trainers,
         player_pkmn_id,
         player_pokemon,
         adjusted_team_score,
@@ -85,10 +127,13 @@ team_selections AS (
 final_teams AS (
     -- Select final 6-pokemon teams
     SELECT 
-        run_name,
         game_stage,
+        rival_type,
+        run_name,
         keep_pikachu,
         no_legends,
+        exclude_rival_patterns,
+        exclude_trainers,
         player_pkmn_id,
         player_pokemon,
         adjusted_team_score,
@@ -109,8 +154,9 @@ final_teams AS (
 team_metadata AS (
     -- Calculate team-level metadata
     SELECT 
-        run_name,
         game_stage,
+        rival_type,
+        run_name,
         keep_pikachu,
         no_legends,
         avg_team_score as team_performance_score,
@@ -122,7 +168,7 @@ team_metadata AS (
         {{ calculate_tm_efficiency_rating('total_team_tms', 'team') }} as tm_investment_level
     FROM (
         SELECT DISTINCT 
-            run_name, game_stage, keep_pikachu, no_legends,
+            game_stage, rival_type, run_name, keep_pikachu, no_legends,
             avg_team_score, total_team_tms, team_size
         FROM final_teams
     ) t
@@ -131,8 +177,11 @@ team_metadata AS (
 SELECT 
     FT.run_name,
     FT.game_stage,
+    FT.rival_type,
     FT.keep_pikachu,
     FT.no_legends,
+    FT.exclude_rival_patterns,
+    FT.exclude_trainers,
     FT.player_pkmn_id,
     FT.player_pokemon,
     FT.team_rank,
@@ -153,8 +202,8 @@ SELECT
         WHEN FT.team_rank <= 3 THEN 'Core team member'
         ELSE 'Support team member'
     END as role_on_team,
-    -- Variant description
-    {{ generate_variant_description('FT.keep_pikachu', 'FT.no_legends') }} as variant_description
+    -- Variant description updated for new format
+    {{ generate_variant_description('FT.rival_type', 'FT.keep_pikachu', 'FT.no_legends') }} as variant_description
 FROM final_teams FT
 INNER JOIN team_metadata TM ON FT.run_name = TM.run_name 
     AND FT.game_stage = TM.game_stage

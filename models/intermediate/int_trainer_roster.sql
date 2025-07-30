@@ -38,8 +38,27 @@ WITH all_trainer_data AS (
     FROM {{ ref('stg_trainers_gym_leaders') }}
 ),
 
-all_trainers AS (
-    -- Join trainers with their available moves using unified source
+gym_leader_moves AS (
+    -- Use explicit moves from gym leader seed file
+    SELECT 
+        T.trainer,
+        T.is_gym_leader,
+        T.pkmn_id,
+        T.nearest_route,
+        T.pokemon,
+        T.game_stage,
+        T.notes,
+        T.level,
+        GL.move,
+        GL.move_number
+    FROM all_trainer_data T
+    INNER JOIN {{ ref('stg_trainers_gym_leaders') }} GL 
+        ON T.pkmn_id = GL.pkmn_id
+    WHERE T.is_gym_leader = 1
+),
+
+regular_trainer_moves AS (
+    -- Use level-up moves for non-gym leaders
     SELECT 
         T.trainer,
         T.is_gym_leader,
@@ -54,9 +73,17 @@ all_trainers AS (
     FROM all_trainer_data T
     INNER JOIN {{ ref('stg_move_sources_unified') }} M 
         ON T.pokemon = M.pokemon
-    WHERE M.move_origin = 'level-up'
+    WHERE T.is_gym_leader = 0
+        AND M.move_origin = 'level-up'
         AND T.level >= M.level
     QUALIFY ROW_NUMBER() OVER(PARTITION BY T.pkmn_id ORDER BY M.move) <= 4
+),
+
+all_trainers AS (
+    -- Combine gym leaders (explicit moves) with regular trainers (level-up moves)
+    SELECT * FROM gym_leader_moves
+    UNION ALL
+    SELECT * FROM regular_trainer_moves
 ),
 
 trainer_roster AS (
