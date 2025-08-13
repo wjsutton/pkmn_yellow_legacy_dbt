@@ -1,4 +1,4 @@
-# 🔥 Pokémon Yellow Legacy dbt Project
+# Pokémon Yellow Legacy dbt
 
 [![dbt](https://img.shields.io/badge/dbt-1.9+-orange)](https://www.getdbt.com/)
 [![DuckDB](https://img.shields.io/badge/DuckDB-Latest-blue)](https://duckdb.org/)
@@ -8,11 +8,10 @@ A **dbt** project analyzing Pokémon Yellow Legacy ROM hack data to optimize tea
 
 ## 🎯 Project Overview
 
-This project transforms raw Pokémon game data into analytical models that answer: **What's the optimal team composition for beating Pokémon Yellow Legacy?**
+This project transforms raw Pokémon game data into analytical models that answer: **What's the best team for beating Pokémon Yellow Legacy?**
 
 Key features:
 - ✅ **SQL-based optimization** (99%+ performance improvement over genetic algorithms)
-- ✅ **Strategic team building** with coverage-based approach (Jan 2025 refactor)
 - ✅ **Generation 1 battle mechanics** with exact damage calculations
 - ✅ **Multi-variant support** (Standard, NoLedges, Pikachu variants)
 - ✅ **TM conflict resolution** using greedy assignment algorithms
