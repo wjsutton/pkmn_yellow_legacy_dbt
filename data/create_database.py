@@ -2,9 +2,9 @@ import os
 import duckdb
 
 def create_database(db_path):
-    # Create the 'data' folder if it does not exist
+    # Create the directory if it does not exist (only if db_path includes a directory)
     data_folder = os.path.dirname(db_path)
-    if not os.path.exists(data_folder):
+    if data_folder and not os.path.exists(data_folder):
         os.makedirs(data_folder)
     
     # If a file with the same name exists, delete it
@@ -24,8 +24,8 @@ def create_database(db_path):
     except Exception as e:
         print(f"Failed to create database: {e}")
 
-# Specify the path to the database
-db_path = os.path.join('data', 'pkmn_yellow_legacy.db')
+# Specify the path to the database (relative to current working directory)
+db_path = 'pkmn_yellow_legacy.db'
 
 # Create the database
 create_database(db_path)

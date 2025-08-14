@@ -29,21 +29,47 @@ base_catchable_pokemon AS (
     INNER JOIN {{ ref('int_game_progression') }} as L on R.next_gym = L.game_stage
 ),
 
--- Level-up evolutions from catchable pokemon
-level_up_evolutions AS (
-    {{ get_evolution_pokemon('base_catchable_pokemon', 'evolution_level') }}
+-- Evolved forms available from catchable pokemon using new expanded evolutions table
+catchable_evolutions AS (
+    SELECT 
+        BCP.initial_pokemon,
+        EE.current_form as pokemon,
+        BCP.level,
+        BCP.level_cap,
+        BCP.map,
+        CASE 
+            WHEN EE.evolution_type = 'Stone' THEN 'Stone Evolution'
+            WHEN EE.evolution_type = 'Level' THEN 'Evolution'
+            ELSE 'Evolution'
+        END as area,
+        BCP."order",
+        BCP.next_gym,
+        CASE 
+            WHEN EE.evolution_type = 'Stone' THEN EE.availability_description
+            WHEN EE.evolution_type = 'Level' THEN 'Level Evolution'
+            ELSE 'Evolution Available'
+        END as availability_source,
+        -- For stone evolutions, use the stone availability route
+        -- For level evolutions, use the base pokemon's earliest route
+        CASE 
+            WHEN EE.evolution_type = 'Stone' AND EE.route_order IS NOT NULL 
+                THEN GREATEST(BCP.earliest_route, EE.route_order)
+            ELSE BCP.earliest_route
+        END as earliest_route
+    FROM base_catchable_pokemon BCP
+    INNER JOIN {{ ref('stg_pokemon_evolutions_expanded') }} EE 
+        ON BCP.pokemon = EE.base_pokemon
+    WHERE EE.evolution_stage > 0  -- Only evolved forms
+        AND (
+            -- Level evolutions available when pokemon can reach required level
+            (EE.evolution_type = 'Level' AND EE.evolution_level_required <= BCP.level_cap)
+            OR 
+            -- Stone evolutions available when stone route is accessible
+            (EE.evolution_type = 'Stone' AND EE.route_order <= BCP."order")
+        )
 ),
 
--- Stone evolutions available at different locations
-stone_evolutions_route7 AS (
-    {{ get_stone_evolution_pokemon('base_catchable_pokemon', ['Fire', 'Water', 'Thunder', 'Leaf'], 'Route7') }}
-),
-
-stone_evolutions_mt_moon AS (
-    {{ get_stone_evolution_pokemon('base_catchable_pokemon', ['Moon Stone'], 'MtMoon1F') }}
-),
-
--- All catchable pokemon sources combined
+-- All catchable pokemon sources combined (simplified)
 all_catchable_sources AS (
     -- Base wild encounters
     SELECT
@@ -60,61 +86,30 @@ all_catchable_sources AS (
     
     UNION ALL
     
-    -- Level-up evolutions
+    -- All evolutions from catchable pokemon
     SELECT
         pokemon,
-        NULL as level, -- Evolutions don't have encounter levels
+        NULL as level, -- Evolutions don't have specific encounter levels
         level_cap,
         map,
-        'Evolution' as area,
-        "order" as earliest_route,
+        area,
+        earliest_route,
         next_gym,
         initial_pokemon,
-        'Level Evolution' as availability_source
-    FROM level_up_evolutions
-    
-    UNION ALL
-    
-    -- Stone evolutions (Route 7 - Celadon City)
-    SELECT
-        pokemon,
-        NULL as level,
-        level_cap,
-        map,
-        'Stone Evolution' as area,
-        "order" as earliest_route,
-        next_gym,
-        initial_pokemon,
-        'Stone Evolution (Route 7)' as availability_source
-    FROM stone_evolutions_route7
-    
-    UNION ALL
-    
-    -- Stone evolutions (Mt. Moon)
-    SELECT
-        pokemon,
-        NULL as level,
-        level_cap,
-        map,
-        'Stone Evolution' as area,
-        "order" as earliest_route,
-        next_gym,
-        initial_pokemon,
-        'Stone Evolution (Mt. Moon)' as availability_source
-    FROM stone_evolutions_mt_moon
+        availability_source
+    FROM catchable_evolutions
 ),
 
--- Find first catch opportunity for each pokemon
+-- Find first catch opportunity for each pokemon (unchanged logic)
 first_catch_opportunity AS (
     SELECT 
         pokemon,
         MIN(earliest_route) as earliest_route
-    FROM all_catchable_sources as P
-    INNER JOIN {{ ref('stg_game_route_order') }} as R ON P.earliest_route <= R."order"
+    FROM all_catchable_sources
     GROUP BY pokemon
 ),
 
--- Team options: Pokemon available at each game stage
+-- Team building options: Pokemon available at each game stage (simplified)
 team_availability AS (
     SELECT 
         R.map,
@@ -129,50 +124,45 @@ team_availability AS (
     INNER JOIN {{ ref('int_game_progression') }} as L ON L.game_stage = R.next_gym
 ),
 
--- Add evolutions available for team building
-team_level_evolutions AS (
-    {{ get_evolution_pokemon('team_availability', 'evolution_level') }}
+-- Team evolution options using expanded evolutions table
+team_evolutions AS (
+    SELECT 
+        TA.map,
+        TA."order",
+        TA.next_gym,
+        TA.initial_pokemon,
+        TA.level_cap,
+        EE.current_form as pokemon,
+        CASE 
+            WHEN EE.evolution_type = 'Stone' THEN EE.availability_description
+            WHEN EE.evolution_type = 'Level' THEN 'Level Evolution'
+            ELSE 'Evolution Available'
+        END as team_source
+    FROM team_availability TA
+    INNER JOIN {{ ref('stg_pokemon_evolutions_expanded') }} EE 
+        ON TA.pokemon = EE.base_pokemon
+    WHERE EE.evolution_stage > 0  -- Only evolved forms
+        AND (
+            -- Level evolutions available when pokemon can reach required level
+            (EE.evolution_type = 'Level' AND EE.evolution_level_required <= TA.level_cap)
+            OR 
+            -- Stone evolutions available when stone route is accessible
+            (EE.evolution_type = 'Stone' AND EE.route_order <= TA."order")
+        )
 ),
 
-team_stone_evolutions_route7 AS (
-    {{ get_stone_evolution_pokemon('team_availability', ['"Water Stone"', '"Fire Stone"', '"Leaf Stone"', '"Thunder Stone"'], 'Route7') }}
-),
-
-team_stone_evolutions_mt_moon AS (
-    {{ get_stone_evolution_pokemon('team_availability', ['"Moon Stone"'], 'MtMoon1F') }}
-),
-
--- All team building options
+-- All team building options (simplified)
 all_team_options AS (
     SELECT * FROM team_availability
-    
     UNION ALL 
-    
-    SELECT 
-        map, "order", next_gym, initial_pokemon, level_cap, pokemon,
-        'Level Evolution' as team_source
-    FROM team_level_evolutions
-    
-    UNION ALL
-    
-    SELECT 
-        map, "order", next_gym, initial_pokemon, level_cap, pokemon,
-        'Stone Evolution (Route 7)' as team_source
-    FROM team_stone_evolutions_route7
-
-    UNION ALL
-
-    SELECT 
-        map, "order", next_gym, initial_pokemon, level_cap, pokemon,
-        'Stone Evolution (Mt. Moon)' as team_source
-    FROM team_stone_evolutions_mt_moon
+    SELECT * FROM team_evolutions
 ),
 
--- Final comprehensive pokemon availability
+-- Final comprehensive pokemon availability (with deduplication fix)
 pokemon_availability AS (
     -- Catchable pokemon with encounter details
-    SELECT
-        {{ dbt_utils.generate_surrogate_key(['pokemon','COALESCE(level, 0)','map','area','earliest_route']) }} as id,
+    SELECT DISTINCT
+        {{ dbt_utils.generate_surrogate_key(['pokemon','initial_pokemon','COALESCE(level, 0)','map','area','earliest_route','next_gym']) }} as id,
         'Catchable' as availability_type,
         pokemon,
         initial_pokemon,
@@ -189,8 +179,8 @@ pokemon_availability AS (
     UNION
     
     -- Team building options
-    SELECT
-        {{ dbt_utils.generate_surrogate_key(['pokemon','map','"order"','initial_pokemon']) }} as id,
+    SELECT DISTINCT
+        {{ dbt_utils.generate_surrogate_key(['pokemon','map','"order"','initial_pokemon','next_gym']) }} as id,
         'Team Option' as availability_type,
         pokemon,
         initial_pokemon,
@@ -205,7 +195,8 @@ pokemon_availability AS (
     FROM all_team_options
 )
 
-SELECT 
+-- Final output maintains same structure as original
+SELECT DISTINCT
     id,
     availability_type,
     pokemon,
@@ -217,7 +208,7 @@ SELECT
     earliest_route,
     game_stage,
     COALESCE(availability_source, team_source) as source,
-    -- Add helpful derived fields
+    -- Add helpful derived fields (same as original)
     CASE 
         WHEN availability_type = 'Catchable' AND area = 'Evolution' THEN 'Evolved Form'
         WHEN availability_type = 'Catchable' AND area = 'Stone Evolution' THEN 'Stone Evolved Form'
@@ -227,8 +218,8 @@ SELECT
     END as pokemon_category,
     CASE 
         WHEN pokemon = initial_pokemon THEN 0
-        WHEN source LIKE '%Level Evolution%' THEN 1
-        WHEN source LIKE '%Stone Evolution%' THEN 2
+        WHEN COALESCE(availability_source, team_source) LIKE '%Level Evolution%' THEN 1
+        WHEN COALESCE(availability_source, team_source) LIKE '%Stone Evolution%' THEN 2
         ELSE 0
     END as evolution_stage
 FROM pokemon_availability

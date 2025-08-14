@@ -1,9 +1,10 @@
-
+.claude/*
 target/
 dbt_packages/
 logs/
 dashboard_assets/*
 env/
 old/
+.env
 *.csv
 *.xlsx

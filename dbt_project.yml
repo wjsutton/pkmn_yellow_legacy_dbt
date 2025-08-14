@@ -39,8 +39,6 @@ models:
       +materialized: table
     intermediate:
       +materialized: table
-    output_teams:
-      +materialized: table
     optimisation:
       +materialized: table
     tableau:

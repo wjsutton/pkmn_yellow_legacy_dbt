@@ -1,7 +1,7 @@
 SELECT 
-    x as x,
-    y as y,
+    x as x_coordinate,
+    y as y_coordinate,
     type as location_type,
-    map as map,
+    COALESCE(map, 'MapCorner_' || CAST(x as VARCHAR) || '_' || CAST(y as VARCHAR)) as map,
     "display name" as display_name
 FROM {{ source('yellow_legacy', 'map_locations') }} 
