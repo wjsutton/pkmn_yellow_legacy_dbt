@@ -23,7 +23,6 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 seeds:
-  +quote_columns: true
   +delimiter: ','
 
 vars:

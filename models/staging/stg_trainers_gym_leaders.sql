@@ -2,26 +2,26 @@
 WITH CTE AS (
 
     SELECT 
-        Trainer as trainer,
-        Pkmn_id as pkmn_id,
-        Map as location,
-        Nearest_Route as nearest_route,
-        CASE Pokemon 
+        trainer,
+        pkmn_id,
+        map as location,
+        nearest_route,
+        CASE pokemon 
             WHEN 'Ratatta' THEN 'Rattata'
             WHEN 'Mr Mime' THEN 'Mr-mime'
             WHEN 'Weepingbell' THEN 'Weepinbell'
-            ELSE Pokemon
+            ELSE pokemon
         END as pokemon,
-        Game_Stage as game_stage,
-        Notes as notes,
-        Level as level,
-        CASE Moves 
+        game_stage,
+        notes,
+        pkmn_level,
+        CASE moves 
             WHEN 'Poison Powder' THEN 'Poisonpowder'
             WHEN 'Double-Edge' THEN 'Double Edge'
-            ELSE Moves
+            ELSE moves
         END as move
     FROM {{ source('yellow_legacy', 'trainers_gym_leaders') }} 
-    WHERE Moves IS NOT NULL
+    WHERE moves IS NOT NULL
 
 )
 
@@ -34,7 +34,7 @@ SELECT
     pokemon,
     game_stage,
     notes,
-    level,
+    pkmn_level,
     move,
     ROW_NUMBER() OVER (PARTITION BY pkmn_id ORDER BY move) AS move_number
 FROM CTE

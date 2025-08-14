@@ -1,4 +1,4 @@
-pokedex,pokemon,HP,Attack,Defense,Special,Speed,Total,Type1,Type2
+pokedex,pokemon,hp,attack,defense,special,speed,total,type1,type2
 1,Bulbasaur,45,49,49,65,45,253,Grass,Poison
 2,Ivysaur,60,62,63,80,60,325,Grass,Poison
 3,Venusaur,80,82,83,100,80,425,Grass,Poison

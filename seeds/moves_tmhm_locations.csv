@@ -1,4 +1,4 @@
-﻿TM/HM,Move,Type,Locations,Price,Earliest Nearest Route,Repurchase Route
+tm_or_hm,move,type,locations,price,earliest_nearest_route,repurchase_route
 TM01,Mega Punch,Normal,"Mt. Moon, Celadon Department Store",$3000,MtMoonB2F,Route7
 TM02,Razor Wind,Normal,Route 4,N/A,Route4,Route7
 TM03,Swords Dance,Normal,Silph Co.,N/A,Route17,

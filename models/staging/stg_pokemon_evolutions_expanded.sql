@@ -19,7 +19,7 @@ stone_evolution_routes AS (
     SELECT 
         stone_name,
         earliest_route,
-        R."order" as route_order
+        R.game_order as route_order
     FROM (
         SELECT 'Fire' as stone_name, 'Route7' as earliest_route
         UNION ALL
@@ -178,7 +178,7 @@ complete_evolution_chains AS (
         PS.type2
     FROM second_stage_evolutions SSE
     INNER JOIN {{ ref('stg_pkmn_stats') }} PS ON SSE.final_form = PS.pokemon
-    LEFT JOIN {{ ref('stg_game_route_order') }} R ON R.order = SSE.final_route_order
+    LEFT JOIN {{ ref('stg_game_route_order') }} R ON R.game_order = SSE.final_route_order
 )
 
 SELECT 

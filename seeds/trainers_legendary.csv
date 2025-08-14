@@ -1,4 +1,4 @@
-﻿Trainer,Pkmn_id,Map,Nearest_Route,Pokemon,Moves,Game_Stage,Level
+trainer,pkmn_id,map,nearest_route,pokemon,moves,game_stage,pkmn_level
 Craig,Craig_Jolteon_1,PowerPlant,PowerPlant,Jolteon,Pin Missile,Badge_8,55
 Craig,Craig_Jolteon_1,PowerPlant,PowerPlant,Jolteon,Thunderbolt,Badge_8,55
 Craig,Craig_Jolteon_1,PowerPlant,PowerPlant,Jolteon,Thunder Wave,Badge_8,55
