@@ -22,6 +22,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+seeds:
+  +quote_columns: true
+  +delimiter: ','
 
 vars:
   sprite_base_url: "https://raw.githubusercontent.com/cRz-Shadows/Pokemon_Yellow_Legacy/refs/heads/main/gfx"
