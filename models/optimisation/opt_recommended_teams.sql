@@ -1,5 +1,3 @@
-{{ config(materialized='table') }}
-
 WITH run_variants AS (
     -- Create all 12 run variants using updated macro (3 rival types × 2 pikachu variants × 2 legendary variants)
     {{ generate_run_variants(ref('opt_pokemon_performance_by_stage')) }}

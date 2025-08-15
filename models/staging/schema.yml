@@ -251,7 +251,7 @@ models:
                 to: ref('stg_game_route_order')
                 field: map
             - not_null
-        - name: level
+        - name: pkmn_level
           description: "Level of wild pokemon encounter"
           tests:
             - not_null

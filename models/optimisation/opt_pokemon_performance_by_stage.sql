@@ -1,4 +1,3 @@
-{{ config(materialized='table') }}
 
 WITH battle_matchups AS (
     -- Get best battle performance for each pokemon vs each opponent

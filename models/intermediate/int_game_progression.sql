@@ -3,8 +3,8 @@ WITH trainer_max_levels AS (
     SELECT 
         G.trainer,
         G.game_stage,
-        MAX(R.order) AS order,
-        MAX(G.level) AS max_level,
+        MAX(R.game_order) AS game_order,
+        MAX(G.pkmn_level) AS max_level,
         'Gym Leader' as trainer_type
     FROM {{ ref('stg_trainers_gym_leaders') }} AS G
     INNER JOIN {{ ref('stg_game_route_order') }} AS R 
@@ -17,8 +17,8 @@ WITH trainer_max_levels AS (
     SELECT 
         G.trainer,
         G.game_stage,
-        MAX(R.order) AS order,
-        MAX(G.level) AS max_level,
+        MAX(R.game_order) AS game_order,
+        MAX(G.pkmn_level) AS max_level,
         'Legendary' as trainer_type
     FROM {{ ref('stg_trainers_legendary') }} AS G
     INNER JOIN {{ ref('stg_game_route_order') }} AS R 
@@ -37,14 +37,14 @@ level_caps AS (
         END) AS level_cap
     FROM trainer_max_levels AS G
     INNER JOIN {{ ref('stg_game_route_order') }} AS R 
-        ON R.order <= G.order
+        ON R.game_order <= G.game_order
     GROUP BY G.game_stage
 ),
 
 route_mapping AS (
     SELECT 
         next_gym,
-        MAX("order") AS last_order
+        MAX(game_order) AS last_order
     FROM {{ ref('stg_game_route_order') }}
     GROUP BY next_gym
 ),

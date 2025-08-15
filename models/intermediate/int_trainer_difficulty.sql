@@ -144,7 +144,7 @@ team_building_recommendations AS (
             ELSE 'Standard preparation sufficient'
         END as preparation_recommendation,
         -- Counter recommendations
-        STRING_AGG(
+        LISTAGG(
             TPA.trainer_pokemon || ' (vs ' || TPA.best_counter_pokemon || ')', 
             '; '
         ) as specific_counter_suggestions

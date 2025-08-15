@@ -8,7 +8,7 @@ WITH all_trainer_data AS (
         pokemon,
         game_stage,
         notes,
-        level
+        pkmn_level
     FROM {{ ref('stg_trainers_mandatory') }}
     
     UNION ALL
@@ -21,7 +21,7 @@ WITH all_trainer_data AS (
         pokemon,
         game_stage,
         'Legendary' as notes,
-        level
+        pkmn_level
     FROM {{ ref('stg_trainers_legendary') }}
     
     UNION ALL
@@ -34,7 +34,7 @@ WITH all_trainer_data AS (
         pokemon,
         game_stage,
         notes,
-        level
+        pkmn_level
     FROM {{ ref('stg_trainers_gym_leaders') }}
 ),
 
@@ -48,7 +48,7 @@ gym_leader_moves AS (
         T.pokemon,
         T.game_stage,
         T.notes,
-        T.level,
+        T.pkmn_level,
         GL.move,
         GL.move_number
     FROM all_trainer_data T
@@ -67,7 +67,7 @@ regular_trainer_moves AS (
         T.pokemon,
         T.game_stage,
         T.notes,
-        T.level,
+        T.pkmn_level,
         M.move,
         ROW_NUMBER() OVER (PARTITION BY T.pkmn_id ORDER BY M.move) AS move_number
     FROM all_trainer_data T
@@ -75,7 +75,7 @@ regular_trainer_moves AS (
         ON T.pokemon = M.pokemon
     WHERE T.is_gym_leader = 0
         AND M.move_origin = 'level-up'
-        AND T.level >= M.level
+        AND T.pkmn_level >= M.pkmn_level
     QUALIFY ROW_NUMBER() OVER(PARTITION BY T.pkmn_id ORDER BY M.move) <= 4
 ),
 
@@ -91,12 +91,12 @@ trainer_roster AS (
         T.trainer,
         T.is_gym_leader,
         T.game_stage,
-        R.order, 
+        R.game_order, 
         T.notes,
         T.pkmn_id,
         S.pokedex,
         T.pokemon,
-        T.level,
+        T.pkmn_level,
         MAX(CASE WHEN T.move_number = 1 THEN move END) as move_1,
         MAX(CASE WHEN T.move_number = 2 THEN move END) as move_2,
         MAX(CASE WHEN T.move_number = 3 THEN move END) as move_3,
@@ -126,14 +126,14 @@ SELECT
     tr.trainer,
     tr.is_gym_leader,
     tr.game_stage,
-    tr.order,
+    tr.game_order,
     tr.notes,
     
     -- Pokemon details
     tr.pkmn_id,
     tr.pokedex,
     tr.pokemon,
-    tr.level,
+    tr.pkmn_level,
     
     -- Movesets
     tr.move_1,

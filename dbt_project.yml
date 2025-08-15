@@ -45,4 +45,4 @@ models:
       +materialized: table
     tableau:
       +materialized: table
-      +post-hook: "COPY {{ this }} TO 'dashboard_assets/data/{{ this.identifier }}.csv' (HEADER, DELIMITER ',')"
+      # +post-hook: "COPY {{ this }} TO 'dashboard_assets/data/{{ this.identifier }}.csv' (HEADER, DELIMITER ',')"

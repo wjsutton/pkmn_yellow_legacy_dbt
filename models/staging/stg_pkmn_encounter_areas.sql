@@ -1,7 +1,7 @@
 SELECT 
-    {{ dbt_utils.generate_surrogate_key(['map','level','pokemon','area']) }} as id,
+    {{ dbt_utils.generate_surrogate_key(['map','pkmn_level','pokemon','area']) }} as id,
     map,
-    COALESCE(level, 25) as level,  -- Default level for trades/gifts
+    COALESCE(pkmn_level, 25) as pkmn_level, 
     pokemon,
     area,
     SUM(encounter_probability) as encounter_probability
