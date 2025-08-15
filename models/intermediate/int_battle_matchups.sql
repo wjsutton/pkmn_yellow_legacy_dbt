@@ -41,7 +41,7 @@ trainer_pokemon_with_moves AS (
         physpec.stat_used AS move_stat_used,
         0 AS is_single_use_tm,
         pkmn_id,
-    FROM FROM {{ ref('int_trainer_roster') }}
+    FROM {{ ref('int_trainer_roster') }}
     UNPIVOT (move FOR move_slot IN (move_1, move_2, move_3, move_4)) AS unpvt
     INNER JOIN {{ ref('stg_moves_stats') }} AS ms ON unpvt.move = ms.move
     LEFT JOIN {{ ref('stg_moves_phys_spec') }} AS physpec ON ms.type = physpec.type
