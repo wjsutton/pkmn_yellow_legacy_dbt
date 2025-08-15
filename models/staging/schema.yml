@@ -9,9 +9,8 @@ models:
           tests:
             - unique
             - not_null
-        - name: order
+        - name: game_order
           description: "Sequential numeric order of progression through the game (1 = earliest, higher = later)"
-          quote: true
           tests:
             - not_null
             - unique
@@ -49,7 +48,7 @@ models:
             - relationships:
                 to: ref('stg_pkmn_stats')
                 field: pokemon
-        - name: level
+        - name: pkmn_level
           description: "Level at which the pokemon learns this move"
           tests:
             - not_null
@@ -232,9 +231,8 @@ models:
                 to: ref('stg_game_route_order')
                 field: map
             - not_null
-        - name: order
+        - name: game_order
           description: "Sequential order when this encounter area becomes available"
-          quote: true
           tests:
             - not_null
 
@@ -253,7 +251,7 @@ models:
                 to: ref('stg_game_route_order')
                 field: map
             - not_null
-        - name: level
+        - name: pkmn_level
           description: "Level of wild pokemon encounter"
           tests:
             - not_null
@@ -385,7 +383,7 @@ models:
           description: "Game progression stage (Badge_1, Badge_2, etc.)"
           tests:
             - not_null
-        - name: level
+        - name: pkmn_level
           description: "Pokemon level in gym battle"
           tests:
             - not_null
@@ -437,7 +435,7 @@ models:
           description: "Game progression stage when battle occurs"
           tests:
             - not_null
-        - name: level
+        - name: pkmn_level
           description: "Pokemon level in legendary battle"
           tests:
             - not_null
@@ -485,7 +483,7 @@ models:
           description: "Game progression stage when battle occurs"
           tests:
             - not_null
-        - name: level
+        - name: pkmn_level
           description: "Pokemon level in mandatory battle"
           tests:
             - not_null
@@ -511,7 +509,7 @@ models:
             - relationships:
                 to: ref('stg_pkmn_stats')
                 field: pokemon
-        - name: level
+        - name: pkmn_level
           description: "Pokemon level (1-100)"
           tests:
             - not_null
@@ -588,7 +586,7 @@ models:
             - relationships:
                 to: ref('stg_moves_stats')
                 field: move
-        - name: level
+        - name: pkmn_level
           description: "Level required for level-up moves (null for TM/HM moves)"
         - name: move_origin
           description: "Source of move availability"

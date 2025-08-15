@@ -1,9 +1,9 @@
 WITH CTE AS (
 
     SELECT 
-        "Pokedex Number" as pokedex,
-        Pokemon as pokemon,
-        Move as move
+        pokedex,
+        pokemon,
+        move
     FROM {{ source('yellow_legacy', 'moves_from_tmhm') }} 
 
 )

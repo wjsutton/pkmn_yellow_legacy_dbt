@@ -1,4 +1,4 @@
-﻿Trainer,Pkmn_id,Map,Nearest_Route,Pokemon,Moves,Game_Stage,Notes,Level
+trainer,pkmn_id,map,nearest_route,pokemon,moves,game_stage,notes,pkmn_level
 Rival_1,Rival_1_Eevee_1,OaksLab,OaksLab,Eevee,Tackle,Badge_1,,5
 Rival_1,Rival_1_Eevee_1,OaksLab,OaksLab,Eevee,Tail Whip,Badge_1,,5
 Rival_2,Rival_2_Spearow_1,Route22,Route22,Spearow,Growl,Badge_1,,9

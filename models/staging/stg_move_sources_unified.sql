@@ -2,7 +2,7 @@ WITH level_up_moves AS (
     SELECT 
         M.pokemon,
         M.move,
-        M.level,
+        M.pkmn_level,
         'level-up' as move_origin,
         NULL as route_order,
         NULL as game_stage,
@@ -25,9 +25,9 @@ repurchasable_tm_moves AS (
     SELECT 
         M.pokemon,
         M.move,
-        NULL as level,
+        NULL as pkmn_level,
         'repurchasible-tm' as move_origin,
-        R.order as route_order,
+        R.game_order as route_order,
         R.next_gym as game_stage,
         'Repurchasable at ' || L.repurchase_route as location_details,
         S.type as move_type,
@@ -50,9 +50,9 @@ single_use_tm_moves AS (
     SELECT 
         M.pokemon,
         M.move,
-        NULL as level,
+        NULL as pkmn_level,
         'single-use-tm' as move_origin,
-        R.order as route_order,
+        R.game_order as route_order,
         R.next_gym as game_stage,
         'Single-use TM at ' || L.earliest_nearest_route as location_details,
         S.type as move_type,
@@ -81,10 +81,10 @@ all_move_sources AS (
 )
 
 SELECT 
-    {{ dbt_utils.generate_surrogate_key(['pokemon','move','move_origin','COALESCE(level,0)','COALESCE(route_order,0)']) }} as id,
+    {{ dbt_utils.generate_surrogate_key(['pokemon','move','move_origin','COALESCE(pkmn_level,0)','COALESCE(route_order,0)']) }} as id,
     pokemon,
     move,
-    level,
+    pkmn_level,
     move_origin,
     route_order,
     game_stage,
@@ -110,7 +110,7 @@ SELECT
             WHEN 'repurchasible-tm' THEN 2 
             WHEN 'single-use-tm' THEN 3 
         END,
-        level ASC NULLS LAST,
+        pkmn_level ASC NULLS LAST,
         route_order ASC NULLS LAST
     ) as move_priority_rank
 FROM all_move_sources

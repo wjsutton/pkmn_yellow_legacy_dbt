@@ -1,4 +1,4 @@
-﻿Map,Level,Pokemon,Area,Encounter Probability
+map,pkmn_level,pokemon,area,encounter_probability
 OaksLab,5,Pikachu,Gift,1
 Route1,3,Pidgey,Grass,0.199
 Route1,4,Pidgey,Grass,0.199

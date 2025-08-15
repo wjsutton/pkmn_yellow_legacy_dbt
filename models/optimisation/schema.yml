@@ -139,74 +139,74 @@ models:
                   'Vaporeon + Pikachu + Legendaries', 'Vaporeon + Pikachu + No Legendaries'
                 ]
 
-  - name: opt_team_battle_analysis
-    description: "Detailed battle analysis for recommended teams showing matchup performance against all trainers"
-    columns:
-        - name: run
-          description: "Run variant identifier"
-        - name: game_stage
-          description: "Game progression stage"
-        - name: player_pkmn_id
-          description: "Team member pokemon identifier"
-        - name: player_pokemon
-          description: "Team member pokemon species"
-        - name: trainer
-          description: "Opponent trainer name"
-        - name: trainer_pkmn_id
-          description: "Opponent pokemon identifier"
-        - name: trainer_pokemon
-          description: "Opponent pokemon species"
-        - name: trainer_type
-          description: "Type of trainer (Gym Leader or Trainer)"
-          tests:
-            - accepted_values:
-                values: ['Gym Leader', 'Trainer']
-        - name: is_gym_leader
-          description: "Flag indicating if opponent is gym leader (1) or regular trainer (0)"
-          tests:
-            - accepted_values:
-                values: [0, 1]
-        - name: battle_score
-          description: "Battle performance score (0-1 scale, higher = better)"
-        - name: player_pkmn_move
-          description: "Best move for this matchup"
-        - name: single_use_tm
-          description: "Flag indicating if best move requires single-use TM (1) or not (0)"
-          tests:
-            - accepted_values:
-                values: [0, 1]
-        - name: is_assigned_move
-          description: "Flag indicating if this is the pokemon's assigned TM move (1) or not (0)"
-          tests:
-            - accepted_values:
-                values: [0, 1]
-        - name: best_score
-          description: "Team's overall performance score"
-        - name: team_size
-          description: "Number of pokemon in team (should be 6)"
-        - name: total_tms
-          description: "Total TMs used by team"
-        - name: variant_type
-          description: "Human-readable variant description"
-        - name: team_rank
-          description: "Pokemon's position in team (1-6)"
-        - name: pokemon_score
-          description: "Individual pokemon performance score"
-        - name: performance_tier
-          description: "Pokemon performance classification"
-        - name: assigned_tm_move
-          description: "TM move assigned to this pokemon"
-        - name: tms_allocated
-          description: "Number of TMs allocated to this pokemon"
-        - name: matchup_priority
-          description: "Priority ranking for this matchup (1 = highest priority)"
-        - name: move_category
-          description: "Classification of the move used"
-          tests:
-            - accepted_values:
-                values: ['ASSIGNED MOVE', 'ALTERNATIVE TM OPTION', 'NATURAL MOVE']
-        - name: matchup_difficulty
-          description: "Assessment of battle difficulty"
-          tests:
-            - accepted_values:
-                values: ['Easy Win', 'Favorable', 'Challenging', 'Very Difficult']
+  # - name: opt_team_battle_analysis
+  #   description: "Detailed battle analysis for recommended teams showing matchup performance against all trainers"
+  #   columns:
+  #       - name: run
+  #         description: "Run variant identifier"
+  #       - name: game_stage
+  #         description: "Game progression stage"
+  #       - name: player_pkmn_id
+  #         description: "Team member pokemon identifier"
+  #       - name: player_pokemon
+  #         description: "Team member pokemon species"
+  #       - name: trainer
+  #         description: "Opponent trainer name"
+  #       - name: trainer_pkmn_id
+  #         description: "Opponent pokemon identifier"
+  #       - name: trainer_pokemon
+  #         description: "Opponent pokemon species"
+  #       - name: trainer_type
+  #         description: "Type of trainer (Gym Leader or Trainer)"
+  #         tests:
+  #           - accepted_values:
+  #               values: ['Gym Leader', 'Trainer']
+  #       - name: is_gym_leader
+  #         description: "Flag indicating if opponent is gym leader (1) or regular trainer (0)"
+  #         tests:
+  #           - accepted_values:
+  #               values: [0, 1]
+  #       - name: battle_score
+  #         description: "Battle performance score (0-1 scale, higher = better)"
+  #       - name: player_pkmn_move
+  #         description: "Best move for this matchup"
+  #       - name: single_use_tm
+  #         description: "Flag indicating if best move requires single-use TM (1) or not (0)"
+  #         tests:
+  #           - accepted_values:
+  #               values: [0, 1]
+  #       - name: is_assigned_move
+  #         description: "Flag indicating if this is the pokemon's assigned TM move (1) or not (0)"
+  #         tests:
+  #           - accepted_values:
+  #               values: [0, 1]
+  #       - name: best_score
+  #         description: "Team's overall performance score"
+  #       - name: team_size
+  #         description: "Number of pokemon in team (should be 6)"
+  #       - name: total_tms
+  #         description: "Total TMs used by team"
+  #       - name: variant_type
+  #         description: "Human-readable variant description"
+  #       - name: team_rank
+  #         description: "Pokemon's position in team (1-6)"
+  #       - name: pokemon_score
+  #         description: "Individual pokemon performance score"
+  #       - name: performance_tier
+  #         description: "Pokemon performance classification"
+  #       - name: assigned_tm_move
+  #         description: "TM move assigned to this pokemon"
+  #       - name: tms_allocated
+  #         description: "Number of TMs allocated to this pokemon"
+  #       - name: matchup_priority
+  #         description: "Priority ranking for this matchup (1 = highest priority)"
+  #       - name: move_category
+  #         description: "Classification of the move used"
+  #         tests:
+  #           - accepted_values:
+  #               values: ['ASSIGNED MOVE', 'ALTERNATIVE TM OPTION', 'NATURAL MOVE']
+  #       - name: matchup_difficulty
+  #         description: "Assessment of battle difficulty"
+  #         tests:
+  #           - accepted_values:
+  #               values: ['Easy Win', 'Favorable', 'Challenging', 'Very Difficult']

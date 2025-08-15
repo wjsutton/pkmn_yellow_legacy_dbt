@@ -1,14 +1,14 @@
 SELECT 
-    "TM/HM" as tm_or_hm,
+    tm_or_hm,
     CASE 
-        WHEN Move = 'BubbleBeam' THEN 'Bubblebeam'
-        WHEN Move = 'SolarBeam' THEN 'Solarbeam'  
-        WHEN Move = 'Double-Edge' THEN 'Double Edge'
-        ELSE Move 
+        WHEN move = 'BubbleBeam' THEN 'Bubblebeam'
+        WHEN move = 'SolarBeam' THEN 'Solarbeam'  
+        WHEN move = 'Double-Edge' THEN 'Double Edge'
+        ELSE move 
     END as move,
-    Type as type,
-    Locations as locations,
-    Price as price,
-    "Earliest Nearest Route" as earliest_nearest_route,
-    COALESCE("Repurchase Route", "Earliest Nearest Route") as repurchase_route
+    type,
+    locations,
+    price,
+    earliest_nearest_route,
+    COALESCE(repurchase_route, earliest_nearest_route) as repurchase_route
 FROM {{ source('yellow_legacy', 'moves_tmhm_locations') }} 

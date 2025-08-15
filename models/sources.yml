@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: yellow_legacy
-    schema: main  
+    schema: dbt_wsutton_pkmn_dev 
     tables:
       - name: game_route_order
 

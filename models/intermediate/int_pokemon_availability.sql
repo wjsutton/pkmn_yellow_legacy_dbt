@@ -2,7 +2,7 @@ WITH area_order AS (
     SELECT 
         EAO.encounter_area,
         R.map,
-        R."order"
+        R.game_order
     FROM {{ ref('stg_pkmn_encounter_area_order') }} as EAO 
     INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EAO.map
 ),
@@ -11,17 +11,17 @@ WITH area_order AS (
 base_catchable_pokemon AS (
     SELECT 
         EA.pokemon,
-        EA.level,
+        EA.pkmn_level,
         L.level_cap,
         EA.map,
         EA.area,
-        R."order",
+        R.game_order,
         R.next_gym,
         EA.pokemon as initial_pokemon,
         'Wild Encounter' as availability_source,
         CASE 
-            WHEN R."order" >= EAO."order" THEN R."order" 
-            ELSE EAO."order" 
+            WHEN R.game_order >= EAO.game_order THEN R.game_order 
+            ELSE EAO.game_order
         END as earliest_route
     FROM {{ ref('stg_pkmn_encounter_areas') }} as EA
     INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EA.map
@@ -34,7 +34,7 @@ catchable_evolutions AS (
     SELECT 
         BCP.initial_pokemon,
         EE.current_form as pokemon,
-        BCP.level,
+        BCP.pkmn_level,
         BCP.level_cap,
         BCP.map,
         CASE 
@@ -42,7 +42,7 @@ catchable_evolutions AS (
             WHEN EE.evolution_type = 'Level' THEN 'Evolution'
             ELSE 'Evolution'
         END as area,
-        BCP."order",
+        BCP.game_order,
         BCP.next_gym,
         CASE 
             WHEN EE.evolution_type = 'Stone' THEN EE.availability_description
@@ -65,7 +65,7 @@ catchable_evolutions AS (
             (EE.evolution_type = 'Level' AND EE.evolution_level_required <= BCP.level_cap)
             OR 
             -- Stone evolutions available when stone route is accessible
-            (EE.evolution_type = 'Stone' AND EE.route_order <= BCP."order")
+            (EE.evolution_type = 'Stone' AND EE.route_order <= BCP.game_order)
         )
 ),
 
@@ -74,7 +74,7 @@ all_catchable_sources AS (
     -- Base wild encounters
     SELECT
         pokemon,
-        level,
+        pkmn_level,
         level_cap,
         map,
         area,
@@ -89,7 +89,7 @@ all_catchable_sources AS (
     -- All evolutions from catchable pokemon
     SELECT
         pokemon,
-        NULL as level, -- Evolutions don't have specific encounter levels
+        NULL as pkmn_level, -- Evolutions don't have specific encounter levels
         level_cap,
         map,
         area,
@@ -113,14 +113,14 @@ first_catch_opportunity AS (
 team_availability AS (
     SELECT 
         R.map,
-        R."order",
+        R.game_order,
         R.next_gym,
         F.pokemon as initial_pokemon,
         L.level_cap,
         F.pokemon,
         'Base Pokemon' as team_source
     FROM {{ ref('stg_game_route_order') }} as R
-    INNER JOIN first_catch_opportunity as F ON F.earliest_route <= R."order"
+    INNER JOIN first_catch_opportunity as F ON F.earliest_route <= R.game_order
     INNER JOIN {{ ref('int_game_progression') }} as L ON L.game_stage = R.next_gym
 ),
 
@@ -128,7 +128,7 @@ team_availability AS (
 team_evolutions AS (
     SELECT 
         TA.map,
-        TA."order",
+        TA.game_order,
         TA.next_gym,
         TA.initial_pokemon,
         TA.level_cap,
@@ -147,7 +147,7 @@ team_evolutions AS (
             (EE.evolution_type = 'Level' AND EE.evolution_level_required <= TA.level_cap)
             OR 
             -- Stone evolutions available when stone route is accessible
-            (EE.evolution_type = 'Stone' AND EE.route_order <= TA."order")
+            (EE.evolution_type = 'Stone' AND EE.route_order <= TA.game_order)
         )
 ),
 
@@ -162,11 +162,11 @@ all_team_options AS (
 pokemon_availability AS (
     -- Catchable pokemon with encounter details
     SELECT DISTINCT
-        {{ dbt_utils.generate_surrogate_key(['pokemon','initial_pokemon','COALESCE(level, 0)','map','area','earliest_route','next_gym']) }} as id,
+        {{ dbt_utils.generate_surrogate_key(['pokemon','initial_pokemon','COALESCE(pkmn_level, 0)','map','area','earliest_route','next_gym']) }} as id,
         'Catchable' as availability_type,
         pokemon,
         initial_pokemon,
-        level as encounter_level,
+        pkmn_level as encounter_level,
         level_cap,
         map,
         area,
@@ -180,7 +180,7 @@ pokemon_availability AS (
     
     -- Team building options
     SELECT DISTINCT
-        {{ dbt_utils.generate_surrogate_key(['pokemon','map','"order"','initial_pokemon','next_gym']) }} as id,
+        {{ dbt_utils.generate_surrogate_key(['pokemon','map','game_order','initial_pokemon','next_gym']) }} as id,
         'Team Option' as availability_type,
         pokemon,
         initial_pokemon,
@@ -188,7 +188,7 @@ pokemon_availability AS (
         level_cap,
         map,
         NULL as area,
-        "order" as earliest_route,
+        game_order as earliest_route,
         next_gym as game_stage,
         NULL as availability_source,
         team_source

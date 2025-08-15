@@ -1,5 +1,6 @@
 WITH level_range AS (
-    SELECT UNNEST(GENERATE_SERIES(1, 100)) AS level
+    SELECT seq4() + 1 AS pkmn_level
+    FROM TABLE(generator(rowcount => 100))
 ),
 
 pokemon_base_stats AS (
@@ -18,18 +19,18 @@ pokemon_base_stats AS (
 
 pokemon_calculated_stats AS (
     SELECT 
-        {{ dbt_utils.generate_surrogate_key(['P.pokedex','L.level']) }} as id,
+        {{ dbt_utils.generate_surrogate_key(['P.pokedex','L.pkmn_level']) }} as id,
         P.pokedex,
         P.pokemon,
-        L.level,
+        L.pkmn_level,
         P.type1,
         P.type2,
         -- Calculate Generation 1 stats using existing macros
-        {{ calculate_hp_rby('P.hp','L.level','7') }} as calculated_hp,
-        {{ calculate_stat_rby('P.attack','L.level','7') }} as calculated_attack,
-        {{ calculate_stat_rby('P.defense','L.level','7') }} as calculated_defense,
-        {{ calculate_stat_rby('P.special','L.level','7') }} as calculated_special,
-        {{ calculate_stat_rby('P.speed','L.level','7') }} as calculated_speed,
+        {{ calculate_hp_rby('P.hp','L.pkmn_level','7') }} as calculated_hp,
+        {{ calculate_stat_rby('P.attack','L.pkmn_level','7') }} as calculated_attack,
+        {{ calculate_stat_rby('P.defense','L.pkmn_level','7') }} as calculated_defense,
+        {{ calculate_stat_rby('P.special','L.pkmn_level','7') }} as calculated_special,
+        {{ calculate_stat_rby('P.speed','L.pkmn_level','7') }} as calculated_speed,
         -- Include base stats for reference
         P.hp as base_hp,
         P.attack as base_attack,
@@ -44,7 +45,7 @@ SELECT
     id,
     pokedex,
     pokemon,
-    level,
+    pkmn_level,
     type1,
     type2,
     calculated_hp,

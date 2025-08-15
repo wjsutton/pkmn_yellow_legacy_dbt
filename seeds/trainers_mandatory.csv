@@ -1,4 +1,4 @@
-﻿Trainer,Pkmn_id,Map,Nearest_Route,Pokemon,Game_Stage,Level
+trainer,pkmn_id,map,nearest_route,pokemon,game_stage,pkmn_level
 ViridianForest_Bug_Catcher_4,ViridianForest_Bug_Catcher_4_Pinsir_1,ViridianForest,ViridianForest,Pinsir,Badge_1,8
 ViridianForest_Bug_Catcher_4,ViridianForest_Bug_Catcher_4_Metapod_1,ViridianForest,ViridianForest,Metapod,Badge_1,9
 Route3_Bug_Catcher_1,Route3_Bug_Catcher_1_Metapod_1,Route3,Route3,Metapod,Badge_2,8

@@ -1,4 +1,4 @@
-﻿Attacking Type,Defending Type,Damage Modifier
+attacking_type,defending_type,damage_modifier
 Normal,Normal,1
 Normal,Fighting,1
 Normal,Flying,1

@@ -1,4 +1,3 @@
-{{ config(materialized='table') }}
 
 WITH team_candidates AS (
     -- Get potential team members (top performers per stage)

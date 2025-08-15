@@ -1,4 +1,4 @@
-﻿Pokedex Number,Pokemon,Col3,Level,Move,Type,Power,Accuracy,PP
+pokedex,pokemon,mow_row,pkmn_level,move,type,power,accuracy,pp
 1,Bulbasaur,Move 1,1,Tackle,Normal,35,1,35
 1,Bulbasaur,Move 2,1,Growl,Growl,N/A,1,40
 1,Bulbasaur,Move 3,7,Leech Seed,Leech Seed,N/A,0.9,10
