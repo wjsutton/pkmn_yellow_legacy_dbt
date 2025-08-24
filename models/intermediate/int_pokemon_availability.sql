@@ -57,7 +57,7 @@ catchable_evolutions AS (
             ELSE BCP.earliest_route
         END as earliest_route
     FROM base_catchable_pokemon BCP
-    INNER JOIN {{ ref('stg_pokemon_evolutions_expanded') }} EE 
+    INNER JOIN {{ ref('int_pokemon_evolutions_expanded') }} EE 
         ON BCP.pokemon = EE.base_pokemon
     WHERE EE.evolution_stage > 0  -- Only evolved forms
         AND (
@@ -139,7 +139,7 @@ team_evolutions AS (
             ELSE 'Evolution Available'
         END as team_source
     FROM team_availability TA
-    INNER JOIN {{ ref('stg_pokemon_evolutions_expanded') }} EE 
+    INNER JOIN {{ ref('int_pokemon_evolutions_expanded') }} EE 
         ON TA.pokemon = EE.base_pokemon
     WHERE EE.evolution_stage > 0  -- Only evolved forms
         AND (
