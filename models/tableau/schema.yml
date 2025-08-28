@@ -1,8 +1,6 @@
 version: 2
 
 models:
-  # - name: tableau_team_BAN
-
   - name: tableau_map_locations
 
   - name: tableau_toughest_fights

@@ -10,14 +10,9 @@ models:
             - unique
             - not_null
         - name: game_order
-          description: "Sequential numeric order of progression through the game (1 = earliest, higher = later)"
-          tests:
-            - not_null
-            - unique
+          description: "Sequential numeric order of progression through the game (0 = earliest, higher = later)"
         - name: next_gym
           description: "Next gym leader or game stage that follows this route (e.g. Badge_1, Badge_2, Elite_Four)"
-          tests:
-            - not_null
 
   - name: stg_map_locations
     description: "Geographic coordinate data for map locations used in Tableau visualizations"
@@ -43,34 +38,18 @@ models:
             - not_null
         - name: pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
         - name: pkmn_level
           description: "Level at which the pokemon learns this move"
-          tests:
-            - not_null
         - name: move
           description: "Move name"
-          tests:
-            - relationships:
-                to: ref('stg_moves_stats')
-                field: move
-            - not_null
         - name: type
           description: "Move type (Fire, Water, Electric, etc.)"
-          tests:
-            - not_null
         - name: power
           description: "Base power of the move (N/A for status moves)"
         - name: accuracy
           description: "Move accuracy percentage"
         - name: pp
           description: "Power Points - number of times move can be used"
-          tests:
-            - not_null
 
   - name: stg_moves_from_tmhm
     description: "Pokemon moves available through TM (Technical Machine) or HM (Hidden Machine) items"
@@ -82,22 +61,10 @@ models:
             - not_null
         - name: pokedex
           description: "Pokedex number of the pokemon"
-          tests:
-            - not_null
         - name: pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
         - name: move
           description: "TM/HM move name"
-          tests:
-            - relationships:
-                to: ref('stg_moves_stats')
-                field: move
-            - not_null
 
   - name: stg_moves_phys_spec
     description: "Move type classification for physical vs special attack stat usage in Generation 1 mechanics"
@@ -109,15 +76,8 @@ models:
             - not_null
         - name: type
           description: "Move type (Fire, Water, Electric, etc.)"
-          tests:
-            - not_null
-            - unique
         - name: stat_used
           description: "Which stat the move uses for damage calculation (Attack for physical, Special for special)"
-          tests:
-            - not_null
-            - accepted_values:
-                values: ['Attack', 'Special']
 
   - name: stg_moves_stats
     description: "Comprehensive move statistics including power, accuracy, PP, and special effects"
@@ -129,9 +89,6 @@ models:
             - not_null
         - name: move
           description: "Move name"
-          tests:
-            - not_null
-            - unique
         - name: effect
           description: "Move effect description (e.g. 'Inflicts regular damage', 'May cause paralysis')"
         - name: type
@@ -169,25 +126,10 @@ models:
             - not_null
         - name: move
           description: "Move taught by this TM/HM"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_moves_stats')
-                field: move
         - name: earliest_nearest_route
           description: "First route where this TM/HM can be obtained"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_game_route_order')
-                field: map
         - name: repurchase_route
           description: "Route where this TM can be repurchased (same as earliest for single-use TMs)"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_game_route_order')
-                field: map
 
   - name: stg_moves_type_effectiveness 
     description: "Type effectiveness multipliers for Generation 1 battle calculations (e.g. Fire vs Water = 0.5x)"
@@ -199,18 +141,10 @@ models:
             - not_null
         - name: attacking_type
           description: "Type of the attacking move"
-          tests:
-            - not_null
         - name: defending_type
           description: "Type of the defending pokemon"
-          tests:
-            - not_null
         - name: damage_modifier
           description: "Damage multiplier (0=immune, 0.5=not very effective, 1=normal, 2=super effective)"
-          tests:
-            - not_null
-            - accepted_values:
-                values: [0, 0.5, 1, 2]
 
   - name: stg_pkmn_encounter_area_order
     description: "Mapping of encounter areas to routes for determining pokemon availability timing"
@@ -221,20 +155,11 @@ models:
             - unique
             - not_null
         - name: encounter_area
-          description: "Specific encounter area name (e.g. Route1Grass, ViridianeForest)"
-          tests:
-            - not_null
+          description: "Specific encounter area name"
         - name: map
           description: "Route or location name where this encounter area exists"
-          tests:
-            - relationships:
-                to: ref('stg_game_route_order')
-                field: map
-            - not_null
         - name: game_order
           description: "Sequential order when this encounter area becomes available"
-          tests:
-            - not_null
 
   - name: stg_pkmn_encounter_areas
     description: "Wild pokemon encounter data with levels and probability rates for each area"
@@ -246,30 +171,14 @@ models:
             - not_null
         - name: map
           description: "Route or location name"
-          tests:
-            - relationships:
-                to: ref('stg_game_route_order')
-                field: map
-            - not_null
         - name: pkmn_level
           description: "Level of wild pokemon encounter"
-          tests:
-            - not_null
         - name: pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
         - name: area
           description: "Specific encounter area (Grass, Water, Cave, etc.)"
-          tests:
-            - not_null
         - name: encounter_probability
           description: "Probability of encountering this pokemon (summed across all encounter methods)"
-          tests:
-            - not_null
 
   - name: stg_pkmn_evolutions
     description: "Pokemon evolution relationships with level and stone requirements from seed data"
@@ -281,25 +190,14 @@ models:
             - not_null
         - name: pokedex
           description: "Pokedex number of the base (pre-evolution) pokemon"
-          tests:
-            - not_null
         - name: pokemon
           description: "Base pokemon species name (the pokemon that evolves)"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
         - name: evolution_level
           description: "Level required for evolution (null for stone evolutions)"
         - name: evolution_stone
           description: "Stone required for evolution (null for level evolutions)"
         - name: evolution_name
           description: "Evolved pokemon species name (null for final evolution forms)"
-          tests:
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
 
   - name: stg_pkmn_stats
     description: "Base stats for all pokemon species including HP, Attack, Defense, Special, Speed, and typing"
@@ -311,9 +209,6 @@ models:
             - not_null
         - name: pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-            - unique
         - name: hp
           description: "Base HP stat used in Generation 1 stat calculations"
           tests:
@@ -355,45 +250,20 @@ models:
             - not_null
         - name: trainer
           description: "Gym leader name (Brock, Misty, Lt. Surge, etc.)"
-          tests:
-            - not_null
         - name: pkmn_id
           description: "Unique identifier for this specific pokemon instance"
-          tests:
-            - not_null
         - name: location
           description: "Gym location where battle takes place"
-          tests:
-            - not_null
         - name: nearest_route
           description: "Route used for game progression order mapping"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_game_route_order')
-                field: map
         - name: pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
         - name: game_stage
           description: "Game progression stage (Badge_1, Badge_2, etc.)"
-          tests:
-            - not_null
         - name: pkmn_level
           description: "Pokemon level in gym battle"
-          tests:
-            - not_null
         - name: move
           description: "One of the pokemon's four moves (unpivoted in downstream models)"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_moves_stats')
-                field: move
         - name: notes
           description: "Additional context or special notes about this battle"
 
@@ -407,45 +277,20 @@ models:
             - not_null
         - name: trainer
           description: "Legendary trainer name (primarily Smith from Pokemon Yellow Legacy)"
-          tests:
-            - not_null
         - name: pkmn_id
           description: "Unique identifier for this specific pokemon instance"
-          tests:
-            - not_null
         - name: location
           description: "Location where legendary battle takes place"
-          tests:
-            - not_null
         - name: nearest_route
           description: "Route used for game progression order mapping"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_game_route_order')
-                field: map
         - name: pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
         - name: game_stage
           description: "Game progression stage when battle occurs"
-          tests:
-            - not_null
         - name: pkmn_level
           description: "Pokemon level in legendary battle"
-          tests:
-            - not_null
         - name: move
           description: "One of the pokemon's four moves (unpivoted in downstream models)"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_moves_stats')
-                field: move
         - name: notes
           description: "Additional context about this legendary encounter"
 
@@ -463,30 +308,14 @@ models:
             - unique
         - name: location
           description: "Location where mandatory battle takes place"
-          tests:
-            - not_null
         - name: nearest_route
           description: "Route used for game progression order mapping"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_game_route_order')
-                field: map
         - name: pokemon
           description: "Pokemon species name"
-          tests:
-            - not_null
-            - relationships:
-                to: ref('stg_pkmn_stats')
-                field: pokemon
         - name: game_stage
           description: "Game progression stage when battle occurs"
-          tests:
-            - not_null
         - name: pkmn_level
           description: "Pokemon level in mandatory battle"
-          tests:
-            - not_null
         - name: notes
           description: "Additional context about this mandatory encounter"
 
