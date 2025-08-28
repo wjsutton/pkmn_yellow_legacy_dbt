@@ -2,25 +2,45 @@ version: 2
 
 sources:
   - name: yellow_legacy
+    description: Data from the game Pokemon Yellow Legacy
     schema: dbt_wsutton_pkmn_dev 
+    config: 
+      freshness:
+        warn_after: {count: 24, period: hour}
+        
     tables:
       - name: game_route_order
+        description: Order of areas unlocked in the game
 
       - name: map_locations
+        description: All locations on the Kanto map
 
       - name: moves_from_level_up
+        description: Moves Pokemon learn from leveling up
       - name: moves_from_tmhm 
+        description: Moves Pokemon learn from TMs and HMs
       - name: moves_phys_spec
+        description: Which moves are Physical and Special
       - name: moves_stats
+        description: Damage and accuracy of moves
       - name: moves_tmhm_locations
+        description: Locations of TMs and HMs
       - name: moves_type_effectiveness
+        description: Moves effectiveness against other types
 
       - name: pkmn_encounter_area_order
+        description: Order of areas you can encounter Pokemon
       - name: pkmn_encounter_areas
+        description: Types of areas you can encounter Pokemon
       - name: pkmn_evolutions
+        description: Pokemon with evolutions and methods
       - name: pkmn_stats
+        description: Pokemon stats
 
       - name: trainers_gym_leaders
+        description: Pokemon teams of Gym leaders
       - name: trainers_legendary
+        description: Pokemon teams of legendary training (Craig, Weebo, Smith)
       - name: trainers_mandatory
+        description: Pokemon teams of the mandatory trainers
 
