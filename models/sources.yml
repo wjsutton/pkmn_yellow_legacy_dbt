@@ -8,6 +8,8 @@ sources:
       freshness:
         warn_after: {count: 24, period: hour}
         
+      loaded_at_field: dbt_loaded_at
+
     tables:
       - name: game_route_order
         description: Order of areas unlocked in the game
