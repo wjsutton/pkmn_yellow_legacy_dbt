@@ -16,7 +16,7 @@ WITH player_pokemon_with_moves AS (
         'Player_' || pa.pokemon || '_1' AS pkmn_id
     FROM {{ ref('int_pokemon_availability') }} AS pa
     INNER JOIN
-        {{ ref('stg_move_sources_unified') }} AS ms
+        {{ ref('int_move_sources_unified') }} AS ms
         ON pa.pokemon = ms.pokemon
     WHERE (
         (ms.pkmn_level <= pa.level_cap AND ms.is_level_up_move = 1)
@@ -93,7 +93,7 @@ all_pokemon_with_stats AS (
         COALESCE(t.move_accuracy, s.acc) AS move_acc
     FROM player_and_trainer_pokemon_moves AS t
     INNER JOIN {{ ref('stg_pkmn_stats') }} AS ps ON t.pokemon = ps.pokemon
-    INNER JOIN {{ ref('stg_pkmn_stats_calculated') }} AS psc
+    INNER JOIN {{ ref('int_pkmn_stats_calculated') }} AS psc
         ON ps.pokemon = psc.pokemon AND t.pkmn_level = psc.pkmn_level
     LEFT JOIN {{ ref('stg_moves_stats') }} AS s ON t.move = s.move
     LEFT JOIN

@@ -11,18 +11,14 @@ WITH area_order AS (
 base_catchable_pokemon AS (
     SELECT 
         EA.pokemon,
-        EA.pkmn_level,
         L.level_cap,
-        EA.map,
-        EA.area,
-        R.game_order,
-        R.next_gym,
-        EA.pokemon as initial_pokemon,
-        'Wild Encounter' as availability_source,
+        -- EA.map,
+        -- EA.area,
+        -- R.next_gym,
         CASE 
             WHEN R.game_order >= EAO.game_order THEN R.game_order 
             ELSE EAO.game_order
-        END as earliest_route
+        END as game_order
     FROM {{ ref('stg_pkmn_encounter_areas') }} as EA
     INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EA.map
     INNER JOIN area_order as EAO on EA.area = EAO.encounter_area
@@ -32,37 +28,30 @@ base_catchable_pokemon AS (
 -- Evolved forms available from catchable pokemon using new expanded evolutions table
 catchable_evolutions AS (
     SELECT 
-        BCP.initial_pokemon,
-        EE.current_form as pokemon,
-        BCP.pkmn_level,
+        -- BCP.pokemon,
+        EE.evolution_name as pokemon,
+        -- BCP.pkmn_level,
         BCP.level_cap,
-        BCP.map,
-        CASE 
-            WHEN EE.evolution_type = 'Stone' THEN 'Stone Evolution'
-            WHEN EE.evolution_type = 'Level' THEN 'Evolution'
-            ELSE 'Evolution'
-        END as area,
-        BCP.game_order,
-        BCP.next_gym,
-        CASE 
-            WHEN EE.evolution_type = 'Stone' THEN EE.availability_description
-            WHEN EE.evolution_type = 'Level' THEN 'Level Evolution'
-            ELSE 'Evolution Available'
-        END as availability_source,
-        -- For stone evolutions, use the stone availability route
-        -- For level evolutions, use the base pokemon's earliest route
+        -- BCP.map,
+        -- CASE 
+        --     WHEN EE.evolution_type = 'Stone' THEN 'Stone Evolution'
+        --     WHEN EE.evolution_type = 'Level' THEN 'Evolution'
+        --     ELSE 'Evolution'
+        -- END as area,
+        -- BCP.game_order,
+        -- BCP.next_gym,
         CASE 
             WHEN EE.evolution_type = 'Stone' AND EE.route_order IS NOT NULL 
-                THEN GREATEST(BCP.earliest_route, EE.route_order)
-            ELSE BCP.earliest_route
-        END as earliest_route
+                THEN GREATEST(BCP.game_order, EE.route_order)
+            ELSE BCP.game_order
+        END as game_order
     FROM base_catchable_pokemon BCP
-    INNER JOIN {{ ref('int_pokemon_evolutions_expanded') }} EE 
-        ON BCP.pokemon = EE.base_pokemon
-    WHERE EE.evolution_stage > 0  -- Only evolved forms
+    INNER JOIN {{ ref('int_pkmn_evolutions_all') }} EE 
+        ON BCP.pokemon = EE.pokemon
+    WHERE EE.evolution_stage > 0 
         AND (
             -- Level evolutions available when pokemon can reach required level
-            (EE.evolution_type = 'Level' AND EE.evolution_level_required <= BCP.level_cap)
+            (EE.evolution_type = 'Level' AND EE.evolution_level <= BCP.level_cap)
             OR 
             -- Stone evolutions available when stone route is accessible
             (EE.evolution_type = 'Stone' AND EE.route_order <= BCP.game_order)
@@ -74,14 +63,13 @@ all_catchable_sources AS (
     -- Base wild encounters
     SELECT
         pokemon,
-        pkmn_level,
+        -- pkmn_level,
         level_cap,
-        map,
-        area,
-        earliest_route,
-        next_gym,
-        initial_pokemon,
-        availability_source
+        -- map,
+        -- area,
+        game_order
+        -- next_gym,
+        -- initial_pokemon
     FROM base_catchable_pokemon
     
     UNION ALL
@@ -89,16 +77,80 @@ all_catchable_sources AS (
     -- All evolutions from catchable pokemon
     SELECT
         pokemon,
-        NULL as pkmn_level, -- Evolutions don't have specific encounter levels
+        -- NULL as pkmn_level,
         level_cap,
-        map,
-        area,
-        earliest_route,
-        next_gym,
-        initial_pokemon,
-        availability_source
+        -- map,
+        -- area,
+        game_order
+        -- next_gym,
+        -- initial_pokemon
     FROM catchable_evolutions
-),
+), 
+
+-- SELECT * FROM base_catchable_pokemon
+-- ORDER BY initial_pokemon, game_order
+-- , available_from AS (
+-- SELECT 
+--     EA.pokemon,
+--     MIN(R.game_order) as earliest_game_stage
+
+-- FROM {{ ref('stg_game_route_order') }} as R 
+-- INNER JOIN {{ ref('stg_pkmn_encounter_areas') }} as EA on R.map = EA.map
+-- GROUP BY EA.pokemon
+-- )
+-- Need to account for non grass catches 
+-- SELECT 
+-- A.pokemon,
+-- R.game_order
+-- FROM available_from as A 
+-- INNER JOIN {{ ref('stg_game_route_order') }} as R on R.game_order >= A.earliest_game_stage
+-- WHERE A.pokemon = 'Tentacool'
+
+-- Resolve avilable from cte
+
+available_from AS (
+SELECT 
+    pokemon,
+    MAX(level_cap) as level_cap,
+    MIN(game_order) as earliest_game_stage
+
+FROM all_catchable_sources
+GROUP BY pokemon
+)
+-- Muk should be available from game_order 23 onwards, thin available from needs to be sooner
+
+SELECT 
+A.pokemon,
+L.level_cap,
+R.game_order
+FROM available_from as A
+INNER JOIN {{ ref('stg_game_route_order') }} as R on R.game_order >= A.earliest_game_stage
+INNER JOIN {{ ref('int_game_progression') }} as L on R.next_gym = L.game_stage
+WHERE A.pokemon IN ('Grimer','Muk')
+ORDER BY R.game_order, A.pokemon
+
+-- SELECT 
+--         EA.pokemon,
+--         EA.pkmn_level,
+--         L.level_cap,
+--         EA.map,
+--         EA.area,
+--         EAO.game_order,
+--         R.game_order,
+--         R.next_gym,
+--         EA.pokemon as initial_pokemon,
+--         CASE 
+--             WHEN R.game_order >= EAO.game_order THEN R.game_order 
+--             ELSE EAO.game_order
+--         END as earliest_route
+--     FROM {{ ref('stg_pkmn_encounter_areas') }} as EA
+--     INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EA.map
+--     INNER JOIN area_order as EAO on EA.area = EAO.encounter_area
+--     INNER JOIN {{ ref('int_game_progression') }} as L on R.next_gym = L.game_stage
+--     WHERE EA.pokemon = 'Tentacool'
+
+/*
+,
 
 -- Find first catch opportunity for each pokemon (unchanged logic)
 first_catch_opportunity AS (
@@ -223,3 +275,4 @@ SELECT DISTINCT
         ELSE 0
     END as evolution_stage
 FROM pokemon_availability
+*/

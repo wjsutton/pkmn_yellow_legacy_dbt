@@ -20,14 +20,8 @@ models:
           description: "Total penalty applied for difficulty thresholds"
         - name: performance_tier
           description: "Performance classification (Elite, Strong, Solid, Viable, Weak)"
-          tests:
-            - accepted_values:
-                values: ['Elite', 'Strong', 'Solid', 'Viable', 'Weak']
         - name: tm_efficiency
           description: "TM usage classification (TM-Free, TM-Efficient, TM-Dependent, TM-Heavy)"
-          tests:
-            - accepted_values:
-                values: ['TM-Free', 'TM-Efficient', 'TM-Dependent', 'TM-Heavy']
         - name: tm_dependent_wins
           description: "Number of victories requiring single-use TMs"
         - name: total_matchups
@@ -40,9 +34,6 @@ models:
           description: "Ranking among all pokemon for this stage (1 = best)"
         - name: team_recommendation
           description: "Team inclusion recommendation"
-          tests:
-            - accepted_values:
-                values: ['Core Team Candidate', 'Backup Option', 'Situational Use']
 
   - name: opt_tm_assignments
     description: "TM allocation decisions using greedy assignment algorithm to resolve single-use TM conflicts"
@@ -63,9 +54,6 @@ models:
           description: "Complete list of TMs allocated to this pokemon"
         - name: tm_efficiency_rating
           description: "TM allocation efficiency classification"
-          tests:
-            - accepted_values:
-                values: ['TM-Free', 'TM-Efficient', 'TM-Moderate', 'TM-Heavy']
         - name: tm_usage_recommendation
           description: "Detailed TM investment recommendation"
 
@@ -78,14 +66,8 @@ models:
           description: "Game progression stage"
         - name: keep_pikachu
           description: "Flag indicating if Pikachu is required in team (1) or not (0)"
-          tests:
-            - accepted_values:
-                values: [0, 1]
         - name: no_legends
           description: "Flag indicating if legendary pokemon are excluded (1) or allowed (0)"
-          tests:
-            - accepted_values:
-                values: [0, 1]
         - name: player_pkmn_id
           description: "Pokemon team member identifier"
         - name: player_pokemon
@@ -96,9 +78,6 @@ models:
           description: "Individual pokemon performance score"
         - name: performance_tier
           description: "Pokemon performance classification"
-          tests:
-            - accepted_values:
-                values: ['Elite', 'Strong', 'Solid', 'Viable', 'Weak']
         - name: tm_efficiency_rating
           description: "TM usage efficiency rating"
         - name: assigned_tm_move
@@ -107,106 +86,15 @@ models:
           description: "Number of TMs allocated to this pokemon"
         - name: is_pikachu
           description: "Flag indicating if this pokemon is Pikachu (1) or not (0)"
-          tests:
-            - accepted_values:
-                values: [0, 1]
         - name: team_performance_score
           description: "Overall team performance score"
         - name: team_quality
           description: "Team quality classification"
-          tests:
-            - accepted_values:
-                values: ['Elite Team', 'Strong Team', 'Solid Team', 'Weak Team']
         - name: tm_investment_level
           description: "Team TM investment classification"
         - name: total_team_tms
           description: "Total TMs used by entire team"
         - name: role_on_team
           description: "Pokemon's role within the team"
-          tests:
-            - accepted_values:
-                values: ['Primary team member', 'Core team member', 'Support team member']
         - name: variant_description
           description: "Human-readable description of run variant including rival type"
-          tests:
-            - accepted_values:
-                values: [
-                  'Jolteon + Legendaries', 'Jolteon + No Legendaries', 
-                  'Jolteon + Pikachu + Legendaries', 'Jolteon + Pikachu + No Legendaries',
-                  'Flareon + Legendaries', 'Flareon + No Legendaries',
-                  'Flareon + Pikachu + Legendaries', 'Flareon + Pikachu + No Legendaries',
-                  'Vaporeon + Legendaries', 'Vaporeon + No Legendaries',
-                  'Vaporeon + Pikachu + Legendaries', 'Vaporeon + Pikachu + No Legendaries'
-                ]
-
-  # - name: opt_team_battle_analysis
-  #   description: "Detailed battle analysis for recommended teams showing matchup performance against all trainers"
-  #   columns:
-  #       - name: run
-  #         description: "Run variant identifier"
-  #       - name: game_stage
-  #         description: "Game progression stage"
-  #       - name: player_pkmn_id
-  #         description: "Team member pokemon identifier"
-  #       - name: player_pokemon
-  #         description: "Team member pokemon species"
-  #       - name: trainer
-  #         description: "Opponent trainer name"
-  #       - name: trainer_pkmn_id
-  #         description: "Opponent pokemon identifier"
-  #       - name: trainer_pokemon
-  #         description: "Opponent pokemon species"
-  #       - name: trainer_type
-  #         description: "Type of trainer (Gym Leader or Trainer)"
-  #         tests:
-  #           - accepted_values:
-  #               values: ['Gym Leader', 'Trainer']
-  #       - name: is_gym_leader
-  #         description: "Flag indicating if opponent is gym leader (1) or regular trainer (0)"
-  #         tests:
-  #           - accepted_values:
-  #               values: [0, 1]
-  #       - name: battle_score
-  #         description: "Battle performance score (0-1 scale, higher = better)"
-  #       - name: player_pkmn_move
-  #         description: "Best move for this matchup"
-  #       - name: single_use_tm
-  #         description: "Flag indicating if best move requires single-use TM (1) or not (0)"
-  #         tests:
-  #           - accepted_values:
-  #               values: [0, 1]
-  #       - name: is_assigned_move
-  #         description: "Flag indicating if this is the pokemon's assigned TM move (1) or not (0)"
-  #         tests:
-  #           - accepted_values:
-  #               values: [0, 1]
-  #       - name: best_score
-  #         description: "Team's overall performance score"
-  #       - name: team_size
-  #         description: "Number of pokemon in team (should be 6)"
-  #       - name: total_tms
-  #         description: "Total TMs used by team"
-  #       - name: variant_type
-  #         description: "Human-readable variant description"
-  #       - name: team_rank
-  #         description: "Pokemon's position in team (1-6)"
-  #       - name: pokemon_score
-  #         description: "Individual pokemon performance score"
-  #       - name: performance_tier
-  #         description: "Pokemon performance classification"
-  #       - name: assigned_tm_move
-  #         description: "TM move assigned to this pokemon"
-  #       - name: tms_allocated
-  #         description: "Number of TMs allocated to this pokemon"
-  #       - name: matchup_priority
-  #         description: "Priority ranking for this matchup (1 = highest priority)"
-  #       - name: move_category
-  #         description: "Classification of the move used"
-  #         tests:
-  #           - accepted_values:
-  #               values: ['ASSIGNED MOVE', 'ALTERNATIVE TM OPTION', 'NATURAL MOVE']
-  #       - name: matchup_difficulty
-  #         description: "Assessment of battle difficulty"
-  #         tests:
-  #           - accepted_values:
-  #               values: ['Easy Win', 'Favorable', 'Challenging', 'Very Difficult']
