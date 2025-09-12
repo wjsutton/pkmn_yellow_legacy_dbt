@@ -144,6 +144,7 @@ SELECT
     -- Additional route/run information from combinations
     -- trc.run
 FROM trainer_roster as tr
+ORDER BY game_order
 -- Optional: could add run combinations logic here if needed
 -- LEFT JOIN trainer_run_combinations as trc 
 --     ON tr.trainer = trc.trainer 
