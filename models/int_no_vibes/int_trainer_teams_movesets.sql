@@ -78,17 +78,17 @@ SELECT
     tr.game_stage,
     tr.game_order,
 
-    CASE
-        WHEN tr.trainer LIKE 'Rival_1' THEN NULL
-        WHEN tr.trainer LIKE 'Rival_2' THEN NULL
-        WHEN tr.trainer LIKE 'Rival_3' THEN NULL
-        WHEN tr.trainer LIKE 'Rival_4' THEN NULL
-        WHEN tr.trainer LIKE 'Rival_%_%' 
-        THEN REGEXP_SUBSTR(tr.trainer, '[^_]+$', 1, 1)
-        WHEN tr.trainer LIKE 'Champion_%' 
-        THEN REGEXP_SUBSTR(tr.trainer, '[^_]+$', 1, 1)
-        ELSE NULL
-    END as rival_variant,
+    -- CASE
+    --     WHEN tr.trainer LIKE 'Rival_1' THEN NULL
+    --     WHEN tr.trainer LIKE 'Rival_2' THEN NULL
+    --     WHEN tr.trainer LIKE 'Rival_3' THEN NULL
+    --     WHEN tr.trainer LIKE 'Rival_4' THEN NULL
+    --     WHEN tr.trainer LIKE 'Rival_%_%' 
+    --     THEN REGEXP_SUBSTR(tr.trainer, '[^_]+$', 1, 1)
+    --     WHEN tr.trainer LIKE 'Champion_%' 
+    --     THEN REGEXP_SUBSTR(tr.trainer, '[^_]+$', 1, 1)
+    --     ELSE NULL
+    -- END as rival_variant,
     
     -- Pokemon details
     tr.pkmn_id,
@@ -96,7 +96,18 @@ SELECT
     tr.pokemon,
     tr.pkmn_level,
     
-    tr.move
-
+    tr.move,
+    S.type as move_type,
+    S.power as move_power,
+    S.acc as move_accuracy,
+    S.pp as move_pp,
+    S.hits as move_hits,
+    S.hits_min as move_hits_min,
+    S.hits_max as move_hits_max,
+    S.critical_hit_ratio,
+    PS.stat_used as move_stat_used
 FROM trainer_roster as tr
+INNER JOIN {{ ref('stg_moves_stats') }} S ON tr.move = S.move
+INNER JOIN {{ ref('stg_moves_phys_spec') }} PS ON PS.type = S.type
+WHERE move_power <> 'N/A'  
 ORDER BY game_order
