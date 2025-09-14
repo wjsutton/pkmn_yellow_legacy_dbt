@@ -200,7 +200,7 @@ models:
           description: "Evolved pokemon species name (null for final evolution forms)"
 
   - name: stg_pkmn_stats
-    description: "Base stats for all pokemon species including HP, Attack, Defense, Special, Speed, and typing"
+    description: "Base stats for all pokemon species including HP, Attack, Defence, Special, Speed, and typing"
     columns:
         - name: pokedex
           description: "Pokedex number (unique identifier for each pokemon species)"
@@ -217,12 +217,12 @@ models:
           description: "Base Attack stat for physical move damage"
           tests:
             - not_null
-        - name: defense
-          description: "Base Defense stat for physical damage reduction"
+        - name: defence
+          description: "Base Defence stat for physical damage reduction"
           tests:
             - not_null
         - name: special
-          description: "Base Special stat for special attack and defense in Generation 1"
+          description: "Base Special stat for special attack and defence in Generation 1"
           tests:
             - not_null
         - name: speed
