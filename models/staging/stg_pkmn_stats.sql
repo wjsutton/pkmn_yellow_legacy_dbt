@@ -3,7 +3,7 @@ SELECT
     pokemon,
     hp,
     attack,
-    defense,
+    defense as defence,
     special,
     speed,
     total,

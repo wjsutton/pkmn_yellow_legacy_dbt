@@ -158,4 +158,4 @@ SELECT
     earliest_route,
     route_order
 FROM complete_evolution_chains as E
-INNER JOIN {{ ref('pkmn_stats') }} as PS on E.pokemon = PS.pokemon
+INNER JOIN {{ ref('stg_pkmn_stats') }} as PS on E.pokemon = PS.pokemon

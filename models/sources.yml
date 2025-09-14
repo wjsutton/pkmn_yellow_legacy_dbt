@@ -3,10 +3,11 @@ version: 2
 sources:
   - name: yellow_legacy
     description: Data from the game Pokemon Yellow Legacy
-    schema: dbt_wsutton_pkmn_dev 
+    schema: dbt_wsutton
     config: 
       freshness:
         warn_after: {count: 24, period: hour}
+        error_after: {count: 3, period: day}
         
       loaded_at_field: dbt_loaded_at
 
