@@ -5,6 +5,10 @@
 name: 'pkmn_yellow_legacy_map'
 version: '1.0.0'
 
+# dbt version compatibility - supports both dbt Core 1.8+ and future dbt Fusion (2.x)
+# See FUSION_COMPATIBILITY.md for migration details
+require-dbt-version: ">=1.8.0,<3.0.0"
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'pkmn_yellow_legacy_map'
 

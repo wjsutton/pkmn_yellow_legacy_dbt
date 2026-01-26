@@ -1,3 +1,4 @@
 packages:
+  # dbt_utils 1.3.0+ is Fusion-compatible (requires dbt >=1.3.0,<3.0.0)
   - package: dbt-labs/dbt_utils
     version: 1.3.0
