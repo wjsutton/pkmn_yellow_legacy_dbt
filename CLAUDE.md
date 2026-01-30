@@ -34,6 +34,13 @@ Runs support parameters:
 - `env/Scripts/dbt run --select <model_name>` -- run a specific model
 - `env/Scripts/dbt compile` -- compile SQL without running
 
+## Memory Between Iterations
+
+Each iteration is a fresh context. Your only memory is:
+- Git hisotry (see previous commits)
+- `PROGRESS.md` (learnings from past iterations)
+- `CLAUDE.md` (overall object and success criteria)
+
 ## Architecture (3 folders only)
 - **staging/**: Light cleanup of 15 seed CSV sources. Tests: unique + not_null on primary keys only.
 - **intermediate/**: 5 models answering key questions (no tests):
@@ -45,4 +52,4 @@ Runs support parameters:
 - **optimisation/**: Final team selection (fewer files than intermediate). Tests: max 6 per team, single-use TM uniqueness.
 
 ## Implementation Plan
-See PLAN.md for the full restructuring plan.
+See PROGRESS.md for the full restructuring plan and progress.
