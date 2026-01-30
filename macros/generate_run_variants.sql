@@ -9,20 +9,20 @@
         SELECT 
             'Jolteon' as rival_type,
             -- Jolteon run: exclude rival battles ending in '_Flareon' or '_Vaporeon'
-            ['%_Flareon', '%_Vaporeon']::ARRAY(STRING) as exclude_rival_patterns,
-            []::ARRAY(STRING) as exclude_trainers
+            ['%_Flareon', '%_Vaporeon']::VARCHAR[] as exclude_rival_patterns,
+            []::VARCHAR[] as exclude_trainers
         UNION ALL
         SELECT 
             'Flareon' as rival_type,
             -- Flareon run: exclude rival battles ending in '_Jolteon' or '_Vaporeon' AND exclude trainer 'Rival_2'
-            ['%_Jolteon', '%_Vaporeon']::ARRAY(STRING) as exclude_rival_patterns,
-            ['Rival_2']::ARRAY(STRING) as exclude_trainers
+            ['%_Jolteon', '%_Vaporeon']::VARCHAR[] as exclude_rival_patterns,
+            ['Rival_2']::VARCHAR[] as exclude_trainers
         UNION ALL
         SELECT 
             'Vaporeon' as rival_type,
             -- Vaporeon run: exclude rival battles ending in '_Flareon' or '_Jolteon' AND exclude trainers 'Rival_2' and 'Rival_1'
-            ['%_Flareon', '%_Jolteon']::ARRAY(STRING) as exclude_rival_patterns,
-            ['Rival_2', 'Rival_1']::ARRAY(STRING) as exclude_trainers
+            ['%_Flareon', '%_Jolteon']::VARCHAR[] as exclude_rival_patterns,
+            ['Rival_2', 'Rival_1']::VARCHAR[] as exclude_trainers
     ),
     
     pikachu_variants AS (

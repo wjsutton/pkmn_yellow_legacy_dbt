@@ -71,7 +71,7 @@ regular_trainer_moves AS (
         M.move,
         ROW_NUMBER() OVER (PARTITION BY T.pkmn_id ORDER BY M.move) AS move_number
     FROM all_trainer_data T
-    INNER JOIN {{ ref('int_move_sources_unified') }} M 
+    INNER JOIN {{ ref('int_pokemon_movesets') }} M 
         ON T.pokemon = M.pokemon
     WHERE T.is_gym_leader = 0
         AND M.move_origin = 'level-up'

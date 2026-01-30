@@ -1,15 +1,14 @@
 WITH level_range AS (
-    SELECT seq4() + 1 AS pkmn_level
-    FROM TABLE(generator(rowcount => 100))
+    SELECT UNNEST(generate_series(1, 100)) AS pkmn_level
 ),
 
 pokemon_base_stats AS (
-    SELECT 
+    SELECT
         pokedex,
         pokemon,
         hp,
         attack,
-        defense,
+        defence,
         special,
         speed,
         type1,
@@ -18,7 +17,7 @@ pokemon_base_stats AS (
 ),
 
 pokemon_calculated_stats AS (
-    SELECT 
+    SELECT
         {{ dbt_utils.generate_surrogate_key(['P.pokedex','L.pkmn_level']) }} as id,
         P.pokedex,
         P.pokemon,
@@ -28,20 +27,20 @@ pokemon_calculated_stats AS (
         -- Calculate Generation 1 stats using existing macros
         {{ calculate_hp_rby('P.hp','L.pkmn_level','7') }} as calculated_hp,
         {{ calculate_stat_rby('P.attack','L.pkmn_level','7') }} as calculated_attack,
-        {{ calculate_stat_rby('P.defense','L.pkmn_level','7') }} as calculated_defense,
+        {{ calculate_stat_rby('P.defence','L.pkmn_level','7') }} as calculated_defense,
         {{ calculate_stat_rby('P.special','L.pkmn_level','7') }} as calculated_special,
         {{ calculate_stat_rby('P.speed','L.pkmn_level','7') }} as calculated_speed,
         -- Include base stats for reference
         P.hp as base_hp,
         P.attack as base_attack,
-        P.defense as base_defense,
+        P.defence as base_defense,
         P.special as base_special,
         P.speed as base_speed
     FROM pokemon_base_stats P
     CROSS JOIN level_range L
 )
 
-SELECT 
+SELECT
     id,
     pokedex,
     pokemon,
@@ -58,6 +57,5 @@ SELECT
     base_defense,
     base_special,
     base_speed,
-    -- Add total calculated stats for convenience
     calculated_hp + calculated_attack + calculated_defense + calculated_special + calculated_speed as calculated_total
 FROM pokemon_calculated_stats
