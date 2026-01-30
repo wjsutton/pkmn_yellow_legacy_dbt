@@ -3,8 +3,10 @@ target/
 dbt_packages/
 logs/
 dashboard_assets/*
-env/
+.venv/
 old/
 .env
+.vscode/*
+.github/*
 *.csv
 *.xlsx
