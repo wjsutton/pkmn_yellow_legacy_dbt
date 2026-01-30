@@ -11,6 +11,7 @@ $ITERATION = 1
 while ($ITERATION -le $MAX_ITERATIONS) {
   Write-Host "======================== LOOP $ITERATION ========================"
 
+  # This line streams Claude’s output directly to your console as it runs
   type $PROMPT_FILE | claude -p `
     --dangerously-skip-permissions `
     --model $MODEL
@@ -20,6 +21,6 @@ while ($ITERATION -le $MAX_ITERATIONS) {
   git push -ErrorAction SilentlyContinue
 
   $ITERATION++
-
 }
+
 Write-Host "Done after $MAX_ITERATIONS iterations."
