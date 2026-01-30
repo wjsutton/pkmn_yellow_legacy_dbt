@@ -8,6 +8,11 @@ Runs support parameters:
 - **Use Legendary Pokemon**: yes/no
 - **Rival Type**: Jolteon, Vaporeon, or Flareon (each is a separate run)
 
+## Tasks
+- Use the dbt mcp server to verify the following success criteria
+- For any failures, modify the existing models in the dbt project use the dbt mcp server to support you
+- Iterate untill the success criteria is met
+
 ## Success Criteria
 1. Nidoking should be a potential teammate at Misty's gym (Badge_2)
 2. Lt Surge (Badge_3) should have the fewest positive matchups for the player
