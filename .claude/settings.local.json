@@ -35,7 +35,8 @@
       "Bash(env/Scripts/dbt run --select opt_pokemon_performance_by_stage)",
       "Bash(env/Scripts/dbt run --select opt_recommended_teams)",
       "Bash(env/Scripts/dbt run --select int_trainer_roster)",
-      "Bash(env/Scripts/dbt run --select int_battle_analysis)"
+      "Bash(env/Scripts/dbt run --select int_battle_analysis)",
+      "Bash(findstr:*)"
     ],
     "deny": []
   }
