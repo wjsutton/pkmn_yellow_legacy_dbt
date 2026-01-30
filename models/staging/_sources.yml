@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: yellow_legacy
     description: Data from the game Pokemon Yellow Legacy
-    schema: dbt_wsutton
+    schema: main
     config: 
       freshness:
         warn_after: {count: 24, period: hour}

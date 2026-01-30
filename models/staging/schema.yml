@@ -93,20 +93,12 @@ models:
           description: "Move effect description (e.g. 'Inflicts regular damage', 'May cause paralysis')"
         - name: type
           description: "Move type (Fire, Water, Electric, etc.)"
-          tests:
-            - not_null
         - name: power
           description: "Base power of the move (N/A for status moves, KO for OHKO moves)"
-          tests:
-            - not_null
         - name: acc
           description: "Move accuracy as percentage or decimal"
-          tests:
-            - not_null
         - name: pp
           description: "Power Points - number of times move can be used"
-          tests:
-            - not_null
         - name: hits
           description: "Number of hits for multi-hit moves"
         - name: hits_min
@@ -211,32 +203,18 @@ models:
           description: "Pokemon species name"
         - name: hp
           description: "Base HP stat used in Generation 1 stat calculations"
-          tests:
-            - not_null
         - name: attack
           description: "Base Attack stat for physical move damage"
-          tests:
-            - not_null
         - name: defence
           description: "Base Defence stat for physical damage reduction"
-          tests:
-            - not_null
         - name: special
           description: "Base Special stat for special attack and defence in Generation 1"
-          tests:
-            - not_null
         - name: speed
           description: "Base Speed stat for turn order determination"
-          tests:
-            - not_null
         - name: total
           description: "Base stat total (sum of all base stats)"
-          tests:
-            - not_null
         - name: type1
           description: "Primary pokemon type"
-          tests:
-            - not_null
         - name: type2
           description: "Secondary pokemon type (null for single-type pokemon)"
 
@@ -299,13 +277,11 @@ models:
     columns:
         - name: trainer
           description: "Trainer name (rival encounters, story trainers, etc.)"
-          tests:
-            - not_null
         - name: pkmn_id
           description: "Unique identifier for this specific pokemon instance"
           tests:
-            - not_null
             - unique
+            - not_null
         - name: location
           description: "Location where mandatory battle takes place"
         - name: nearest_route

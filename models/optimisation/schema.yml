@@ -1,11 +1,11 @@
 version: 2
 
 models:
-  - name: opt_pokemon_performance_by_stage
-    description: "Pokemon performance scores and rankings by game stage with difficulty penalties and TM efficiency analysis"
+  - name: opt_team_performance
+    description: "Pokemon performance scores by game stage with difficulty-weighted battle contributions, TM assignments via greedy algorithm, and team ranking."
     columns:
         - name: game_stage
-          description: "Game progression stage (e.g., Badge_1, Badge_2)"
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
         - name: player_pkmn_id
           description: "Unique identifier for player pokemon instance"
         - name: player_pokemon
@@ -24,26 +24,18 @@ models:
           description: "TM usage classification (TM-Free, TM-Efficient, TM-Dependent, TM-Heavy)"
         - name: tm_dependent_wins
           description: "Number of victories requiring single-use TMs"
+        - name: battles_as_best_option
+          description: "Number of battles where this pokemon is the best team option"
         - name: total_matchups
           description: "Total number of trainer battles analyzed"
-        - name: gym_leader_matchups
-          description: "Number of gym leader battles"
+        - name: gym_leader_best_matchups
+          description: "Number of gym leader battles where this pokemon is best"
         - name: avg_gym_score
           description: "Average battle score against gym leaders"
         - name: stage_rank
           description: "Ranking among all pokemon for this stage (1 = best)"
         - name: team_recommendation
-          description: "Team inclusion recommendation"
-
-  - name: opt_tm_assignments
-    description: "TM allocation decisions using greedy assignment algorithm to resolve single-use TM conflicts"
-    columns:
-        - name: game_stage
-          description: "Game progression stage when TM allocation is relevant"
-        - name: player_pkmn_id
-          description: "Pokemon receiving TM allocation"
-        - name: player_pokemon
-          description: "Pokemon species name"
+          description: "Team inclusion recommendation (Core Team Candidate, Backup Option, Situational Use)"
         - name: assigned_tm_move
           description: "Primary TM move assigned to this pokemon (None if no TMs)"
         - name: tms_allocated
@@ -52,18 +44,20 @@ models:
           description: "Number of TM requests denied due to conflicts"
         - name: allocated_tm_list
           description: "Complete list of TMs allocated to this pokemon"
-        - name: tm_efficiency_rating
+        - name: tm_allocation_efficiency
           description: "TM allocation efficiency classification"
         - name: tm_usage_recommendation
           description: "Detailed TM investment recommendation"
 
   - name: opt_recommended_teams
-    description: "Optimal 6-pokemon teams per game stage with variant support (Standard, NoLedges, Pikachu variants)"
+    description: "Optimal 6-pokemon teams per game stage with 12 run variants (3 rival types x 2 pikachu x 2 legendary)."
     columns:
         - name: run_name
-          description: "Run variant identifier (e.g., Standard_Ledges, NoLedges_keepPikachu)"
+          description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
         - name: game_stage
           description: "Game progression stage"
+        - name: rival_type
+          description: "Rival pokemon type for this run variant (Jolteon, Vaporeon, Flareon)"
         - name: keep_pikachu
           description: "Flag indicating if Pikachu is required in team (1) or not (0)"
         - name: no_legends
