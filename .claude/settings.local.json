@@ -36,7 +36,19 @@
       "Bash(env/Scripts/dbt run --select opt_recommended_teams)",
       "Bash(env/Scripts/dbt run --select int_trainer_roster)",
       "Bash(env/Scripts/dbt run --select int_battle_analysis)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "mcp__dbt__get_column_lineage",
+      "Bash(envScriptspython.exe -c \"import duckdb; conn = duckdb.connect\\(''data/pkmn_yellow_legacy.db'', read_only=True\\); tables = conn.execute\\(\"\"SELECT table_name FROM information_schema.tables WHERE table_name LIKE ''%%recommended%%'' OR table_name LIKE ''%%team_performance%%'' OR table_name LIKE ''%%opt%%''\"\"\\).fetchall\\(\\); print\\(''Available tables:'', tables\\); conn.close\\(\\)\")",
+      "Bash(python3:*)",
+      "Bash(.venv/Scripts/python:*)",
+      "Bash(.venv/Scripts/dbt build:*)",
+      "Bash(.venv/Scripts/dbt.exe run:*)",
+      "Bash(.venv/Scripts/dbt.exe debug:*)",
+      "Bash(echo:*)",
+      "Bash(cmd.exe /c \".venv\\\\Scripts\\\\dbt.exe debug\")",
+      "Bash(powershell.exe -Command \"& .venv/Scripts/dbt.exe debug 2>&1\")",
+      "Bash(.venv/Scripts/python.exe -c \"\nimport subprocess, sys\nresult = subprocess.run\\(\n    [r''C:\\\\Users\\\\sutto\\\\Documents\\\\GitHub\\\\pkmn_yellow_legacy_dbt\\\\.venv\\\\Scripts\\\\dbt.exe'', ''debug''],\n    capture_output=True, text=True, cwd=r''C:\\\\Users\\\\sutto\\\\Documents\\\\GitHub\\\\pkmn_yellow_legacy_dbt''\n\\)\nprint\\(''STDOUT:'', result.stdout\\)\nprint\\(''STDERR:'', result.stderr\\)\nprint\\(''RC:'', result.returncode\\)\n\")",
+      "Bash(.venv/Scripts/python.exe:*)"
     ],
     "deny": []
   }
