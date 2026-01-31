@@ -8,13 +8,17 @@ clean-targets:
 
 seeds:
   +delimiter: ','
+  +schema: raw
   +post-hook: "{{ add_dbt_loaded_at_col() }}"
 
 models:
   pkmn_yellow_legacy_map:
     staging:
       +materialized: table
+      +schema: staging
     intermediate:
       +materialized: table
+      +schema: intermediate
     optimisation:
       +materialized: table
+      +schema: optimisation

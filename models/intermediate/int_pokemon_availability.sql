@@ -93,23 +93,22 @@ base_evolutions AS (
     INNER JOIN {{ ref('stg_pkmn_stats') }} PS2 ON E.evolution_name = PS2.pokemon
 ),
 
+stone_locations_ranked AS (
+    SELECT
+        stone_type as stone_name,
+        map as earliest_route,
+        game_order as route_order,
+        ROW_NUMBER() OVER (PARTITION BY stone_type ORDER BY game_order) as rn
+    FROM {{ ref('stg_item_stone_locations') }}
+),
+
 stone_evolution_routes AS (
     SELECT
         stone_name,
         earliest_route,
-        R.game_order as route_order
-    FROM (
-        SELECT 'Fire' as stone_name, 'Route7' as earliest_route
-        UNION ALL
-        SELECT 'Water', 'Route7'
-        UNION ALL
-        SELECT 'Thunder', 'Route7'
-        UNION ALL
-        SELECT 'Leaf', 'Route7'
-        UNION ALL
-        SELECT 'Moon', 'MtMoon1F'
-    ) stone_locations
-    INNER JOIN {{ ref('stg_game_route_order') }} R ON R.map = stone_locations.earliest_route
+        route_order
+    FROM stone_locations_ranked
+    WHERE rn = 1
 ),
 
 stone_evolutions_with_routes AS (
@@ -274,8 +273,7 @@ pokemon_evolutions_expanded AS (
         CASE
             WHEN evolution_stage = 0 THEN 'Always Available'
             WHEN evolution_type = 'Level' THEN 'Available when level reached'
-            WHEN evolution_type = 'Stone' AND route_order <= 3 THEN 'Available from Mt. Moon'
-            WHEN evolution_type = 'Stone' AND route_order <= 7 THEN 'Available from Celadon City'
+            WHEN evolution_type = 'Stone' THEN 'Available from ' || COALESCE(evo_earliest_route, 'Unknown')
             ELSE 'Availability depends on route progression'
         END as availability_description
     FROM complete_evolution_chains

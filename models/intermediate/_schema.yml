@@ -1,0 +1,182 @@
+version: 2
+
+models:
+  - name: int_pokemon_availability
+    description: "What pokemon are available at each game stage? Covers catchable pokemon, trades, evolution by level/stone, with game progression level caps."
+    columns:
+        - name: id
+          description: "Unique identifier for each pokemon availability record"
+        - name: availability_type
+          description: "How pokemon is obtained (Catchable, Team Option)"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: initial_pokemon
+          description: "Base pokemon that this pokemon evolves from (same as pokemon for base forms)"
+        - name: encounter_level
+          description: "Level at which pokemon is encountered in wild (null for evolutions)"
+        - name: level_cap
+          description: "Maximum level allowed at this game stage"
+        - name: map
+          description: "Map/location where pokemon is available"
+        - name: area
+          description: "Specific area within the map (Grass, Water, Cave, Evolution, Stone Evolution)"
+        - name: earliest_route
+          description: "Numeric order of first route where pokemon becomes available"
+        - name: game_stage
+          description: "Game stage when pokemon becomes available (Badge_1, Badge_2, etc.)"
+        - name: source
+          description: "Detailed source of availability (Wild Encounter, Level Evolution, Available from <map> for stone evolutions, Base Pokemon, etc.)"
+        - name: pokemon_category
+          description: "Categorization of pokemon availability (Wild Pokemon, Evolved Form, etc.)"
+        - name: evolution_stage
+          description: "Evolution stage (0 = base, 1 = first evolution, 2 = second evolution)"
+
+  - name: int_pokemon_movesets
+    description: "What moveset could each pokemon have? Consolidates level-up moves, repurchasable TM moves, and single-use TM moves with full stats."
+    columns:
+        - name: id
+          description: "Unique identifier for each pokemon-move-source combination"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: move
+          description: "Move name"
+        - name: pkmn_level
+          description: "Level required for level-up moves (null for TM/HM moves)"
+        - name: move_origin
+          description: "Source of move availability (level-up, repurchasable-tm, single-use-tm)"
+        - name: route_order
+          description: "Route order when TM/HM becomes available (null for level-up moves)"
+        - name: game_stage
+          description: "Game stage when TM/HM becomes available (null for level-up moves)"
+        - name: location_details
+          description: "Descriptive text about TM/HM availability location"
+        - name: move_type
+          description: "Move type (Fire, Water, Electric, etc.)"
+        - name: move_power
+          description: "Base power of the move"
+        - name: move_accuracy
+          description: "Move accuracy"
+        - name: move_pp
+          description: "Power Points for the move"
+        - name: move_hits
+          description: "Number of hits for multi-hit moves"
+        - name: move_hits_min
+          description: "Minimum hits for variable multi-hit moves"
+        - name: move_hits_max
+          description: "Maximum hits for variable multi-hit moves"
+        - name: critical_hit_ratio
+          description: "Critical hit ratio for the move"
+        - name: move_stat_used
+          description: "Which stat the move uses (Attack or Special)"
+
+  - name: int_opponent_pokemon
+    description: "What opponent pokemon will we face? Complete trainer rosters with movesets per game stage."
+    columns:
+        - name: trainer
+          description: "Name of the trainer"
+        - name: is_gym_leader
+          description: "Flag indicating if trainer is a gym leader (1) or regular trainer (0)"
+        - name: game_stage
+          description: "Game stage when this trainer is encountered"
+        - name: game_order
+          description: "Numeric game progression order"
+        - name: notes
+          description: "Additional context about trainer encounter"
+        - name: pkmn_id
+          description: "Unique identifier for trainer pokemon instance"
+        - name: pokedex
+          description: "Pokedex number"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: pkmn_level
+          description: "Pokemon level in battle"
+        - name: move_1
+          description: "Primary move"
+        - name: move_2
+          description: "Secondary move"
+        - name: move_3
+          description: "Third move"
+        - name: move_4
+          description: "Fourth move"
+
+  - name: int_pokemon_stats
+    description: "What stats do all pokemon have at any level? Pre-calculated Generation 1 stats for all pokemon at levels 1-100."
+    columns:
+        - name: id
+          description: "Unique identifier generated from pokemon and level"
+        - name: pokedex
+          description: "Pokedex number"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: pkmn_level
+          description: "Pokemon level (1-100)"
+        - name: type1
+          description: "Primary pokemon type"
+        - name: type2
+          description: "Secondary pokemon type (null for single-type)"
+        - name: calculated_hp
+          description: "HP stat calculated using Generation 1 formula"
+        - name: calculated_attack
+          description: "Attack stat calculated using Generation 1 formula"
+        - name: calculated_defence
+          description: "Defence stat calculated using Generation 1 formula"
+        - name: calculated_special
+          description: "Special stat calculated using Generation 1 formula"
+        - name: calculated_speed
+          description: "Speed stat calculated using Generation 1 formula"
+        - name: base_hp
+          description: "Base HP stat from species data"
+        - name: base_attack
+          description: "Base Attack stat from species data"
+        - name: base_defence
+          description: "Base Defence stat from species data"
+        - name: base_special
+          description: "Base Special stat from species data"
+        - name: base_speed
+          description: "Base Speed stat from species data"
+        - name: calculated_total
+          description: "Sum of all calculated stats"
+
+  - name: int_battle_outcomes
+    description: "Who wins in a fight? Battle outcome calculations using Gen 1 damage formulas for all player vs trainer matchups."
+    columns:
+        - name: matchup_id
+          description: "Unique identifier for each battle matchup"
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: player
+          description: "Always 'Player' - identifies the player side"
+        - name: trainer
+          description: "Name of the opposing trainer"
+        - name: is_gym_leader
+          description: "Flag indicating if the trainer is a gym leader (1) or regular trainer (0)"
+        - name: player_pkmn_id
+          description: "Unique identifier for player pokemon instance"
+        - name: player_pokemon
+          description: "Player pokemon species name"
+        - name: player_pkmn_level
+          description: "Player pokemon level (based on level cap)"
+        - name: player_pkmn_move
+          description: "Best move available to player pokemon for this matchup"
+        - name: player_pkmn_move_origin
+          description: "Source of the move (level-up, repurchasable-tm, single-use-tm)"
+        - name: player_move_single_use_tm
+          description: "Flag indicating if player move requires single-use TM (1) or not (0)"
+        - name: trainer_pkmn_id
+          description: "Unique identifier for trainer pokemon instance"
+        - name: trainer_pokemon
+          description: "Trainer pokemon species name"
+        - name: trainer_pkmn_level
+          description: "Trainer pokemon level"
+        - name: trainer_pkmn_move
+          description: "Best move available to trainer pokemon"
+        - name: trainer_speed
+          description: "Trainer pokemon calculated speed stat"
+        - name: player_speed
+          description: "Player pokemon calculated speed stat"
+        - name: player_attempts_to_ko
+          description: "Number of moves required for player to KO trainer pokemon"
+        - name: trainer_attempts_to_ko
+          description: "Number of moves required for trainer to KO player pokemon"
+        - name: battle_score
+          description: "Calculated battle outcome score (0-1 scale, 1 = complete player advantage)"

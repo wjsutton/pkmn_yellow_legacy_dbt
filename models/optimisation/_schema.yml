@@ -1,0 +1,98 @@
+version: 2
+
+models:
+  - name: opt_team_performance
+    description: "Pokemon performance scores by game stage with difficulty-weighted battle contributions, TM assignments via greedy algorithm, and team ranking."
+    columns:
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: player_pkmn_id
+          description: "Unique identifier for player pokemon instance"
+        - name: player_pokemon
+          description: "Pokemon species name"
+        - name: team_selection_score
+          description: "Overall score for team selection consideration"
+        - name: route_score
+          description: "Performance score for this game stage route"
+        - name: base_score
+          description: "Sum of all battle scores before penalties"
+        - name: total_penalty
+          description: "Total penalty applied for difficulty thresholds"
+        - name: performance_tier
+          description: "Performance classification (Elite, Strong, Solid, Viable, Weak)"
+        - name: tm_efficiency
+          description: "TM usage classification (TM-Free, TM-Efficient, TM-Dependent, TM-Heavy)"
+        - name: tm_dependent_wins
+          description: "Number of victories requiring single-use TMs"
+        - name: battles_as_best_option
+          description: "Number of battles where this pokemon is the best team option"
+        - name: total_matchups
+          description: "Total number of trainer battles analysed"
+        - name: gym_leader_best_matchups
+          description: "Number of gym leader battles where this pokemon is best"
+        - name: avg_gym_score
+          description: "Average battle score against gym leaders"
+        - name: stage_rank
+          description: "Ranking among all pokemon for this stage (1 = best)"
+        - name: team_recommendation
+          description: "Team inclusion recommendation (Core Team Candidate, Backup Option, Situational Use)"
+        - name: assigned_tm_move
+          description: "Primary TM move assigned to this pokemon (None if no TMs)"
+        - name: tms_allocated
+          description: "Total number of TMs allocated to this pokemon"
+        - name: tms_denied
+          description: "Number of TM requests denied due to conflicts"
+        - name: allocated_tm_list
+          description: "Complete list of TMs allocated to this pokemon"
+        - name: tm_allocation_efficiency
+          description: "TM allocation efficiency classification"
+        - name: tm_usage_recommendation
+          description: "Detailed TM investment recommendation"
+
+  - name: opt_recommended_teams
+    description: "Optimal 6-pokemon teams per game stage with 12 run variants (3 rival types x 2 pikachu x 2 legendary)."
+    columns:
+        - name: run_name
+          description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
+        - name: game_stage
+          description: "Game progression stage"
+        - name: rival_type
+          description: "Rival pokemon type for this run variant (Jolteon, Vaporeon, Flareon)"
+        - name: keep_pikachu
+          description: "Flag indicating if Pikachu is required in team (1) or not (0)"
+        - name: no_legends
+          description: "Flag indicating if legendary pokemon are excluded (1) or allowed (0)"
+        - name: exclude_rival_patterns
+          description: "JSON array of SQL LIKE patterns for rival trainers to exclude in this variant"
+        - name: exclude_trainers
+          description: "JSON array of trainer names to exclude in this variant (e.g. Rival_2 for early rival fight)"
+        - name: player_pkmn_id
+          description: "Pokemon team member identifier"
+        - name: player_pokemon
+          description: "Pokemon species name"
+        - name: team_rank
+          description: "Position in team (1-6, 1 = primary member)"
+        - name: pokemon_score
+          description: "Individual pokemon performance score"
+        - name: performance_tier
+          description: "Pokemon performance classification"
+        - name: tm_efficiency_rating
+          description: "TM usage efficiency rating"
+        - name: assigned_tm_move
+          description: "Primary TM move assigned to this pokemon"
+        - name: tms_allocated
+          description: "Number of TMs allocated to this pokemon"
+        - name: is_pikachu
+          description: "Flag indicating if this pokemon is Pikachu (1) or not (0)"
+        - name: team_performance_score
+          description: "Overall team performance score"
+        - name: team_quality
+          description: "Team quality classification"
+        - name: tm_investment_level
+          description: "Team TM investment classification"
+        - name: total_team_tms
+          description: "Total TMs used by entire team"
+        - name: role_on_team
+          description: "Pokemon's role within the team"
+        - name: variant_description
+          description: "Human-readable description of run variant including rival type"

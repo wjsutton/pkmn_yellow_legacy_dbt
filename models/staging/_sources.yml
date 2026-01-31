@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: yellow_legacy
     description: Data from the game Pokemon Yellow Legacy
-    schema: main
+    schema: raw
     config: 
       freshness:
         warn_after: {count: 24, period: hour}
@@ -46,4 +46,7 @@ sources:
         description: Pokemon teams of legendary training (Craig, Weebo, Smith)
       - name: trainers_mandatory
         description: Pokemon teams of the mandatory trainers
+
+      - name: item_stone_locations
+        description: Evolution stone locations throughout the game (overworld items and shops)
 
