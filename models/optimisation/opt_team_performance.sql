@@ -6,7 +6,7 @@ WITH trainer_battle_difficulty AS (
     SELECT
         BA.game_stage,
         BA.trainer,
-        BA.is_gym_leader,
+        BA.is_mini_boss,
         COUNT(DISTINCT BA.trainer_pkmn_id) as total_pokemon,
         COUNT(DISTINCT BA.player_pkmn_id) as available_counters,
         AVG(BA.battle_score) as avg_battle_score,
@@ -18,7 +18,7 @@ WITH trainer_battle_difficulty AS (
         COUNT(CASE WHEN BA.player_move_single_use_tm = 1 AND BA.battle_score >= 0.6 THEN 1 END) as tm_dependent_solutions,
         COUNT(CASE WHEN BA.player_move_single_use_tm = 0 AND BA.battle_score >= 0.6 THEN 1 END) as natural_solutions
     FROM {{ ref('int_battle_outcomes') }} BA
-    GROUP BY BA.game_stage, BA.trainer, BA.is_gym_leader
+    GROUP BY BA.game_stage, BA.trainer, BA.is_mini_boss
 ),
 
 difficulty_classification AS (
@@ -37,7 +37,7 @@ difficulty_classification AS (
                 (1 - TBD.avg_battle_score) * 4 +
                 CASE WHEN TBD.excellent_counters = 0 THEN 2 ELSE 0 END +
                 CASE WHEN TBD.good_counters <= 2 THEN 1 ELSE 0 END +
-                CASE WHEN TBD.is_gym_leader = 1 THEN 1 ELSE 0 END +
+                CASE WHEN TBD.is_mini_boss = 1 THEN 1 ELSE 0 END +
                 CASE WHEN TBD.tm_dependent_solutions > TBD.natural_solutions THEN 1 ELSE 0 END +
                 CASE WHEN TBD.min_battle_score < 0.2 THEN 1 ELSE 0 END
             ), 1
@@ -54,7 +54,7 @@ battle_matchups AS (
         BA.trainer,
         BA.trainer_pkmn_id,
         BA.trainer_pokemon,
-        BA.is_gym_leader,
+        BA.is_mini_boss,
         BA.battle_score,
         BA.player_pkmn_move,
         BA.player_move_single_use_tm,
@@ -96,24 +96,31 @@ team_contributions AS (
         BTO.battle_score,
         BTO.difficulty_score,
         BTO.difficulty_rating,
-        BTO.is_gym_leader,
+        BTO.is_mini_boss,
         BTO.player_pkmn_move,
         BTO.player_move_single_use_tm,
         BTO.team_rank,
         CASE
-            WHEN BTO.is_gym_leader = 1 THEN BTO.difficulty_score * 3.0
+            WHEN BTO.is_mini_boss = 1 THEN BTO.difficulty_score * 3.0
             WHEN BTO.difficulty_rating IN ('Very Hard', 'Extreme') THEN BTO.difficulty_score * 2.0
             ELSE BTO.difficulty_score
         END as battle_weight,
         CASE
             WHEN BTO.team_rank = 1 THEN BTO.battle_score *
                 CASE
-                    WHEN BTO.is_gym_leader = 1 THEN BTO.difficulty_score * 3.0
+                    WHEN BTO.is_mini_boss = 1 THEN BTO.difficulty_score * 3.0
                     WHEN BTO.difficulty_rating IN ('Very Hard', 'Extreme') THEN BTO.difficulty_score * 2.0
                     ELSE BTO.difficulty_score
                 END
             ELSE 0
-        END as weighted_contribution
+        END as weighted_contribution,
+        -- Baseline score for all pokemon (used to fill remaining team slots)
+        BTO.battle_score *
+            CASE
+                WHEN BTO.is_mini_boss = 1 THEN BTO.difficulty_score * 3.0
+                WHEN BTO.difficulty_rating IN ('Very Hard', 'Extreme') THEN BTO.difficulty_score * 2.0
+                ELSE BTO.difficulty_score
+            END as baseline_contribution
     FROM best_team_options BTO
 ),
 
@@ -123,14 +130,15 @@ stage_scores AS (
         player_pkmn_id,
         player_pokemon,
         SUM(weighted_contribution) as team_contribution_score,
+        SUM(baseline_contribution) as backup_score,
         SUM(battle_score) as base_score,
         0 as total_penalty,
         SUM(weighted_contribution) as route_score,
         COUNT(CASE WHEN team_rank = 1 AND player_move_single_use_tm = 1 THEN 1 END) as tm_dependent_wins,
         COUNT(CASE WHEN team_rank = 1 THEN 1 END) as battles_as_best_option,
         COUNT(*) as total_matchups,
-        COUNT(CASE WHEN is_gym_leader = 1 AND team_rank = 1 THEN 1 END) as gym_leader_best_matchups,
-        AVG(CASE WHEN is_gym_leader = 1 AND team_rank = 1 THEN battle_score END) as avg_gym_score
+        COUNT(CASE WHEN is_mini_boss = 1 AND team_rank = 1 THEN 1 END) as mini_boss_best_matchups,
+        AVG(CASE WHEN is_mini_boss = 1 AND team_rank = 1 THEN battle_score END) as avg_mini_boss_score
     FROM team_contributions
     GROUP BY game_stage, player_pkmn_id, player_pokemon
 ),
@@ -141,19 +149,20 @@ pokemon_stage_performance AS (
         player_pkmn_id,
         player_pokemon,
         route_score,
+        backup_score,
         base_score,
         total_penalty,
         tm_dependent_wins,
         battles_as_best_option,
         total_matchups,
-        gym_leader_best_matchups,
-        avg_gym_score,
+        mini_boss_best_matchups,
+        avg_mini_boss_score,
         team_contribution_score as team_selection_score,
         {{ calculate_performance_tier('team_contribution_score', 'pokemon') }} as performance_tier,
         {{ calculate_tm_efficiency_rating('tm_dependent_wins', 'pokemon') }} as tm_efficiency,
         ROW_NUMBER() OVER(
             PARTITION BY game_stage
-            ORDER BY team_contribution_score DESC, avg_gym_score DESC NULLS LAST
+            ORDER BY team_contribution_score DESC, backup_score DESC, avg_mini_boss_score DESC NULLS LAST
         ) as stage_rank
     FROM stage_scores
 ),
@@ -252,6 +261,7 @@ SELECT
     PSP.player_pokemon,
     PSP.team_selection_score,
     PSP.route_score,
+    PSP.backup_score,
     PSP.base_score,
     PSP.total_penalty,
     PSP.performance_tier,
@@ -259,8 +269,8 @@ SELECT
     PSP.tm_dependent_wins,
     PSP.battles_as_best_option,
     PSP.total_matchups,
-    PSP.gym_leader_best_matchups,
-    PSP.avg_gym_score,
+    PSP.mini_boss_best_matchups,
+    PSP.avg_mini_boss_score,
     PSP.stage_rank,
     CASE
         WHEN PSP.stage_rank <= 6 THEN 'Core Team Candidate'

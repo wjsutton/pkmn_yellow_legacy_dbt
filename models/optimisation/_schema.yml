@@ -28,10 +28,10 @@ models:
           description: "Number of battles where this pokemon is the best team option"
         - name: total_matchups
           description: "Total number of trainer battles analysed"
-        - name: gym_leader_best_matchups
-          description: "Number of gym leader battles where this pokemon is best"
-        - name: avg_gym_score
-          description: "Average battle score against gym leaders"
+        - name: mini_boss_best_matchups
+          description: "Number of mini boss battles where this pokemon is best"
+        - name: avg_mini_boss_score
+          description: "Average battle score against mini bosses"
         - name: stage_rank
           description: "Ranking among all pokemon for this stage (1 = best)"
         - name: team_recommendation

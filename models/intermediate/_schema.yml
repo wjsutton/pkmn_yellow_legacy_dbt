@@ -74,8 +74,8 @@ models:
     columns:
         - name: trainer
           description: "Name of the trainer"
-        - name: is_gym_leader
-          description: "Flag indicating if trainer is a gym leader (1) or regular trainer (0)"
+        - name: is_mini_boss
+          description: "Flag indicating if trainer is a mini boss (1) or regular trainer (0). Mini bosses include gym leaders, rivals, Elite 4, and other boss trainers."
         - name: game_stage
           description: "Game stage when this trainer is encountered"
         - name: game_order
@@ -148,8 +148,8 @@ models:
           description: "Always 'Player' - identifies the player side"
         - name: trainer
           description: "Name of the opposing trainer"
-        - name: is_gym_leader
-          description: "Flag indicating if the trainer is a gym leader (1) or regular trainer (0)"
+        - name: is_mini_boss
+          description: "Flag indicating if the trainer is a mini boss (1) or regular trainer (0). Mini bosses include gym leaders, rivals, Elite 4, and other boss trainers."
         - name: player_pkmn_id
           description: "Unique identifier for player pokemon instance"
         - name: player_pokemon

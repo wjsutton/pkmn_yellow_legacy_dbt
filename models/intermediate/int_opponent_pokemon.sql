@@ -2,7 +2,7 @@ WITH all_trainer_data AS (
     -- Combine all trainer types
     SELECT 
         trainer,
-        0 as is_gym_leader,
+        0 as is_mini_boss,
         pkmn_id,
         nearest_route,
         pokemon,
@@ -15,7 +15,7 @@ WITH all_trainer_data AS (
     
     SELECT 
         trainer,
-        0 as is_gym_leader,
+        0 as is_mini_boss,
         pkmn_id,
         nearest_route,
         pokemon,
@@ -28,7 +28,7 @@ WITH all_trainer_data AS (
     
     SELECT 
         trainer,
-        1 as is_gym_leader,
+        1 as is_mini_boss,
         pkmn_id,
         nearest_route,
         pokemon,
@@ -42,7 +42,7 @@ gym_leader_moves AS (
     -- Use explicit moves from gym leader seed file
     SELECT 
         T.trainer,
-        T.is_gym_leader,
+        T.is_mini_boss,
         T.pkmn_id,
         T.nearest_route,
         T.pokemon,
@@ -54,14 +54,14 @@ gym_leader_moves AS (
     FROM all_trainer_data T
     INNER JOIN {{ ref('stg_trainers_gym_leaders') }} GL 
         ON T.pkmn_id = GL.pkmn_id
-    WHERE T.is_gym_leader = 1
+    WHERE T.is_mini_boss = 1
 ),
 
 regular_trainer_moves AS (
     -- Use level-up moves for non-gym leaders
     SELECT 
         T.trainer,
-        T.is_gym_leader,
+        T.is_mini_boss,
         T.pkmn_id,
         T.nearest_route,
         T.pokemon,
@@ -73,7 +73,7 @@ regular_trainer_moves AS (
     FROM all_trainer_data T
     INNER JOIN {{ ref('int_pokemon_movesets') }} M 
         ON T.pokemon = M.pokemon
-    WHERE T.is_gym_leader = 0
+    WHERE T.is_mini_boss = 0
         AND M.move_origin = 'level-up'
         AND T.pkmn_level >= M.pkmn_level
     QUALIFY ROW_NUMBER() OVER(PARTITION BY T.pkmn_id ORDER BY M.move) <= 4
@@ -89,7 +89,7 @@ all_trainers AS (
 trainer_roster AS (
     SELECT
         T.trainer,
-        T.is_gym_leader,
+        T.is_mini_boss,
         T.game_stage,
         R.game_order, 
         T.notes,
@@ -124,7 +124,7 @@ trainer_run_combinations AS (
 SELECT
     -- Trainer identification
     tr.trainer,
-    tr.is_gym_leader,
+    tr.is_mini_boss,
     tr.game_stage,
     tr.game_order,
     tr.notes,

@@ -90,7 +90,7 @@ Night Shade,Damages a target,Ghost,60,1,15,1,1,1,0.5
 Pay Day,The player picks up extra money after in-game battles; the money received is equal to: [user's level * 2 * number of times Pay Day is used]. The player does not lose money if the opponent uses Pay Day but the player wins the battle.,Normal,60,1,20,1,1,1,0.5
 Peck,Damages the target.,Flying,35,1,35,1,1,1,0.5
 Petal Dance,The user attacks uncontrollably for 2-3 turns and then gets confused.,Grass,90,1,20,2.5,2,3,0.5
-Pin Missile,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Bug,6,1,30,3.5,2,5,0.5
+Pin Missile,"Attacks 2-5 times in one turn; if one of these attacks breaks a target's Substitute, the target will take damage for the rest of the hits. This move has a 3/8 chance to hit twice, a 3/8 chance to hit three times, a 1/8 chance to hit four times and a 1/8 chance to hit five times.",Bug,20,1,30,3.5,2,5,0.5
 Poison Gas,Poisons the target.,Poison,N/A,0.85,40,1,1,1,0.5
 Poison Sting,Has a ~20% chance to poison the target.,Poison,35,1,35,1,1,1,0.5
 Poisonpowder,Poisons the target.,Poison,N/A,0.95,35,1,1,1,0.5
