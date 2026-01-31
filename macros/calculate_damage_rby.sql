@@ -13,7 +13,7 @@ CASE
     WHEN {{ move }} IN ('Seismic Toss', 'Night Shade') THEN {{ attacker_level }}::double
     ELSE 
         (FLOOR(((LEAST(997,(FLOOR(FLOOR((2 * FLOOR({{ attacker_level }} / 5) + 2) * GREATEST(1,COALESCE({{ attacker_stat }},1)) * {{ move_power }}::double) / GREATEST(1,COALESCE({{ defender_stat }},1)))) / 50) + 2) * {{ stab }} * {{ move_type_effectiveness }})))
-        / (CASE WHEN {{ move }} IN ('Solarbeam','Razor Wind','Skull Bash','Hyper Beam') THEN 2 ELSE 1 END)
+        / (CASE WHEN {{ move }} IN ('Solarbeam','Razor Wind','Skull Bash') THEN 2 ELSE 1 END)
 END) * (CASE WHEN {{ move_power }} = 'KO' THEN 1.0 WHEN {{ acc }}='N/A' THEN 1.0 ELSE {{ acc }}::double END)
 
 {% endmacro %}
