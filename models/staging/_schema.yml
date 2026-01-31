@@ -12,7 +12,7 @@ models:
         - name: game_order
           description: "Sequential numeric order of progression through the game (0 = earliest, higher = later)"
         - name: next_gym
-          description: "Next gym leader or game stage that follows this route (e.g. Badge_1, Badge_2, Elite_Four)"
+          description: "Next gym leader or game stage that follows this route (e.g. Badge_1, Badge_2, Elite 4, Rematches)"
 
   - name: stg_map_locations
     description: "Geographic coordinate data for map locations used in Tableau visualizations"
@@ -26,7 +26,9 @@ models:
         - name: y_coordinate
           description: "Y coordinate for map visualization"
         - name: location_type
-          description: "Type of location (route, town, dungeon, etc.)"
+          description: "Type of location (route, town, dungeon, corners, etc.)"
+        - name: display_name
+          description: "Human-readable display name for the location (null for map corners)"
 
   - name: stg_moves_from_level_up
     description: "Pokemon moves learned through level progression with power and accuracy stats"
@@ -43,11 +45,11 @@ models:
         - name: move
           description: "Move name"
         - name: type
-          description: "Move type (Fire, Water, Electric, etc.)"
+          description: "Move name (legacy seed column, duplicates the move column)"
         - name: power
           description: "Base power of the move (N/A for status moves)"
         - name: accuracy
-          description: "Move accuracy percentage"
+          description: "Move accuracy as a decimal (e.g. 1 for 100%, 0.85 for 85%)"
         - name: pp
           description: "Power Points - number of times move can be used"
 
@@ -118,10 +120,16 @@ models:
             - not_null
         - name: move
           description: "Move taught by this TM/HM"
+        - name: type
+          description: "Move type (Normal, Fire, Water, etc.)"
+        - name: locations
+          description: "Comma-separated list of locations where this TM/HM can be found"
+        - name: price
+          description: "Purchase price at shops (N/A if not purchasable)"
         - name: earliest_nearest_route
           description: "First route where this TM/HM can be obtained"
         - name: repurchase_route
-          description: "Route where this TM can be repurchased (same as earliest for single-use TMs)"
+          description: "Route where this TM can be repurchased (defaults to earliest_nearest_route if not specified)"
 
   - name: stg_moves_type_effectiveness 
     description: "Type effectiveness multipliers for Generation 1 battle calculations (e.g. Fire vs Water = 0.5x)"
@@ -147,11 +155,9 @@ models:
             - unique
             - not_null
         - name: encounter_area
-          description: "Specific encounter area name"
+          description: "Specific encounter area name (Grass, Water, Cave, Gift, GameCorner, etc.)"
         - name: map
           description: "Route or location name where this encounter area exists"
-        - name: game_order
-          description: "Sequential order when this encounter area becomes available"
 
   - name: stg_pkmn_encounter_areas
     description: "Wild pokemon encounter data with levels and probability rates for each area"
@@ -242,6 +248,8 @@ models:
           description: "Pokemon level in gym battle"
         - name: move
           description: "One of the pokemon's four moves (unpivoted in downstream models)"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering within each pokemon"
         - name: notes
           description: "Additional context or special notes about this battle"
 
@@ -269,8 +277,31 @@ models:
           description: "Pokemon level in legendary battle"
         - name: move
           description: "One of the pokemon's four moves (unpivoted in downstream models)"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering within each pokemon"
         - name: notes
-          description: "Additional context about this legendary encounter"
+          description: "Additional context about this legendary encounter (always null)"
+
+  - name: stg_item_stone_locations
+    description: "Evolution stone locations with game progression order, covering overworld items and shop purchases"
+    columns:
+        - name: id
+          description: "Unique identifier generated from stone type, map, and source type"
+          tests:
+            - unique
+            - not_null
+        - name: stone_type
+          description: "Type of evolution stone (Moon, Fire, Water, Thunder, Leaf)"
+        - name: map
+          description: "Map location where the stone is found"
+        - name: quantity
+          description: "Number available (1 for overworld items, unlimited for shops)"
+        - name: source_type
+          description: "How the stone is obtained (Hidden, Visible, Shop)"
+        - name: game_order
+          description: "Sequential game progression order from stg_game_route_order"
+        - name: next_gym
+          description: "Next gym stage after this location"
 
   - name: stg_trainers_mandatory
     description: "Mandatory trainer battles that must be completed for game progression (rivals, story battles)"

@@ -26,7 +26,7 @@ repurchasable_tm_moves AS (
         M.pokemon,
         M.move,
         NULL as pkmn_level,
-        'repurchasible-tm' as move_origin,
+        'repurchasable-tm' as move_origin,
         R.game_order as route_order,
         R.next_gym as game_stage,
         'Repurchasable at ' || L.repurchase_route as location_details,

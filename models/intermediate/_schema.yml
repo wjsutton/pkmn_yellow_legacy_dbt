@@ -25,7 +25,7 @@ models:
         - name: game_stage
           description: "Game stage when pokemon becomes available (Badge_1, Badge_2, etc.)"
         - name: source
-          description: "Detailed source of availability (Wild Encounter, Level Evolution, Stone Evolution, etc.)"
+          description: "Detailed source of availability (Wild Encounter, Level Evolution, Available from <map> for stone evolutions, Base Pokemon, etc.)"
         - name: pokemon_category
           description: "Categorization of pokemon availability (Wild Pokemon, Evolved Form, etc.)"
         - name: evolution_stage
@@ -43,7 +43,7 @@ models:
         - name: pkmn_level
           description: "Level required for level-up moves (null for TM/HM moves)"
         - name: move_origin
-          description: "Source of move availability (level-up, repurchasible-tm, single-use-tm)"
+          description: "Source of move availability (level-up, repurchasable-tm, single-use-tm)"
         - name: route_order
           description: "Route order when TM/HM becomes available (null for level-up moves)"
         - name: game_stage
@@ -118,8 +118,8 @@ models:
           description: "HP stat calculated using Generation 1 formula"
         - name: calculated_attack
           description: "Attack stat calculated using Generation 1 formula"
-        - name: calculated_defense
-          description: "Defense stat calculated using Generation 1 formula"
+        - name: calculated_defence
+          description: "Defence stat calculated using Generation 1 formula"
         - name: calculated_special
           description: "Special stat calculated using Generation 1 formula"
         - name: calculated_speed
@@ -128,8 +128,8 @@ models:
           description: "Base HP stat from species data"
         - name: base_attack
           description: "Base Attack stat from species data"
-        - name: base_defense
-          description: "Base Defense stat from species data"
+        - name: base_defence
+          description: "Base Defence stat from species data"
         - name: base_special
           description: "Base Special stat from species data"
         - name: base_speed
@@ -159,7 +159,7 @@ models:
         - name: player_pkmn_move
           description: "Best move available to player pokemon for this matchup"
         - name: player_pkmn_move_origin
-          description: "Source of the move (level-up, repurchasible-tm, single-use-tm)"
+          description: "Source of the move (level-up, repurchasable-tm, single-use-tm)"
         - name: player_move_single_use_tm
           description: "Flag indicating if player move requires single-use TM (1) or not (0)"
         - name: trainer_pkmn_id

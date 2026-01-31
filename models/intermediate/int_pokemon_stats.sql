@@ -27,13 +27,13 @@ pokemon_calculated_stats AS (
         -- Calculate Generation 1 stats using existing macros
         {{ calculate_hp_rby('P.hp','L.pkmn_level','7') }} as calculated_hp,
         {{ calculate_stat_rby('P.attack','L.pkmn_level','7') }} as calculated_attack,
-        {{ calculate_stat_rby('P.defence','L.pkmn_level','7') }} as calculated_defense,
+        {{ calculate_stat_rby('P.defence','L.pkmn_level','7') }} as calculated_defence,
         {{ calculate_stat_rby('P.special','L.pkmn_level','7') }} as calculated_special,
         {{ calculate_stat_rby('P.speed','L.pkmn_level','7') }} as calculated_speed,
         -- Include base stats for reference
         P.hp as base_hp,
         P.attack as base_attack,
-        P.defence as base_defense,
+        P.defence as base_defence,
         P.special as base_special,
         P.speed as base_speed
     FROM pokemon_base_stats P
@@ -49,13 +49,13 @@ SELECT
     type2,
     calculated_hp,
     calculated_attack,
-    calculated_defense,
+    calculated_defence,
     calculated_special,
     calculated_speed,
     base_hp,
     base_attack,
-    base_defense,
+    base_defence,
     base_special,
     base_speed,
-    calculated_hp + calculated_attack + calculated_defense + calculated_special + calculated_speed as calculated_total
+    calculated_hp + calculated_attack + calculated_defence + calculated_special + calculated_speed as calculated_total
 FROM pokemon_calculated_stats

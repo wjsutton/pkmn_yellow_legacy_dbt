@@ -76,7 +76,7 @@ all_pokemon_with_stats AS (
         t.is_single_use_tm,
         psc.calculated_hp AS hp,
         psc.calculated_attack AS attack,
-        psc.calculated_defense AS defense,
+        psc.calculated_defence AS defence,
         psc.calculated_special AS special,
         psc.calculated_speed AS speed,
         CASE WHEN t.trainer = 'Player' THEN 1 ELSE 0 END AS player,
@@ -145,7 +145,7 @@ matchups AS (
         a.move_power,
         a.move_hits_min,
         a.is_single_use_tm,
-        CASE WHEN a.move_stat = 'Attack' THEN d.defense ELSE d.special END AS defender_stat,
+        CASE WHEN a.move_stat = 'Attack' THEN d.defence ELSE d.special END AS defender_stat,
         CASE WHEN a.move_stat = 'Attack' THEN a.attack ELSE a.special END AS attacker_stat
     FROM all_pokemon_with_stats AS a
     INNER JOIN all_pokemon_with_stats AS d

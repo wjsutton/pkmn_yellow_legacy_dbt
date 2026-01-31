@@ -27,7 +27,7 @@ models:
         - name: battles_as_best_option
           description: "Number of battles where this pokemon is the best team option"
         - name: total_matchups
-          description: "Total number of trainer battles analyzed"
+          description: "Total number of trainer battles analysed"
         - name: gym_leader_best_matchups
           description: "Number of gym leader battles where this pokemon is best"
         - name: avg_gym_score
@@ -62,6 +62,10 @@ models:
           description: "Flag indicating if Pikachu is required in team (1) or not (0)"
         - name: no_legends
           description: "Flag indicating if legendary pokemon are excluded (1) or allowed (0)"
+        - name: exclude_rival_patterns
+          description: "JSON array of SQL LIKE patterns for rival trainers to exclude in this variant"
+        - name: exclude_trainers
+          description: "JSON array of trainer names to exclude in this variant (e.g. Rival_2 for early rival fight)"
         - name: player_pkmn_id
           description: "Pokemon team member identifier"
         - name: player_pokemon

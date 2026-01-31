@@ -50,7 +50,17 @@
       "Bash(.venv/Scripts/python.exe -c \"\nimport subprocess, sys\nresult = subprocess.run\\(\n    [r''C:\\\\Users\\\\sutto\\\\Documents\\\\GitHub\\\\pkmn_yellow_legacy_dbt\\\\.venv\\\\Scripts\\\\dbt.exe'', ''debug''],\n    capture_output=True, text=True, cwd=r''C:\\\\Users\\\\sutto\\\\Documents\\\\GitHub\\\\pkmn_yellow_legacy_dbt''\n\\)\nprint\\(''STDOUT:'', result.stdout\\)\nprint\\(''STDERR:'', result.stderr\\)\nprint\\(''RC:'', result.returncode\\)\n\")",
       "Bash(.venv/Scripts/python.exe:*)",
       "Bash(powershell.exe -Command \"& ''.venv/Scripts/dbt.exe'' debug 2>&1 | Out-String\")",
-      "Bash(where:*)"
+      "Bash(where:*)",
+      "Bash(dir:*)",
+      "Bash(tree:*)",
+      "mcp__dbt__show",
+      "Bash(env/Scripts/dbt seed:*)",
+      "Bash(envScriptsdbt seed --select item_stone_locations)",
+      "mcp__dbt__build",
+      "mcp__dbt__test",
+      "mcp__dbt__parse",
+      "mcp__dbt__run",
+      "mcp__dbt__compile"
     ],
     "deny": []
   }
