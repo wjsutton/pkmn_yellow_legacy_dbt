@@ -180,3 +180,5 @@ models:
           description: "Number of moves required for trainer to KO player pokemon"
         - name: battle_score
           description: "Calculated battle outcome score (0-1 scale, 1 = complete player advantage)"
+        - name: player_victory
+          description: "Binary flag indicating if the player wins this matchup (1 = win, 0 = loss or draw). Derived from battle_score > 0."

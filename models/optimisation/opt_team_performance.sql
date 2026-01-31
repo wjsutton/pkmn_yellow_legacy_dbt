@@ -120,7 +120,19 @@ team_contributions AS (
                 WHEN BTO.is_mini_boss = 1 THEN BTO.difficulty_score * 3.0
                 WHEN BTO.difficulty_rating IN ('Very Hard', 'Extreme') THEN BTO.difficulty_score * 2.0
                 ELSE BTO.difficulty_score
-            END as baseline_contribution
+            END as baseline_contribution,
+        -- Normalize per trainer: divide by trainer roster size so each trainer
+        -- contributes one "unit" of score regardless of how many pokemon they have.
+        -- Without this, a trainer with 4 pokemon generates 4x the score of a
+        -- trainer with 1 pokemon, drowning out hard bosses like Lt. Surge.
+        (BTO.battle_score *
+            CASE
+                WHEN BTO.is_mini_boss = 1 THEN BTO.difficulty_score * 3.0
+                WHEN BTO.difficulty_rating IN ('Very Hard', 'Extreme') THEN BTO.difficulty_score * 2.0
+                ELSE BTO.difficulty_score
+            END)
+        / COUNT(*) OVER (PARTITION BY BTO.game_stage, BTO.player_pkmn_id, BTO.trainer)
+        as normalized_contribution
     FROM best_team_options BTO
 ),
 
@@ -130,7 +142,8 @@ stage_scores AS (
         player_pkmn_id,
         player_pokemon,
         SUM(weighted_contribution) as team_contribution_score,
-        SUM(baseline_contribution) as backup_score,
+        SUM(normalized_contribution) as backup_score,
+        SUM(baseline_contribution) as raw_backup_score,
         SUM(battle_score) as base_score,
         0 as total_penalty,
         SUM(weighted_contribution) as route_score,
@@ -157,8 +170,8 @@ pokemon_stage_performance AS (
         total_matchups,
         mini_boss_best_matchups,
         avg_mini_boss_score,
-        team_contribution_score as team_selection_score,
-        {{ calculate_performance_tier('team_contribution_score', 'pokemon') }} as performance_tier,
+        backup_score as team_selection_score,
+        {{ calculate_performance_tier('backup_score', 'pokemon') }} as performance_tier,
         {{ calculate_tm_efficiency_rating('tm_dependent_wins', 'pokemon') }} as tm_efficiency,
         ROW_NUMBER() OVER(
             PARTITION BY game_stage

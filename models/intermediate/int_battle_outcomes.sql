@@ -292,6 +292,9 @@ trainer_damage_raw AS (
 ),
 
 trainer_damage AS (
+    -- Keep only the trainer's best move against each specific player pokemon.
+    -- This ensures e.g. Raichu uses Surf (4x effective) vs Geodude,
+    -- not Body Slam, because the trainer picks the strongest option.
     SELECT
         attacker_pkmn_id, defender_pkmn_id,
         move, is_ohko_move, move_accuracy,
@@ -301,6 +304,14 @@ trainer_damage AS (
         END AS attempts_to_ko
     FROM trainer_damage_raw
     WHERE damage > 0
+    QUALIFY ROW_NUMBER() OVER(
+        PARTITION BY attacker_pkmn_id, defender_pkmn_id
+        ORDER BY
+            CASE
+                WHEN move = 'Hyper Beam' AND damage < defender_hp THEN (defender_hp / damage) * 2
+                ELSE defender_hp / damage
+            END ASC
+    ) = 1
 ),
 
 mini_bosses AS (
@@ -347,25 +358,32 @@ battle_pairs AS (
         ON P.defender = MB.trainer
 )
 
+, final AS (
+    SELECT
+        matchup_id,
+        game_stage,
+        'Player' AS player,
+        trainer,
+        is_mini_boss,
+        player_pkmn_id,
+        player_pokemon,
+        player_pkmn_level,
+        player_pkmn_move,
+        player_pkmn_move_origin,
+        player_move_single_use_tm,
+        trainer_pkmn_id,
+        trainer_pokemon,
+        trainer_pkmn_level,
+        trainer_pkmn_move,
+        trainer_speed,
+        player_speed,
+        player_attempts_to_ko,
+        trainer_attempts_to_ko,
+        {{ calculate_battle_outcome() }} AS battle_score
+    FROM battle_pairs
+)
+
 SELECT
-    matchup_id,
-    game_stage,
-    'Player' AS player,
-    trainer,
-    is_mini_boss,
-    player_pkmn_id,
-    player_pokemon,
-    player_pkmn_level,
-    player_pkmn_move,
-    player_pkmn_move_origin,
-    player_move_single_use_tm,
-    trainer_pkmn_id,
-    trainer_pokemon,
-    trainer_pkmn_level,
-    trainer_pkmn_move,
-    trainer_speed,
-    player_speed,
-    player_attempts_to_ko,
-    trainer_attempts_to_ko,
-    {{ calculate_battle_outcome() }} AS battle_score
-FROM battle_pairs
+    *,
+    CASE WHEN battle_score > 0 THEN 1 ELSE 0 END AS player_victory
+FROM final
