@@ -297,7 +297,9 @@ base_catchable_pokemon AS (
         EA.map,
         EA.area,
         R.game_order,
-        R.next_gym,
+        -- When the encounter area (e.g. SuperRod) isn't available until a later
+        -- route, use that route's game stage instead of the map's original stage.
+        COALESCE(R_AREA.next_gym, R.next_gym) as next_gym,
         EA.pokemon as initial_pokemon,
         'Wild Encounter' as availability_source,
         CASE
@@ -307,7 +309,11 @@ base_catchable_pokemon AS (
     FROM {{ ref('stg_pkmn_encounter_areas') }} as EA
     INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EA.map
     INNER JOIN area_order as EAO on EA.area = EAO.encounter_area
-    INNER JOIN game_progression as L on R.next_gym = L.game_stage
+    LEFT JOIN {{ ref('stg_game_route_order') }} as R_AREA
+        on R_AREA.game_order = EAO.game_order
+        AND EAO.game_order > R.game_order
+    INNER JOIN game_progression as L
+        on COALESCE(R_AREA.next_gym, R.next_gym) = L.game_stage
 ),
 
 catchable_evolutions AS (

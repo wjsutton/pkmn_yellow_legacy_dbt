@@ -101,19 +101,14 @@ team_selections AS (
         tms_allocated,
         is_pikachu,
         -- Rank pokemon for team selection
-        CASE
-            WHEN keep_pikachu = 1 AND is_pikachu = 1 THEN 1
-            WHEN keep_pikachu = 1 AND is_pikachu = 0 THEN
-                ROW_NUMBER() OVER(
-                    PARTITION BY run_name, game_stage
-                    ORDER BY adjusted_team_score DESC
-                ) + 1
-            ELSE
-                ROW_NUMBER() OVER(
-                    PARTITION BY run_name, game_stage
-                    ORDER BY adjusted_team_score DESC
-                )
-        END as team_rank
+        -- keep_pikachu=1: Pikachu sorts first (guaranteed slot), others by score
+        -- keep_pikachu=0: everyone (including Pikachu) ranks purely by score
+        ROW_NUMBER() OVER(
+            PARTITION BY run_name, game_stage
+            ORDER BY
+                CASE WHEN keep_pikachu = 1 AND is_pikachu = 1 THEN 0 ELSE 1 END,
+                adjusted_team_score DESC
+        ) as team_rank
     FROM filtered_pokemon
 ),
 

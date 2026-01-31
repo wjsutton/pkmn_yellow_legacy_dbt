@@ -10,3 +10,5 @@ old/
 .github/*
 *.csv
 *.xlsx
+*.pyc
+__pycache__/
