@@ -326,3 +326,29 @@ models:
         - name: notes
           description: "Additional context about this mandatory encounter"
 
+  - name: stg_pkmn_growth_rates
+    description: "Growth rate classification for each pokemon species (fast, medium_fast, medium_slow, slow)"
+    columns:
+        - name: pokedex
+          description: "Pokedex number (unique identifier for each pokemon species)"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: growth_rate
+          description: "Experience growth rate category (fast, medium_fast, medium_slow, slow)"
+
+  - name: stg_pkmn_base_exp
+    description: "Base experience yield when a pokemon species is defeated in battle"
+    columns:
+        - name: pokedex
+          description: "Pokedex number (unique identifier for each pokemon species)"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: base_exp
+          description: "Base experience points yielded when this pokemon is defeated"
+

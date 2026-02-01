@@ -12,3 +12,4 @@ old/
 *.xlsx
 *.pyc
 __pycache__/
+bug_reports/*

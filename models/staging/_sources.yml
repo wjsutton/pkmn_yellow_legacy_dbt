@@ -50,3 +50,9 @@ sources:
       - name: item_stone_locations
         description: Evolution stone locations throughout the game (overworld items and shops)
 
+      - name: pkmn_growth_rates
+        description: Growth rate category for each pokemon species
+
+      - name: pkmn_base_exp
+        description: Base experience yield for each pokemon species
+

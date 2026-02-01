@@ -182,3 +182,93 @@ models:
           description: "Calculated battle outcome score (0-1 scale, 1 = complete player advantage)"
         - name: player_victory
           description: "Binary flag indicating if the player wins this matchup (1 = win, 0 = loss or draw). Derived from battle_score > 0."
+
+  - name: int_level_exp_requirements
+    description: "Total EXP required and EXP to next level for every level (1-100) and growth rate combination."
+    columns:
+        - name: level
+          description: "Pokemon level (1-100)"
+        - name: growth_rate
+          description: "Experience growth rate category (fast, medium_fast, medium_slow, slow)"
+        - name: total_exp_required
+          description: "Cumulative experience points needed to reach this level"
+        - name: exp_to_next_level
+          description: "Experience points needed to advance from this level to the next (NULL at level 100)"
+
+  - name: int_pkmn_exp_data
+    description: "Pokemon species data enriched with growth rate and base experience yield for EXP calculations."
+    columns:
+        - name: pokedex
+          description: "Pokedex number"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: hp
+          description: "Base HP stat"
+        - name: attack
+          description: "Base Attack stat"
+        - name: defence
+          description: "Base Defence stat"
+        - name: special
+          description: "Base Special stat"
+        - name: speed
+          description: "Base Speed stat"
+        - name: total
+          description: "Base stat total"
+        - name: type1
+          description: "Primary pokemon type"
+        - name: type2
+          description: "Secondary pokemon type"
+        - name: growth_rate
+          description: "Experience growth rate category"
+        - name: base_exp
+          description: "Base experience points yielded when defeated"
+        - name: max_exp_to_100
+          description: "Total experience points required to reach level 100 for this growth rate"
+
+  - name: int_pkmn_level_exp
+    description: "Per-pokemon, per-level experience data including EXP requirements and battle yields for wild and trainer encounters."
+    columns:
+        - name: pokedex
+          description: "Pokedex number"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: growth_rate
+          description: "Experience growth rate category"
+        - name: base_exp
+          description: "Base experience points yielded when defeated"
+        - name: level
+          description: "Pokemon level (1-100)"
+        - name: total_exp_at_level
+          description: "Cumulative experience points at this level"
+        - name: exp_to_next_level
+          description: "Experience points needed to advance to the next level (NULL at level 100)"
+        - name: wild_exp_yield
+          description: "EXP gained from defeating this pokemon as a wild encounter at this level"
+        - name: trainer_exp_yield
+          description: "EXP gained from defeating this pokemon as a trainer battle at this level"
+
+  - name: int_stage_pokemon_costs
+    description: "What does each pokemon cost at each game stage? Pre-computes EXP costs and coverage metrics for squad optimization. Finds the cheapest catch option per stage (highest catch level, trade bonus)."
+    columns:
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: level_cap
+          description: "Maximum level allowed at this game stage"
+        - name: stage_num
+          description: "Numeric ordering of game stages"
+        - name: catch_level
+          description: "Best catch level for this pokemon at this stage (highest available)"
+        - name: is_traded
+          description: "Whether the cheapest option is a trade (1) or wild catch (0)"
+        - name: growth_rate
+          description: "Experience growth rate category"
+        - name: fresh_exp_cost
+          description: "EXP needed to train from catch level to level cap (with trade discount if applicable)"
+        - name: opponents_beaten
+          description: "Number of distinct trainer pokemon this pokemon can beat at this stage"
+        - name: opponents_beaten_no_tm
+          description: "Number of opponents beaten without single-use TMs"
+        - name: total_opponents_faced
+          description: "Total number of distinct trainer pokemon faced at this stage"

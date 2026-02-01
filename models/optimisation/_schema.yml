@@ -96,3 +96,35 @@ models:
           description: "Pokemon's role within the team"
         - name: variant_description
           description: "Human-readable description of run variant including rival type"
+
+  - name: opt_min_exp_squads
+    description: "Minimum-EXP teams via greedy weighted set cover. Picks pokemon maximizing opponents_covered/exp_cost ratio per game stage and run variant."
+    columns:
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: run_name
+          description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
+        - name: rival_type
+          description: "Rival pokemon type for this run variant (Jolteon, Vaporeon, Flareon)"
+        - name: keep_pikachu
+          description: "Flag indicating if Pikachu is required in team (1) or not (0)"
+        - name: no_legends
+          description: "Flag indicating if legendary pokemon are excluded (1) or allowed (0)"
+        - name: pokemon
+          description: "Pokemon species name on the team"
+        - name: pick_order
+          description: "Order in which pokemon was selected (1 = first pick)"
+        - name: exp_cost
+          description: "Fresh EXP cost to train this pokemon from catch level to stage level cap"
+        - name: new_coverage
+          description: "Number of new opponents covered when this pokemon was picked"
+        - name: total_team_exp
+          description: "Sum of fresh EXP costs for entire team at this stage"
+        - name: opponents_covered
+          description: "Total distinct opponents beaten by the team"
+        - name: total_opponents
+          description: "Total distinct opponents in this stage/variant"
+        - name: coverage_pct
+          description: "Percentage of opponents covered by the team"
+        - name: variant_description
+          description: "Human-readable description of run variant"
