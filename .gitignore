@@ -12,3 +12,4 @@ old/
 *.pyc
 __pycache__/
 source/*
+bug_reports/*
