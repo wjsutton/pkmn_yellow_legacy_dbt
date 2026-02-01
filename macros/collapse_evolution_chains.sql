@@ -60,14 +60,21 @@ _evo_notes AS (
     WHERE ebf.evo_depth > 0
 ),
 
--- Keep only the most evolved form per chain per game stage
+-- Keep only the most evolved form per chain per game stage.
+-- Uses NOT EXISTS so ALL rows for the winning pokemon are preserved
+-- (important when the source has multiple rows per pokemon, e.g. one per opponent).
 {{ source_cte }}_deduped AS (
     SELECT src.*
     FROM {{ source_cte }} src
     INNER JOIN _evo_base_form ebf ON ebf.pokemon = src.{{ pokemon_col }}
-    QUALIFY ROW_NUMBER() OVER (
-        PARTITION BY src.{{ game_stage_col }}, ebf.base_form
-        ORDER BY ebf.evo_depth DESC
-    ) = 1
+    WHERE NOT EXISTS (
+        -- Exclude this pokemon if a more evolved form of the same chain exists at this stage
+        SELECT 1
+        FROM {{ source_cte }} src2
+        INNER JOIN _evo_base_form ebf2 ON ebf2.pokemon = src2.{{ pokemon_col }}
+        WHERE src2.{{ game_stage_col }} = src.{{ game_stage_col }}
+          AND ebf2.base_form = ebf.base_form
+          AND ebf2.evo_depth > ebf.evo_depth
+    )
 ),
 {% endmacro %}

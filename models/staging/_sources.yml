@@ -18,6 +18,9 @@ sources:
       - name: map_locations
         description: All locations on the Kanto map
 
+      - name: map_location_groups
+        description: Mapping of game route order entries to map location points (handles grouping of dungeon floors, etc.)
+
       - name: moves_from_level_up
         description: Moves Pokemon learn from leveling up
       - name: moves_from_tmhm 

@@ -20,6 +20,7 @@ models:
         - name: map
           description: "Route or location name matching stg_game_route_order"
           tests:
+            - unique
             - not_null
         - name: x_coordinate
           description: "X coordinate for map visualization"
@@ -29,6 +30,17 @@ models:
           description: "Type of location (route, town, dungeon, corners, etc.)"
         - name: display_name
           description: "Human-readable display name for the location (null for map corners)"
+
+  - name: stg_map_location_groups
+    description: "Mapping of game route order entries to map visualization points"
+    columns:
+        - name: game_route_map
+          description: "Map value from game_route_order (e.g. MtMoon1F, PokemonTower3F)"
+          tests:
+            - unique
+            - not_null
+        - name: map_location
+          description: "Canonical map location identifier matching map_locations.map"
 
   - name: stg_moves_from_level_up
     description: "Pokemon moves learned through level progression with power and accuracy stats"

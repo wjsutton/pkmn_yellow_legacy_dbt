@@ -1,10 +1,10 @@
--- opt_min_exp_squads: Minimum-EXP teams via cheapest-counter assignment.
--- For each opponent, assigns it to the cheapest pokemon that can beat it.
--- Then ranks pokemon by assigned coverage / EXP cost to select top 6.
--- Pikachu is forced into slot 1 for KeepPikachu variants.
+-- opt_min_exp_squads: Minimum-EXP teams via greedy set cover.
+-- Iteratively picks the pokemon that covers the most uncovered opponents
+-- per EXP cost. After each pick, covered opponents are removed so the next
+-- pick maximizes NEW coverage. Pikachu forced to slot 1 for KeepPikachu.
 -- Also computes EXP earned from trainer battles to identify grinding gaps.
 
-WITH run_variants AS (
+WITH RECURSIVE run_variants AS (
     {{ generate_run_variants(ref('int_stage_pokemon_costs')) }}
 ),
 
@@ -58,79 +58,94 @@ stage_totals AS (
     GROUP BY rv.run_name, op.game_stage
 ),
 
--- Assign each opponent to its cheapest counter (handles overlap naturally)
-opponent_best_counter AS (
+-- Pre-compute opponent lists and total coverage per pokemon per stage/variant
+pokemon_opponents AS (
     SELECT
         game_stage,
         run_name,
-        trainer_pkmn_id,
+        keep_pikachu,
         pokemon,
         exp_cost,
-        ROW_NUMBER() OVER (
-            PARTITION BY game_stage, run_name, trainer_pkmn_id
-            ORDER BY exp_cost ASC, pokemon ASC
-        ) as counter_rank
+        list(DISTINCT trainer_pkmn_id) as beatable_opponents,
+        COUNT(DISTINCT trainer_pkmn_id) as total_beatable
     FROM stage_coverage
+    GROUP BY game_stage, run_name, keep_pikachu, pokemon, exp_cost
 ),
 
--- Count assigned opponents per pokemon (each opponent counted once)
-pokemon_assigned AS (
+-- Greedy set cover: iteratively pick the pokemon that covers the most
+-- uncovered opponents per EXP cost. After each pick, opponents beaten by
+-- that pokemon are removed from consideration so the next pick maximises
+-- NEW coverage. This ensures the 6-member team collectively covers as
+-- many opponents as possible while keeping total EXP low.
+greedy_team AS (
+    -- Pick 1: force Pikachu for KeepPikachu runs, else best coverage/cost
     SELECT
-        game_stage,
-        run_name,
-        pokemon,
-        exp_cost,
-        COUNT(*) as assigned_opponents
-    FROM opponent_best_counter
-    WHERE counter_rank = 1
-    GROUP BY game_stage, run_name, pokemon, exp_cost
-),
+        game_stage, run_name, keep_pikachu,
+        pokemon, exp_cost, beatable_opponents,
+        total_beatable as assigned_opponents,
+        total_beatable as total_opponents_beaten,
+        1 as pick_order,
+        [pokemon]::VARCHAR[] as team_list,
+        beatable_opponents as covered_list
+    FROM (
+        SELECT *,
+            ROW_NUMBER() OVER (
+                PARTITION BY game_stage, run_name
+                ORDER BY
+                    CASE WHEN keep_pikachu = 1 AND pokemon = 'Pikachu' THEN 0 ELSE 1 END,
+                    total_beatable::FLOAT / GREATEST(1, exp_cost) DESC,
+                    total_beatable DESC,
+                    exp_cost ASC
+            ) as rn
+        FROM pokemon_opponents
+    ) ranked
+    WHERE rn = 1
 
--- Also compute total coverage (not just assigned)
-pokemon_total_coverage AS (
+    UNION ALL
+
+    -- Recursive: pick next pokemon covering the most uncovered opponents
     SELECT
-        game_stage,
-        run_name,
-        pokemon,
-        exp_cost,
-        COUNT(DISTINCT trainer_pkmn_id) as total_opponents_beaten
-    FROM stage_coverage
-    GROUP BY game_stage, run_name, pokemon, exp_cost
+        sub.game_stage, sub.run_name, sub.keep_pikachu,
+        sub.pokemon, sub.exp_cost, sub.beatable_opponents,
+        sub.assigned_opponents,
+        sub.total_opponents_beaten,
+        sub.pick_order,
+        sub.new_team_list as team_list,
+        sub.new_covered_list as covered_list
+    FROM (
+        SELECT
+            tb.game_stage, tb.run_name, tb.keep_pikachu,
+            po.pokemon, po.exp_cost, po.beatable_opponents,
+            len(list_filter(po.beatable_opponents, x -> NOT list_contains(tb.covered_list, x))) as assigned_opponents,
+            po.total_beatable as total_opponents_beaten,
+            tb.pick_order + 1 as pick_order,
+            list_append(tb.team_list, po.pokemon) as new_team_list,
+            list_distinct(list_concat(tb.covered_list, po.beatable_opponents)) as new_covered_list,
+            ROW_NUMBER() OVER (
+                PARTITION BY tb.game_stage, tb.run_name
+                ORDER BY
+                    len(list_filter(po.beatable_opponents, x -> NOT list_contains(tb.covered_list, x)))::FLOAT
+                        / GREATEST(1, po.exp_cost) DESC,
+                    len(list_filter(po.beatable_opponents, x -> NOT list_contains(tb.covered_list, x))) DESC,
+                    po.exp_cost ASC
+            ) as rn
+        FROM greedy_team tb
+        JOIN pokemon_opponents po
+            ON po.game_stage = tb.game_stage
+            AND po.run_name = tb.run_name
+            AND NOT list_contains(tb.team_list, po.pokemon)
+        WHERE tb.pick_order < 6
+          AND len(list_filter(po.beatable_opponents, x -> NOT list_contains(tb.covered_list, x))) > 0
+    ) sub
+    WHERE sub.rn = 1
 ),
 
--- Merge assigned + total coverage and rank
-pokemon_ranked AS (
-    SELECT
-        pa.game_stage,
-        pa.run_name,
-        pa.pokemon,
-        pa.exp_cost,
-        pa.assigned_opponents,
-        ptc.total_opponents_beaten,
-        sc_rv.keep_pikachu,
-        ROW_NUMBER() OVER (
-            PARTITION BY pa.game_stage, pa.run_name
-            ORDER BY
-                -- KeepPikachu: force Pikachu to slot 1
-                CASE WHEN sc_rv.keep_pikachu = 1 AND pa.pokemon = 'Pikachu' THEN 0 ELSE 1 END,
-                -- Then by assigned coverage efficiency
-                pa.assigned_opponents::FLOAT / GREATEST(1, pa.exp_cost) DESC,
-                pa.assigned_opponents DESC,
-                pa.exp_cost ASC
-        ) as pick_order
-    FROM pokemon_assigned pa
-    INNER JOIN pokemon_total_coverage ptc
-        ON ptc.game_stage = pa.game_stage
-        AND ptc.run_name = pa.run_name
-        AND ptc.pokemon = pa.pokemon
-    INNER JOIN (
-        SELECT DISTINCT game_stage, run_name, keep_pikachu FROM run_variants
-    ) sc_rv ON sc_rv.game_stage = pa.game_stage AND sc_rv.run_name = pa.run_name
-),
-
--- Select top 6 per team
+-- Select final team members
 final_picks AS (
-    SELECT * FROM pokemon_ranked WHERE pick_order <= 6
+    SELECT
+        game_stage, run_name, pokemon, exp_cost,
+        assigned_opponents, total_opponents_beaten, pick_order
+    FROM greedy_team
 ),
 
 -- Compute actual team coverage (how many opponents the full team of 6 covers)
