@@ -1,110 +1,216 @@
+-- opt_recommended_teams: Variant-aware team selection.
+-- Uses base scores from opt_team_performance (computed against ALL trainers),
+-- then subtracts contributions from excluded rival trainers per variant.
+-- This avoids reprocessing battle data while making rival type affect team selection.
+
 WITH run_variants AS (
-    -- Create all 12 run variants using updated macro (3 rival types x 2 pikachu variants x 2 legendary variants)
     {{ generate_run_variants(ref('opt_team_performance')) }}
 ),
 
-pokemon_performance_base AS (
-    -- Get base pokemon performance with TM allocations from unified model
+-- === Compute rival-trainer contributions to subtract per variant ===
+-- Only process rival-specific battles (tiny fraction of total data)
+rival_battles AS (
+    SELECT
+        bo.game_stage,
+        bo.player_pkmn_id,
+        bo.player_pokemon,
+        bo.trainer,
+        bo.trainer_pkmn_id,
+        bo.is_mini_boss,
+        bo.battle_score,
+        bo.player_pkmn_move,
+        bo.player_move_single_use_tm
+    FROM {{ ref('int_battle_outcomes') }} bo
+    WHERE bo.trainer LIKE '%\_Flareon' ESCAPE '\'
+       OR bo.trainer LIKE '%\_Vaporeon' ESCAPE '\'
+       OR bo.trainer LIKE '%\_Jolteon' ESCAPE '\'
+       OR bo.trainer IN ('Rival_1', 'Rival_2')
+),
+
+-- Best move per (player_pkmn, rival_trainer_pkmn)
+rival_best_moves AS (
+    SELECT *
+    FROM (
+        SELECT
+            rb.*,
+            ROW_NUMBER() OVER(
+                PARTITION BY rb.player_pkmn_id, rb.trainer_pkmn_id
+                ORDER BY rb.battle_score DESC
+            ) as move_rank
+        FROM rival_battles rb
+    )
+    WHERE move_rank = 1
+),
+
+-- Rival trainer difficulty (same formula as opt_team_performance)
+rival_trainer_difficulty AS (
+    SELECT
+        game_stage,
+        trainer,
+        is_mini_boss,
+        AVG(battle_score) as avg_battle_score,
+        COUNT(CASE WHEN battle_score >= 0.8 THEN 1 END) as excellent_counters,
+        COUNT(CASE WHEN battle_score >= 0.6 THEN 1 END) as good_counters,
+        COUNT(CASE WHEN player_move_single_use_tm = 1 AND battle_score >= 0.6 THEN 1 END) as tm_dependent_solutions,
+        COUNT(CASE WHEN player_move_single_use_tm = 0 AND battle_score >= 0.6 THEN 1 END) as natural_solutions
+    FROM rival_best_moves
+    GROUP BY game_stage, trainer, is_mini_boss
+),
+
+rival_difficulty_class AS (
+    SELECT
+        *,
+        CASE
+            WHEN avg_battle_score < 0.25 THEN 'Extreme'
+            WHEN avg_battle_score < 0.35 THEN 'Very Hard'
+            WHEN avg_battle_score < 0.5 THEN 'Hard'
+            WHEN avg_battle_score < 0.65 THEN 'Medium'
+            WHEN excellent_counters <= 2 AND good_counters <= 5 THEN 'Requires Specific Counter'
+            ELSE 'Easy'
+        END as difficulty_rating,
+        ROUND(
+            (1 - avg_battle_score) * 4 +
+            CASE WHEN excellent_counters = 0 THEN 2 ELSE 0 END +
+            CASE WHEN good_counters <= 2 THEN 1 ELSE 0 END +
+            CASE WHEN is_mini_boss = 1 THEN 1 ELSE 0 END +
+            CASE WHEN tm_dependent_solutions > natural_solutions THEN 1 ELSE 0 END
+        , 1) as difficulty_score
+    FROM rival_trainer_difficulty
+),
+
+-- Best counter rank per rival trainer pokemon
+rival_team_options AS (
+    SELECT
+        rbm.*,
+        ROW_NUMBER() OVER(
+            PARTITION BY rbm.game_stage, rbm.trainer_pkmn_id
+            ORDER BY rbm.battle_score DESC
+        ) as team_rank
+    FROM rival_best_moves rbm
+),
+
+-- Rival contributions with difficulty weights
+rival_contributions AS (
+    SELECT
+        rto.game_stage,
+        rto.player_pkmn_id,
+        rto.player_pokemon,
+        rto.trainer,
+        rto.team_rank,
+        -- Normalized contribution (same formula as opt_team_performance)
+        (rto.battle_score *
+            CASE
+                WHEN rto.is_mini_boss = 1 THEN dc.difficulty_score * 3.0
+                WHEN dc.difficulty_rating IN ('Very Hard', 'Extreme') THEN dc.difficulty_score * 2.0
+                ELSE dc.difficulty_score
+            END)
+        / COUNT(*) OVER (PARTITION BY rto.game_stage, rto.player_pkmn_id, rto.trainer)
+        as normalized_contribution,
+        -- Weighted contribution (best counter only)
+        CASE
+            WHEN rto.team_rank = 1 THEN rto.battle_score *
+                CASE
+                    WHEN rto.is_mini_boss = 1 THEN dc.difficulty_score * 3.0
+                    WHEN dc.difficulty_rating IN ('Very Hard', 'Extreme') THEN dc.difficulty_score * 2.0
+                    ELSE dc.difficulty_score
+                END
+            ELSE 0
+        END as weighted_contribution
+    FROM rival_team_options rto
+    LEFT JOIN rival_difficulty_class dc
+        ON dc.game_stage = rto.game_stage
+        AND dc.trainer = rto.trainer
+),
+
+-- Sum excluded contributions per pokemon per variant
+-- Each variant excludes different rival trainers
+rival_exclusion_scores AS (
+    SELECT
+        game_stage,
+        player_pkmn_id,
+        -- Jolteon variant: exclude trainers matching %_Flareon or %_Vaporeon
+        SUM(CASE WHEN trainer LIKE '%\_Flareon' ESCAPE '\' OR trainer LIKE '%\_Vaporeon' ESCAPE '\'
+            THEN normalized_contribution ELSE 0 END) as jolteon_exclude_backup,
+        SUM(CASE WHEN trainer LIKE '%\_Flareon' ESCAPE '\' OR trainer LIKE '%\_Vaporeon' ESCAPE '\'
+            THEN weighted_contribution ELSE 0 END) as jolteon_exclude_weighted,
+        -- Flareon variant: exclude %_Jolteon, %_Vaporeon, and Rival_2
+        SUM(CASE WHEN trainer LIKE '%\_Jolteon' ESCAPE '\' OR trainer LIKE '%\_Vaporeon' ESCAPE '\' OR trainer = 'Rival_2'
+            THEN normalized_contribution ELSE 0 END) as flareon_exclude_backup,
+        SUM(CASE WHEN trainer LIKE '%\_Jolteon' ESCAPE '\' OR trainer LIKE '%\_Vaporeon' ESCAPE '\' OR trainer = 'Rival_2'
+            THEN weighted_contribution ELSE 0 END) as flareon_exclude_weighted,
+        -- Vaporeon variant: exclude %_Flareon, %_Jolteon, Rival_1, and Rival_2
+        SUM(CASE WHEN trainer LIKE '%\_Flareon' ESCAPE '\' OR trainer LIKE '%\_Jolteon' ESCAPE '\' OR trainer IN ('Rival_1', 'Rival_2')
+            THEN normalized_contribution ELSE 0 END) as vaporeon_exclude_backup,
+        SUM(CASE WHEN trainer LIKE '%\_Flareon' ESCAPE '\' OR trainer LIKE '%\_Jolteon' ESCAPE '\' OR trainer IN ('Rival_1', 'Rival_2')
+            THEN weighted_contribution ELSE 0 END) as vaporeon_exclude_weighted
+    FROM rival_contributions
+    GROUP BY game_stage, player_pkmn_id
+),
+
+-- === Base pokemon performance with variant-adjusted scores ===
+-- Split into two CTEs: raw scores first, then macro-derived columns
+pokemon_performance_raw AS (
     SELECT
         TP.game_stage,
         TP.player_pkmn_id,
         TP.player_pokemon,
-        TP.team_selection_score,
-        TP.performance_tier,
-        TP.stage_rank,
+        -- Variant-adjusted scores: base minus excluded rival contributions
+        TP.team_selection_score
+            - CASE rv.rival_type
+                WHEN 'Jolteon'  THEN COALESCE(res.jolteon_exclude_backup, 0)
+                WHEN 'Flareon'  THEN COALESCE(res.flareon_exclude_backup, 0)
+                WHEN 'Vaporeon' THEN COALESCE(res.vaporeon_exclude_backup, 0)
+            END as team_selection_score,
         TP.tms_allocated,
+        TP.tms_denied,
         COALESCE(TP.assigned_tm_move, 'None') as assigned_tm_move,
         TP.tm_allocation_efficiency as tm_efficiency_rating,
-        -- Apply TM conflict penalty
-        CASE
-            WHEN TP.tms_denied > 0 THEN TP.team_selection_score * 0.8
-            ELSE TP.team_selection_score
-        END as adjusted_team_score,
-        -- Check if this is a legendary pokemon
-        CASE
-            WHEN TP.player_pokemon IN ('Moltres', 'Articuno', 'Zapdos', 'Mewtwo', 'Mew') THEN 1
-            ELSE 0
-        END as is_legendary,
-        -- Check if this is Pikachu
-        CASE
-            WHEN TP.player_pkmn_id = 'Player_Pikachu_1' THEN 1
-            ELSE 0
-        END as is_pikachu
+        -- Variant-adjusted contribution score for ranking
+        (TP.route_score
+            - CASE rv.rival_type
+                WHEN 'Jolteon'  THEN COALESCE(res.jolteon_exclude_weighted, 0)
+                WHEN 'Flareon'  THEN COALESCE(res.flareon_exclude_weighted, 0)
+                WHEN 'Vaporeon' THEN COALESCE(res.vaporeon_exclude_weighted, 0)
+            END) as team_contribution_score,
+        TP.avg_mini_boss_score,
+        CASE WHEN TP.player_pokemon IN ('Moltres', 'Articuno', 'Zapdos', 'Mewtwo', 'Mew') THEN 1 ELSE 0 END as is_legendary,
+        CASE WHEN TP.player_pkmn_id = 'Player_Pikachu_1' THEN 1 ELSE 0 END as is_pikachu,
+        rv.run_name,
+        rv.rival_type,
+        rv.keep_pikachu,
+        rv.no_legends,
+        rv.exclude_rival_patterns,
+        rv.exclude_trainers
     FROM {{ ref('opt_team_performance') }} TP
+    CROSS JOIN run_variants rv
+    LEFT JOIN rival_exclusion_scores res
+        ON res.game_stage = TP.game_stage
+        AND res.player_pkmn_id = TP.player_pkmn_id
+    WHERE rv.game_stage = TP.game_stage
+),
+
+pokemon_performance_base AS (
+    SELECT
+        ppr.*,
+        {{ calculate_performance_tier('ppr.team_selection_score', 'pokemon') }} as performance_tier,
+        CASE
+            WHEN ppr.tms_denied > 0 THEN ppr.team_selection_score * 0.8
+            ELSE ppr.team_selection_score
+        END as adjusted_team_score
+    FROM pokemon_performance_raw ppr
 ),
 
 {{ collapse_evolution_chains('pokemon_performance_base', 'player_pokemon', 'game_stage') }}
 
-pokemon_performance AS (
-    -- Apply battle filtering based on rival variants
-    SELECT
-        RV.game_stage,
-        RV.rival_type,
-        RV.run_name,
-        RV.keep_pikachu,
-        RV.no_legends,
-        RV.exclude_rival_patterns,
-        RV.exclude_trainers,
-        PPB.player_pkmn_id,
-        PPB.player_pokemon,
-        PPB.performance_tier,
-        PPB.stage_rank,
-        PPB.tms_allocated,
-        PPB.assigned_tm_move,
-        PPB.tm_efficiency_rating,
-        PPB.is_legendary,
-        PPB.is_pikachu,
-        PPB.adjusted_team_score
-    FROM run_variants RV
-    CROSS JOIN pokemon_performance_base_deduped PPB
-    WHERE RV.game_stage = PPB.game_stage
-),
-
 filtered_pokemon AS (
-    -- Apply variant filters (NoLedges filtering for legendary pokemon)
-    SELECT
-        PP.game_stage,
-        PP.rival_type,
-        PP.run_name,
-        PP.keep_pikachu,
-        PP.no_legends,
-        PP.exclude_rival_patterns,
-        PP.exclude_trainers,
-        PP.player_pkmn_id,
-        PP.player_pokemon,
-        PP.performance_tier,
-        PP.stage_rank,
-        PP.tms_allocated,
-        PP.assigned_tm_move,
-        PP.tm_efficiency_rating,
-        PP.is_legendary,
-        PP.is_pikachu,
-        PP.adjusted_team_score
-    FROM pokemon_performance PP
-    WHERE (PP.no_legends = 0 OR PP.is_legendary = 0)
+    SELECT *
+    FROM pokemon_performance_base_deduped
+    WHERE (no_legends = 0 OR is_legendary = 0)
 ),
 
 team_selections AS (
-    -- Select optimal teams based on variant rules
     SELECT
-        game_stage,
-        rival_type,
-        run_name,
-        keep_pikachu,
-        no_legends,
-        exclude_rival_patterns,
-        exclude_trainers,
-        player_pkmn_id,
-        player_pokemon,
-        adjusted_team_score,
-        performance_tier,
-        tm_efficiency_rating,
-        assigned_tm_move,
-        tms_allocated,
-        is_pikachu,
-        -- Rank pokemon for team selection
-        -- keep_pikachu=1: Pikachu sorts first (guaranteed slot), others by score
-        -- keep_pikachu=0: everyone (including Pikachu) ranks purely by score
+        *,
         ROW_NUMBER() OVER(
             PARTITION BY run_name, game_stage
             ORDER BY
@@ -115,24 +221,8 @@ team_selections AS (
 ),
 
 final_teams AS (
-    -- Select final 6-pokemon teams
     SELECT
-        game_stage,
-        rival_type,
-        run_name,
-        keep_pikachu,
-        no_legends,
-        exclude_rival_patterns,
-        exclude_trainers,
-        player_pkmn_id,
-        player_pokemon,
-        adjusted_team_score,
-        performance_tier,
-        tm_efficiency_rating,
-        assigned_tm_move,
-        tms_allocated,
-        team_rank,
-        is_pikachu,
+        *,
         COUNT(*) OVER(PARTITION BY run_name, game_stage) as team_size,
         AVG(adjusted_team_score) OVER(PARTITION BY run_name, game_stage) as avg_team_score,
         SUM(tms_allocated) OVER(PARTITION BY run_name, game_stage) as total_team_tms
@@ -142,11 +232,8 @@ final_teams AS (
 
 team_metadata AS (
     SELECT
-        game_stage,
-        rival_type,
         run_name,
-        keep_pikachu,
-        no_legends,
+        game_stage,
         avg_team_score as team_performance_score,
         total_team_tms,
         team_size,
@@ -154,7 +241,7 @@ team_metadata AS (
         {{ calculate_tm_efficiency_rating('total_team_tms', 'team') }} as tm_investment_level
     FROM (
         SELECT DISTINCT
-            game_stage, rival_type, run_name, keep_pikachu, no_legends,
+            run_name, game_stage,
             avg_team_score, total_team_tms, team_size
         FROM final_teams
     ) t

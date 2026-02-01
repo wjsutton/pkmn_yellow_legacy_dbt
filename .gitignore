@@ -11,3 +11,4 @@ old/
 *.xlsx
 *.pyc
 __pycache__/
+source/*
