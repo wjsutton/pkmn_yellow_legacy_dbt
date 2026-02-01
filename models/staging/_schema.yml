@@ -306,13 +306,15 @@ models:
   - name: stg_trainers_mandatory
     description: "Mandatory trainer battles that must be completed for game progression (rivals, story battles)"
     columns:
+        - name: id
+          description: "Unique identifier for each mandatory trainer pokemon move"
+          tests:
+            - unique
+            - not_null
         - name: trainer
           description: "Trainer name (rival encounters, story trainers, etc.)"
         - name: pkmn_id
           description: "Unique identifier for this specific pokemon instance"
-          tests:
-            - unique
-            - not_null
         - name: location
           description: "Location where mandatory battle takes place"
         - name: nearest_route
@@ -323,8 +325,70 @@ models:
           description: "Game progression stage when battle occurs"
         - name: pkmn_level
           description: "Pokemon level in mandatory battle"
+        - name: move
+          description: "One of the pokemon's four moves"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering"
         - name: notes
           description: "Additional context about this mandatory encounter"
+
+  - name: stg_trainers_non_mandatory
+    description: "Optional route trainers that can be battled but are not required for game progression"
+    columns:
+        - name: id
+          description: "Unique identifier for each non-mandatory trainer pokemon move"
+          tests:
+            - unique
+            - not_null
+        - name: trainer
+          description: "Trainer name (e.g. Route3_Youngster_1, SaffronGym_Psychic_2)"
+        - name: pkmn_id
+          description: "Unique identifier for this specific pokemon instance"
+        - name: location
+          description: "Location where battle takes place"
+        - name: nearest_route
+          description: "Route used for game progression order mapping"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage when battle is available"
+        - name: pkmn_level
+          description: "Pokemon level in battle"
+        - name: move
+          description: "One of the pokemon's four moves"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering"
+        - name: notes
+          description: "Additional context (always null for non-mandatory)"
+
+  - name: stg_trainers_postgame
+    description: "Postgame trainer battles including gym rematches, E4 rematches, and special trainers"
+    columns:
+        - name: id
+          description: "Unique identifier for each postgame trainer pokemon move"
+          tests:
+            - unique
+            - not_null
+        - name: trainer
+          description: "Trainer name (e.g. Brock_Rematch, Professor_Oak_1)"
+        - name: pkmn_id
+          description: "Unique identifier for this specific pokemon instance"
+        - name: location
+          description: "Location where battle takes place"
+        - name: nearest_route
+          description: "Route used for game progression order mapping"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage (Rematches for all postgame)"
+        - name: pkmn_level
+          description: "Pokemon level in postgame battle"
+        - name: move
+          description: "One of the pokemon's four moves"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering"
+        - name: notes
+          description: "Additional context (always null for postgame)"
 
   - name: stg_pkmn_growth_rates
     description: "Growth rate classification for each pokemon species (fast, medium_fast, medium_slow, slow)"

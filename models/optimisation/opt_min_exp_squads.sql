@@ -25,6 +25,8 @@ base_victories AS (
     WHERE bo.player_victory = 1
 ),
 
+{{ collapse_evolution_chains('base_victories', 'pokemon', 'game_stage') }}
+
 -- Expand to run variants with filtering
 stage_coverage AS (
     SELECT
@@ -34,7 +36,7 @@ stage_coverage AS (
         bv.pokemon,
         bv.exp_cost,
         bv.trainer_pkmn_id
-    FROM base_victories bv
+    FROM base_victories_deduped bv
     INNER JOIN run_variants rv ON rv.game_stage = bv.game_stage
     WHERE (rv.no_legends = 0 OR bv.is_legendary = 0)
     AND NOT (bv.trainer LIKE rv.exclude_rival_patterns[1])
@@ -165,14 +167,16 @@ team_opponent_assignment AS (
 ),
 
 -- Look up EXP yield for each defeated opponent and sum per team member
--- trainer_exp_yield is the base EXP from defeating that pokemon in a trainer battle
--- fresh_exp_cost already normalises for trade bonus, so comparing against base yields is correct
+-- Traded pokemon gain 1.5x EXP per battle (Gen 1 trade bonus: t = 1.5)
+-- exp_earned is in actual EXP terms (what the pokemon's EXP bar receives)
 team_exp_earned AS (
     SELECT
         toa.game_stage,
         toa.run_name,
         toa.fighter as pokemon,
-        SUM(ple.trainer_exp_yield) as exp_earned,
+        SUM(
+            FLOOR(ple.trainer_exp_yield * CASE WHEN spc.is_traded = 1 THEN 1.5 ELSE 1.0 END)
+        )::integer as exp_earned,
         COUNT(*) as battles_fought
     FROM team_opponent_assignment toa
     INNER JOIN {{ ref('int_opponent_pokemon') }} op
@@ -181,6 +185,9 @@ team_exp_earned AS (
     INNER JOIN {{ ref('int_pkmn_level_exp') }} ple
         ON ple.pokemon = op.pokemon
         AND ple.level = op.pkmn_level
+    INNER JOIN {{ ref('int_stage_pokemon_costs') }} spc
+        ON spc.pokemon = toa.fighter
+        AND spc.game_stage = toa.game_stage
     WHERE toa.fight_rank = 1
     GROUP BY toa.game_stage, toa.run_name, toa.fighter
 )
@@ -193,23 +200,33 @@ SELECT
     rv.no_legends,
     fp.pokemon,
     fp.pick_order,
-    fp.exp_cost,
+    spc.is_traded,
+    -- EXP needed in actual terms (undo the trade discount from fresh_exp_cost)
+    CASE WHEN spc.is_traded = 1
+        THEN ROUND(fp.exp_cost * 1.5)::integer
+        ELSE fp.exp_cost
+    END as exp_needed,
     fp.assigned_opponents,
     fp.total_opponents_beaten,
     SUM(fp.exp_cost) OVER (PARTITION BY fp.game_stage, fp.run_name) as total_team_exp,
     ac.opponents_covered,
     st.total_opponents,
     ROUND(ac.opponents_covered::FLOAT / GREATEST(st.total_opponents, 1) * 100, 1) as coverage_pct,
-    -- EXP budget: earned from trainers vs needed to reach level cap
+    -- EXP budget: actual EXP earned (includes 1.5x trade bonus) vs actual EXP needed
     COALESCE(te.exp_earned, 0) as exp_earned,
     COALESCE(te.battles_fought, 0) as battles_fought,
-    fp.exp_cost - COALESCE(te.exp_earned, 0) as exp_deficit,
+    (CASE WHEN spc.is_traded = 1 THEN ROUND(fp.exp_cost * 1.5)::integer ELSE fp.exp_cost END)
+        - COALESCE(te.exp_earned, 0) as exp_deficit,
     CASE
-        WHEN fp.exp_cost = 0 THEN 'Free (trade at cap)'
-        WHEN COALESCE(te.exp_earned, 0) >= fp.exp_cost THEN 'Self-sustaining'
-        WHEN COALESCE(te.exp_earned, 0) >= fp.exp_cost * 0.5 THEN 'Needs minor grinding'
+        WHEN fp.exp_cost = 0 AND spc.is_traded = 1 THEN 'Traded at cap'
+        WHEN fp.exp_cost = 0 THEN 'Caught at cap'
+        WHEN COALESCE(te.exp_earned, 0) >= (CASE WHEN spc.is_traded = 1 THEN ROUND(fp.exp_cost * 1.5)::integer ELSE fp.exp_cost END)
+            THEN 'Self-sustaining'
+        WHEN COALESCE(te.exp_earned, 0) >= (CASE WHEN spc.is_traded = 1 THEN ROUND(fp.exp_cost * 1.5)::integer ELSE fp.exp_cost END) * 0.5
+            THEN 'Needs minor grinding'
         ELSE 'Needs significant grinding'
     END as exp_status,
+    en.evolution_note,
     {{ generate_variant_description('rv.rival_type', 'rv.keep_pikachu', 'rv.no_legends') }} as variant_description
 FROM final_picks fp
 INNER JOIN run_variants rv
@@ -218,8 +235,12 @@ INNER JOIN actual_coverage ac
     ON ac.game_stage = fp.game_stage AND ac.run_name = fp.run_name
 INNER JOIN stage_totals st
     ON st.game_stage = fp.game_stage AND st.run_name = fp.run_name
+INNER JOIN {{ ref('int_stage_pokemon_costs') }} spc
+    ON spc.pokemon = fp.pokemon AND spc.game_stage = fp.game_stage
 LEFT JOIN team_exp_earned te
     ON te.game_stage = fp.game_stage
     AND te.run_name = fp.run_name
     AND te.pokemon = fp.pokemon
+LEFT JOIN _evo_notes en
+    ON en.pokemon = fp.pokemon
 ORDER BY fp.run_name, fp.game_stage, fp.pick_order

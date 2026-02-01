@@ -8,8 +8,6 @@ old/
 .env
 .vscode/*
 .github/*
-*.csv
 *.xlsx
 *.pyc
 __pycache__/
-bug_reports/*

@@ -1,97 +1,79 @@
-WITH all_trainer_data AS (
-    -- Combine all trainer types
-    SELECT 
+WITH all_trainer_moves AS (
+    -- All trainer sources now have explicit moves
+    SELECT
         trainer,
-        0 as is_mini_boss,
         pkmn_id,
         nearest_route,
         pokemon,
         game_stage,
         notes,
-        pkmn_level
+        pkmn_level,
+        move,
+        move_number
     FROM {{ ref('stg_trainers_mandatory') }}
-    
+
     UNION ALL
-    
-    SELECT 
+
+    SELECT
         trainer,
-        0 as is_mini_boss,
-        pkmn_id,
-        nearest_route,
-        pokemon,
-        game_stage,
-        'Legendary' as notes,
-        pkmn_level
-    FROM {{ ref('stg_trainers_legendary') }}
-    
-    UNION ALL
-    
-    SELECT 
-        trainer,
-        1 as is_mini_boss,
         pkmn_id,
         nearest_route,
         pokemon,
         game_stage,
         notes,
-        pkmn_level
-    FROM {{ ref('stg_trainers_gym_leaders') }}
-),
+        pkmn_level,
+        move,
+        move_number
+    FROM {{ ref('stg_trainers_legendary') }}
 
-gym_leader_moves AS (
-    -- Use explicit moves from gym leader seed file
-    SELECT 
-        T.trainer,
-        T.is_mini_boss,
-        T.pkmn_id,
-        T.nearest_route,
-        T.pokemon,
-        T.game_stage,
-        T.notes,
-        T.pkmn_level,
-        GL.move,
-        GL.move_number
-    FROM all_trainer_data T
-    INNER JOIN {{ ref('stg_trainers_gym_leaders') }} GL 
-        ON T.pkmn_id = GL.pkmn_id
-    WHERE T.is_mini_boss = 1
-),
-
-regular_trainer_moves AS (
-    -- Use level-up moves for non-gym leaders
-    SELECT 
-        T.trainer,
-        T.is_mini_boss,
-        T.pkmn_id,
-        T.nearest_route,
-        T.pokemon,
-        T.game_stage,
-        T.notes,
-        T.pkmn_level,
-        M.move,
-        ROW_NUMBER() OVER (PARTITION BY T.pkmn_id ORDER BY M.move) AS move_number
-    FROM all_trainer_data T
-    INNER JOIN {{ ref('int_pokemon_movesets') }} M 
-        ON T.pokemon = M.pokemon
-    WHERE T.is_mini_boss = 0
-        AND M.move_origin = 'level-up'
-        AND T.pkmn_level >= M.pkmn_level
-    QUALIFY ROW_NUMBER() OVER(PARTITION BY T.pkmn_id ORDER BY M.move) <= 4
-),
-
-all_trainers AS (
-    -- Combine gym leaders (explicit moves) with regular trainers (level-up moves)
-    SELECT * FROM gym_leader_moves
     UNION ALL
-    SELECT * FROM regular_trainer_moves
+
+    SELECT
+        trainer,
+        pkmn_id,
+        nearest_route,
+        pokemon,
+        game_stage,
+        notes,
+        pkmn_level,
+        move,
+        move_number
+    FROM {{ ref('stg_trainers_gym_leaders') }}
+
+    UNION ALL
+
+    SELECT
+        trainer,
+        pkmn_id,
+        nearest_route,
+        pokemon,
+        game_stage,
+        notes,
+        pkmn_level,
+        move,
+        move_number
+    FROM {{ ref('stg_trainers_non_mandatory') }}
+
+    UNION ALL
+
+    SELECT
+        trainer,
+        pkmn_id,
+        nearest_route,
+        pokemon,
+        game_stage,
+        notes,
+        pkmn_level,
+        move,
+        move_number
+    FROM {{ ref('stg_trainers_postgame') }}
 ),
 
 trainer_roster AS (
     SELECT
         T.trainer,
-        T.is_mini_boss,
         T.game_stage,
-        R.game_order, 
+        R.game_order,
         T.notes,
         T.pkmn_id,
         S.pokedex,
@@ -101,7 +83,7 @@ trainer_roster AS (
         MAX(CASE WHEN T.move_number = 2 THEN move END) as move_2,
         MAX(CASE WHEN T.move_number = 3 THEN move END) as move_3,
         MAX(CASE WHEN T.move_number = 4 THEN move END) as move_4
-    FROM all_trainers as T
+    FROM all_trainer_moves as T
     INNER JOIN {{ ref('stg_game_route_order') }} as R ON T.nearest_route = R.map
     INNER JOIN {{ ref('stg_pkmn_stats') }} as S ON T.pokemon = S.pokemon
     WHERE LOWER(T.game_stage) NOT LIKE '%_alt%'
@@ -124,28 +106,21 @@ trainer_run_combinations AS (
 SELECT
     -- Trainer identification
     tr.trainer,
-    tr.is_mini_boss,
     tr.game_stage,
     tr.game_order,
     tr.notes,
-    
+
     -- Pokemon details
     tr.pkmn_id,
     tr.pokedex,
     tr.pokemon,
     tr.pkmn_level,
-    
+
     -- Movesets
     tr.move_1,
     tr.move_2,
     tr.move_3,
-    tr.move_4,
-    
-    -- Additional route/run information from combinations
-    -- trc.run
+    tr.move_4
+
 FROM trainer_roster as tr
 ORDER BY game_order
--- Optional: could add run combinations logic here if needed
--- LEFT JOIN trainer_run_combinations as trc 
---     ON tr.trainer = trc.trainer 
---     AND tr.game_stage = trc.game_stage

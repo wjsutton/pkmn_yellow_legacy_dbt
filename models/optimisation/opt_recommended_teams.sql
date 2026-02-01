@@ -33,6 +33,8 @@ pokemon_performance_base AS (
     FROM {{ ref('opt_team_performance') }} TP
 ),
 
+{{ collapse_evolution_chains('pokemon_performance_base', 'player_pokemon', 'game_stage') }}
+
 pokemon_performance AS (
     -- Apply battle filtering based on rival variants
     SELECT
@@ -54,7 +56,7 @@ pokemon_performance AS (
         PPB.is_pikachu,
         PPB.adjusted_team_score
     FROM run_variants RV
-    CROSS JOIN pokemon_performance_base PPB
+    CROSS JOIN pokemon_performance_base_deduped PPB
     WHERE RV.game_stage = PPB.game_stage
 ),
 
@@ -184,8 +186,10 @@ SELECT
         WHEN FT.team_rank <= 3 THEN 'Core team member'
         ELSE 'Support team member'
     END as role_on_team,
+    EN.evolution_note,
     {{ generate_variant_description('FT.rival_type', 'FT.keep_pikachu', 'FT.no_legends') }} as variant_description
 FROM final_teams FT
 INNER JOIN team_metadata TM ON FT.run_name = TM.run_name
     AND FT.game_stage = TM.game_stage
+LEFT JOIN _evo_notes EN ON EN.pokemon = FT.player_pokemon
 ORDER BY FT.run_name, FT.game_stage, FT.team_rank

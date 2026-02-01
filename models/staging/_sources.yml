@@ -46,6 +46,10 @@ sources:
         description: Pokemon teams of legendary training (Craig, Weebo, Smith)
       - name: trainers_mandatory
         description: Pokemon teams of the mandatory trainers
+      - name: trainers_non_mandatory
+        description: Pokemon teams of optional route trainers
+      - name: trainers_postgame
+        description: Pokemon teams of postgame trainers (gym rematches, E4 rematches, special trainers)
 
       - name: item_stone_locations
         description: Evolution stone locations throughout the game (overworld items and shops)

@@ -15,7 +15,7 @@ WITH CTE AS (
         notes,
         pkmn_level,
         moves as move
-    FROM {{ source('yellow_legacy', 'trainers_mandatory') }}
+    FROM {{ source('yellow_legacy', 'trainers_non_mandatory') }}
     WHERE moves IS NOT NULL
 
 )

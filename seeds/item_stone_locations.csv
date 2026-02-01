@@ -1,0 +1,13 @@
+stone_type,map,quantity,source_type
+Moon,MtMoonB2F,1,Hidden
+Moon,MtMoonB2F,1,Visible
+Moon,PokemonMansion1F,1,Hidden
+Moon,Route7,unlimited,Shop
+Fire,PokemonMansion1F,1,Hidden
+Fire,Route7,unlimited,Shop
+Water,SeafoamIslandsB3F,1,Hidden
+Water,Route7,unlimited,Shop
+Thunder,PowerPlant,1,Hidden
+Thunder,Route7,unlimited,Shop
+Leaf,VictoryRoad2F,1,Hidden
+Leaf,Route7,unlimited,Shop
