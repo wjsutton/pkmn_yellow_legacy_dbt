@@ -6,10 +6,15 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
+on-run-start:
+  - "{{ drop_dbt_loaded_at_col() }}"
+
+on-run-end:
+  - "{{ add_dbt_loaded_at_col() }}"
+
 seeds:
   +delimiter: ','
   +schema: raw
-  +post-hook: "{{ add_dbt_loaded_at_col() }}"
 
 models:
   pkmn_yellow_legacy_map:
