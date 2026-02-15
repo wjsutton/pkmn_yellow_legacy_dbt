@@ -272,3 +272,83 @@ models:
           description: "Number of opponents beaten without single-use TMs"
         - name: total_opponents_faced
           description: "Total number of distinct trainer pokemon faced at this stage"
+
+  - name: int_navigation_guide
+    description: "Step-by-step navigation guide enriched with map dimensions, available exits, and next-step preview. Query by map_name and order by step_order."
+    columns:
+        - name: route_section
+          description: "Walkthrough section (title_screen, bedroom_exit, pallet_to_oak, etc.)"
+        - name: step_order
+          description: "Sequential step number"
+          tests:
+            - unique
+            - not_null
+        - name: map_name
+          description: "Map where this step takes place"
+        - name: target_x
+          description: "Target X coordinate"
+        - name: target_y
+          description: "Target Y coordinate"
+        - name: action
+          description: "Action type (press, move, use_warp, interact, battle, wait, checkpoint)"
+        - name: action_detail
+          description: "Specific instructions"
+        - name: expected_result
+          description: "Expected outcome after this step"
+        - name: notes
+          description: "Additional tips"
+        - name: map_width
+          description: "Width of current map in blocks"
+        - name: map_height
+          description: "Height of current map in blocks"
+        - name: area_type
+          description: "Type of area (town, city, route, indoor, dungeon, gate)"
+        - name: parent_area
+          description: "Parent town/city for indoor locations"
+        - name: available_exits
+          description: "Aggregated string of all exits from this map with coordinates and destinations"
+        - name: next_map
+          description: "Map name of the next step"
+        - name: next_action
+          description: "Action type of the next step"
+        - name: next_action_detail
+          description: "Instructions for the next step"
+
+  - name: int_map_connections
+    description: "Map-to-map connection reference with navigation instructions. Query by from_map to find all exits from a location."
+    columns:
+        - name: id
+          description: "Surrogate key for the warp connection"
+          tests:
+            - unique
+            - not_null
+        - name: from_map
+          description: "Source map name"
+        - name: from_x
+          description: "X coordinate of warp on source map"
+        - name: from_y
+          description: "Y coordinate of warp on source map"
+        - name: to_map
+          description: "Destination map name"
+        - name: to_x
+          description: "X coordinate on destination map"
+        - name: to_y
+          description: "Y coordinate on destination map"
+        - name: warp_type
+          description: "Type of connection (door, stairs, gate, edge)"
+        - name: notes
+          description: "Description of the connection"
+        - name: from_map_width
+          description: "Width of source map"
+        - name: from_map_height
+          description: "Height of source map"
+        - name: from_area_type
+          description: "Area type of source map"
+        - name: to_map_width
+          description: "Width of destination map"
+        - name: to_map_height
+          description: "Height of destination map"
+        - name: to_area_type
+          description: "Area type of destination map"
+        - name: navigation_instruction
+          description: "Human-readable instruction for using this connection"

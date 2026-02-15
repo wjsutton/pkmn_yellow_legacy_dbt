@@ -27,3 +27,6 @@ models:
     optimisation:
       +materialized: table
       +schema: optimisation
+    dashboard:
+      +materialized: table
+      +schema: dashboard

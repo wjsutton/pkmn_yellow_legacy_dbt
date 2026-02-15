@@ -21,7 +21,7 @@ Runs support parameters:
 5. Staging layer tests: only unique and not_null on primary keys
 6. Each team has a maximum of 6 pokemon; single-use TMs can only be assigned once per team (verified by dbt test)
 7. The intermediate layer should have no tests
-8. Only 3 folders in models/ with no files outside of folders
+8. Only 4 folders in models/ with no files outside of folders
 9. Fewer files in the final layer than the intermediate layer
 
 ## Tools & Environment
@@ -30,6 +30,12 @@ Runs support parameters:
 - **Virtual Environment**: `env/Scripts/` (Python, dbt, duckdb executables)
 - **MCP Server**: dbt MCP server available for column lineage queries
 - **Macros**: Gen 1 battle mechanics (calculate_damage_rby, calculate_hp_rby, calculate_stat_rby, calculate_battle_outcome), run variant generation, TM efficiency
+
+## Required Skills
+When working on this dbt project, use these skills from the dbt plugin:
+- `dbt:using-dbt-for-analytics-engineering` -- for building/modifying models, debugging errors, exploring data, writing tests
+- `dbt:adding-dbt-unit-test` -- when adding unit tests for dbt models
+- `dbt:fetching-dbt-docs` -- when looking up dbt features or syntax
 
 ## Key Commands
 - `env/Scripts/python data/create_database.py` -- recreate the DuckDB database
@@ -46,7 +52,7 @@ Each iteration is a fresh context. Your only memory is:
 - `PROGRESS.md` (learnings from past iterations)
 - `CLAUDE.md` (overall object and success criteria)
 
-## Architecture (3 folders only)
+## Architecture (4 folders only)
 - **staging/**: Light cleanup of 15 seed CSV sources. Tests: unique + not_null on primary keys only.
 - **intermediate/**: 5 models answering key questions (no tests):
   1. What pokemon are available at each game stage? (catchable, trades, evolution by level/stone)
@@ -55,6 +61,7 @@ Each iteration is a fresh context. Your only memory is:
   4. What stats do all pokemon have at any level? (Gen 1 stat formulas)
   5. Who wins in a fight? (battle outcome calculations using macros)
 - **optimisation/**: Final team selection (fewer files than intermediate). Tests: max 6 per team, single-use TM uniqueness.
+- **dashboard/**: Tableau-ready datasets (3 models). Tests: unique + not_null on surrogate keys, accepted values.
 
 ## Implementation Plan
 See PROGRESS.md for the full restructuring plan and progress.

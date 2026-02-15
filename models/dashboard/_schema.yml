@@ -1,0 +1,182 @@
+version: 2
+
+models:
+  - name: dash_map_pokemon
+    description: "Map locations with catchable pokemon and key catch flags for Tableau map visualization."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: display_location + game_stage + pokemon + area"
+        tests:
+          - unique
+          - not_null
+      - name: display_location
+        description: "Human-readable location name for map display"
+      - name: display_name
+        description: "Location display name from map_locations"
+      - name: x_coordinate
+        description: "Map X coordinate for Tableau plotting"
+      - name: y_coordinate
+        description: "Map Y coordinate for Tableau plotting"
+      - name: location_type
+        description: "Type of location (Route, City, Cave, etc.)"
+      - name: game_stage
+        description: "Game progression stage (Badge_1, Badge_2, etc.)"
+      - name: pokemon
+        description: "Pokemon species name (may be evolved form)"
+      - name: initial_pokemon
+        description: "Base pokemon that is caught (before evolution)"
+      - name: area
+        description: "Encounter area (Grass, Water, Cave, Evolution, etc.)"
+      - name: min_encounter_level
+        description: "Minimum encounter level for this pokemon at this location"
+      - name: max_encounter_level
+        description: "Maximum encounter level for this pokemon at this location"
+      - name: source
+        description: "How this pokemon is obtained (Wild Encounter, Level Evolution, etc.)"
+      - name: pokemon_category
+        description: "Category classification (Wild Pokemon, Evolved Form, etc.)"
+      - name: is_key_catch
+        description: "1 if this pokemon appears on any recommended or min-exp team"
+
+  - name: dash_trainer_counters
+    description: "Trainer difficulty rankings with top 5 counter pokemon per opponent, run-variant aware."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: run_name + trainer_pkmn_id + counter_pokemon"
+        tests:
+          - unique
+          - not_null
+      - name: run_name
+        description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
+      - name: rival_type
+        description: "Rival pokemon type (Jolteon, Vaporeon, Flareon)"
+      - name: keep_pikachu
+        description: "Whether Pikachu is required (1) or not (0)"
+      - name: no_legends
+        description: "Whether legendaries are excluded (1) or allowed (0)"
+      - name: variant_description
+        description: "Human-readable description of run variant"
+      - name: game_stage
+        description: "Game progression stage"
+      - name: trainer
+        description: "Trainer name"
+      - name: is_mini_boss
+        description: "Whether trainer is a gym leader / mini boss (1) or not (0)"
+      - name: difficulty_rank
+        description: "Trainer difficulty rank within stage (1 = hardest)"
+      - name: difficulty_score
+        description: "Numeric difficulty score (0-10)"
+      - name: difficulty_rating
+        description: "Difficulty classification (Extreme, Very Hard, Hard, Medium, Easy)"
+      - name: trainer_pkmn_id
+        description: "Unique identifier for this trainer's pokemon instance"
+      - name: trainer_pokemon
+        description: "Trainer's pokemon species name"
+      - name: trainer_pkmn_level
+        description: "Trainer's pokemon level"
+      - name: counter_pokemon
+        description: "Recommended counter pokemon species"
+      - name: counter_rank
+        description: "Counter ranking (1-5, 1 = best counter)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 1
+              max_value: 5
+      - name: battle_score
+        description: "Battle outcome score for this counter matchup"
+      - name: counter_move
+        description: "Best move for the counter to use"
+      - name: counter_move_origin
+        description: "How the counter move is learned (level-up, tm, hm, single-use-tm)"
+      - name: requires_single_use_tm
+        description: "Whether the counter move requires a single-use TM (1) or not (0)"
+      - name: player_turns_to_ko
+        description: "Number of turns for the counter pokemon to KO the opponent"
+      - name: opponent_move
+        description: "Best move the opponent uses against our counter pokemon"
+      - name: opponent_turns_to_ko
+        description: "Number of turns for the opponent to KO our counter pokemon"
+      - name: catch_display_name
+        description: "Where to catch the counter pokemon"
+      - name: catch_level
+        description: "Level at which the counter pokemon can be caught"
+      - name: counter_evolution_note
+        description: "How to evolve the counter pokemon from its base form"
+      - name: opponent_type1
+        description: "Trainer pokemon primary type"
+      - name: opponent_type2
+        description: "Trainer pokemon secondary type"
+      - name: counter_type1
+        description: "Counter pokemon primary type"
+      - name: counter_type2
+        description: "Counter pokemon secondary type"
+
+  - name: dash_team_builder
+    description: "Combined recommended, backup, and min-exp teams with EXP analysis and catch locations."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: run_name + game_stage + team_type + pokemon"
+        tests:
+          - unique
+          - not_null
+      - name: run_name
+        description: "Run variant identifier"
+      - name: game_stage
+        description: "Game progression stage"
+      - name: rival_type
+        description: "Rival pokemon type"
+      - name: keep_pikachu
+        description: "Whether Pikachu is required (1) or not (0)"
+      - name: no_legends
+        description: "Whether legendaries are excluded (1) or allowed (0)"
+      - name: variant_description
+        description: "Human-readable description of run variant"
+      - name: pokemon
+        description: "Pokemon species name"
+      - name: type1
+        description: "Pokemon primary type"
+      - name: type2
+        description: "Pokemon secondary type"
+      - name: team_type
+        description: "Team category: recommended, backup, or min_exp"
+        tests:
+          - accepted_values:
+              values: ['recommended', 'backup', 'min_exp']
+      - name: slot_order
+        description: "Position within team (1-6)"
+      - name: pokemon_score
+        description: "Individual pokemon performance score"
+      - name: performance_tier
+        description: "Performance classification (Elite, Strong, Solid, Viable, Weak)"
+      - name: assigned_tm_move
+        description: "Primary TM move assigned"
+      - name: tms_allocated
+        description: "Number of TMs allocated"
+      - name: role_on_team
+        description: "Pokemon's role description"
+      - name: team_performance_score
+        description: "Overall team performance score (recommended only)"
+      - name: team_quality
+        description: "Team quality classification (recommended only)"
+      - name: exp_needed
+        description: "EXP required to reach level cap"
+      - name: exp_earned
+        description: "EXP earned from trainer battles (min_exp only)"
+      - name: exp_deficit
+        description: "EXP needed minus EXP earned (min_exp only)"
+      - name: exp_status
+        description: "Grinding status classification (min_exp only)"
+      - name: is_traded
+        description: "Whether pokemon is obtained via trade"
+      - name: coverage_pct
+        description: "Team opponent coverage percentage (min_exp only)"
+      - name: evolution_note
+        description: "How to evolve this pokemon from its base form"
+      - name: catch_display_name
+        description: "Where to catch this pokemon"
+      - name: catch_level
+        description: "Level at which this pokemon can be caught"
+      - name: catch_x
+        description: "Map X coordinate of catch location"
+      - name: catch_y
+        description: "Map Y coordinate of catch location"

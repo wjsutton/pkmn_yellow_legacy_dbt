@@ -1,0 +1,49 @@
+route_section,step_order,map_name,target_x,target_y,action,action_detail,expected_result,notes
+title_screen,1,NONE,-1,-1,press,a,Title screen advances,Press A at title screen
+title_screen,2,NONE,-1,-1,press,a,New Game option appears,Select New Game
+title_screen,3,NONE,-1,-1,press,a,Difficulty select appears,Choose difficulty
+title_screen,4,NONE,-1,-1,press,a,Name select appears,Select Hard difficulty
+title_screen,5,NONE,-1,-1,press,a,Game starts,Pick default name and confirm
+bedroom_exit,10,PLAYERS_HOUSE_2F,3,3,move,Walk to center of room,Standing in bedroom,Start position in bedroom
+bedroom_exit,11,PLAYERS_HOUSE_2F,7,1,move,Walk right then up to stairs,Reached stairs,Stairs are at (7 1) in top-right
+bedroom_exit,12,PLAYERS_HOUSE_1F,7,1,use_warp,Step on stairs,Arrived downstairs,Auto-warp to 1F
+bedroom_exit,13,PLAYERS_HOUSE_1F,2,7,move,Walk left and down to door,At front door,Door tiles at (2 7) and (3 7)
+bedroom_exit,14,PALLET_TOWN,5,6,use_warp,Walk through door,Outside in Pallet Town,Exit places you at (5 6)
+pallet_to_oak,15,PALLET_TOWN,5,0,move,Walk north toward Route 1,Near grass at north edge,Walking into tall grass triggers Oak
+pallet_to_oak,16,PALLET_TOWN,-1,-1,wait,Oak cutscene,Oak leads you to his lab,Automatic - just press A through dialogue
+pallet_to_oak,17,OAKS_LAB,4,4,interact,Talk to Oak and get Pikachu,Received Pikachu,Walk to Pikachu ball on table and press A
+pallet_to_oak,18,OAKS_LAB,-1,-1,interact,Press A through all dialogue,Pikachu joins party,Multiple dialogue boxes
+rival_battle,19,OAKS_LAB,-1,-1,battle,Rival battle triggers,Battle starts,Rival challenges you before you can leave
+rival_battle,20,OAKS_LAB,-1,-1,battle,Win battle with Pikachu,Battle won,Use ThunderShock - its super effective vs Eevee in Yellow Legacy
+parcel_quest,21,OAKS_LAB,4,11,move,Walk to lab exit,At exit door,Exit doors at (4 11) and (5 11)
+parcel_quest,22,PALLET_TOWN,12,0,move,Walk north through Pallet Town,At north edge,Head toward Route 1
+parcel_quest,23,ROUTE_1,-1,-1,move,Walk north through Route 1,Traversing Route 1,Follow the path north avoiding trainers
+parcel_quest,24,VIRIDIAN_CITY,29,19,move,Enter Viridian City and find Mart,At Mart entrance,Mart is on the east side of city
+parcel_quest,25,VIRIDIAN_MART,-1,-1,interact,Talk to clerk and get Oaks Parcel,Received Oaks Parcel,Talk to the shopkeeper
+return_parcel,30,VIRIDIAN_MART,2,7,move,Exit the Mart,At Mart exit,Walk to exit door
+return_parcel,31,VIRIDIAN_CITY,-1,17,move,Walk south through Viridian,At south edge,Head back to Route 1
+return_parcel,32,ROUTE_1,-1,-1,move,Walk south through Route 1,Traversing Route 1 southbound,Follow path south
+return_parcel,33,PALLET_TOWN,12,11,move,Walk to Oaks Lab,At lab entrance,Lab entrance at (12 11)
+return_parcel,34,OAKS_LAB,-1,-1,interact,Deliver parcel to Oak and get Pokedex,Received Pokedex,Talk to Oak - get Pokedex and Poke Balls
+viridian_to_forest,40,OAKS_LAB,4,11,move,Exit Oaks Lab,At lab exit,Leave after getting Pokedex
+viridian_to_forest,41,PALLET_TOWN,-1,0,move,Walk north to Route 1,Leaving Pallet Town,Head north
+viridian_to_forest,42,ROUTE_1,-1,0,move,Walk north through Route 1,Heading to Viridian,Follow path north
+viridian_to_forest,43,VIRIDIAN_CITY,-1,0,move,Walk north through Viridian to Route 2,Heading to Route 2,Continue north through city
+viridian_to_forest,44,ROUTE_2,-1,0,move,Walk north through Route 2 to Forest gate,At Forest South Gate,Enter the gate building
+viridian_to_forest,45,VIRIDIAN_FOREST_SOUTH_GATE,3,0,move,Walk through gate to Forest,Entering Viridian Forest,Walk north through gate
+forest_traverse,50,VIRIDIAN_FOREST,17,47,move,Enter forest from south entrance,At south end of forest,Start navigating north
+forest_traverse,51,VIRIDIAN_FOREST,1,24,move,Navigate northwest through forest,Mid-forest,Follow winding path - generally go left and up
+forest_traverse,52,VIRIDIAN_FOREST,3,12,move,Continue north through forest,Upper forest area,Watch for Bug Catchers - good exp
+forest_traverse,53,VIRIDIAN_FOREST,1,0,move,Reach north exit,At north exit of forest,Exit tiles at (1 0) and (2 0)
+forest_traverse,54,VIRIDIAN_FOREST_NORTH_GATE,2,0,move,Walk through north gate,Exiting to Route 2 north,Walk north through gate building
+forest_traverse,55,ROUTE_2,4,0,move,Exit to Route 2 north section,On Route 2 heading to Pewter,Short walk north
+pewter_to_brock,60,PEWTER_CITY,-1,-1,move,Enter Pewter City,Arrived in Pewter City,Entering from the south
+pewter_to_brock,61,PEWTER_CITY,13,25,move,Walk to Pokemon Center,At Pokecenter entrance,Pokecenter at (13 25)
+pewter_to_brock,62,PEWTER_POKECENTER,-1,-1,interact,Heal Pokemon at counter,Pokemon healed,Talk to nurse and heal
+pewter_to_brock,63,PEWTER_POKECENTER,3,7,move,Exit Pokemon Center,At Pokecenter exit,Leave after healing
+pewter_to_brock,64,PEWTER_CITY,16,17,move,Walk to Pewter Gym,At Gym entrance,Gym at (16 17)
+pewter_to_brock,65,PEWTER_GYM,4,3,move,Walk to Brock,Standing near Brock,Walk up to the gym leader
+pewter_to_brock,66,PEWTER_GYM,-1,-1,interact,Talk to Brock to start battle,Battle begins,Press A to initiate battle
+pewter_to_brock,67,PEWTER_GYM,-1,-1,battle,Defeat Brock,Earned Boulder Badge,Pikachu struggles vs Rock - consider Mankey or Butterfree
+pewter_to_brock,68,PEWTER_GYM,4,13,move,Exit gym after victory,At gym exit,Walk south to exit doors
+pewter_to_brock,69,PEWTER_CITY,-1,-1,checkpoint,Save milestone,Badge 1 complete,Use checkpoint command to record progress

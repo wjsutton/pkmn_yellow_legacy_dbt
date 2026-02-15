@@ -193,6 +193,19 @@ See `CLAUDE.md` for detailed development guidelines.
 - `models/intermediate/int_pokemon_availability.sql` -- Pokemon availability per game stage
 - `macros/calculate_damage_rby.sql` -- Generation 1 damage formula
 
+## Integration with ClaudePlaysPokemonStarter
+
+This dbt project provides navigation and battle data to the [ClaudePlaysPokemonStarter](https://github.com/wjsutton/ClaudePlaysPokemonStarter) AI agent via a dbt MCP server. The emulator project queries navigation guides and map connections to help the agent navigate the game world.
+
+To use them together, clone both repos as siblings:
+```
+GitHub/
+├── ClaudePlaysPokemonStarter/
+└── pkmn_yellow_legacy_dbt/      ← this repo
+```
+
+See the emulator project's CLAUDE.md for setup details.
+
 ## Contact
 
 - **GitHub**: [@wjsutton](https://github.com/wjsutton)

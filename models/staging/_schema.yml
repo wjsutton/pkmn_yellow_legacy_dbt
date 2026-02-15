@@ -428,3 +428,72 @@ models:
         - name: base_exp
           description: "Base experience points yielded when this pokemon is defeated"
 
+  - name: stg_nav_map_metadata
+    description: "Map properties for navigation - dimensions, type, and parent area for maps from Pallet Town through Pewter City"
+    columns:
+        - name: map_name
+          description: "Memory reader enum name for the map (e.g. PLAYERS_HOUSE_1F)"
+          tests:
+            - unique
+            - not_null
+        - name: map_id_hex
+          description: "Hex map ID from the ROM"
+        - name: width
+          description: "Map width in blocks/steps (matches memory reader coordinates)"
+        - name: height
+          description: "Map height in blocks/steps (matches memory reader coordinates)"
+        - name: area_type
+          description: "Type of area (town, city, route, indoor, dungeon, gate)"
+        - name: parent_area
+          description: "Parent town/city this indoor location belongs to (null for routes/dungeons)"
+
+  - name: stg_nav_map_warps
+    description: "Door, staircase, and gate connections between maps with exact warp coordinates"
+    columns:
+        - name: id
+          description: "Surrogate key from from_map, from_x, from_y, to_map"
+          tests:
+            - unique
+            - not_null
+        - name: from_map
+          description: "Source map name (memory reader enum)"
+        - name: from_x
+          description: "X coordinate of the warp on the source map (-1 for map edges)"
+        - name: from_y
+          description: "Y coordinate of the warp on the source map (-1 for map edges)"
+        - name: to_map
+          description: "Destination map name (memory reader enum)"
+        - name: to_x
+          description: "X coordinate of arrival on the destination map (-1 for map edges)"
+        - name: to_y
+          description: "Y coordinate of arrival on the destination map (-1 for map edges)"
+        - name: warp_type
+          description: "Type of warp (door, stairs, gate, edge)"
+        - name: notes
+          description: "Description of the warp connection"
+
+  - name: stg_nav_route_waypoints
+    description: "Ordered step-by-step walkthrough from title screen through defeating Brock (Badge 1)"
+    columns:
+        - name: route_section
+          description: "Section of the walkthrough (title_screen, bedroom_exit, pallet_to_oak, etc.)"
+        - name: step_order
+          description: "Sequential step number for ordering"
+          tests:
+            - unique
+            - not_null
+        - name: map_name
+          description: "Map where this step takes place (NONE for menu/title steps)"
+        - name: target_x
+          description: "Target X coordinate to walk to (-1 for non-positional actions)"
+        - name: target_y
+          description: "Target Y coordinate to walk to (-1 for non-positional actions)"
+        - name: action
+          description: "Action type (press, move, use_warp, interact, battle, wait, checkpoint)"
+        - name: action_detail
+          description: "Specific instructions for this step"
+        - name: expected_result
+          description: "What should happen after completing this step"
+        - name: notes
+          description: "Additional tips or context"
+

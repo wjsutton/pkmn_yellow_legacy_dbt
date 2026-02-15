@@ -13,3 +13,4 @@ old/
 __pycache__/
 source/*
 bug_reports/*
+scripts/cache/*

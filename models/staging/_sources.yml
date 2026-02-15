@@ -63,3 +63,18 @@ sources:
       - name: pkmn_base_exp
         description: Base experience yield for each pokemon species
 
+      - name: nav_map_metadata
+        description: Map properties (dimensions, type, parent area) for navigation assistance
+
+      - name: nav_map_warps
+        description: Door, staircase, and gate connections between maps with exact coordinates
+
+      - name: nav_route_waypoints
+        description: Ordered step-by-step walkthrough from game start through beating Brock
+
+      - name: nav_map_tiles
+        description: Per-tile walkability grid for each map extracted from ASM source (tile_type, walkable, ledge_direction)
+
+      - name: nav_map_tileset
+        description: Mapping of maps to their tileset names (used for collision/grass detection)
+

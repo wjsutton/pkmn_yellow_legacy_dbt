@@ -7,7 +7,9 @@
             schema=node.schema,
             identifier=node.alias
         ) %}
-        {% do run_query("ALTER TABLE " ~ relation ~ " DROP COLUMN IF EXISTS dbt_loaded_at;") %}
+        {% if adapter.get_relation(database=node.database, schema=node.schema, identifier=node.alias) %}
+          {% do run_query("ALTER TABLE " ~ relation ~ " DROP COLUMN IF EXISTS dbt_loaded_at;") %}
+        {% endif %}
       {% endif %}
     {% endfor %}
   {% endif %}
