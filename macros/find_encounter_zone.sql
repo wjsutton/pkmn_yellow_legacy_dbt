@@ -185,25 +185,10 @@ ranked_results AS (
 )
 
 SELECT
-    found_on_map,
-    target_pokemon,
     catch_pokemon,
-    evo_steps,
-    evolve_via,
-    evolve_detail,
-    encounter_map,
-    area,
-    min_level,
-    max_level,
-    total_probability,
-    encounter_method,
-    tile_type,
-    badges_to_reach,
-    route_distance,
-    tile_x,
-    tile_y,
-    tile_distance
+    encounter_map
 FROM ranked_results
 WHERE result_rank <= 3
+ORDER BY max_level DESC
 
 {% endmacro %}
