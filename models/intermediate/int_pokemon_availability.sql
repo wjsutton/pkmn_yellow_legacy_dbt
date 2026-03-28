@@ -282,17 +282,17 @@ pokemon_evolutions_expanded AS (
 -- === Pokemon Availability (original logic, now using CTEs above) ===
 area_order AS (
     SELECT
-        EAO.encounter_area,
+        EAO.area,
         R.map,
         R.game_order
     FROM {{ ref('stg_pkmn_encounter_area_order') }} as EAO
-    INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EAO.map
+    INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EAO.representative_location
 ),
 
 base_catchable_pokemon AS (
     SELECT
         EA.pokemon,
-        EA.pkmn_level,
+        EA.level,
         L.level_cap,
         EA.map,
         EA.area,
@@ -303,24 +303,29 @@ base_catchable_pokemon AS (
         EA.pokemon as initial_pokemon,
         'Wild Encounter' as availability_source,
         CASE
+            WHEN EA.available_from_order IS NOT NULL THEN EA.available_from_order
             WHEN R.game_order >= EAO.game_order THEN R.game_order
             ELSE EAO.game_order
         END as earliest_route
     FROM {{ ref('stg_pkmn_encounter_areas') }} as EA
     INNER JOIN {{ ref('stg_game_route_order') }} as R on R.map = EA.map
-    INNER JOIN area_order as EAO on EA.area = EAO.encounter_area
+    INNER JOIN area_order as EAO on EA.area = EAO.area
     LEFT JOIN {{ ref('stg_game_route_order') }} as R_AREA
         on R_AREA.game_order = EAO.game_order
         AND EAO.game_order > R.game_order
+    -- For overworld legendaries/Snorlax: use the game stage of the map
+    -- they become available from (i.e. the map AFTER catching them)
+    LEFT JOIN {{ ref('stg_game_route_order') }} as R_AVAIL
+        on R_AVAIL.game_order = EA.available_from_order
     INNER JOIN game_progression as L
-        on COALESCE(R_AREA.next_gym, R.next_gym) = L.game_stage
+        on COALESCE(R_AVAIL.next_gym, R_AREA.next_gym, R.next_gym) = L.game_stage
 ),
 
 catchable_evolutions AS (
     SELECT
         BCP.initial_pokemon,
         EE.current_form as pokemon,
-        BCP.pkmn_level,
+        BCP.level,
         BCP.level_cap,
         BCP.map,
         CASE
@@ -354,7 +359,7 @@ catchable_evolutions AS (
 all_catchable_sources AS (
     SELECT
         pokemon,
-        pkmn_level,
+        level,
         level_cap,
         map,
         area,
@@ -368,7 +373,7 @@ all_catchable_sources AS (
 
     SELECT
         pokemon,
-        NULL as pkmn_level,
+        NULL as level,
         level_cap,
         map,
         area,
@@ -433,11 +438,11 @@ all_team_options AS (
 
 pokemon_availability AS (
     SELECT DISTINCT
-        {{ dbt_utils.generate_surrogate_key(['pokemon','initial_pokemon','COALESCE(pkmn_level, 0)','map','area','earliest_route','next_gym']) }} as id,
+        {{ dbt_utils.generate_surrogate_key(['pokemon','initial_pokemon','COALESCE(level, 0)','map','area','earliest_route','next_gym']) }} as id,
         'Catchable' as availability_type,
         pokemon,
         initial_pokemon,
-        pkmn_level as encounter_level,
+        level as encounter_level,
         level_cap,
         map,
         area,

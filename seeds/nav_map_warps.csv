@@ -2,7 +2,7 @@ from_map,from_x,from_y,to_map,to_x,to_y,warp_type,notes
 PALLET_TOWN,5,5,PLAYERS_HOUSE_1F,2,7,door,Player's house entrance
 PALLET_TOWN,13,5,RIVALS_HOUSE,2,7,door,Rival's house entrance
 PALLET_TOWN,12,11,OAKS_LAB,4,11,door,Oak's Lab entrance
-PALLET_TOWN,-1,0,ROUTE_1,-1,17,edge,North exit to Route 1
+PALLET_TOWN,9,0,ROUTE_1,9,35,edge,North exit to Route 1
 PLAYERS_HOUSE_1F,2,7,PALLET_TOWN,5,6,door,Front door exit
 PLAYERS_HOUSE_1F,3,7,PALLET_TOWN,5,6,door,Front door exit (right tile)
 PLAYERS_HOUSE_1F,7,1,PLAYERS_HOUSE_2F,7,1,stairs,Stairs to bedroom
@@ -11,38 +11,43 @@ RIVALS_HOUSE,2,7,PALLET_TOWN,13,6,door,Exit to Pallet Town
 RIVALS_HOUSE,3,7,PALLET_TOWN,13,6,door,Exit to Pallet Town (right tile)
 OAKS_LAB,4,11,PALLET_TOWN,12,12,door,Exit to Pallet Town
 OAKS_LAB,5,11,PALLET_TOWN,12,12,door,Exit to Pallet Town (right tile)
-ROUTE_1,-1,0,VIRIDIAN_CITY,-1,17,edge,North exit to Viridian City
-ROUTE_1,-1,17,PALLET_TOWN,-1,0,edge,South exit to Pallet Town
+ROUTE_1,9,0,VIRIDIAN_CITY,20,35,edge,North exit to Viridian City
+ROUTE_1,9,35,PALLET_TOWN,9,0,edge,South exit to Pallet Town
 VIRIDIAN_CITY,23,25,VIRIDIAN_POKECENTER,3,7,door,Pokemon Center entrance
-VIRIDIAN_CITY,29,19,VIRIDIAN_MART,2,7,door,Poke Mart entrance
+VIRIDIAN_CITY,29,19,VIRIDIAN_MART,3,7,door,Poke Mart entrance
 VIRIDIAN_CITY,32,7,VIRIDIAN_GYM,4,13,door,Viridian Gym (locked until late game)
-VIRIDIAN_CITY,-1,0,ROUTE_2,-1,17,edge,North exit to Route 2
-VIRIDIAN_CITY,-1,17,ROUTE_1,-1,0,edge,South exit to Route 1
-VIRIDIAN_CITY,33,25,ROUTE_22_GATE,2,5,gate,West exit to Route 22 Gate
+VIRIDIAN_CITY,18,0,ROUTE_2,8,71,edge,North exit to Route 2
+VIRIDIAN_CITY,20,35,ROUTE_1,9,0,edge,South exit to Route 1
+VIRIDIAN_CITY,0,15,ROUTE_22,39,7,edge,West exit to Route 22
 VIRIDIAN_POKECENTER,3,7,VIRIDIAN_CITY,23,26,door,Exit to Viridian City
-VIRIDIAN_MART,2,7,VIRIDIAN_CITY,29,20,door,Exit to Viridian City
+VIRIDIAN_POKECENTER,4,7,VIRIDIAN_CITY,23,26,door,Exit to Viridian City (right tile)
+VIRIDIAN_MART,3,7,VIRIDIAN_CITY,29,20,door,Exit to Viridian City
+VIRIDIAN_MART,4,7,VIRIDIAN_CITY,29,20,door,Exit to Viridian City (right tile)
 VIRIDIAN_GYM,4,13,VIRIDIAN_CITY,32,8,door,Exit to Viridian City
 VIRIDIAN_GYM,5,13,VIRIDIAN_CITY,32,8,door,Exit to Viridian City (right tile)
-ROUTE_2,-1,0,VIRIDIAN_FOREST_SOUTH_GATE,2,5,edge,North to Forest South Gate
-ROUTE_2,-1,17,VIRIDIAN_CITY,-1,0,edge,South exit to Viridian City
+ROUTE_2,8,0,VIRIDIAN_FOREST_SOUTH_GATE,4,7,edge,North to Forest South Gate
+ROUTE_2,3,38,VIRIDIAN_FOREST_SOUTH_GATE,4,7,door,Gate entrance to Viridian Forest (south section)
+ROUTE_2,8,71,VIRIDIAN_CITY,18,0,edge,South exit to Viridian City
 ROUTE_2,3,11,ROUTE_2_HOUSE,2,7,door,Route 2 house
 ROUTE_2_HOUSE,2,7,ROUTE_2,3,12,door,Exit to Route 2
-VIRIDIAN_FOREST_SOUTH_GATE,3,0,VIRIDIAN_FOREST,17,47,gate,Enter Viridian Forest (south)
-VIRIDIAN_FOREST_SOUTH_GATE,2,5,ROUTE_2,4,0,gate,Exit south to Route 2
-VIRIDIAN_FOREST,17,47,VIRIDIAN_FOREST_SOUTH_GATE,3,0,gate,South exit
+VIRIDIAN_FOREST_SOUTH_GATE,4,0,VIRIDIAN_FOREST,17,47,gate,Enter Viridian Forest (south)
+VIRIDIAN_FOREST_SOUTH_GATE,5,0,VIRIDIAN_FOREST,17,47,gate,Enter Viridian Forest (south right tile)
+VIRIDIAN_FOREST_SOUTH_GATE,4,7,ROUTE_2,4,0,gate,Exit south to Route 2
+VIRIDIAN_FOREST_SOUTH_GATE,5,7,ROUTE_2,4,0,gate,Exit south to Route 2 (right tile)
+VIRIDIAN_FOREST,17,47,VIRIDIAN_FOREST_SOUTH_GATE,4,0,gate,South exit
 VIRIDIAN_FOREST,1,0,VIRIDIAN_FOREST_NORTH_GATE,2,5,gate,North exit (left tile)
 VIRIDIAN_FOREST,2,0,VIRIDIAN_FOREST_NORTH_GATE,3,5,gate,North exit (right tile)
 VIRIDIAN_FOREST_NORTH_GATE,2,0,ROUTE_2,3,0,gate,Exit north to Route 2 (north section)
 VIRIDIAN_FOREST_NORTH_GATE,3,0,ROUTE_2,4,0,gate,Exit north to Route 2 (north section right)
 VIRIDIAN_FOREST_NORTH_GATE,2,5,VIRIDIAN_FOREST,1,0,gate,Enter forest from north
 VIRIDIAN_FOREST_NORTH_GATE,3,5,VIRIDIAN_FOREST,2,0,gate,Enter forest from north (right)
-ROUTE_2,4,0,PEWTER_CITY,-1,17,edge,North to Pewter City (from north section)
-PEWTER_CITY,-1,17,ROUTE_2,-1,0,edge,South exit to Route 2
+ROUTE_2,4,0,PEWTER_CITY,5,35,edge,North to Pewter City (from north section)
+PEWTER_CITY,5,35,ROUTE_2,8,0,edge,South exit to Route 2
 PEWTER_CITY,16,17,PEWTER_GYM,4,13,door,Pewter Gym entrance
 PEWTER_CITY,13,25,PEWTER_POKECENTER,3,7,door,Pokemon Center entrance
 PEWTER_CITY,29,25,PEWTER_MART,2,7,door,Poke Mart entrance
 PEWTER_CITY,16,5,PEWTER_MUSEUM_1F,3,7,door,Museum entrance
-PEWTER_CITY,-1,0,ROUTE_3,-1,4,edge,East exit to Route 3
+PEWTER_CITY,39,17,ROUTE_3,0,9,edge,East exit to Route 3
 PEWTER_GYM,4,13,PEWTER_CITY,16,18,door,Exit to Pewter City
 PEWTER_GYM,5,13,PEWTER_CITY,16,18,door,Exit to Pewter City (right tile)
 PEWTER_POKECENTER,3,7,PEWTER_CITY,13,26,door,Exit to Pewter City
@@ -50,6 +55,6 @@ PEWTER_MART,2,7,PEWTER_CITY,29,26,door,Exit to Pewter City
 PEWTER_MUSEUM_1F,3,7,PEWTER_CITY,16,6,door,Exit to Pewter City
 PEWTER_MUSEUM_1F,0,3,PEWTER_MUSEUM_2F,0,3,stairs,Stairs to 2F
 PEWTER_MUSEUM_2F,0,3,PEWTER_MUSEUM_1F,0,3,stairs,Stairs to 1F
-ROUTE_22,-1,19,VIRIDIAN_CITY,0,25,edge,East exit to Viridian City
+ROUTE_22,39,7,VIRIDIAN_CITY,0,15,edge,East exit to Viridian City
 ROUTE_22_GATE,2,0,ROUTE_22,19,4,gate,Exit west to Route 22
 ROUTE_22_GATE,2,5,VIRIDIAN_CITY,33,26,gate,Exit east to Viridian City

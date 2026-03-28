@@ -5,7 +5,7 @@ Downloads binary .blk (map block) and .bst (blockset) files from the
 cRz-Shadows/Pokemon_Yellow_Legacy GitHub repo, then:
   1. Expands each block to its 4x4 tile grid using the blockset
   2. Checks collision tile IDs for each player-coordinate metatile
-  3. Classifies each tile as path/grass/wall/ledge
+  3. Classifies each tile as path/grass/water/wall/ledge
   4. Outputs seeds/nav_map_tiles.csv and seeds/nav_map_tileset.csv
 
 Usage:
@@ -13,6 +13,7 @@ Usage:
 """
 
 import csv
+import re
 import sys
 import urllib.request
 import urllib.error
@@ -33,104 +34,564 @@ OUTPUT_TILESET_CSV = SEEDS_DIR / "nav_map_tileset.csv"
 REPO_BASE = "https://raw.githubusercontent.com/cRz-Shadows/Pokemon_Yellow_Legacy/main"
 
 # ---------------------------------------------------------------------------
-# Dimension overrides from ASM source (constants/map_constants.asm)
-# The nav_map_metadata.csv has vanilla Yellow dimensions for some maps, but
-# Yellow Legacy expanded several maps. These are the CORRECT dimensions
-# from the ASM source that match the .blk file sizes.
-# Format: map_name -> (width_blocks, height_blocks)
+# Map name overrides: UPPER_SNAKE_CASE -> CamelCase BLK filename
+# Only needed where auto-conversion fails. All others are derived
+# automatically by converting UPPER_SNAKE_CASE to CamelCase.
 # ---------------------------------------------------------------------------
-DIMENSION_OVERRIDES = {
-    "ROUTE_2": (10, 36),
-    "ROUTE_3": (35, 9),
-    "VIRIDIAN_GYM": (10, 9),
-    "VIRIDIAN_FOREST_SOUTH_GATE": (5, 4),
-    "VIRIDIAN_FOREST_NORTH_GATE": (5, 4),
-    "ROUTE_2_GATE": (5, 4),
-    "ROUTE_22_GATE": (5, 4),
-}
-
-# ---------------------------------------------------------------------------
-# Map name -> .blk file name (CamelCase) mapping
-# ---------------------------------------------------------------------------
-MAP_NAME_TO_BLK = {
-    "PALLET_TOWN": "PalletTown",
-    "VIRIDIAN_CITY": "ViridianCity",
-    "PEWTER_CITY": "PewterCity",
-    "ROUTE_1": "Route1",
-    "ROUTE_2": "Route2",
-    "ROUTE_3": "Route3",
-    "ROUTE_22": "Route22",
+BLK_NAME_OVERRIDES = {
     "PLAYERS_HOUSE_1F": "RedsHouse1F",
     "PLAYERS_HOUSE_2F": "RedsHouse2F",
     "RIVALS_HOUSE": "BluesHouse",
     "OAKS_LAB": "OaksLab",
-    "VIRIDIAN_POKECENTER": "ViridianPokecenter",
-    "VIRIDIAN_MART": "ViridianMart",
-    "VIRIDIAN_GYM": "ViridianGym",
-    "VIRIDIAN_FOREST": "ViridianForest",
-    "VIRIDIAN_FOREST_SOUTH_GATE": "ViridianForestSouthGate",
-    "VIRIDIAN_FOREST_NORTH_GATE": "ViridianForestNorthGate",
-    "PEWTER_POKECENTER": "PewterPokecenter",
-    "PEWTER_GYM": "PewterGym",
-    "PEWTER_MART": "PewterMart",
     "PEWTER_MUSEUM_1F": "Museum1F",
     "PEWTER_MUSEUM_2F": "Museum2F",
-    "ROUTE_2_GATE": "Route2Gate",
-    "ROUTE_2_HOUSE": "Route2TradeHouse",
-    "ROUTE_22_GATE": "Route22Gate",
+    "ROUTE_2_TRADE_HOUSE": "Route2TradeHouse",
+    "DIGLETTS_CAVE_ROUTE_2": "DiglettsCaveRoute2",
+    "DIGLETTS_CAVE_ROUTE_11": "DiglettsCaveRoute11",
+    "DIGLETTS_CAVE": "DiglettsCave",
+    "CERULEAN_MELANIES_HOUSE": None,  # No BLK file exists
+    "CERULEAN_TRASHED_HOUSE_COPY": None,
+    "UNDERGROUND_PATH_ROUTE_6_COPY": None,
+    "UNDERGROUND_PATH_ROUTE_7_COPY": None,
+    "CINNABAR_MART_COPY": None,
+    "SS_ANNE_1F": "SSAnne1F",
+    "SS_ANNE_2F": "SSAnne2F",
+    "SS_ANNE_3F": "SSAnne3F",
+    "SS_ANNE_B1F": "SSAnneB1F",
+    "SS_ANNE_BOW": "SSAnneBow",
+    "SS_ANNE_KITCHEN": "SSAnneKitchen",
+    "SS_ANNE_CAPTAINS_ROOM": "SSAnneCaptainsRoom",
+    "SS_ANNE_1F_ROOMS": "SSAnne1FRooms",
+    "SS_ANNE_2F_ROOMS": "SSAnne2FRooms",
+    "SS_ANNE_B1F_ROOMS": "SSAnneB1FRooms",
+    "MR_FUJIS_HOUSE": "MrFujisHouse",
+    "MR_PSYCHICS_HOUSE": "MrPsychicsHouse",
+    "BILLS_HOUSE": "BillsHouse",
+    "FUCHSIA_BILLS_GRANDPAS_HOUSE": "FuchsiaBillsGrandpasHouse",
 }
 
 # ---------------------------------------------------------------------------
-# Map name -> tileset name (from map header ASM inspection)
+# Tileset name -> display name mapping (ASM UPPER_SNAKE -> script CamelCase)
 # ---------------------------------------------------------------------------
-MAP_NAME_TO_TILESET = {
-    "PALLET_TOWN": "Overworld",
-    "VIRIDIAN_CITY": "Overworld",
-    "PEWTER_CITY": "Overworld",
-    "ROUTE_1": "Overworld",
-    "ROUTE_2": "Overworld",
-    "ROUTE_3": "Overworld",
-    "ROUTE_22": "Overworld",
-    "PLAYERS_HOUSE_1F": "RedsHouse1",
-    "PLAYERS_HOUSE_2F": "RedsHouse2",
-    "RIVALS_HOUSE": "House",
-    "OAKS_LAB": "Dojo",           # confirmed from header: DOJO tileset
-    "VIRIDIAN_POKECENTER": "Pokecenter",
-    "VIRIDIAN_MART": "Mart",
-    "VIRIDIAN_GYM": "Gym",
-    "VIRIDIAN_FOREST": "Forest",
-    "VIRIDIAN_FOREST_SOUTH_GATE": "ForestGate",
-    "VIRIDIAN_FOREST_NORTH_GATE": "ForestGate",
-    "PEWTER_POKECENTER": "Pokecenter",
-    "PEWTER_GYM": "Gym",
-    "PEWTER_MART": "Mart",
-    "PEWTER_MUSEUM_1F": "Museum",
-    "PEWTER_MUSEUM_2F": "Museum",
-    "ROUTE_2_GATE": "Gate",
-    "ROUTE_2_HOUSE": "House",
-    "ROUTE_22_GATE": "Gate",
+TILESET_NAME_MAP = {
+    "OVERWORLD": "Overworld",
+    "REDS_HOUSE_1": "RedsHouse1",
+    "REDS_HOUSE_2": "RedsHouse2",
+    "HOUSE": "House",
+    "DOJO": "Dojo",
+    "GYM": "Gym",
+    "MART": "Mart",
+    "POKECENTER": "Pokecenter",
+    "FOREST": "Forest",
+    "FOREST_GATE": "ForestGate",
+    "MUSEUM": "Museum",
+    "GATE": "Gate",
+    "LAB": "Lab",
+    "CAVERN": "Cavern",
+    "SHIP": "Ship",
+    "SHIP_PORT": "ShipPort",
+    "CEMETERY": "Cemetery",
+    "INTERIOR": "Interior",
+    "FACILITY": "Facility",
+    "MANSION": "Mansion",
+    "PLATEAU": "Plateau",
+    "LOBBY": "Lobby",
+    "CLUB": "Club",
+    "UNDERGROUND": "Underground",
+    "BEACH_HOUSE": "BeachHouse",
+}
+
+# ---------------------------------------------------------------------------
+# Map name -> tileset (from ROM map headers, fetched in bulk)
+# Format: CamelCase BLK name -> ASM tileset name
+# ---------------------------------------------------------------------------
+MAP_TILESET_FROM_HEADER = {
+    "AgathasRoom": "DOJO",
+    "BikeShop": "HOUSE",
+    "BillsHouse": "HOUSE",
+    "BluesHouse": "HOUSE",
+    "BrunosRoom": "DOJO",
+    "CeladonChiefHouse": "HOUSE",
+    "CeladonCity": "OVERWORLD",
+    "CeladonDiner": "GATE",
+    "CeladonGym": "GYM",
+    "CeladonHotel": "POKECENTER",
+    "CeladonMansion1F": "MANSION",
+    "CeladonMansion2F": "MANSION",
+    "CeladonMansion3F": "MANSION",
+    "CeladonMansionRoof": "MANSION",
+    "CeladonMansionRoofHouse": "HOUSE",
+    "CeladonMart1F": "MART",
+    "CeladonMart2F": "MART",
+    "CeladonMart3F": "MART",
+    "CeladonMart4F": "MART",
+    "CeladonMart5F": "MART",
+    "CeladonMartElevator": "FACILITY",
+    "CeladonMartRoof": "MART",
+    "CeladonPokecenter": "POKECENTER",
+    "CeruleanBadgeHouse": "HOUSE",
+    "CeruleanCave1F": "CAVERN",
+    "CeruleanCave2F": "CAVERN",
+    "CeruleanCaveB1F": "CAVERN",
+    "CeruleanCity": "OVERWORLD",
+    "CeruleanGym": "GYM",
+    "CeruleanMart": "MART",
+    "CeruleanPokecenter": "POKECENTER",
+    "CeruleanTradeHouse": "HOUSE",
+    "CeruleanTrashedHouse": "HOUSE",
+    "ChampionsRoom": "LOBBY",
+    "CinnabarGym": "GYM",
+    "CinnabarIsland": "OVERWORLD",
+    "CinnabarLab": "LAB",
+    "CinnabarLabFossilRoom": "LAB",
+    "CinnabarLabMetronomeRoom": "LAB",
+    "CinnabarLabTradeRoom": "LAB",
+    "CinnabarMart": "MART",
+    "CinnabarPokecenter": "POKECENTER",
+    "Colosseum": "GATE",
+    "CopycatsHouse1F": "HOUSE",
+    "CopycatsHouse2F": "REDS_HOUSE_2",
+    "Daycare": "HOUSE",
+    "DiglettsCave": "CAVERN",
+    "DiglettsCaveRoute11": "CAVERN",
+    "DiglettsCaveRoute2": "CAVERN",
+    "FightingDojo": "DOJO",
+    "FuchsiaBillsGrandpasHouse": "HOUSE",
+    "FuchsiaCity": "OVERWORLD",
+    "FuchsiaGoodRodHouse": "HOUSE",
+    "FuchsiaGym": "GYM",
+    "FuchsiaMart": "MART",
+    "FuchsiaMeetingRoom": "POKECENTER",
+    "FuchsiaPokecenter": "POKECENTER",
+    "GameCorner": "CLUB",
+    "GameCornerPrizeRoom": "GATE",
+    "HallOfFame": "LOBBY",
+    "IndigoPlateau": "OVERWORLD",
+    "IndigoPlateauLobby": "LOBBY",
+    "LancesRoom": "DOJO",
+    "LavenderCuboneHouse": "HOUSE",
+    "LavenderMart": "MART",
+    "LavenderPokecenter": "POKECENTER",
+    "LavenderTown": "OVERWORLD",
+    "LoreleisRoom": "DOJO",
+    "MrFujisHouse": "HOUSE",
+    "MrPsychicsHouse": "HOUSE",
+    "MtMoon1F": "CAVERN",
+    "MtMoonB1F": "CAVERN",
+    "MtMoonB2F": "CAVERN",
+    "MtMoonPokecenter": "POKECENTER",
+    "Museum1F": "MUSEUM",
+    "Museum2F": "MUSEUM",
+    "NameRatersHouse": "HOUSE",
+    "OaksLab": "DOJO",
+    "PalletTown": "OVERWORLD",
+    "PewterCity": "OVERWORLD",
+    "PewterGym": "GYM",
+    "PewterMart": "MART",
+    "PewterNidoranHouse": "HOUSE",
+    "PewterPokecenter": "POKECENTER",
+    "PewterSpeechHouse": "HOUSE",
+    "PokemonFanClub": "CLUB",
+    "PokemonMansion1F": "MANSION",
+    "PokemonMansion2F": "MANSION",
+    "PokemonMansion3F": "MANSION",
+    "PokemonMansionB1F": "MANSION",
+    "PokemonTower1F": "CEMETERY",
+    "PokemonTower2F": "CEMETERY",
+    "PokemonTower3F": "CEMETERY",
+    "PokemonTower4F": "CEMETERY",
+    "PokemonTower5F": "CEMETERY",
+    "PokemonTower6F": "CEMETERY",
+    "PokemonTower7F": "CEMETERY",
+    "PowerPlant": "FACILITY",
+    "RedsHouse1F": "REDS_HOUSE_1",
+    "RedsHouse2F": "REDS_HOUSE_2",
+    "RockTunnel1F": "CAVERN",
+    "RockTunnelB1F": "CAVERN",
+    "RockTunnelPokecenter": "POKECENTER",
+    "RocketHideoutB1F": "FACILITY",
+    "RocketHideoutB2F": "FACILITY",
+    "RocketHideoutB3F": "FACILITY",
+    "RocketHideoutB4F": "FACILITY",
+    "RocketHideoutElevator": "FACILITY",
+    "Route1": "OVERWORLD",
+    "Route10": "OVERWORLD",
+    "Route11": "OVERWORLD",
+    "Route11Gate1F": "GATE",
+    "Route11Gate2F": "GATE",
+    "Route12": "OVERWORLD",
+    "Route12Gate1F": "GATE",
+    "Route12Gate2F": "GATE",
+    "Route12SuperRodHouse": "HOUSE",
+    "Route13": "OVERWORLD",
+    "Route14": "OVERWORLD",
+    "Route15": "OVERWORLD",
+    "Route15Gate1F": "GATE",
+    "Route15Gate2F": "GATE",
+    "Route16": "OVERWORLD",
+    "Route16FlyHouse": "HOUSE",
+    "Route16Gate1F": "GATE",
+    "Route16Gate2F": "GATE",
+    "Route17": "OVERWORLD",
+    "Route18": "OVERWORLD",
+    "Route18Gate1F": "GATE",
+    "Route18Gate2F": "GATE",
+    "Route19": "OVERWORLD",
+    "Route2": "OVERWORLD",
+    "Route20": "OVERWORLD",
+    "Route21": "OVERWORLD",
+    "Route22": "OVERWORLD",
+    "Route22Gate": "GATE",
+    "Route23": "OVERWORLD",
+    "Route24": "OVERWORLD",
+    "Route25": "OVERWORLD",
+    "Route2Gate": "GATE",
+    "Route2TradeHouse": "HOUSE",
+    "Route3": "OVERWORLD",
+    "Route4": "OVERWORLD",
+    "Route5": "OVERWORLD",
+    "Route5Gate": "GATE",
+    "Route6": "OVERWORLD",
+    "Route6Gate": "GATE",
+    "Route7": "OVERWORLD",
+    "Route7Gate": "GATE",
+    "Route8": "OVERWORLD",
+    "Route8Gate": "GATE",
+    "Route9": "OVERWORLD",
+    "SSAnne1F": "SHIP",
+    "SSAnne1FRooms": "SHIP",
+    "SSAnne2F": "SHIP",
+    "SSAnne2FRooms": "SHIP",
+    "SSAnne3F": "SHIP",
+    "SSAnneB1F": "SHIP",
+    "SSAnneB1FRooms": "SHIP",
+    "SSAnneBow": "SHIP",
+    "SSAnneCaptainsRoom": "SHIP",
+    "SSAnneKitchen": "SHIP",
+    "SafariZoneCenter": "OVERWORLD",
+    "SafariZoneCenterRestHouse": "INTERIOR",
+    "SafariZoneEast": "OVERWORLD",
+    "SafariZoneEastRestHouse": "INTERIOR",
+    "SafariZoneGate": "GATE",
+    "SafariZoneNorth": "OVERWORLD",
+    "SafariZoneNorthRestHouse": "INTERIOR",
+    "SafariZoneSecretHouse": "INTERIOR",
+    "SafariZoneWest": "OVERWORLD",
+    "SafariZoneWestRestHouse": "INTERIOR",
+    "SaffronCity": "OVERWORLD",
+    "SaffronGym": "GYM",
+    "SaffronMart": "MART",
+    "SaffronPidgeyHouse": "HOUSE",
+    "SaffronPokecenter": "POKECENTER",
+    "SeafoamIslands1F": "CAVERN",
+    "SeafoamIslandsB1F": "CAVERN",
+    "SeafoamIslandsB2F": "CAVERN",
+    "SeafoamIslandsB3F": "CAVERN",
+    "SeafoamIslandsB4F": "CAVERN",
+    "SilphCo10F": "FACILITY",
+    "SilphCo11F": "FACILITY",
+    "SilphCo1F": "FACILITY",
+    "SilphCo2F": "FACILITY",
+    "SilphCo3F": "FACILITY",
+    "SilphCo4F": "FACILITY",
+    "SilphCo5F": "FACILITY",
+    "SilphCo6F": "FACILITY",
+    "SilphCo7F": "FACILITY",
+    "SilphCo8F": "FACILITY",
+    "SilphCo9F": "FACILITY",
+    "SilphCoElevator": "FACILITY",
+    "SummerBeachHouse": "BEACH_HOUSE",
+    "TradeCenter": "GATE",
+    "UndergroundPathNorthSouth": "UNDERGROUND",
+    "UndergroundPathRoute5": "UNDERGROUND",
+    "UndergroundPathRoute6": "UNDERGROUND",
+    "UndergroundPathRoute7": "UNDERGROUND",
+    "UndergroundPathRoute8": "UNDERGROUND",
+    "UndergroundPathWestEast": "UNDERGROUND",
+    "UnusedDiglettsCaveCopy": None,
+    "UnusedEmptyMap": None,
+    "UnusedPokecenterCopy": None,
+    "VermilionCity": "OVERWORLD",
+    "VermilionDock": "SHIP_PORT",
+    "VermilionGym": "GYM",
+    "VermilionMart": "MART",
+    "VermilionOldRodHouse": "HOUSE",
+    "VermilionPidgeyHouse": "HOUSE",
+    "VermilionPokecenter": "POKECENTER",
+    "VermilionTradeHouse": "HOUSE",
+    "VictoryRoad1F": "CAVERN",
+    "VictoryRoad2F": "CAVERN",
+    "VictoryRoad3F": "CAVERN",
+    "ViridianCity": "OVERWORLD",
+    "ViridianForest": "FOREST",
+    "ViridianForestNorthGate": "FOREST_GATE",
+    "ViridianForestSouthGate": "FOREST_GATE",
+    "ViridianGym": "GYM",
+    "ViridianMart": "MART",
+    "ViridianNicknameHouse": "HOUSE",
+    "ViridianPokecenter": "POKECENTER",
+    "ViridianSchoolHouse": "HOUSE",
+    "WardensHouse": "LAB",
+}
+
+# ---------------------------------------------------------------------------
+# Map dimensions from constants/map_constants.asm
+# Format: UPPER_SNAKE_CASE -> (width, height) in blocks
+# ---------------------------------------------------------------------------
+MAP_DIMENSIONS = {
+    "PALLET_TOWN": (10, 9),
+    "VIRIDIAN_CITY": (20, 18),
+    "PEWTER_CITY": (20, 18),
+    "CERULEAN_CITY": (20, 18),
+    "LAVENDER_TOWN": (10, 9),
+    "VERMILION_CITY": (20, 18),
+    "CELADON_CITY": (25, 18),
+    "FUCHSIA_CITY": (20, 18),
+    "CINNABAR_ISLAND": (10, 9),
+    "INDIGO_PLATEAU": (10, 9),
+    "SAFFRON_CITY": (20, 18),
+    "ROUTE_1": (10, 18),
+    "ROUTE_2": (10, 36),
+    "ROUTE_3": (35, 9),
+    "ROUTE_4": (45, 9),
+    "ROUTE_5": (10, 18),
+    "ROUTE_6": (10, 18),
+    "ROUTE_7": (10, 9),
+    "ROUTE_8": (30, 9),
+    "ROUTE_9": (30, 9),
+    "ROUTE_10": (10, 36),
+    "ROUTE_11": (30, 9),
+    "ROUTE_12": (10, 54),
+    "ROUTE_13": (30, 9),
+    "ROUTE_14": (10, 27),
+    "ROUTE_15": (30, 9),
+    "ROUTE_16": (20, 9),
+    "ROUTE_17": (10, 72),
+    "ROUTE_18": (25, 9),
+    "ROUTE_19": (10, 27),
+    "ROUTE_20": (50, 9),
+    "ROUTE_21": (10, 45),
+    "ROUTE_22": (20, 9),
+    "ROUTE_23": (10, 72),
+    "ROUTE_24": (10, 18),
+    "ROUTE_25": (30, 9),
+    "PLAYERS_HOUSE_1F": (4, 4),
+    "PLAYERS_HOUSE_2F": (4, 4),
+    "RIVALS_HOUSE": (4, 4),
+    "OAKS_LAB": (5, 6),
+    "VIRIDIAN_POKECENTER": (7, 4),
+    "VIRIDIAN_MART": (4, 4),
+    "VIRIDIAN_SCHOOL_HOUSE": (4, 4),
+    "VIRIDIAN_NICKNAME_HOUSE": (4, 4),
+    "VIRIDIAN_GYM": (10, 9),
+    "DIGLETTS_CAVE_ROUTE_2": (4, 4),
+    "VIRIDIAN_FOREST_NORTH_GATE": (5, 4),
+    "ROUTE_2_TRADE_HOUSE": (4, 4),
+    "ROUTE_2_GATE": (5, 4),
+    "VIRIDIAN_FOREST_SOUTH_GATE": (5, 4),
+    "VIRIDIAN_FOREST": (17, 24),
+    "MUSEUM_1F": (10, 4),
+    "MUSEUM_2F": (7, 4),
+    "PEWTER_GYM": (5, 7),
+    "PEWTER_NIDORAN_HOUSE": (4, 4),
+    "PEWTER_MART": (4, 4),
+    "PEWTER_SPEECH_HOUSE": (4, 4),
+    "PEWTER_POKECENTER": (7, 4),
+    "MT_MOON_1F": (20, 18),
+    "MT_MOON_B1F": (14, 14),
+    "MT_MOON_B2F": (20, 18),
+    "CERULEAN_TRASHED_HOUSE": (4, 4),
+    "CERULEAN_POKECENTER": (7, 4),
+    "CERULEAN_GYM": (5, 7),
+    "BIKE_SHOP": (4, 4),
+    "CERULEAN_MART": (4, 4),
+    "MT_MOON_POKECENTER": (7, 4),
+    "ROUTE_5_GATE": (4, 3),
+    "UNDERGROUND_PATH_ROUTE_5": (4, 4),
+    "DAYCARE": (4, 4),
+    "ROUTE_6_GATE": (4, 3),
+    "UNDERGROUND_PATH_ROUTE_6": (4, 4),
+    "ROUTE_7_GATE": (3, 4),
+    "UNDERGROUND_PATH_ROUTE_7": (4, 4),
+    "ROUTE_8_GATE": (3, 4),
+    "UNDERGROUND_PATH_ROUTE_8": (4, 4),
+    "ROCK_TUNNEL_POKECENTER": (7, 4),
+    "ROCK_TUNNEL_1F": (20, 18),
+    "POWER_PLANT": (20, 18),
+    "ROUTE_11_GATE_1F": (4, 5),
+    "DIGLETTS_CAVE_ROUTE_11": (4, 4),
+    "ROUTE_11_GATE_2F": (4, 4),
+    "ROUTE_12_GATE_1F": (5, 4),
+    "BILLS_HOUSE": (4, 4),
+    "VERMILION_POKECENTER": (7, 4),
+    "POKEMON_FAN_CLUB": (4, 4),
+    "VERMILION_MART": (4, 4),
+    "VERMILION_GYM": (5, 9),
+    "VERMILION_PIDGEY_HOUSE": (4, 4),
+    "VERMILION_DOCK": (14, 6),
+    "SS_ANNE_1F": (20, 9),
+    "SS_ANNE_2F": (20, 9),
+    "SS_ANNE_3F": (10, 3),
+    "SS_ANNE_B1F": (15, 4),
+    "SS_ANNE_BOW": (10, 7),
+    "SS_ANNE_KITCHEN": (7, 8),
+    "SS_ANNE_CAPTAINS_ROOM": (3, 4),
+    "SS_ANNE_1F_ROOMS": (12, 8),
+    "SS_ANNE_2F_ROOMS": (12, 8),
+    "SS_ANNE_B1F_ROOMS": (12, 8),
+    "VICTORY_ROAD_1F": (10, 9),
+    "LANCES_ROOM": (13, 13),
+    "HALL_OF_FAME": (5, 4),
+    "UNDERGROUND_PATH_NORTH_SOUTH": (4, 23),  # Yellow Legacy changed from 4x24
+    "CHAMPIONS_ROOM": (4, 4),
+    "UNDERGROUND_PATH_WEST_EAST": (25, 4),
+    "CELADON_MART_1F": (10, 4),
+    "CELADON_MART_2F": (10, 4),
+    "CELADON_MART_3F": (10, 4),
+    "CELADON_MART_4F": (10, 4),
+    "CELADON_MART_ROOF": (10, 4),
+    "CELADON_MART_ELEVATOR": (2, 2),
+    "CELADON_MANSION_1F": (4, 6),
+    "CELADON_MANSION_2F": (4, 6),
+    "CELADON_MANSION_3F": (4, 6),
+    "CELADON_MANSION_ROOF": (4, 6),
+    "CELADON_MANSION_ROOF_HOUSE": (4, 4),
+    "CELADON_POKECENTER": (7, 4),
+    "CELADON_GYM": (5, 9),
+    "GAME_CORNER": (10, 9),
+    "CELADON_MART_5F": (10, 4),
+    "GAME_CORNER_PRIZE_ROOM": (5, 4),
+    "CELADON_DINER": (5, 4),
+    "CELADON_CHIEF_HOUSE": (4, 4),
+    "CELADON_HOTEL": (7, 4),
+    "LAVENDER_POKECENTER": (7, 4),
+    "POKEMON_TOWER_1F": (10, 9),
+    "POKEMON_TOWER_2F": (10, 9),
+    "POKEMON_TOWER_3F": (10, 9),
+    "POKEMON_TOWER_4F": (10, 9),
+    "POKEMON_TOWER_5F": (10, 9),
+    "POKEMON_TOWER_6F": (10, 9),
+    "POKEMON_TOWER_7F": (10, 9),
+    "MR_FUJIS_HOUSE": (4, 4),
+    "LAVENDER_MART": (4, 4),
+    "LAVENDER_CUBONE_HOUSE": (4, 4),
+    "FUCHSIA_MART": (4, 4),
+    "FUCHSIA_BILLS_GRANDPAS_HOUSE": (4, 4),
+    "FUCHSIA_POKECENTER": (7, 4),
+    "WARDENS_HOUSE": (5, 4),
+    "SAFARI_ZONE_GATE": (4, 3),
+    "FUCHSIA_GYM": (5, 9),
+    "FUCHSIA_MEETING_ROOM": (7, 4),
+    "SEAFOAM_ISLANDS_B1F": (15, 9),
+    "SEAFOAM_ISLANDS_B2F": (15, 9),
+    "SEAFOAM_ISLANDS_B3F": (15, 9),
+    "SEAFOAM_ISLANDS_B4F": (15, 9),
+    "VERMILION_OLD_ROD_HOUSE": (4, 4),
+    "FUCHSIA_GOOD_ROD_HOUSE": (4, 4),
+    "POKEMON_MANSION_1F": (15, 14),
+    "CINNABAR_GYM": (10, 9),
+    "CINNABAR_LAB": (9, 4),
+    "CINNABAR_LAB_TRADE_ROOM": (4, 4),
+    "CINNABAR_LAB_METRONOME_ROOM": (4, 4),
+    "CINNABAR_LAB_FOSSIL_ROOM": (4, 4),
+    "CINNABAR_POKECENTER": (7, 4),
+    "CINNABAR_MART": (4, 4),
+    "INDIGO_PLATEAU_LOBBY": (8, 6),
+    "COPYCATS_HOUSE_1F": (4, 4),
+    "COPYCATS_HOUSE_2F": (4, 4),
+    "FIGHTING_DOJO": (5, 6),
+    "SAFFRON_GYM": (10, 9),
+    "SAFFRON_PIDGEY_HOUSE": (4, 4),
+    "SAFFRON_MART": (4, 4),
+    "SILPH_CO_1F": (15, 9),
+    "SAFFRON_POKECENTER": (7, 4),
+    "MR_PSYCHICS_HOUSE": (4, 4),
+    "ROUTE_15_GATE_1F": (4, 5),
+    "ROUTE_15_GATE_2F": (4, 4),
+    "ROUTE_16_GATE_1F": (4, 7),
+    "ROUTE_16_GATE_2F": (4, 4),
+    "ROUTE_16_FLY_HOUSE": (4, 4),
+    "ROUTE_12_SUPER_ROD_HOUSE": (4, 4),
+    "ROUTE_18_GATE_1F": (4, 5),
+    "ROUTE_18_GATE_2F": (4, 4),
+    "SEAFOAM_ISLANDS_1F": (15, 9),
+    "ROUTE_22_GATE": (5, 4),
+    "VICTORY_ROAD_2F": (15, 9),
+    "ROUTE_12_GATE_2F": (4, 4),
+    "VERMILION_TRADE_HOUSE": (4, 4),
+    "DIGLETTS_CAVE": (20, 18),
+    "VICTORY_ROAD_3F": (15, 9),
+    "ROCKET_HIDEOUT_B1F": (15, 14),
+    "ROCKET_HIDEOUT_B2F": (15, 14),
+    "ROCKET_HIDEOUT_B3F": (15, 14),
+    "ROCKET_HIDEOUT_B4F": (15, 12),
+    "ROCKET_HIDEOUT_ELEVATOR": (3, 4),
+    "SILPH_CO_2F": (15, 9),
+    "SILPH_CO_3F": (15, 9),
+    "SILPH_CO_4F": (15, 9),
+    "SILPH_CO_5F": (15, 9),
+    "SILPH_CO_6F": (13, 9),
+    "SILPH_CO_7F": (13, 9),
+    "SILPH_CO_8F": (13, 9),
+    "POKEMON_MANSION_2F": (15, 14),
+    "POKEMON_MANSION_3F": (15, 9),
+    "POKEMON_MANSION_B1F": (15, 14),
+    "SAFARI_ZONE_EAST": (15, 13),
+    "SAFARI_ZONE_NORTH": (20, 18),
+    "SAFARI_ZONE_WEST": (15, 13),
+    "SAFARI_ZONE_CENTER": (15, 13),
+    "SAFARI_ZONE_CENTER_REST_HOUSE": (4, 4),
+    "SAFARI_ZONE_SECRET_HOUSE": (4, 4),
+    "SAFARI_ZONE_WEST_REST_HOUSE": (4, 4),
+    "SAFARI_ZONE_EAST_REST_HOUSE": (4, 4),
+    "SAFARI_ZONE_NORTH_REST_HOUSE": (4, 4),
+    "CERULEAN_CAVE_2F": (15, 9),
+    "CERULEAN_CAVE_B1F": (15, 9),
+    "CERULEAN_CAVE_1F": (15, 9),
+    "NAME_RATERS_HOUSE": (4, 4),
+    "CERULEAN_BADGE_HOUSE": (4, 4),
+    "ROCK_TUNNEL_B1F": (20, 18),
+    "SILPH_CO_9F": (13, 9),
+    "SILPH_CO_10F": (8, 9),
+    "SILPH_CO_11F": (9, 9),
+    "SILPH_CO_ELEVATOR": (2, 2),
+    "TRADE_CENTER": (5, 4),
+    "COLOSSEUM": (5, 4),
+    "LORELEIS_ROOM": (5, 6),
+    "BRUNOS_ROOM": (5, 6),
+    "AGATHAS_ROOM": (5, 6),
+    "SUMMER_BEACH_HOUSE": (7, 4),
 }
 
 # ---------------------------------------------------------------------------
 # Tileset name -> blockset .bst file name
-# From gfx/tilesets.asm, each tileset's _Block symbol points to an INCBIN.
-# Some tilesets share blocksets (e.g. Dojo/Gym -> gym.bst, Mart/Pokecenter -> pokecenter.bst).
 # ---------------------------------------------------------------------------
 TILESET_TO_BST = {
     "Overworld": "overworld.bst",
     "RedsHouse1": "reds_house.bst",
     "RedsHouse2": "reds_house.bst",
     "House": "house.bst",
-    "Dojo": "gym.bst",           # Dojo_Block = Gym_Block = gym.bst
+    "Dojo": "gym.bst",
     "Gym": "gym.bst",
-    "Mart": "pokecenter.bst",    # Mart_Block = Pokecenter_Block = pokecenter.bst
+    "Mart": "pokecenter.bst",
     "Pokecenter": "pokecenter.bst",
     "Forest": "forest.bst",
-    "ForestGate": "gate.bst",    # ForestGate_Block = Museum_Block = Gate_Block = gate.bst
+    "ForestGate": "gate.bst",
     "Museum": "gate.bst",
     "Gate": "gate.bst",
     "Lab": "lab.bst",
     "Cavern": "cavern.bst",
+    "Ship": "ship.bst",
+    "ShipPort": "ship_port.bst",
+    "Cemetery": "cemetery.bst",
+    "Interior": "interior.bst",
+    "Facility": "facility.bst",
+    "Mansion": "mansion.bst",
+    "Plateau": "plateau.bst",
+    "Lobby": "lobby.bst",
+    "Club": "club.bst",
+    "Underground": "underground.bst",
+    "BeachHouse": "beach_house.bst",
 }
 
 # ---------------------------------------------------------------------------
@@ -154,56 +615,98 @@ COLLISION_TILES = {
     "Gate": {0x01, 0x12, 0x14, 0x1a, 0x1c, 0x37, 0x38, 0x3b, 0x3c, 0x5e},
     "Lab": {0x0c, 0x26, 0x16, 0x1e, 0x34, 0x37},
     "Cavern": {0x05, 0x15, 0x18, 0x1a, 0x20, 0x21, 0x22, 0x2a, 0x2d, 0x30},
+    "Ship": {0x04, 0x0d, 0x17, 0x1d, 0x1e, 0x23, 0x34, 0x37, 0x39, 0x4a},
+    "ShipPort": {0x0a, 0x1a, 0x32, 0x3b},
+    "Cemetery": {0x01, 0x10, 0x13, 0x1b, 0x22, 0x42, 0x52},
+    "Interior": {0x04, 0x0f, 0x15, 0x1f, 0x3b, 0x45, 0x47, 0x55, 0x56},
+    "Facility": {0x01, 0x10, 0x11, 0x13, 0x1b, 0x20, 0x21, 0x22, 0x30, 0x31,
+                 0x32, 0x42, 0x43, 0x48, 0x52, 0x55, 0x58, 0x5e},
+    "Mansion": {0x01, 0x05, 0x11, 0x12, 0x14, 0x1a, 0x1c, 0x2c, 0x53},
+    "Plateau": {0x1b, 0x23, 0x2c, 0x2d, 0x3b, 0x45},
+    "Lobby": {0x14, 0x17, 0x1a, 0x1c, 0x20, 0x38, 0x45},
+    "Club": {0x0f, 0x1a, 0x1f, 0x26, 0x28, 0x29, 0x2c, 0x2d, 0x2e, 0x2f, 0x41},
+    "Underground": {0x0b, 0x0c, 0x13, 0x15, 0x18},
+    "BeachHouse": {0x01, 0x11, 0x12, 0x14},
 }
 
 # ---------------------------------------------------------------------------
 # Grass tile per tileset (from tileset_headers.asm)
-# These tiles are passable but trigger wild encounters.
 # ---------------------------------------------------------------------------
 GRASS_TILES = {
     "Overworld": 0x52,
-    "Forest": 0x20,   # Forest grass tile from tileset header (but see note below)
+    "Forest": 0x20,
+    "Plateau": 0x45,
 }
-# Note: In Forest tileset, 0x52 is also passable (tall grass sprite tile).
-# The tileset header says grass=$20 for Forest, meaning the *movement tile* that
-# triggers encounters is 0x20. We'll mark 0x52 in Forest as grass too since
-# it also appears as walkable grass.
 
-# Additional grass tiles by tileset (tiles that look like grass AND are passable)
 EXTRA_GRASS_TILES = {
-    "Overworld": set(),      # 0x52 already covered
-    "Forest": {0x52},        # Forest also has 0x52 as grass encounter tile
+    "Overworld": set(),
+    "Forest": {0x52},
+}
+
+# ---------------------------------------------------------------------------
+# Water tile IDs per tileset (from data/tilesets/water_tilesets.asm)
+# Tile 0x14 is the universal water tile across all tilesets that have water.
+# These are NOT passable on foot but represent fishable/surfable water.
+# ---------------------------------------------------------------------------
+WATER_TILES = {
+    "Overworld": {0x14},
+    "Forest": {0x14},
+    "Dojo": {0x14},
+    "Gym": {0x14},
+    "Ship": {0x14},
+    "ShipPort": {0x14},
+    "Cavern": {0x14},
+    "Facility": {0x14},
+    "Plateau": {0x14},
 }
 
 # ---------------------------------------------------------------------------
 # Ledge tiles (from data/tilesets/ledge_tiles.asm)
-# Format: (standing_tile, target_tile) -> direction
-# These only apply to Overworld tileset.
-# The ledge check works by looking at the tile the player is standing on
-# AND the tile in the direction they want to move.
+# Only apply to Overworld tileset.
 # ---------------------------------------------------------------------------
-# For our purposes, we need to identify which player coordinates have ledges.
-# Ledge tiles are passable in one direction only.
-# The "target" tiles (0x37, 0x36, 0x27, 0x0D, 0x1D) are what the LEDGE looks
-# like. The player stands on a passable tile and can jump OVER the ledge tile.
-# So the ledge tile itself is NOT normally passable (it's not in collision list).
-# But the player CAN move onto it from certain directions.
-#
-# For the tile grid: we mark the TARGET tile positions as ledge tiles.
-# A ledge tile at (x,y) means the player can land there only from the
-# appropriate direction.
 LEDGE_TARGET_TILES = {
     "Overworld": {
-        0x37: "down",    # ledge facing down
-        0x36: "down",    # ledge facing down (variant)
-        0x27: "left",    # ledge facing left
-        0x0D: "right",   # ledge facing right
-        0x1D: "right",   # ledge facing right (variant)
+        0x37: "down",
+        0x36: "down",
+        0x27: "left",
+        0x0D: "right",
+        0x1D: "right",
     }
 }
 
 
-def download_file(url: str, cache_path: Path) -> bytes:
+def snake_to_camel(name: str) -> str:
+    """Convert UPPER_SNAKE_CASE to CamelCase.
+
+    Handles floor suffixes like 1F, 2F, B1F by keeping the F uppercase.
+    """
+    parts = name.lower().split("_")
+    result = []
+    for part in parts:
+        # Floor suffixes: "1f" -> "1F", "b1f" -> "B1F"
+        if re.match(r'^b?\d+f$', part):
+            result.append(part.upper())
+        else:
+            result.append(part.capitalize())
+    return "".join(result)
+
+
+def get_blk_name(map_name: str) -> str | None:
+    """Get the CamelCase BLK filename for a map."""
+    if map_name in BLK_NAME_OVERRIDES:
+        return BLK_NAME_OVERRIDES[map_name]
+    return snake_to_camel(map_name)
+
+
+def get_tileset(blk_name: str) -> str | None:
+    """Get the tileset name for a map (returns CamelCase tileset name)."""
+    asm_tileset = MAP_TILESET_FROM_HEADER.get(blk_name)
+    if asm_tileset is None:
+        return None
+    return TILESET_NAME_MAP.get(asm_tileset, asm_tileset)
+
+
+def download_file(url: str, cache_path: Path) -> bytes | None:
     """Download a file from URL, using local cache if available."""
     if cache_path.exists():
         return cache_path.read_bytes()
@@ -219,49 +722,11 @@ def download_file(url: str, cache_path: Path) -> bytes:
         return None
 
 
-def load_metadata() -> list[dict]:
-    """Load map metadata from the nav_map_metadata.csv seed.
-
-    Applies DIMENSION_OVERRIDES where the CSV dimensions don't match the
-    actual ASM source (Yellow Legacy expanded some maps).
-    """
-    maps = []
-    with open(METADATA_CSV, "r", newline="") as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            if not row["map_name"]:
-                continue
-            map_name = row["map_name"]
-            width = int(row["width"])
-            height = int(row["height"])
-
-            # Apply dimension overrides from ASM source
-            if map_name in DIMENSION_OVERRIDES:
-                old_w, old_h = width, height
-                width, height = DIMENSION_OVERRIDES[map_name]
-                print(f"  [override] {map_name}: {old_w}x{old_h} -> {width}x{height}")
-
-            maps.append({
-                "map_name": map_name,
-                "width": width,
-                "height": height,
-            })
-    return maps
-
-
-def download_blk(map_name: str) -> bytes | None:
-    """Download the .blk file for a given map name."""
-    blk_name = MAP_NAME_TO_BLK.get(map_name)
-    if not blk_name:
-        print(f"  WARNING: No .blk mapping for {map_name}, skipping")
-        return None
-
+def download_blk(blk_name: str) -> bytes | None:
+    """Download the .blk file for a given map."""
     url = f"{REPO_BASE}/maps/{blk_name}.blk"
     cache_path = CACHE_DIR / "maps" / f"{blk_name}.blk"
-    data = download_file(url, cache_path)
-    if data is None:
-        print(f"  WARNING: Could not download {blk_name}.blk")
-    return data
+    return download_file(url, cache_path)
 
 
 def download_bst(tileset_name: str) -> bytes | None:
@@ -270,24 +735,13 @@ def download_bst(tileset_name: str) -> bytes | None:
     if not bst_file:
         print(f"  WARNING: No .bst mapping for tileset {tileset_name}")
         return None
-
     url = f"{REPO_BASE}/gfx/blocksets/{bst_file}"
     cache_path = CACHE_DIR / "blocksets" / bst_file
-    data = download_file(url, cache_path)
-    if data is None:
-        print(f"  WARNING: Could not download {bst_file}")
-    return data
+    return download_file(url, cache_path)
 
 
 def get_block_tiles(bst_data: bytes, block_id: int) -> list[int]:
-    """
-    Extract the 16 tile IDs for a given block from the blockset data.
-    Returns a list of 16 bytes representing the 4x4 tile grid:
-      [row0_col0, row0_col1, row0_col2, row0_col3,
-       row1_col0, row1_col1, row1_col2, row1_col3,
-       row2_col0, row2_col1, row2_col2, row2_col3,
-       row3_col0, row3_col1, row3_col2, row3_col3]
-    """
+    """Extract the 16 tile IDs for a given block from the blockset data."""
     offset = block_id * 16
     if offset + 16 > len(bst_data):
         return [0] * 16
@@ -295,22 +749,7 @@ def get_block_tiles(bst_data: bytes, block_id: int) -> list[int]:
 
 
 def get_collision_tile(block_tiles: list[int], mx: int, my: int) -> int:
-    """
-    Get the collision-check tile for a metatile position within a block.
-
-    A block is 4x4 tiles. The player occupies 2x2 tiles. There are 4
-    metatile positions per block: (0,0), (1,0), (0,1), (1,1).
-
-    For metatile (mx, my), the 2x2 tiles are:
-      top-left:     row=my*2,   col=mx*2
-      top-right:    row=my*2,   col=mx*2+1
-      bottom-left:  row=my*2+1, col=mx*2
-      bottom-right: row=my*2+1, col=mx*2+1
-
-    The game checks the BOTTOM-LEFT tile for collision:
-      row = my*2 + 1, col = mx*2
-      byte index = (my*2 + 1) * 4 + mx*2
-    """
+    """Get the collision-check tile for a metatile position within a block."""
     row = my * 2 + 1
     col = mx * 2
     idx = row * 4 + col
@@ -322,7 +761,7 @@ def classify_tile(tile_id: int, tileset_name: str) -> tuple[str, bool, str]:
     Classify a tile as (tile_type, walkable, ledge_direction).
 
     Returns:
-        tile_type: "path", "grass", "wall", or "ledge"
+        tile_type: "path", "grass", "water", "wall", or "ledge"
         walkable: True if passable (path, grass, or ledge)
         ledge_direction: direction string for ledges, empty otherwise
     """
@@ -330,49 +769,42 @@ def classify_tile(tile_id: int, tileset_name: str) -> tuple[str, bool, str]:
     grass_tile = GRASS_TILES.get(tileset_name)
     extra_grass = EXTRA_GRASS_TILES.get(tileset_name, set())
     ledge_targets = LEDGE_TARGET_TILES.get(tileset_name, {})
+    water_tiles = WATER_TILES.get(tileset_name, set())
 
-    # Check ledge first -- ledge target tiles are NOT in the passable set
-    # but are traversable in one direction
+    # Check ledge first
     if tile_id in ledge_targets:
         direction = ledge_targets[tile_id]
         return ("ledge", True, direction)
 
     # Check if passable
     if tile_id in passable_tiles:
-        # Check if it's grass
         if tile_id == grass_tile or tile_id in extra_grass:
             return ("grass", True, "")
         else:
             return ("path", True, "")
 
+    # Check if it's a water tile (not passable on foot, but fishable/surfable)
+    if tile_id in water_tiles:
+        return ("water", False, "")
+
     # Not passable
     return ("wall", False, "")
 
 
-def process_map(map_info: dict, bst_cache: dict) -> list[dict]:
-    """
-    Process a single map and return a list of tile rows.
-
-    Each row: {map_name, x, y, tile_type, walkable, ledge_direction}
-    """
-    map_name = map_info["map_name"]
-    width_blocks = map_info["width"]
-    height_blocks = map_info["height"]
-
-    tileset_name = MAP_NAME_TO_TILESET.get(map_name)
-    if not tileset_name:
-        print(f"  WARNING: No tileset for {map_name}, skipping")
-        return []
-
+def process_map(map_name: str, width: int, height: int,
+                blk_name: str, tileset_name: str,
+                bst_cache: dict) -> list[dict]:
+    """Process a single map and return a list of tile rows."""
     # Download .blk
-    blk_data = download_blk(map_name)
+    blk_data = download_blk(blk_name)
     if blk_data is None:
+        print(f"  WARNING: Could not download {blk_name}.blk")
         return []
 
-    expected_size = width_blocks * height_blocks
+    expected_size = width * height
     if len(blk_data) != expected_size:
         print(f"  WARNING: {map_name} .blk size {len(blk_data)} != expected "
-              f"{expected_size} ({width_blocks}x{height_blocks})")
+              f"{expected_size} ({width}x{height})")
         return []
 
     # Get blockset data
@@ -384,24 +816,19 @@ def process_map(map_info: dict, bst_cache: dict) -> list[dict]:
     bst_data = bst_cache[tileset_name]
 
     rows = []
-    for by in range(height_blocks):
-        for bx in range(width_blocks):
-            block_id = blk_data[by * width_blocks + bx]
+    for by in range(height):
+        for bx in range(width):
+            block_id = blk_data[by * width + bx]
             block_tiles = get_block_tiles(bst_data, block_id)
 
-            # Each block has 2x2 metatile positions
             for my in range(2):
                 for mx in range(2):
-                    # Player coordinate on the map
                     px = bx * 2 + mx
                     py = by * 2 + my
-
-                    # Get the collision tile
                     tile_id = get_collision_tile(block_tiles, mx, my)
                     tile_type, walkable, ledge_dir = classify_tile(
                         tile_id, tileset_name
                     )
-
                     rows.append({
                         "map_name": map_name,
                         "x": px,
@@ -419,42 +846,87 @@ def main():
     print("Pokemon Yellow Legacy - Map Tile Extractor")
     print("=" * 60)
 
-    # Load metadata
-    if not METADATA_CSV.exists():
-        print(f"ERROR: {METADATA_CSV} not found")
-        sys.exit(1)
-
-    maps = load_metadata()
-    print(f"Loaded {len(maps)} maps from {METADATA_CSV.name}")
-
-    # Create cache directory
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Process each map
     bst_cache: dict[str, bytes] = {}
     all_tile_rows = []
     tileset_rows = []
+    metadata_rows = []
+    skipped = []
 
-    for map_info in maps:
-        map_name = map_info["map_name"]
-        tileset_name = MAP_NAME_TO_TILESET.get(map_name, "UNKNOWN")
-        print(f"\nProcessing {map_name} ({map_info['width']}x{map_info['height']} blocks, "
-              f"tileset={tileset_name})...")
+    for map_name, (width, height) in sorted(MAP_DIMENSIONS.items()):
+        blk_name = get_blk_name(map_name)
+        if blk_name is None:
+            skipped.append(map_name)
+            continue
 
-        tile_rows = process_map(map_info, bst_cache)
+        tileset_name = get_tileset(blk_name)
+        if tileset_name is None:
+            print(f"  WARNING: No tileset for {map_name} ({blk_name}), skipping")
+            skipped.append(map_name)
+            continue
+
+        print(f"Processing {map_name} ({width}x{height}, tileset={tileset_name})...")
+
+        tile_rows = process_map(map_name, width, height,
+                                blk_name, tileset_name, bst_cache)
         if tile_rows:
             all_tile_rows.extend(tile_rows)
-            walkable_count = sum(1 for r in tile_rows if r["walkable"])
-            wall_count = sum(1 for r in tile_rows if r["tile_type"] == "wall")
-            grass_count = sum(1 for r in tile_rows if r["tile_type"] == "grass")
-            ledge_count = sum(1 for r in tile_rows if r["tile_type"] == "ledge")
-            total = len(tile_rows)
-            print(f"  -> {total} tiles: {walkable_count} walkable "
-                  f"({grass_count} grass, {ledge_count} ledge), {wall_count} wall")
+            counts = {}
+            for r in tile_rows:
+                counts[r["tile_type"]] = counts.get(r["tile_type"], 0) + 1
+            walkable = sum(1 for r in tile_rows if r["walkable"])
+            parts = ", ".join(f"{c} {t}" for t, c in sorted(counts.items()) if t != "wall")
+            print(f"  -> {len(tile_rows)} tiles: {walkable} walkable ({parts}), "
+                  f"{counts.get('wall', 0)} wall")
 
         tileset_rows.append({
             "map_name": map_name,
             "tileset_name": tileset_name,
+        })
+
+        # Determine area type for metadata
+        area_type = "indoor"
+        name_lower = map_name.lower()
+        if "route" in name_lower and "gate" not in name_lower and "house" not in name_lower:
+            area_type = "route"
+        elif any(t in name_lower for t in ["_town", "_city", "_island", "_plateau"]):
+            if map_name in ("PALLET_TOWN", "VIRIDIAN_CITY", "PEWTER_CITY", "CERULEAN_CITY",
+                            "VERMILION_CITY", "CELADON_CITY", "LAVENDER_TOWN", "FUCHSIA_CITY",
+                            "SAFFRON_CITY", "CINNABAR_ISLAND", "INDIGO_PLATEAU"):
+                area_type = "town" if "town" in name_lower else "city"
+        elif any(t in name_lower for t in ["cave", "tunnel", "mt_moon", "seafoam",
+                                            "victory_road", "power_plant", "digletts"]):
+            area_type = "dungeon"
+        elif "gate" in name_lower:
+            area_type = "gate"
+        elif map_name == "VIRIDIAN_FOREST":
+            area_type = "dungeon"
+        elif any(map_name.startswith(sz) for sz in ["SAFARI_ZONE_CENTER", "SAFARI_ZONE_EAST",
+                                                      "SAFARI_ZONE_NORTH", "SAFARI_ZONE_WEST"]):
+            if "REST_HOUSE" not in map_name and "SECRET_HOUSE" not in map_name and "GATE" not in map_name:
+                area_type = "route"
+
+        # Determine parent area
+        parent = ""
+        city_map = {
+            "PALLET": "PALLET_TOWN", "VIRIDIAN": "VIRIDIAN_CITY", "PEWTER": "PEWTER_CITY",
+            "CERULEAN": "CERULEAN_CITY", "VERMILION": "VERMILION_CITY", "CELADON": "CELADON_CITY",
+            "LAVENDER": "LAVENDER_TOWN", "FUCHSIA": "FUCHSIA_CITY", "SAFFRON": "SAFFRON_CITY",
+            "CINNABAR": "CINNABAR_ISLAND", "INDIGO": "INDIGO_PLATEAU",
+        }
+        for prefix, city_name in city_map.items():
+            if map_name.startswith(prefix) and area_type == "indoor":
+                parent = city_name
+                break
+
+        metadata_rows.append({
+            "map_name": map_name,
+            "map_id_hex": "",
+            "width": width * 2,  # blocks -> player coordinates
+            "height": height * 2,
+            "area_type": area_type,
+            "parent_area": parent,
         })
 
     # Write nav_map_tiles.csv
@@ -476,21 +948,41 @@ def main():
         writer.writerows(tileset_rows)
     print(f"  -> {len(tileset_rows)} tileset rows written")
 
+    # Write nav_map_metadata.csv
+    print(f"Writing {METADATA_CSV}...")
+    with open(METADATA_CSV, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=[
+            "map_name", "map_id_hex", "width", "height", "area_type", "parent_area"
+        ])
+        writer.writeheader()
+        writer.writerows(metadata_rows)
+    print(f"  -> {len(metadata_rows)} metadata rows written")
+
     # Summary
     print(f"\n{'=' * 60}")
     print("Summary:")
+    total = len(all_tile_rows)
+    if total == 0:
+        print("  No tiles extracted!")
+        return
+
+    counts = {}
+    for r in all_tile_rows:
+        counts[r["tile_type"]] = counts.get(r["tile_type"], 0) + 1
+
     total_walkable = sum(1 for r in all_tile_rows if r["walkable"])
-    total_wall = sum(1 for r in all_tile_rows if r["tile_type"] == "wall")
-    total_grass = sum(1 for r in all_tile_rows if r["tile_type"] == "grass")
-    total_ledge = sum(1 for r in all_tile_rows if r["tile_type"] == "ledge")
-    print(f"  Total tiles:    {len(all_tile_rows)}")
-    print(f"  Walkable:       {total_walkable} "
-          f"({total_walkable / len(all_tile_rows) * 100:.1f}%)")
-    print(f"    - Path:       {total_walkable - total_grass - total_ledge}")
-    print(f"    - Grass:      {total_grass}")
-    print(f"    - Ledge:      {total_ledge}")
-    print(f"  Wall:           {total_wall} "
-          f"({total_wall / len(all_tile_rows) * 100:.1f}%)")
+    print(f"  Maps processed: {len(tileset_rows)}")
+    print(f"  Total tiles:    {total}")
+    print(f"  Walkable:       {total_walkable} ({total_walkable / total * 100:.1f}%)")
+    print(f"    - Path:       {counts.get('path', 0)}")
+    print(f"    - Grass:      {counts.get('grass', 0)}")
+    print(f"    - Ledge:      {counts.get('ledge', 0)}")
+    print(f"  Water:          {counts.get('water', 0)} ({counts.get('water', 0) / total * 100:.1f}%)")
+    print(f"  Wall:           {counts.get('wall', 0)} ({counts.get('wall', 0) / total * 100:.1f}%)")
+
+    if skipped:
+        print(f"\n  Skipped {len(skipped)} maps: {', '.join(skipped[:10])}")
+
     print(f"\nDone!")
 
 

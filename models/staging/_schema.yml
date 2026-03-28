@@ -159,17 +159,27 @@ models:
           description: "Damage multiplier (0=immune, 0.5=not very effective, 1=normal, 2=super effective)"
 
   - name: stg_pkmn_encounter_area_order
-    description: "Mapping of encounter areas to routes for determining pokemon availability timing"
+    description: "Metadata about encounter area types including method, tile type, and prerequisites"
     columns:
         - name: id
-          description: "Unique identifier for each encounter area mapping"
+          description: "Unique identifier for each encounter area type"
           tests:
             - unique
             - not_null
-        - name: encounter_area
-          description: "Specific encounter area name (Grass, Water, Cave, Gift, GameCorner, etc.)"
-        - name: map
-          description: "Route or location name where this encounter area exists"
+        - name: area
+          description: "Encounter area type (Grass, Surf, OldRod, GoodRod, SuperRod, GameCorner, Trade, Gift, Overworld)"
+        - name: encounter_method
+          description: "Human-readable instruction for triggering this encounter type"
+        - name: tile_type
+          description: "Nav tile type to navigate to (grass, water, or null)"
+        - name: required_badge_count
+          description: "Minimum badges needed to use this encounter method"
+        - name: required_item
+          description: "Item required (e.g., OLD_ROD, HM03)"
+        - name: area_order
+          description: "Game progression order when this encounter method becomes available"
+        - name: representative_location
+          description: "Route where this encounter method first becomes available"
 
   - name: stg_pkmn_encounter_areas
     description: "Wild pokemon encounter data with levels and probability rates for each area"
@@ -181,7 +191,7 @@ models:
             - not_null
         - name: map
           description: "Route or location name"
-        - name: pkmn_level
+        - name: level
           description: "Level of wild pokemon encounter"
         - name: pokemon
           description: "Pokemon species name"

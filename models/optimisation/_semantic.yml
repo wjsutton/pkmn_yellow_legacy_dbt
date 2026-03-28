@@ -1,0 +1,170 @@
+semantic_models:
+  - name: recommended_teams
+    description: |
+      Optimized 6-Pokemon team selections per game stage with 12 run
+      variants (3 rival types x 2 pikachu x 2 legendary).
+    model: ref('opt_recommended_teams')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: team_slot
+        type: primary
+        expr: "run_name || '|' || game_stage || '|' || cast(team_rank as varchar)"
+      - name: pokemon
+        type: foreign
+        expr: player_pokemon
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: player_pokemon_name
+        type: categorical
+        expr: player_pokemon
+      - name: run_name
+        type: categorical
+      - name: rival_type
+        type: categorical
+      - name: keep_pikachu
+        type: categorical
+        expr: cast(keep_pikachu as varchar)
+      - name: no_legends
+        type: categorical
+        expr: cast(no_legends as varchar)
+      - name: team_rank
+        type: categorical
+        expr: cast(team_rank as varchar)
+      - name: performance_tier
+        type: categorical
+      - name: role_on_team
+        type: categorical
+      - name: assigned_tm_move
+        type: categorical
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: team_quality
+        type: categorical
+      - name: variant_description
+        type: categorical
+
+    measures:
+      - name: team_performance_score
+        description: "Overall team effectiveness score"
+        expr: team_performance_score
+        agg: max
+      - name: team_member_count
+        description: "Number of Pokemon in the team"
+        expr: "1"
+        agg: sum
+      - name: avg_pokemon_score
+        description: "Average individual pokemon score"
+        expr: pokemon_score
+        agg: average
+
+  - name: team_performance
+    description: |
+      Per-Pokemon performance scores at each game stage with difficulty-weighted
+      battle contributions and TM assignments.
+    model: ref('opt_team_performance')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: performance_record
+        type: primary
+        expr: "game_stage || '|' || player_pkmn_id"
+      - name: pokemon
+        type: foreign
+        expr: player_pokemon
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: player_pokemon_name
+        type: categorical
+        expr: player_pokemon
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: performance_tier
+        type: categorical
+      - name: tm_efficiency
+        type: categorical
+      - name: team_recommendation
+        type: categorical
+      - name: stage_rank
+        type: categorical
+        expr: cast(stage_rank as varchar)
+
+    measures:
+      - name: avg_team_selection_score
+        description: "Average team selection score"
+        expr: team_selection_score
+        agg: average
+      - name: total_battles_as_best
+        description: "Total battles where this pokemon is the best option"
+        expr: battles_as_best_option
+        agg: sum
+      - name: avg_mini_boss_score
+        description: "Average battle score against mini bosses"
+        expr: avg_mini_boss_score
+        agg: average
+
+metrics:
+  - name: available_pokemon_by_stage
+    type: simple
+    label: "Available Pokemon Count"
+    description: "Count of distinct Pokemon available at each game stage"
+    type_params:
+      measure: available_pokemon_count
+
+  - name: total_victories_metric
+    type: simple
+    label: "Total Victories"
+    description: "Total number of player victories across all matchups"
+    type_params:
+      measure: total_victories
+
+  - name: total_matchups_metric
+    type: simple
+    label: "Total Matchups"
+    description: "Total number of battle matchups analysed"
+    type_params:
+      measure: total_matchups
+
+  - name: win_rate
+    type: derived
+    label: "Battle Win Rate"
+    description: "Percentage of battles won by the player"
+    type_params:
+      expr: "cast(total_victories_metric as double) / nullif(total_matchups_metric, 0)"
+      metrics:
+        - name: total_victories_metric
+        - name: total_matchups_metric
+
+  - name: trainer_avg_level_metric
+    type: simple
+    label: "Trainer Avg Level"
+    description: "Average level of trainer teams"
+    type_params:
+      measure: trainer_avg_level
+
+  - name: team_score
+    type: simple
+    label: "Team Performance Score"
+    description: "Overall team effectiveness score per stage"
+    type_params:
+      measure: team_performance_score

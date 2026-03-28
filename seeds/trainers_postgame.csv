@@ -1,361 +1,361 @@
 trainer,pkmn_id,map,nearest_route,pokemon,moves,game_stage,pkmn_level
-Brock_Rematch,Brock_Rematch_Omastar_1,Rematches,Rematches,Omastar,Blizzard,Rematches,64
-Brock_Rematch,Brock_Rematch_Omastar_1,Rematches,Rematches,Omastar,Rock Slide,Rematches,64
-Brock_Rematch,Brock_Rematch_Omastar_1,Rematches,Rematches,Omastar,Clamp,Rematches,64
-Brock_Rematch,Brock_Rematch_Omastar_1,Rematches,Rematches,Omastar,Hydro Pump,Rematches,64
-Brock_Rematch,Brock_Rematch_Onix_2,Rematches,Rematches,Onix,Fissure,Rematches,65
-Brock_Rematch,Brock_Rematch_Onix_2,Rematches,Rematches,Onix,Rock Slide,Rematches,65
-Brock_Rematch,Brock_Rematch_Onix_2,Rematches,Rematches,Onix,Earthquake,Rematches,65
-Brock_Rematch,Brock_Rematch_Onix_2,Rematches,Rematches,Onix,Bind,Rematches,65
-Brock_Rematch,Brock_Rematch_Kabutops_3,Rematches,Rematches,Kabutops,Slash,Rematches,64
-Brock_Rematch,Brock_Rematch_Kabutops_3,Rematches,Rematches,Kabutops,Swords Dance,Rematches,64
-Brock_Rematch,Brock_Rematch_Kabutops_3,Rematches,Rematches,Kabutops,Rock Slide,Rematches,64
-Brock_Rematch,Brock_Rematch_Kabutops_3,Rematches,Rematches,Kabutops,Hydro Pump,Rematches,64
-Brock_Rematch,Brock_Rematch_Golem_4,Rematches,Rematches,Golem,Body Slam,Rematches,64
-Brock_Rematch,Brock_Rematch_Golem_4,Rematches,Rematches,Golem,Rock Slide,Rematches,64
-Brock_Rematch,Brock_Rematch_Golem_4,Rematches,Rematches,Golem,Earthquake,Rematches,64
-Brock_Rematch,Brock_Rematch_Golem_4,Rematches,Rematches,Golem,Explosion,Rematches,64
-Brock_Rematch,Brock_Rematch_Exeggutor_5,Rematches,Rematches,Exeggutor,Reflect,Rematches,64
-Brock_Rematch,Brock_Rematch_Exeggutor_5,Rematches,Rematches,Exeggutor,Solarbeam,Rematches,64
-Brock_Rematch,Brock_Rematch_Exeggutor_5,Rematches,Rematches,Exeggutor,Confuse Ray,Rematches,64
-Brock_Rematch,Brock_Rematch_Exeggutor_5,Rematches,Rematches,Exeggutor,Fire Spin,Rematches,64
-Brock_Rematch,Brock_Rematch_Aerodactyl_6,Rematches,Rematches,Aerodactyl,Fly,Rematches,65
-Brock_Rematch,Brock_Rematch_Aerodactyl_6,Rematches,Rematches,Aerodactyl,Rock Slide,Rematches,65
-Brock_Rematch,Brock_Rematch_Aerodactyl_6,Rematches,Rematches,Aerodactyl,Earthquake,Rematches,65
-Brock_Rematch,Brock_Rematch_Aerodactyl_6,Rematches,Rematches,Aerodactyl,Double Edge,Rematches,65
-Misty_Rematch,Misty_Rematch_Seadra_1,Rematches,Rematches,Seadra,Ice Beam,Rematches,64
-Misty_Rematch,Misty_Rematch_Seadra_1,Rematches,Rematches,Seadra,Double Team,Rematches,64
-Misty_Rematch,Misty_Rematch_Seadra_1,Rematches,Rematches,Seadra,Slam,Rematches,64
-Misty_Rematch,Misty_Rematch_Seadra_1,Rematches,Rematches,Seadra,Hydro Pump,Rematches,64
-Misty_Rematch,Misty_Rematch_Pidgeot_2,Rematches,Rematches,Pidgeot,Blizzard,Rematches,65
-Misty_Rematch,Misty_Rematch_Pidgeot_2,Rematches,Rematches,Pidgeot,Psychic,Rematches,65
-Misty_Rematch,Misty_Rematch_Pidgeot_2,Rematches,Rematches,Pidgeot,Amnesia,Rematches,65
-Misty_Rematch,Misty_Rematch_Pidgeot_2,Rematches,Rematches,Pidgeot,Hydro Pump,Rematches,65
-Misty_Rematch,Misty_Rematch_Lapras_3,Rematches,Rematches,Lapras,Psychic,Rematches,64
-Misty_Rematch,Misty_Rematch_Lapras_3,Rematches,Rematches,Lapras,Thunder,Rematches,64
-Misty_Rematch,Misty_Rematch_Lapras_3,Rematches,Rematches,Lapras,Hydro Pump,Rematches,64
-Misty_Rematch,Misty_Rematch_Lapras_3,Rematches,Rematches,Lapras,Blizzard,Rematches,64
-Misty_Rematch,Misty_Rematch_Blastoise_4,Rematches,Rematches,Blastoise,Surf,Rematches,64
-Misty_Rematch,Misty_Rematch_Blastoise_4,Rematches,Rematches,Blastoise,Earthquake,Rematches,64
-Misty_Rematch,Misty_Rematch_Blastoise_4,Rematches,Rematches,Blastoise,Ice Beam,Rematches,64
-Misty_Rematch,Misty_Rematch_Blastoise_4,Rematches,Rematches,Blastoise,Reflect,Rematches,64
-Misty_Rematch,Misty_Rematch_Flareon_5,Rematches,Rematches,Flareon,Substitute,Rematches,64
-Misty_Rematch,Misty_Rematch_Flareon_5,Rematches,Rematches,Flareon,Acid Armor,Rematches,64
-Misty_Rematch,Misty_Rematch_Flareon_5,Rematches,Rematches,Flareon,Blizzard,Rematches,64
-Misty_Rematch,Misty_Rematch_Flareon_5,Rematches,Rematches,Flareon,Hydro Pump,Rematches,64
-Misty_Rematch,Misty_Rematch_Starmie_6,Rematches,Rematches,Starmie,Surf,Rematches,65
-Misty_Rematch,Misty_Rematch_Starmie_6,Rematches,Rematches,Starmie,Psychic,Rematches,65
-Misty_Rematch,Misty_Rematch_Starmie_6,Rematches,Rematches,Starmie,Recover,Rematches,65
-Misty_Rematch,Misty_Rematch_Starmie_6,Rematches,Rematches,Starmie,Thunderbolt,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,Rematches,Rematches,Electrode,Light Screen,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,Rematches,Rematches,Electrode,Thunder Wave,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,Rematches,Rematches,Electrode,Explosion,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,Rematches,Rematches,Electrode,Thunder,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,Rematches,Rematches,Exeggutor,Thunder Wave,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,Rematches,Rematches,Exeggutor,Tri Attack,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,Rematches,Rematches,Exeggutor,Reflect,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,Rematches,Rematches,Exeggutor,Thunder,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,Rematches,Rematches,Flareon,Headbutt,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,Rematches,Rematches,Flareon,Dig,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,Rematches,Rematches,Flareon,Thunder Wave,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,Rematches,Rematches,Flareon,Thunder,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,Rematches,Rematches,Gyarados,Thunder,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,Rematches,Rematches,Gyarados,Blizzard,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,Rematches,Rematches,Gyarados,Recover,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,Rematches,Rematches,Gyarados,Hyper Beam,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,Rematches,Rematches,Parasect,Ice Punch,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,Rematches,Rematches,Parasect,Light Screen,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,Rematches,Rematches,Parasect,Psychic,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,Rematches,Rematches,Parasect,Thunder,Rematches,64
-Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,Rematches,Rematches,Raichu,Surf,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,Rematches,Rematches,Raichu,Cut,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,Rematches,Rematches,Raichu,Thunder,Rematches,65
-Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,Rematches,Rematches,Raichu,Thunder Wave,Rematches,65
-Erika_Rematch,Erika_Rematch_Tangela_1,Rematches,Rematches,Tangela,Mega Drain,Rematches,64
-Erika_Rematch,Erika_Rematch_Tangela_1,Rematches,Rematches,Tangela,Body Slam,Rematches,64
-Erika_Rematch,Erika_Rematch_Tangela_1,Rematches,Rematches,Tangela,Stun Spore,Rematches,64
-Erika_Rematch,Erika_Rematch_Tangela_1,Rematches,Rematches,Tangela,Bind,Rematches,64
-Erika_Rematch,Erika_Rematch_Venusaur_2,Rematches,Rematches,Venusaur,Sludge,Rematches,64
-Erika_Rematch,Erika_Rematch_Venusaur_2,Rematches,Rematches,Venusaur,Leech Seed,Rematches,64
-Erika_Rematch,Erika_Rematch_Venusaur_2,Rematches,Rematches,Venusaur,Sleep Powder,Rematches,64
-Erika_Rematch,Erika_Rematch_Venusaur_2,Rematches,Rematches,Venusaur,Razor Leaf,Rematches,64
-Erika_Rematch,Erika_Rematch_Parasect_3,Rematches,Rematches,Parasect,Leech Life,Rematches,64
-Erika_Rematch,Erika_Rematch_Parasect_3,Rematches,Rematches,Parasect,Mega Drain,Rematches,64
-Erika_Rematch,Erika_Rematch_Parasect_3,Rematches,Rematches,Parasect,Solarbeam,Rematches,64
-Erika_Rematch,Erika_Rematch_Parasect_3,Rematches,Rematches,Parasect,Growth,Rematches,64
-Erika_Rematch,Erika_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Mega Drain,Rematches,64
-Erika_Rematch,Erika_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Substitute,Rematches,64
-Erika_Rematch,Erika_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Psychic,Rematches,64
-Erika_Rematch,Erika_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Sleep Powder,Rematches,64
-Erika_Rematch,Erika_Rematch_Parasect_5,Rematches,Rematches,Parasect,Mega Drain,Rematches,65
-Erika_Rematch,Erika_Rematch_Parasect_5,Rematches,Rematches,Parasect,Sludge,Rematches,65
-Erika_Rematch,Erika_Rematch_Parasect_5,Rematches,Rematches,Parasect,Growth,Rematches,65
-Erika_Rematch,Erika_Rematch_Parasect_5,Rematches,Rematches,Parasect,Sleep Powder,Rematches,65
-Erika_Rematch,Erika_Rematch_Gloom_6,Rematches,Rematches,Gloom,Sleep Powder,Rematches,65
-Erika_Rematch,Erika_Rematch_Gloom_6,Rematches,Rematches,Gloom,Leech Seed,Rematches,65
-Erika_Rematch,Erika_Rematch_Gloom_6,Rematches,Rematches,Gloom,Substitute,Rematches,65
-Erika_Rematch,Erika_Rematch_Gloom_6,Rematches,Rematches,Gloom,Mega Drain,Rematches,65
-Koga_Rematch,Koga_Rematch_Golbat_1,Rematches,Rematches,Golbat,Fly,Rematches,64
-Koga_Rematch,Koga_Rematch_Golbat_1,Rematches,Rematches,Golbat,Toxic,Rematches,64
-Koga_Rematch,Koga_Rematch_Golbat_1,Rematches,Rematches,Golbat,Double Team,Rematches,64
-Koga_Rematch,Koga_Rematch_Golbat_1,Rematches,Rematches,Golbat,Confuse Ray,Rematches,64
-Koga_Rematch,Koga_Rematch_Muk_2,Rematches,Rematches,Muk,Sludge,Rematches,64
-Koga_Rematch,Koga_Rematch_Muk_2,Rematches,Rematches,Muk,Toxic,Rematches,64
-Koga_Rematch,Koga_Rematch_Muk_2,Rematches,Rematches,Muk,Mega Drain,Rematches,64
-Koga_Rematch,Koga_Rematch_Muk_2,Rematches,Rematches,Muk,Minimize,Rematches,64
-Koga_Rematch,Koga_Rematch_Tentacruel_3,Rematches,Rematches,Tentacruel,Surf,Rematches,64
-Koga_Rematch,Koga_Rematch_Tentacruel_3,Rematches,Rematches,Tentacruel,Sludge,Rematches,64
-Koga_Rematch,Koga_Rematch_Tentacruel_3,Rematches,Rematches,Tentacruel,Blizzard,Rematches,64
-Koga_Rematch,Koga_Rematch_Tentacruel_3,Rematches,Rematches,Tentacruel,Reflect,Rematches,64
-Koga_Rematch,Koga_Rematch_Weezing_4,Rematches,Rematches,Weezing,Amnesia,Rematches,65
-Koga_Rematch,Koga_Rematch_Weezing_4,Rematches,Rematches,Weezing,Fire Blast,Rematches,65
-Koga_Rematch,Koga_Rematch_Weezing_4,Rematches,Rematches,Weezing,Thunderbolt,Rematches,65
-Koga_Rematch,Koga_Rematch_Weezing_4,Rematches,Rematches,Weezing,Sludge,Rematches,65
-Koga_Rematch,Koga_Rematch_Arbok_5,Rematches,Rematches,Arbok,Glare,Rematches,64
-Koga_Rematch,Koga_Rematch_Arbok_5,Rematches,Rematches,Arbok,Earthquake,Rematches,64
-Koga_Rematch,Koga_Rematch_Arbok_5,Rematches,Rematches,Arbok,Rock Slide,Rematches,64
-Koga_Rematch,Koga_Rematch_Arbok_5,Rematches,Rematches,Arbok,Wrap,Rematches,64
-Koga_Rematch,Koga_Rematch_Gloom_6,Rematches,Rematches,Gloom,Double Team,Rematches,65
-Koga_Rematch,Koga_Rematch_Gloom_6,Rematches,Rematches,Gloom,Sleep Powder,Rematches,65
-Koga_Rematch,Koga_Rematch_Gloom_6,Rematches,Rematches,Gloom,Psychic,Rematches,65
-Koga_Rematch,Koga_Rematch_Gloom_6,Rematches,Rematches,Gloom,Leech Life,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Gastly_1,Rematches,Rematches,Gastly,Thunderbolt,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Gastly_1,Rematches,Rematches,Gastly,Psychic,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Gastly_1,Rematches,Rematches,Gastly,Substitute,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Gastly_1,Rematches,Rematches,Gastly,Thunder Wave,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,Rematches,Rematches,Drowzee,Substitute,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,Rematches,Rematches,Drowzee,Psywave,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,Rematches,Rematches,Drowzee,Hypnosis,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,Rematches,Rematches,Drowzee,Dream Eater,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,Rematches,Rematches,Slowbro,Surf,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,Rematches,Rematches,Slowbro,Reflect,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,Rematches,Rematches,Slowbro,Amnesia,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,Rematches,Rematches,Slowbro,Psychic,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Jynx_4,Rematches,Rematches,Jynx,Lovely Kiss,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Jynx_4,Rematches,Rematches,Jynx,Dream Eater,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Jynx_4,Rematches,Rematches,Jynx,Bubblebeam,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Jynx_4,Rematches,Rematches,Jynx,Blizzard,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Gengar_5,Rematches,Rematches,Gengar,Psychic,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Gengar_5,Rematches,Rematches,Gengar,Night Shade,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Gengar_5,Rematches,Rematches,Gengar,Double Team,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Gengar_5,Rematches,Rematches,Gengar,Mega Drain,Rematches,64
-Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,Rematches,Rematches,Alakazam,Thunder Wave,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,Rematches,Rematches,Alakazam,Recover,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,Rematches,Rematches,Alakazam,Psychic,Rematches,65
-Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,Rematches,Rematches,Alakazam,Reflect,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Rapidash_1,Rematches,Rematches,Rapidash,Fire Spin,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Rapidash_1,Rematches,Rematches,Rapidash,Agility,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Rapidash_1,Rematches,Rematches,Rapidash,Solarbeam,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Rapidash_1,Rematches,Rematches,Rapidash,Horn Drill,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Flareon_2,Rematches,Rematches,Flareon,Double Edge,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Flareon_2,Rematches,Rematches,Flareon,Growth,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Flareon_2,Rematches,Rematches,Flareon,Fire Spin,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Flareon_2,Rematches,Rematches,Flareon,Dig,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Charizard_3,Rematches,Rematches,Charizard,Wing Attack,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Charizard_3,Rematches,Rematches,Charizard,Fire Blast,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Charizard_3,Rematches,Rematches,Charizard,Earthquake,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Charizard_3,Rematches,Rematches,Charizard,Swords Dance,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Reflect,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Confuse Ray,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Solarbeam,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Exeggutor_4,Rematches,Rematches,Exeggutor,Fire Spin,Rematches,64
-Blaine_Rematch,Blaine_Rematch_Arcanine_5,Rematches,Rematches,Arcanine,Fire Blast,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Arcanine_5,Rematches,Rematches,Arcanine,Dig,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Arcanine_5,Rematches,Rematches,Arcanine,Double Edge,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Arcanine_5,Rematches,Rematches,Arcanine,Agility,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Magmar_6,Rematches,Rematches,Magmar,Thunderpunch,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Magmar_6,Rematches,Rematches,Magmar,Psychic,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Magmar_6,Rematches,Rematches,Magmar,Confuse Ray,Rematches,65
-Blaine_Rematch,Blaine_Rematch_Magmar_6,Rematches,Rematches,Magmar,Fire Blast,Rematches,65
-Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,IndigoP,Route23,Wigglytuff,Rest,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,IndigoP,Route23,Wigglytuff,Body Slam,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,IndigoP,Route23,Wigglytuff,Lovely Kiss,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,IndigoP,Route23,Wigglytuff,Blizzard,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Starmie_2,IndigoP,Route23,Starmie,Thunder Wave,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Starmie_2,IndigoP,Route23,Starmie,Psychic,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Starmie_2,IndigoP,Route23,Starmie,Thunder,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Starmie_2,IndigoP,Route23,Starmie,Surf,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,IndigoP,Route23,Gyarados,Clamp,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,IndigoP,Route23,Gyarados,Ice Beam,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,IndigoP,Route23,Gyarados,Toxic,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,IndigoP,Route23,Gyarados,Explosion,Rematches,71
-Lorelei_Rematch,Lorelei_Rematch_Omastar_4,IndigoP,Route23,Omastar,Blizzard,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Omastar_4,IndigoP,Route23,Omastar,Rock Slide,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Omastar_4,IndigoP,Route23,Omastar,Horn Drill,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Omastar_4,IndigoP,Route23,Omastar,Hydro Pump,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,IndigoP,Route23,Exeggutor,Leech Seed,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,IndigoP,Route23,Exeggutor,Egg Bomb,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,IndigoP,Route23,Exeggutor,Psychic,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,IndigoP,Route23,Exeggutor,Sleep Powder,Rematches,70
-Lorelei_Rematch,Lorelei_Rematch_Lapras_6,IndigoP,Route23,Lapras,Confuse Ray,Rematches,72
-Lorelei_Rematch,Lorelei_Rematch_Lapras_6,IndigoP,Route23,Lapras,Psychic,Rematches,72
-Lorelei_Rematch,Lorelei_Rematch_Lapras_6,IndigoP,Route23,Lapras,Surf,Rematches,72
-Lorelei_Rematch,Lorelei_Rematch_Lapras_6,IndigoP,Route23,Lapras,Blizzard,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Clefable_1,IndigoP,Route23,Clefable,Softboiled,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Clefable_1,IndigoP,Route23,Clefable,Psychic,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Clefable_1,IndigoP,Route23,Clefable,Ice Beam,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Clefable_1,IndigoP,Route23,Clefable,Thunderbolt,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Muk_2,IndigoP,Route23,Muk,Sludge,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Muk_2,IndigoP,Route23,Muk,Minimize,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Muk_2,IndigoP,Route23,Muk,Body Slam,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Muk_2,IndigoP,Route23,Muk,Fire Blast,Rematches,71
-Bruno_Rematch,Bruno_Rematch_Slowbro_3,IndigoP,Route23,Slowbro,Double Team,Rematches,70
-Bruno_Rematch,Bruno_Rematch_Slowbro_3,IndigoP,Route23,Slowbro,Surf,Rematches,70
-Bruno_Rematch,Bruno_Rematch_Slowbro_3,IndigoP,Route23,Slowbro,Amnesia,Rematches,70
-Bruno_Rematch,Bruno_Rematch_Slowbro_3,IndigoP,Route23,Slowbro,Psychic,Rematches,70
-Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,IndigoP,Route23,Hitmonlee,Body Slam,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,IndigoP,Route23,Hitmonlee,Double Team,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,IndigoP,Route23,Hitmonlee,Hi Jump Kick,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,IndigoP,Route23,Hitmonlee,Metronome,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Rhydon_5,IndigoP,Route23,Rhydon,Rock Slide,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Rhydon_5,IndigoP,Route23,Rhydon,Earthquake,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Rhydon_5,IndigoP,Route23,Rhydon,Body Slam,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Rhydon_5,IndigoP,Route23,Rhydon,Surf,Rematches,72
-Bruno_Rematch,Bruno_Rematch_Arcanine_6,IndigoP,Route23,Arcanine,Earthquake,Rematches,73
-Bruno_Rematch,Bruno_Rematch_Arcanine_6,IndigoP,Route23,Arcanine,Hyper Beam,Rematches,73
-Bruno_Rematch,Bruno_Rematch_Arcanine_6,IndigoP,Route23,Arcanine,Rock Slide,Rematches,73
-Bruno_Rematch,Bruno_Rematch_Arcanine_6,IndigoP,Route23,Arcanine,Karate Chop,Rematches,73
-Agatha_Rematch,Agatha_Rematch_Jynx_1,IndigoP,Route23,Jynx,Psychic,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Jynx_1,IndigoP,Route23,Jynx,Lovely Kiss,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Jynx_1,IndigoP,Route23,Jynx,Reflect,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Jynx_1,IndigoP,Route23,Jynx,Blizzard,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Gyarados_2,IndigoP,Route23,Gyarados,Fire Blast,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Gyarados_2,IndigoP,Route23,Gyarados,Thunderbolt,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Gyarados_2,IndigoP,Route23,Gyarados,Surf,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Gyarados_2,IndigoP,Route23,Gyarados,Hyper Beam,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Alakazam_3,IndigoP,Route23,Alakazam,Thunder Wave,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Alakazam_3,IndigoP,Route23,Alakazam,Recover,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Alakazam_3,IndigoP,Route23,Alakazam,Psychic,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Alakazam_3,IndigoP,Route23,Alakazam,Substitute,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Venusaur_4,IndigoP,Route23,Venusaur,Sleep Powder,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Venusaur_4,IndigoP,Route23,Venusaur,Double Edge,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Venusaur_4,IndigoP,Route23,Venusaur,Leech Seed,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Venusaur_4,IndigoP,Route23,Venusaur,Solarbeam,Rematches,71
-Agatha_Rematch,Agatha_Rematch_Arbok_5,IndigoP,Route23,Arbok,Glare,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Arbok_5,IndigoP,Route23,Arbok,Earthquake,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Arbok_5,IndigoP,Route23,Arbok,Sludge,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Arbok_5,IndigoP,Route23,Arbok,Wrap,Rematches,72
-Agatha_Rematch,Agatha_Rematch_Gengar_6,IndigoP,Route23,Gengar,Confuse Ray,Rematches,73
-Agatha_Rematch,Agatha_Rematch_Gengar_6,IndigoP,Route23,Gengar,Night Shade,Rematches,73
-Agatha_Rematch,Agatha_Rematch_Gengar_6,IndigoP,Route23,Gengar,Explosion,Rematches,73
-Agatha_Rematch,Agatha_Rematch_Gengar_6,IndigoP,Route23,Gengar,Thunderbolt,Rematches,73
-Lance_Rematch,Lance_Rematch_Arcanine_1,IndigoP,Route23,Arcanine,Dragon Rage,Rematches,73
-Lance_Rematch,Lance_Rematch_Arcanine_1,IndigoP,Route23,Arcanine,Fire Blast,Rematches,73
-Lance_Rematch,Lance_Rematch_Arcanine_1,IndigoP,Route23,Arcanine,Hyper Beam,Rematches,73
-Lance_Rematch,Lance_Rematch_Arcanine_1,IndigoP,Route23,Arcanine,Dig,Rematches,73
-Lance_Rematch,Lance_Rematch_Parasect_2,IndigoP,Route23,Parasect,Thunder Wave,Rematches,73
-Lance_Rematch,Lance_Rematch_Parasect_2,IndigoP,Route23,Parasect,Light Screen,Rematches,73
-Lance_Rematch,Lance_Rematch_Parasect_2,IndigoP,Route23,Parasect,Thunderbolt,Rematches,73
-Lance_Rematch,Lance_Rematch_Parasect_2,IndigoP,Route23,Parasect,Psychic,Rematches,73
-Lance_Rematch,Lance_Rematch_Snorlax_3,IndigoP,Route23,Snorlax,Selfdestruct,Rematches,74
-Lance_Rematch,Lance_Rematch_Snorlax_3,IndigoP,Route23,Snorlax,Earthquake,Rematches,74
-Lance_Rematch,Lance_Rematch_Snorlax_3,IndigoP,Route23,Snorlax,Reflect,Rematches,74
-Lance_Rematch,Lance_Rematch_Snorlax_3,IndigoP,Route23,Snorlax,Hyper Beam,Rematches,74
-Lance_Rematch,Lance_Rematch_Charizard_4,IndigoP,Route23,Charizard,Slash,Rematches,74
-Lance_Rematch,Lance_Rematch_Charizard_4,IndigoP,Route23,Charizard,Fire Blast,Rematches,74
-Lance_Rematch,Lance_Rematch_Charizard_4,IndigoP,Route23,Charizard,Earthquake,Rematches,74
-Lance_Rematch,Lance_Rematch_Charizard_4,IndigoP,Route23,Charizard,Double Team,Rematches,74
-Lance_Rematch,Lance_Rematch_Kangaskhan_5,IndigoP,Route23,Kangaskhan,Hyper Beam,Rematches,72
-Lance_Rematch,Lance_Rematch_Kangaskhan_5,IndigoP,Route23,Kangaskhan,Submission,Rematches,72
-Lance_Rematch,Lance_Rematch_Kangaskhan_5,IndigoP,Route23,Kangaskhan,Earthquake,Rematches,72
-Lance_Rematch,Lance_Rematch_Kangaskhan_5,IndigoP,Route23,Kangaskhan,Rock Slide,Rematches,72
-Lance_Rematch,Lance_Rematch_Dragonite_6,IndigoP,Route23,Dragonite,Thunder,Rematches,75
-Lance_Rematch,Lance_Rematch_Dragonite_6,IndigoP,Route23,Dragonite,Thunder Wave,Rematches,75
-Lance_Rematch,Lance_Rematch_Dragonite_6,IndigoP,Route23,Dragonite,Blizzard,Rematches,75
-Lance_Rematch,Lance_Rematch_Dragonite_6,IndigoP,Route23,Dragonite,Hyper Beam,Rematches,75
-Nurse_Joy,Nurse_Joy_Kangaskhan_1,PostGame,PostGame,Kangaskhan,Rest,Rematches,65
-Nurse_Joy,Nurse_Joy_Kangaskhan_1,PostGame,PostGame,Kangaskhan,Double Team,Rematches,65
-Nurse_Joy,Nurse_Joy_Kangaskhan_1,PostGame,PostGame,Kangaskhan,Fissure,Rematches,65
-Nurse_Joy,Nurse_Joy_Kangaskhan_1,PostGame,PostGame,Kangaskhan,Double Edge,Rematches,65
-Nurse_Joy,Nurse_Joy_Snorlax_2,PostGame,PostGame,Snorlax,Rest,Rematches,65
-Nurse_Joy,Nurse_Joy_Snorlax_2,PostGame,PostGame,Snorlax,Ice Beam,Rematches,65
-Nurse_Joy,Nurse_Joy_Snorlax_2,PostGame,PostGame,Snorlax,Amnesia,Rematches,65
-Nurse_Joy,Nurse_Joy_Snorlax_2,PostGame,PostGame,Snorlax,Double Team,Rematches,65
-Nurse_Joy,Nurse_Joy_Starmie_3,PostGame,PostGame,Starmie,Recover,Rematches,65
-Nurse_Joy,Nurse_Joy_Starmie_3,PostGame,PostGame,Starmie,Psychic,Rematches,65
-Nurse_Joy,Nurse_Joy_Starmie_3,PostGame,PostGame,Starmie,Thunder Wave,Rematches,65
-Nurse_Joy,Nurse_Joy_Starmie_3,PostGame,PostGame,Starmie,Substitute,Rematches,65
-Nurse_Joy,Nurse_Joy_Gyarados_4,PostGame,PostGame,Gyarados,Reflect,Rematches,65
-Nurse_Joy,Nurse_Joy_Gyarados_4,PostGame,PostGame,Gyarados,Blizzard,Rematches,65
-Nurse_Joy,Nurse_Joy_Gyarados_4,PostGame,PostGame,Gyarados,Recover,Rematches,65
-Nurse_Joy,Nurse_Joy_Gyarados_4,PostGame,PostGame,Gyarados,Thunder Wave,Rematches,65
-Nurse_Joy,Nurse_Joy_Exeggutor_5,PostGame,PostGame,Exeggutor,Softboiled,Rematches,65
-Nurse_Joy,Nurse_Joy_Exeggutor_5,PostGame,PostGame,Exeggutor,Reflect,Rematches,65
-Nurse_Joy,Nurse_Joy_Exeggutor_5,PostGame,PostGame,Exeggutor,Dream Eater,Rematches,65
-Nurse_Joy,Nurse_Joy_Exeggutor_5,PostGame,PostGame,Exeggutor,Sleep Powder,Rematches,65
-Nurse_Joy,Nurse_Joy_Chansey_6,PostGame,PostGame,Chansey,Softboiled,Rematches,65
-Nurse_Joy,Nurse_Joy_Chansey_6,PostGame,PostGame,Chansey,Reflect,Rematches,65
-Nurse_Joy,Nurse_Joy_Chansey_6,PostGame,PostGame,Chansey,Egg Bomb,Rematches,65
-Nurse_Joy,Nurse_Joy_Chansey_6,PostGame,PostGame,Chansey,Thunder Wave,Rematches,65
-Officer_Jenny,Officer_Jenny_Pidgeot_1,PostGame,PostGame,Pidgeot,Take Down,Rematches,65
-Officer_Jenny,Officer_Jenny_Pidgeot_1,PostGame,PostGame,Pidgeot,Agility,Rematches,65
-Officer_Jenny,Officer_Jenny_Pidgeot_1,PostGame,PostGame,Pidgeot,Sky Attack,Rematches,65
-Officer_Jenny,Officer_Jenny_Pidgeot_1,PostGame,PostGame,Pidgeot,Toxic,Rematches,65
-Officer_Jenny,Officer_Jenny_Blastoise_2,PostGame,PostGame,Blastoise,Surf,Rematches,65
-Officer_Jenny,Officer_Jenny_Blastoise_2,PostGame,PostGame,Blastoise,Earthquake,Rematches,65
-Officer_Jenny,Officer_Jenny_Blastoise_2,PostGame,PostGame,Blastoise,Ice Beam,Rematches,65
-Officer_Jenny,Officer_Jenny_Blastoise_2,PostGame,PostGame,Blastoise,Body Slam,Rematches,65
-Officer_Jenny,Officer_Jenny_Tangela_3,PostGame,PostGame,Tangela,Mega Drain,Rematches,65
-Officer_Jenny,Officer_Jenny_Tangela_3,PostGame,PostGame,Tangela,Sleep Powder,Rematches,65
-Officer_Jenny,Officer_Jenny_Tangela_3,PostGame,PostGame,Tangela,Mimic,Rematches,65
-Officer_Jenny,Officer_Jenny_Tangela_3,PostGame,PostGame,Tangela,Bind,Rematches,65
-Officer_Jenny,Officer_Jenny_Gengar_4,PostGame,PostGame,Gengar,Psychic,Rematches,65
-Officer_Jenny,Officer_Jenny_Gengar_4,PostGame,PostGame,Gengar,Night Shade,Rematches,65
-Officer_Jenny,Officer_Jenny_Gengar_4,PostGame,PostGame,Gengar,Hypnosis,Rematches,65
-Officer_Jenny,Officer_Jenny_Gengar_4,PostGame,PostGame,Gengar,Thunderbolt,Rematches,65
-Officer_Jenny,Officer_Jenny_Parasect_5,PostGame,PostGame,Parasect,Spore,Rematches,65
-Officer_Jenny,Officer_Jenny_Parasect_5,PostGame,PostGame,Parasect,Mega Drain,Rematches,65
-Officer_Jenny,Officer_Jenny_Parasect_5,PostGame,PostGame,Parasect,Slash,Rematches,65
-Officer_Jenny,Officer_Jenny_Parasect_5,PostGame,PostGame,Parasect,Leech Life,Rematches,65
-Officer_Jenny,Officer_Jenny_Arcanine_6,PostGame,PostGame,Arcanine,Reflect,Rematches,65
-Officer_Jenny,Officer_Jenny_Arcanine_6,PostGame,PostGame,Arcanine,Fire Blast,Rematches,65
-Officer_Jenny,Officer_Jenny_Arcanine_6,PostGame,PostGame,Arcanine,Body Slam,Rematches,65
-Officer_Jenny,Officer_Jenny_Arcanine_6,PostGame,PostGame,Arcanine,Dig,Rematches,65
-Professor_Oak_1,Professor_Oak_1_Tauros_1,PostGame,PostGame,Tauros,Hyper Beam,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Tauros_1,PostGame,PostGame,Tauros,Earthquake,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Tauros_1,PostGame,PostGame,Tauros,Blizzard,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Tauros_1,PostGame,PostGame,Tauros,Thunder,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Charizard_2,PostGame,PostGame,Charizard,Fire Blast,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Charizard_2,PostGame,PostGame,Charizard,Earthquake,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Charizard_2,PostGame,PostGame,Charizard,Slash,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Charizard_2,PostGame,PostGame,Charizard,Double Team,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Venusaur_3,PostGame,PostGame,Venusaur,Swords Dance,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Venusaur_3,PostGame,PostGame,Venusaur,Earthquake,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Venusaur_3,PostGame,PostGame,Venusaur,Sleep Powder,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Venusaur_3,PostGame,PostGame,Venusaur,Solarbeam,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Blastoise_4,PostGame,PostGame,Blastoise,Reflect,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Blastoise_4,PostGame,PostGame,Blastoise,Earthquake,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Blastoise_4,PostGame,PostGame,Blastoise,Ice Beam,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Blastoise_4,PostGame,PostGame,Blastoise,Hydro Pump,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Snorlax_5,PostGame,PostGame,Snorlax,Rest,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Snorlax_5,PostGame,PostGame,Snorlax,Amnesia,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Snorlax_5,PostGame,PostGame,Snorlax,Psychic,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Snorlax_5,PostGame,PostGame,Snorlax,Hyper Beam,Rematches,69
-Professor_Oak_1,Professor_Oak_1_Nidoking_6,PostGame,PostGame,Nidoking,Earthquake,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Nidoking_6,PostGame,PostGame,Nidoking,Rock Slide,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Nidoking_6,PostGame,PostGame,Nidoking,Sludge,Rematches,70
-Professor_Oak_1,Professor_Oak_1_Nidoking_6,PostGame,PostGame,Nidoking,Blizzard,Rematches,70
-Professor_Oak_2,Professor_Oak_2_Tauros_1,PostGame,PostGame,Tauros,Hyper Beam,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Tauros_1,PostGame,PostGame,Tauros,Earthquake,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Tauros_1,PostGame,PostGame,Tauros,Blizzard,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Tauros_1,PostGame,PostGame,Tauros,Thunder,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Zapdos_2,PostGame,PostGame,Zapdos,Thunder Wave,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Zapdos_2,PostGame,PostGame,Zapdos,Thunder,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Zapdos_2,PostGame,PostGame,Zapdos,Sky Attack,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Zapdos_2,PostGame,PostGame,Zapdos,Light Screen,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Articuno_3,PostGame,PostGame,Articuno,Bubblebeam,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Articuno_3,PostGame,PostGame,Articuno,Blizzard,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Articuno_3,PostGame,PostGame,Articuno,Sky Attack,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Articuno_3,PostGame,PostGame,Articuno,Reflect,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Moltres_4,PostGame,PostGame,Moltres,Agility,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Moltres_4,PostGame,PostGame,Moltres,Solarbeam,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Moltres_4,PostGame,PostGame,Moltres,Sky Attack,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Moltres_4,PostGame,PostGame,Moltres,Fire Spin,Rematches,77
-Professor_Oak_2,Professor_Oak_2_Snorlax_5,PostGame,PostGame,Snorlax,Amnesia,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Snorlax_5,PostGame,PostGame,Snorlax,Reflect,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Snorlax_5,PostGame,PostGame,Snorlax,Rest,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Snorlax_5,PostGame,PostGame,Snorlax,Hyper Beam,Rematches,78
-Professor_Oak_2,Professor_Oak_2_Nidoking_6,PostGame,PostGame,Nidoking,Earthquake,Rematches,81
-Professor_Oak_2,Professor_Oak_2_Nidoking_6,PostGame,PostGame,Nidoking,Rock Slide,Rematches,81
-Professor_Oak_2,Professor_Oak_2_Nidoking_6,PostGame,PostGame,Nidoking,Thunder,Rematches,81
-Professor_Oak_2,Professor_Oak_2_Nidoking_6,PostGame,PostGame,Nidoking,Sludge,Rematches,81
+Brock_Rematch,Brock_Rematch_Omastar_1,REMATCHES,REMATCHES,Omastar,Blizzard,Rematches,64
+Brock_Rematch,Brock_Rematch_Omastar_1,REMATCHES,REMATCHES,Omastar,Rock Slide,Rematches,64
+Brock_Rematch,Brock_Rematch_Omastar_1,REMATCHES,REMATCHES,Omastar,Clamp,Rematches,64
+Brock_Rematch,Brock_Rematch_Omastar_1,REMATCHES,REMATCHES,Omastar,Hydro Pump,Rematches,64
+Brock_Rematch,Brock_Rematch_Onix_2,REMATCHES,REMATCHES,Onix,Fissure,Rematches,65
+Brock_Rematch,Brock_Rematch_Onix_2,REMATCHES,REMATCHES,Onix,Rock Slide,Rematches,65
+Brock_Rematch,Brock_Rematch_Onix_2,REMATCHES,REMATCHES,Onix,Earthquake,Rematches,65
+Brock_Rematch,Brock_Rematch_Onix_2,REMATCHES,REMATCHES,Onix,Bind,Rematches,65
+Brock_Rematch,Brock_Rematch_Kabutops_3,REMATCHES,REMATCHES,Kabutops,Slash,Rematches,64
+Brock_Rematch,Brock_Rematch_Kabutops_3,REMATCHES,REMATCHES,Kabutops,Swords Dance,Rematches,64
+Brock_Rematch,Brock_Rematch_Kabutops_3,REMATCHES,REMATCHES,Kabutops,Rock Slide,Rematches,64
+Brock_Rematch,Brock_Rematch_Kabutops_3,REMATCHES,REMATCHES,Kabutops,Hydro Pump,Rematches,64
+Brock_Rematch,Brock_Rematch_Golem_4,REMATCHES,REMATCHES,Golem,Body Slam,Rematches,64
+Brock_Rematch,Brock_Rematch_Golem_4,REMATCHES,REMATCHES,Golem,Rock Slide,Rematches,64
+Brock_Rematch,Brock_Rematch_Golem_4,REMATCHES,REMATCHES,Golem,Earthquake,Rematches,64
+Brock_Rematch,Brock_Rematch_Golem_4,REMATCHES,REMATCHES,Golem,Explosion,Rematches,64
+Brock_Rematch,Brock_Rematch_Exeggutor_5,REMATCHES,REMATCHES,Exeggutor,Reflect,Rematches,64
+Brock_Rematch,Brock_Rematch_Exeggutor_5,REMATCHES,REMATCHES,Exeggutor,Solarbeam,Rematches,64
+Brock_Rematch,Brock_Rematch_Exeggutor_5,REMATCHES,REMATCHES,Exeggutor,Confuse Ray,Rematches,64
+Brock_Rematch,Brock_Rematch_Exeggutor_5,REMATCHES,REMATCHES,Exeggutor,Fire Spin,Rematches,64
+Brock_Rematch,Brock_Rematch_Aerodactyl_6,REMATCHES,REMATCHES,Aerodactyl,Fly,Rematches,65
+Brock_Rematch,Brock_Rematch_Aerodactyl_6,REMATCHES,REMATCHES,Aerodactyl,Rock Slide,Rematches,65
+Brock_Rematch,Brock_Rematch_Aerodactyl_6,REMATCHES,REMATCHES,Aerodactyl,Earthquake,Rematches,65
+Brock_Rematch,Brock_Rematch_Aerodactyl_6,REMATCHES,REMATCHES,Aerodactyl,Double Edge,Rematches,65
+Misty_Rematch,Misty_Rematch_Seadra_1,REMATCHES,REMATCHES,Seadra,Ice Beam,Rematches,64
+Misty_Rematch,Misty_Rematch_Seadra_1,REMATCHES,REMATCHES,Seadra,Double Team,Rematches,64
+Misty_Rematch,Misty_Rematch_Seadra_1,REMATCHES,REMATCHES,Seadra,Slam,Rematches,64
+Misty_Rematch,Misty_Rematch_Seadra_1,REMATCHES,REMATCHES,Seadra,Hydro Pump,Rematches,64
+Misty_Rematch,Misty_Rematch_Pidgeot_2,REMATCHES,REMATCHES,Pidgeot,Blizzard,Rematches,65
+Misty_Rematch,Misty_Rematch_Pidgeot_2,REMATCHES,REMATCHES,Pidgeot,Psychic,Rematches,65
+Misty_Rematch,Misty_Rematch_Pidgeot_2,REMATCHES,REMATCHES,Pidgeot,Amnesia,Rematches,65
+Misty_Rematch,Misty_Rematch_Pidgeot_2,REMATCHES,REMATCHES,Pidgeot,Hydro Pump,Rematches,65
+Misty_Rematch,Misty_Rematch_Lapras_3,REMATCHES,REMATCHES,Lapras,Psychic,Rematches,64
+Misty_Rematch,Misty_Rematch_Lapras_3,REMATCHES,REMATCHES,Lapras,Thunder,Rematches,64
+Misty_Rematch,Misty_Rematch_Lapras_3,REMATCHES,REMATCHES,Lapras,Hydro Pump,Rematches,64
+Misty_Rematch,Misty_Rematch_Lapras_3,REMATCHES,REMATCHES,Lapras,Blizzard,Rematches,64
+Misty_Rematch,Misty_Rematch_Blastoise_4,REMATCHES,REMATCHES,Blastoise,Surf,Rematches,64
+Misty_Rematch,Misty_Rematch_Blastoise_4,REMATCHES,REMATCHES,Blastoise,Earthquake,Rematches,64
+Misty_Rematch,Misty_Rematch_Blastoise_4,REMATCHES,REMATCHES,Blastoise,Ice Beam,Rematches,64
+Misty_Rematch,Misty_Rematch_Blastoise_4,REMATCHES,REMATCHES,Blastoise,Reflect,Rematches,64
+Misty_Rematch,Misty_Rematch_Flareon_5,REMATCHES,REMATCHES,Flareon,Substitute,Rematches,64
+Misty_Rematch,Misty_Rematch_Flareon_5,REMATCHES,REMATCHES,Flareon,Acid Armor,Rematches,64
+Misty_Rematch,Misty_Rematch_Flareon_5,REMATCHES,REMATCHES,Flareon,Blizzard,Rematches,64
+Misty_Rematch,Misty_Rematch_Flareon_5,REMATCHES,REMATCHES,Flareon,Hydro Pump,Rematches,64
+Misty_Rematch,Misty_Rematch_Starmie_6,REMATCHES,REMATCHES,Starmie,Surf,Rematches,65
+Misty_Rematch,Misty_Rematch_Starmie_6,REMATCHES,REMATCHES,Starmie,Psychic,Rematches,65
+Misty_Rematch,Misty_Rematch_Starmie_6,REMATCHES,REMATCHES,Starmie,Recover,Rematches,65
+Misty_Rematch,Misty_Rematch_Starmie_6,REMATCHES,REMATCHES,Starmie,Thunderbolt,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,REMATCHES,REMATCHES,Electrode,Light Screen,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,REMATCHES,REMATCHES,Electrode,Thunder Wave,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,REMATCHES,REMATCHES,Electrode,Explosion,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Electrode_1,REMATCHES,REMATCHES,Electrode,Thunder,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,REMATCHES,REMATCHES,Exeggutor,Thunder Wave,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,REMATCHES,REMATCHES,Exeggutor,Tri Attack,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,REMATCHES,REMATCHES,Exeggutor,Reflect,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Exeggutor_2,REMATCHES,REMATCHES,Exeggutor,Thunder,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,REMATCHES,REMATCHES,Flareon,Headbutt,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,REMATCHES,REMATCHES,Flareon,Dig,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,REMATCHES,REMATCHES,Flareon,Thunder Wave,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Flareon_3,REMATCHES,REMATCHES,Flareon,Thunder,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,REMATCHES,REMATCHES,Gyarados,Thunder,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,REMATCHES,REMATCHES,Gyarados,Blizzard,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,REMATCHES,REMATCHES,Gyarados,Recover,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Gyarados_4,REMATCHES,REMATCHES,Gyarados,Hyper Beam,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Ice Punch,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Light Screen,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Psychic,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Thunder,Rematches,64
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,REMATCHES,REMATCHES,Raichu,Surf,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,REMATCHES,REMATCHES,Raichu,Cut,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,REMATCHES,REMATCHES,Raichu,Thunder,Rematches,65
+Lt._Surge_Rematch,Lt._Surge_Rematch_Raichu_6,REMATCHES,REMATCHES,Raichu,Thunder Wave,Rematches,65
+Erika_Rematch,Erika_Rematch_Tangela_1,REMATCHES,REMATCHES,Tangela,Mega Drain,Rematches,64
+Erika_Rematch,Erika_Rematch_Tangela_1,REMATCHES,REMATCHES,Tangela,Body Slam,Rematches,64
+Erika_Rematch,Erika_Rematch_Tangela_1,REMATCHES,REMATCHES,Tangela,Stun Spore,Rematches,64
+Erika_Rematch,Erika_Rematch_Tangela_1,REMATCHES,REMATCHES,Tangela,Bind,Rematches,64
+Erika_Rematch,Erika_Rematch_Venusaur_2,REMATCHES,REMATCHES,Venusaur,Sludge,Rematches,64
+Erika_Rematch,Erika_Rematch_Venusaur_2,REMATCHES,REMATCHES,Venusaur,Leech Seed,Rematches,64
+Erika_Rematch,Erika_Rematch_Venusaur_2,REMATCHES,REMATCHES,Venusaur,Sleep Powder,Rematches,64
+Erika_Rematch,Erika_Rematch_Venusaur_2,REMATCHES,REMATCHES,Venusaur,Razor Leaf,Rematches,64
+Erika_Rematch,Erika_Rematch_Parasect_3,REMATCHES,REMATCHES,Parasect,Leech Life,Rematches,64
+Erika_Rematch,Erika_Rematch_Parasect_3,REMATCHES,REMATCHES,Parasect,Mega Drain,Rematches,64
+Erika_Rematch,Erika_Rematch_Parasect_3,REMATCHES,REMATCHES,Parasect,Solarbeam,Rematches,64
+Erika_Rematch,Erika_Rematch_Parasect_3,REMATCHES,REMATCHES,Parasect,Growth,Rematches,64
+Erika_Rematch,Erika_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Mega Drain,Rematches,64
+Erika_Rematch,Erika_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Substitute,Rematches,64
+Erika_Rematch,Erika_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Psychic,Rematches,64
+Erika_Rematch,Erika_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Sleep Powder,Rematches,64
+Erika_Rematch,Erika_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Mega Drain,Rematches,65
+Erika_Rematch,Erika_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Sludge,Rematches,65
+Erika_Rematch,Erika_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Growth,Rematches,65
+Erika_Rematch,Erika_Rematch_Parasect_5,REMATCHES,REMATCHES,Parasect,Sleep Powder,Rematches,65
+Erika_Rematch,Erika_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Sleep Powder,Rematches,65
+Erika_Rematch,Erika_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Leech Seed,Rematches,65
+Erika_Rematch,Erika_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Substitute,Rematches,65
+Erika_Rematch,Erika_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Mega Drain,Rematches,65
+Koga_Rematch,Koga_Rematch_Golbat_1,REMATCHES,REMATCHES,Golbat,Fly,Rematches,64
+Koga_Rematch,Koga_Rematch_Golbat_1,REMATCHES,REMATCHES,Golbat,Toxic,Rematches,64
+Koga_Rematch,Koga_Rematch_Golbat_1,REMATCHES,REMATCHES,Golbat,Double Team,Rematches,64
+Koga_Rematch,Koga_Rematch_Golbat_1,REMATCHES,REMATCHES,Golbat,Confuse Ray,Rematches,64
+Koga_Rematch,Koga_Rematch_Muk_2,REMATCHES,REMATCHES,Muk,Sludge,Rematches,64
+Koga_Rematch,Koga_Rematch_Muk_2,REMATCHES,REMATCHES,Muk,Toxic,Rematches,64
+Koga_Rematch,Koga_Rematch_Muk_2,REMATCHES,REMATCHES,Muk,Mega Drain,Rematches,64
+Koga_Rematch,Koga_Rematch_Muk_2,REMATCHES,REMATCHES,Muk,Minimize,Rematches,64
+Koga_Rematch,Koga_Rematch_Tentacruel_3,REMATCHES,REMATCHES,Tentacruel,Surf,Rematches,64
+Koga_Rematch,Koga_Rematch_Tentacruel_3,REMATCHES,REMATCHES,Tentacruel,Sludge,Rematches,64
+Koga_Rematch,Koga_Rematch_Tentacruel_3,REMATCHES,REMATCHES,Tentacruel,Blizzard,Rematches,64
+Koga_Rematch,Koga_Rematch_Tentacruel_3,REMATCHES,REMATCHES,Tentacruel,Reflect,Rematches,64
+Koga_Rematch,Koga_Rematch_Weezing_4,REMATCHES,REMATCHES,Weezing,Amnesia,Rematches,65
+Koga_Rematch,Koga_Rematch_Weezing_4,REMATCHES,REMATCHES,Weezing,Fire Blast,Rematches,65
+Koga_Rematch,Koga_Rematch_Weezing_4,REMATCHES,REMATCHES,Weezing,Thunderbolt,Rematches,65
+Koga_Rematch,Koga_Rematch_Weezing_4,REMATCHES,REMATCHES,Weezing,Sludge,Rematches,65
+Koga_Rematch,Koga_Rematch_Arbok_5,REMATCHES,REMATCHES,Arbok,Glare,Rematches,64
+Koga_Rematch,Koga_Rematch_Arbok_5,REMATCHES,REMATCHES,Arbok,Earthquake,Rematches,64
+Koga_Rematch,Koga_Rematch_Arbok_5,REMATCHES,REMATCHES,Arbok,Rock Slide,Rematches,64
+Koga_Rematch,Koga_Rematch_Arbok_5,REMATCHES,REMATCHES,Arbok,Wrap,Rematches,64
+Koga_Rematch,Koga_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Double Team,Rematches,65
+Koga_Rematch,Koga_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Sleep Powder,Rematches,65
+Koga_Rematch,Koga_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Psychic,Rematches,65
+Koga_Rematch,Koga_Rematch_Gloom_6,REMATCHES,REMATCHES,Gloom,Leech Life,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Gastly_1,REMATCHES,REMATCHES,Gastly,Thunderbolt,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Gastly_1,REMATCHES,REMATCHES,Gastly,Psychic,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Gastly_1,REMATCHES,REMATCHES,Gastly,Substitute,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Gastly_1,REMATCHES,REMATCHES,Gastly,Thunder Wave,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,REMATCHES,REMATCHES,Drowzee,Substitute,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,REMATCHES,REMATCHES,Drowzee,Psywave,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,REMATCHES,REMATCHES,Drowzee,Hypnosis,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Drowzee_2,REMATCHES,REMATCHES,Drowzee,Dream Eater,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,REMATCHES,REMATCHES,Slowbro,Surf,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,REMATCHES,REMATCHES,Slowbro,Reflect,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,REMATCHES,REMATCHES,Slowbro,Amnesia,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Slowbro_3,REMATCHES,REMATCHES,Slowbro,Psychic,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_4,REMATCHES,REMATCHES,Jynx,Lovely Kiss,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_4,REMATCHES,REMATCHES,Jynx,Dream Eater,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_4,REMATCHES,REMATCHES,Jynx,Bubblebeam,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Jynx_4,REMATCHES,REMATCHES,Jynx,Blizzard,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_5,REMATCHES,REMATCHES,Gengar,Psychic,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_5,REMATCHES,REMATCHES,Gengar,Night Shade,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_5,REMATCHES,REMATCHES,Gengar,Double Team,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Gengar_5,REMATCHES,REMATCHES,Gengar,Mega Drain,Rematches,64
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,REMATCHES,REMATCHES,Alakazam,Thunder Wave,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,REMATCHES,REMATCHES,Alakazam,Recover,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,REMATCHES,REMATCHES,Alakazam,Psychic,Rematches,65
+Sabrina_Rematch,Sabrina_Rematch_Alakazam_6,REMATCHES,REMATCHES,Alakazam,Reflect,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,REMATCHES,REMATCHES,Rapidash,Fire Spin,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,REMATCHES,REMATCHES,Rapidash,Agility,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,REMATCHES,REMATCHES,Rapidash,Solarbeam,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Rapidash_1,REMATCHES,REMATCHES,Rapidash,Horn Drill,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Flareon_2,REMATCHES,REMATCHES,Flareon,Double Edge,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Flareon_2,REMATCHES,REMATCHES,Flareon,Growth,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Flareon_2,REMATCHES,REMATCHES,Flareon,Fire Spin,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Flareon_2,REMATCHES,REMATCHES,Flareon,Dig,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Charizard_3,REMATCHES,REMATCHES,Charizard,Wing Attack,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Charizard_3,REMATCHES,REMATCHES,Charizard,Fire Blast,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Charizard_3,REMATCHES,REMATCHES,Charizard,Earthquake,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Charizard_3,REMATCHES,REMATCHES,Charizard,Swords Dance,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Reflect,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Confuse Ray,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Solarbeam,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Exeggutor_4,REMATCHES,REMATCHES,Exeggutor,Fire Spin,Rematches,64
+Blaine_Rematch,Blaine_Rematch_Arcanine_5,REMATCHES,REMATCHES,Arcanine,Fire Blast,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Arcanine_5,REMATCHES,REMATCHES,Arcanine,Dig,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Arcanine_5,REMATCHES,REMATCHES,Arcanine,Double Edge,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Arcanine_5,REMATCHES,REMATCHES,Arcanine,Agility,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Magmar_6,REMATCHES,REMATCHES,Magmar,Thunderpunch,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Magmar_6,REMATCHES,REMATCHES,Magmar,Psychic,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Magmar_6,REMATCHES,REMATCHES,Magmar,Confuse Ray,Rematches,65
+Blaine_Rematch,Blaine_Rematch_Magmar_6,REMATCHES,REMATCHES,Magmar,Fire Blast,Rematches,65
+Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,INDIGO_P,ROUTE_23,Wigglytuff,Rest,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,INDIGO_P,ROUTE_23,Wigglytuff,Body Slam,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,INDIGO_P,ROUTE_23,Wigglytuff,Lovely Kiss,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Wigglytuff_1,INDIGO_P,ROUTE_23,Wigglytuff,Blizzard,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Starmie_2,INDIGO_P,ROUTE_23,Starmie,Thunder Wave,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Starmie_2,INDIGO_P,ROUTE_23,Starmie,Psychic,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Starmie_2,INDIGO_P,ROUTE_23,Starmie,Thunder,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Starmie_2,INDIGO_P,ROUTE_23,Starmie,Surf,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,INDIGO_P,ROUTE_23,Gyarados,Clamp,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,INDIGO_P,ROUTE_23,Gyarados,Ice Beam,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,INDIGO_P,ROUTE_23,Gyarados,Toxic,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Gyarados_3,INDIGO_P,ROUTE_23,Gyarados,Explosion,Rematches,71
+Lorelei_Rematch,Lorelei_Rematch_Omastar_4,INDIGO_P,ROUTE_23,Omastar,Blizzard,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Omastar_4,INDIGO_P,ROUTE_23,Omastar,Rock Slide,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Omastar_4,INDIGO_P,ROUTE_23,Omastar,Horn Drill,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Omastar_4,INDIGO_P,ROUTE_23,Omastar,Hydro Pump,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,INDIGO_P,ROUTE_23,Exeggutor,Leech Seed,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,INDIGO_P,ROUTE_23,Exeggutor,Egg Bomb,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,INDIGO_P,ROUTE_23,Exeggutor,Psychic,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Exeggutor_5,INDIGO_P,ROUTE_23,Exeggutor,Sleep Powder,Rematches,70
+Lorelei_Rematch,Lorelei_Rematch_Lapras_6,INDIGO_P,ROUTE_23,Lapras,Confuse Ray,Rematches,72
+Lorelei_Rematch,Lorelei_Rematch_Lapras_6,INDIGO_P,ROUTE_23,Lapras,Psychic,Rematches,72
+Lorelei_Rematch,Lorelei_Rematch_Lapras_6,INDIGO_P,ROUTE_23,Lapras,Surf,Rematches,72
+Lorelei_Rematch,Lorelei_Rematch_Lapras_6,INDIGO_P,ROUTE_23,Lapras,Blizzard,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Clefable_1,INDIGO_P,ROUTE_23,Clefable,Softboiled,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Clefable_1,INDIGO_P,ROUTE_23,Clefable,Psychic,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Clefable_1,INDIGO_P,ROUTE_23,Clefable,Ice Beam,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Clefable_1,INDIGO_P,ROUTE_23,Clefable,Thunderbolt,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Muk_2,INDIGO_P,ROUTE_23,Muk,Sludge,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Muk_2,INDIGO_P,ROUTE_23,Muk,Minimize,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Muk_2,INDIGO_P,ROUTE_23,Muk,Body Slam,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Muk_2,INDIGO_P,ROUTE_23,Muk,Fire Blast,Rematches,71
+Bruno_Rematch,Bruno_Rematch_Slowbro_3,INDIGO_P,ROUTE_23,Slowbro,Double Team,Rematches,70
+Bruno_Rematch,Bruno_Rematch_Slowbro_3,INDIGO_P,ROUTE_23,Slowbro,Surf,Rematches,70
+Bruno_Rematch,Bruno_Rematch_Slowbro_3,INDIGO_P,ROUTE_23,Slowbro,Amnesia,Rematches,70
+Bruno_Rematch,Bruno_Rematch_Slowbro_3,INDIGO_P,ROUTE_23,Slowbro,Psychic,Rematches,70
+Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,INDIGO_P,ROUTE_23,Hitmonlee,Body Slam,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,INDIGO_P,ROUTE_23,Hitmonlee,Double Team,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,INDIGO_P,ROUTE_23,Hitmonlee,Hi Jump Kick,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Hitmonlee_4,INDIGO_P,ROUTE_23,Hitmonlee,Metronome,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Rhydon_5,INDIGO_P,ROUTE_23,Rhydon,Rock Slide,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Rhydon_5,INDIGO_P,ROUTE_23,Rhydon,Earthquake,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Rhydon_5,INDIGO_P,ROUTE_23,Rhydon,Body Slam,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Rhydon_5,INDIGO_P,ROUTE_23,Rhydon,Surf,Rematches,72
+Bruno_Rematch,Bruno_Rematch_Arcanine_6,INDIGO_P,ROUTE_23,Arcanine,Earthquake,Rematches,73
+Bruno_Rematch,Bruno_Rematch_Arcanine_6,INDIGO_P,ROUTE_23,Arcanine,Hyper Beam,Rematches,73
+Bruno_Rematch,Bruno_Rematch_Arcanine_6,INDIGO_P,ROUTE_23,Arcanine,Rock Slide,Rematches,73
+Bruno_Rematch,Bruno_Rematch_Arcanine_6,INDIGO_P,ROUTE_23,Arcanine,Karate Chop,Rematches,73
+Agatha_Rematch,Agatha_Rematch_Jynx_1,INDIGO_P,ROUTE_23,Jynx,Psychic,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Jynx_1,INDIGO_P,ROUTE_23,Jynx,Lovely Kiss,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Jynx_1,INDIGO_P,ROUTE_23,Jynx,Reflect,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Jynx_1,INDIGO_P,ROUTE_23,Jynx,Blizzard,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Gyarados_2,INDIGO_P,ROUTE_23,Gyarados,Fire Blast,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Gyarados_2,INDIGO_P,ROUTE_23,Gyarados,Thunderbolt,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Gyarados_2,INDIGO_P,ROUTE_23,Gyarados,Surf,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Gyarados_2,INDIGO_P,ROUTE_23,Gyarados,Hyper Beam,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Alakazam_3,INDIGO_P,ROUTE_23,Alakazam,Thunder Wave,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Alakazam_3,INDIGO_P,ROUTE_23,Alakazam,Recover,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Alakazam_3,INDIGO_P,ROUTE_23,Alakazam,Psychic,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Alakazam_3,INDIGO_P,ROUTE_23,Alakazam,Substitute,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Venusaur_4,INDIGO_P,ROUTE_23,Venusaur,Sleep Powder,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Venusaur_4,INDIGO_P,ROUTE_23,Venusaur,Double Edge,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Venusaur_4,INDIGO_P,ROUTE_23,Venusaur,Leech Seed,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Venusaur_4,INDIGO_P,ROUTE_23,Venusaur,Solarbeam,Rematches,71
+Agatha_Rematch,Agatha_Rematch_Arbok_5,INDIGO_P,ROUTE_23,Arbok,Glare,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Arbok_5,INDIGO_P,ROUTE_23,Arbok,Earthquake,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Arbok_5,INDIGO_P,ROUTE_23,Arbok,Sludge,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Arbok_5,INDIGO_P,ROUTE_23,Arbok,Wrap,Rematches,72
+Agatha_Rematch,Agatha_Rematch_Gengar_6,INDIGO_P,ROUTE_23,Gengar,Confuse Ray,Rematches,73
+Agatha_Rematch,Agatha_Rematch_Gengar_6,INDIGO_P,ROUTE_23,Gengar,Night Shade,Rematches,73
+Agatha_Rematch,Agatha_Rematch_Gengar_6,INDIGO_P,ROUTE_23,Gengar,Explosion,Rematches,73
+Agatha_Rematch,Agatha_Rematch_Gengar_6,INDIGO_P,ROUTE_23,Gengar,Thunderbolt,Rematches,73
+Lance_Rematch,Lance_Rematch_Arcanine_1,INDIGO_P,ROUTE_23,Arcanine,Dragon Rage,Rematches,73
+Lance_Rematch,Lance_Rematch_Arcanine_1,INDIGO_P,ROUTE_23,Arcanine,Fire Blast,Rematches,73
+Lance_Rematch,Lance_Rematch_Arcanine_1,INDIGO_P,ROUTE_23,Arcanine,Hyper Beam,Rematches,73
+Lance_Rematch,Lance_Rematch_Arcanine_1,INDIGO_P,ROUTE_23,Arcanine,Dig,Rematches,73
+Lance_Rematch,Lance_Rematch_Parasect_2,INDIGO_P,ROUTE_23,Parasect,Thunder Wave,Rematches,73
+Lance_Rematch,Lance_Rematch_Parasect_2,INDIGO_P,ROUTE_23,Parasect,Light Screen,Rematches,73
+Lance_Rematch,Lance_Rematch_Parasect_2,INDIGO_P,ROUTE_23,Parasect,Thunderbolt,Rematches,73
+Lance_Rematch,Lance_Rematch_Parasect_2,INDIGO_P,ROUTE_23,Parasect,Psychic,Rematches,73
+Lance_Rematch,Lance_Rematch_Snorlax_3,INDIGO_P,ROUTE_23,Snorlax,Selfdestruct,Rematches,74
+Lance_Rematch,Lance_Rematch_Snorlax_3,INDIGO_P,ROUTE_23,Snorlax,Earthquake,Rematches,74
+Lance_Rematch,Lance_Rematch_Snorlax_3,INDIGO_P,ROUTE_23,Snorlax,Reflect,Rematches,74
+Lance_Rematch,Lance_Rematch_Snorlax_3,INDIGO_P,ROUTE_23,Snorlax,Hyper Beam,Rematches,74
+Lance_Rematch,Lance_Rematch_Charizard_4,INDIGO_P,ROUTE_23,Charizard,Slash,Rematches,74
+Lance_Rematch,Lance_Rematch_Charizard_4,INDIGO_P,ROUTE_23,Charizard,Fire Blast,Rematches,74
+Lance_Rematch,Lance_Rematch_Charizard_4,INDIGO_P,ROUTE_23,Charizard,Earthquake,Rematches,74
+Lance_Rematch,Lance_Rematch_Charizard_4,INDIGO_P,ROUTE_23,Charizard,Double Team,Rematches,74
+Lance_Rematch,Lance_Rematch_Kangaskhan_5,INDIGO_P,ROUTE_23,Kangaskhan,Hyper Beam,Rematches,72
+Lance_Rematch,Lance_Rematch_Kangaskhan_5,INDIGO_P,ROUTE_23,Kangaskhan,Submission,Rematches,72
+Lance_Rematch,Lance_Rematch_Kangaskhan_5,INDIGO_P,ROUTE_23,Kangaskhan,Earthquake,Rematches,72
+Lance_Rematch,Lance_Rematch_Kangaskhan_5,INDIGO_P,ROUTE_23,Kangaskhan,Rock Slide,Rematches,72
+Lance_Rematch,Lance_Rematch_Dragonite_6,INDIGO_P,ROUTE_23,Dragonite,Thunder,Rematches,75
+Lance_Rematch,Lance_Rematch_Dragonite_6,INDIGO_P,ROUTE_23,Dragonite,Thunder Wave,Rematches,75
+Lance_Rematch,Lance_Rematch_Dragonite_6,INDIGO_P,ROUTE_23,Dragonite,Blizzard,Rematches,75
+Lance_Rematch,Lance_Rematch_Dragonite_6,INDIGO_P,ROUTE_23,Dragonite,Hyper Beam,Rematches,75
+Nurse_Joy,Nurse_Joy_Kangaskhan_1,POST_GAME,POST_GAME,Kangaskhan,Rest,Rematches,65
+Nurse_Joy,Nurse_Joy_Kangaskhan_1,POST_GAME,POST_GAME,Kangaskhan,Double Team,Rematches,65
+Nurse_Joy,Nurse_Joy_Kangaskhan_1,POST_GAME,POST_GAME,Kangaskhan,Fissure,Rematches,65
+Nurse_Joy,Nurse_Joy_Kangaskhan_1,POST_GAME,POST_GAME,Kangaskhan,Double Edge,Rematches,65
+Nurse_Joy,Nurse_Joy_Snorlax_2,POST_GAME,POST_GAME,Snorlax,Rest,Rematches,65
+Nurse_Joy,Nurse_Joy_Snorlax_2,POST_GAME,POST_GAME,Snorlax,Ice Beam,Rematches,65
+Nurse_Joy,Nurse_Joy_Snorlax_2,POST_GAME,POST_GAME,Snorlax,Amnesia,Rematches,65
+Nurse_Joy,Nurse_Joy_Snorlax_2,POST_GAME,POST_GAME,Snorlax,Double Team,Rematches,65
+Nurse_Joy,Nurse_Joy_Starmie_3,POST_GAME,POST_GAME,Starmie,Recover,Rematches,65
+Nurse_Joy,Nurse_Joy_Starmie_3,POST_GAME,POST_GAME,Starmie,Psychic,Rematches,65
+Nurse_Joy,Nurse_Joy_Starmie_3,POST_GAME,POST_GAME,Starmie,Thunder Wave,Rematches,65
+Nurse_Joy,Nurse_Joy_Starmie_3,POST_GAME,POST_GAME,Starmie,Substitute,Rematches,65
+Nurse_Joy,Nurse_Joy_Gyarados_4,POST_GAME,POST_GAME,Gyarados,Reflect,Rematches,65
+Nurse_Joy,Nurse_Joy_Gyarados_4,POST_GAME,POST_GAME,Gyarados,Blizzard,Rematches,65
+Nurse_Joy,Nurse_Joy_Gyarados_4,POST_GAME,POST_GAME,Gyarados,Recover,Rematches,65
+Nurse_Joy,Nurse_Joy_Gyarados_4,POST_GAME,POST_GAME,Gyarados,Thunder Wave,Rematches,65
+Nurse_Joy,Nurse_Joy_Exeggutor_5,POST_GAME,POST_GAME,Exeggutor,Softboiled,Rematches,65
+Nurse_Joy,Nurse_Joy_Exeggutor_5,POST_GAME,POST_GAME,Exeggutor,Reflect,Rematches,65
+Nurse_Joy,Nurse_Joy_Exeggutor_5,POST_GAME,POST_GAME,Exeggutor,Dream Eater,Rematches,65
+Nurse_Joy,Nurse_Joy_Exeggutor_5,POST_GAME,POST_GAME,Exeggutor,Sleep Powder,Rematches,65
+Nurse_Joy,Nurse_Joy_Chansey_6,POST_GAME,POST_GAME,Chansey,Softboiled,Rematches,65
+Nurse_Joy,Nurse_Joy_Chansey_6,POST_GAME,POST_GAME,Chansey,Reflect,Rematches,65
+Nurse_Joy,Nurse_Joy_Chansey_6,POST_GAME,POST_GAME,Chansey,Egg Bomb,Rematches,65
+Nurse_Joy,Nurse_Joy_Chansey_6,POST_GAME,POST_GAME,Chansey,Thunder Wave,Rematches,65
+Officer_Jenny,Officer_Jenny_Pidgeot_1,POST_GAME,POST_GAME,Pidgeot,Take Down,Rematches,65
+Officer_Jenny,Officer_Jenny_Pidgeot_1,POST_GAME,POST_GAME,Pidgeot,Agility,Rematches,65
+Officer_Jenny,Officer_Jenny_Pidgeot_1,POST_GAME,POST_GAME,Pidgeot,Sky Attack,Rematches,65
+Officer_Jenny,Officer_Jenny_Pidgeot_1,POST_GAME,POST_GAME,Pidgeot,Toxic,Rematches,65
+Officer_Jenny,Officer_Jenny_Blastoise_2,POST_GAME,POST_GAME,Blastoise,Surf,Rematches,65
+Officer_Jenny,Officer_Jenny_Blastoise_2,POST_GAME,POST_GAME,Blastoise,Earthquake,Rematches,65
+Officer_Jenny,Officer_Jenny_Blastoise_2,POST_GAME,POST_GAME,Blastoise,Ice Beam,Rematches,65
+Officer_Jenny,Officer_Jenny_Blastoise_2,POST_GAME,POST_GAME,Blastoise,Body Slam,Rematches,65
+Officer_Jenny,Officer_Jenny_Tangela_3,POST_GAME,POST_GAME,Tangela,Mega Drain,Rematches,65
+Officer_Jenny,Officer_Jenny_Tangela_3,POST_GAME,POST_GAME,Tangela,Sleep Powder,Rematches,65
+Officer_Jenny,Officer_Jenny_Tangela_3,POST_GAME,POST_GAME,Tangela,Mimic,Rematches,65
+Officer_Jenny,Officer_Jenny_Tangela_3,POST_GAME,POST_GAME,Tangela,Bind,Rematches,65
+Officer_Jenny,Officer_Jenny_Gengar_4,POST_GAME,POST_GAME,Gengar,Psychic,Rematches,65
+Officer_Jenny,Officer_Jenny_Gengar_4,POST_GAME,POST_GAME,Gengar,Night Shade,Rematches,65
+Officer_Jenny,Officer_Jenny_Gengar_4,POST_GAME,POST_GAME,Gengar,Hypnosis,Rematches,65
+Officer_Jenny,Officer_Jenny_Gengar_4,POST_GAME,POST_GAME,Gengar,Thunderbolt,Rematches,65
+Officer_Jenny,Officer_Jenny_Parasect_5,POST_GAME,POST_GAME,Parasect,Spore,Rematches,65
+Officer_Jenny,Officer_Jenny_Parasect_5,POST_GAME,POST_GAME,Parasect,Mega Drain,Rematches,65
+Officer_Jenny,Officer_Jenny_Parasect_5,POST_GAME,POST_GAME,Parasect,Slash,Rematches,65
+Officer_Jenny,Officer_Jenny_Parasect_5,POST_GAME,POST_GAME,Parasect,Leech Life,Rematches,65
+Officer_Jenny,Officer_Jenny_Arcanine_6,POST_GAME,POST_GAME,Arcanine,Reflect,Rematches,65
+Officer_Jenny,Officer_Jenny_Arcanine_6,POST_GAME,POST_GAME,Arcanine,Fire Blast,Rematches,65
+Officer_Jenny,Officer_Jenny_Arcanine_6,POST_GAME,POST_GAME,Arcanine,Body Slam,Rematches,65
+Officer_Jenny,Officer_Jenny_Arcanine_6,POST_GAME,POST_GAME,Arcanine,Dig,Rematches,65
+Professor_Oak_1,Professor_Oak_1_Tauros_1,POST_GAME,POST_GAME,Tauros,Hyper Beam,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Tauros_1,POST_GAME,POST_GAME,Tauros,Earthquake,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Tauros_1,POST_GAME,POST_GAME,Tauros,Blizzard,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Tauros_1,POST_GAME,POST_GAME,Tauros,Thunder,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Charizard_2,POST_GAME,POST_GAME,Charizard,Fire Blast,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Charizard_2,POST_GAME,POST_GAME,Charizard,Earthquake,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Charizard_2,POST_GAME,POST_GAME,Charizard,Slash,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Charizard_2,POST_GAME,POST_GAME,Charizard,Double Team,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Venusaur_3,POST_GAME,POST_GAME,Venusaur,Swords Dance,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Venusaur_3,POST_GAME,POST_GAME,Venusaur,Earthquake,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Venusaur_3,POST_GAME,POST_GAME,Venusaur,Sleep Powder,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Venusaur_3,POST_GAME,POST_GAME,Venusaur,Solarbeam,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Blastoise_4,POST_GAME,POST_GAME,Blastoise,Reflect,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Blastoise_4,POST_GAME,POST_GAME,Blastoise,Earthquake,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Blastoise_4,POST_GAME,POST_GAME,Blastoise,Ice Beam,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Blastoise_4,POST_GAME,POST_GAME,Blastoise,Hydro Pump,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Rest,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Amnesia,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Psychic,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Hyper Beam,Rematches,69
+Professor_Oak_1,Professor_Oak_1_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Earthquake,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Rock Slide,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Sludge,Rematches,70
+Professor_Oak_1,Professor_Oak_1_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Blizzard,Rematches,70
+Professor_Oak_2,Professor_Oak_2_Tauros_1,POST_GAME,POST_GAME,Tauros,Hyper Beam,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Tauros_1,POST_GAME,POST_GAME,Tauros,Earthquake,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Tauros_1,POST_GAME,POST_GAME,Tauros,Blizzard,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Tauros_1,POST_GAME,POST_GAME,Tauros,Thunder,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Zapdos_2,POST_GAME,POST_GAME,Zapdos,Thunder Wave,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Zapdos_2,POST_GAME,POST_GAME,Zapdos,Thunder,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Zapdos_2,POST_GAME,POST_GAME,Zapdos,Sky Attack,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Zapdos_2,POST_GAME,POST_GAME,Zapdos,Light Screen,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Articuno_3,POST_GAME,POST_GAME,Articuno,Bubblebeam,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Articuno_3,POST_GAME,POST_GAME,Articuno,Blizzard,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Articuno_3,POST_GAME,POST_GAME,Articuno,Sky Attack,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Articuno_3,POST_GAME,POST_GAME,Articuno,Reflect,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Moltres_4,POST_GAME,POST_GAME,Moltres,Agility,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Moltres_4,POST_GAME,POST_GAME,Moltres,Solarbeam,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Moltres_4,POST_GAME,POST_GAME,Moltres,Sky Attack,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Moltres_4,POST_GAME,POST_GAME,Moltres,Fire Spin,Rematches,77
+Professor_Oak_2,Professor_Oak_2_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Amnesia,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Reflect,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Rest,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Snorlax_5,POST_GAME,POST_GAME,Snorlax,Hyper Beam,Rematches,78
+Professor_Oak_2,Professor_Oak_2_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Earthquake,Rematches,81
+Professor_Oak_2,Professor_Oak_2_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Rock Slide,Rematches,81
+Professor_Oak_2,Professor_Oak_2_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Thunder,Rematches,81
+Professor_Oak_2,Professor_Oak_2_Nidoking_6,POST_GAME,POST_GAME,Nidoking,Sludge,Rematches,81

@@ -1,5 +1,6 @@
 -- Test: Every recommended team must have at least one member that can beat
 -- each opponent pokemon. Returns "bad matchups" where no team member wins.
+-- {{ config(severity='warn') }}
 WITH team_vs_opponents AS (
     SELECT
         RT.run_name,

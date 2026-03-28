@@ -1,0 +1,103 @@
+models:
+  - name: stg_metricflow_time_spine
+    description: "Minimal time spine for MetricFlow. All semantic models use synthetic date 2024-01-01."
+    columns:
+      - name: date_day
+        granularity: day
+    time_spine:
+      standard_granularity_column: date_day
+
+semantic_models:
+  - name: pokemon_base_stats
+    description: |
+      Base stats and types for all 151 Pokemon. Dimension-only model
+      serving as the central join target for Pokemon attributes.
+    model: ref('stg_pkmn_stats')
+
+    entities:
+      - name: pokemon
+        type: primary
+        expr: pokemon
+      - name: pokedex_entry
+        type: unique
+        expr: pokedex
+
+    dimensions:
+      - name: pokemon_name
+        type: categorical
+        expr: pokemon
+      - name: type1
+        type: categorical
+      - name: type2
+        type: categorical
+      - name: hp
+        type: categorical
+        expr: cast(hp as varchar)
+      - name: attack
+        type: categorical
+        expr: cast(attack as varchar)
+      - name: defence
+        type: categorical
+        expr: cast(defence as varchar)
+      - name: special
+        type: categorical
+        expr: cast(special as varchar)
+      - name: speed
+        type: categorical
+        expr: cast(speed as varchar)
+      - name: stat_total
+        type: categorical
+        expr: cast(total as varchar)
+
+  - name: encounter_areas
+    description: |
+      Where each Pokemon can be caught, at what levels, and by what method.
+      Dimension-only model for location-based queries.
+    model: ref('stg_pkmn_encounter_areas')
+
+    entities:
+      - name: encounter
+        type: primary
+        expr: id
+      - name: pokemon
+        type: foreign
+        expr: pokemon
+
+    dimensions:
+      - name: pokemon_name
+        type: categorical
+        expr: pokemon
+      - name: map
+        type: categorical
+      - name: area
+        type: categorical
+      - name: pkmn_level
+        type: categorical
+        expr: cast(pkmn_level as varchar)
+      - name: encounter_probability
+        type: categorical
+        expr: cast(encounter_probability as varchar)
+
+  - name: game_route_order
+    description: |
+      Linear game progression through routes and cities with level caps
+      at each stage. Provides the game_stage entity for cross-model joins.
+    model: ref('stg_game_route_order')
+
+    entities:
+      - name: game_stage
+        type: primary
+        expr: next_gym
+      - name: location
+        type: foreign
+        expr: map
+
+    dimensions:
+      - name: map_name
+        type: categorical
+        expr: map
+      - name: game_order
+        type: categorical
+        expr: cast(game_order as varchar)
+      - name: next_gym
+        type: categorical

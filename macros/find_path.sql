@@ -1,4 +1,4 @@
-{% macro find_path(map_name, start_x, start_y, target_x, target_y, max_steps=50, avoid_grass=false) %}
+{% macro find_path(map_name, start_x, start_y, target_x, target_y, max_steps=50, avoid_grass=false, blocked_coordinates='') %}
 -- BFS shortest path from ({{ start_x }}, {{ start_y }}) to ({{ target_x }}, {{ target_y }}) on {{ map_name }}
 WITH RECURSIVE bfs AS (
     SELECT
@@ -26,6 +26,9 @@ WITH RECURSIVE bfs AS (
         AND NOT list_contains(b.visited, pf.to_y * 1000 + pf.to_x)
     WHERE b.steps < {{ max_steps }}
         AND NOT (b.x = {{ target_x }} AND b.y = {{ target_y }})
+        {% if blocked_coordinates != '' %}
+        AND {{ blocked_coordinates }}
+        {% endif %}
 )
 SELECT steps, path, grass_count
 FROM bfs
