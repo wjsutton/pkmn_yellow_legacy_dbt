@@ -186,7 +186,8 @@ ranked_results AS (
 
 SELECT
     catch_pokemon,
-    encounter_map
+    encounter_map,
+    area
 FROM ranked_results
 WHERE result_rank <= 3
 ORDER BY max_level DESC
