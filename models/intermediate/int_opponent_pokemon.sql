@@ -6,7 +6,7 @@ WITH all_trainer_moves AS (
         nearest_route,
         pokemon,
         game_stage,
-        notes,
+        CAST(notes AS VARCHAR) AS notes,
         pkmn_level,
         move,
         move_number
@@ -20,7 +20,7 @@ WITH all_trainer_moves AS (
         nearest_route,
         pokemon,
         game_stage,
-        notes,
+        CAST(notes AS VARCHAR) AS notes,
         pkmn_level,
         move,
         move_number
@@ -34,7 +34,7 @@ WITH all_trainer_moves AS (
         nearest_route,
         pokemon,
         game_stage,
-        notes,
+        CAST(notes AS VARCHAR) AS notes,
         pkmn_level,
         move,
         move_number
@@ -48,7 +48,7 @@ WITH all_trainer_moves AS (
         nearest_route,
         pokemon,
         game_stage,
-        notes,
+        CAST(notes AS VARCHAR) AS notes,
         pkmn_level,
         move,
         move_number
@@ -62,7 +62,7 @@ WITH all_trainer_moves AS (
         nearest_route,
         pokemon,
         game_stage,
-        notes,
+        CAST(notes AS VARCHAR) AS notes,
         pkmn_level,
         move,
         move_number
@@ -88,18 +88,6 @@ trainer_roster AS (
     INNER JOIN {{ ref('stg_pkmn_stats') }} as S ON T.pokemon = S.pokemon
     WHERE LOWER(T.game_stage) NOT LIKE '%_alt%'
     GROUP BY ALL
-),
-
-distinct_trainers AS (
-    SELECT DISTINCT
-        trainer,
-        game_stage,
-        notes
-    FROM trainer_roster
-),
-
-trainer_run_combinations AS (
-    {{ generate_trainer_run_combinations() }}
 )
 
 -- Main output: Complete trainer and pokemon roster with routes

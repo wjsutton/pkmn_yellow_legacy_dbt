@@ -1,0 +1,98 @@
+# =============================================================================
+# CATCH SEMANTIC VIEW
+# Relationship map for the tables behind the catch_* tools (catch & team building).
+#
+# All catch-domain models join through two shared entities:
+#     pokemon      (the catchable species)        <- the spine
+#     game_stage   (Badge_1 .. Elite 4)           <- the progression axis
+# plus, on the battle side:
+#     trainer      (links matchups to opponents)
+#
+#   ┌────────────────────────┐  pokemon + game_stage  ┌──────────────────────────┐
+#   │  stage_pokemon_costs    │◄──────────────────────►│  battle_outcomes          │
+#   │  (NEW - exp / catch lvl)│                         │  (player vs opponent)     │
+#   └───────────┬─────────────┘                         └─────────────┬────────────┘
+#               │ pokemon + game_stage                  trainer │     │ pokemon
+#               ▼                                                ▼     │
+#   ┌────────────────────────┐                         ┌──────────────────────────┐
+#   │  pokemon_availability   │  pokemon                │  opponent_pokemon         │
+#   │  (what/where catchable) │◄───────────┐            │  (trainer rosters)        │
+#   └───────────┬─────────────┘            │            └──────────────────────────┘
+#               │ pokemon                  │ pokemon
+#               ▼                          │
+#   ┌────────────────────────┐             │
+#   │  encounter_lookup       │◄────────────┘
+#   │  (where / probability)  │
+#   └────────────────────────┘
+#
+# Which tool reads which models (all filtered to a run variant via generate_run_variants):
+#   catch_scout_badge        -> battle_outcomes
+#   catch_next_catch         -> battle_outcomes + stage_pokemon_costs
+#   catch_verify_encounter   -> battle_outcomes + stage_pokemon_costs
+#   catch_team_verify        -> battle_outcomes + stage_pokemon_costs
+#   catch_locate_best_catch  -> pokemon_availability + encounter_lookup
+#
+# battle_outcomes / pokemon_availability / encounter_lookup / opponent_pokemon are
+# already declared in _semantic.yml. This file adds the missing cost model so the
+# catch domain is complete and the four tables join on `pokemon` (+ `game_stage`).
+# =============================================================================
+
+semantic_models:
+  - name: stage_pokemon_costs
+    description: |
+      Per-stage acquisition cost of every catchable Pokemon: the EXP needed to
+      train it from its cheapest catch level up to that stage's level cap, plus
+      catch level and trade status. The "cost" side of the quality-vs-EXP trade-off.
+    model: ref('int_stage_pokemon_costs')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: pokemon_stage_cost
+        type: primary
+        expr: pokemon || '-' || game_stage
+      - name: pokemon
+        type: foreign
+        expr: pokemon
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: pokemon_name
+        type: categorical
+        expr: pokemon
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: growth_rate
+        type: categorical
+      - name: is_traded
+        type: categorical
+        expr: cast(is_traded as varchar)
+      - name: catch_level_band
+        type: categorical
+        expr: cast(catch_level as varchar)
+
+    measures:
+      - name: exp_to_cap
+        description: "Total EXP to train from catch level to the stage level cap"
+        expr: fresh_exp_cost
+        agg: sum
+      - name: avg_exp_to_cap
+        description: "Average EXP-to-cap across the selected Pokemon"
+        expr: fresh_exp_cost
+        agg: average
+      - name: min_exp_to_cap
+        description: "Cheapest EXP-to-cap in the selection"
+        expr: fresh_exp_cost
+        agg: min
+      - name: avg_catch_level
+        description: "Average catch level"
+        expr: catch_level
+        agg: average

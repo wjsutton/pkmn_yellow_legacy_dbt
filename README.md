@@ -77,13 +77,17 @@ Watch: How to Play Pokemon Yellow Legacy
 ```
 pkmn_yellow_legacy_dbt/
 ├── models/
-│   ├── staging/          # 16 cleaned source tables (stg_*)
-│   ├── intermediate/     # 5 core analysis models (int_*)
-│   └── optimisation/     # 2 team selection models (opt_*)
+│   ├── staging/          # cleaned source tables (stg_*)
+│   ├── intermediate/     # core analysis models (int_*)
+│   ├── optimisation/     # team selection models (opt_*)
+│   ├── dashboard/        # Tableau-ready datasets (dash_*, currently disabled)
+│   └── marts/            # semantic layer: catch-domain entities & relationships
+├── analyses/             # ad-hoc analyses + catch_* MCP tool queries
 ├── macros/               # Gen 1 battle mechanics & utilities
-├── seeds/                # 16 raw CSV data files
-├── tests/                # 3 singular data tests
+├── seeds/                # raw CSV data files
+├── tests/                # singular data tests
 ├── data/                 # DuckDB database
+├── doc_assets/           # analysis graphs used in this README
 └── dashboard_assets/     # Sprite assets for visualization
 ```
 
@@ -107,9 +111,15 @@ Seeds (16 CSVs)
 4. `int_pokemon_stats` -- What stats do all pokemon have at any level?
 5. `int_battle_outcomes` -- Who wins in a fight?
 
-**Optimisation** -- Final team selection (2 models):
+**Optimisation** -- Final team selection (3 models):
 - `opt_team_performance` -- Scores each pokemon's contribution per stage
 - `opt_recommended_teams` -- Selects optimal 6-pokemon teams across 12 run variants
+- `opt_min_exp_squads` -- Smallest team that covers the stage for the least EXP (greedy set cover)
+
+**Marts** -- Semantic layer (no materialized models). `_catch_semantic.yml` declares the
+catch-domain entities (`pokemon`, `game_stage`, `trainer`) and the relationships between
+`battle_outcomes`, `stage_pokemon_costs`, `pokemon_availability`, and `encounter_lookup`
+that power the `catch_*` analysis / MCP tools.
 
 ### Tests
 
@@ -139,6 +149,51 @@ Results include:
 - TM allocation per team member
 - Battle matchup analysis with player victory flags
 - Coverage gaps identifying opponent pokemon no team member can beat
+
+## Analysis: Win Likelihood vs. Training Cost
+
+A core team-building question is: **which Pokemon gives the best chance of beating an
+opponent for the least training effort?** The project answers it by scoring every
+catchable Pokemon on two axes:
+
+- **Win likelihood (y)** -- a difficulty-weighted battle score from `int_battle_outcomes`
+  (exact Gen 1 damage maths, biased toward *robust* wins to survive Gen 1's RNG). A score
+  above 0 is a win; 1.0 is a clean outspeed-KO.
+- **Training cost (x)** -- `int_stage_pokemon_costs.fresh_exp_cost`: the EXP needed to raise
+  the Pokemon from its cheapest catch level to the badge's level cap. Lower = less grinding.
+
+Plotted together, the **top-left is best** (strong *and* cheap). For Badge 1 vs Brock's
+Onix, **Poliwag** is the standout -- the strongest counter *and* the cheapest to train,
+while Vulpix (a common pick) does not even beat Onix:
+
+![Badge 1 - likelihood to beat Onix vs EXP to train](doc_assets/badge1_onix_catch_options.png)
+
+Extending from a single opponent to the **whole route to the badge**, the ranking shifts:
+a Brock-specialist like Poliwag is overtaken by an all-rounder like **Mankey** once every
+trainer on the way is weighed (mini-bosses counting most):
+
+![Whole-route strength vs EXP](doc_assets/badge1_A_generalist_scatter.png)
+
+Because you field a *team*, the useful output is the **best few**, not the single best. The
+non-dominated set -- where nothing else is both cheaper *and* stronger -- forms a Pareto
+frontier that is your shortlist (cheap-weak -> mid -> top):
+
+![Pareto frontier of catch options](doc_assets/badge1_D_pareto_frontier.png)
+
+These analyses live in `analyses/` and are operationalised as a small set of **`catch_*`
+tools** (designed to run as dbt MCP tools for an AI playing the game):
+
+| Tool | Question it answers |
+|------|---------------------|
+| `catch_scout_badge` | What opponents are on the way to this badge, which is the "wall", and what counters it? |
+| `catch_next_catch` | What is the best next addition to my team, by win-quality per EXP? |
+| `catch_locate_best_catch` | Where do I catch a Pokemon (or its pre-evolution), and what are the encounter odds? |
+| `catch_verify_encounter` | Is the wild Pokemon I just met worth keeping, or worth re-rolling? |
+| `catch_team_verify` | What is my overall team quality and opponent coverage? |
+
+The relationships between the tables behind these tools are defined in the **`marts/`
+semantic layer** (`models/marts/_catch_semantic.yml`), joined through the shared `pokemon`,
+`game_stage`, and `trainer` entities.
 
 ## Technical Highlights
 
