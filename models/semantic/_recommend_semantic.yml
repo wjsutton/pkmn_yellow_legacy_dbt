@@ -1,0 +1,102 @@
+# =============================================================================
+# RECOMMEND (LIVE ADVISOR) SEMANTIC VIEW
+# Catalog + relationship map for the recommend_* tools — the LIVE-battle / build
+# advisors. Unlike the catch_* tools (precomputed marts, see _catch_semantic.yml),
+# these answer questions the marts CAN'T precompute: an arbitrary current moveset,
+# level, remaining HP and PP. They run the Gen-1 damage engine (calculate_damage_rby,
+# calculate_stat_rby, calculate_hp_rby) live over staging/intermediate data.
+#
+# The `catalog key` column below mirrors the agent's source of truth,
+# dbtPlaysPokemon/dbt_catalog.json (the "macros" map, loaded by agent/dbt_catalog.py).
+# Keep the two in sync: the json maps key -> macro name for the Python agent; this
+# file documents what each does and what it reads for humans / the planner.
+#
+# TOOL CATALOG
+#   tool (macro)            catalog key   answers                                    reads
+#   ---------------------   -----------   ----------------------------------------   ----------------------------------------------
+#   recommend_battle_move   best_move     which of MY moves to use to KO fastest     moves, pokemon_base_stats, type_effectiveness,
+#                                         (offensive; fixed-damage & OHKO modelled)  phys_spec
+#   recommend_catch_move    catch_move    which move WEAKENS (won't KO) or which     moves, pokemon_base_stats, type_effectiveness,
+#                                         status move (sleep>paralysis) to catch     phys_spec
+#   recommend_build         build_guide   evolution path + best <=4-move set + TM    pokemon_movesets, pokemon_base_stats,
+#                                         plan to a stage's level cap                evolutions, stone_locations, game_route_order,
+#                                                                                    tmhm_locations
+#
+#   best_move / catch_move are siblings (one maximises a KO, the other avoids it).
+#   build_guide is the planning tool; best_move/catch_move are the in-battle tools.
+#
+# SHARED SPINE
+#       moves       (the move catalog: power / type / accuracy / effect)  <- declared below
+#       pokemon     (base stats & types)  -> pokemon_base_stats in staging/_semantic.yml
+#
+#   ┌─────────────────────┐   move    ┌──────────────────────────────┐
+#   │  moves              │◄──────────│  recommend_battle_move        │
+#   │  (power/type/acc/   │           │  recommend_catch_move         │
+#   │   effect, NEW here) │           │  recommend_build              │
+#   └─────────┬───────────┘           └──────────────┬───────────────┘
+#             │ move_type                             │ pokemon
+#             ▼                                        ▼
+#   ┌─────────────────────┐                  ┌──────────────────────────────┐
+#   │ type_effectiveness  │                  │  pokemon_base_stats           │
+#   │ phys_spec           │                  │  (staging/_semantic.yml)      │
+#   └─────────────────────┘                  └──────────────────────────────┘
+#
+# pokemon_base_stats, pokemon_availability and encounter_lookup are already declared
+# (staging / intermediate _semantic.yml). This file adds the missing `moves` catalog
+# so the live-advisor domain is self-describing and these tools are easy to find.
+# =============================================================================
+
+semantic_models:
+  - name: moves
+    description: |
+      The move catalog behind the live battle/build advisors (best_move,
+      catch_move, build_guide): every move's type, power, accuracy, PP, hit count
+      and effect text. Power is a string ('N/A' status, 'KO' OHKO, 'Var Dmg'/'Set'
+      fixed-damage, else numeric) — the damage engine interprets it. The sleep /
+      paralysis classifications used by catch_move are read from `effect`.
+    model: ref('stg_moves_stats')
+
+    entities:
+      - name: move
+        type: primary
+        expr: move
+      - name: move_id
+        type: unique
+        expr: id
+
+    dimensions:
+      - name: move_name
+        type: categorical
+        expr: move
+      - name: move_type
+        type: categorical
+        expr: type
+      - name: power
+        type: categorical
+        expr: cast(power as varchar)
+      - name: accuracy
+        type: categorical
+        expr: cast(acc as varchar)
+      - name: pp
+        type: categorical
+        expr: cast(pp as varchar)
+      - name: effect
+        type: categorical
+        expr: effect
+      - name: damage_kind
+        type: categorical
+        expr: >
+          case
+            when power = 'N/A' then 'status'
+            when power = 'KO' then 'ohko'
+            when power in ('Var Dmg', 'Set', 'Copy') then 'fixed-or-special'
+            else 'damaging'
+          end
+      - name: status_effect
+        type: categorical
+        expr: >
+          case
+            when effect ilike '%target%sleep%' then 'sleep'
+            when effect ilike '%paraly%' then 'paralysis'
+            else 'none'
+          end

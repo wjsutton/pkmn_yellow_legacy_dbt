@@ -7,7 +7,9 @@
 ) %}
 
 {#
-    Recommends the best move for catching a wild Pokemon.
+    recommend_catch_move (catalog key: catch_move) — best move for catching a wild
+    Pokemon. The defensive sibling of recommend_battle_move (best_move): that macro
+    maximises a KO, this one avoids it (you want the target alive to catch).
 
     When want_status = 'true':
       Returns the best status move (SLEEP > PARALYSIS) with PP remaining.
