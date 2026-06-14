@@ -36,6 +36,31 @@ nav_map_names AS (
     FROM {{ ref('stg_nav_map_tiles') }}
 ),
 
+catch_rates AS (
+    SELECT pokemon AS cr_pokemon, catch_rate
+    FROM {{ ref('stg_pkmn_catch_rates') }}
+),
+
+encounter_rates AS (
+    -- Per-map encounter rate byte (rate/256 = P(encounter per eligible step)).
+    SELECT map AS er_map, grass_rate, water_rate
+    FROM {{ ref('stg_pkmn_encounter_rates') }}
+),
+
+area_wild_exp AS (
+    -- Expected wild EXP of a random battle in each (map, area): the EXP a team
+    -- member would gain per battle fought while hunting here. Probability-weighted
+    -- across the area's encounter slots (floor(base_exp * level / 7), Gen-1 wild formula).
+    SELECT
+        ea.map AS awe_map,
+        ea.area AS awe_area,
+        SUM(ea.encounter_probability * {{ calculate_wild_exp('be.base_exp', 'ea.level') }})
+            / NULLIF(SUM(ea.encounter_probability), 0) AS avg_wild_exp
+    FROM {{ ref('stg_pkmn_encounter_areas') }} ea
+    INNER JOIN {{ ref('stg_pkmn_base_exp') }} be ON ea.pokemon = be.pokemon
+    GROUP BY ea.map, ea.area
+),
+
 map_name_lookup AS (
     SELECT
         r.map AS encounter_map,
@@ -60,17 +85,23 @@ aggregated AS (
         am.area_order,
         ro.next_gym AS game_stage_available,
         ro.game_order AS route_distance,
-        ml.nav_map_name
+        ml.nav_map_name,
+        er.grass_rate,
+        er.water_rate,
+        awe.avg_wild_exp
     FROM encounters e
     LEFT JOIN area_metadata am ON e.area = am.area
     LEFT JOIN route_order ro ON e.map = ro.map
     LEFT JOIN map_name_lookup ml ON e.map = ml.encounter_map
+    LEFT JOIN encounter_rates er ON e.map = er.er_map
+    LEFT JOIN area_wild_exp awe ON e.map = awe.awe_map AND e.area = awe.awe_area
     GROUP BY
         e.pokemon, e.map, e.area,
         am.encounter_method, am.required_badge_count, am.required_item,
         am.tile_type, am.area_order,
         ro.next_gym, ro.game_order,
-        ml.nav_map_name
+        ml.nav_map_name,
+        er.grass_rate, er.water_rate, awe.avg_wild_exp
 )
 
 SELECT
@@ -95,5 +126,47 @@ SELECT
         ELSE 0
     END AS badges_to_reach,
     route_distance,
-    nav_map_name
-FROM aggregated
+    nav_map_name,
+    -- Per-map encounter rate byte (data/wild/maps/*.asm). The effective rate for
+    -- THIS area is the grass byte on grass tiles, the water byte on water tiles.
+    grass_rate,
+    water_rate,
+    CASE
+        WHEN tile_type = 'water' THEN water_rate
+        WHEN tile_type = 'grass' THEN grass_rate
+        ELSE NULL
+    END AS encounter_rate,
+    -- P(encounter on a given eligible step) = rate / 256.
+    ROUND(
+        CASE
+            WHEN tile_type = 'water' THEN water_rate
+            WHEN tile_type = 'grass' THEN grass_rate
+            ELSE NULL
+        END / 256.0, 4
+    ) AS pct_per_step,
+    -- Expected eligible steps to MEET this species:
+    --   1 / [ (rate/256) * P(species | encounter) ].
+    ROUND(
+        1.0 / NULLIF(
+            (CASE
+                WHEN tile_type = 'water' THEN water_rate
+                WHEN tile_type = 'grass' THEN grass_rate
+                ELSE NULL
+            END / 256.0) * total_probability, 0
+        ), 1
+    ) AS expected_steps_to_meet,
+    -- Expected wild EXP of a random battle in this area (opportunity cost per battle).
+    ROUND(avg_wild_exp, 1) AS avg_wild_exp,
+    -- Capture difficulty (independent of encounter rarity above).
+    -- catch_rate is the Gen-1 0-255 byte; higher = easier to catch.
+    cr.catch_rate,
+    CASE
+        WHEN cr.catch_rate IS NULL THEN NULL
+        WHEN cr.catch_rate >= 200 THEN 'Very Easy'
+        WHEN cr.catch_rate >= 120 THEN 'Easy'
+        WHEN cr.catch_rate >= 75  THEN 'Moderate'
+        WHEN cr.catch_rate >= 45  THEN 'Hard'
+        ELSE 'Very Hard'
+    END AS catch_difficulty
+FROM aggregated a
+LEFT JOIN catch_rates cr ON a.pokemon = cr.cr_pokemon

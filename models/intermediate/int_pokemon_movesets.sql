@@ -41,7 +41,11 @@ repurchasable_tm_moves AS (
         PS.stat_used as move_stat_used
     FROM {{ ref('stg_moves_from_tmhm') }} M
     INNER JOIN {{ ref('stg_moves_tmhm_locations') }} L ON M.move = L.move
-    INNER JOIN {{ ref('stg_game_route_order') }} R ON R.map = L.repurchase_route
+    -- stg_game_route_order.map is UPPER_SNAKE_CASE (ROUTE_7) while the tmhm
+    -- location routes are CamelCase (Route7); normalise both sides so the TM
+    -- moves actually flow into the spine (otherwise this join matched 0 rows).
+    INNER JOIN {{ ref('stg_game_route_order') }} R
+        ON UPPER(REPLACE(REPLACE(R.map, '_', ''), ' ', '')) = UPPER(L.repurchase_route)
     INNER JOIN {{ ref('stg_moves_stats') }} S ON M.move = S.move
     INNER JOIN {{ ref('stg_moves_phys_spec') }} PS ON PS.type = S.type
 ),
@@ -66,7 +70,8 @@ single_use_tm_moves AS (
         PS.stat_used as move_stat_used
     FROM {{ ref('stg_moves_from_tmhm') }} M
     INNER JOIN {{ ref('stg_moves_tmhm_locations') }} L ON M.move = L.move
-    INNER JOIN {{ ref('stg_game_route_order') }} R ON R.map = L.earliest_nearest_route
+    INNER JOIN {{ ref('stg_game_route_order') }} R
+        ON UPPER(REPLACE(REPLACE(R.map, '_', ''), ' ', '')) = UPPER(L.earliest_nearest_route)
     INNER JOIN {{ ref('stg_moves_stats') }} S ON M.move = S.move
     INNER JOIN {{ ref('stg_moves_phys_spec') }} PS ON PS.type = S.type
     WHERE L.earliest_nearest_route <> L.repurchase_route

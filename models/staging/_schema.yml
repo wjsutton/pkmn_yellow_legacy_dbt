@@ -438,6 +438,45 @@ models:
         - name: base_exp
           description: "Base experience points yielded when this pokemon is defeated"
 
+  - name: stg_pkmn_catch_rates
+    description: "Species capture rate (0-255 byte from the Gen-1 base stats; higher = easier to catch). Sourced from data/pokemon/base_stats/*.asm in the Pokemon Yellow Legacy disassembly."
+    columns:
+        - name: pokedex
+          description: "Pokedex number (unique identifier for each pokemon species)"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: catch_rate
+          description: "Base capture rate (3-255). Used as catch_rate/256 baseline probability before HP/status/ball modifiers in the Gen-1 capture formula."
+
+  - name: stg_pkmn_trades
+    description: "In-game NPC trades (Pokemon Yellow Legacy, data/events/trades.asm). To GET the traded species you must GIVE (and therefore catch/obtain) the give_pokemon. Excludes the two upstream-unused trades (Beedrill, Mew)."
+    columns:
+        - name: get_pokemon
+          description: "Species received from the trade (unique identifier - each species is offered by one trade)"
+          tests:
+            - unique
+            - not_null
+        - name: give_pokemon
+          description: "Species the player must hand over to receive get_pokemon"
+        - name: nickname
+          description: "The fixed nickname the received pokemon comes with"
+
+  - name: stg_pkmn_encounter_rates
+    description: "Per-map wild encounter rate byte from the Pokemon Yellow Legacy disassembly (data/wild/maps/*.asm). P(encounter per eligible step) = rate/256."
+    columns:
+        - name: map
+          description: "Route or location name (UPPER_SNAKE, matches stg_pkmn_encounter_areas.map). Static encounters (gifts, Mewtwo) are excluded as they are not step-based."
+          tests:
+            - unique
+            - not_null
+        - name: grass_rate
+          description: "Grass tile encounter rate byte (0-255); P(encounter/step) = grass_rate/256. Null for water-only maps (e.g. Route19/20)."
+        - name: water_rate
+          description: "Water tile encounter rate byte (0-255); P(encounter/step) = water_rate/256. Null for maps with no surf/fishing encounters."
+
   - name: stg_nav_map_metadata
     description: "Map properties for navigation - dimensions, type, and parent area for maps from Pallet Town through Pewter City"
     columns:

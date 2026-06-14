@@ -65,7 +65,14 @@ player_moves AS (
     )
     AND COALESCE(ms.move_power, s.power) <> 'N/A'
     AND COALESCE(ms.move_power, s.power) IS NOT NULL
-    AND COALESCE(ms.move_power, s.power) NOT IN ('Copy', 'Set', 'Var Dmg')
+    -- Drop unmodelled variable/copy-damage moves, EXCEPT the fixed-damage moves
+    -- the damage macro computes explicitly (Seismic Toss/Psywave = level-based).
+    -- Others (Counter, Super Fang, Bide, Sonicboom, Dragon Rage, Mirror Move)
+    -- would fall through to the regular formula's hard ::double cast and error.
+    AND (
+        COALESCE(ms.move_power, s.power) NOT IN ('Copy', 'Set', 'Var Dmg')
+        OR ms.move IN ('Seismic Toss', 'Psywave')
+    )
     AND COALESCE(ms.move_accuracy, s.acc) <> 'N/A'
     QUALIFY
         COALESCE(ms.move_power, s.power) = 'KO'
@@ -123,7 +130,11 @@ trainer_moves AS (
     WHERE unpvt.move IS NOT NULL
         AND ms.power <> 'N/A'
         AND ms.power IS NOT NULL
-        AND ms.power NOT IN ('Copy', 'Set', 'Var Dmg')
+        -- Keep fixed-damage moves the damage macro handles (see player_moves note).
+        AND (
+            ms.power NOT IN ('Copy', 'Set', 'Var Dmg')
+            OR unpvt.move IN ('Seismic Toss', 'Psywave')
+        )
         AND ms.acc <> 'N/A'
     QUALIFY
         ms.power = 'KO'

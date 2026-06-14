@@ -16,12 +16,19 @@
         rival        'Jolteon' | 'Flareon' | 'Vaporeon'
         legendary    'NoLedges' (exclude legendaries) | 'Ledges' (allow)
 
-    Returns columns: candidate, marginal_gain, exp_to_cap, gain_per_1k_exp,
-                     catch_level, is_traded
+    Returns columns: candidate, marginal_gain, exp_to_cap, catch_cost_exp,
+                     total_acquisition_exp, gain_per_1k_exp, gain_per_1k_total,
+                     catch_level, is_traded, trade_give_pokemon
+
+    Ranking uses total_acquisition_exp = raise cost (exp_to_cap) + EXP-equivalent
+    catch effort (catch_cost_exp), so rare/hard wild catches are no longer "free".
+    Trade-obtained mons carry no wild catch cost (guaranteed), so the trade route wins
+    when the wild catch is dear.
 #}
 {% set no_legends = (legendary == 'NoLedges') %}
 {% set run_name = rival ~ '_' ~ keep_pikachu ~ '_' ~ legendary %}
 {% set team_sql = "'" ~ team | join("','") ~ "'" %}
+{% set badge_num = badge.split('_')[1] | int if 'Badge_' in badge else 99 %}
 
 WITH variant_all AS (
     {{ generate_run_variants(ref('mart_battle_outcomes')) }}
@@ -54,18 +61,36 @@ gain AS (
     WHERE v.player_pokemon NOT IN ({{ team_sql }})
       {% if no_legends %}AND NOT {{ is_legendary('v.player_pokemon') }}{% endif %}
     GROUP BY 1
+),
+-- Cheapest EXP-equivalent wild-catch effort per candidate, over locations reachable
+-- by this badge. Resolves the wild species actually caught (initial_pokemon) for
+-- evolved forms. Trade/gift candidates have no wild row here -> NULL (treated as 0).
+catch_cost AS (
+    SELECT pa.pokemon AS candidate,
+           MIN({{ calculate_catch_cost_exp('el.total_probability', 'el.catch_rate', 'el.avg_wild_exp') }}) AS catch_cost_exp
+    FROM {{ ref('int_pokemon_availability') }} pa
+    INNER JOIN {{ ref('int_encounter_lookup') }} el ON el.pokemon = pa.initial_pokemon
+    WHERE pa.availability_type = 'Catchable'
+      AND el.badges_to_reach <= {{ badge_num - 1 }}
+    GROUP BY 1
 )
 SELECT
     g.player_pokemon                                                   AS candidate,
     ROUND(g.marginal_gain, 2)                                          AS marginal_gain,
     sc.fresh_exp_cost                                                  AS exp_to_cap,
+    cc.catch_cost_exp,
+    sc.fresh_exp_cost + COALESCE(cc.catch_cost_exp, 0)                 AS total_acquisition_exp,
     ROUND(g.marginal_gain / GREATEST(sc.fresh_exp_cost, 1) * 1000, 3)  AS gain_per_1k_exp,
+    ROUND(g.marginal_gain
+          / GREATEST(sc.fresh_exp_cost + COALESCE(cc.catch_cost_exp, 0), 1) * 1000, 3) AS gain_per_1k_total,
     sc.catch_level,
-    sc.is_traded
+    sc.is_traded,
+    sc.trade_give_pokemon
 FROM gain g
 LEFT JOIN {{ ref('mart_stage_pokemon_costs') }} sc
     ON sc.pokemon = g.player_pokemon AND sc.game_stage = '{{ badge }}'
+LEFT JOIN catch_cost cc ON cc.candidate = g.player_pokemon
 WHERE sc.fresh_exp_cost IS NOT NULL AND g.marginal_gain > 0
-ORDER BY gain_per_1k_exp DESC, marginal_gain DESC
+ORDER BY gain_per_1k_total DESC, gain_per_1k_exp DESC, marginal_gain DESC
 
 {% endmacro %}

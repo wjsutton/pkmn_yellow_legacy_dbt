@@ -75,6 +75,62 @@ pokemon_best_option AS (
     ) = 1
 ),
 
+-- In-game trades: to GET the species you must GIVE (and obtain) give_pokemon.
+-- Evolved forms of a traded mon (e.g. trade-obtained Machoke -> Machamp) inherit
+-- the same give-side requirement.
+trades AS (
+    SELECT get_pokemon, give_pokemon
+    FROM {{ ref('stg_pkmn_trades') }}
+    UNION
+    SELECT e.evolution_name AS get_pokemon, t.give_pokemon
+    FROM {{ ref('stg_pkmn_trades') }} t
+    JOIN {{ ref('stg_pkmn_evolutions') }} e ON e.pokemon = t.get_pokemon
+    WHERE e.evolution_name IS NOT NULL
+),
+
+-- The give-side mon's own cheapest catch level at each stage (reuses the
+-- per-pokemon best option already computed above).
+give_availability AS (
+    SELECT pokemon AS give_pokemon, game_stage, catch_level AS give_catch_level
+    FROM pokemon_best_option
+),
+
+-- Re-price trade picks. A traded mon is received at the LEVEL of the give-mon
+-- you hand over (Gen-1 trades preserve level), so the cheapest route is to catch
+-- the give-mon and trade immediately at its catch level, then raise the received
+-- mon to the cap with the 1.5x traded-EXP boost. Non-trade rows pass through.
+-- NOTE: the upstream QUALIFY already picked the trade option (flat cost 0) over any
+-- wild option, so this re-pricing is exact except for the late game where these 8
+-- species are ALSO wild-catchable (then the wild alternative isn't reconsidered here).
+costs AS (
+    SELECT
+        pc.pokemon,
+        pc.game_stage,
+        pc.level_cap,
+        pc.stage_num,
+        CASE WHEN pc.is_traded = 1 THEN tr.give_pokemon END AS give_pokemon,
+        CASE WHEN pc.is_traded = 1 AND tr.give_pokemon IS NOT NULL
+             THEN ga.give_catch_level ELSE pc.catch_level END AS catch_level,
+        pc.is_traded,
+        CASE
+            WHEN pc.is_traded = 1 AND tr.give_pokemon IS NOT NULL THEN
+                CASE WHEN pc.level_cap > ga.give_catch_level THEN
+                    FLOOR((exp_cap.total_exp_at_level - exp_recv.total_exp_at_level) / 1.5)::integer
+                ELSE 0 END
+            ELSE pc.fresh_exp_cost
+        END AS fresh_exp_cost
+    FROM pokemon_best_option pc
+    LEFT JOIN trades tr ON tr.get_pokemon = pc.pokemon
+    LEFT JOIN give_availability ga
+        ON ga.give_pokemon = tr.give_pokemon AND ga.game_stage = pc.game_stage
+    LEFT JOIN {{ ref('mart_pkmn_level_exp') }} exp_cap
+        ON exp_cap.pokemon = pc.pokemon AND exp_cap.level = pc.level_cap
+    LEFT JOIN {{ ref('mart_pkmn_level_exp') }} exp_recv
+        ON exp_recv.pokemon = pc.pokemon AND exp_recv.level = ga.give_catch_level
+    -- GATE: drop a trade pick whose give-mon isn't catchable/reachable by this stage.
+    WHERE NOT (pc.is_traded = 1 AND tr.give_pokemon IS NOT NULL AND ga.give_catch_level IS NULL)
+),
+
 -- Growth rates
 growth_data AS (
     SELECT pokemon, growth_rate
@@ -100,12 +156,13 @@ SELECT
     pc.stage_num,
     pc.catch_level,
     pc.is_traded,
+    pc.give_pokemon as trade_give_pokemon,
     gd.growth_rate,
     pc.fresh_exp_cost,
     COALESCE(cs.opponents_beaten, 0) as opponents_beaten,
     COALESCE(cs.opponents_beaten_no_tm, 0) as opponents_beaten_no_tm,
     COALESCE(cs.total_opponents_faced, 0) as total_opponents_faced
-FROM pokemon_best_option pc
+FROM costs pc
 INNER JOIN growth_data gd ON gd.pokemon = pc.pokemon
 LEFT JOIN coverage_summary cs
     ON pc.pokemon = cs.pokemon AND pc.game_stage = cs.game_stage
