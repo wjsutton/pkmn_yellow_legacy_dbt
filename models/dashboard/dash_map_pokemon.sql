@@ -39,12 +39,12 @@ catchable_pokemon AS (
 -- across all variants for the current or future stages.
 recommended_pokemon AS (
     SELECT DISTINCT player_pokemon AS pokemon
-    FROM {{ ref('opt_recommended_teams') }}
+    FROM {{ ref('mart_recommended_teams') }}
 ),
 
 min_exp_pokemon AS (
     SELECT DISTINCT pokemon
-    FROM {{ ref('opt_min_exp_squads') }}
+    FROM {{ ref('mart_min_exp_squads') }}
 ),
 
 key_catches AS (

@@ -3,7 +3,7 @@ semantic_models:
     description: |
       Optimized 6-Pokemon team selections per game stage with 12 run
       variants (3 rival types x 2 pikachu x 2 legendary).
-    model: ref('opt_recommended_teams')
+    model: ref('mart_recommended_teams')
     defaults:
       agg_time_dimension: game_data_date
 
@@ -72,7 +72,7 @@ semantic_models:
     description: |
       Per-Pokemon performance scores at each game stage with difficulty-weighted
       battle contributions and TM assignments.
-    model: ref('opt_team_performance')
+    model: ref('mart_team_performance')
     defaults:
       agg_time_dimension: game_data_date
 

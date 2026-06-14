@@ -1,4 +1,4 @@
--- int_battle_outcomes: Who wins in a fight?
+-- mart_battle_outcomes: Who wins in a fight?
 -- Calculates battle outcomes for all player vs trainer pokemon matchups.
 
 WITH player_availability AS (

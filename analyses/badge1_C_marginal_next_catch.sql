@@ -18,7 +18,7 @@ WITH matchups AS (
         bo.trainer_pkmn_id,
         CASE WHEN bo.is_mini_boss = 1 THEN 3 ELSE 1 END AS opponent_weight,
         GREATEST(MAX(bo.battle_score), 0) * CASE WHEN bo.is_mini_boss = 1 THEN 3 ELSE 1 END AS win_value
-    FROM {{ ref('int_battle_outcomes') }} bo
+    FROM {{ ref('mart_battle_outcomes') }} bo
     WHERE bo.game_stage = 'Badge_1'
     GROUP BY bo.player_pokemon, bo.trainer_pkmn_id, bo.is_mini_boss
 ),
@@ -50,6 +50,6 @@ SELECT
     c.fresh_exp_cost AS exp_to_cap,                 -- x-axis
     ROUND(cg.marginal_gain / GREATEST(c.fresh_exp_cost, 1) * 1000, 3) AS gain_per_1k_exp
 FROM candidate_gain cg
-LEFT JOIN {{ ref('int_stage_pokemon_costs') }} c
+LEFT JOIN {{ ref('mart_stage_pokemon_costs') }} c
     ON c.pokemon = cg.player_pokemon AND c.game_stage = 'Badge_1'
 ORDER BY cg.marginal_gain DESC, c.fresh_exp_cost ASC

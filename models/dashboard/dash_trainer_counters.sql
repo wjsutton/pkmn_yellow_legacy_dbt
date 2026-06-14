@@ -2,7 +2,7 @@
 -- Grain: one row per (run_name, game_stage, trainer_pkmn_id, counter_rank)
 
 WITH run_variants AS (
-    {{ generate_run_variants(ref('int_battle_outcomes')) }}
+    {{ generate_run_variants(ref('mart_battle_outcomes')) }}
 ),
 
 -- Best move per (player_pokemon, trainer_pkmn_id)
@@ -24,20 +24,21 @@ best_moves AS (
         bo.trainer_attempts_to_ko,
         bo.battle_score,
         bo.player_victory
-    FROM {{ ref('int_battle_outcomes') }} bo
+    FROM {{ ref('mart_battle_outcomes') }} bo
     QUALIFY ROW_NUMBER() OVER (
         PARTITION BY bo.player_pkmn_id, bo.trainer_pkmn_id
         ORDER BY bo.battle_score DESC
     ) = 1
 ),
 
--- Trainer difficulty (same formula as opt_team_performance)
+-- Trainer difficulty (same formula as mart_team_performance)
 trainer_difficulty AS (
     SELECT
         game_stage,
         trainer,
         is_mini_boss,
         AVG(battle_score) AS avg_battle_score,
+        MIN(battle_score) AS min_battle_score,
         COUNT(CASE WHEN battle_score >= 0.8 THEN 1 END) AS excellent_counters,
         COUNT(CASE WHEN battle_score >= 0.6 THEN 1 END) AS good_counters,
         COUNT(CASE WHEN player_move_single_use_tm = 1 AND battle_score >= 0.6 THEN 1 END) AS tm_dependent_solutions,
@@ -49,21 +50,8 @@ trainer_difficulty AS (
 difficulty_class AS (
     SELECT
         *,
-        CASE
-            WHEN avg_battle_score < 0.25 THEN 'Extreme'
-            WHEN avg_battle_score < 0.35 THEN 'Very Hard'
-            WHEN avg_battle_score < 0.5 THEN 'Hard'
-            WHEN avg_battle_score < 0.65 THEN 'Medium'
-            WHEN excellent_counters <= 2 AND good_counters <= 5 THEN 'Requires Specific Counter'
-            ELSE 'Easy'
-        END AS difficulty_rating,
-        ROUND(
-            (1 - avg_battle_score) * 4 +
-            CASE WHEN excellent_counters = 0 THEN 2 ELSE 0 END +
-            CASE WHEN good_counters <= 2 THEN 1 ELSE 0 END +
-            CASE WHEN is_mini_boss = 1 THEN 1 ELSE 0 END +
-            CASE WHEN tm_dependent_solutions > natural_solutions THEN 1 ELSE 0 END
-        , 1) AS difficulty_score
+        {{ trainer_difficulty_rating() }} AS difficulty_rating,
+        {{ trainer_difficulty_score() }} AS difficulty_score
     FROM trainer_difficulty
 ),
 
@@ -95,7 +83,7 @@ counter_ranks AS (
         bm.player_attempts_to_ko AS player_turns_to_ko,
         bm.trainer_pkmn_move AS opponent_move,
         bm.trainer_attempts_to_ko AS opponent_turns_to_ko,
-        CASE WHEN bm.player_pokemon IN ('Moltres', 'Articuno', 'Zapdos', 'Mewtwo', 'Mew')
+        CASE WHEN {{ is_legendary('bm.player_pokemon') }}
             THEN 1 ELSE 0
         END AS is_legendary,
         ROW_NUMBER() OVER (

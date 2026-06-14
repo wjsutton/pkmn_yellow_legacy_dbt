@@ -22,7 +22,7 @@ SELECT
     MAX(bo.battle_score) AS best_score,
     -- quality-weighted "coverage value": a loss contributes 0, a strong win more
     GREATEST(MAX(bo.battle_score), 0) * CASE WHEN bo.is_mini_boss = 1 THEN 3 ELSE 1 END AS win_value
-FROM {{ ref('int_battle_outcomes') }} bo
+FROM {{ ref('mart_battle_outcomes') }} bo
 WHERE bo.game_stage = 'Badge_1'
 GROUP BY bo.player_pokemon, bo.trainer, bo.trainer_pokemon,
          bo.trainer_pkmn_id, bo.trainer_pkmn_level, bo.is_mini_boss

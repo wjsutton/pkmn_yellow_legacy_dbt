@@ -1,10 +1,10 @@
--- opt_recommended_teams: Variant-aware team selection.
--- Uses base scores from opt_team_performance (computed against ALL trainers),
+-- mart_recommended_teams: Variant-aware team selection.
+-- Uses base scores from mart_team_performance (computed against ALL trainers),
 -- then subtracts contributions from excluded rival trainers per variant.
 -- This avoids reprocessing battle data while making rival type affect team selection.
 
 WITH run_variants AS (
-    {{ generate_run_variants(ref('opt_team_performance')) }}
+    {{ generate_run_variants(ref('mart_team_performance')) }}
 ),
 
 -- === Compute rival-trainer contributions to subtract per variant ===
@@ -20,7 +20,7 @@ rival_battles AS (
         bo.battle_score,
         bo.player_pkmn_move,
         bo.player_move_single_use_tm
-    FROM {{ ref('int_battle_outcomes') }} bo
+    FROM {{ ref('mart_battle_outcomes') }} bo
     WHERE bo.trainer LIKE '%\_Flareon' ESCAPE '\'
        OR bo.trainer LIKE '%\_Vaporeon' ESCAPE '\'
        OR bo.trainer LIKE '%\_Jolteon' ESCAPE '\'
@@ -42,13 +42,14 @@ rival_best_moves AS (
     WHERE move_rank = 1
 ),
 
--- Rival trainer difficulty (same formula as opt_team_performance)
+-- Rival trainer difficulty (same formula as mart_team_performance)
 rival_trainer_difficulty AS (
     SELECT
         game_stage,
         trainer,
         is_mini_boss,
         AVG(battle_score) as avg_battle_score,
+        MIN(battle_score) as min_battle_score,
         COUNT(CASE WHEN battle_score >= 0.8 THEN 1 END) as excellent_counters,
         COUNT(CASE WHEN battle_score >= 0.6 THEN 1 END) as good_counters,
         COUNT(CASE WHEN player_move_single_use_tm = 1 AND battle_score >= 0.6 THEN 1 END) as tm_dependent_solutions,
@@ -60,21 +61,8 @@ rival_trainer_difficulty AS (
 rival_difficulty_class AS (
     SELECT
         *,
-        CASE
-            WHEN avg_battle_score < 0.25 THEN 'Extreme'
-            WHEN avg_battle_score < 0.35 THEN 'Very Hard'
-            WHEN avg_battle_score < 0.5 THEN 'Hard'
-            WHEN avg_battle_score < 0.65 THEN 'Medium'
-            WHEN excellent_counters <= 2 AND good_counters <= 5 THEN 'Requires Specific Counter'
-            ELSE 'Easy'
-        END as difficulty_rating,
-        ROUND(
-            (1 - avg_battle_score) * 4 +
-            CASE WHEN excellent_counters = 0 THEN 2 ELSE 0 END +
-            CASE WHEN good_counters <= 2 THEN 1 ELSE 0 END +
-            CASE WHEN is_mini_boss = 1 THEN 1 ELSE 0 END +
-            CASE WHEN tm_dependent_solutions > natural_solutions THEN 1 ELSE 0 END
-        , 1) as difficulty_score
+        {{ trainer_difficulty_rating() }} as difficulty_rating,
+        {{ trainer_difficulty_score() }} as difficulty_score
     FROM rival_trainer_difficulty
 ),
 
@@ -97,7 +85,7 @@ rival_contributions AS (
         rto.player_pokemon,
         rto.trainer,
         rto.team_rank,
-        -- Normalized contribution (same formula as opt_team_performance)
+        -- Normalized contribution (same formula as mart_team_performance)
         (rto.battle_score *
             CASE
                 WHEN rto.is_mini_boss = 1 THEN dc.difficulty_score * 3.0
@@ -173,7 +161,7 @@ pokemon_performance_raw AS (
                 WHEN 'Vaporeon' THEN COALESCE(res.vaporeon_exclude_weighted, 0)
             END) as team_contribution_score,
         TP.avg_mini_boss_score,
-        CASE WHEN TP.player_pokemon IN ('Moltres', 'Articuno', 'Zapdos', 'Mewtwo', 'Mew') THEN 1 ELSE 0 END as is_legendary,
+        CASE WHEN {{ is_legendary('TP.player_pokemon') }} THEN 1 ELSE 0 END as is_legendary,
         CASE WHEN TP.player_pkmn_id = 'Player_Pikachu_1' THEN 1 ELSE 0 END as is_pikachu,
         rv.run_name,
         rv.rival_type,
@@ -181,7 +169,7 @@ pokemon_performance_raw AS (
         rv.no_legends,
         rv.exclude_rival_patterns,
         rv.exclude_trainers
-    FROM {{ ref('opt_team_performance') }} TP
+    FROM {{ ref('mart_team_performance') }} TP
     CROSS JOIN run_variants rv
     LEFT JOIN rival_exclusion_scores res
         ON res.game_stage = TP.game_stage

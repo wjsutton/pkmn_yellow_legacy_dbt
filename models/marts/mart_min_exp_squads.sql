@@ -1,11 +1,11 @@
--- opt_min_exp_squads: Minimum-EXP teams via greedy set cover.
+-- mart_min_exp_squads: Minimum-EXP teams via greedy set cover.
 -- Iteratively picks the pokemon that covers the most uncovered opponents
 -- per EXP cost. After each pick, covered opponents are removed so the next
 -- pick maximizes NEW coverage. Pikachu forced to slot 1 for KeepPikachu.
 -- Also computes EXP earned from trainer battles to identify grinding gaps.
 
 WITH RECURSIVE run_variants AS (
-    {{ generate_run_variants(ref('int_stage_pokemon_costs')) }}
+    {{ generate_run_variants(ref('mart_stage_pokemon_costs')) }}
 ),
 
 -- Deduplicated victories: one row per (game_stage, pokemon, opponent)
@@ -16,11 +16,11 @@ base_victories AS (
         spc.fresh_exp_cost as exp_cost,
         bo.trainer_pkmn_id,
         bo.trainer,
-        CASE WHEN bo.player_pokemon IN ('Moltres', 'Articuno', 'Zapdos', 'Mewtwo', 'Mew')
+        CASE WHEN {{ is_legendary('bo.player_pokemon') }}
             THEN 1 ELSE 0
         END as is_legendary
-    FROM {{ ref('int_battle_outcomes') }} bo
-    INNER JOIN {{ ref('int_stage_pokemon_costs') }} spc
+    FROM {{ ref('mart_battle_outcomes') }} bo
+    INNER JOIN {{ ref('mart_stage_pokemon_costs') }} spc
         ON spc.pokemon = bo.player_pokemon AND spc.game_stage = bo.game_stage
     WHERE bo.player_victory = 1
 ),
@@ -197,10 +197,10 @@ team_exp_earned AS (
     INNER JOIN {{ ref('int_opponent_pokemon') }} op
         ON op.pkmn_id = toa.trainer_pkmn_id
         AND op.game_stage = toa.game_stage
-    INNER JOIN {{ ref('int_pkmn_level_exp') }} ple
+    INNER JOIN {{ ref('mart_pkmn_level_exp') }} ple
         ON ple.pokemon = op.pokemon
         AND ple.level = op.pkmn_level
-    INNER JOIN {{ ref('int_stage_pokemon_costs') }} spc
+    INNER JOIN {{ ref('mart_stage_pokemon_costs') }} spc
         ON spc.pokemon = toa.fighter
         AND spc.game_stage = toa.game_stage
     WHERE toa.fight_rank = 1
@@ -250,7 +250,7 @@ INNER JOIN actual_coverage ac
     ON ac.game_stage = fp.game_stage AND ac.run_name = fp.run_name
 INNER JOIN stage_totals st
     ON st.game_stage = fp.game_stage AND st.run_name = fp.run_name
-INNER JOIN {{ ref('int_stage_pokemon_costs') }} spc
+INNER JOIN {{ ref('mart_stage_pokemon_costs') }} spc
     ON spc.pokemon = fp.pokemon AND spc.game_stage = fp.game_stage
 LEFT JOIN team_exp_earned te
     ON te.game_stage = fp.game_stage

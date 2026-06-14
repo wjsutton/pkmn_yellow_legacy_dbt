@@ -28,7 +28,7 @@ WITH onix_matchup AS (
         MAX(CASE WHEN player_victory = 1 THEN 1 ELSE 0 END) AS beats_onix,
         ARG_MAX(player_pkmn_move, battle_score)             AS best_move,
         ARG_MAX(player_pkmn_move_origin, battle_score)      AS best_move_origin
-    FROM {{ ref('int_battle_outcomes') }}
+    FROM {{ ref('mart_battle_outcomes') }}
     WHERE game_stage = 'Badge_1'
       AND trainer_pkmn_id = 'Brock_Onix_1'
     GROUP BY player_pokemon
@@ -41,7 +41,7 @@ exp_cost AS (
         catch_level,
         is_traded,
         fresh_exp_cost AS exp_to_cap
-    FROM {{ ref('int_stage_pokemon_costs') }}
+    FROM {{ ref('mart_stage_pokemon_costs') }}
     WHERE game_stage = 'Badge_1'
 )
 

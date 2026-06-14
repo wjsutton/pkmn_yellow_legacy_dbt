@@ -24,9 +24,9 @@ models:
     intermediate:
       +materialized: table
       +schema: intermediate
-    optimisation:
+    marts:
       +materialized: table
-      +schema: optimisation
+      +schema: marts
     dashboard:
       +materialized: table
       +schema: dashboard

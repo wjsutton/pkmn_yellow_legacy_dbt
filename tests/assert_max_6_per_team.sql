@@ -4,6 +4,6 @@ SELECT
     run_name,
     game_stage,
     COUNT(*) as team_size
-FROM {{ ref('opt_recommended_teams') }}
+FROM {{ ref('mart_recommended_teams') }}
 GROUP BY run_name, game_stage
 HAVING COUNT(*) > 6

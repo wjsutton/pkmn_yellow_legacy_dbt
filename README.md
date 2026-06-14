@@ -68,7 +68,7 @@ Watch: How to Play Pokemon Yellow Legacy
 
 ### Key Commands
 - `dbt seed --full-refresh` -- Rebuild all seed tables from CSV
-- `dbt run --select int_battle_outcomes+` -- Rebuild battle outcomes and downstream
+- `dbt run --select mart_battle_outcomes+` -- Rebuild battle outcomes and downstream
 - `dbt test --select assert_team_beats_all_opponents` -- Run team coverage test
 - `dbt clean` -- Remove target/ and dbt_packages/ directories
 
@@ -78,10 +78,10 @@ Watch: How to Play Pokemon Yellow Legacy
 pkmn_yellow_legacy_dbt/
 ├── models/
 │   ├── staging/          # cleaned source tables (stg_*)
-│   ├── intermediate/     # core analysis models (int_*)
-│   ├── optimisation/     # team selection models (opt_*)
+│   ├── intermediate/     # core building-block models (int_*)
+│   ├── marts/            # final analytical layer: battle outcomes, costs, team selection (mart_*)
 │   ├── dashboard/        # Tableau-ready datasets (dash_*, currently disabled)
-│   └── marts/            # semantic layer: catch-domain entities & relationships
+│   └── semantic/         # semantic layer: catch-domain entities & relationships
 ├── analyses/             # ad-hoc analyses + catch_* MCP tool queries
 ├── macros/               # Gen 1 battle mechanics & utilities
 ├── seeds/                # raw CSV data files
@@ -94,29 +94,33 @@ pkmn_yellow_legacy_dbt/
 ### Data Flow
 
 ```
-Seeds (16 CSVs)
-  → Staging (16 models) -- Light cleanup of source data
-    → Intermediate (5 models) -- Core game analysis
-      → Optimisation (2 models) -- Team selection
+Seeds (CSVs)
+  → Staging (stg_*) -- Light cleanup of source data
+    → Intermediate (int_*) -- Core game analysis building blocks
+      → Marts (mart_*) -- Battle outcomes, costs & team selection
 ```
 
 ### Model Layers
 
-**Staging** -- Light cleanup of 16 seed CSV sources. Tests: unique + not_null on primary keys only.
+**Staging** -- Light cleanup of the seed CSV sources. Tests: unique + not_null on primary keys only.
 
-**Intermediate** -- 5 models answering key questions (no tests):
+**Intermediate** -- Building-block models answering key questions (no tests):
 1. `int_pokemon_availability` -- What pokemon are available at each game stage?
 2. `int_pokemon_movesets` -- What moveset could each pokemon have?
 3. `int_opponent_pokemon` -- What opponent pokemon will we face?
 4. `int_pokemon_stats` -- What stats do all pokemon have at any level?
-5. `int_battle_outcomes` -- Who wins in a fight?
 
-**Optimisation** -- Final team selection (3 models):
-- `opt_team_performance` -- Scores each pokemon's contribution per stage
-- `opt_recommended_teams` -- Selects optimal 6-pokemon teams across 12 run variants
-- `opt_min_exp_squads` -- Smallest team that covers the stage for the least EXP (greedy set cover)
+(plus EXP source data, encounter lookup, and map/navigation helpers)
 
-**Marts** -- Semantic layer (no materialized models). `_catch_semantic.yml` declares the
+**Marts** -- Final analytical layer (6 models). Tests: max 6 per team, single-use TM uniqueness.
+- `mart_battle_outcomes` -- Who wins in a fight?
+- `mart_pkmn_level_exp` -- Per-pokemon, per-level EXP requirements and battle yields
+- `mart_stage_pokemon_costs` -- Per-stage acquisition cost of every catchable pokemon
+- `mart_team_performance` -- Scores each pokemon's contribution per stage
+- `mart_recommended_teams` -- Selects optimal 6-pokemon teams across 12 run variants
+- `mart_min_exp_squads` -- Smallest team that covers the stage for the least EXP (greedy set cover)
+
+**Semantic** -- Semantic layer (no materialized models). `_catch_semantic.yml` declares the
 catch-domain entities (`pokemon`, `game_stage`, `trainer`) and the relationships between
 `battle_outcomes`, `stage_pokemon_costs`, `pokemon_availability`, and `encounter_lookup`
 that power the `catch_*` analysis / MCP tools.
@@ -156,10 +160,10 @@ A core team-building question is: **which Pokemon gives the best chance of beati
 opponent for the least training effort?** The project answers it by scoring every
 catchable Pokemon on two axes:
 
-- **Win likelihood (y)** -- a difficulty-weighted battle score from `int_battle_outcomes`
+- **Win likelihood (y)** -- a difficulty-weighted battle score from `mart_battle_outcomes`
   (exact Gen 1 damage maths, biased toward *robust* wins to survive Gen 1's RNG). A score
   above 0 is a win; 1.0 is a clean outspeed-KO.
-- **Training cost (x)** -- `int_stage_pokemon_costs.fresh_exp_cost`: the EXP needed to raise
+- **Training cost (x)** -- `mart_stage_pokemon_costs.fresh_exp_cost`: the EXP needed to raise
   the Pokemon from its cheapest catch level to the badge's level cap. Lower = less grinding.
 
 Plotted together, the **top-left is best** (strong *and* cheap). For Badge 1 vs Brock's
@@ -191,8 +195,8 @@ tools** (designed to run as dbt MCP tools for an AI playing the game):
 | `catch_verify_encounter` | Is the wild Pokemon I just met worth keeping, or worth re-rolling? |
 | `catch_team_verify` | What is my overall team quality and opponent coverage? |
 
-The relationships between the tables behind these tools are defined in the **`marts/`
-semantic layer** (`models/marts/_catch_semantic.yml`), joined through the shared `pokemon`,
+The relationships between the tables behind these tools are defined in the **`semantic/`
+layer** (`models/semantic/_catch_semantic.yml`), joined through the shared `pokemon`,
 `game_stage`, and `trainer` entities.
 
 ## Technical Highlights
@@ -242,9 +246,9 @@ See `CLAUDE.md` for detailed development guidelines.
 ## Key Files
 
 - `CLAUDE.md` -- Project objectives, success criteria, and development guide
-- `models/optimisation/opt_recommended_teams.sql` -- Main team selection output
-- `models/optimisation/opt_team_performance.sql` -- Pokemon scoring per stage
-- `models/intermediate/int_battle_outcomes.sql` -- Battle outcome calculations
+- `models/marts/mart_recommended_teams.sql` -- Main team selection output
+- `models/marts/mart_team_performance.sql` -- Pokemon scoring per stage
+- `models/marts/mart_battle_outcomes.sql` -- Battle outcome calculations
 - `models/intermediate/int_pokemon_availability.sql` -- Pokemon availability per game stage
 - `macros/calculate_damage_rby.sql` -- Generation 1 damage formula
 

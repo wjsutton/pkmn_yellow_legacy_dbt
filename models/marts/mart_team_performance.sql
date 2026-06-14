@@ -1,4 +1,4 @@
--- opt_team_performance: Merge pokemon performance scoring, trainer difficulty analysis, and TM assignments
+-- mart_team_performance: Merge pokemon performance scoring, trainer difficulty analysis, and TM assignments
 -- Absorbs int_trainer_difficulty logic + opt_pokemon_performance_by_stage + opt_tm_assignments
 
 -- === Trainer Difficulty (formerly int_trainer_difficulty) ===
@@ -17,31 +17,15 @@ WITH trainer_battle_difficulty AS (
         COUNT(CASE WHEN BA.battle_score < 0.3 THEN 1 END) as very_hard_matchups,
         COUNT(CASE WHEN BA.player_move_single_use_tm = 1 AND BA.battle_score >= 0.6 THEN 1 END) as tm_dependent_solutions,
         COUNT(CASE WHEN BA.player_move_single_use_tm = 0 AND BA.battle_score >= 0.6 THEN 1 END) as natural_solutions
-    FROM {{ ref('int_battle_outcomes') }} BA
+    FROM {{ ref('mart_battle_outcomes') }} BA
     GROUP BY BA.game_stage, BA.trainer, BA.is_mini_boss
 ),
 
 difficulty_classification AS (
     SELECT
         TBD.*,
-        CASE
-            WHEN TBD.avg_battle_score < 0.25 THEN 'Extreme'
-            WHEN TBD.avg_battle_score < 0.35 THEN 'Very Hard'
-            WHEN TBD.avg_battle_score < 0.5 THEN 'Hard'
-            WHEN TBD.avg_battle_score < 0.65 THEN 'Medium'
-            WHEN TBD.excellent_counters <= 2 AND TBD.good_counters <= 5 THEN 'Requires Specific Counter'
-            ELSE 'Easy'
-        END as difficulty_rating,
-        ROUND(
-            (
-                (1 - TBD.avg_battle_score) * 4 +
-                CASE WHEN TBD.excellent_counters = 0 THEN 2 ELSE 0 END +
-                CASE WHEN TBD.good_counters <= 2 THEN 1 ELSE 0 END +
-                CASE WHEN TBD.is_mini_boss = 1 THEN 1 ELSE 0 END +
-                CASE WHEN TBD.tm_dependent_solutions > TBD.natural_solutions THEN 1 ELSE 0 END +
-                CASE WHEN TBD.min_battle_score < 0.2 THEN 1 ELSE 0 END
-            ), 1
-        ) as difficulty_score
+        {{ trainer_difficulty_rating(prefix='TBD.') }} as difficulty_rating,
+        {{ trainer_difficulty_score(prefix='TBD.') }} as difficulty_score
     FROM trainer_battle_difficulty TBD
 ),
 
@@ -64,7 +48,7 @@ battle_matchups AS (
             PARTITION BY BA.player_pkmn_id, BA.trainer_pkmn_id
             ORDER BY BA.battle_score DESC
         ) as move_rank
-    FROM {{ ref('int_battle_outcomes') }} BA
+    FROM {{ ref('mart_battle_outcomes') }} BA
     LEFT JOIN difficulty_classification DR
         ON BA.trainer = DR.trainer
 ),
@@ -202,7 +186,7 @@ tm_battle_data AS (
             PARTITION BY BA.player_pkmn_id, BA.trainer_pkmn_id
             ORDER BY BA.battle_score DESC
         ) as move_rank
-    FROM {{ ref('int_battle_outcomes') }} BA
+    FROM {{ ref('mart_battle_outcomes') }} BA
     INNER JOIN team_candidates TC ON BA.player_pkmn_id = TC.player_pkmn_id
         AND BA.game_stage = TC.game_stage
     WHERE BA.player_move_single_use_tm = 1

@@ -23,7 +23,7 @@ SELECT
     NULL::VARCHAR            AS performance_tier,
     evolution_note,
     SUM(exp_needed) OVER ()  AS team_total_exp
-FROM {{ ref('opt_min_exp_squads') }}
+FROM {{ ref('mart_min_exp_squads') }}
 WHERE run_name = '{{ run_name }}' AND game_stage = '{{ badge }}'
 
 UNION ALL
@@ -39,7 +39,7 @@ SELECT
     performance_tier,
     evolution_note,
     NULL::INT                AS team_total_exp
-FROM {{ ref('opt_recommended_teams') }}
+FROM {{ ref('mart_recommended_teams') }}
 WHERE run_name = '{{ run_name }}' AND game_stage = '{{ badge }}'
 
 ORDER BY strategy, slot

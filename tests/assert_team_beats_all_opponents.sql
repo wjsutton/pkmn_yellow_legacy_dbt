@@ -9,8 +9,8 @@ WITH team_vs_opponents AS (
         BO.trainer_pkmn_id,
         BO.trainer_pokemon,
         BO.player_victory
-    FROM {{ ref('opt_recommended_teams') }} RT
-    INNER JOIN {{ ref('int_battle_outcomes') }} BO
+    FROM {{ ref('mart_recommended_teams') }} RT
+    INNER JOIN {{ ref('mart_battle_outcomes') }} BO
         ON RT.game_stage = BO.game_stage
         AND RT.player_pkmn_id = BO.player_pkmn_id
     WHERE

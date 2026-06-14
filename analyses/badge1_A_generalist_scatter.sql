@@ -5,8 +5,8 @@
 -- Poliwag (a Brock specialist).
 --
 -- Scenario: Badge_1, Keep Pikachu, Jolteon rival.
---   x = exp_to_cap   (int_stage_pokemon_costs.fresh_exp_cost, lower = less grind)
---   y = route_score  (opt_team_performance.route_score = sum of best battle_score
+--   x = exp_to_cap   (mart_stage_pokemon_costs.fresh_exp_cost, lower = less grind)
+--   y = route_score  (mart_team_performance.route_score = sum of best battle_score
 --                     per opponent, weighted up for mini-bosses; the model's own
 --                     whole-route quality measure)
 
@@ -18,8 +18,8 @@ SELECT
     c.fresh_exp_cost AS exp_to_cap, -- x-axis: grind cost to Lv.12
     c.catch_level,
     c.is_traded
-FROM {{ ref('opt_team_performance') }} tp
-LEFT JOIN {{ ref('int_stage_pokemon_costs') }} c
+FROM {{ ref('mart_team_performance') }} tp
+LEFT JOIN {{ ref('mart_stage_pokemon_costs') }} c
     ON c.pokemon = tp.player_pokemon
    AND c.game_stage = tp.game_stage
 WHERE tp.game_stage = 'Badge_1'

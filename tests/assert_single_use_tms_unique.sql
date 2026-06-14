@@ -5,7 +5,7 @@ SELECT
     RT.game_stage,
     RT.assigned_tm_move,
     COUNT(*) as times_assigned
-FROM {{ ref('opt_recommended_teams') }} RT
+FROM {{ ref('mart_recommended_teams') }} RT
 INNER JOIN {{ ref('stg_moves_tmhm_locations') }} TL
     ON RT.assigned_tm_move = TL.move
 WHERE RT.assigned_tm_move <> 'None'

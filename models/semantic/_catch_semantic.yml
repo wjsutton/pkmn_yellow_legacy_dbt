@@ -43,7 +43,7 @@ semantic_models:
       Per-stage acquisition cost of every catchable Pokemon: the EXP needed to
       train it from its cheapest catch level up to that stage's level cap, plus
       catch level and trade status. The "cost" side of the quality-vs-EXP trade-off.
-    model: ref('int_stage_pokemon_costs')
+    model: ref('mart_stage_pokemon_costs')
     defaults:
       agg_time_dimension: game_data_date
 

@@ -2,7 +2,7 @@
 -- Grain: one row per (run_name, game_stage, team_type, pokemon)
 
 WITH run_variants AS (
-    {{ generate_run_variants(ref('opt_team_performance')) }}
+    {{ generate_run_variants(ref('mart_team_performance')) }}
 ),
 
 -- Recommended team (ranks 1-6, already variant-aware)
@@ -25,10 +25,10 @@ recommended AS (
         rt.team_quality,
         rt.evolution_note,
         'recommended' AS team_type
-    FROM {{ ref('opt_recommended_teams') }} rt
+    FROM {{ ref('mart_recommended_teams') }} rt
 ),
 
--- Backup options: stage_rank 7+ from opt_team_performance, cross-joined with variants
+-- Backup options: stage_rank 7+ from mart_team_performance, cross-joined with variants
 -- Exclude pokemon already on the recommended team for that variant
 backup_candidates AS (
     SELECT
@@ -44,16 +44,16 @@ backup_candidates AS (
         COALESCE(tp.assigned_tm_move, 'None') AS assigned_tm_move,
         COALESCE(tp.tms_allocated, 0) AS tms_allocated,
         {{ generate_variant_description('rv.rival_type', 'rv.keep_pikachu', 'rv.no_legends') }} AS variant_description
-    FROM {{ ref('opt_team_performance') }} tp
+    FROM {{ ref('mart_team_performance') }} tp
     CROSS JOIN run_variants rv
     WHERE rv.game_stage = tp.game_stage
       AND tp.stage_rank BETWEEN 7 AND 18
       -- Filter legendaries per variant
-      AND (rv.no_legends = 0 OR tp.player_pokemon NOT IN ('Moltres', 'Articuno', 'Zapdos', 'Mewtwo', 'Mew'))
+      AND (rv.no_legends = 0 OR NOT {{ is_legendary('tp.player_pokemon') }})
       -- Exclude pokemon already on the recommended team for that variant
       AND NOT EXISTS (
           SELECT 1
-          FROM {{ ref('opt_recommended_teams') }} rt
+          FROM {{ ref('mart_recommended_teams') }} rt
           WHERE rt.run_name = rv.run_name
             AND rt.game_stage = rv.game_stage
             AND rt.player_pokemon = tp.player_pokemon
@@ -114,7 +114,7 @@ min_exp AS (
         NULL::VARCHAR AS team_quality,
         mes.evolution_note,
         'min_exp' AS team_type
-    FROM {{ ref('opt_min_exp_squads') }} mes
+    FROM {{ ref('mart_min_exp_squads') }} mes
 ),
 
 -- Union all three team types
@@ -126,7 +126,7 @@ all_teams AS (
     SELECT * FROM min_exp
 ),
 
--- EXP data from int_stage_pokemon_costs (for recommended/backup)
+-- EXP data from mart_stage_pokemon_costs (for recommended/backup)
 exp_data_stage AS (
     SELECT
         pokemon,
@@ -134,7 +134,7 @@ exp_data_stage AS (
         fresh_exp_cost,
         is_traded,
         catch_level
-    FROM {{ ref('int_stage_pokemon_costs') }}
+    FROM {{ ref('mart_stage_pokemon_costs') }}
 ),
 
 -- Min-exp has its own EXP data
@@ -149,7 +149,7 @@ min_exp_data AS (
         exp_status,
         is_traded,
         coverage_pct
-    FROM {{ ref('opt_min_exp_squads') }}
+    FROM {{ ref('mart_min_exp_squads') }}
 ),
 
 -- Catch locations with map coordinates

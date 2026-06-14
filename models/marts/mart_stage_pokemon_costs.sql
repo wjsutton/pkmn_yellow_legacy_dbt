@@ -1,4 +1,4 @@
--- int_stage_pokemon_costs: What does each pokemon cost at each game stage?
+-- mart_stage_pokemon_costs: What does each pokemon cost at each game stage?
 -- Pre-computes EXP costs and coverage metrics for squad optimization.
 -- For each pokemon, finds the cheapest catch option per stage (highest catch level, trade bonus).
 
@@ -58,9 +58,9 @@ pokemon_best_option AS (
     INNER JOIN catch_options co
         ON co.initial_pokemon = pas.initial_pokemon
         AND co.available_from_stage_num <= gs.stage_num
-    INNER JOIN {{ ref('int_pkmn_level_exp') }} exp_cap
+    INNER JOIN {{ ref('mart_pkmn_level_exp') }} exp_cap
         ON exp_cap.pokemon = pas.pokemon AND exp_cap.level = gs.level_cap
-    INNER JOIN {{ ref('int_pkmn_level_exp') }} exp_catch
+    INNER JOIN {{ ref('mart_pkmn_level_exp') }} exp_catch
         ON exp_catch.pokemon = pas.pokemon AND exp_catch.level = co.encounter_level
     QUALIFY ROW_NUMBER() OVER (
         PARTITION BY pas.pokemon, pas.game_stage
@@ -89,7 +89,7 @@ coverage_summary AS (
         COUNT(DISTINCT trainer_pkmn_id) as total_opponents_faced,
         COUNT(DISTINCT CASE WHEN player_victory = 1 THEN trainer_pkmn_id END) as opponents_beaten,
         COUNT(DISTINCT CASE WHEN player_victory = 1 AND player_move_single_use_tm = 0 THEN trainer_pkmn_id END) as opponents_beaten_no_tm
-    FROM {{ ref('int_battle_outcomes') }}
+    FROM {{ ref('mart_battle_outcomes') }}
     GROUP BY game_stage, player_pokemon
 )
 

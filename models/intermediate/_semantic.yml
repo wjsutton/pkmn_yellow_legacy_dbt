@@ -126,7 +126,7 @@ semantic_models:
     description: |
       Pokemon-vs-Pokemon matchup calculations using Gen 1 damage formulas.
       Connects player Pokemon to opponent Pokemon with battle scores.
-    model: ref('int_battle_outcomes')
+    model: ref('mart_battle_outcomes')
     defaults:
       agg_time_dimension: game_data_date
 

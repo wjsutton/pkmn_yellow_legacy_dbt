@@ -21,8 +21,8 @@ Runs support parameters:
 5. Staging layer tests: only unique and not_null on primary keys
 6. Each team has a maximum of 6 pokemon; single-use TMs can only be assigned once per team (verified by dbt test)
 7. The intermediate layer should have no tests
-8. Only 5 folders in models/ (staging, intermediate, optimisation, dashboard, marts) with no files outside of folders
-9. Fewer files in the final layer than the intermediate layer
+8. Only 5 folders in models/ (staging, intermediate, marts, dashboard, semantic) with no files outside of folders
+9. Fewer files in the final layer (marts) than the intermediate layer
 
 ## Tools & Environment
 - **Database**: DuckDB
@@ -53,16 +53,20 @@ Each iteration is a fresh context. Your only memory is:
 - `CLAUDE.md` (overall object and success criteria)
 
 ## Architecture (5 folders)
-- **staging/**: Light cleanup of 15 seed CSV sources. Tests: unique + not_null on primary keys only.
-- **intermediate/**: 5 models answering key questions (no tests):
+- **staging/**: Light cleanup of the seed CSV sources. Tests: unique + not_null on primary keys only.
+- **intermediate/**: Building-block models (no tests) answering key questions:
   1. What pokemon are available at each game stage? (catchable, trades, evolution by level/stone)
   2. What moveset could each pokemon have? (level-up moves, TMs, HMs at level cap)
   3. What opponent pokemon will we face? (trainer rosters with movesets)
   4. What stats do all pokemon have at any level? (Gen 1 stat formulas)
-  5. Who wins in a fight? (battle outcome calculations using macros)
-- **optimisation/**: Final team selection (fewer files than intermediate). Tests: max 6 per team, single-use TM uniqueness.
-- **dashboard/**: Tableau-ready datasets (3 models). Tests: unique + not_null on surrogate keys, accepted values.
-- **marts/**: Semantic layer (no materialized models). Semantic models defining the catch domain -- entities (`pokemon`, `game_stage`, `trainer`) and the relationships between battle_outcomes, stage_pokemon_costs, pokemon_availability, and encounter_lookup -- that power the `catch_*` analytics / MCP tools.
+  Plus EXP source data, encounter lookup, and map/navigation helpers consumed by the marts layer.
+- **marts/**: Final analytical layer (fewer files than intermediate). Materialized models:
+  - `mart_battle_outcomes` -- who wins in a fight? (battle outcome calculations using macros)
+  - `mart_pkmn_level_exp`, `mart_stage_pokemon_costs` -- per-level EXP and per-stage acquisition cost
+  - `mart_team_performance`, `mart_recommended_teams`, `mart_min_exp_squads` -- team selection / optimisation
+  Tests: max 6 per team, single-use TM uniqueness.
+- **dashboard/**: Tableau-ready datasets (3 models, currently `+enabled: false` in dbt_project.yml). Tests: unique + not_null on surrogate keys, accepted values.
+- **semantic/**: Semantic layer (no materialized models). The `_catch_semantic.yml` view defines the catch domain -- entities (`pokemon`, `game_stage`, `trainer`) and the relationships between battle_outcomes, stage_pokemon_costs, pokemon_availability, and encounter_lookup -- that power the `catch_*` analytics / MCP tools. (Additional semantic models / metrics live alongside the layers they describe in `intermediate/_semantic.yml`, `marts/_semantic.yml`, and `dashboard/_semantic.yml`.)
 
 ## Implementation Plan
 See PROGRESS.md for the full restructuring plan and progress.

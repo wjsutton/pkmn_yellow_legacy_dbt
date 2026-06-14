@@ -4,7 +4,7 @@
 -- a Pokemon is on the frontier if nothing else is both cheaper (<= EXP) AND
 -- stronger (>= quality). The frontier IS your shortlist.
 --
--- quality = opt_team_performance.route_score: the model's own DIFFICULTY-weighted
+-- quality = mart_team_performance.route_score: the model's own DIFFICULTY-weighted
 -- whole-route score. Beating a hard fight (Brock) is worth far more than beating
 -- an easy one -- which is why Mankey (beats Brock) clearly tops Pikachu here, even
 -- though a flat win-count would call them a tie. (Same measure as Option A.)
@@ -16,8 +16,8 @@ WITH with_cost AS (
         tp.player_pokemon,
         ROUND(tp.route_score, 2) AS quality,
         c.fresh_exp_cost AS exp_to_cap
-    FROM {{ ref('opt_team_performance') }} tp
-    LEFT JOIN {{ ref('int_stage_pokemon_costs') }} c
+    FROM {{ ref('mart_team_performance') }} tp
+    LEFT JOIN {{ ref('mart_stage_pokemon_costs') }} c
         ON c.pokemon = tp.player_pokemon AND c.game_stage = tp.game_stage
     WHERE tp.game_stage = 'Badge_1'
 )
