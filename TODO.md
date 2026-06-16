@@ -68,6 +68,9 @@ is a genuinely strong batch model whose richest assets are invisible to the agen
   `int_progression_gates` (HM/key-item requirements per warp/route) so it knows if a route is
   CUT/SURF-locked; promote move effects to a typed `stg_move_effects` (status/stat-stage/
   multiturn) instead of `LIKE '%sleep%'` on free text in `recommend_catch_move`.
+  (2026-06-15: the immediate bug — effect text uses a non-breaking space so the `LIKE` never
+  matched — is patched in `recommend_catch_move` via `REPLACE(effect, chr(160), ' ')`; the
+  typed `stg_move_effects` model is still the durable fix.)
 - [ ] **`int_battle_outcomes` assumes player at the stage level cap** — an under-levelled party
   is told it wins fights it loses. Two-track it: keep the cap table for planning; serve
   in-battle decisions from a live-level macro. Document the cap assumption in the model

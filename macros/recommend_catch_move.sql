@@ -45,9 +45,11 @@ move_data AS (
         ms.hits,
         ps.stat_used,
         -- Detect status from effect text
+        -- effect text uses a non-breaking space (chr 160) between words, e.g.
+        -- 'Puts the target to\xa0sleep.' — normalise it so the LIKE patterns match.
         CASE
-            WHEN LOWER(ms.effect) LIKE '%puts the target to sleep%' THEN 'SLEEP'
-            WHEN LOWER(ms.effect) LIKE '%paralyzes the target%' THEN 'PARALYSIS'
+            WHEN REPLACE(LOWER(ms.effect), chr(160), ' ') LIKE '%puts the target to sleep%' THEN 'SLEEP'
+            WHEN REPLACE(LOWER(ms.effect), chr(160), ' ') LIKE '%paralyzes the target%' THEN 'PARALYSIS'
             ELSE NULL
         END AS status_type,
         -- Is this a pure status move (no damage)?
