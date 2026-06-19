@@ -27,7 +27,7 @@ Runs support parameters:
 ## Tools & Environment
 - **Database**: DuckDB
 - **Framework**: dbt (data build tool) with dbt-duckdb adapter
-- **Virtual Environment**: `env/Scripts/` (Python, dbt, duckdb executables)
+- **Virtual Environment**: `.venv/Scripts/` (Python, dbt, duckdb executables)
 - **MCP Server**: dbt MCP server available for column lineage queries
 - **Macros**: Gen 1 battle mechanics (calculate_damage_rby, calculate_hp_rby, calculate_stat_rby, calculate_battle_outcome), run variant generation, TM efficiency
 
@@ -38,12 +38,14 @@ When working on this dbt project, use these skills from the dbt plugin:
 - `dbt:fetching-dbt-docs` -- when looking up dbt features or syntax
 
 ## Key Commands
-- `env/Scripts/python data/create_database.py` -- recreate the DuckDB database
-- `env/Scripts/dbt seed` -- load seed CSV data
-- `env/Scripts/dbt run` -- build all models
-- `env/Scripts/dbt test` -- run data quality tests
-- `env/Scripts/dbt run --select <model_name>` -- run a specific model
-- `env/Scripts/dbt compile` -- compile SQL without running
+- `.venv/Scripts/python data/create_database.py` -- recreate the DuckDB database
+- `.venv/Scripts/python scripts/extract_map_tiles.py` -- regenerate nav_map_tiles/tileset/metadata seeds from the ROM disassembly
+- `.venv/Scripts/python scripts/extract_map_warps.py` -- regenerate nav_map_warps seed (warp_events + edge connections) from the ROM disassembly
+- `.venv/Scripts/dbt seed` -- load seed CSV data
+- `.venv/Scripts/dbt run` -- build all models
+- `.venv/Scripts/dbt test` -- run data quality tests
+- `.venv/Scripts/dbt run --select <model_name>` -- run a specific model
+- `.venv/Scripts/dbt compile` -- compile SQL without running
 
 ## Memory Between Iterations
 
