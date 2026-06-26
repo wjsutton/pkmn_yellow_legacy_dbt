@@ -68,7 +68,7 @@ semantic_models:
       Run-variant aware for all 12 run configurations.
     config:
       enabled: false
-    model: ref('dash_trainer_counters')
+    model: ref('dash_team_counters')
     defaults:
       agg_time_dimension: game_data_date
 

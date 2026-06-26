@@ -7,7 +7,7 @@
     {{ trainer_difficulty_rating(prefix='TBD.') }}.
 
     Canonical definition shared by mart_team_performance, mart_recommended_teams,
-    and dash_trainer_counters (previously copy-pasted in all three).
+    and dash_team_counters (previously copy-pasted in all three).
 #}
 {% macro trainer_difficulty_rating(prefix='') %}
     CASE

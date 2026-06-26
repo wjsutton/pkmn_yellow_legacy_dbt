@@ -39,6 +39,20 @@ METADATA_CSV = SEEDS_DIR / "nav_map_metadata.csv"
 WARP_EVENT_RE = re.compile(r"warp_event\s+(-?\d+),\s*(-?\d+),\s*(\w+),\s*(\w+)")
 CONNECTION_RE = re.compile(r"connection\s+(\w+),\s*(\w+),\s*(\w+),\s*(-?\d+)")
 
+# `IF DEF(_DEBUG) ... ENDC` blocks hold debug-only warps (e.g. RedsHouse2F warping to
+# MT_MOON_B2F / SILPH_CO_11F) that don't exist in a normal build — strip them before parsing.
+# ponytail: assumes these blocks don't nest (true for map object files).
+DEBUG_BLOCK_RE = re.compile(r"IF DEF\(_DEBUG\).*?ENDC", re.DOTALL)
+
+# warp_event destinations use the disassembly's original constants, but MAP_DIMENSIONS / the
+# seeds use Yellow-Legacy display names. Without this, warps to/from these maps are dropped
+# (`dest not in events`), which left PLAYERS_HOUSE_1F with no exits at all.
+DEST_CONST_ALIASES = {
+    "REDS_HOUSE_1F": "PLAYERS_HOUSE_1F",
+    "REDS_HOUSE_2F": "PLAYERS_HOUSE_2F",
+    "BLUES_HOUSE": "RIVALS_HOUSE",
+}
+
 # Map-name floor suffixes used to detect same-building stairs warps.
 FLOOR_SUFFIX_RE = re.compile(r"_(B?\d+F|ROOF|ELEVATOR)$")
 
@@ -75,11 +89,12 @@ def parse_warp_events(const: str) -> list[tuple[int, int, str, int]]:
     text = fetch(f"data/maps/objects/{blk}.asm")
     if text is None:
         return []
+    text = DEBUG_BLOCK_RE.sub("", text)
     events = []
     for x, y, dest, wid in WARP_EVENT_RE.findall(text):
         if not wid.isdigit():
             continue  # non-numeric warp id (rare/unsupported) -- skip
-        events.append((int(x), int(y), dest, int(wid)))
+        events.append((int(x), int(y), DEST_CONST_ALIASES.get(dest, dest), int(wid)))
     return events
 
 

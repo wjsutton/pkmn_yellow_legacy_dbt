@@ -170,7 +170,11 @@ models:
           description: "Detailed TM investment recommendation"
 
   - name: mart_recommended_teams
-    description: "Optimal 6-pokemon teams per game stage with 12 run variants (3 rival types x 2 pikachu x 2 legendary)."
+    description: "Optimal 6-pokemon teams per game stage with 12 run variants (3 rival types x 2 pikachu x 2 legendary). Grain: one row per (run_name, game_stage, player_pkmn_id) -- a plain SELECT of any column needs no GROUP BY."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [run_name, game_stage, player_pkmn_id]
     columns:
         - name: run_name
           description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
@@ -190,6 +194,10 @@ models:
           description: "Pokemon team member identifier"
         - name: player_pokemon
           description: "Pokemon species name"
+        - name: player_pkmn_level
+          description: "Target/recommended level for this pokemon at this game stage = the stage level cap (the level to reach for the matchups). Sourced from mart_battle_outcomes.player_pkmn_level."
+          tests:
+            - not_null
         - name: team_rank
           description: "Position in team (1-6, 1 = primary member)"
         - name: pokemon_score

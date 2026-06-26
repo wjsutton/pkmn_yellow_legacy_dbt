@@ -1,5 +1,9 @@
--- dash_trainer_counters: Trainer difficulty + top 5 counters per opponent pokemon.
+-- dash_team_counters: Trainer difficulty + top 5 counters per opponent pokemon.
+-- Drill-down for "this opponent is tough -> who counters it -> where to catch them".
 -- Grain: one row per (run_name, game_stage, trainer_pkmn_id, counter_rank)
+-- Connect to dash_team_battles on (run_name, game_stage, trainer) and dash_team_catch
+-- on (game_stage, counter_pokemon = pokemon) in Tableau.
+{{ config(enabled=true) }}
 
 WITH run_variants AS (
     {{ generate_run_variants(ref('mart_battle_outcomes')) }}
@@ -97,30 +101,6 @@ top_counters AS (
     SELECT * FROM counter_ranks WHERE counter_rank <= 5
 ),
 
--- Catch locations: earliest catch location per pokemon per stage with map coordinates
-catch_locations AS (
-    SELECT
-        pa.pokemon,
-        pa.game_stage,
-        ml.display_name AS catch_display_name,
-        pa.encounter_level AS catch_level,
-        ROW_NUMBER() OVER (
-            PARTITION BY pa.pokemon, pa.game_stage
-            ORDER BY pa.earliest_route ASC, pa.encounter_level DESC NULLS LAST
-        ) AS loc_rank
-    FROM {{ ref('int_pokemon_availability') }} pa
-    LEFT JOIN {{ ref('stg_map_location_groups') }} mlg
-        ON mlg.game_route_map = pa.map
-    LEFT JOIN {{ ref('stg_map_locations') }} ml
-        ON ml.map = mlg.map_location
-    WHERE pa.availability_type = 'Catchable'
-        AND pa.encounter_level IS NOT NULL
-),
-
-best_catch AS (
-    SELECT * FROM catch_locations WHERE loc_rank = 1
-),
-
 -- Pokemon types
 pkmn_types AS (
     SELECT pokemon, type1, type2
@@ -184,26 +164,28 @@ SELECT
     tc.player_turns_to_ko,
     tc.opponent_move,
     tc.opponent_turns_to_ko,
-    bc.catch_display_name,
-    bc.catch_level,
     en.evolution_note AS counter_evolution_note,
     ot.opponent_type1,
     ot.opponent_type2,
     ct.type1 AS counter_type1,
-    ct.type2 AS counter_type2
+    ct.type2 AS counter_type2,
+    -- strategy split: is this counter part of the damage / ease build for this run + stage?
+    COALESCE(rost.on_damage_team, 0) AS on_damage_team,
+    COALESCE(rost.on_ease_team, 0)   AS on_ease_team
 FROM variant_trainers vt
 INNER JOIN top_counters_deduped tc
     ON tc.game_stage = vt.game_stage
     AND tc.trainer = vt.trainer
-LEFT JOIN best_catch bc
-    ON bc.pokemon = tc.counter_pokemon
-    AND bc.game_stage = tc.game_stage
 LEFT JOIN _evo_notes en
     ON en.pokemon = tc.counter_pokemon
 LEFT JOIN opponent_types ot
     ON ot.pokemon = tc.trainer_pokemon
 LEFT JOIN pkmn_types ct
     ON ct.pokemon = tc.counter_pokemon
+LEFT JOIN {{ ref('dash_team_roster') }} rost
+    ON rost.run_name = vt.run_name
+    AND rost.game_stage = vt.game_stage
+    AND rost.pokemon = tc.counter_pokemon
 -- Filter counter pokemon by legendary/pikachu rules per variant
 WHERE (vt.no_legends = 0 OR tc.is_legendary = 0)
 ORDER BY vt.run_name, vt.game_stage, vt.difficulty_rank, tc.trainer_pkmn_id, tc.counter_rank

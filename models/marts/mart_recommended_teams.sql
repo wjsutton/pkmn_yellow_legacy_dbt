@@ -233,6 +233,17 @@ team_metadata AS (
             avg_team_score, total_team_tms, team_size
         FROM final_teams
     ) t
+),
+
+-- Target level per pokemon = the stage level cap (constant per game_stage + pkmn_id
+-- in mart_battle_outcomes, where player_pkmn_level is derived from level_cap).
+stage_levels AS (
+    SELECT
+        game_stage,
+        player_pkmn_id,
+        MAX(player_pkmn_level) AS player_pkmn_level
+    FROM {{ ref('mart_battle_outcomes') }}
+    GROUP BY game_stage, player_pkmn_id
 )
 
 SELECT
@@ -245,6 +256,7 @@ SELECT
     FT.exclude_trainers,
     FT.player_pkmn_id,
     FT.player_pokemon,
+    LVL.player_pkmn_level,
     FT.team_rank,
     FT.adjusted_team_score as pokemon_score,
     FT.performance_tier,
@@ -266,5 +278,7 @@ SELECT
 FROM final_teams FT
 INNER JOIN team_metadata TM ON FT.run_name = TM.run_name
     AND FT.game_stage = TM.game_stage
+LEFT JOIN stage_levels LVL ON LVL.game_stage = FT.game_stage
+    AND LVL.player_pkmn_id = FT.player_pkmn_id
 LEFT JOIN _evo_notes EN ON EN.pokemon = FT.player_pokemon
 ORDER BY FT.run_name, FT.game_stage, FT.team_rank

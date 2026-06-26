@@ -1,6 +1,60 @@
 version: 2
 
 models:
+  - name: dash_team_roster
+    description: "Candidate POOL for the interactive team-builder: every obtainable pokemon per run + game stage with acquisition attributes (exp_to_cap, catch_cost_exp, total_acquisition_exp, catch location, evolution_note) and on_damage_team / on_ease_team flags marking the precomputed picks. Tableau party-picker source."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: run_name + game_stage + pokemon"
+        tests:
+          - unique
+          - not_null
+
+  - name: dash_team_winmatrix
+    description: "Candidate x opponent win-value matrix (win_value > 0). Marginal-gain engine for the Tableau team-builder: team_best = MAX(win_value) over party, marginal_gain = SUM(GREATEST(0, win_value - team_best))."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: run_name + game_stage + pokemon + trainer_pkmn_id"
+        tests:
+          - unique
+          - not_null
+
+  - name: dash_team_opponents
+    description: "Full opponent set per run + game stage (rival-filtered) -- the denominator for weighted team-quality coverage in Tableau."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: run_name + game_stage + trainer_pkmn_id"
+        tests:
+          - unique
+          - not_null
+
+  - name: dash_team_battles
+    description: "Best lineup member to beat each opponent, split by strategy (damage vs ease): one row per opponent per strategy with the chosen mon, best move, turns-to-KO both ways, exp-to-cap. Filter on [strategy]. Connects to dash_team_roster on (run_name, game_stage, pokemon)."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: run_name + game_stage + strategy + trainer_pkmn_id"
+        tests:
+          - unique
+          - not_null
+
+  - name: dash_team_catch
+    description: "Where to catch each roster member (or pre-evolution) per game stage: area, route, levels, reachability. Connects to dash_team_roster on (game_stage, pokemon)."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: game_stage + target_pokemon + catch_species + map_name + area"
+        tests:
+          - unique
+          - not_null
+
+  - name: dash_team_moves
+    description: "Recommended moveset per roster member by run + game stage, with acquisition (level-up level or TM/HM location). Connects to dash_team_roster on (run_name, game_stage, pokemon)."
+    columns:
+      - name: surrogate_key
+        description: "Surrogate key: run_name + game_stage + pokemon + move"
+        tests:
+          - unique
+          - not_null
+
   - name: dash_map_pokemon
     description: "Map locations with catchable pokemon and key catch flags for Tableau map visualization."
     columns:
@@ -38,8 +92,8 @@ models:
       - name: is_key_catch
         description: "1 if this pokemon appears on any recommended or min-exp team"
 
-  - name: dash_trainer_counters
-    description: "Trainer difficulty rankings with top 5 counter pokemon per opponent, run-variant aware."
+  - name: dash_team_counters
+    description: "Trainer difficulty rankings with top 5 counter pokemon per opponent (and where to catch them), run-variant aware. Drill-down: tough opponent -> counters -> catch location."
     columns:
       - name: surrogate_key
         description: "Surrogate key: run_name + trainer_pkmn_id + counter_pokemon"

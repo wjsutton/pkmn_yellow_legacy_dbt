@@ -10,7 +10,7 @@
     {{ trainer_difficulty_score(prefix='TBD.') }}.
 
     Canonical definition shared by mart_team_performance, mart_recommended_teams,
-    and dash_trainer_counters. Includes the min_battle_score penalty (+1 when a
+    and dash_team_counters. Includes the min_battle_score penalty (+1 when a
     trainer has a near-unwinnable matchup) in all three; this term had previously
     drifted into mart_team_performance only.
 #}
