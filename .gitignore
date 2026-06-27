@@ -19,3 +19,4 @@ dbt_internal_packages/
 data/pkmn_yellow_legacy.db.tmp/*
 data/exports/*
 docs/*
+data/pkmn_yellow_legacy.db
