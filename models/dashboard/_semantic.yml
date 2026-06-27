@@ -1,0 +1,126 @@
+semantic_models:
+  - name: team_builder
+    description: |
+      Combined recommended, backup, and min-exp teams with EXP analysis
+      and catch locations. Tableau-ready consumption layer.
+    config:
+      enabled: false
+    model: ref('dash_team_builder')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: team_entry
+        type: primary
+        expr: surrogate_key
+      - name: pokemon
+        type: foreign
+        expr: pokemon
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: pokemon_name
+        type: categorical
+        expr: pokemon
+      - name: run_name
+        type: categorical
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: rival_type
+        type: categorical
+      - name: team_type
+        type: categorical
+      - name: slot_order
+        type: categorical
+        expr: cast(slot_order as varchar)
+      - name: performance_tier
+        type: categorical
+      - name: role_on_team
+        type: categorical
+      - name: variant_description
+        type: categorical
+      - name: evolution_note
+        type: categorical
+      - name: exp_status
+        type: categorical
+
+    measures:
+      - name: dash_team_performance_score
+        description: "Overall team performance score"
+        expr: team_performance_score
+        agg: max
+      - name: total_exp_needed
+        description: "Total EXP needed across all team members"
+        expr: exp_needed
+        agg: sum
+
+  - name: trainer_counters
+    description: |
+      Trainer difficulty rankings with top 5 counter Pokemon per opponent.
+      Run-variant aware for all 12 run configurations.
+    config:
+      enabled: false
+    model: ref('dash_team_counters')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: counter_record
+        type: primary
+        expr: surrogate_key
+      - name: pokemon
+        type: foreign
+        expr: counter_pokemon
+      - name: trainer
+        type: foreign
+        expr: trainer
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: trainer_name
+        type: categorical
+        expr: trainer
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: run_name
+        type: categorical
+      - name: trainer_pokemon
+        type: categorical
+      - name: counter_pokemon_name
+        type: categorical
+        expr: counter_pokemon
+      - name: counter_rank
+        type: categorical
+        expr: cast(counter_rank as varchar)
+      - name: difficulty_rating
+        type: categorical
+      - name: counter_move
+        type: categorical
+      - name: variant_description
+        type: categorical
+
+    measures:
+      - name: counter_avg_battle_score
+        description: "Average battle score for counter matchups"
+        expr: battle_score
+        agg: average
+      - name: avg_difficulty_score
+        description: "Average trainer difficulty score"
+        expr: difficulty_score
+        agg: average

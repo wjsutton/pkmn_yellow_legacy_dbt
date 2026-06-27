@@ -1,10 +1,10 @@
-encounter_area,map
-GameCorner,Route7
-Gift,OaksLab
-GoodRod,Route11
-Grass,OaksLab
-OldRod,Route22
-Overworld,OaksLab
-SuperRod,Route12
-Surf,Route19
-Trade,OaksLab
+area,encounter_method,tile_type,required_badge_count,required_item,area_order,representative_location
+Grass,Walk in tall grass,grass,0,,1,OAKS_LAB
+Surf,Use Surf on water,water,5,HM03,2,ROUTE_19
+OldRod,Use Old Rod facing water,water,0,OLD_ROD,3,VIRIDIAN_MART
+GoodRod,Use Good Rod facing water,water,2,GOOD_ROD,4,VERMILION_OLD_ROD_HOUSE
+SuperRod,Use Super Rod facing water,water,4,SUPER_ROD,5,ROUTE_12_SUPER_ROD_HOUSE
+GameCorner,Buy with coins at Game Corner,,3,,6,GAME_CORNER
+Trade,Trade with NPC,,0,,7,OAKS_LAB
+Gift,Talk to NPC / pick up item ball,,0,,8,OAKS_LAB
+Overworld,Interact with overworld sprite,,0,,9,OAKS_LAB

@@ -1,0 +1,548 @@
+version: 2
+
+models:
+  - name: stg_game_route_order
+    description: "Game progression route order mapping with next gym information for level cap determination"
+    columns:
+        - name: map
+          description: "Route or location name (e.g. Route1, PalletTown, VictoryRoad)"
+          tests:
+            - unique
+            - not_null
+        - name: game_order
+          description: "Sequential numeric order of progression through the game (0 = earliest, higher = later)"
+        - name: next_gym
+          description: "Next gym leader or game stage that follows this route (e.g. Badge_1, Badge_2, Elite 4, Rematches)"
+
+  - name: stg_map_locations
+    description: "Geographic coordinate data for map locations used in Tableau visualizations"
+    columns:
+        - name: map
+          description: "Route or location name matching stg_game_route_order"
+          tests:
+            - unique
+            - not_null
+        - name: x_coordinate
+          description: "X coordinate for map visualization"
+        - name: y_coordinate
+          description: "Y coordinate for map visualization"
+        - name: location_type
+          description: "Type of location (route, town, dungeon, corners, etc.)"
+        - name: display_name
+          description: "Human-readable display name for the location (null for map corners)"
+
+  - name: stg_map_location_groups
+    description: "Mapping of game route order entries to map visualization points"
+    columns:
+        - name: game_route_map
+          description: "Map value from game_route_order (e.g. MtMoon1F, PokemonTower3F)"
+          tests:
+            - unique
+            - not_null
+        - name: map_location
+          description: "Canonical map location identifier matching map_locations.map"
+
+  - name: stg_moves_from_level_up
+    description: "Pokemon moves learned through level progression with power and accuracy stats"
+    columns:
+        - name: id
+          description: "Unique identifier generated from pokedex number, level, and move"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: pkmn_level
+          description: "Level at which the pokemon learns this move"
+        - name: move
+          description: "Move name"
+        - name: type
+          description: "Move name (legacy seed column, duplicates the move column)"
+        - name: power
+          description: "Base power of the move (N/A for status moves)"
+        - name: accuracy
+          description: "Move accuracy as a decimal (e.g. 1 for 100%, 0.85 for 85%)"
+        - name: pp
+          description: "Power Points - number of times move can be used"
+
+  - name: stg_moves_from_tmhm
+    description: "Pokemon moves available through TM (Technical Machine) or HM (Hidden Machine) items"
+    columns:
+        - name: id
+          description: "Unique identifier generated from pokedex number and move"
+          tests:
+            - unique
+            - not_null
+        - name: pokedex
+          description: "Pokedex number of the pokemon"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: move
+          description: "TM/HM move name"
+
+  - name: stg_moves_phys_spec
+    description: "Move type classification for physical vs special attack stat usage in Generation 1 mechanics"
+    columns:
+        - name: id
+          description: "Unique identifier for each move type"
+          tests:
+            - unique
+            - not_null
+        - name: type
+          description: "Move type (Fire, Water, Electric, etc.)"
+        - name: stat_used
+          description: "Which stat the move uses for damage calculation (Attack for physical, Special for special)"
+
+  - name: stg_moves_stats
+    description: "Comprehensive move statistics including power, accuracy, PP, and special effects"
+    columns:
+        - name: id
+          description: "Unique identifier generated from move name"
+          tests:
+            - unique
+            - not_null
+        - name: move
+          description: "Move name"
+        - name: effect
+          description: "Move effect description (e.g. 'Inflicts regular damage', 'May cause paralysis')"
+        - name: type
+          description: "Move type (Fire, Water, Electric, etc.)"
+        - name: power
+          description: "Base power of the move (N/A for status moves, KO for OHKO moves)"
+        - name: acc
+          description: "Move accuracy as percentage or decimal"
+        - name: pp
+          description: "Power Points - number of times move can be used"
+        - name: hits
+          description: "Number of hits for multi-hit moves"
+        - name: hits_min
+          description: "Minimum number of hits for variable multi-hit moves"
+        - name: hits_max
+          description: "Maximum number of hits for variable multi-hit moves"
+        - name: critical_hit_ratio
+          description: "Critical hit ratio modifier for moves with increased crit chance"
+
+  - name: stg_moves_tmhm_locations
+    description: "Location and availability information for TM and HM items throughout the game"
+    columns:
+        - name: tm_or_hm
+          description: "TM or HM identifier (e.g. TM01, HM01)"
+          tests:
+            - unique
+            - not_null
+        - name: move
+          description: "Move taught by this TM/HM"
+        - name: type
+          description: "Move type (Normal, Fire, Water, etc.)"
+        - name: locations
+          description: "Comma-separated list of locations where this TM/HM can be found"
+        - name: price
+          description: "Purchase price at shops (N/A if not purchasable)"
+        - name: earliest_nearest_route
+          description: "First route where this TM/HM can be obtained"
+        - name: repurchase_route
+          description: "Route where this TM can be repurchased (defaults to earliest_nearest_route if not specified)"
+
+  - name: stg_moves_type_effectiveness 
+    description: "Type effectiveness multipliers for Generation 1 battle calculations (e.g. Fire vs Water = 0.5x)"
+    columns:
+        - name: id
+          description: "Unique identifier for each type matchup"
+          tests:
+            - unique
+            - not_null
+        - name: attacking_type
+          description: "Type of the attacking move"
+        - name: defending_type
+          description: "Type of the defending pokemon"
+        - name: damage_modifier
+          description: "Damage multiplier (0=immune, 0.5=not very effective, 1=normal, 2=super effective)"
+
+  - name: stg_pkmn_encounter_area_order
+    description: "Metadata about encounter area types including method, tile type, and prerequisites"
+    columns:
+        - name: id
+          description: "Unique identifier for each encounter area type"
+          tests:
+            - unique
+            - not_null
+        - name: area
+          description: "Encounter area type (Grass, Surf, OldRod, GoodRod, SuperRod, GameCorner, Trade, Gift, Overworld)"
+        - name: encounter_method
+          description: "Human-readable instruction for triggering this encounter type"
+        - name: tile_type
+          description: "Nav tile type to navigate to (grass, water, or null)"
+        - name: required_badge_count
+          description: "Minimum badges needed to use this encounter method"
+        - name: required_item
+          description: "Item required (e.g., OLD_ROD, HM03)"
+        - name: area_order
+          description: "Game progression order when this encounter method becomes available"
+        - name: representative_location
+          description: "Route where this encounter method first becomes available"
+
+  - name: stg_pkmn_encounter_areas
+    description: "Wild pokemon encounter data with levels and probability rates for each area"
+    columns:
+        - name: id
+          description: "Unique identifier for each pokemon encounter record"
+          tests:
+            - unique
+            - not_null
+        - name: map
+          description: "Route or location name"
+        - name: level
+          description: "Level of wild pokemon encounter"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: area
+          description: "Specific encounter area (Grass, Water, Cave, etc.)"
+        - name: encounter_probability
+          description: "Probability of encountering this pokemon (summed across all encounter methods)"
+
+  - name: stg_pkmn_evolutions
+    description: "Pokemon evolution relationships with level and stone requirements from seed data"
+    columns:
+        - name: id
+          description: "Unique identifier for each evolution relationship"
+          tests:
+            - unique
+            - not_null
+        - name: pokedex
+          description: "Pokedex number of the base (pre-evolution) pokemon"
+        - name: pokemon
+          description: "Base pokemon species name (the pokemon that evolves)"
+        - name: evolution_level
+          description: "Level required for evolution (null for stone evolutions)"
+        - name: evolution_stone
+          description: "Stone required for evolution (null for level evolutions)"
+        - name: evolution_name
+          description: "Evolved pokemon species name (null for final evolution forms)"
+
+  - name: stg_pkmn_stats
+    description: "Base stats for all pokemon species including HP, Attack, Defence, Special, Speed, and typing"
+    columns:
+        - name: pokedex
+          description: "Pokedex number (unique identifier for each pokemon species)"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: hp
+          description: "Base HP stat used in Generation 1 stat calculations"
+        - name: attack
+          description: "Base Attack stat for physical move damage"
+        - name: defence
+          description: "Base Defence stat for physical damage reduction"
+        - name: special
+          description: "Base Special stat for special attack and defence in Generation 1"
+        - name: speed
+          description: "Base Speed stat for turn order determination"
+        - name: total
+          description: "Base stat total (sum of all base stats)"
+        - name: type1
+          description: "Primary pokemon type"
+        - name: type2
+          description: "Secondary pokemon type (null for single-type pokemon)"
+
+  - name: stg_trainers_gym_leaders
+    description: "Gym leader pokemon rosters with levels, moves, and battle context information"
+    columns:
+        - name: id
+          description: "Unique identifier for each gym leader pokemon"
+          tests:
+            - unique
+            - not_null
+        - name: trainer
+          description: "Gym leader name (Brock, Misty, Lt. Surge, etc.)"
+        - name: pkmn_id
+          description: "Unique identifier for this specific pokemon instance"
+        - name: location
+          description: "Gym location where battle takes place"
+        - name: nearest_route
+          description: "Route used for game progression order mapping"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: pkmn_level
+          description: "Pokemon level in gym battle"
+        - name: move
+          description: "One of the pokemon's four moves (unpivoted in downstream models)"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering within each pokemon"
+        - name: notes
+          description: "Additional context or special notes about this battle"
+
+  - name: stg_trainers_legendary
+    description: "Legendary trainer battles (primarily Smith encounters) with pokemon rosters and context"
+    columns:
+        - name: id
+          description: "Unique identifier for each legendary trainer pokemon"
+          tests:
+            - unique
+            - not_null
+        - name: trainer
+          description: "Legendary trainer name (primarily Smith from Pokemon Yellow Legacy)"
+        - name: pkmn_id
+          description: "Unique identifier for this specific pokemon instance"
+        - name: location
+          description: "Location where legendary battle takes place"
+        - name: nearest_route
+          description: "Route used for game progression order mapping"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage when battle occurs"
+        - name: pkmn_level
+          description: "Pokemon level in legendary battle"
+        - name: move
+          description: "One of the pokemon's four moves (unpivoted in downstream models)"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering within each pokemon"
+        - name: notes
+          description: "Additional context about this legendary encounter (always null)"
+
+  - name: stg_item_stone_locations
+    description: "Evolution stone locations with game progression order, covering overworld items and shop purchases"
+    columns:
+        - name: id
+          description: "Unique identifier generated from stone type, map, and source type"
+          tests:
+            - unique
+            - not_null
+        - name: stone_type
+          description: "Type of evolution stone (Moon, Fire, Water, Thunder, Leaf)"
+        - name: map
+          description: "Map location where the stone is found"
+        - name: quantity
+          description: "Number available (1 for overworld items, unlimited for shops)"
+        - name: source_type
+          description: "How the stone is obtained (Hidden, Visible, Shop)"
+        - name: game_order
+          description: "Sequential game progression order from stg_game_route_order"
+        - name: next_gym
+          description: "Next gym stage after this location"
+
+  - name: stg_trainers_mandatory
+    description: "Mandatory trainer battles that must be completed for game progression (rivals, story battles)"
+    columns:
+        - name: id
+          description: "Unique identifier for each mandatory trainer pokemon move"
+          tests:
+            - unique
+            - not_null
+        - name: trainer
+          description: "Trainer name (rival encounters, story trainers, etc.)"
+        - name: pkmn_id
+          description: "Unique identifier for this specific pokemon instance"
+        - name: location
+          description: "Location where mandatory battle takes place"
+        - name: nearest_route
+          description: "Route used for game progression order mapping"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage when battle occurs"
+        - name: pkmn_level
+          description: "Pokemon level in mandatory battle"
+        - name: move
+          description: "One of the pokemon's four moves"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering"
+        - name: notes
+          description: "Additional context about this mandatory encounter"
+
+  - name: stg_trainers_non_mandatory
+    description: "Optional route trainers that can be battled but are not required for game progression"
+    columns:
+        - name: id
+          description: "Unique identifier for each non-mandatory trainer pokemon move"
+          tests:
+            - unique
+            - not_null
+        - name: trainer
+          description: "Trainer name (e.g. Route3_Youngster_1, SaffronGym_Psychic_2)"
+        - name: pkmn_id
+          description: "Unique identifier for this specific pokemon instance"
+        - name: location
+          description: "Location where battle takes place"
+        - name: nearest_route
+          description: "Route used for game progression order mapping"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage when battle is available"
+        - name: pkmn_level
+          description: "Pokemon level in battle"
+        - name: move
+          description: "One of the pokemon's four moves"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering"
+        - name: notes
+          description: "Additional context (always null for non-mandatory)"
+
+  - name: stg_trainers_postgame
+    description: "Postgame trainer battles including gym rematches, E4 rematches, and special trainers"
+    columns:
+        - name: id
+          description: "Unique identifier for each postgame trainer pokemon move"
+          tests:
+            - unique
+            - not_null
+        - name: trainer
+          description: "Trainer name (e.g. Brock_Rematch, Professor_Oak_1)"
+        - name: pkmn_id
+          description: "Unique identifier for this specific pokemon instance"
+        - name: location
+          description: "Location where battle takes place"
+        - name: nearest_route
+          description: "Route used for game progression order mapping"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage (Rematches for all postgame)"
+        - name: pkmn_level
+          description: "Pokemon level in postgame battle"
+        - name: move
+          description: "One of the pokemon's four moves"
+        - name: move_number
+          description: "Sequential move number (1-4) assigned by alphabetical ordering"
+        - name: notes
+          description: "Additional context (always null for postgame)"
+
+  - name: stg_pkmn_growth_rates
+    description: "Growth rate classification for each pokemon species (fast, medium_fast, medium_slow, slow)"
+    columns:
+        - name: pokedex
+          description: "Pokedex number (unique identifier for each pokemon species)"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: growth_rate
+          description: "Experience growth rate category (fast, medium_fast, medium_slow, slow)"
+
+  - name: stg_pkmn_base_exp
+    description: "Base experience yield when a pokemon species is defeated in battle"
+    columns:
+        - name: pokedex
+          description: "Pokedex number (unique identifier for each pokemon species)"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: base_exp
+          description: "Base experience points yielded when this pokemon is defeated"
+
+  - name: stg_pkmn_catch_rates
+    description: "Species capture rate (0-255 byte from the Gen-1 base stats; higher = easier to catch). Sourced from data/pokemon/base_stats/*.asm in the Pokemon Yellow Legacy disassembly."
+    columns:
+        - name: pokedex
+          description: "Pokedex number (unique identifier for each pokemon species)"
+          tests:
+            - unique
+            - not_null
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: catch_rate
+          description: "Base capture rate (3-255). Used as catch_rate/256 baseline probability before HP/status/ball modifiers in the Gen-1 capture formula."
+
+  - name: stg_pkmn_trades
+    description: "In-game NPC trades (Pokemon Yellow Legacy, data/events/trades.asm). To GET the traded species you must GIVE (and therefore catch/obtain) the give_pokemon. Excludes the two upstream-unused trades (Beedrill, Mew)."
+    columns:
+        - name: get_pokemon
+          description: "Species received from the trade (unique identifier - each species is offered by one trade)"
+          tests:
+            - unique
+            - not_null
+        - name: give_pokemon
+          description: "Species the player must hand over to receive get_pokemon"
+        - name: nickname
+          description: "The fixed nickname the received pokemon comes with"
+
+  - name: stg_pkmn_encounter_rates
+    description: "Per-map wild encounter rate byte from the Pokemon Yellow Legacy disassembly (data/wild/maps/*.asm). P(encounter per eligible step) = rate/256."
+    columns:
+        - name: map
+          description: "Route or location name (UPPER_SNAKE, matches stg_pkmn_encounter_areas.map). Static encounters (gifts, Mewtwo) are excluded as they are not step-based."
+          tests:
+            - unique
+            - not_null
+        - name: grass_rate
+          description: "Grass tile encounter rate byte (0-255); P(encounter/step) = grass_rate/256. Null for water-only maps (e.g. Route19/20)."
+        - name: water_rate
+          description: "Water tile encounter rate byte (0-255); P(encounter/step) = water_rate/256. Null for maps with no surf/fishing encounters."
+
+  - name: stg_nav_map_metadata
+    description: "Map properties for navigation - dimensions, type, and parent area for maps from Pallet Town through Pewter City"
+    columns:
+        - name: map_name
+          description: "Memory reader enum name for the map (e.g. PLAYERS_HOUSE_1F)"
+          tests:
+            - unique
+            - not_null
+        - name: map_id_hex
+          description: "Hex map ID from the ROM"
+        - name: width
+          description: "Map width in blocks/steps (matches memory reader coordinates)"
+        - name: height
+          description: "Map height in blocks/steps (matches memory reader coordinates)"
+        - name: area_type
+          description: "Type of area (town, city, route, indoor, dungeon, gate)"
+        - name: parent_area
+          description: "Parent town/city this indoor location belongs to (null for routes/dungeons)"
+
+  - name: stg_nav_map_warps
+    description: "Door, staircase, and gate connections between maps with exact warp coordinates"
+    columns:
+        - name: id
+          description: "Surrogate key from from_map, from_x, from_y, to_map"
+          tests:
+            - unique
+            - not_null
+        - name: from_map
+          description: "Source map name (memory reader enum)"
+        - name: from_x
+          description: "X coordinate of the warp on the source map (-1 for map edges)"
+        - name: from_y
+          description: "Y coordinate of the warp on the source map (-1 for map edges)"
+        - name: to_map
+          description: "Destination map name (memory reader enum)"
+        - name: to_x
+          description: "X coordinate of arrival on the destination map (-1 for map edges)"
+        - name: to_y
+          description: "Y coordinate of arrival on the destination map (-1 for map edges)"
+        - name: warp_type
+          description: "Type of warp (door, stairs, gate, edge)"
+        - name: notes
+          description: "Description of the warp connection"
+
+  - name: stg_nav_route_waypoints
+    description: "Ordered step-by-step walkthrough from title screen through defeating Brock (Badge 1)"
+    columns:
+        - name: route_section
+          description: "Section of the walkthrough (title_screen, bedroom_exit, pallet_to_oak, etc.)"
+        - name: step_order
+          description: "Sequential step number for ordering"
+          tests:
+            - unique
+            - not_null
+        - name: map_name
+          description: "Map where this step takes place (NONE for menu/title steps)"
+        - name: target_x
+          description: "Target X coordinate to walk to (-1 for non-positional actions)"
+        - name: target_y
+          description: "Target Y coordinate to walk to (-1 for non-positional actions)"
+        - name: action
+          description: "Action type (press, move, use_warp, interact, battle, wait, checkpoint)"
+        - name: action_detail
+          description: "Specific instructions for this step"
+        - name: expected_result
+          description: "What should happen after completing this step"
+        - name: notes
+          description: "Additional tips or context"
+

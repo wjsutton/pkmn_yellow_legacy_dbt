@@ -1,0 +1,274 @@
+version: 2
+
+models:
+  - name: mart_run_variants
+    description: "Run-variant definitions per game stage (run_name-keyed), materialised from the generate_run_variants macro. The 'prefilter' data model: lets AI fast-path queries select a variant's opponent-exclusion rules with a plain JOIN on (run_name, game_stage) instead of compiling Jinja, so they run on the persistent DuckDB connection (~13ms) rather than dbt show (~4s). Grain: one row per (run_name, game_stage)."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [run_name, game_stage]
+    columns:
+        - name: run_name
+          description: "Run variant identifier, format Rival_Pikachu_Legendary (e.g. Jolteon_KeepPikachu_NoLedges)"
+        - name: game_stage
+          description: "Game progression stage (Badge_1 .. Badge_8 / Elite 4)"
+        - name: rival_type
+          description: "Rival eeveelution for this run (Jolteon, Flareon, Vaporeon)"
+        - name: pikachu_variant
+          description: "KeepPikachu | NoPikachu"
+        - name: legendary_variant
+          description: "Ledges (allow legendaries) | NoLedges (exclude)"
+        - name: keep_pikachu
+          description: "Flag: Pikachu required in team (1) or not (0)"
+        - name: no_legends
+          description: "Flag: legendaries excluded (1) or allowed (0)"
+        - name: exclude_rival_patterns
+          description: "Array of SQL LIKE patterns for rival trainers to exclude in this variant"
+        - name: exclude_trainers
+          description: "Array of exact trainer names to exclude in this variant"
+
+  - name: mart_battle_outcomes
+    description: "Who wins in a fight? Battle outcome calculations using Gen 1 damage formulas for all player vs trainer matchups."
+    columns:
+        - name: matchup_id
+          description: "Unique identifier for each battle matchup"
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: player
+          description: "Always 'Player' - identifies the player side"
+        - name: trainer
+          description: "Name of the opposing trainer"
+        - name: is_mini_boss
+          description: "Flag indicating if the trainer is a mini boss (1) or regular trainer (0). Mini bosses include gym leaders, rivals, Elite 4, and other boss trainers."
+        - name: player_pkmn_id
+          description: "Unique identifier for player pokemon instance"
+        - name: player_pokemon
+          description: "Player pokemon species name"
+        - name: player_pkmn_level
+          description: "Player pokemon level (based on level cap)"
+        - name: player_pkmn_move
+          description: "Best move available to player pokemon for this matchup"
+        - name: player_pkmn_move_origin
+          description: "Source of the move (level-up, repurchasable-tm, single-use-tm)"
+        - name: player_move_single_use_tm
+          description: "Flag indicating if player move requires single-use TM (1) or not (0)"
+        - name: trainer_pkmn_id
+          description: "Unique identifier for trainer pokemon instance"
+        - name: trainer_pokemon
+          description: "Trainer pokemon species name"
+        - name: trainer_pkmn_level
+          description: "Trainer pokemon level"
+        - name: trainer_pkmn_move
+          description: "Best move available to trainer pokemon"
+        - name: trainer_speed
+          description: "Trainer pokemon calculated speed stat"
+        - name: player_speed
+          description: "Player pokemon calculated speed stat"
+        - name: player_attempts_to_ko
+          description: "Number of moves required for player to KO trainer pokemon"
+        - name: trainer_attempts_to_ko
+          description: "Number of moves required for trainer to KO player pokemon"
+        - name: battle_score
+          description: "Calculated battle outcome score (0-1 scale, 1 = complete player advantage)"
+        - name: player_victory
+          description: "Binary flag indicating if the player wins this matchup (1 = win, 0 = loss or draw). Derived from battle_score > 0."
+
+  - name: mart_pkmn_level_exp
+    description: "Per-pokemon, per-level experience data including EXP requirements and battle yields for wild and trainer encounters."
+    columns:
+        - name: pokedex
+          description: "Pokedex number"
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: growth_rate
+          description: "Experience growth rate category"
+        - name: base_exp
+          description: "Base experience points yielded when defeated"
+        - name: level
+          description: "Pokemon level (1-100)"
+        - name: total_exp_at_level
+          description: "Cumulative experience points at this level"
+        - name: exp_to_next_level
+          description: "Experience points needed to advance to the next level (NULL at level 100)"
+        - name: wild_exp_yield
+          description: "EXP gained from defeating this pokemon as a wild encounter at this level"
+        - name: trainer_exp_yield
+          description: "EXP gained from defeating this pokemon as a trainer battle at this level"
+
+  - name: mart_stage_pokemon_costs
+    description: "What does each pokemon cost at each game stage? Pre-computes EXP costs and coverage metrics for squad optimization. Finds the cheapest catch option per stage (highest catch level, trade bonus)."
+    columns:
+        - name: pokemon
+          description: "Pokemon species name"
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: level_cap
+          description: "Maximum level allowed at this game stage"
+        - name: stage_num
+          description: "Numeric ordering of game stages"
+        - name: catch_level
+          description: "Best catch level for this pokemon at this stage (highest available)"
+        - name: is_traded
+          description: "Whether the cheapest option is a trade (1) or wild catch (0)"
+        - name: growth_rate
+          description: "Experience growth rate category"
+        - name: fresh_exp_cost
+          description: "EXP needed to train from catch level to level cap (with trade discount if applicable)"
+        - name: opponents_beaten
+          description: "Number of distinct trainer pokemon this pokemon can beat at this stage"
+        - name: opponents_beaten_no_tm
+          description: "Number of opponents beaten without single-use TMs"
+        - name: total_opponents_faced
+          description: "Total number of distinct trainer pokemon faced at this stage"
+
+  - name: mart_team_performance
+    description: "Pokemon performance scores by game stage with difficulty-weighted battle contributions, TM assignments via greedy algorithm, and team ranking."
+    columns:
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: player_pkmn_id
+          description: "Unique identifier for player pokemon instance"
+        - name: player_pokemon
+          description: "Pokemon species name"
+        - name: team_selection_score
+          description: "Overall score for team selection consideration"
+        - name: route_score
+          description: "Performance score for this game stage route"
+        - name: base_score
+          description: "Sum of all battle scores before penalties"
+        - name: total_penalty
+          description: "Total penalty applied for difficulty thresholds"
+        - name: performance_tier
+          description: "Performance classification (Elite, Strong, Solid, Viable, Weak)"
+        - name: tm_efficiency
+          description: "TM usage classification (TM-Free, TM-Efficient, TM-Dependent, TM-Heavy)"
+        - name: tm_dependent_wins
+          description: "Number of victories requiring single-use TMs"
+        - name: battles_as_best_option
+          description: "Number of battles where this pokemon is the best team option"
+        - name: total_matchups
+          description: "Total number of trainer battles analysed"
+        - name: mini_boss_best_matchups
+          description: "Number of mini boss battles where this pokemon is best"
+        - name: avg_mini_boss_score
+          description: "Average battle score against mini bosses"
+        - name: stage_rank
+          description: "Ranking among all pokemon for this stage (1 = best)"
+        - name: team_recommendation
+          description: "Team inclusion recommendation (Core Team Candidate, Backup Option, Situational Use)"
+        - name: assigned_tm_move
+          description: "Primary TM move assigned to this pokemon (None if no TMs)"
+        - name: tms_allocated
+          description: "Total number of TMs allocated to this pokemon"
+        - name: tms_denied
+          description: "Number of TM requests denied due to conflicts"
+        - name: allocated_tm_list
+          description: "Complete list of TMs allocated to this pokemon"
+        - name: tm_allocation_efficiency
+          description: "TM allocation efficiency classification"
+        - name: tm_usage_recommendation
+          description: "Detailed TM investment recommendation"
+
+  - name: mart_recommended_teams
+    description: "Optimal 6-pokemon teams per game stage with 12 run variants (3 rival types x 2 pikachu x 2 legendary). Grain: one row per (run_name, game_stage, player_pkmn_id) -- a plain SELECT of any column needs no GROUP BY."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [run_name, game_stage, player_pkmn_id]
+    columns:
+        - name: run_name
+          description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
+        - name: game_stage
+          description: "Game progression stage"
+        - name: rival_type
+          description: "Rival pokemon type for this run variant (Jolteon, Vaporeon, Flareon)"
+        - name: keep_pikachu
+          description: "Flag indicating if Pikachu is required in team (1) or not (0)"
+        - name: no_legends
+          description: "Flag indicating if legendary pokemon are excluded (1) or allowed (0)"
+        - name: exclude_rival_patterns
+          description: "JSON array of SQL LIKE patterns for rival trainers to exclude in this variant"
+        - name: exclude_trainers
+          description: "JSON array of trainer names to exclude in this variant (e.g. Rival_2 for early rival fight)"
+        - name: player_pkmn_id
+          description: "Pokemon team member identifier"
+        - name: player_pokemon
+          description: "Pokemon species name"
+        - name: player_pkmn_level
+          description: "Target/recommended level for this pokemon at this game stage = the stage level cap (the level to reach for the matchups). Sourced from mart_battle_outcomes.player_pkmn_level."
+          tests:
+            - not_null
+        - name: team_rank
+          description: "Position in team (1-6, 1 = primary member)"
+        - name: pokemon_score
+          description: "Individual pokemon performance score"
+        - name: performance_tier
+          description: "Pokemon performance classification"
+        - name: tm_efficiency_rating
+          description: "TM usage efficiency rating"
+        - name: assigned_tm_move
+          description: "Primary TM move assigned to this pokemon"
+        - name: tms_allocated
+          description: "Number of TMs allocated to this pokemon"
+        - name: is_pikachu
+          description: "Flag indicating if this pokemon is Pikachu (1) or not (0)"
+        - name: team_performance_score
+          description: "Overall team performance score"
+        - name: team_quality
+          description: "Team quality classification"
+        - name: tm_investment_level
+          description: "Team TM investment classification"
+        - name: total_team_tms
+          description: "Total TMs used by entire team"
+        - name: role_on_team
+          description: "Pokemon's role within the team"
+        - name: evolution_note
+          description: "How to evolve this pokemon from its base form (NULL for base forms)"
+        - name: variant_description
+          description: "Human-readable description of run variant including rival type"
+
+  - name: mart_min_exp_squads
+    description: "Minimum-EXP teams via cheapest-counter assignment. Assigns each opponent to its cheapest counter, ranks pokemon by coverage/cost efficiency, and computes EXP earned from trainer battles."
+    columns:
+        - name: game_stage
+          description: "Game progression stage (Badge_1, Badge_2, etc.)"
+        - name: run_name
+          description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
+        - name: rival_type
+          description: "Rival pokemon type for this run variant (Jolteon, Vaporeon, Flareon)"
+        - name: keep_pikachu
+          description: "Flag indicating if Pikachu is required in team (1) or not (0)"
+        - name: no_legends
+          description: "Flag indicating if legendary pokemon are excluded (1) or allowed (0)"
+        - name: pokemon
+          description: "Pokemon species name on the team"
+        - name: pick_order
+          description: "Order in which pokemon was selected (1 = first pick)"
+        - name: is_traded
+          description: "Whether this pokemon was obtained via in-game trade (1) or caught wild (0)"
+        - name: exp_needed
+          description: "Actual EXP needed to level from catch to stage cap (not trade-discounted)"
+        - name: assigned_opponents
+          description: "Number of opponents uniquely assigned to this pokemon as cheapest counter"
+        - name: total_opponents_beaten
+          description: "Total distinct opponents this pokemon can beat (including shared coverage)"
+        - name: total_team_exp
+          description: "Sum of fresh EXP costs for entire team at this stage"
+        - name: opponents_covered
+          description: "Total distinct opponents beaten by the team"
+        - name: total_opponents
+          description: "Total distinct opponents in this stage/variant"
+        - name: coverage_pct
+          description: "Percentage of opponents covered by the team"
+        - name: exp_earned
+          description: "Actual EXP earned from defeating assigned trainer pokemon (includes 1.5x trade bonus for traded pokemon)"
+        - name: battles_fought
+          description: "Number of trainer pokemon defeated by this team member"
+        - name: exp_deficit
+          description: "EXP needed minus EXP earned; negative means pokemon earns more than needed"
+        - name: exp_status
+          description: "Grinding classification: Traded at cap, Caught at cap, Self-sustaining, Needs minor grinding, Needs significant grinding"
+        - name: evolution_note
+          description: "How to evolve this pokemon from its base form (NULL for base forms)"
+        - name: variant_description
+          description: "Human-readable description of run variant"

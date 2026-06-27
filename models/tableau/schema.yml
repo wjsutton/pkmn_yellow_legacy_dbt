@@ -1,6 +1,0 @@
-version: 2
-
-models:
-  - name: tableau_map_locations
-
-  - name: tableau_toughest_fights

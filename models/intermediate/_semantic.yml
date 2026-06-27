@@ -1,0 +1,240 @@
+semantic_models:
+  - name: pokemon_availability
+    description: |
+      Which Pokemon are available at each game stage, including evolution
+      chains and catch locations. Answers availability-by-progression queries.
+    model: ref('int_pokemon_availability')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: availability_record
+        type: primary
+        expr: id
+      - name: pokemon
+        type: foreign
+        expr: pokemon
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: pokemon_name
+        type: categorical
+        expr: pokemon
+      - name: availability_type
+        type: categorical
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: map
+        type: categorical
+      - name: area
+        type: categorical
+      - name: pokemon_category
+        type: categorical
+      - name: evolution_stage
+        type: categorical
+        expr: cast(evolution_stage as varchar)
+      - name: initial_pokemon
+        type: categorical
+      - name: source
+        type: categorical
+
+    measures:
+      - name: available_pokemon_count
+        description: "Count of distinct Pokemon available at a game stage"
+        expr: pokemon
+        agg: count_distinct
+      - name: max_encounter_level
+        description: "Highest encounter level available"
+        expr: encounter_level
+        agg: max
+
+  - name: opponent_pokemon
+    description: |
+      Every trainer's full Pokemon team with movesets. Includes gym leaders
+      with explicit moves and regular trainers with level-up movesets.
+    model: ref('int_opponent_pokemon')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: trainer_pokemon_slot
+        type: primary
+        expr: pkmn_id
+      - name: pokemon
+        type: foreign
+        expr: pokemon
+      - name: trainer
+        type: foreign
+        expr: trainer
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: trainer_name
+        type: categorical
+        expr: trainer
+      - name: is_mini_boss
+        type: categorical
+        expr: cast(is_mini_boss as varchar)
+      - name: pokemon_name
+        type: categorical
+        expr: pokemon
+      - name: pkmn_level
+        type: categorical
+        expr: cast(pkmn_level as varchar)
+      - name: move_1
+        type: categorical
+      - name: move_2
+        type: categorical
+      - name: move_3
+        type: categorical
+      - name: move_4
+        type: categorical
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+
+    measures:
+      - name: trainer_team_size
+        description: "Number of Pokemon on a trainer's team"
+        expr: "1"
+        agg: sum
+      - name: trainer_avg_level
+        description: "Average level of a trainer's team"
+        expr: pkmn_level
+        agg: average
+      - name: trainer_max_level
+        description: "Highest level Pokemon on a trainer's team"
+        expr: pkmn_level
+        agg: max
+
+  - name: battle_outcomes
+    description: |
+      Pokemon-vs-Pokemon matchup calculations using Gen 1 damage formulas.
+      Connects player Pokemon to opponent Pokemon with battle scores.
+    model: ref('mart_battle_outcomes')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: matchup
+        type: primary
+        expr: matchup_id
+      - name: pokemon
+        type: foreign
+        expr: player_pokemon
+      - name: trainer
+        type: foreign
+        expr: trainer
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: player_pokemon_name
+        type: categorical
+        expr: player_pokemon
+      - name: trainer_pokemon_name
+        type: categorical
+        expr: trainer_pokemon
+      - name: trainer_name
+        type: categorical
+        expr: trainer
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: player_pkmn_move
+        type: categorical
+      - name: is_mini_boss
+        type: categorical
+        expr: cast(is_mini_boss as varchar)
+      - name: player_victory
+        type: categorical
+        expr: cast(player_victory as varchar)
+
+    measures:
+      - name: avg_battle_score
+        description: "Average battle outcome score (0-1 scale)"
+        expr: battle_score
+        agg: average
+      - name: total_victories
+        description: "Total number of player victories"
+        expr: player_victory
+        agg: sum
+      - name: total_matchups
+        description: "Total number of battle matchups"
+        expr: matchup_id
+        agg: count
+      - name: avg_player_attempts_to_ko
+        description: "Average moves needed for player to KO opponent"
+        expr: player_attempts_to_ko
+        agg: average
+
+  - name: encounter_lookup
+    description: |
+      Pre-joined encounter data for agent queries. Shows where to find any Pokemon
+      including method, tile type, badge requirements, and level ranges.
+    model: ref('int_encounter_lookup')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: encounter_record
+        type: primary
+        expr: id
+      - name: pokemon
+        type: foreign
+        expr: pokemon
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: pokemon_name
+        type: categorical
+        expr: pokemon
+      - name: map_name
+        type: categorical
+      - name: area
+        type: categorical
+      - name: encounter_method
+        type: categorical
+      - name: tile_type
+        type: categorical
+      - name: game_stage_available
+        type: categorical
+
+    measures:
+      - name: encounter_count
+        description: "Count of distinct encounter locations"
+        expr: id
+        agg: count
+      - name: max_encounter_lookup_level
+        description: "Highest encounter level in lookup"
+        expr: max_level
+        agg: max
+      - name: avg_probability
+        description: "Average encounter probability"
+        expr: total_probability
+        agg: average

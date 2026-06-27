@@ -1,0 +1,80 @@
+version: 2
+
+sources:
+  - name: yellow_legacy
+    description: Data from the game Pokemon Yellow Legacy
+    schema: raw
+    config: 
+      freshness:
+        warn_after: {count: 24, period: hour}
+        error_after: {count: 3, period: day}
+        
+      loaded_at_field: dbt_loaded_at
+
+    tables:
+      - name: game_route_order
+        description: Order of areas unlocked in the game
+
+      - name: map_locations
+        description: All locations on the Kanto map
+
+      - name: map_location_groups
+        description: Mapping of game route order entries to map location points (handles grouping of dungeon floors, etc.)
+
+      - name: moves_from_level_up
+        description: Moves Pokemon learn from leveling up
+      - name: moves_from_tmhm 
+        description: Moves Pokemon learn from TMs and HMs
+      - name: moves_phys_spec
+        description: Which moves are Physical and Special
+      - name: moves_stats
+        description: Damage and accuracy of moves
+      - name: moves_tmhm_locations
+        description: Locations of TMs and HMs
+      - name: moves_type_effectiveness
+        description: Moves effectiveness against other types
+
+      - name: pkmn_encounter_area_order
+        description: Order of areas you can encounter Pokemon
+      - name: pkmn_encounter_areas
+        description: Types of areas you can encounter Pokemon
+      - name: pkmn_evolutions
+        description: Pokemon with evolutions and methods
+      - name: pkmn_stats
+        description: Pokemon stats
+
+      - name: trainers_gym_leaders
+        description: Pokemon teams of Gym leaders
+      - name: trainers_legendary
+        description: Pokemon teams of legendary training (Craig, Weebo, Smith)
+      - name: trainers_mandatory
+        description: Pokemon teams of the mandatory trainers
+      - name: trainers_non_mandatory
+        description: Pokemon teams of optional route trainers
+      - name: trainers_postgame
+        description: Pokemon teams of postgame trainers (gym rematches, E4 rematches, special trainers)
+
+      - name: item_stone_locations
+        description: Evolution stone locations throughout the game (overworld items and shops)
+
+      - name: pkmn_growth_rates
+        description: Growth rate category for each pokemon species
+
+      - name: pkmn_base_exp
+        description: Base experience yield for each pokemon species
+
+      - name: nav_map_metadata
+        description: Map properties (dimensions, type, parent area) for navigation assistance
+
+      - name: nav_map_warps
+        description: Door, staircase, and gate connections between maps with exact coordinates
+
+      - name: nav_route_waypoints
+        description: Ordered step-by-step walkthrough from game start through beating Brock
+
+      - name: nav_map_tiles
+        description: Per-tile walkability grid for each map extracted from ASM source (tile_type, walkable, ledge_direction)
+
+      - name: nav_map_tileset
+        description: Mapping of maps to their tileset names (used for collision/grass detection)
+

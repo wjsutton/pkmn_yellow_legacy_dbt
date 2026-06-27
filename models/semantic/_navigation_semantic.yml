@@ -1,0 +1,80 @@
+# =============================================================================
+# NAVIGATION (MAP / MOVEMENT) SEMANTIC VIEW
+# Catalog + relationship map for the map-and-movement tools — the third tool
+# family alongside catch_* (_catch_semantic.yml) and recommend_* (_recommend_semantic.yml).
+# These answer "where am I, where can I go, and how do I get there": exits, walkable
+# tiles, BFS pathfinding within a map, map-to-map routing, and where to find a species.
+#
+# The `catalog key` column mirrors dbtPlaysPokemon/dbt_catalog.json (the "macros" map,
+# loaded by agent/dbt_catalog.py). Keep the two in sync.
+#
+# TOOL CATALOG
+#   tool (macro)          catalog key      answers                                   reads
+#   -------------------   --------------   ---------------------------------------   --------------------------------------------
+#   get_exit_paths        exit_paths       exits/warps from a map near (x,y),        map (metadata) + map_warps
+#                                          with the facing needed to take each
+#   get_map_tiles         map_tiles        tile coords + walkability on a map        map_tiles
+#   get_grass_tiles       grass_tiles      grass tile coords (wild-encounter seek)   map_tiles
+#   get_map_edges         map_edges        walkable adjacency edges for in-map BFS   map_pathfinding
+#   find_path             (none*)          BFS shortest path between two tiles       map_pathfinding
+#   get_map_connections   map_connections  full map-to-map adjacency list            map_connections
+#   find_nearest_mart     (none*)          nearest Poke Mart via map-graph BFS       map_connections + map (metadata)
+#   find_encounter_zone   find_encounter   where to catch a species near the player  encounter_lookup + map_tiles + evolutions
+#                                          (walks back the evo chain if needed)
+#   get_pre_evolutions    pre_evolutions   catchable pre-evolutions of a species     evolutions
+#
+#   Planner-facing (not a macro): int_navigation_guide -> catalog strategy key
+#   `navigation_guide` — the scripted title-screen-to-Brock walkthrough.
+#
+#   * find_path and find_nearest_mart are live macros that exist in the project but
+#     have NO catalog key in dbt_catalog.json. If the Python agent should call them,
+#     add them to the "macros" map there; otherwise they remain SQL-only helpers.
+#
+# SHARED SPINE
+#       map  (map_name)  — the join axis for every navigation model        <- declared below
+#
+#   ┌──────────────────────┐  map_name  ┌─────────────────────────────────────────────┐
+#   │  map (metadata:      │◄───────────│  map_tiles      (per-tile walkable/grass)     │
+#   │  dims, area_type,    │            │  map_warps      (door/stair/gate/edge links)  │
+#   │  parent_area)        │            │  map_pathfinding(walkable adjacency edges)    │
+#   │  NEW here            │            │  map_connections(map-to-map adjacency)        │
+#   └──────────────────────┘            │  navigation_guide (scripted walkthrough)      │
+#                                        └─────────────────────────────────────────────┘
+#
+# Only `map` is declared here (the spine that ties the family together). The tiles /
+# warps / pathfinding / connections / guide models are referenced by the macros above
+# but are not yet semantic models; this view documents the family and completes the
+# join axis, matching the pattern of _catch_semantic.yml and _recommend_semantic.yml.
+# =============================================================================
+
+semantic_models:
+  - name: map
+    description: |
+      Per-map metadata (the navigation spine): dimensions, area type and parent
+      town/city for each map, keyed by the memory-reader map enum (map_name). Every
+      navigation tool joins on map_name — tiles, warps, in-map pathfinding edges,
+      and the map-to-map connection graph all hang off this.
+    model: ref('stg_nav_map_metadata')
+
+    entities:
+      # named nav_map (not `map`) because `map` is already a dimension in other
+      # semantic models; MetricFlow requires each element name be one type project-wide.
+      - name: nav_map
+        type: primary
+        expr: map_name
+
+    dimensions:
+      - name: map_name
+        type: categorical
+      - name: map_id_hex
+        type: categorical
+      - name: area_type
+        type: categorical
+      - name: parent_area
+        type: categorical
+      - name: width
+        type: categorical
+        expr: cast(width as varchar)
+      - name: height
+        type: categorical
+        expr: cast(height as varchar)

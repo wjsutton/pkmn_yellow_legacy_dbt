@@ -5,7 +5,7 @@ SELECT
     player_pkmn_id,
     player_pokemon,
     COUNT(*) as move_count
-FROM {{ ref('opt_recommended_teams') }}
+FROM {{ ref('mart_recommended_teams') }}
 WHERE run_name = 'Flareon_KeepPikachu_Ledges'
     AND game_stage = 'Badge_3'
 GROUP BY ALL
