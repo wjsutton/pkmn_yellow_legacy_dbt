@@ -134,8 +134,9 @@ models:
         description: "Counter ranking (1-5, 1 = best counter)"
         tests:
           - dbt_utils.accepted_range:
-              min_value: 1
-              max_value: 5
+              arguments:
+                min_value: 1
+                max_value: 5
       - name: battle_score
         description: "Battle outcome score for this counter matchup"
       - name: counter_move
@@ -195,7 +196,8 @@ models:
         description: "Team category: recommended, backup, or min_exp"
         tests:
           - accepted_values:
-              values: ['recommended', 'backup', 'min_exp']
+              arguments:
+                values: ['recommended', 'backup', 'min_exp']
       - name: slot_order
         description: "Position within team (1-6)"
       - name: pokemon_score
