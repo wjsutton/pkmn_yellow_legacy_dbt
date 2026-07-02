@@ -722,6 +722,39 @@ def download_file(url: str, cache_path: Path) -> bytes | None:
         return None
 
 
+# Seed map names -> disassembly constant names where they differ
+# (Yellow-Legacy display names vs original Red constants; inverse of
+# extract_map_warps.DEST_CONST_ALIASES).
+SEED_TO_DISASM_ALIASES = {
+    "PLAYERS_HOUSE_1F": "REDS_HOUSE_1F",
+    "PLAYERS_HOUSE_2F": "REDS_HOUSE_2F",
+    "RIVALS_HOUSE": "BLUES_HOUSE",
+}
+
+MAP_CONST_RE = re.compile(r"map_const\s+(\w+),\s*-?\d+,\s*-?\d+\s*(?:;\s*\$([0-9A-Fa-f]+))?")
+
+
+def load_map_ids() -> dict[str, int]:
+    """Parse constants/map_constants.asm -> {map_constant: numeric id}.
+
+    IDs are sequential from const_def; each entry's `; $XX` comment is used
+    as a cross-check where present.
+    """
+    data = download_file(
+        f"{REPO_BASE}/constants/map_constants.asm",
+        CACHE_DIR / "constants_map_constants.asm",
+    )
+    if data is None:
+        raise RuntimeError("Could not fetch constants/map_constants.asm")
+    ids: dict[str, int] = {}
+    for i, (name, hex_comment) in enumerate(MAP_CONST_RE.findall(data.decode("utf-8", "replace"))):
+        if hex_comment:
+            assert int(hex_comment, 16) == i, f"{name}: sequential id {i} != comment ${hex_comment}"
+        ids[name] = i
+    assert ids, "no map_const entries parsed"
+    return ids
+
+
 def download_blk(blk_name: str) -> bytes | None:
     """Download the .blk file for a given map."""
     url = f"{REPO_BASE}/maps/{blk_name}.blk"
@@ -848,6 +881,7 @@ def main():
 
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
+    map_ids = load_map_ids()
     bst_cache: dict[str, bytes] = {}
     all_tile_rows = []
     tileset_rows = []
@@ -920,9 +954,10 @@ def main():
                 parent = city_name
                 break
 
+        map_id = map_ids[SEED_TO_DISASM_ALIASES.get(map_name, map_name)]
         metadata_rows.append({
             "map_name": map_name,
-            "map_id_hex": "",
+            "map_id_hex": f"0x{map_id:02X}",
             "width": width * 2,  # blocks -> player coordinates
             "height": height * 2,
             "area_type": area_type,

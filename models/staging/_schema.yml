@@ -486,7 +486,10 @@ models:
             - unique
             - not_null
         - name: map_id_hex
-          description: "Hex map ID from the ROM"
+          description: "Hex map ID from the ROM disassembly (constants/map_constants.asm), e.g. 0x2B. Stable join key for runtime map IDs regardless of map-name conventions."
+          tests:
+            - unique
+            - not_null
         - name: width
           description: "Map width in blocks/steps (matches memory reader coordinates)"
         - name: height
