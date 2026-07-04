@@ -46,6 +46,7 @@ When working on this dbt project, use these skills from the dbt plugin:
 - `.venv/Scripts/dbt test` -- run data quality tests
 - `.venv/Scripts/dbt run --select <model_name>` -- run a specific model
 - `.venv/Scripts/dbt compile` -- compile SQL without running
+- `.venv/Scripts/dbt run-operation check_orphan_relations` -- fail if the database holds tables not in the manifest (stale-schema guard)
 
 ## Memory Between Iterations
 

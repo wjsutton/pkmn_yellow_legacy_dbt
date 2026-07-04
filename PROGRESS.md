@@ -41,6 +41,18 @@ and split the catch semantic view into its own `semantic/` folder.
   `assert_single_use_tms_unique` pass. `assert_team_beats_all_opponents` WARNs (75 rows) —
   pre-existing, `severity='warn'`, unrelated to the move.
 
+## 2026-07-04 — Stale-schema fix (issue #15)
+
+- Root cause: `data/create_database.py` used a cwd-relative db path, so "rebuilds" run from
+  the repo root created/deleted a db in the **root** while dbt kept writing to
+  `data/pkmn_yellow_legacy.db` — stale schemas (`optimisation.*`, old `main.*`, pre-rename
+  `intermediate.*`) survived every rebuild. Path is now anchored to the script's directory.
+- New guard: `dbt run-operation check_orphan_relations` diffs `information_schema.tables`
+  against the manifest (models + seeds) and fails listing any orphans. Run it after
+  renaming/deleting models. Excludes `dbt_test__audit` (dbt's store_failures schema).
+- Verified: check flagged 52 orphans on the stale db; after clean rebuild
+  (create_database.py → seed → build) it passes with 85 relations.
+
 ### Notes / gotchas
 - The venv lives at `.venv/Scripts/` (CLAUDE.md's `env/Scripts/` reference is stale).
 - The 3 `dash_*` models are disabled via `+enabled: false` in `dbt_project.yml`, so they do
