@@ -123,6 +123,63 @@ semantic_models:
         expr: avg_mini_boss_score
         agg: average
 
+  - name: trainer_counters
+    description: |
+      Top 5 counter pokemon per opponent trainer pokemon across run variants,
+      with trainer difficulty and catch location/level for each counter.
+    model: ref('mart_trainer_counters')
+    defaults:
+      agg_time_dimension: game_data_date
+
+    entities:
+      - name: counter_slot
+        type: primary
+        expr: "run_name || '|' || game_stage || '|' || trainer_pkmn_id || '|' || cast(counter_rank as varchar)"
+      - name: pokemon
+        type: foreign
+        expr: counter_pokemon
+      - name: game_stage
+        type: foreign
+        expr: game_stage
+      - name: trainer
+        type: foreign
+        expr: trainer
+
+    dimensions:
+      - name: game_data_date
+        type: time
+        expr: "cast('2024-01-01' as date)"
+        type_params:
+          time_granularity: day
+      - name: run_name
+        type: categorical
+      - name: rival_type
+        type: categorical
+      - name: game_stage_name
+        type: categorical
+        expr: game_stage
+      - name: trainer_name
+        type: categorical
+        expr: trainer
+      - name: counter_pokemon_name
+        type: categorical
+        expr: counter_pokemon
+      - name: difficulty_rating
+        type: categorical
+      - name: counter_rank
+        type: categorical
+        expr: cast(counter_rank as varchar)
+
+    measures:
+      - name: avg_counter_battle_score
+        description: "Average battle score of listed counters"
+        expr: battle_score
+        agg: average
+      - name: counter_count
+        description: "Number of counter rows"
+        expr: "1"
+        agg: sum
+
 metrics:
   - name: available_pokemon_by_stage
     type: simple
