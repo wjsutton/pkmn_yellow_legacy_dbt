@@ -24,8 +24,9 @@ def create_database(db_path):
     except Exception as e:
         print(f"Failed to create database: {e}")
 
-# Specify the path to the database (relative to current working directory)
-db_path = 'pkmn_yellow_legacy.db'
+# Anchor to this script's directory so the db lands in data/ regardless of cwd
+# (matches profiles.yml path 'data/pkmn_yellow_legacy.db'; issue #15)
+db_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'pkmn_yellow_legacy.db')
 
 # Create the database
 create_database(db_path)
