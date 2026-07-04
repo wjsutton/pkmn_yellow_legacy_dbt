@@ -32,6 +32,9 @@ models:
     columns:
         - name: matchup_id
           description: "Unique identifier for each battle matchup"
+          tests:
+            - unique
+            - not_null
         - name: game_stage
           description: "Game progression stage (Badge_1, Badge_2, etc.)"
         - name: player

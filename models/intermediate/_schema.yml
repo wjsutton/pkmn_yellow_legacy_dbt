@@ -271,3 +271,41 @@ models:
           description: "Area type of destination map"
         - name: navigation_instruction
           description: "Human-readable instruction for using this connection"
+
+  - name: int_map_pathfinding
+    description: "Walkable tile adjacency graph per map. For each walkable tile, lists which neighboring tiles can be reached and in which direction, accounting for walls (blocked), ledges (one-way), and grass (encounter risk). Grain: one row per (map_name, from_x, from_y, direction)."
+    columns:
+        - name: map_name
+          description: "Memory reader enum name for the map, part of the composite grain"
+        - name: from_x
+          description: "X coordinate of the source tile, part of the composite grain"
+        - name: from_y
+          description: "Y coordinate of the source tile, part of the composite grain"
+        - name: from_tile_type
+          description: "Terrain type of the source tile"
+        - name: to_x
+          description: "X coordinate of the destination tile"
+        - name: to_y
+          description: "Y coordinate of the destination tile"
+        - name: to_tile_type
+          description: "Terrain type of the destination tile"
+        - name: direction
+          description: "Movement direction from source to destination (up, down, left, right), part of the composite grain"
+        - name: is_passable
+          description: "Whether this edge can be traversed (always TRUE in output; impassable ledge entries are filtered out)"
+        - name: has_encounter_risk
+          description: "Whether the destination tile is grass (wild encounter risk)"
+
+  - name: int_map_components
+    description: "Weakly-connected components of each map's walkable graph. Labels every walkable tile with a subregion_id so consumers can tell an intentional split map (e.g. ROUTE_2's north/south halves) from a genuine data hole. Components are undirected: one-way ledge drops are treated as ordinary connectivity."
+    columns:
+        - name: map_name
+          description: "Memory reader enum name for the map"
+        - name: x
+          description: "Tile X coordinate"
+        - name: y
+          description: "Tile Y coordinate"
+        - name: subregion_id
+          description: "0-based component label, stable per map (components ordered by their smallest tile)"
+        - name: component_size
+          description: "Number of walkable tiles in this tile's component"

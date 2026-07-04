@@ -477,6 +477,32 @@ models:
         - name: water_rate
           description: "Water tile encounter rate byte (0-255); P(encounter/step) = water_rate/256. Null for maps with no surf/fishing encounters."
 
+  - name: stg_nav_map_tiles
+    description: "Per-tile collision and terrain data for navigable maps -- the collision source of truth for pathfinding. One row per (map_name, x, y). Regenerated from the ROM disassembly by scripts/extract_map_tiles.py."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [map_name, x, y]
+    columns:
+        - name: map_name
+          description: "Memory reader enum name for the map (e.g. PLAYERS_HOUSE_1F), part of the composite primary key"
+          tests:
+            - not_null
+        - name: x
+          description: "Tile X coordinate (matches memory reader coordinates), part of the composite primary key"
+          tests:
+            - not_null
+        - name: y
+          description: "Tile Y coordinate (matches memory reader coordinates), part of the composite primary key"
+          tests:
+            - not_null
+        - name: tile_type
+          description: "Terrain type of the tile (e.g. path, grass, water, ledge, wall)"
+        - name: walkable
+          description: "Whether the player can stand on this tile"
+        - name: ledge_direction
+          description: "For ledge tiles, the direction the ledge can be hopped (null otherwise)"
+
   - name: stg_nav_map_metadata
     description: "Map properties for navigation - dimensions, type, and parent area for maps from Pallet Town through Pewter City"
     columns:
