@@ -179,6 +179,19 @@ models:
         - name: max_exp_to_100
           description: "Total experience points required to reach level 100 for this growth rate"
 
+  - name: int_encounter_lookup
+    description: "Where can I catch any Pokemon? Pre-joined encounter data for agent queries, one row per (pokemon, map, area)."
+    columns:
+        - name: id
+          description: "Surrogate key from pokemon, map_name, area"
+          tests:
+            - unique
+            - not_null
+        - name: nav_map_name
+          description: "Matching map name in the navigation tile data (stg_nav_map_tiles)"
+          tests:
+            - not_null
+
   - name: int_navigation_guide
     description: "Step-by-step navigation guide enriched with map dimensions, available exits, and next-step preview. Query by map_name and order by step_order."
     columns:
