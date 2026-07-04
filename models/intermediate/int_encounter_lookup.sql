@@ -113,6 +113,7 @@ aggregated AS (
 SELECT
     {{ dbt_utils.generate_surrogate_key(['pokemon', 'map_name', 'area']) }} AS id,
     pokemon,
+    {{ species_key('pokemon') }} AS species_key,
     map_name,
     area,
     min_level,

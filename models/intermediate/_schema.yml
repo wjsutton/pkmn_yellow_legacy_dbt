@@ -187,6 +187,8 @@ models:
           tests:
             - unique
             - not_null
+        - name: species_key
+          description: "Canonical join key (UPPER, alphanumeric-only) for the encounterable species. Lets the agent bind raw emulator species without string surgery (issue #17)."
         - name: nav_map_name
           description: "Matching map name in the navigation tile data (stg_nav_map_tiles)"
           tests:

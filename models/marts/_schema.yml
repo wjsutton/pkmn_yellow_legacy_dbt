@@ -268,12 +268,16 @@ models:
             - not_null
         - name: trainer_pokemon
           description: "Trainer pokemon species name"
+        - name: trainer_species_key
+          description: "Canonical join key (UPPER, alphanumeric-only) for the trainer pokemon, for agent binding without string surgery (issue #17)."
         - name: trainer_pkmn_level
           description: "Trainer pokemon level"
         - name: counter_pokemon
           description: "Player pokemon species recommended against this opponent"
           tests:
             - not_null
+        - name: counter_species_key
+          description: "Canonical join key (UPPER, alphanumeric-only) for the counter pokemon, for agent binding without string surgery (issue #17)."
         - name: counter_rank
           description: "Counter ranking per opponent pokemon (1 = best, max 5)"
           tests:
