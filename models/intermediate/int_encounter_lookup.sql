@@ -62,12 +62,18 @@ area_wild_exp AS (
 ),
 
 map_name_lookup AS (
+    -- Encounter maps and nav maps share the same underscore enum, so plain
+    -- equality works. Sole exception: the Mewtwo static encounter is tagged
+    -- CERULEAN_CAVE_B1F_MEWTWO but happens on the CERULEAN_CAVE_B1F map.
     SELECT
         r.map AS encounter_map,
         n.map_name AS nav_map_name
     FROM (SELECT DISTINCT map FROM encounters) r
-    CROSS JOIN nav_map_names n
-    WHERE UPPER(REPLACE(r.map, ' ', '')) = REPLACE(n.map_name, '_', '')
+    INNER JOIN nav_map_names n
+        ON n.map_name = CASE
+            WHEN r.map = 'CERULEAN_CAVE_B1F_MEWTWO' THEN 'CERULEAN_CAVE_B1F'
+            ELSE r.map
+        END
 ),
 
 aggregated AS (
