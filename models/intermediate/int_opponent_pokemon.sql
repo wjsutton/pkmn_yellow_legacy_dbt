@@ -67,6 +67,12 @@ WITH all_trainer_moves AS (
         move,
         move_number
     FROM {{ ref('stg_trainers_postgame') }}
+    -- Gym leader rematches appear in BOTH stg_trainers_gym_leaders and
+    -- stg_trainers_postgame with identical levels/moves. Keep the gym_leaders
+    -- copy (correct species, drives the is_mini_boss flag) and drop the
+    -- postgame duplicate, else colliding pkmn_ids fan out downstream and
+    -- break mart_battle_outcomes.matchup_id uniqueness.
+    WHERE trainer NOT IN (SELECT trainer FROM {{ ref('stg_trainers_gym_leaders') }})
 ),
 
 trainer_roster AS (
