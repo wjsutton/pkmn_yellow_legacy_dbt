@@ -227,6 +227,83 @@ models:
         - name: variant_description
           description: "Human-readable description of run variant including rival type"
 
+  - name: mart_trainer_counters
+    description: "Trainer difficulty + top 5 counter pokemon per opponent pokemon, with catch location/level for each counter. Consumed by the dbtPlaysPokemon agent planner (dbt_catalog.json 'trainer_counters'). Grain: one row per (run_name, game_stage, trainer_pkmn_id, counter_rank)."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [run_name, game_stage, trainer_pkmn_id, counter_rank]
+    columns:
+        - name: run_name
+          description: "Run variant identifier (e.g., Jolteon_NoPikachu_Ledges)"
+          tests:
+            - not_null
+        - name: rival_type
+          description: "Rival eeveelution for this run (Jolteon, Vaporeon, Flareon)"
+        - name: variant_description
+          description: "Human-readable description of run variant"
+        - name: game_stage
+          description: "Game progression stage (Badge_1 .. Badge_8, Elite 4, Rematches)"
+          tests:
+            - not_null
+            - accepted_values:
+                arguments:
+                  values: ['Badge_1', 'Badge_2', 'Badge_3', 'Badge_4', 'Badge_5', 'Badge_6', 'Badge_7', 'Badge_8', 'Elite 4', 'Rematches']
+        - name: trainer
+          description: "Name of the opposing trainer"
+          tests:
+            - not_null
+        - name: is_mini_boss
+          description: "Flag indicating if the trainer is a mini boss (1) or regular trainer (0)"
+        - name: difficulty_rank
+          description: "Trainer difficulty ranking within the stage (1 = hardest)"
+        - name: difficulty_rating
+          description: "Trainer difficulty classification"
+        - name: trainer_pkmn_id
+          description: "Unique identifier for trainer pokemon instance"
+          tests:
+            - not_null
+        - name: trainer_pokemon
+          description: "Trainer pokemon species name"
+        - name: trainer_pkmn_level
+          description: "Trainer pokemon level"
+        - name: counter_pokemon
+          description: "Player pokemon species recommended against this opponent"
+          tests:
+            - not_null
+        - name: counter_rank
+          description: "Counter ranking per opponent pokemon (1 = best, max 5)"
+          tests:
+            - not_null
+        - name: battle_score
+          description: "Calculated battle outcome score (0-1 scale, 1 = complete player advantage)"
+        - name: counter_move
+          description: "Best move for the counter pokemon in this matchup"
+        - name: counter_move_origin
+          description: "Source of the counter move (level-up, repurchasable-tm, single-use-tm)"
+        - name: requires_single_use_tm
+          description: "Whether the counter move requires a single-use TM (1) or not (0)"
+        - name: player_turns_to_ko
+          description: "Number of turns for the counter pokemon to KO the opponent"
+        - name: opponent_move
+          description: "Best move the opponent uses against our counter pokemon"
+        - name: opponent_turns_to_ko
+          description: "Number of turns for the opponent to KO our counter pokemon"
+        - name: catch_display_name
+          description: "Where to catch the counter pokemon (NULL if not wild-catchable at this stage, e.g. starters/trades/evolutions)"
+        - name: catch_level
+          description: "Level at which the counter pokemon can be caught"
+        - name: counter_evolution_note
+          description: "How to evolve the counter pokemon from its base form (NULL for base forms)"
+        - name: opponent_type1
+          description: "Trainer pokemon primary type"
+        - name: opponent_type2
+          description: "Trainer pokemon secondary type"
+        - name: counter_type1
+          description: "Counter pokemon primary type"
+        - name: counter_type2
+          description: "Counter pokemon secondary type"
+
   - name: mart_min_exp_squads
     description: "Minimum-EXP teams via cheapest-counter assignment. Assigns each opponent to its cheapest counter, ranks pokemon by coverage/cost efficiency, and computes EXP earned from trainer battles."
     columns:
