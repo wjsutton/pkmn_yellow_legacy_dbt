@@ -1,0 +1,139 @@
+item_const,item_id,item_name,price,is_key_item,tm_number,tm_move,description
+MASTER_BALL,1,MASTER BALL,0,False,,,The best Ball. Catches any wild Pokemon without fail.
+ULTRA_BALL,2,ULTRA BALL,1200,False,,,A high-performance Ball with a better catch rate than a Great Ball.
+GREAT_BALL,3,GREAT BALL,600,False,,,A good Ball with a better catch rate than a Poke Ball.
+POKE_BALL,4,POKé BALL,200,False,,,A basic Ball used to catch wild Pokemon.
+TOWN_MAP,5,TOWN MAP,0,True,,,A map of the Kanto region.
+BICYCLE,6,BICYCLE,0,True,,,A folding bicycle. Travel twice as fast as walking.
+SURFBOARD,7,?????,0,True,,,Lets the player surf on water without an HM user.
+SAFARI_BALL,8,SAFARI BALL,1000,True,,,A special Ball used only in the Safari Zone.
+POKEDEX,9,POKéDEX,0,True,,,A high-tech encyclopedia that records Pokemon data.
+MOON_STONE,10,MOON STONE,0,False,,,A stone that makes certain Pokemon evolve.
+ANTIDOTE,11,ANTIDOTE,100,False,,,Cures a poisoned Pokemon.
+BURN_HEAL,12,BURN HEAL,250,False,,,Heals a burned Pokemon.
+ICE_HEAL,13,ICE HEAL,250,False,,,Defrosts a frozen Pokemon.
+AWAKENING,14,AWAKENING,200,False,,,Awakens a sleeping Pokemon.
+PARLYZ_HEAL,15,PARLYZ HEAL,200,False,,,Cures a paralyzed Pokemon.
+FULL_RESTORE,16,FULL RESTORE,3000,False,,,Fully restores HP and cures all status problems.
+MAX_POTION,17,MAX POTION,2500,False,,,Fully restores a Pokemon's HP.
+HYPER_POTION,18,HYPER POTION,1200,False,,,Restores 200 HP.
+SUPER_POTION,19,SUPER POTION,500,False,,,Restores 50 HP.
+POTION,20,POTION,200,False,,,Restores 20 HP.
+BOULDERBADGE,21,BOULDERBADGE,0,True,,,Pewter Gym badge from Brock.
+CASCADEBADGE,22,CASCADEBADGE,0,True,,,Cerulean Gym badge from Misty.
+THUNDERBADGE,23,THUNDERBADGE,0,True,,,Vermilion Gym badge from Lt. Surge.
+RAINBOWBADGE,24,RAINBOWBADGE,0,True,,,Celadon Gym badge from Erika.
+SOULBADGE,25,SOULBADGE,0,True,,,Fuchsia Gym badge from Koga.
+MARSHBADGE,26,MARSHBADGE,0,True,,,Saffron Gym badge from Sabrina.
+VOLCANOBADGE,27,VOLCANOBADGE,0,True,,,Cinnabar Gym badge from Blaine.
+EARTHBADGE,28,EARTHBADGE,0,True,,,Viridian Gym badge from Giovanni.
+ESCAPE_ROPE,29,ESCAPE ROPE,550,False,,,Escape instantly from a cave or dungeon.
+REPEL,30,REPEL,10,False,,,Repels weak wild Pokemon for 100 steps.
+OLD_AMBER,31,OLD AMBER,0,True,,,Amber holding Pokemon DNA. Revives into Aerodactyl.
+FIRE_STONE,32,FIRE STONE,2100,False,,,A stone that makes certain Pokemon evolve.
+THUNDER_STONE,33,THUNDERSTONE,2100,False,,,A stone that makes certain Pokemon evolve.
+WATER_STONE,34,WATER STONE,2100,False,,,A stone that makes certain Pokemon evolve.
+HP_UP,35,HP UP,9800,False,,,Raises a Pokemon's HP stat.
+PROTEIN,36,PROTEIN,9800,False,,,Raises a Pokemon's Attack stat.
+IRON,37,IRON,9800,False,,,Raises a Pokemon's Defense stat.
+CARBOS,38,CARBOS,9800,False,,,Raises a Pokemon's Speed stat.
+CALCIUM,39,CALCIUM,9800,False,,,Raises a Pokemon's Special stat.
+RARE_CANDY,40,RARE CANDY,4800,False,,,Raises a Pokemon's level by one.
+DOME_FOSSIL,41,DOME FOSSIL,0,True,,,A fossil that revives into Kabuto.
+HELIX_FOSSIL,42,HELIX FOSSIL,0,True,,,A fossil that revives into Omanyte.
+SECRET_KEY,43,SECRET KEY,0,True,,,Opens the locked Cinnabar Gym door.
+BIKE_VOUCHER,45,BIKE VOUCHER,0,True,,,Exchange for a free Bicycle at the Bike Shop.
+X_ACCURACY,46,X ACCURACY,5000,False,,,Raises accuracy in battle.
+LEAF_STONE,47,LEAF STONE,2100,False,,,A stone that makes certain Pokemon evolve.
+CARD_KEY,48,CARD KEY,0,True,,,Opens locked doors in Silph Co.
+NUGGET,49,NUGGET,10000,False,,,A pure gold nugget. Sells for a high price.
+POKE_DOLL,51,POKé DOLL,1000,False,,,A doll that lets you flee from any wild battle.
+FULL_HEAL,52,FULL HEAL,600,False,,,Cures all status problems.
+REVIVE,53,REVIVE,1500,False,,,Revives a fainted Pokemon with half its HP.
+MAX_REVIVE,54,MAX REVIVE,4000,False,,,Revives a fainted Pokemon with full HP.
+GUARD_SPEC,55,GUARD SPEC.,3000,False,,,Prevents stat reduction in battle.
+SUPER_REPEL,56,SUPER REPEL,500,False,,,Repels weak wild Pokemon for 200 steps.
+MAX_REPEL,57,MAX REPEL,700,False,,,Repels weak wild Pokemon for 250 steps.
+DIRE_HIT,58,DIRE HIT,5000,False,,,Raises the critical hit ratio in battle.
+COIN,59,COIN,10,False,,,Game Corner currency.
+FRESH_WATER,60,FRESH WATER,200,False,,,Restores 50 HP. Also given to thirsty guards.
+SODA_POP,61,SODA POP,300,False,,,Restores 60 HP. Also given to thirsty guards.
+LEMONADE,62,LEMONADE,350,False,,,Restores 80 HP. Also given to thirsty guards.
+S_S_TICKET,63,S.S.TICKET,0,True,,,A ticket to board the S.S. Anne.
+GOLD_TEETH,64,GOLD TEETH,0,True,,,Lost gold dentures. Return to the Safari Zone Warden.
+X_ATTACK,65,X ATTACK,4000,False,,,Raises Attack in battle.
+X_DEFEND,66,X DEFEND,4000,False,,,Raises Defense in battle.
+X_SPEED,67,X SPEED,4000,False,,,Raises Speed in battle.
+X_SPECIAL,68,X SPECIAL,4000,False,,,Raises Special in battle.
+COIN_CASE,69,COIN CASE,0,True,,,Holds up to 9999 Game Corner coins.
+OAKS_PARCEL,70,OAK's PARCEL,0,True,,,A parcel to deliver to Professor Oak.
+ITEMFINDER,71,ITEMFINDER,0,True,,,Detects hidden items nearby.
+SILPH_SCOPE,72,SILPH SCOPE,0,True,,,Reveals ghosts in Pokemon Tower.
+POKE_FLUTE,73,POKé FLUTE,0,True,,,"Awakens sleeping Pokemon, including Snorlax."
+LIFT_KEY,74,LIFT KEY,0,True,,,Operates the Rocket Hideout elevator.
+EXP_ALL,75,EXP.ALL,0,False,,,Shares battle EXP with the whole party.
+OLD_ROD,76,OLD ROD,0,True,,,A basic fishing rod.
+GOOD_ROD,77,GOOD ROD,0,True,,,A decent fishing rod.
+SUPER_ROD,78,SUPER ROD,0,True,,,The best fishing rod.
+PP_UP,79,PP UP,9800,False,,,Raises the max PP of a move.
+ETHER,80,ETHER,0,False,,,Restores 10 PP of one move.
+MAX_ETHER,81,MAX ETHER,0,False,,,Fully restores the PP of one move.
+ELIXER,82,ELIXER,0,False,,,Restores 10 PP of all moves.
+MAX_ELIXER,83,MAX ELIXER,0,False,,,Fully restores the PP of all moves.
+HM_,196,HM ,0,False,,,
+HM_CUT,197,HM01 CUT,0,True,HM01,CUT,Teaches Cut. Reusable.
+HM_FLY,198,HM02 FLY,0,True,HM02,FLY,Teaches Fly. Reusable.
+HM_SURF,199,HM03 SURF,0,True,HM03,SURF,Teaches Surf. Reusable.
+HM_STRENGTH,200,HM04 STRENGTH,0,True,HM04,STRENGTH,Teaches Strength. Reusable.
+HM_FLASH,201,HM05 FLASH,0,True,HM05,FLASH,Teaches Flash. Reusable.
+TM_,202,TM ,0,False,,,
+TM_MEGA_PUNCH,203,TM01 MEGA PUNCH,3000,False,TM01,MEGA_PUNCH,Teaches Mega Punch. Single use.
+TM_RAZOR_WIND,204,TM02 RAZOR WIND,2000,False,TM02,RAZOR_WIND,Teaches Razor Wind. Single use.
+TM_SWORDS_DANCE,205,TM03 SWORDS DANCE,2000,False,TM03,SWORDS_DANCE,Teaches Swords Dance. Single use.
+TM_FLAMETHROWER,206,TM04 FLAMETHROWER,4000,False,TM04,FLAMETHROWER,Teaches Flamethrower. Single use.
+TM_MEGA_KICK,207,TM05 MEGA KICK,3000,False,TM05,MEGA_KICK,Teaches Mega Kick. Single use.
+TM_TOXIC,208,TM06 TOXIC,4000,False,TM06,TOXIC,Teaches Toxic. Single use.
+TM_HORN_DRILL,209,TM07 HORN DRILL,2000,False,TM07,HORN_DRILL,Teaches Horn Drill. Single use.
+TM_BODY_SLAM,210,TM08 BODY SLAM,4000,False,TM08,BODY_SLAM,Teaches Body Slam. Single use.
+TM_TAKE_DOWN,211,TM09 TAKE DOWN,3000,False,TM09,TAKE_DOWN,Teaches Take Down. Single use.
+TM_DOUBLE_EDGE,212,TM10 DOUBLE EDGE,4000,False,TM10,DOUBLE_EDGE,Teaches Double Edge. Single use.
+TM_BUBBLEBEAM,213,TM11 BUBBLEBEAM,2000,False,TM11,BUBBLEBEAM,Teaches Bubblebeam. Single use.
+TM_WATER_GUN,214,TM12 WATER GUN,1000,False,TM12,WATER_GUN,Teaches Water Gun. Single use.
+TM_ICE_BEAM,215,TM13 ICE BEAM,4000,False,TM13,ICE_BEAM,Teaches Ice Beam. Single use.
+TM_BLIZZARD,216,TM14 BLIZZARD,5000,False,TM14,BLIZZARD,Teaches Blizzard. Single use.
+TM_HYPER_BEAM,217,TM15 HYPER BEAM,5000,False,TM15,HYPER_BEAM,Teaches Hyper Beam. Single use.
+TM_PAY_DAY,218,TM16 PAY DAY,5000,False,TM16,PAY_DAY,Teaches Pay Day. Single use.
+TM_SUBMISSION,219,TM17 SUBMISSION,3000,False,TM17,SUBMISSION,Teaches Submission. Single use.
+TM_COUNTER,220,TM18 COUNTER,2000,False,TM18,COUNTER,Teaches Counter. Single use.
+TM_SEISMIC_TOSS,221,TM19 SEISMIC TOSS,3000,False,TM19,SEISMIC_TOSS,Teaches Seismic Toss. Single use.
+TM_RAGE,222,TM20 RAGE,2000,False,TM20,RAGE,Teaches Rage. Single use.
+TM_MEGA_DRAIN,223,TM21 MEGA DRAIN,5000,False,TM21,MEGA_DRAIN,Teaches Mega Drain. Single use.
+TM_SOLARBEAM,224,TM22 SOLARBEAM,5000,False,TM22,SOLARBEAM,Teaches Solarbeam. Single use.
+TM_DRAGON_RAGE,225,TM23 DRAGON RAGE,5000,False,TM23,DRAGON_RAGE,Teaches Dragon Rage. Single use.
+TM_THUNDERBOLT,226,TM24 THUNDERBOLT,2000,False,TM24,THUNDERBOLT,Teaches Thunderbolt. Single use.
+TM_THUNDER,227,TM25 THUNDER,5000,False,TM25,THUNDER,Teaches Thunder. Single use.
+TM_EARTHQUAKE,228,TM26 EARTHQUAKE,4000,False,TM26,EARTHQUAKE,Teaches Earthquake. Single use.
+TM_FISSURE,229,TM27 FISSURE,5000,False,TM27,FISSURE,Teaches Fissure. Single use.
+TM_DIG,230,TM28 DIG,2000,False,TM28,DIG,Teaches Dig. Single use.
+TM_PSYCHIC_M,231,TM29 PSYCHIC M,4000,False,TM29,PSYCHIC_M,Teaches Psychic M. Single use.
+TM_TELEPORT,232,TM30 TELEPORT,1000,False,TM30,TELEPORT,Teaches Teleport. Single use.
+TM_MIMIC,233,TM31 MIMIC,2000,False,TM31,MIMIC,Teaches Mimic. Single use.
+TM_DOUBLE_TEAM,234,TM32 DOUBLE TEAM,1000,False,TM32,DOUBLE_TEAM,Teaches Double Team. Single use.
+TM_REFLECT,235,TM33 REFLECT,1000,False,TM33,REFLECT,Teaches Reflect. Single use.
+TM_BIDE,236,TM34 BIDE,2000,False,TM34,BIDE,Teaches Bide. Single use.
+TM_METRONOME,237,TM35 METRONOME,4000,False,TM35,METRONOME,Teaches Metronome. Single use.
+TM_SELFDESTRUCT,238,TM36 SELFDESTRUCT,2000,False,TM36,SELFDESTRUCT,Teaches Selfdestruct. Single use.
+TM_EGG_BOMB,239,TM37 EGG BOMB,2000,False,TM37,EGG_BOMB,Teaches Egg Bomb. Single use.
+TM_FIRE_BLAST,240,TM38 FIRE BLAST,5000,False,TM38,FIRE_BLAST,Teaches Fire Blast. Single use.
+TM_SWIFT,241,TM39 SWIFT,2000,False,TM39,SWIFT,Teaches Swift. Single use.
+TM_SKULL_BASH,242,TM40 SKULL BASH,4000,False,TM40,SKULL_BASH,Teaches Skull Bash. Single use.
+TM_SOFTBOILED,243,TM41 SOFTBOILED,2000,False,TM41,SOFTBOILED,Teaches Softboiled. Single use.
+TM_DREAM_EATER,244,TM42 DREAM EATER,2000,False,TM42,DREAM_EATER,Teaches Dream Eater. Single use.
+TM_SKY_ATTACK,245,TM43 SKY ATTACK,5000,False,TM43,SKY_ATTACK,Teaches Sky Attack. Single use.
+TM_REST,246,TM44 REST,2000,False,TM44,REST,Teaches Rest. Single use.
+TM_THUNDER_WAVE,247,TM45 THUNDER WAVE,2000,False,TM45,THUNDER_WAVE,Teaches Thunder Wave. Single use.
+TM_PSYWAVE,248,TM46 PSYWAVE,4000,False,TM46,PSYWAVE,Teaches Psywave. Single use.
+TM_EXPLOSION,249,TM47 EXPLOSION,3000,False,TM47,EXPLOSION,Teaches Explosion. Single use.
+TM_ROCK_SLIDE,250,TM48 ROCK SLIDE,4000,False,TM48,ROCK_SLIDE,Teaches Rock Slide. Single use.
+TM_TRI_ATTACK,251,TM49 TRI ATTACK,4000,False,TM49,TRI_ATTACK,Teaches Tri Attack. Single use.
+TM_SUBSTITUTE,252,TM50 SUBSTITUTE,2000,False,TM50,SUBSTITUTE,Teaches Substitute. Single use.

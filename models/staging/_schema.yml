@@ -313,6 +313,60 @@ models:
         - name: notes
           description: "Additional context about this legendary encounter (always null)"
 
+  - name: stg_items
+    description: "Item catalogue from the Yellow Legacy disassembly: names, buy prices, key-item flags, TM/HM move mapping, and descriptions"
+    columns:
+        - name: item_const
+          description: "Item constant from the disassembly (e.g. POKE_BALL, TM_MEGA_PUNCH), primary key"
+          tests:
+            - unique
+            - not_null
+        - name: item_id
+          description: "Numeric item id from constants/item_constants.asm"
+        - name: item_name
+          description: "In-game display name"
+        - name: price
+          description: "Buy price in Pokedollars (0 = not purchasable)"
+        - name: is_key_item
+          description: "True if flagged as a key item (cannot be sold or tossed)"
+        - name: tm_number
+          description: "TM/HM number (e.g. TM01, HM03) for machine items, blank otherwise"
+        - name: tm_move
+          description: "Move taught by this TM/HM, blank otherwise"
+        - name: description
+          description: "Short functional description of the item"
+
+  - name: stg_item_locations
+    description: "Where every item can be obtained: mart stock, vending machines, Game Corner prizes, overworld item balls, hidden items, and NPC gifts"
+    columns:
+        - name: id
+          description: "Surrogate key from map, item_const, source_type, x, y, quantity, notes"
+          tests:
+            - unique
+            - not_null
+        - name: map
+          description: "Map constant where the item is obtained (joins to nav_map_metadata / game_route_order)"
+        - name: item_const
+          description: "Item constant (joins to stg_items)"
+        - name: source_type
+          description: "How the item is obtained: mart, vending_machine, prize_corner, item_ball, hidden_item, npc_gift"
+        - name: x
+          description: "Tile x coordinate for item balls and hidden items"
+        - name: y
+          description: "Tile y coordinate for item balls and hidden items"
+        - name: quantity
+          description: "Number obtained (or 'unlimited' for purchasable stock)"
+        - name: price
+          description: "Cost to obtain, blank for free pickups/gifts"
+        - name: currency
+          description: "money or coins (Game Corner)"
+        - name: notes
+          description: "Source detail (mart clerk label or gift script filename)"
+        - name: game_order
+          description: "Game progression order of the map"
+        - name: next_gym
+          description: "Next gym badge at this point of progression"
+
   - name: stg_item_stone_locations
     description: "Evolution stone locations with game progression order, covering overworld items and shop purchases"
     columns:
