@@ -212,12 +212,16 @@ models:
           description: "Pokedex number of the base (pre-evolution) pokemon"
         - name: pokemon
           description: "Base pokemon species name (the pokemon that evolves)"
+        - name: species_key
+          description: "Canonical join key (UPPER, alphanumeric-only) for the base pokemon. Not unique -- a species may branch into multiple evolutions (issue #17)."
         - name: evolution_level
           description: "Level required for evolution (null for stone evolutions)"
         - name: evolution_stone
           description: "Stone required for evolution (null for level evolutions)"
         - name: evolution_name
           description: "Evolved pokemon species name (null for final evolution forms)"
+        - name: evolution_key
+          description: "Canonical join key (UPPER, alphanumeric-only) for the evolved pokemon (issue #17)."
 
   - name: stg_pkmn_stats
     description: "Base stats for all pokemon species including HP, Attack, Defence, Special, Speed, and typing"
@@ -229,6 +233,11 @@ models:
             - not_null
         - name: pokemon
           description: "Pokemon species name"
+        - name: species_key
+          description: "Canonical join key (UPPER, alphanumeric-only) from the species_key macro, e.g. NIDORANM, MRMIME. Stable join key for consumers binding raw emulator species values (issue #17)."
+          tests:
+            - unique
+            - not_null
         - name: hp
           description: "Base HP stat used in Generation 1 stat calculations"
         - name: attack
@@ -448,6 +457,11 @@ models:
             - not_null
         - name: pokemon
           description: "Pokemon species name"
+        - name: species_key
+          description: "Canonical join key (UPPER, alphanumeric-only) from the species_key macro. Lets the agent's catch-rate lookup bind raw emulator species without REPLACE surgery (issue #17)."
+          tests:
+            - unique
+            - not_null
         - name: catch_rate
           description: "Base capture rate (3-255). Used as catch_rate/256 baseline probability before HP/status/ball modifiers in the Gen-1 capture formula."
 

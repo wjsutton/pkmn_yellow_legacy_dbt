@@ -53,6 +53,27 @@ and split the catch semantic view into its own `semantic/` folder.
 - Verified: check flagged 52 orphans on the stale db; after clean rebuild
   (create_database.py → seed → build) it passes with 85 relations.
 
+## 2026-07-04 — Canonical species_key (issue #17)
+
+- Root cause of the "string-surgery join" bug class: within dbt every join uses the same
+  `pokemon` string form consistently, so internal joins already work. The drift only bites at
+  the **agent boundary**, where the sibling repo binds raw emulator species values against
+  dbt's hyphenated/spaced names with ad-hoc `.replace()`/`REPLACE()`/`LOWER()` surgery.
+- Fix: new `species_key()` macro (`UPPER(REGEXP_REPLACE(col,'[^A-Za-z0-9]','','g'))` →
+  `NIDORANM`, `MRMIME`, `FARFETCHD`) emitted as an additive column on exactly the 5 boundary
+  tables the agent reads: `stg_pkmn_stats`, `stg_pkmn_catch_rates`, `stg_pkmn_evolutions`
+  (+`evolution_key`), `int_encounter_lookup`, `mart_trainer_counters` (trainer + counter keys).
+  `unique`/`not_null` on `species_key` only where it's 1:1 with the species (stats, catch_rates);
+  evolutions is not unique (branching evos) so no test there.
+- Scoped deliberately (ponytail): threading the key through *every* species-bearing model is
+  additive churn with no consumer — the internal joins already match. Map side needs nothing:
+  nav models key on the `map_name` enum + `stg_nav_map_metadata.map_id_hex`, and #13 already
+  fixed `int_encounter_lookup.nav_map_name`. Agent-side `.replace()` deletion is a **separate
+  PR** in dbtPlaysPokemon.
+- Verified: clean rebuild → seed → `dbt build` PASS=190 WARN=1 (pre-existing
+  `assert_team_beats_all_opponents`) ERROR=0; `check_orphan_relations` OK (86 relations);
+  sibling agent `pytest -q` 286 passed.
+
 ### Notes / gotchas
 - The venv lives at `.venv/Scripts/` (CLAUDE.md's `env/Scripts/` reference is stale).
 - The 3 `dash_*` models are disabled via `+enabled: false` in `dbt_project.yml`, so they do

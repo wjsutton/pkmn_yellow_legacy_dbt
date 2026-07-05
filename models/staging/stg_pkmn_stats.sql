@@ -1,6 +1,7 @@
-SELECT 
+SELECT
     pokedex,
     pokemon,
+    {{ species_key('pokemon') }} AS species_key,
     hp,
     attack,
     defense as defence,
