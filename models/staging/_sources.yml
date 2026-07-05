@@ -57,6 +57,12 @@ sources:
       - name: item_stone_locations
         description: Evolution stone locations throughout the game (overworld items and shops)
 
+      - name: items
+        description: Item catalogue extracted from the Yellow Legacy disassembly (names, prices, key-item flags, TM/HM moves, descriptions)
+
+      - name: item_locations
+        description: Where every item can be obtained (mart stock, vending machines, Game Corner prizes, item balls, hidden items, NPC gifts) with map, coordinates, and cost
+
       - name: pkmn_growth_rates
         description: Growth rate category for each pokemon species
 

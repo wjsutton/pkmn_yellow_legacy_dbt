@@ -1,0 +1,5 @@
+quest_order,quest_name,description,map_name,npc,trigger_keyword,complete_when_key,complete_when_value,mode,requires_item,requires_badges,notes
+10,get_starter,Receive Pikachu from Prof. Oak,OAKS_LAB,Oak,you need a POK,party_size_gt,0,progress,,0,VERIFY dialog wording vs Yellow Legacy
+20,oaks_parcel_pickup,Pick up OAK's PARCEL at the Viridian Mart counter,VIRIDIAN_MART,Clerk,OAK's PARCEL,item_name_contains,PARCEL,progress,,0,location confirmed in item_locations (ViridianMart.asm)
+30,oaks_parcel_deliver,Deliver OAK's PARCEL to Prof. Oak in Pallet Town,OAKS_LAB,Oak,deliver,has_pokedex,true,progress,PARCEL,0,reward POKEDEX (RAM flag has_pokedex)
+40,pewter_gym,Defeat Brock at Pewter Gym for the Boulder Badge,PEWTER_GYM,Brock,,badges,1,progress,,0,
