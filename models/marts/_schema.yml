@@ -311,6 +311,37 @@ models:
         - name: counter_type2
           description: "Counter pokemon secondary type"
 
+  - name: mart_map_routes
+    description: "Map-to-map next-hop shortest-path closure over int_map_connections. One row per reachable (from_map, to_map): the immediate next map to head for (next_hop), the shortest hop count, and how to make that first transition. Replaces the dbtPlaysPokemon agent's Python bfs_map_route / cached connection graph with a single filtered read -- WHERE from_map = ? AND to_map = ? for a known destination, or filter to_map + MIN(hop_count) for the nearest map matching a predicate. Grain: one row per (from_map, to_map)."
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [from_map, to_map]
+    columns:
+        - name: route_key
+          description: "Surrogate key 'from_map -> to_map' for the (from_map, to_map) pair."
+          tests:
+            - unique
+            - not_null
+        - name: from_map
+          description: "Origin map (dataset/Yellow-Legacy map name enum)."
+          tests:
+            - not_null
+        - name: to_map
+          description: "Destination map reachable from from_map within map_route_max_hops (default 25)."
+          tests:
+            - not_null
+        - name: next_hop
+          description: "The immediate neighbouring map to navigate to first on a shortest path to to_map (equals to_map when hop_count = 1)."
+          tests:
+            - not_null
+        - name: hop_count
+          description: "Shortest number of map transitions from from_map to to_map."
+          tests:
+            - not_null
+        - name: next_hop_instruction
+          description: "Human-readable navigation instruction for the first hop (from_map -> next_hop), from int_map_connections. NULL if the connecting warp carries no instruction."
+
   - name: mart_min_exp_squads
     description: "Minimum-EXP teams via cheapest-counter assignment. Assigns each opponent to its cheapest counter, ranks pokemon by coverage/cost efficiency, and computes EXP earned from trainer battles."
     columns:
