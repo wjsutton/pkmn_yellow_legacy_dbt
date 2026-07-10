@@ -4,7 +4,7 @@ WITH CTE AS (
         pokedex,
         pokemon,
         move
-    FROM {{ source('yellow_legacy', 'moves_from_tmhm') }} 
+    FROM {{ ref('moves_from_tmhm') }} 
 
 )
 

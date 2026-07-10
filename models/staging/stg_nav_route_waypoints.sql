@@ -8,4 +8,4 @@ SELECT
     action_detail,
     expected_result,
     notes
-FROM {{ source('yellow_legacy', 'nav_route_waypoints') }}
+FROM {{ ref('nav_route_waypoints') }}

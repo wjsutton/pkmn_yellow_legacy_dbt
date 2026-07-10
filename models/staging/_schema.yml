@@ -572,7 +572,7 @@ models:
           description: "For ledge tiles, the direction the ledge can be hopped (null otherwise)"
 
   - name: stg_nav_map_metadata
-    description: "Map properties for navigation - dimensions, type, and parent area for maps from Pallet Town through Pewter City"
+    description: "Map properties for navigation - dimensions, type, and parent area for all maps in the game"
     columns:
         - name: map_name
           description: "Memory reader enum name for the map (e.g. PLAYERS_HOUSE_1F)"

@@ -13,4 +13,4 @@ SELECT
         ELSE evolution_name
     END as evolution_name,
     {{ species_key("CASE WHEN evolution_name = 'Mr. Mime' THEN 'Mr-mime' ELSE evolution_name END") }} AS evolution_key
-FROM {{ source('yellow_legacy', 'pkmn_evolutions') }} 
+FROM {{ ref('pkmn_evolutions') }} 

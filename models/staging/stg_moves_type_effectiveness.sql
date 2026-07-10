@@ -4,4 +4,4 @@ SELECT
     attacking_type,
     defending_type,
     damage_modifier
-FROM {{ source('yellow_legacy', 'moves_type_effectiveness') }}
+FROM {{ ref('moves_type_effectiveness') }}

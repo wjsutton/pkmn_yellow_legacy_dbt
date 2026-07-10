@@ -50,11 +50,6 @@ SELECT
     to_y,
     to_tile_type,
     direction,
-    -- Ledge tiles can only be entered from the matching direction
-    CASE
-        WHEN to_tile_type = 'ledge' AND ledge_direction != direction THEN FALSE
-        ELSE TRUE
-    END AS is_passable,
     -- Flag if destination has wild encounter risk
     to_tile_type = 'grass' AS has_encounter_risk
 FROM edges

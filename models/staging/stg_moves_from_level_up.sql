@@ -9,7 +9,7 @@ WITH CTE AS (
         power,
         accuracy,
         pp
-    FROM {{ source('yellow_legacy', 'moves_from_level_up') }} 
+    FROM {{ ref('moves_from_level_up') }} 
 
 )
 

@@ -10,4 +10,4 @@ SELECT
     total,
     type1,
     type2
-FROM {{ source('yellow_legacy', 'pkmn_stats') }} 
+FROM {{ ref('pkmn_stats') }} 

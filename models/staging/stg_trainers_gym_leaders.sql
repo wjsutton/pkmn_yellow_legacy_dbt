@@ -20,7 +20,7 @@ WITH CTE AS (
             WHEN 'Double-Edge' THEN 'Double Edge'
             ELSE moves
         END as move
-    FROM {{ source('yellow_legacy', 'trainers_gym_leaders') }} 
+    FROM {{ ref('trainers_gym_leaders') }} 
     WHERE moves IS NOT NULL
 
 )

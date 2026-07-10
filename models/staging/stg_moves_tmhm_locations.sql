@@ -11,4 +11,4 @@ SELECT
     price,
     earliest_nearest_route,
     COALESCE(repurchase_route, earliest_nearest_route) as repurchase_route
-FROM {{ source('yellow_legacy', 'moves_tmhm_locations') }} 
+FROM {{ ref('moves_tmhm_locations') }} 
