@@ -11,6 +11,6 @@ SELECT
     l.notes,
     r.game_order,
     r.next_gym
-FROM {{ source('yellow_legacy', 'item_locations') }} l
+FROM {{ ref('item_locations') }} l
 LEFT JOIN {{ ref('stg_game_route_order') }} r
     ON l.map = r.map

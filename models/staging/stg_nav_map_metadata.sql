@@ -5,4 +5,4 @@ SELECT
     CAST(height AS INTEGER) AS height,
     area_type,
     parent_area
-FROM {{ source('yellow_legacy', 'nav_map_metadata') }}
+FROM {{ ref('nav_map_metadata') }}

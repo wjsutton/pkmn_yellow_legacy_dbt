@@ -6,5 +6,5 @@ SELECT
     area,
     SUM(encounter_probability) as encounter_probability,
     MAX(available_from_order) as available_from_order
-FROM {{ source('yellow_legacy', 'pkmn_encounter_areas') }}
+FROM {{ ref('pkmn_encounter_areas') }}
 GROUP BY ALL

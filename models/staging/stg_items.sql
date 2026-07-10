@@ -7,4 +7,4 @@ SELECT
     tm_number,
     tm_move,
     description
-FROM {{ source('yellow_legacy', 'items') }}
+FROM {{ ref('items') }}

@@ -6,6 +6,6 @@ SELECT
     s.source_type,
     r.game_order,
     r.next_gym
-FROM {{ source('yellow_legacy', 'item_stone_locations') }} s
+FROM {{ ref('item_stone_locations') }} s
 LEFT JOIN {{ ref('stg_game_route_order') }} r
     ON s.map = r.map

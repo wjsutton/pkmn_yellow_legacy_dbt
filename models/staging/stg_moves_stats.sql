@@ -10,4 +10,4 @@ SELECT
     hits_min,
     hits_max,
     critical_hit_ratio
-FROM {{ source('yellow_legacy', 'moves_stats') }} 
+FROM {{ ref('moves_stats') }} 

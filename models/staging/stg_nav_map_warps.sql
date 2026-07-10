@@ -8,4 +8,4 @@ SELECT
     CAST(to_y AS INTEGER) AS to_y,
     warp_type,
     notes
-FROM {{ source('yellow_legacy', 'nav_map_warps') }}
+FROM {{ ref('nav_map_warps') }}

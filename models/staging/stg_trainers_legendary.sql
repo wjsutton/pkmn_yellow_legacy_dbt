@@ -11,5 +11,5 @@ SELECT
     pkmn_level,
     moves as move,
     ROW_NUMBER() OVER (PARTITION BY pkmn_id ORDER BY moves) AS move_number
-FROM {{ source('yellow_legacy', 'trainers_legendary') }} 
+FROM {{ ref('trainers_legendary') }} 
 WHERE moves IS NOT NULL

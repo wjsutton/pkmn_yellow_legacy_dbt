@@ -7,4 +7,4 @@ SELECT
     required_item,
     area_order,
     representative_location
-FROM {{ source('yellow_legacy', 'pkmn_encounter_area_order') }}
+FROM {{ ref('pkmn_encounter_area_order') }}

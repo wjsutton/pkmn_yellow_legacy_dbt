@@ -293,8 +293,6 @@ models:
           description: "Terrain type of the destination tile"
         - name: direction
           description: "Movement direction from source to destination (up, down, left, right), part of the composite grain"
-        - name: is_passable
-          description: "Whether this edge can be traversed (always TRUE in output; impassable ledge entries are filtered out)"
         - name: has_encounter_risk
           description: "Whether the destination tile is grass (wild encounter risk)"
 

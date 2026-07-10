@@ -74,8 +74,40 @@ and split the catch semantic view into its own `semantic/` folder.
   `assert_team_beats_all_opponents`) ERROR=0; `check_orphan_relations` OK (86 relations);
   sibling agent `pytest -q` 286 passed.
 
+## 2026-07-08 — Hygiene batch, part 1 (issue #19, items 1/3/5)
+
+Issue #19 is a 6-item hygiene grab-bag. Did the three low-risk deletion/doc items; deferred
+2/4/6 (each needs a new int model, a regenerated seed, or hand-authored data + a cross-repo
+agent change — not safe to bundle unattended).
+
+- **Item 1 — one seed convention (`ref()` everywhere).** `create_database.py` only creates an
+  *empty* DuckDB file; every CSV is a dbt seed loaded into schema `raw` (`+schema: raw`). So
+  `source('yellow_legacy', X)` and `ref('X')` both resolve to `raw.X` — the source layer was a
+  pure shim. Converted all 26 `source()` calls in staging to `ref()` (seed name == source table
+  name in every case), matching the 5 models that already used `ref()`. Deleted
+  `models/staging/_sources.yml`, `macros/add_dbt_loaded_at_col.sql` (both `drop_/add_dbt_loaded_at_col`
+  macros), and the `on-run-start`/`on-run-end` hooks in `dbt_project.yml` — those existed *only*
+  to fake source freshness on seeds. No model references `dbt_loaded_at` by name (only generated
+  `logs/`), and the col never exists during build, so `SELECT *` staging models are unaffected.
+- **Item 3 — dropped dead `int_map_pathfinding.is_passable`.** Was `TRUE` for all 145,046 rows;
+  the `WHERE` already removes impassable ledge edges. No consumer selected it (macros use
+  `direction`/`has_encounter_risk`; `int_map_components.py` uses graph structure). Removed the
+  column + its `_schema.yml` entry.
+- **Item 5 — fixed stale `stg_nav_map_metadata` description** ("Pallet Town through Pewter City"
+  → "all maps in the game"; table holds 222 maps). The other stale source-level descriptions
+  died with `_sources.yml`. `nav_route_waypoints` "through beating Brock" is *accurate* (seed
+  only covers start→Brock), left as-is.
+- **Deferred:** #2 (move `stg_item_stone_locations`/`stg_item_locations` → stg_game_route_order
+  join into an `int_` model — needs a new model + repointing 4 consumers), #4 (`edge_direction`
+  column — needs `extract_map_warps.py` re-run + risks seed drift + touches the agent boundary),
+  #6 (`shop_inventory` seed — would be hand-authored data, no ROM extractor; CLAUDE.md forbids
+  manual seed authoring; primary consumer is the sibling agent).
+- Verified: clean rebuild → seed (PASS=31) → `dbt build`; `check_orphan_relations` OK.
+
 ### Notes / gotchas
 - The venv lives at `.venv/Scripts/` (CLAUDE.md's `env/Scripts/` reference is stale).
+- Every seed loads into schema `raw`; `create_database.py` only makes an empty DB. There is no
+  separate raw-loading step — seeds ARE the raw layer. Read via `ref()`, not `source()`.
 - The 3 `dash_*` models are disabled via `+enabled: false` in `dbt_project.yml`, so they do
   not build (relevant to success criterion #4 — they produce no rows while disabled).
 - Disabled models keep their `refs` (by name) but have empty resolved `depends_on.nodes` in
